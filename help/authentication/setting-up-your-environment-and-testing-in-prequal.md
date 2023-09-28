@@ -68,7 +68,7 @@ ht-degree: 0%
 * *編輯 c：\\windows\\System32\\drivers\\etc\\hosts* 檔案 （在 Windows 中） 或 */etc/hosts* 檔案 （在 Macintosh/Linux/Android 上），並新增下列項目：
 
 * 詐騙生產設定檔
-   * 52.13.71.11 HTTP://entitlement.auth.adobe.com， HTTP://sp.auth.adobe.com， HTTP://api.auth.adobe.com
+   * 52.13.71.11 http://entitlement.auth.adobe.com， http://sp.auth.adobe.com， http://api.auth.adobe.com
 
 **在Android上詐騙：** 若要在Android上詐騙，您必須使用Android模擬器。
 
