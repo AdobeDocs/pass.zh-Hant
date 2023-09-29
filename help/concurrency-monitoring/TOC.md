@@ -2,17 +2,17 @@
 product: adobe primetime
 feature: Concurrency Monitoring
 audience: end-user
-user-guide-title: Adobe Pass並行監控
-user-guide-description: 瞭解如何定義並強制實施多個應用程式間並行使用的限制。
+user-guide-title: Adobe Pass 並行監視
+user-guide-description: 瞭解如何定義多個應用程式並行使用的限制並強制執行。
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
 source-wordcount: '141'
-ht-degree: 0%
+ht-degree: 17%
 
 ---
 
 
-# Adobe Pass並行監視說明 {#cm}
+# Adobe Pass 並行監視 說明 {#cm}
 
 + [並行監視簡介](cm-home.md)
 + [並行監視字彙表](cm-glossary.md)
@@ -43,7 +43,7 @@ ht-degree: 0%
    + [並行監控 — 2.5.0發行說明](rn-cm-250.md)
    + [並行監控 — 2.3.2發行說明](rn-cm-232.md)
    + [並行監控 — 2.2.2發行說明](rn-cm-222.md)
-+ 技術說明{#tech-notes}
++ 技術注意事項{#tech-notes}
    + [做法：在並行監視中區分VOD和即時內容](vod-live-dist.md)
 
 <!--    + [Usage reports](usage-rep-versionone.md) -->
