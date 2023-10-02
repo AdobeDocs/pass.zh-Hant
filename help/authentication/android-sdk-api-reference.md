@@ -2,9 +2,9 @@
 title: Android SDK API參考
 description: Android SDK API參考
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: 2ccfa8e018b854a359881eab193c1414103eb903
+source-git-commit: 854698397d9d14c1bfddcc10eecc61c7e3c32b71
 workflow-type: tm+mt
-source-wordcount: '4518'
+source-wordcount: '4526'
 ht-degree: 0%
 
 ---
@@ -165,7 +165,7 @@ ht-degree: 0%
 
 ### checkAuthentication {#checkAuthN}
 
-**說明：** 檢查驗證狀態。 其做法是在本機權杖儲存空間中搜尋有效的驗證權杖。 呼叫此方法不會執行任何網路呼叫。 應用程式會使用它來查詢使用者的驗證狀態並相應地更新UI （即更新登入/登出UI）。 驗證狀態會透過 [*setAuthenticationStatus()*](#setAuthNStatus) 回撥。
+**說明：** 檢查驗證狀態。 其做法是在本機權杖儲存空間中搜尋有效的驗證權杖。 此方法不會執行任何網路呼叫，我們建議您在主要執行緒上呼叫它。 應用程式會使用它來查詢使用者的驗證狀態並相應地更新UI （即更新登入/登出UI）。 驗證狀態會透過 [*setAuthenticationStatus()*](#setAuthNStatus) 回撥。
 
 如果MVPD支援「每個請求者的驗證」功能，則多個驗證權杖可以儲存在裝置上。  如需有關此功能的詳細資訊，請參閱 [快取准則](#$caching) 部分（在Android技術概覽中）。
 

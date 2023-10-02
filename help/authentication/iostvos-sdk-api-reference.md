@@ -2,9 +2,9 @@
 title: iOS/tvOS API參考
 description: iOS/tvOS API參考
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: 2ccfa8e018b854a359881eab193c1414103eb903
+source-git-commit: 854698397d9d14c1bfddcc10eecc61c7e3c32b71
 workflow-type: tm+mt
-source-wordcount: '7010'
+source-wordcount: '7018'
 ht-degree: 0%
 
 ---
@@ -365,7 +365,8 @@ ht-degree: 0%
 **檔案：** AccessEnabler/headers/AccessEnabler.h
 
 **說明：** 檢查目前使用者的驗證狀態。
-其做法是在本機權杖儲存空間中搜尋有效的驗證權杖。 呼叫此方法不會執行任何網路呼叫。 應用程式會使用它來查詢使用者的驗證狀態並相應地更新UI （即更新登入/登出UI）。 驗證狀態會透過 [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) 回撥。
+其做法是在本機權杖儲存空間中搜尋有效的驗證權杖。 此方法不會執行任何網路呼叫，我們建議您在主要執行緒上呼叫它。
+應用程式會使用它來查詢使用者的驗證狀態並相應地更新UI （即更新登入/登出UI）。 驗證狀態會透過 [`setAuthenticationStatus:errorCode:`](#setAuthNStatus) 回撥。
 
 
 <table class="pass_api_table">
