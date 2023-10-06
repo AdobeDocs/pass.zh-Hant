@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: fd65582522d6b40e5797dff192e2340c5575ef3b
+source-git-commit: 05184defb3d912050240be7763ced4ccce6a35ad
 workflow-type: tm+mt
-source-wordcount: '776'
+source-wordcount: '785'
 ht-degree: 4%
 
 ---
@@ -161,10 +161,12 @@ ht-degree: 4%
    + [Adobe Pass Authentication 2.64發行說明](auth-rn-264.md)
    + [Adobe Pass Authentication 2.63發行說明](auth-rn-263.md)
    + [Adobe Pass Authentication 2.62.1發行說明](auth-rn-2621.md)
-   + [Adobe Pass Authentication iOS / tvOS 3.7.0發行說明](authn-rn-ios-tvos-370.md)
-   + [Adobe Pass Authentication iOS / tvOS 3.8.1發行說明](authn-rn-ios-tvos-381.md)
-   + [Adobe Pass Authentication iOS / tvOS 3.8.2發行說明](authn-rn-ios-tvos-382.md)
-   + [Adobe Pass Authentication Android 3.7.3發行說明](authn-rn-android-373.md)
+   + iOS/tvOS SDK發行說明  {#release-notes-ios}
+      + [Adobe Pass Authentication iOS / tvOS 3.8.2發行說明](authn-rn-ios-tvos-382.md)
+      + [Adobe Pass Authentication iOS / tvOS 3.8.1發行說明](authn-rn-ios-tvos-381.md)
+      + [Adobe Pass Authentication iOS / tvOS 3.7.0發行說明](authn-rn-ios-tvos-370.md)
+   + Android SDK發行說明 {#release-notes-android}
+      + [Adobe Pass Authentication Android 3.7.3發行說明](authn-rn-android-373.md)
 + 技術注意事項 {#tech-notes}
    + Adobe Pass驗證SDK {#primetime-authentication-sdks}
       + [憑證問答](certificates-qa.md)
