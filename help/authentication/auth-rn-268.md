@@ -1,9 +1,9 @@
 ---
 title: Adobe Pass Authentication 2.68發行說明
 description: Adobe Pass Authentication 2.68發行說明
-source-git-commit: 3271a0c31670ba086d1b0d464f4f255d1d311808
+source-git-commit: dc9572912371fb23586eafa93d06c3f3a5c546bc
 workflow-type: tm+mt
-source-wordcount: '135'
+source-wordcount: '142'
 ht-degree: 0%
 
 ---
@@ -29,9 +29,9 @@ Adobe Pass驗證： adobe-pass-**2.68.0.5**
 
 ### 新功能 {#new-features-268}
 
-* 我們新REST API的更新。  新的端點尚未提供，但我們正在努力更新詳細說明這些新API使用的檔案。
+* 正在開發新的REST API。 新端點和流程預計將在即將推出的專屬版本中推出。 正在更新使用這些新API的檔案。
 * 持續改善內部架構。
-* 已更新Device Atlas資料庫以改善裝置識別。
+* 已將Device Atlas程式庫更新至最新版本，以改進裝置識別。
 
 #### 錯誤修正 {#bug-fixes-268}
 
