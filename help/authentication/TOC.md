@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: 97928c231d5e3d4b36fb2967452b01cb8af86072
+source-git-commit: 7057aeda34b4fe0d059912ab0a71ea856427654c
 workflow-type: tm+mt
-source-wordcount: '832'
+source-wordcount: '892'
 ht-degree: 3%
 
 ---
@@ -164,6 +164,14 @@ ht-degree: 3%
    + [Adobe Pass Authentication 2.64發行說明](auth-rn-264.md)
    + [Adobe Pass Authentication 2.63發行說明](auth-rn-263.md)
    + [Adobe Pass Authentication 2.62.1發行說明](auth-rn-2621.md)
+   + JavaScript SDK發行說明  {#release-notes-javascript}
+      + [Adobe Pass Authentication JavaScript 3.5.0發行說明](authn-rn-javascript-350.md)
+      + [Adobe Pass Authentication JavaScript 4.0.0發行說明](authn-rn-javascript-400.md)
+      + [Adobe Pass Authentication JavaScript 4.1.0發行說明](authn-rn-javascript-410.md)
+      + [Adobe Pass Authentication JavaScript 4.1.1發行說明](authn-rn-javascript-411.md)
+      + [Adobe Pass Authentication JavaScript 4.2.0發行說明](authn-rn-javascript-420.md)
+      + [Adobe Pass Authentication JavaScript 4.4.0發行說明](authn-rn-javascript-440.md)
+      + [Adobe Pass Authentication JavaScript 4.6.0發行說明](authn-rn-javascript-460.md)
    + iOS/tvOS SDK發行說明  {#release-notes-ios}
       + [Adobe Pass Authentication iOS / tvOS 3.8.3發行說明](authn-rn-ios-tvos-383.md)
       + [Adobe Pass Authentication iOS / tvOS 3.8.2發行說明](authn-rn-ios-tvos-382.md)
