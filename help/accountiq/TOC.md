@@ -2,11 +2,11 @@
 product: adobe primetime
 audience: end-user
 feature: Account IQ
-user-guide-description: Adobe Pass 帳戶 IQ 可協助提供 Account IQ 元件的相關資訊，並逐步引導您了解使用各種元件的使用者歷程。
-source-git-commit: 2ced89dc1f77d2c090b599c40e778f3054f1a8dd
+user-guide-description: Adobe Pass Account IQ可協助提供Account IQ元件的相關資訊，並逐步引導您瞭解使用各種元件的使用者歷程。
+source-git-commit: 964ca5d24682662df2f7f766924ac062ca49b54e
 workflow-type: tm+mt
-source-wordcount: '142'
-ht-degree: 16%
+source-wordcount: '144'
+ht-degree: 0%
 
 ---
 
