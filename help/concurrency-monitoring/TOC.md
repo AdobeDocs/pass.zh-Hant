@@ -4,15 +4,15 @@ feature: Concurrency Monitoring
 audience: end-user
 user-guide-title: Adobe Pass 並行監視
 user-guide-description: 瞭解如何定義多個應用程式並行使用的限制並強制執行。
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: d39836cfb81a81271f526e6aa52fcc2d6558678f
 workflow-type: tm+mt
-source-wordcount: '141'
-ht-degree: 17%
+source-wordcount: '161'
+ht-degree: 9%
 
 ---
 
 
-# Adobe Pass 並行監視 說明 {#cm}
+# Adobe Pass並行監視說明 {#cm}
 
 + [並行監視簡介](cm-home.md)
 + [並行監視字彙表](cm-glossary.md)
@@ -21,6 +21,7 @@ ht-degree: 17%
 + [並行監視API總覽](cm-api-overview.md)
 + [標準中繼資料屬性](standard-metadata-attributes.md)
 + [資料保留原則](data-retention-policy.md)
++ [節流機制](throttling-mechanism.md)
 + [向上呈報程式](cm-escalation-procedures.md)
 + 並行監視使用情況 {#cmu}
    + [並行監視使用報告](cm-usage-reports.md)
@@ -43,7 +44,7 @@ ht-degree: 17%
    + [並行監控 — 2.5.0發行說明](rn-cm-250.md)
    + [並行監控 — 2.3.2發行說明](rn-cm-232.md)
    + [並行監控 — 2.2.2發行說明](rn-cm-222.md)
-+ 技術注意事項{#tech-notes}
++ 技術說明{#tech-notes}
    + [做法：在並行監視中區分VOD和即時內容](vod-live-dist.md)
 
 <!--    + [Usage reports](usage-rep-versionone.md) -->
