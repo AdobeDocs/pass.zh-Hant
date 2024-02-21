@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: 31620db6a05d4c7043e49c03099e9f84cdbad4fb
+source-git-commit: 2dbb45aebb1a00863a9344114963f6df95763dfc
 workflow-type: tm+mt
-source-wordcount: '901'
+source-wordcount: '915'
 ht-degree: 3%
 
 ---
@@ -155,6 +155,7 @@ ht-degree: 3%
    + [監控Adobe PassAdobePayTV Pass](monitoring-adobe-pay-tv-pass.md)
    + [最低系統需求](minimum-system-requirements.md)
 + 發行說明 {#release-notes}
+   + [Adobe Pass Authentication 2.69發行說明](auth-rn-269.md)
    + [Adobe Pass Authentication 2.68發行說明](auth-rn-268.md)
    + [Adobe Pass Authentication 2.67發行說明](auth-rn-267.md)
    + [Adobe Pass Authentication 2.66發行說明](auth-rn-266.md)
@@ -165,13 +166,14 @@ ht-degree: 3%
    + [Adobe Pass Authentication 2.63發行說明](auth-rn-263.md)
    + [Adobe Pass Authentication 2.62.1發行說明](auth-rn-2621.md)
    + JavaScript SDK發行說明  {#release-notes-javascript}
-      + [Adobe Pass Authentication JavaScript 3.5.0發行說明](authn-rn-javascript-350.md)
-      + [Adobe Pass Authentication JavaScript 4.0.0發行說明](authn-rn-javascript-400.md)
-      + [Adobe Pass Authentication JavaScript 4.1.0發行說明](authn-rn-javascript-410.md)
-      + [Adobe Pass Authentication JavaScript 4.1.1發行說明](authn-rn-javascript-411.md)
-      + [Adobe Pass Authentication JavaScript 4.2.0發行說明](authn-rn-javascript-420.md)
-      + [Adobe Pass Authentication JavaScript 4.4.0發行說明](authn-rn-javascript-440.md)
+      + [Adobe Pass Authentication JavaScript 4.7.0發行說明](authn-rn-javascript-470.md)
       + [Adobe Pass Authentication JavaScript 4.6.0發行說明](authn-rn-javascript-460.md)
+      + [Adobe Pass Authentication JavaScript 4.4.0發行說明](authn-rn-javascript-440.md)
+      + [Adobe Pass Authentication JavaScript 4.2.0發行說明](authn-rn-javascript-420.md)
+      + [Adobe Pass Authentication JavaScript 4.1.1發行說明](authn-rn-javascript-411.md)
+      + [Adobe Pass Authentication JavaScript 4.1.0發行說明](authn-rn-javascript-410.md)
+      + [Adobe Pass Authentication JavaScript 4.0.0發行說明](authn-rn-javascript-400.md)
+      + [Adobe Pass Authentication JavaScript 3.5.0發行說明](authn-rn-javascript-350.md)
    + iOS/tvOS SDK發行說明  {#release-notes-ios}
       + [Adobe Pass Authentication iOS / tvOS 3.8.4發行說明](authn-rn-ios-tvos-384.md)
       + [Adobe Pass Authentication iOS / tvOS 3.8.3發行說明](authn-rn-ios-tvos-383.md)
@@ -185,7 +187,7 @@ ht-degree: 3%
       + [憑證問答](certificates-qa.md)
       + JavaScript SDK {#javascript}
          + [Safari瀏覽器的JS SDK限制](js-sdk-limitations-for-safari-browser.md)
-         + [Cookie更新 — SameSite和Secure標幟](cookies-updates--samesite-and-secure-flags.md)
+         + [Cookie更新 — SameSite和Secure標幟](cookies-updates-samesite-and-secure-flags.md)
       + Android SDK {#android}
          + [Android 10應用程式上的Access Enabler Android SDK單一登入(SSO)](access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
          + [Adobe Pass驗證和Android 6「Marshmallow」新許可權模型](adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
@@ -202,7 +204,7 @@ ht-degree: 3%
       + [在預備中設定您的環境及測試](setting-up-your-environment-and-testing-in-prequal.md)
       + [如何使用Adobe API測試網站測試驗證和授權流程](test-authn-authz-flows-using-adobes-api-test-site.md)
    + 無使用者端API {#clientless-api}
-      + [無使用者端API實施 — 錯誤代碼/包含可能原因/原因的訊息](clientless-api-implementation-error-codes--messages-with-probable-reason--cause.md)
+      + [無使用者端API實施 — 錯誤代碼/包含可能原因/原因的訊息](clientless-api-implementation-error-codes-messages-with-probable-reason-cause.md)
       + [缺少裝置ID時的無使用者端API流程](clientless-api-flow-in-the-absence-of-device-id.md)
       + [無使用者端：避免在/authenticate請求中使用&#39;&amp;&#39;reg_code](clientless-avoid-using-reg-code-in-authenticate-request.md)
       + [在Xbox 360和XboxOne無使用者端上啟用程式設計師的Adobe Pass軟體權利檔案服務](enabling-primetime-entitlement-services-for-a-programmer-on-xbox-360-and-xboxone-clientless-solution.md)
