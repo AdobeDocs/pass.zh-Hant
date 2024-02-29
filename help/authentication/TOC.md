@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: 2dbb45aebb1a00863a9344114963f6df95763dfc
+source-git-commit: 579ce868b6ee94e1854bbc51145fc7840268db26
 workflow-type: tm+mt
-source-wordcount: '915'
+source-wordcount: '919'
 ht-degree: 3%
 
 ---
@@ -186,7 +186,8 @@ ht-degree: 3%
    + Adobe Pass驗證SDK {#primetime-authentication-sdks}
       + [憑證問答](certificates-qa.md)
       + JavaScript SDK {#javascript}
-         + [Safari瀏覽器的JS SDK限制](js-sdk-limitations-for-safari-browser.md)
+         + [追蹤預防評估 — Apple Safari](tracking-prevention-assessment-apple-safari.md)
+         + [預防追蹤評估 — Google Chrome](tracking-prevention-assessment-google-chrome.md)
          + [Cookie更新 — SameSite和Secure標幟](cookies-updates-samesite-and-secure-flags.md)
       + Android SDK {#android}
          + [Android 10應用程式上的Access Enabler Android SDK單一登入(SSO)](access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
