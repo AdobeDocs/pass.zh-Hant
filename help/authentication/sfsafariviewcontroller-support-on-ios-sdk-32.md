@@ -2,9 +2,9 @@
 title: iOS SDK 3.2+上的SFSafariViewController支援
 description: iOS SDK 3.2+上的SFSafariViewController支援
 exl-id: 6691550f-c36f-4fae-aa77-082ca7d8a60a
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: 929d1cc2e0466155b29d1f905f2979c942c9ab8c
 workflow-type: tm+mt
-source-wordcount: '405'
+source-wordcount: '413'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ SDK 3.1版會自動從應用程式的根檢視控制器顯示SFSafariViewControl
 
 1. 呼叫 **setOptions([&quot;handleSVC&quot;：true])** AccessEnabler初始化之後（請確定在驗證開始前執行此呼叫）。 這樣會啟用「手動」SVC管理，SDK不會自動呈現SVC，而是在需要時呼叫 **navigate(toUrl：*{url}* useSVC：true)**.
 
-1. 實作選用回呼 **navigateToUrl:useSVC:** 在實施內，您必須使用提供的URL以SFSafariViewController執行個體建立svc執行個體，並將其顯示在畫面上：
+1. 實作選用回呼 **`navigateToUrl:useSVC:`** 在實施內，您必須使用提供的URL以SFSafariViewController執行個體建立svc執行個體，並將其顯示在畫面上：
 
    ```obj-c
    func navigate(toUrl url: String!, useSVC: Bool) {

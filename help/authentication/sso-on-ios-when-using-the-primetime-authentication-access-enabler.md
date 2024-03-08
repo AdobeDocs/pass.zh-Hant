@@ -2,9 +2,9 @@
 title: 使用iOS Authentication Access Enabler時Adobe Pass上的SSO
 description: 使用iOS Authentication Access Enabler時Adobe Pass上的SSO
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 929d1cc2e0466155b29d1f905f2979c942c9ab8c
 workflow-type: tm+mt
-source-wordcount: '1164'
+source-wordcount: '1121'
 ht-degree: 0%
 
 ---
@@ -38,7 +38,7 @@ SSO行為如下：
    - **重要：** 請注意，iOS SDK 1.9.4版已 [將最低iOS部署目標提高至iOS 7。](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
 - **iOS 7和更新版本**：SSO的運作條件如下：
 
-1. 應用程式是使用相同的Apple發佈設定檔發佈，或是屬於相同團隊的設定檔發佈。 這是應用程式在iOS 7和更高版本上共用自訂作業底板的唯一方法。 在所有其他情況下，作業範圍會依應用程式而沙箱。 從 [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html)： \+\[UIPasteboard作業範圍與名稱:create:\]和+\[UIPasteboard作業範圍具有UniqueName\]的指定名稱現在是唯一的，僅允許相同應用程式群組中的應用程式存取作業範圍。 如果開發人員嘗試以已存在的名稱建立剪貼簿，而他們不屬於相同應用程式套裝，則會取得專屬的私人剪貼簿。 請注意，這不會影響系統提供的作業範圍、一般和尋找。
+1. 應用程式是使用相同的Apple發佈設定檔發佈，或是屬於相同團隊的設定檔發佈。 這是應用程式在iOS 7和更高版本上共用自訂作業底板的唯一方法。 在所有其他情況下，作業範圍會依應用程式而沙箱。 從 [*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html)： \+\[`UIPasteboard pasteboardWithName:create:\`]和+\[`UIPasteboard pasteboardWithUniqueName`\]現在指定名稱是唯一的，僅允許相同應用程式群組中的應用程式存取作業面板。 如果開發人員嘗試以已存在的名稱建立剪貼簿，而他們不屬於相同應用程式套裝，則會取得專屬的私人剪貼簿。 請注意，這不會影響系統提供的作業範圍、一般和尋找。
 
 1. 應用程式具有相同的套件ID首碼（最後一個元件以外的所有元件）。 只有共用相同套件ID首碼的應用程式會運算相同的IDFV。 從 [*https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice\_Class/index.html\#//apple\_ref/occ/instp/UIDevice/identifierForVendor*](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIDevice_Class/index.html#//apple_ref/occ/instp/UIDevice/identifierForVendor)：在IOS 7上，套件組合的所有元件（最後一個元件除外）都會用來產生廠商ID。 如果束ID只有單一元件，則會使用整個束ID。
 
