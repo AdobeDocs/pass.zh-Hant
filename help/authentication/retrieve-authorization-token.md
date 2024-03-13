@@ -2,9 +2,9 @@
 title: 擷取授權Token
 description: 擷取授權Token
 exl-id: 0b010958-efa8-4dd9-b11b-5d10f51f5680
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '330'
+source-wordcount: '340'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+
+>[!NOTE]
+>
+> REST API實作受限於 [節流機制](/help/authentication/throttling-mechanism.md)
 
 ## REST API端點 {#clientless-endpoints}
 

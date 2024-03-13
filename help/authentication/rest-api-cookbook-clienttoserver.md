@@ -2,9 +2,9 @@
 title: REST API逐步指南（使用者端對伺服器）
 description: Rest API逐步指南使用者端至伺服器。
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '855'
+source-wordcount: '870'
 ht-degree: 0%
 
 ---
@@ -22,6 +22,10 @@ ht-degree: 0%
 
 
 此方法需要兩個元件（串流應用程式和AuthN應用程式）才能完成所需的流程：串流應用程式中的啟動、註冊、授權和檢視媒體流程，以及AuthN應用程式中的驗證流程。
+
+### 節流機制
+
+Adobe Pass驗證REST API由 [節流機制](/help/authentication/throttling-mechanism.md).
 
 ## 元件 {#components}
 

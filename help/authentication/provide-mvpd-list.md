@@ -2,10 +2,10 @@
 title: 提供MVPD清單
 description: 提供MVPD清單
 exl-id: db2d8f19-d0b9-4195-bf0b-f9de0d96062b
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '230'
-ht-degree: 0%
+source-wordcount: '232'
+ht-degree: 2%
 
 ---
 
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+
+>[!NOTE]
+>
+> REST API實作受限於 [節流機制](/help/authentication/throttling-mechanism.md)
 
 ## REST API端點 {#clientless-endpoints}
 
@@ -35,7 +39,7 @@ ht-degree: 0%
 
 | 端點 | 已呼叫  </br>作者： | 輸入   </br>引數 | HTTP  </br>方法 | 回應 | HTTP  </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/config/{requestorId}</br></br>例如：</br></br>&lt;sp_fqdn>/api/v1/config/sampleRequestorId | Adobe Pass驗證 | 1.請求者</br>    （路徑元件）</br>_2.  deviceType （已棄用）_ | GET | 包含MVPD清單的XML或JSON。 | 200 |
+| &lt;sp_fqdn>/api/v1/config/{requestorId}</br></br>例如：</br></br>&lt;sp_fqdn>/api/v1/config/sampleRequestorId | Adobe Pass 驗證 | 1.請求者</br>    （路徑元件）</br>_2.  deviceType （已棄用）_ | GET | 包含MVPD清單的XML或JSON。 | 200 |
 
 {style="table-layout:auto"}
 

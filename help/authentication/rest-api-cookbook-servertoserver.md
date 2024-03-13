@@ -2,9 +2,9 @@
 title: REST API逐步指南（伺服器對伺服器）
 description: Rest API逐步指南伺服器到伺服器。
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
 workflow-type: tm+mt
-source-wordcount: '1825'
+source-wordcount: '1847'
 ht-degree: 0%
 
 ---
@@ -20,6 +20,9 @@ ht-degree: 0%
 
 本逐步指南檔案的目的，在於詳細說明使用伺服器對伺服器架構實作Adobe Pass驗證的最佳實務。  它提供基本需求、逐步流程實作，以及生產環境和作業的一般考量事項。
 
+### 節流機制
+
+Adobe Pass驗證REST API由 [節流機制](/help/authentication/throttling-mechanism.md).
 
 
 ## 元件 {#components}
