@@ -1,7 +1,7 @@
 ---
 title: CMU API存取
 description: CMU API存取
-source-git-commit: 30631ac006b7944cb2eb8996c2c165343b6be5fe
+source-git-commit: 598eb878168f6e352a8eae369cbc8cb833033328
 workflow-type: tm+mt
 source-wordcount: '407'
 ht-degree: 0%
@@ -16,8 +16,7 @@ ht-degree: 0%
 
 ## 存取程式概觀 {#api-access-procedure-overview}
 
-我們已更新CMU報表存取權，使其與OAuth 2.0動態使用者端註冊通訊協定相容。
-自訂OAuth 2.0授權伺服器已部署，以因應並行監視應用程式的需求。 \
+我們已更新CMU報表存取權，使其與OAuth 2.0動態使用者端註冊通訊協定相容。 自訂OAuth 2.0授權伺服器已部署，以因應並行監視應用程式的需求。 \
 為了讓使用者端應用程式能夠利用OAuth 2.0授權，伺服器必須動態註冊以取得特定資訊（使用者端憑證），才能與其互動。 在註冊程式中，使用者端必須向使用者端註冊端點提供一組內建的中繼資料。
 此中繼資料以軟體陳述式傳達，其中包含「software_id」，可讓我們的授權伺服器使用相同的軟體陳述式來關聯應用程式的不同執行個體。
 軟體陳述式是JSON Web權杖(JWT)，會以套件形式宣告有關使用者端軟體的中繼資料值。 當作為使用者端註冊請求的一部分呈報給授權伺服器時，軟體陳述式必須使用JSON Web簽名(JWS)進行數位簽署或MAC編輯。 \
@@ -28,7 +27,7 @@ ht-degree: 0%
 
 1. 在Adobe Pass DCR伺服器中擁有註冊的應用程式。 如需此步驟的相關資訊，請聯絡我們的 [支援團隊](mailto:tve-support@adobe.com).
 2. 取得軟體宣告
-   1. 前往TVE儀表板 <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> 生產前 </a> 或 <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
+   1. 前往TVE儀表板 <a href="https://console-preprod.auth.adobe.com/#!/" target="_blank"> 生產前 </a>  或 <a href="https://console.auth.adobe.com/" target="_blank">PROD</a>
    2. 選取程式設計師
    3. 前往應用程式標籤
    4. 選取應用程式
