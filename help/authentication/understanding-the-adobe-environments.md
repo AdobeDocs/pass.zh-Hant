@@ -2,7 +2,7 @@
 title: 瞭解Adobe環境
 description: 瞭解Adobe環境
 exl-id: bb6cf37f-48cd-47bb-b3c2-f7a96e49b12d
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+source-git-commit: c6afb9b080ffe36344d7a3d658450e9be767be61
 workflow-type: tm+mt
 source-wordcount: '208'
 ht-degree: 0%

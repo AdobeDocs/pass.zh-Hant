@@ -2,9 +2,9 @@
 title: 促銷臨時通票
 description: 促銷臨時通票
 exl-id: 705c1ba9-0430-4e3b-add1-d9e4da3f82d1
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: c88fba76b1805dd88fccb68b13bde11b1b8ea181
 workflow-type: tm+mt
-source-wordcount: '1529'
+source-wordcount: '1510'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ Adobe Pass驗證會根據裝置ID和使用者提供的資訊，並依照下列�
 
 * 使用者提供的資訊金鑰（例如電子郵件）
 * 使用者有權使用的資源數
-* TTL — 使用者有權使用已設定資源數的時間範圍
+* TTL — 使用者有權使用已設定資源數的時間間隔
 
 ### 使用者中繼資料 {#user-metadata}
 
@@ -74,7 +74,7 @@ Adobe Pass驗證會根據裝置ID和使用者提供的資訊，並依照下列�
 
 ### 如何計算檢視時間？ {#compute-viewing-time}
 
-暫時通過保持有效的時間與使用者在程式設計人員應用程式上檢視內容的時間無關。 在透過提升臨時傳遞發出初次使用者授權請求後，到期時間會透過將初始目前請求時間新增至程式設計師指定的TTL （持續時間時間範圍）來計算。
+暫時通過保持有效的時間與使用者在程式設計人員應用程式上檢視內容的時間無關。 透過提升暫存通過的初始使用者授權請求時，到期時間透過將初始目前請求時間加到程式設計師指定的TTL （持續時間時間間隔）來計算。
 
 ### 驗證和授權 {#authn-authz}
 

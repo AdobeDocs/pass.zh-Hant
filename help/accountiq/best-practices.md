@@ -2,7 +2,7 @@
 title: 帳戶IQ最佳實務
 description: 瞭解 [!UICONTROL Account IQ] 在Adobe Pass中。
 exl-id: 55901f5d-d9c1-4ee5-9349-afa28445b324
-source-git-commit: ffc7caa9a857a60380d15f69abf346718de6fa4c
+source-git-commit: 60aeba449cae1c4dc510a23aaf1ba793a7a60db0
 workflow-type: tm+mt
 source-wordcount: '530'
 ht-degree: 0%
@@ -30,19 +30,19 @@ ht-degree: 0%
 使用已定義的目標區段，採取動作。 透過從定義良好的區段開始的小計，您可以降低無意後果的風險，並能更能瞭解結果。 無論您在路徑上的哪個位置，您都可以調整或擴大作業的目標。
 從小處著手，逐步提升是審慎的做法。 使用先前識別的區段，並根據特定目標採取動作（作為實驗）。
 
-使用「作業」工具來定義目標區段和作業時間範圍。 這可讓您在下一個階段追蹤效果。
+使用作業工具來定義目標區段和作業時間間隔。 這可讓您在下一個階段追蹤效果。
 
 * 識別要對其採取行動的定義良好的代表性使用者集合（或子集）。
 
-* 建立定義目標區段和作業時間範圍的作業。
+* 建立定義目標區段和作業時間間隔的作業。
 
-* 根據追加銷售、增加廣告負載或減少存取詐騙帳戶等目標，對已定義的使用者集採取相關動作，例如：應用程式內選件、額外廣告或要求多重驗證。
+* 根據追加銷售、增加廣告負載或減少存取詐騙帳戶等目標，對已定義的使用者集採取相關動作，例如應用程式內優惠、額外廣告或要求多重驗證。
 
 <!--If necessary, gauge the affect [by measuring the impact of actions taken](#track-measure-impact).-->
 
 ## 追蹤和測量動作的影響 {#track-measure-impact}
 
-動作需要時間才會生效。 使用作業和相關聯的圖表，在作業時間範圍的後續幾週或幾個月中追蹤作業狀態和區段特性。 將此資訊與任何其他分析結合，以便回答或瞭解結果。 例如：轉換為訂閱者的借款人百分比為何？ 已檢視多少個其他廣告？ 借款人數目是否減少？
+動作需要時間才會生效。 使用作業和相關聯的圖表，在作業時間間隔的後續幾週或幾個月中追蹤作業狀態和區段特性。 將此資訊與任何其他分析結合，以便回答或瞭解結果。 例如：轉換為訂閱者的借款人百分比為何？ 已檢視多少個其他廣告？ 借款人數目是否減少？
 
 * 使用作業圖表和其他分析來追蹤和測量動作的影響。
 
@@ -54,60 +54,4 @@ ht-degree: 0%
 
 * 如果實驗結果不理想，您可以調整動作或區段。
 
-<!--
 
-Best Practices
-[!UICONTROL Account IQ] enables you to maximize your business ROI, and eventually grow your subscribers and revenue by understanding subscriber usage patterns and password sharing. Read on to know how you can make the best use of [!UICONTROL Account IQ] to manage credential sharing.
-
-Analyze and understand
-Authorized access of streaming services generates vast sums of data representing user activity. Use [!UICONTROL Account IQ] analytics tools to explore the data and identify interesting cohorts or behavioral patterns that indicate sharing. Then, segments representing a particular opportunity or objective can be identified.
-
-To understand nature and impact of sharing on your business:
-
-Use [!UICONTROL Account IQ] to access all relevant data.
-
-Identify and analyze sharing in the context of your objectives.
-
-Identify patterns and behavior to target.
-
-Take targeted incremental action
-To start small and ramp up is a prudent approach. Use previously identified segments, and take actions (as experiments) with specific objectives.
-
-Identify a well-defined, representative subset of users in the segment to act on.
-
-Depending on objectives such as upselling, increasing ad load, or mitigating access to fraudulent accounts, take relevant actions to include customer messaging or offers, extra ads, or requiring multi-factor authentication.
-
-Target users are likely to respond to offers to upgrade and pay for sharing.
-
-Align enterprise stakeholders to update strategy, such as:
-
-Revisit partner agreements to enlist cooperation or concessions.
-
-Simplify access and enhance the user experience for good customers.
-
-Mitigate sharing by limiting access to obvious moochers.
-
-If necessary, gauge the affect by measuring the impact of actions taken.
-
-Track and measure the impact of actions
-Once you have acted on some set of users within a segment, it is important to measure the effect of those actions over a subsequent period of weeks or months. For example, you would want to understand:
-
-What percentage of borrowers converted to subscribers?
-
-How many additional ads were viewed?
-
-Did the number of borrowers decrease?
-
-[!UICONTROL Account IQ]'s sophisticated machine learning based models help you analyze and measure the impacts of your experiments (or actions).
-
-Improve and repeat
-Based on the outcomes of your experiments and targeted actions on small groups of users, you can expand the reach of your strategies to rest of the user segment or reset the strategy and audience to act on.
-
-Based on the usage insights from risk indices, sharing levels, and usage patterns, you can create experiments (or operations) and tailor your actions for strategic goals or desired outcomes.
-
-If the results of the experiment are favorable, then you can scale up the experiment, and repeat those actions on a larger group.
-
-If the results of the experiment are unfavorable, then you can adjust your action or the experiment group.
-
-Therefore, understanding, acting, and tracking are the keys to optimally mitigate and manage credential sharing in your subscribers.
--->

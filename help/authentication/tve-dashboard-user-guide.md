@@ -2,9 +2,9 @@
 title: Primetime TVE儀表板使用手冊
 description: Primetime TVE儀表板使用手冊
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: c6afb9b080ffe36344d7a3d658450e9be767be61
 workflow-type: tm+mt
-source-wordcount: '4386'
+source-wordcount: '4377'
 ht-degree: 0%
 
 ---
@@ -60,6 +60,7 @@ TVE Dashboard提供兩個名為「預合格」（預合格）和「發行」的�
 *圖2： Adobe Pass TVE儀表板環境下拉式清單*
 
 >[!IMPORTANT]
+>
 >請務必注意，透過TVE儀表板對您的Adobe Pass驗證設定進行管理變更時，我們強烈建議您遵循以下順序以確保正常運作。
 
 若要透過TVE控制面板對您的Adobe Pass驗證設定進行管理變更：
@@ -69,6 +70,7 @@ TVE Dashboard提供兩個名為「預合格」（預合格）和「發行」的�
 * 在中執行變更 [發佈生產環境並進行驗證](http://sp.auth-staging.adobe.com/apitest/api.html).
 
 >[!IMPORTANT]
+>
 >為了讓管理變更上線，使用者必須透過選取按鈕（將顯示在側欄的左下方）導覽至「檢閱和推播變更」區段，以便檢閱變更、新增新建立變更的說明，並透過選取「推播設定」確認設定更新。
 
 ![暫時控制面板檢閱推播通知](assets/tve-review-push-notifications.png)
@@ -489,7 +491,7 @@ AuthZ TTL報告表格包含頁面，並可根據熒幕大小進行水平和垂�
 
 * [如何在Mac上擷取熒幕擷取畫面](https://support.apple.com/en-us/HT201361)
 
-## 疑難排除 {#tve-db-troubleshoot}
+## 疑難排解 {#tve-db-troubleshoot}
 
 ### 維護模式 {#maintenance-mode}
 

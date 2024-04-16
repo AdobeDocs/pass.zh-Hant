@@ -2,9 +2,9 @@
 title: 開始使用 [!UICONTROL Account IQ]
 description: 瞭解上線、必要條件以及如何開始使用 [!UICONTROL Account IQ].
 exl-id: 840ab081-0073-492f-86b2-ba174ae93256
-source-git-commit: 3e5bcee38151c88d3538cdbdbf2d07010be929cd
+source-git-commit: a7a37ffea0169a302890ee50b2e2202ddf58d021
 workflow-type: tm+mt
-source-wordcount: '214'
+source-wordcount: '209'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 1. 將組織使用者指派給 **[!UICONTROL TVE Dashboard Read-Write]** 或 **[!UICONTROL TVE Dashboard Read Only]** 中的設定檔 [Adobe Admin Console](https://adminconsole.adobe.com/).
 
-   您組織中的管理員使用者可以建立使用者，並授予他們存取權 [!UICONTROL Account IQ Dashboard and Reports]. 若要授予組織使用者存取權，請執行下列動作： [!UICONTROL Account I]問：組織管理員需要：
+   您組織中的管理員使用者可以建立使用者，並授予他們存取權 [!UICONTROL Account IQ Dashboard and Reports]. 若要授予組織使用者存取權，請執行下列動作： [!UICONTROL Account IQ]，組織管理員需要：
 
    1. 登入 [Adobe Admin Console](https://adminconsole.adobe.com/).
 
