@@ -1,7 +1,8 @@
 ---
 title: 使用區段
 description: 瞭解並使用區段。 瞭解如何建立和管理區段。
-source-git-commit: cfcaa00ab05c99a64bcb0edfe5af60845a6769a9
+exl-id: 01431437-55f5-464d-8ee4-7a79ec553e4f
+source-git-commit: 38402b411dd4fad3490115cff1854faa7f3cb293
 workflow-type: tm+mt
 source-wordcount: '1970'
 ht-degree: 0%
@@ -40,7 +41,7 @@ D2C服務與TV Everywhere建立新區段的程式類似。 每個帳戶IQ版本�
 
 若要建立區段並分析訂閱者的共用行為，請選取 **[!UICONTROL Create new segment]** 位於右上角。
 
-![選取建立新區段](assets/d2c-create-new-segment.png)
+![選取建立新區段](assets/create-new-segment-d2c.png)
 
 *選取建立新區段*
 
@@ -220,7 +221,7 @@ D2C服務與TV Everywhere建立新區段的程式類似。 每個帳戶IQ版本�
 
 *選取要編輯、複製或刪除的區段*
 
-**答：** [影片類別](product-concepts.md#video-category-def) **B.** [預設區段](#work-with-segments)
+**答：** [預設區段](#work-with-segments) **B.** [影片類別](product-concepts.md#video-category-def)
 
 >[!NOTE]
 >
@@ -278,5 +279,3 @@ D2C服務與TV Everywhere建立新區段的程式類似。 每個帳戶IQ版本�
    >[!NOTE]
    >
    >該區段將從系統中永久刪除，並且您無法復原此操作。
-
-
