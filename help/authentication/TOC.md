@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: 30e2507c0622b882744cf8291525c388575df32f
+source-git-commit: 26236fbd4b2d5703bcf99fc0cc5e0460e75ed185
 workflow-type: tm+mt
-source-wordcount: '936'
+source-wordcount: '957'
 ht-degree: 3%
 
 ---
@@ -221,4 +221,16 @@ ht-degree: 3%
    + 概念 {#concepts}
       + [瞭解使用者ID](understanding-user-ids.md)
 + [TVE儀表板使用手冊](tve-dashboard-user-guide.md)
++ 新TVE儀表板使用手冊 {#user-guide}
+   + [TVE儀表板概觀](/help/authentication/tve-dashboard-overview.md)
+   + [環境](/help/authentication/tve-dashboard-environments.md)
+   + [檢閱和推送變更](/help/authentication/tve-dashboard-review-push-changes.md)
+   + [儀表板](/help/authentication/tve-dashboard-home.md)
+   + [頻道](/help/authentication/tve-dashboard-channels.md)
+   + [程式設計師](/help/authentication/tve-dashboard-programmers.md)
+   + [MVPDs](/help/authentication/tve-dashboard-mvpds.md)
+   + [整合](/help/authentication/tve-dashboard-integrations.md)
+   + [報表](/help/authentication/tve-dashboard-reports.md)
+   + [變更記錄](/help/authentication/tve-dashboard-changes-log.md)
 + [字彙表](glossary.md)
+
