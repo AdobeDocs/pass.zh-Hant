@@ -2,9 +2,9 @@
 title: Proxy MVPD Web服務
 description: Proxy MVPD Web服務
 exl-id: f75cbc4d-4132-4ce8-a81c-1561a69d1d3a
-source-git-commit: f918d7f9f7b2af5b4364421f6703211e413eafb4
+source-git-commit: f8cef3c41fb7132204c4fa499301c3010f62ca14
 workflow-type: tm+mt
-source-wordcount: '999'
+source-wordcount: '1003'
 ht-degree: 0%
 
 ---
@@ -42,15 +42,15 @@ ht-degree: 0%
 
 ### 擷取代理的MVPD {#retriev-proxied-mvpds}
 
-擷取由apikey引數識別之ProxyMVPD的目前代理MVPD清單。
+擷取目前與已識別的Proxy MVPD整合的Proxy MVPD清單。
 
-| 端點 | 呼叫者 | 請求標頭 | HTTP方法 | HTTP回應 |
-|---|---|---|---|---|
-| &lt;fqdn>/control/v3/proxiedMvpds | ProxyMVPD | apikey （必要） | GET | <ul><li> 200 （確定） — 已成功處理要求，且回應包含XML格式的ProxiedMVPD清單</li><li>401 （未獲授權） — 指出下列其中一項：<ul><li>使用者端必須要求新的access_token</li><li>請求來自不在允許清單中的IP位址</li><li>權杖無效</li></ul></li><li>403 （禁止） — 指出提供的引數不支援操作，或Proxy MVPD未設定為Proxy或遺失</li><li>405 （不允許使用方法） — 使用GET或POST以外的HTTP方法。 HTTP方法通常不受支援，或是此特定端點不支援。</li><li>500 （內部伺服器錯誤） — 要求程式期間在伺服器端引發錯誤。</li></ul> |
+| 端點 | 呼叫者 | 要求引數 | 請求標頭 | HTTP方法 | HTTP回應 |
+|--------------------------------------------------------------------------|-----------|-----------------------|---------------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| &lt;fqdn>/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds | ProxyMVPD | proxy-mvpd-identifier | 授權（必要） | GET | <ul><li> 200 （確定） — 已成功處理要求，且回應包含XML格式的ProxiedMVPD清單</li><li>401 （未獲授權） — 指出下列其中一項：<ul><li>使用者端必須要求新的access_token</li><li>請求來自不在允許清單中的IP位址</li><li>權杖無效</li></ul></li><li>403 （禁止） — 指出提供的引數不支援操作，或Proxy MVPD未設定為Proxy或遺失</li><li>405 （不允許使用方法） — 使用GET或POST以外的HTTP方法。 HTTP方法通常不受支援，或是此特定端點不支援。</li><li>500 （內部伺服器錯誤） — 要求程式期間在伺服器端引發錯誤。</li></ul> |
 
 Curl範例：
 
-`curl -X GET -H "Authorization: Bearer <access_token_here>" "https://mgmt-prequal.auth-staging.adobe.com/control/v3/proxiedMvpds"`
+`curl -X GET -H "Authorization: Bearer <access_token_here>" "https://mgmt-prequal.auth-staging.adobe.com/control/v3/mvpd-proxies/ProxyMVPD_Adobe/mvpds"`
 
 
 XML回應範例：
@@ -89,15 +89,15 @@ XML回應範例：
 
 ### 提交代理的MVPD {#submit-proxied-mvpds}
 
-推入與Proxy MVPD （由apikey引數識別）整合的MVPD陣列。
+推動與已識別的Proxy MVPD整合的MVPD陣列。
 
-| 端點 | 呼叫者 | 請求標頭 | HTTP方法 | HTTP回應 |
-|:------------------------------:|:---------:|:--------------------------------------------:|:-----------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| &lt;fqdn>/control/v3/proxiedMvpds | ProxyMVPD | apikey （必要） proxied-mvpds （必要） | POST | <ul><li>201 （已建立） — 已成功處理推播</li><li>400 （錯誤請求） — 伺服器不知道如何處理請求：<ul><li>傳入的XML不符合此規格中發佈的結構描述</li><li>代理的mvpds沒有唯一的ID</li><li>已推送的requestorIds不存在400回應代碼的其他Servlet容器原因</li></ul><li>401 （未獲授權） — 指出下列其中一項：<ul><li>使用者端必須要求新的access_token</li><li>請求來自不在允許清單中的IP位址</li><li>權杖無效</li></ul></li><li>403 （禁止） — 指出提供的引數不支援操作，或Proxy MVPD未設定為Proxy或遺失</li><li>405 （不允許使用方法） — 使用GET或POST以外的HTTP方法。 HTTP方法通常不受支援，或是此特定端點不支援。</li><li>500 （內部伺服器錯誤） — 要求程式期間在伺服器端引發錯誤。</li></ul> |
+| 端點 | 呼叫者 | 要求引數 | 請求標頭 | HTTP方法 | HTTP回應 |
+|:------------------------------------------------------------------------:|:---------:|-----------------------|:---------------------------------------------------:|:-----------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| &lt;fqdn>/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds | ProxyMVPD | proxy-mvpd-identifier | Authorization （必要） proxied-mvpds （必要） | POST | <ul><li>201 （已建立） — 已成功處理推播</li><li>400 （錯誤請求） — 伺服器不知道如何處理請求：<ul><li>傳入的XML不符合此規格中發佈的結構描述</li><li>代理的mvpds沒有唯一的ID</li><li>已推送的requestorIds不存在400回應代碼的其他Servlet容器原因</li></ul><li>401 （未獲授權） — 指出下列其中一項：<ul><li>使用者端必須要求新的access_token</li><li>請求來自不在允許清單中的IP位址</li><li>權杖無效</li></ul></li><li>403 （禁止） — 指出提供的引數不支援操作，或Proxy MVPD未設定為Proxy或遺失</li><li>405 （不允許使用方法） — 使用GET或POST以外的HTTP方法。 HTTP方法通常不受支援，或是此特定端點不支援。</li><li>500 （內部伺服器錯誤） — 要求程式期間在伺服器端引發錯誤。</li></ul> |
 
 Curl範例：
 
-`curl -X POST -H "Authorization: Bearer <access_token_here>" "https://mgmt-prequal.auth.adobe.com/control/v3/proxiedMvpds" -d "proxied-mvpds=%3CproxiedMvpds%3E%3CproxiedMvpd%3E%3CdisplayName%3EFirst%20MVPD%20Name%3C%2FdisplayName%3E%3Cid%3EfirstMVPDId%3C%2Fid%3E%3ClogoURL%3E%3C%2FlogoURL%3E%3C%2FproxiedMvpd%3E%3CproxiedMvpd%3E%3Cid%20ProviderID%3D%22ProviderID_Value_Sent_On_IdPEntry%22%3EmvpdPickerId%3C%2Fid%3E%3CdisplayName%3EMVPD%20Name%20Two%3C%2FdisplayName%3E%3ClogoURL%3E%3C%2FlogoURL%3E%3CrequestorIds%3E%3CrequestorId%3ETHE_REQUESTOR_ID%3C%2FrequestorId%3E%3C%2FrequestorIds%3E%3C%2FproxiedMvpd%3E%3C%2FproxiedMvpds%3E"`
+`curl -X POST -H "Authorization: Bearer <access_token_here>" "https://mgmt-prequal.auth.adobe.com/control/v3/mvpd-proxies/ProxyMVPD_Adobe/mvpds" -d "proxied-mvpds=%3CproxiedMvpds%3E%3CproxiedMvpd%3E%3CdisplayName%3EFirst%20MVPD%20Name%3C%2FdisplayName%3E%3Cid%3EfirstMVPDId%3C%2Fid%3E%3ClogoURL%3E%3C%2FlogoURL%3E%3C%2FproxiedMvpd%3E%3CproxiedMvpd%3E%3Cid%20ProviderID%3D%22ProviderID_Value_Sent_On_IdPEntry%22%3EmvpdPickerId%3C%2Fid%3E%3CdisplayName%3EMVPD%20Name%20Two%3C%2FdisplayName%3E%3ClogoURL%3E%3C%2FlogoURL%3E%3CrequestorIds%3E%3CrequestorId%3ETHE_REQUESTOR_ID%3C%2FrequestorId%3E%3C%2FrequestorIds%3E%3C%2FproxiedMvpd%3E%3C%2FproxiedMvpds%3E"`
 
 
 
