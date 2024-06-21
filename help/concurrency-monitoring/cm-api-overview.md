@@ -1,13 +1,13 @@
 ---
 title: API總覽
 description: 並行監視的API總覽
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
+source-git-commit: dd370b231acc08ea0544c0dedaa1bdb0683e378f
 workflow-type: tm+mt
-source-wordcount: '1425'
+source-wordcount: '1556'
 ht-degree: 0%
 
 ---
-
 
 # API總覽 {#api-overview}
 
@@ -101,6 +101,24 @@ ht-degree: 0%
 * 成功回應為202 ACCEPTED
 * 如果工作階段已停止，則為410 GONE。
 
+#### 取得所有執行中的串流 {#get-all-running-streams}
+
+此端點為其所有應用程式上的特定租使用者提供所有目前執行中的工作階段。 使用 **主旨** 和 **idp** 呼叫的引數：
+
+![](assets/get-all-running-streams-parameters.png)
+
+當您進行呼叫時，您會收到下列回應：
+
+![](assets/get-all-running-streams-success.png)
+
+請注意 **過期** 標頭。 這是第一個工作階段到期的時間，除非傳送心率。 OtherStreams的值為0，因為沒有其他資料流在其他租使用者的應用程式上針對此使用者執行。
+中繼資料欄位將會填入工作階段開始時所傳送的所有中繼資料。 我們不篩選它，您會收到您傳送的所有內容。
+如果您進行呼叫時沒有特定使用者的執行中工作階段，您將會收到此回應：
+
+![](assets/get-all-running-streams-empty.png)
+
+另請注意，在此案例中， **過期** 標題不存在。
+
 #### 破壞原則 {#breaking-policy-app-first}
 
 
@@ -157,4 +175,3 @@ ht-degree: 0%
 如果我們每次建立新工作階段時，都使用不同的管道中繼資料值，則所有呼叫都會成功，因為臨界值2會個別設定每個值的範圍。
 
 就像第一個範例一樣，我們可以使用終止程式碼來遠端停止衝突的資料流，或者我們可以假設沒有心率在資料流上運作，而等待其中一個資料流過期。
-
