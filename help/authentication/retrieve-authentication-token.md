@@ -2,9 +2,9 @@
 title: 擷取驗證Token
 description: 擷取驗證Token
 exl-id: 7fb03854-edad-41e7-b218-1858fc071876
-source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
+source-git-commit: 1ad2a4e75cd64755ccbde8f3b208148b7d990d82
 workflow-type: tm+mt
-source-wordcount: '264'
+source-wordcount: '274'
 ht-degree: 0%
 
 ---
@@ -17,19 +17,19 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> REST API實作受限於 [節流機制](/help/authentication/throttling-mechanism.md)
+> REST API實作已由[節流機制](/help/authentication/throttling-mechanism.md)限制
 
 ## REST API端點 {#clientless-endpoints}
 
-&lt;reggie_fqdn>：
+&lt;REGGIE_FQDN>：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生產 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 正在暫存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>：
+&lt;SP_FQDN>：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生產 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 正在暫存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -37,9 +37,9 @@ ht-degree: 0%
 
 擷取驗證(AuthN) Token。
 
-| 端點 | 已呼叫  </br>作者： | 輸入   </br>引數 | HTTP  </br>方法 | 回應 | HTTP  </br>回應 |
+| 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/tokens/authn</br></br>例如：</br></br>&lt;sp_fqdn>/api/v1/tokens/authn | 串流應用程式</br></br>或</br></br>程式設計師服務 | 1.請求者（必要）</br>2.  deviceId （必要）</br>3.  device_info/X-Device-Info （必要）</br>4.  _deviceType_ （已棄用）</br>5.  _deviceuser_ （已棄用）</br>6.  _appId_ （已棄用） | GET | XML或JSON，其中包含驗證資訊或失敗時的錯誤詳細資料。 | 200 — 成功。  </br>404 — 找不到Token  </br>410 - Token已過期 |
+| &lt;SP_FQDN>/api/v1/tokens/authn</br></br>例如：</br></br>&lt;SP_FQDN>/api/v1/tokens/authn | 串流應用程式</br></br>或</br></br>程式設計師服務 | 1.要求者（必要）</br>2。  deviceId （必要）</br>3。  device_info/X-Device-Info （必要）</br>4。  _deviceType_ （已棄用）</br>5。  _deviceUser_ （已棄用）</br>6。  _appId_ （已棄用） | GET | XML或JSON，其中包含驗證資訊或失敗時的錯誤詳細資料。 | 200 — 成功。  </br>404 — 找不到Token </br>410 - Token已過期 |
 
 {style="table-layout:auto"}
 
@@ -48,10 +48,10 @@ ht-degree: 0%
 | --- | --- |
 | 要求者 | 此作業有效的程式設計師要求者ID。 |
 | deviceId | 裝置識別碼位元組。 |
-| device_info/</br></br>X-Device-Info | 串流裝置資訊。</br></br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數潛在的大小以及GETURL長度的限制，應該在http標頭中作為X-Device-Info傳遞。 </br></br><!--See the full details in [Passing Device and Connection Information](http://tve.helpdocsonline.com/passing-device-information)-->. |
-| _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>**注意**：device_info會取代此引數。 |
-| _deviceuser_ | 裝置使用者識別碼。</br></br>**注意**：若使用，deviceUser的值應與中的相同 [建立註冊代碼](/help/authentication/registration-code-request.md) 要求。 |
-| _appId_ | 應用程式id/名稱。 </br></br>**注意**：device_info會取代此引數。 若已使用， `appId` 的值應該與 [建立註冊代碼](/help/authentication/registration-code-request.md) 要求。 |
+| device_info/</br></br>X-Device-Info | 串流裝置資訊。</br></br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數的潛在大小以及GETURL長度的限制，它應該作為X-Device-Info傳遞到http標頭。 </br></br>檢視[傳遞裝置和連線資訊](/help/authentication/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
+| _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>**注意**： device_info會取代此引數。 |
+| _deviceUser_ | 裝置使用者識別碼。</br></br>**注意**：若使用，deviceUser的值應該與[建立註冊代碼](/help/authentication/registration-code-request.md)要求中的值相同。 |
+| _appId_ | 應用程式id/名稱。 </br></br>**注意**： device_info會取代此引數。 若已使用，`appId`應具有與[建立註冊代碼](/help/authentication/registration-code-request.md)要求中相同的值。 |
 
 {style="table-layout:auto"}
 
