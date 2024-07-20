@@ -19,9 +19,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->授權API **必須** 在授與使用者對指定資源的存取權之前使用。
+>授權API **必須先使用**，才能授與使用者對指定資源的存取權。
 
-如果Preauthorize API回應結果包含一或多個具有已拒絕預先授權決定的資源，則可以包含其他錯誤資訊 **（請參閱下方的附註）** 每個受影響的資源。
+如果Preauthorize API回應結果包含一或多個具有被拒絕預先授權決定的資源，則每個受影響的資源可包含其他錯誤資訊&#x200B;**（請參閱以下備註）**。
 
 >[!IMPORTANT]
 >
@@ -169,7 +169,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->透過增強錯誤報告功能的媒體擷取的可能其他錯誤清單，請參見 [進階錯誤報告](/help/authentication/enhanced-error-codes.md).
+>透過增強錯誤報告功能的媒體擷取的可能其他錯誤清單記錄在[進階錯誤報告](/help/authentication/enhanced-error-codes.md)。
 
 #### 成功
 
@@ -406,7 +406,7 @@ Adobe Pass Authentication SDK在服務預先授權API要求時點選錯誤
 </br>
 
 
-## **程式碼範例** {#sample}
+## **範常式式碼** {#sample}
 
 ```
 let resources: [String] = ["resource_1", "resource_2", "resource_3"];

@@ -4,7 +4,7 @@ description: AccessEnabler iOS/tvOS 3.7.0升級路徑
 exl-id: f15c7414-ec9b-4e21-b457-1ecf59f47441
 source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '320'
 ht-degree: 0%
 
 ---
@@ -17,9 +17,9 @@ ht-degree: 0%
 
 </br>
 
-來自的鑰匙圈儲存變更 [新AccessEnabler 3.7.0版](/help/authentication/authn-rn-ios-tvos-370.md) 與AccessEnabler 3.7.0以下版本的鑰匙圈儲存實作不相容。
+來自[新AccessEnabler 3.7.0](/help/authentication/authn-rn-ios-tvos-370.md)版的鑰匙圈儲存變更，與AccessEnabler 3.7.0以下版本的鑰匙圈儲存實作不相容。
 
-一個採用新AccessEnabler 3.7.0版的應用程式的升級路徑，會從舊版鑰匙圈儲存移轉所有代號。 因此，一般使用者 **不會遺失驗證/授權工作階段** 在AccessEnabler架構更新程式期間。
+一個採用新AccessEnabler 3.7.0版的應用程式的升級路徑，會從舊版鑰匙圈儲存移轉所有代號。 因此，在AccessEnabler架構更新程式期間，使用者&#x200B;**不應該遺失驗證/授權工作階段**。
 
 ## 已知限制
 

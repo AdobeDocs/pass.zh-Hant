@@ -1,13 +1,13 @@
 ---
 title: TVE儀表板MVPD
 description: 瞭解TVE Dashboard中的MVPD及其設定。
-source-git-commit: b81cc7498a8035f4c274ba25952dcd1dcd8d71f5
+exl-id: 802c1570-9a5b-4bec-8fb2-6c7738b28bc9
+source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
 workflow-type: tm+mt
 source-wordcount: '133'
 ht-degree: 0%
 
 ---
-
 
 # MVPDs
 
@@ -15,17 +15,16 @@ ht-degree: 0%
 >
 >此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
-此 **MVPDs** TVE控制面板的區段可讓您檢視Adobe Pass驗證生態系統中的整合MVPD清單。
+TVE儀表板的&#x200B;**MVPD**&#x200B;區段可讓您檢視Adobe Pass驗證生態系統中的整合MVPD清單。
 
-此 **MVPDs** 索引標籤在左側面板中會顯示MVPD清單，其中包含下列詳細資訊：
+左側面板中的&#x200B;**MVPD**&#x200B;索引標籤會顯示包含下列詳細資訊的MVPD清單：
 
-* **顯示名稱**：選取器中每個MVPD的顯示名稱。
+* **顯示名稱**：每個MVPD的選取器中的顯示名稱。
 
-* **MVPD ID**：用來在系統中設定新整合的MVPD的唯一ID。
+* **MVPD識別碼**：用來在系統中設定新整合的MVPD的唯一識別碼。
 
 ![整合的MVPD清單](assets/mvpds-list.png)
 
 *整合的MVPD清單*
 
-在「 」中輸入MVPD的名稱 **搜尋** 列於清單上方，以尋找特定的MVPD。
-
+在清單上方的&#x200B;**搜尋**&#x200B;列中輸入MVPD的名稱，以尋找特定的MVPD。

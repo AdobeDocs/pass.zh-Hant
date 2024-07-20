@@ -1,13 +1,13 @@
 ---
 title: Concurrency Monitoring Services 3.0發行說明
 description: Concurrency Monitoring Services 3.0發行說明
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 247e310f-35a2-4078-a3d7-53b44ef08ad9
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '88'
-ht-degree: 0%
+source-wordcount: '93'
+ht-degree: 2%
 
 ---
-
 
 # Concurrency Monitoring Services 3.0發行說明 {#cms-rn-30}
 
@@ -15,7 +15,8 @@ ht-degree: 0%
 
 ## 發行資訊 {#release-info}
 
-版本： 3.0發行日期： 2020年5月5日
+版本： 3.0
+發行日期： 2020年5月5日
 
 ## 版本總覽 {#release-overview}
 

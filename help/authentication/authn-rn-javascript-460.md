@@ -1,7 +1,8 @@
 ---
 title: Adobe Pass Authentication JavaScript 4.6.0發行說明
 description: Adobe Pass Authentication JavaScript 4.6.0發行說明
-source-git-commit: 7057aeda34b4fe0d059912ab0a71ea856427654c
+exl-id: 09b79384-2385-48ce-9ee2-6db93bbce15d
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '126'
 ht-degree: 0%
@@ -25,7 +26,7 @@ Adobe Pass驗證： JavaScript 4.6.0
 
 ## 版本總覽 {#overview-javascript-sdk-460}
 
-* 已移除的 `eval` 函式，藉此讓SDK符合內容安全性原則。
+* 已移除`eval`函式的使用，因此使SDK符合內容安全性原則。
 * 修正合作夥伴應用程式明確清除瀏覽器的本機儲存體時，驗證流程無法成功完成的問題。
 
 

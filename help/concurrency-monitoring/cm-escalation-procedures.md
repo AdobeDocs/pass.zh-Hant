@@ -1,32 +1,32 @@
 ---
 title: 並行監視向上呈報程式
 description: 並行監視向上呈報程式
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+exl-id: eb110465-3a74-489e-a521-0e17f5aeecb8
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '823'
+source-wordcount: '849'
 ht-degree: 0%
 
 ---
-
 
 # 並行監視向上呈報程式 {#esc-procedures}
 
 >[!NOTE]
 >
->請致電熱線： +1-205-693-9813，並傳送電子郵件至 `tve-support@adobe.com` 主旨列包含「緊急 — 事件」。
+>請致電熱線： +1-205-693-9813，並傳送電子郵件至`tve-support@adobe.com`，主旨行中包含「緊急 — 事件」。
 
 
 ## 簡介 {#cm-escalation-intro}
 
-本檔案說明重大事件的支援程式(**嚴重程度1** 會影響Adobe Pass驗證、Adobe Pass並行監控及其合作夥伴的安全。
+本檔案說明影響Adobe Pass驗證、Adobe Pass並行監視及其合作夥伴之重大事件（**嚴重性1**&#x200B;層級）的支援程式。
 
 ## 上報嚴重程度1級的定義 {#defn-escl-sevrityone-level}
 
-A **嚴重程度1** 平準事件是 **LIVE** 狀況， **在生產環境中發生**，這不允許完成一個通道和一個MVPD的驗證和/或授權流程，這會影響執行流程的MVPD的大量訂閱者。
+**嚴重性1**&#x200B;層級事件是生產環境中&#x200B;**發生的**&#x200B;即時&#x200B;**狀況，**&#x200B;不允許完成一個管道和一個MVPD的驗證和/或授權流程，這會影響執行流程的MVPD的大量訂閱者。
 
 ## 嚴重等級1事件的範例 {#exampl-sevone-incident}
 
-* 生產存取啟用程式託管於 <http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js> 無法使用。
+* 在<http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js>裝載的生產存取啟用程式無法使用。
 
 * 對於特定MVPD，在使用者選取MVPD （在任何支援的瀏覽器中）後，Adobe不再重新導向/顯示登入頁面。
 
@@ -35,14 +35,14 @@ A **嚴重程度1** 平準事件是 **LIVE** 狀況， **在生產環境中發�
 * 在驗證過程中，使用者卡在Adobe錯誤頁面上，無法重新啟動驗證/授權流程。
 
 
-## 的範例 *NOT* 嚴重程度1的事件 {#exampl-not-sev1}
+## *NOT* Severity 1事件的範例 {#exampl-not-sev1}
 
-*對於這些型別的問題，Adobe將提供調查支援，但不是嚴重程度1的事件：*
+*對於這些型別的問題，Adobe將提供調查支援，但不是嚴重等級為1的事件：*
 
 * 由於Flash版本問題(缺少Flash、Flash封鎖程式、Flash版本錯誤)，一或數個訂閱者無法執行流程。
 * 一或數個訂閱者無法驗證並停留在MVPD登入頁面上。
 * 一或數個訂閱者已驗證，但無法播放視訊。
-* 一個/少數/所有訂閱者在程式設計師網站上遇到JavaScript錯誤。
+* 一位/少數/所有訂閱者在程式設計師網站上遇到JavaScript錯誤。
 
 ## 嚴重程度1提升流程 {#sevone-escalation-flows}
 
@@ -66,11 +66,11 @@ A **嚴重程度1** 平準事件是 **LIVE** 狀況， **在生產環境中發�
    * **1-205-693-9813**
 
 
-**如果您的票證標題中未包含「URGENT-INCIDENT」（緊急事件），我們的通知系統就不會擷取該事件。**
+**如果票證的標題中未包含「緊急事件」，我們的通知系統就不會擷取該事件。**
 
 ### Adobe啟動的流程 {#adobe-initiated-flow}
 
-**...針對Adobe Pass驗證問題**
+針對Adobe Pass驗證問題&#x200B;**的**...
 
 1. Adobe會識別內部問題，並使用我們的追蹤系統開啟票證。
 
@@ -79,11 +79,11 @@ A **嚴重程度1** 平準事件是 **LIVE** 狀況， **在生產環境中發�
 1. Adobe致力於解決事件，並隨時向所有受影響的合作夥伴通報。
 
 
-**...針對合作夥伴問題（程式設計師/MVPD）**
+**...針對合作夥伴問題（程式設計員/MVPD）**
 
 1. Adobe會識別與MVPD或程式設計師網站上整合相關的問題。
 
-1. Adobe會通知受影響的合作夥伴 **遵循與該合作夥伴建立的支援程式** 並開啟合作夥伴支援組織的票證。
+1. Adobe會依照該合作夥伴&#x200B;**的支援程式通知受影響的合作夥伴**，並開啟合作夥伴支援組織的票證。
 
 1. 在影響分析期間，如果Adobe發現問題屬於事件情境的預先同意決定之一（請參閱下文的「事件情境的預先同意決定」小節），則會在不等待partner1的情況下採取相應的行動。 的輸入。
 

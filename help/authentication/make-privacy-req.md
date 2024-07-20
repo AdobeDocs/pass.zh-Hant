@@ -4,7 +4,7 @@ description: 如何提出隱私權請求
 exl-id: abb21306-98d6-4899-914a-bdfa85cbd204
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '590'
+source-wordcount: '558'
 ht-degree: 0%
 
 ---
@@ -20,8 +20,8 @@ ht-degree: 0%
 傳送存取或刪除隱私權請求時，客戶應用程式必須包含下列識別碼：
 
 * **mvpdID** - MVPD的唯一識別碼。
-* **userID**  — 可唯一識別程式設計師應用程式的使用者，但源自MVPD。 請參閱程式設計師概觀中的瞭解使用者ID 。
-* **Imsrogid** - Adobe Experience Cloud Identity Management服務組織ID，可在Adobe Experience Cloud中唯一識別客戶
+* **userID** — 唯一識別程式設計師應用程式的使用者，但源自MVPD。 請參閱程式設計師概觀中的瞭解使用者ID 。
+* **IMSOrgID** - Adobe Experience Cloud Identity Management服務組織ID，可在Adobe Experience Cloud中唯一識別客戶
 
 
 請檢查下列範例：
@@ -50,7 +50,7 @@ Adobe Pass驗證支援存取和刪除請求。
 所有這些事件都是按照客戶篩選的。
 
 
-**要求範例**
+**要求樣本**
 
 您必須上傳含有Adobe Pass驗證識別碼的JSON，才能提交資料存取請求。 若要檢視格式正確的JSON是什麼樣子，請參閱此範例：
 
@@ -134,7 +134,7 @@ Adobe Pass驗證支援存取和刪除請求。
 
 您必須上傳含有Adobe Pass驗證識別碼的JSON，才能提交資料刪除請求。 若要檢視格式正確的JSON是什麼樣子，請參閱此範例：
 
-**要求範例**
+**要求樣本**
 
 ```JSON
 {
@@ -221,12 +221,12 @@ Adobe Pass驗證支援存取和刪除請求。
 
 客戶若要傳送隱私權請求給Adobe，有2個選項可以選擇：
 
-* **手動**  — 使用 [Privacy Service使用者介面](#privacy-service-ui)
-* **自動**  — 使用 [PRIVACY SERVICE API](#privacy-service-api)
+* **手動** — 使用[Privacy Service使用者介面](#privacy-service-ui)
+* **自動** — 使用[Privacy ServiceAPI](#privacy-service-api)
 
 ### 使用Privacy ServiceUI {#privacy-service-ui}
 
-A [完成教學課程](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md) 您可透過Privacy Service服務線上取得如何存取及使用Adobe I/O使用者介面的資訊。 此外，客戶可以使用此連結來存取隱私權法規的影片和文章庫。 按一下Adobe Experience Cloud和GDPR功能表。 以下影片將說明其使用方式：「GDPR UI使用說明」。
+已透過Adobe I/O服務線上提供如何存取及使用Privacy Service使用者介面的[完整教學課程](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)。 此外，客戶可以使用此連結來存取隱私權法規的影片和文章庫。 按一下Adobe Experience Cloud和GDPR功能表。 以下影片將說明其使用方式：「GDPR UI使用說明」。
 
 在UI中，客戶需要載入自己的IMSOrgID以及包含每個產品之GDPR要求詳細資料的JSON。
 
@@ -234,26 +234,26 @@ A [完成教學課程](https://experienceleague.adobe.com/docs/experience-platfo
 
 Adobe Experience Platform Privacy Service可針對私人資料的存取/刪除請求和選擇退出銷售請求，提供通用、集中的簡化操作。
 
-此 **Privacy Service API檔案** 深入涵蓋Adobe客戶如何與AdobeAPI整合。
+**Privacy Service API檔案**&#x200B;深入涵蓋Adobe客戶如何與AdobeAPI整合。
 
-**使用Postman （免費的第三方軟體）將API呼叫視覺化：**
+**使用Postman （免費的協力廠商軟體）視覺化API呼叫：**
 
-* [在GitHub上Privacy ServiceAPI Postman集合](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
-* [建立Postman環境的影片指南](https://video.tv.adobe.com/v/28832)
+* 在GitHub上[Privacy ServiceAPI Postman集合](https://github.com/adobe/experience-platform-postman-samples/blob/master/apis/experience-platform/Privacy%20Service%20API.postman_collection.json)
+* 建立Postman環境的[影片指南](https://video.tv.adobe.com/v/28832)
 * [在Postman中匯入環境和集合的步驟](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
 
 **API路徑：**
 
 * 平台閘道URL： `https://platform.adobe.io/`
-* 此API的基本路徑： `/data/core/privacy/jobs`
+* 此API的基礎路徑： `/data/core/privacy/jobs`
 * 完整路徑的範例： `https://platform.adobe.io/data/core/privacy/jobs/ping`
 
 
 **必要的標頭：**
 
-* 所有呼叫都需要標題 `Authorization`， `x-gw-ims-org-id`、和 `x-api-key`. 如需如何取得這些值的詳細資訊，請參閱 **驗證教學課程**.
-* 所有在請求內文中具有裝載的請求(例如POST、PUT和PATCH呼叫)都必須包含標題 `Content-Type` ，值為 `application/json`.
+* 所有呼叫都需要標題`Authorization`、`x-gw-ims-org-id`和`x-api-key`。 如需如何取得這些值的詳細資訊，請參閱&#x200B;**驗證教學課程**。
+* 要求內文中具有裝載的所有要求(例如POST、PUT和PATCH呼叫)都必須包含值為`application/json`的標頭`Content-Type`。
 
 <!--
 

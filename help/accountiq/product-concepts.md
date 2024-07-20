@@ -1,5 +1,5 @@
 ---
-title: 帳戶IQ字彙表
+title: Account IQ字彙表
 description: 產品術語表。
 exl-id: 2ee54442-9538-4c30-b999-265310b3935f
 source-git-commit: cfcaa00ab05c99a64bcb0edfe5af60845a6769a9
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 ## D2C和電視上的通用術語
 
-以下產品術語及其定義對所有人都通用 [帳戶IQ的版本](versions-aiq.md).
+下列產品術語及其定義是所有[版本的Account IQ](versions-aiq.md)所共有的。
 
 ### [!UICONTROL Accounts Sharing Probability] {#account-sharing-probability-def}
 
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ### [!UICONTROL Action] {#action-def}
 
-與「 」相關聯的直接或間接事件 [作業](#operation-def) 這會影響相關作業區段的特性（例如共用分數或使用中的裝置數）。
+與[作業](#operation-def)相關的直接或間接事件，會影響相關作業區段的特性（例如，共用分數或使用中的裝置數目）。
 
 ### [!UICONTROL Aggregated sharing score] {#sharing-probability-level-def}
 
@@ -90,7 +90,7 @@ Media Company是擁有一組媒體網路的公司。
 
 ### 作業 {#operation-def}
 
-Operation是建立用來追蹤特定之效果的記錄 [動作](#action-def) 在關聯的區段上。 作業的範例可是對節段所識別之科目所允許的並行資料流數量進行限制。
+操作是建立的記錄，用於追蹤特定[動作](#action-def)對關聯區段的影響。 作業的範例可是對節段所識別之科目所允許的並行資料流數量進行限制。
 
 ### [!UICONTROL Overall sharing score] {#overall-sharing-score}
 

@@ -4,7 +4,7 @@ description: 缺少裝置ID時的無使用者端API流程
 exl-id: 6549a6d6-03a9-4d95-99fb-d3ada832323d
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '238'
+source-wordcount: '242'
 ht-degree: 0%
 
 ---
@@ -27,9 +27,9 @@ ht-degree: 0%
 
 對於沒有裝置ID的使用者端：
 
-1. 第一次使用呼叫註冊代碼服務 `deviceId=dummy`
+1. 第一次使用`deviceId=dummy`呼叫註冊代碼服務
 1. 從回應中擷取UUID。 UUID可在註冊代碼回應（XML和JSON回應格式）的「id」元素中使用。
-1. 再次致電註冊服務。 這次，通過 `deviceId=<uuid obtained in step #2>`
+1. 再次致電註冊服務。 這次傳遞`deviceId=<uuid obtained in step #2>`
 1. 在主控台UI上顯示步驟3中取得的註冊代碼
 
 
@@ -39,7 +39,7 @@ ht-degree: 0%
 
 ## 永久解決方案
 
-Adobe將在未來版本中變更此設定，方法是透過 `deviceId` 建立登入程式碼時，選用的裝載，並使用UUID做為權杖金鑰而非 `deviceId`，時間 `deviceId` 不存在。
+在未來版本中，Adobe會變更此專案，方法是在建立登入程式碼時，將`deviceId`設為選用裝載，並在`deviceId`不存在時，使用UUID做為權杖金鑰而非`deviceId`。
 
 <!--
 ## Related Information

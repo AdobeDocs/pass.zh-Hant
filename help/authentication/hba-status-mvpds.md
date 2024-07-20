@@ -4,7 +4,7 @@ description: MVPD的HBA狀態
 exl-id: 9e506417-0886-4306-9b9f-5fde24a792d3
 source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
 workflow-type: tm+mt
-source-wordcount: '139'
+source-wordcount: '140'
 ht-degree: 0%
 
 ---

@@ -4,7 +4,7 @@ description: 附錄B「偵錯技巧」
 exl-id: ea024797-315e-47c0-99ea-1ac49c8c9697
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '170'
+source-wordcount: '161'
 ht-degree: 0%
 
 ---
@@ -31,9 +31,9 @@ Adobe Pass驗證會儲存暫時資料，例如瀏覽器快取、LSO快取和Cook
 
 ## 正在清除LSO快取 {#clearing-lsos-cache}
 
-存取 [Flash Player說明](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html).
+存取[Flash Player說明](http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html)。
 
-選取 ```entitlement.\*``` （視測試內容而定）並按一下「刪除網站」。
+選取```entitlement.\*``` （視測試專案而定）並按一下[刪除網站]。
 
 
 ## 偵錯工具 {#tools}

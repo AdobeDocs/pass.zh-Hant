@@ -16,14 +16,14 @@ ht-degree: 0%
 >此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 >若要使用Proxy MVPD Web服務，您需要：
 >- 請要求支援小組為您註冊的應用程式提供軟體宣告
->- 取得存取權杖依據 [動態使用者端註冊](dynamic-client-registration.md)
+>- 根據[動態使用者端註冊](dynamic-client-registration.md)取得存取權杖
 > 
 
 >[!NOTE]
 >
 >若要使用Proxy MVPD Web服務，您需要：
 >- 請要求支援小組為您註冊的應用程式提供軟體宣告
->- 取得存取權杖依據 [動態使用者端註冊](dynamic-client-registration.md)
+>- 根據[動態使用者端註冊](dynamic-client-registration.md)取得存取權杖
 > 
 
 ## 概觀 {#overview-proxy-mvpd-webserv}
@@ -38,7 +38,7 @@ ht-degree: 0%
 ## Proxy MVPD服務 {#proxy-mvpd-services}
 
 - [擷取代理的MVPD](#retriev-proxied-mvpds)
-- [提交代理的MVPD](#submit-proxied-mvpds)
+- [送出代理的MVPD](#submit-proxied-mvpds)
 
 ### 擷取代理的MVPD {#retriev-proxied-mvpds}
 
@@ -46,7 +46,7 @@ ht-degree: 0%
 
 | 端點 | 呼叫者 | 要求引數 | 請求標頭 | HTTP方法 | HTTP回應 |
 |--------------------------------------------------------------------------|-----------|-----------------------|---------------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| &lt;fqdn>/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds | ProxyMVPD | proxy-mvpd-identifier | 授權（必要） | GET | <ul><li> 200 （確定） — 已成功處理要求，且回應包含XML格式的ProxiedMVPD清單</li><li>401 （未獲授權） — 指出下列其中一項：<ul><li>使用者端必須要求新的access_token</li><li>請求來自不在允許清單中的IP位址</li><li>權杖無效</li></ul></li><li>403 （禁止） — 指出提供的引數不支援操作，或Proxy MVPD未設定為Proxy或遺失</li><li>405 （不允許使用方法） — 使用GET或POST以外的HTTP方法。 HTTP方法通常不受支援，或是此特定端點不支援。</li><li>500 （內部伺服器錯誤） — 要求程式期間在伺服器端引發錯誤。</li></ul> |
+| &lt;FQDN>/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds | ProxyMVPD | proxy-mvpd-identifier | 授權（必要） | GET | <ul><li> 200 （確定） — 已成功處理要求，且回應包含XML格式的ProxiedMVPD清單</li><li>401 （未獲授權） — 指出下列其中一項：<ul><li>使用者端必須要求新的access_token</li><li>請求來自不在允許清單中的IP位址</li><li>權杖無效</li></ul></li><li>403 （禁止） — 指出提供的引數不支援操作，或Proxy MVPD未設定為Proxy或遺失</li><li>405 （不允許使用方法） — 使用GET或POST以外的HTTP方法。 HTTP方法通常不受支援，或是此特定端點不支援。</li><li>500 （內部伺服器錯誤） — 要求程式期間在伺服器端引發錯誤。</li></ul> |
 
 Curl範例：
 
@@ -93,7 +93,7 @@ XML回應範例：
 
 | 端點 | 呼叫者 | 要求引數 | 請求標頭 | HTTP方法 | HTTP回應 |
 |:------------------------------------------------------------------------:|:---------:|-----------------------|:---------------------------------------------------:|:-----------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| &lt;fqdn>/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds | ProxyMVPD | proxy-mvpd-identifier | Authorization （必要） proxied-mvpds （必要） | POST | <ul><li>201 （已建立） — 已成功處理推播</li><li>400 （錯誤請求） — 伺服器不知道如何處理請求：<ul><li>傳入的XML不符合此規格中發佈的結構描述</li><li>代理的mvpds沒有唯一的ID</li><li>已推送的requestorIds不存在400回應代碼的其他Servlet容器原因</li></ul><li>401 （未獲授權） — 指出下列其中一項：<ul><li>使用者端必須要求新的access_token</li><li>請求來自不在允許清單中的IP位址</li><li>權杖無效</li></ul></li><li>403 （禁止） — 指出提供的引數不支援操作，或Proxy MVPD未設定為Proxy或遺失</li><li>405 （不允許使用方法） — 使用GET或POST以外的HTTP方法。 HTTP方法通常不受支援，或是此特定端點不支援。</li><li>500 （內部伺服器錯誤） — 要求程式期間在伺服器端引發錯誤。</li></ul> |
+| &lt;FQDN>/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds | ProxyMVPD | proxy-mvpd-identifier | Authorization （必要） proxied-mvpds （必要） | POST | <ul><li>201 （已建立） — 已成功處理推播</li><li>400 （錯誤請求） — 伺服器不知道如何處理請求：<ul><li>傳入的XML不符合此規格中發佈的結構描述</li><li>代理的mvpds沒有唯一的ID</li><li>已推送的requestorIds不存在400回應代碼的其他Servlet容器原因</li></ul><li>401 （未獲授權） — 指出下列其中一項：<ul><li>使用者端必須要求新的access_token</li><li>請求來自不在允許清單中的IP位址</li><li>權杖無效</li></ul></li><li>403 （禁止） — 指出提供的引數不支援操作，或Proxy MVPD未設定為Proxy或遺失</li><li>405 （不允許使用方法） — 使用GET或POST以外的HTTP方法。 HTTP方法通常不受支援，或是此特定端點不支援。</li><li>500 （內部伺服器錯誤） — 要求程式期間在伺服器端引發錯誤。</li></ul> |
 
 Curl範例：
 
@@ -215,23 +215,24 @@ Adobe已定義下列可接受的格式，以便向我們的公用Web服務發佈
 </xs:schema>
 ```
 
-**有關元素的附註：**
+**元素的附註：**
 
--   `id` （必要） — 代理的MVPD ID必須是與MVPD名稱相關的字串，且使用下列任一字元（因為程式設計師可能會看到它做為追蹤用途）： — 任何英數字元、底線(「_」)和連字型大小(「 — 」)。
-- idID必須符合下列規則運算式：
+-   `id` （必要） — 代理的MVPD ID必須是與MVPD名稱相關的字串，使用下列任何字元（因為程式設計師會看到它以用於追蹤目的）：
+-   任何英數字元、底線(「_」)和連字型大小(「 — 」)。
+-   idID必須符合下列規則運算式：
 `(a-zA-Z0-9((-)|_)*)`
 
-    因此，它必須至少有一個字元，以字母開頭，並以任何字母、數字、破折號或底線繼續。
+    因此它必須至少有一個字元，以字母開頭，並以任何字母、數字、破折號或底線繼續。
 
--   `iframeSize` （選用） - iframeSize元素是選用專案，如果MVPD驗證頁面應該在iFrame中，它會定義iFrame的大小。 否則，如果iframeSize元素不存在，則會在完整的瀏覽器重新導向頁面中進行驗證。
--   `requestorIds` （選用） - requestorIds值將由Adobe提供。 一個要求是，代理的MVPD應至少與一個requestorId整合。 如果代理的MVPD元素上不存在「requestorIds」標籤，則該代理的MVPD將與整合在Proxy MVPD下的所有可用請求者整合。
--   `ProviderID` （選用） — 當ID元素上出現ProviderID屬性時，ProviderID的值會在SAML驗證要求上傳送給Proxy MVPD，做為代理的MVPD / SubMVPD ID （而非ID值）。 在此情況下，ID的值將只會用於「程式設計人員」頁面上顯示的MVPD選擇器，而且會由Adobe Pass驗證在內部使用。 ProviderID屬性的長度必須介於1到128個字元之間。
+-   `iframeSize` （選擇性） - iframeSize元素是選擇性的，如果MVPD驗證頁面應該在iFrame中，它會定義iFrame的大小。 否則，如果iframeSize元素不存在，則會在完整的瀏覽器重新導向頁面中進行驗證。
+-   `requestorIds` （選擇性） - requestorIds值將由Adobe提供。 一個要求是，代理的MVPD應至少與一個requestorId整合。 如果代理的MVPD元素上不存在「requestorIds」標籤，則該代理的MVPD將與整合在Proxy MVPD下的所有可用請求者整合。
+-   `ProviderID` （選擇性） — 當ID元素上出現ProviderID屬性時，ProviderID的值會在SAML驗證要求上傳送給Proxy MVPD，做為代理的MVPD / SubMVPD ID （而非ID值）。 在此情況下，ID的值將只會用於「程式設計人員」頁面上顯示的MVPD選擇器，而且會由Adobe Pass驗證在內部使用。 ProviderID屬性的長度必須介於1到128個字元之間。
 
 ## 安全性 {#security}
 
 請求必須符合下列規則，才能視為有效：
 
- — 請求標頭必須包含來自的安全性Oauth2存取權杖 [動態使用者端註冊](dynamic-client-registration.md).
+ — 要求標頭必須包含來自[動態使用者端註冊](dynamic-client-registration.md)的安全性Oauth2存取權杖。
  — 要求必須來自允許的特定IP位址。
  — 要求必須透過SSL通訊協定傳送。
 
@@ -243,7 +244,10 @@ Curl範例：
 
 ## Adobe Pass驗證環境的Proxy MVPD Web服務端點 {#proxy-mvpd-wevserv-endpoints}
 
-- **生產網址：** https://mgmt.auth.adobe.com/control/v3/proxiedMvpds - **暫存URL：** https://mgmt.auth-staging.adobe.com/control/v3/proxiedMvpds - **生產前URL：** https://mgmt-prequal.auth.adobe.com/control/v3/proxiedMvpds - **預先測試URL：** https://mgmt-prequal.auth-staging.adobe.com/control/v3/proxiedMvpds
+- **生產URL：** https://mgmt.auth.adobe.com/control/v3/proxiedMvpds
+- **暫存URL：** https://mgmt.auth-staging.adobe.com/control/v3/proxiedMvpds
+- **PreQual-Production URL：** https://mgmt-prequal.auth.adobe.com/control/v3/proxiedMvpds
+- **PreQual-Staging URL：** https://mgmt-prequal.auth-staging.adobe.com/control/v3/proxiedMvpds
 
 <!--
 >[!RELATEDINFORMATION]

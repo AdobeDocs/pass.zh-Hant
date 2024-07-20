@@ -15,14 +15,14 @@ ht-degree: 3%
 # Adobe Pass驗證說明 {#authentication}
 
 + [Adobe Pass驗證概觀](home.md)
-+ Adobe Pass驗證概念 {#authentication-concepts}
++ Adobe Pass驗證概念{#authentication-concepts}
    + [技術檔案](technical-paper.md)
    + [程式設計師概觀](programmer-overview.md)
    + [MVPD概覽](mvpd-overview.md)
-+ Kickstart指南 {#kickstart-guides}
++ Kickstart指南{#kickstart-guides}
    + [程式設計師快速入門手冊](programmer-kickstart-guide.md)
    + [MVPD快速入門手冊](mvpd-kickstart-guide.md)
-+ 程式設計師整合指南 {#programmer-integration-guide}
++ 程式設計師整合指南{#programmer-integration-guide}
    + [程式設計師整合指南概觀](programmer-integration-guide-overview.md)
    + [程式設計師權益流程](entitlement-flow.md)
    + [程式設計師使用案例](programmer-use-cases.md)
@@ -32,7 +32,7 @@ ht-degree: 3%
       + [REST API總覽](rest-api-overview.md)
       + [REST API逐步指南（伺服器對伺服器）](rest-api-cookbook-servertoserver.md)
       + [REST API逐步指南（使用者端對伺服器）](rest-api-cookbook-clienttoserver.md)
-      + Rest API參考 {#rest-api-reference}
+      + Rest API參考{#rest-api-reference}
          + [REST API參考](rest-api-reference.md)
          + [註冊代碼要求](registration-code-request.md)
          + [傳回註冊記錄](return-registration-record.md)
@@ -54,10 +54,10 @@ ht-degree: 3%
          + [臨時通票和促銷臨時通票的免費預覽](free-preview-for-temp-pass-and-promotional-temp-pass.md)
    + AccessEnabler SDK {#accessenabler-sdk}
       + JavaScript SDK {#javascriptsdk}
-         + [JavaScript SDK總覽](javascript-sdk-overview.md)
+         + [JavaScript SDK概觀](javascript-sdk-overview.md)
          + [JavaScript SDK逐步指南](javascript-sdk-cookbook.md)
          + [JavaScript SDK API參考](javascript-sdk-api-reference.md)
-         + 准則 {#js-sdk-guidelines}
+         + 准則{#js-sdk-guidelines}
             + [不需重新整理的登入和登出](refreshless-login-and-logout.md)
          + JavaScript API {#js-api}
             + [預先授權](js-preauthorize.md)
@@ -65,20 +65,20 @@ ht-degree: 3%
          + [iOS/tvOS SDK總覽](iostvos-sdk-overview.md)
          + [iOS/tvOS SDK逐步指南](iostvos-sdk-cookbook.md)
          + [iOS/tvOS SDK API參考](iostvos-sdk-api-reference.md)
-         + 准則 {#ios-tvos-sdk-guidelines}
+         + 准則{#ios-tvos-sdk-guidelines}
             + [iOS/tvOS應用程式註冊](iostvos-application-registration.md)
-            + 移轉准則 {#migration-guidelines}
+            + 移轉准則{#migration-guidelines}
                + [iOS/tvOS v3.x移轉指南](iostvos-v3x-migration-guide.md)
             + [iOS/tvOS儲存完整性檢查](iostvos-sdk-storage-integrity-checks.md)
          + iOS/tvOS API {#ios-tvos-api}
             + [預先授權](preauthorize.md)
       + Android SDK {#androidsdk}
-         + [Android SDK總覽](android-sdk-overview.md)
+         + [Android SDK概觀](android-sdk-overview.md)
          + [Android SDK逐步指南](android-sdk-cookbook.md)
          + [Android SDK API參考](android-sdk-api-reference.md)
-         + 准則 {#androidguidelines}
+         + 准則{#androidguidelines}
             + [Android應用程式註冊](android-application-registration.md)
-            + [具有動態使用者端註冊的Android SDK](android-sdk-with-dynamic-client-registration.md)
+            + [具Dynamic Client註冊的Android SDK](android-sdk-with-dynamic-client-registration.md)
          + Android API{#androidapi}
             + [預先授權](preauthorize-android.md)
       + Amazon FireOS SDK {#fireossdk}
@@ -90,19 +90,19 @@ ht-degree: 3%
          + [Amazon FireOS應用程式註冊](amazon-fireos-application-registration.md)
          + [具有動態使用者端註冊的FireOS SDK](fireos-sdk-with-dynamic-client-registration.md)
    + 平台SSO {#platform-sso}
-      + APPLE SSO {#apple-sso}
+      + Apple SSO {#apple-sso}
          + [Apple SSO概觀](apple-sso-overview.md)
          + [Apple SSO逐步指南(REST API)](apple-sso-cookbook-rest-api.md)
          + [Apple SSO逐步指南(iOS/tvOS SDK)](apple-sso-cookbook-iostvos-sdk.md)
       + Roku SSO {#roku-sso}
          + [Roku SSO](roku-sso-overview.md)
-   + 內容中繼資料 {#content-metadata}
+   + 內容中繼資料{#content-metadata}
       + [識別受保護的資源](identify-protected-resources.md)
-   + 內容伺服器整合 {#content-serv-int}
+   + 內容伺服器整合{#content-serv-int}
       + [如何整合媒體權杖驗證器](media-token-verifier-int.md)
-   + 附錄 {#appendices}
+   + 附錄{#appendices}
       + [偵錯提示](appendix-b-debugging-tips.md)
-+ MVPD整合指南 {#mvpd-int-guide}
++ MVPD整合指南{#mvpd-int-guide}
    + [整合功能](mvpd-integr-features.md)
    + [驗證](authn-usecase.md)
    + [使用OAuth 2.0通訊協定進行驗證](authn-oauth2-protocol.md)
@@ -115,47 +115,47 @@ ht-degree: 3%
    + [Proxy MVPD SAML整合](proxy-mvpd-saml-int.md)
    + [服務提供者範圍](serv-provider-scoping.md)
    + [mvpd允許IP位址](mvpd-listing-ip-addres.md)
-+ Adobe Pass驗證功能 {#auth-features}
-   + Adobe Analytics整合 {#analytics-int}
++ Adobe Pass驗證功能{#auth-features}
+   + Adobe Analytics整合{#analytics-int}
       + [將Adobe Pass驗證伺服器端資料整合至Adobe Analytics](integrate-authn-servr-data-analytics.md)
       + [在Adobe Pass驗證中使用Experience CloudID](exp-cloud-id-authn.md)
-   + 軟體權利檔案服務監視 {#entitlement-service-monitoring}
+   + 權益服務監視{#entitlement-service-monitoring}
       + [軟體權利檔案服務監視概觀](entitlement-service-monitoring-overview.md)
       + [權益服務監視API](entitlement-service-monitoring-api.md)
       + [伺服器端量度](understanding-serverside-metrics.md)
-   + 暫時通過 {#temp-pass}
+   + 暫時傳遞{#temp-pass}
       + [暫時通過](temp-pass.md)
       + [促銷臨時傳遞](promotional-temp-pass.md)
-      + [重設暫時通過](reset-temp-pass.md)
-   + 單一登入 {#sso}
+      + [重設暫存傳遞](reset-temp-pass.md)
+   + 單一登入{#sso}
       + [單一登入支援](sso-support.md)
       + [透過被動驗證的SSO](sso-passive-authn.md)
-   + 以住家為基礎的驗證 {#home-based-auth}
+   + 以住家為基礎的驗證{#home-based-auth}
       + [適用於所有地方電視的家庭式驗證](home-based-authn-tve.md)
       + [MVPD的HBA狀態](hba-status-mvpds.md)
-   + 使用者中繼資料 {#user-metadat}
+   + 使用者中繼資料{#user-metadat}
       + [使用者中繼資料](user-metadata-feature.md)
    + [預檢授權](preflight-authz.md)
-   + 錯誤報告 {#error-reportn}
+   + 報告{#error-reportn}時發生錯誤
       + [錯誤報告](error-reporting.md)
       + [增強的錯誤碼](enhanced-error-codes.md)
-   + 使用者端註冊 {#client-regn}
+   + 使用者端註冊{#client-regn}
       + [動態使用者端註冊](dynamic-client-registration.md)
       + [動態使用者端註冊API](dynamic-client-registration-api.md)
       + [動態使用者端註冊管理](dynamic-client-registration-management.md)
-   + 降級服務 {#degrn-service}
+   + 降級服務{#degrn-service}
       + [降級API概觀](degradation-api-overview.md)
-   + 隱私權整備 {#privacy-readiness}
+   + 隱私權準備{#privacy-readiness}
       + [隱私權支援概述](privacy-supp-overview.md)
       + [如何提出隱私權請求](make-privacy-req.md)
-+ 提示與疑難排解 {#tips-troubleshoot}
++ 提示與疑難排解{#tips-troubleshoot}
    + [在選取對話方塊中允許MVPD](allow-mvpd-selectn-dialog.md)
    + [防止MVPD出現在選取對話方塊中](prevent-mvpd-selectn-dialog.md)
-+ 支援 {#support}
++ 支援{#support}
    + [向上呈報程式](escalation-procedures.md)
    + [監控Adobe PassAdobePayTV Pass](monitoring-adobe-pay-tv-pass.md)
    + [最低系統需求](minimum-system-requirements.md)
-+ 發行說明 {#release-notes}
++ 發行說明{#release-notes}
    + [Adobe Pass Authentication 2.70發行說明](auth-rn-270.md)
    + [Adobe Pass Authentication 2.69發行說明](auth-rn-269.md)
    + [Adobe Pass Authentication 2.68發行說明](auth-rn-268.md)
@@ -167,7 +167,7 @@ ht-degree: 3%
    + [Adobe Pass Authentication 2.64發行說明](auth-rn-264.md)
    + [Adobe Pass Authentication 2.63發行說明](auth-rn-263.md)
    + [Adobe Pass Authentication 2.62.1發行說明](auth-rn-2621.md)
-   + JavaScript SDK發行說明  {#release-notes-javascript}
+   + JavaScript SDK發行說明{#release-notes-javascript}
       + [Adobe Pass Authentication JavaScript 4.7.0發行說明](authn-rn-javascript-470.md)
       + [Adobe Pass Authentication JavaScript 4.6.0發行說明](authn-rn-javascript-460.md)
       + [Adobe Pass Authentication JavaScript 4.4.0發行說明](authn-rn-javascript-440.md)
@@ -176,16 +176,16 @@ ht-degree: 3%
       + [Adobe Pass Authentication JavaScript 4.1.0發行說明](authn-rn-javascript-410.md)
       + [Adobe Pass Authentication JavaScript 4.0.0發行說明](authn-rn-javascript-400.md)
       + [Adobe Pass Authentication JavaScript 3.5.0發行說明](authn-rn-javascript-350.md)
-   + iOS/tvOS SDK發行說明  {#release-notes-ios}
+   + iOS/tvOS SDK發行說明{#release-notes-ios}
       + [Adobe Pass Authentication iOS / tvOS 3.9.2發行說明](authn-rn-ios-tvos-392.md)
       + [Adobe Pass Authentication iOS / tvOS 3.8.4發行說明](authn-rn-ios-tvos-384.md)
       + [Adobe Pass Authentication iOS / tvOS 3.8.3發行說明](authn-rn-ios-tvos-383.md)
       + [Adobe Pass Authentication iOS / tvOS 3.8.2發行說明](authn-rn-ios-tvos-382.md)
       + [Adobe Pass Authentication iOS / tvOS 3.8.1發行說明](authn-rn-ios-tvos-381.md)
       + [Adobe Pass Authentication iOS / tvOS 3.7.0發行說明](authn-rn-ios-tvos-370.md)
-   + Android SDK發行說明 {#release-notes-android}
+   + Android SDK發行說明{#release-notes-android}
       + [Adobe Pass Authentication Android 3.7.3發行說明](authn-rn-android-373.md)
-+ 技術說明 {#tech-notes}
++ 技術說明{#tech-notes}
    + Adobe Pass驗證SDK {#primetime-authentication-sdks}
       + [憑證問答](certificates-qa.md)
       + JavaScript SDK {#javascript}
@@ -194,7 +194,7 @@ ht-degree: 3%
          + [Cookie更新 — SameSite和Secure標幟](cookies-updates-samesite-and-secure-flags.md)
       + Android SDK {#android}
          + [Android 10應用程式上的Access Enabler Android SDK單一登入(SSO)](access-enabler-android-sdk-single-signon-sso-on-android-10-devices.md)
-         + [Adobe Pass驗證和Android 6「Marshmallow」新許可權模型](adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
+         + [Adobe Pass驗證和Android 6 「Marshmallow」新許可權模型](adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model.md)
       + iOS/tvOS SDK {#iostvos}
          + [iOS SDK 3.1+上的WKWebView支援](wkwebview-support-on-ios-sdk-31.md)
          + [iOS SDK 3.2+上的SFSafariViewController支援](sfsafariviewcontroller-support-on-ios-sdk-32.md)
@@ -203,7 +203,7 @@ ht-degree: 3%
          + [在iOS上重設暫時傳遞](reset-temp-pass-on-ios.md)
          + [使用主控台應用程式記錄檔對AccessEnabler iOS/tvOS SDK進行除錯](debugging-the-accessenabler-iostvos-sdk-using-console-app-logs.md)
          + [AccessEnabler iOS/tvOS 3.7.0升級路徑](accessenabler-iostvos-370-upgrade-path.md)
-   + 通過驗證環境 {#primetime-authentication-environments}
+   + 通過驗證環境{#primetime-authentication-environments}
       + [瞭解Adobe環境](understanding-the-adobe-environments.md)
       + [在預備中設定您的環境及測試](setting-up-your-environment-and-testing-in-prequal.md)
       + [如何使用Adobe API測試網站測試驗證和授權流程](test-authn-authz-flows-using-adobes-api-test-site.md)
@@ -213,15 +213,15 @@ ht-degree: 3%
       + [無使用者端：避免在/authenticate請求中使用&#39;&amp;&#39;reg_code](clientless-avoid-using-reg-code-in-authenticate-request.md)
       + [在Xbox 360和XboxOne無使用者端上啟用程式設計師的Adobe Pass軟體權利檔案服務](enabling-primetime-entitlement-services-for-a-programmer-on-xbox-360-and-xboxone-clientless-solution.md)
       + [無使用者端裝置型別和量度](benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)
-   + 使用者體驗 {#user-exp}
+   + 使用者體驗{#user-exp}
       + [如何將MVPD登入頁面從iFrame移轉至快顯視窗](migr-mvpd-login-iframe-popup.md)
       + [預檢功能：如何啟用、疑難排解或判斷問題](preflight-feature.md)
-   + 工具與公用程式 {#tools-and-utilities}
+   + 工具與公用程式{#tools-and-utilities}
       + [使用Charles代理](using-charles-proxy.md)
-   + 概念 {#concepts}
+   + 概念{#concepts}
       + [瞭解使用者ID](understanding-user-ids.md)
 + [TVE儀表板使用手冊](tve-dashboard-user-guide.md)
-+ 新TVE儀表板使用手冊 {#user-guide}
++ 新TVE儀表板使用手冊{#user-guide}
    + [TVE儀表板概觀](/help/authentication/tve-dashboard-overview.md)
    + [環境](/help/authentication/tve-dashboard-environments.md)
    + [檢閱和推送變更](/help/authentication/tve-dashboard-review-push-changes.md)

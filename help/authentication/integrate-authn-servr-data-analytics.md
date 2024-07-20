@@ -4,8 +4,8 @@ description: 將Adobe Pass驗證伺服器端資料整合至Adobe Analytics
 exl-id: c1f1f2a3-c98c-4aed-92ad-1f9bfd80b82b
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1138'
-ht-degree: 4%
+source-wordcount: '1139'
+ht-degree: 0%
 
 ---
 
@@ -19,7 +19,7 @@ Adobe Pass驗證客戶希望在Adobe Analytics儀表板中檢視Adobe Pass驗證
 
 資料可用於追蹤重要的TVE量度，例如每個MVPD的驗證轉換率、根據MVPD使用者ID的不重複使用者等等。
 
-若使用者端實作已存在，此功能的用意並非取代該使用者端實作，因為若無訪客ID，系統便無法追蹤超出下列特定事件的使用者活動。 如果客戶在Pass呼叫上提供訪客ID，那麼我們可以解鎖其他型別的Analytics整合 — 即時 — 可以結合所有Pass事件與現有的客戶資料，更多詳細資訊請參閱此可能整合的新型別： 」[在Adobe Pass驗證中使用Experience CloudID](/help/authentication/exp-cloud-id-authn.md)&quot;
+若使用者端實作已存在，此功能的用意並非取代該使用者端實作，因為若無訪客ID，系統便無法追蹤超出下列特定事件的使用者活動。 如果客戶在Pass呼叫上提供訪客ID，那麼我們可以解除鎖定其他型別的Analytics整合 — 即時 — 可以結合所有Pass事件與現有的客戶資料，更多詳細資訊請參閱此可能整合的新型別： &quot;[在Adobe Pass驗證中使用Experience CloudID](/help/authentication/exp-cloud-id-authn.md)&quot;
 
 ## 包含的量度 {#metrics-included-int-authn-analyt}
 
@@ -48,9 +48,9 @@ Adobe Pass驗證客戶希望在Adobe Analytics儀表板中檢視Adobe Pass驗證
 | SDK型別 | 使用的使用者端SDK (Flash、HTML5、Android原生、iOS、無使用者端等) |
 | SDK版本 | Adobe Pass驗證使用者端SDK的版本 |
 | 資源ID | 授權請求中涉及的實際資源標題（從MRSS承載中擷取，作為專案/標題，如果提供） |
-| AuthZ錯誤型別 | Adobe Pass驗證所報告的失敗原因 <br/> 以下是最常見的值 <br/> **noAuthZ** = MVPD回覆使用者在其封裝中沒有管道<br/> **網路** =我們無法連線MVPD （MVPD在呼叫時有問題，沒有回覆）<br/> **norefreshtoken** =這僅適用於OAuth實作，如果使用者變更其密碼或MVPD因某項原因拒絕密碼，則可能會發生這種情況。 這通常會導致新的驗證<br/> **不相符** =如果要求的裝置不同於具有驗證Token的裝置。 如果使用者嘗試欺騙系統，但大多數都發生在舊版JavaScript SDK的情境下，其中裝置ID使用IP位址作為計算的一部分，則可能會發生這種情況。 如果使用者在家中觀看TVE，然後在工作中觸發此錯誤，且他們必須再次驗證<br/> **無效** =無效的請求，引數遺失或無效<br/>  **authzNone** =程式設計師可以拒絕特定channelxMVPD組合的授權。 這是由程式設計師有權存取的後端API觸發<br/> **詐騙** =這是一種保護機制。 如果使用者授權失敗，然後在短時間間隔（秒）內再次要求授權，我們直接拒絕呼叫。 這通常發生在程式設計師的實作中有錯誤，如果失敗會持續要求授權時。 |
-| 權杖型別 | 當因「全部驗證」和「全部驗證」而建立權杖時，我們必須瞭解退化測量所導致的情形。<br/> 它們是：<br/> &quot;normal&quot; =一般大小寫<br/> &quot;authnall&quot; =啟用「全部驗證」時<br/> &quot;authzall&quot; =啟用「全部驗證」時<br/>  &quot;hba&quot; =啟用HBA時 |
-| 無使用者端裝置型別 | 裝置平台（替代方案），目前用於無使用者端。<br/> 值可以是：<br/> 不適用 — 事件並非源自無使用者端SDK<br/> 未知 — 由於來自的deviceType引數 **無使用者端API** 是選用的，有些呼叫不包含任何值。<br/> 任何透過傳送的其他值 **無使用者端API**. 例如，xbox、appletv和roku。 |
+| AuthZ錯誤型別 | Adobe Pass驗證所報告的失敗原因<br/>以下是最常見的值<br/> **noAuthZ** = MVPD回覆使用者在其封裝中沒有管道<br/> **網路** =我們無法連線MVPD （MVPD在通話時發生問題，且未回覆）<br/> **norefreshtoken** =這完全適用於OAuth實作，如果使用者變更其密碼或MVPD因某項原因拒絕密碼，則可能會發生這種情況。 它通常會產生新的驗證<br/> **不相符** =如果要求的裝置不同於具有驗證權杖的裝置。 如果使用者嘗試欺騙系統，但大多數發生在舊的JavaScript SDK的情境下，其中裝置ID使用IP位址作為計算的一部分，則可能會發生這種情況。 如果使用者在家觀看TVE，然後在公司觀看，則會觸發此錯誤，且使用者必須再次驗證<br/> **無效** =無效的請求、遺漏或無效的引數<br/>  **authzNone** =程式設計師可以拒絕特定channelxMVPD組合的授權。 這是由程式設計師有權存取<br/>的後端API所觸發 **詐騙** =這是我們的保護機制。 如果使用者授權失敗，然後在短時間間隔（秒）內再次要求授權，我們直接拒絕呼叫。 這通常發生在程式設計師的實作中有錯誤，如果失敗會持續要求授權時。 |
+| 權杖型別 | 當因「全部驗證」和「全部驗證」而建立權杖時，我們必須瞭解退化測量所導致的情形。<br/>它們是：<br/> &quot;normal&quot; =一般案例<br/> &quot;authnall&quot; =當AuthN All啟用時<br/> &quot;authzall&quot; =當AuthZ All啟用時<br/> &quot;hba&quot; =當HBA啟用時 |
+| 無使用者端裝置型別 | 裝置平台（替代方案），目前用於無使用者端。<br/>值可以是：<br/> N/A — 事件並非源自無使用者端SDK<br/>未知 — 由於來自&#x200B;**無使用者端API**&#x200B;的deviceType引數是選用的，因此有些呼叫不包含任何值。<br/>任何透過&#x200B;**無使用者端API**&#x200B;傳送的其他值。 例如，xbox、appletv和roku。 |
 | MVPD使用者ID | 取代Cookie型訪客ID |
 
 
@@ -114,15 +114,15 @@ Adobe Pass驗證客戶希望在Adobe Analytics儀表板中檢視Adobe Pass驗證
 
 | 屬性 | eVar |
 |-----------------------------------|--------------------------------|
-| 頻道 | eVar1 |
-| MVPD | eVar2 |
-| 代理 | eVar3 |
-| SDK型別 | eVar4 |
-| SDK版本 | eVar5 |
-| 資源ID | eVar6 |
-| AuthZ錯誤型別 | eVar7 |
-| 權杖型別 | eVar8 |
-| 無使用者端裝置型別 | eVar9 |
+| 頻道 | EVAR1 |
+| MVPD | EVAR2 |
+| 代理 | EVAR3 |
+| SDK型別 | EVAR4 |
+| SDK版本 | EVAR5 |
+| 資源ID | EVAR6 |
+| AuthZ錯誤型別 | EVAR7 |
+| 權杖型別 | EVAR8 |
+| 無使用者端裝置型別 | EVAR9 |
 | MVPD使用者ID | visitorID （自動完成） |
 | MVPD使用者ID | eVar10 |
 | 裝置型別 | eVar11 |

@@ -16,14 +16,14 @@ ht-degree: 0%
 >此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 >若要使用Degradation API，您需要：
 >- 請要求支援小組為您註冊的應用程式提供軟體宣告
->- 取得存取權杖依據 [動態使用者端註冊](dynamic-client-registration.md)
+>- 根據[動態使用者端註冊](dynamic-client-registration.md)取得存取權杖
 > 
 
 >[!NOTE]
 >
 >若要使用Degradation API，您需要：
 >- 請要求支援小組為您註冊的應用程式提供軟體宣告
->- 取得存取權杖依據 [動態使用者端註冊](dynamic-client-registration.md)
+>- 根據[動態使用者端註冊](dynamic-client-registration.md)取得存取權杖
 > 
 
 ## 一般資訊 {#general_info}

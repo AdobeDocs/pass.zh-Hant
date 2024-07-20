@@ -9,13 +9,13 @@ ht-degree: 0%
 
 ---
 
-# [!UICONTROL General usage] 報表 {#general-usage-reports}
+# [!UICONTROL General usage]個報告 {#general-usage-reports}
 
-[!UICONTROL Account IQ] 報表是基本的分析工具，可讓您深入鑽研資料以加以隔離 [同類群組](/help/accountiq/product-concepts.md#segmet-def)、識別異常，並建構對您帳戶特性的瞭解。
+[!UICONTROL Account IQ]報告是基本的分析工具，可讓您深入分析資料，以隔離[同類群組](/help/accountiq/product-concepts.md#segmet-def)、識別異常，並建置對您帳戶特性的瞭解。
 
-[!UICONTROL General usage] 報表頁面提供工具，讓您根據使用中的帳戶裝置數量、偵測到的IP及其各自的郵遞區號來劃分子群組量度。
+[!UICONTROL General usage]報表頁面提供工具，可根據使用中的帳戶裝置數、偵測到的IP及其各自的郵遞區號來分割子群組量度。
 
-這些報表都是根據從以下專案中選擇的目前區段： [區段和時間間隔](/help/accountiq/segments-timeinterval.md) 面板。 您可以微調您的選取範圍，並藉由在「 」中指定（裝置數、IP數和郵遞區號數）臨界值來進一步縮小選取範圍。 [快照概述 — 超過臨界值的帳戶](#snapshot-overview) 面板。
+這些報表都是根據從[區段和時間間隔](/help/accountiq/segments-timeinterval.md)面板中選取的目前區段。 您可以在[快照概述 — 帳戶超過臨界值](#snapshot-overview)面板中指定（裝置數目、IP數目和郵遞區號數目）臨界值，以微調您的選取範圍並進一步縮小選取範圍。
 
 ## 播放請求和不重複訂閱者 {#playreq-uniquesubs}
 
@@ -26,7 +26,7 @@ ht-degree: 0%
 ![](assets/d2c-line-graph-gu.png)
 
 
-*D2C服務的播放要求/不重複訂閱者*
+D2C服務的&#x200B;*播放要求/不重複訂閱者*
 
 +++
 
@@ -35,7 +35,7 @@ ht-degree: 0%
 ![](assets/progr-line-graph-gu.png)
 
 
-*程式設計師的播放請求/不重複訂閱者*
+*程式設計師的播放要求/不重複訂閱者*
 
 +++
 
@@ -43,7 +43,7 @@ ht-degree: 0%
 
 ![](assets/mvpd-line-graph-gu.png)
 
-*MVPD的不重複訂閱者*
+MVPD的&#x200B;*不重複訂閱者*
 
 +++
 
@@ -51,13 +51,13 @@ ht-degree: 0%
 
 X軸代表以目前間隔為基礎的時間，而Y軸代表該期間的基本訂戶活動測量結果。 折線圖可協助您視覺化及比較目前區段中訂閱者的活動。 根據Account IQ的版本，這些量度包括：
 
-* **驗證正常**：成功驗證的次數。 深入瞭解 [驗證正常](/help/accountiq/product-concepts.md#authn-ok-def).
+* **AuthN OK**：成功的驗證數目。 深入瞭解[AuthN OK](/help/accountiq/product-concepts.md#authn-ok-def)。
 
-* **AuthZ確定**：成功的授權數目。 深入瞭解 [AuthZ確定](/help/accountiq/product-concepts.md#authz-ok-def).
+* **AuthZ OK**：成功的授權數目。 深入瞭解[AuthZ OK](/help/accountiq/product-concepts.md#authz-ok-def)。
 
-* **播放請求**：播放要求數。 深入瞭解 [播放請求](/help/accountiq/product-concepts.md#play-requests-def).
+* **播放要求**：播放要求數目。 深入瞭解[播放要求](/help/accountiq/product-concepts.md#play-requests-def)。
 
-* **不重複訂閱者**：成功的不重複訂閱者數目。 深入瞭解 [不重複訂閱者](/help/accountiq/product-concepts.md#unique-subscriber-def).
+* **不重複訂閱者**：成功的不重複訂閱者數目。 深入瞭解[不重複訂閱者](/help/accountiq/product-concepts.md#unique-subscriber-def)。
 
 >[!NOTE]
 >
@@ -73,7 +73,7 @@ X軸代表以目前間隔為基礎的時間，而Y軸代表該期間的基本訂
 
 * 郵遞區號數量臨界值
 
-當您更新中的臨界值時 [以選取臨界值為基準的科目節段](#account-segments-basedon-segments) 面板，您將在以下位置檢視效果：
+當您根據選取的臨界值](#account-segments-basedon-segments)面板更新[帳戶區段中的臨界值時，您將在下列位置檢視效果：
 
 * [每個帳戶的每週（或每月）裝置](#devices-week-account)
 
@@ -85,11 +85,11 @@ X軸代表以目前間隔為基礎的時間，而Y軸代表該期間的基本訂
 
 >[!NOTE]
 >
->每個臨界值都會設定為預設值4。 也就是說，「一般用途」頁面會顯示使用超過四部裝置，且使用超過四部不同IP位址之內容的訂閱者的分析。 *和* 四個以上不同的郵遞區號。
+>每個臨界值都會設定為預設值4。 也就是說，「一般使用方式」頁面會針對使用超過四個裝置的訂閱者顯示分析，這些裝置使用來自四個以上不同IP位址、*和*&#x200B;四個以上不同郵遞區號的內容。
 
 ### 以選取的臨界值為基準的科目節段 {#account-segments-basedon-segments}
 
-此 **以選取臨界值為基準的科目節段** 面板提供您設定裝置數、IP數和郵遞區號數臨界值（介於1到10之間）的選項。
+以選取的臨界值為基礎的&#x200B;**帳戶區段**&#x200B;面板提供您設定裝置數、IP數和郵遞區號數臨界值（介於1到10之間）的選項。
 
 圖表顯示以下內容：
 
@@ -121,7 +121,7 @@ X軸繪製帳戶數，Y軸繪製裝置數。 它會根據您為每個帳戶設�
 
 ## 每個帳戶的每週（或每月）位置 {#locations-week-account}
 
-類似於的量度 [每個帳戶的每週（或每月）裝置](#devices-week-account)，每個帳戶的每週（或每月）位置量度可讓您從不同位置分析訂閱者帳戶使用情況。 X軸繪製「帳戶數」，Y軸繪製「位置數」。
+類似於每個帳戶](#devices-week-account)每週（或每月） [個裝置的量度，每個帳戶的每週（或每月）位置量度可讓您從不同位置分析訂閱者帳戶的使用情況。 X軸繪製「帳戶數」，Y軸繪製「位置數」。
 
 ![](assets/graph-loc-week-acc.png)
 
@@ -135,7 +135,7 @@ X軸繪製帳戶數，Y軸繪製裝置數。 它會根據您為每個帳戶設�
 
 ## 每個帳戶每週（或每月）的IP {#ip-week-account}
 
-類似於的量度 **每個帳戶每週的位置數**，則 **每個帳戶每週IP數量** 量度可讓您評估目前區段的串流來源的變化量。
+類似於每個帳戶&#x200B;**每週**&#x200B;個位置數的量度，每個帳戶每週&#x200B;**個IP數目**&#x200B;量度可讓您評估目前區段的串流來源的變更量。
 
 x軸會繪製「帳戶數」，y軸會繪製「IP數」。
 
@@ -151,13 +151,13 @@ x軸會繪製「帳戶數」，y軸會繪製「IP數」。
 
 ## 科目節段 — 歷史檢視表 {#account-segment-historical-view}
 
-「歷史檢視」長條圖可協助您比較不同時間間隔的使用狀況測量結果。 此外，它還會集體繪製各種使用量度，例如 [每個帳戶的每週（或每月）裝置](#devices-week-account)， [每個帳戶的每週（或每月）位置](#locations-week-account)、和 [每個帳戶每週（或每月）的IP](#ip-week-account).
+「歷史檢視」長條圖可協助您比較不同時間間隔的使用狀況測量結果。 此外，它也會集體繪製各種使用量度，例如每個帳戶](#devices-week-account)每週（或每月）的[個裝置、每個帳戶](#locations-week-account)每週（或每月）的[個位置，以及每個帳戶](#ip-week-account)每週（或每月）的[個IP。
 
 * x軸繪製時間間隔，y軸繪制訂戶帳戶、裝置、位置和IP的數目。
 
 * 橙色長條代表不同時間間隔中的區段。
 
-* 折線圖會繪製以下專案的變更： [每個帳戶的每週（或每月）裝置](#devices-week-account)， [每個帳戶的每週（或每月）位置](#locations-week-account)、和 [每個帳戶每週（或每月）的IP](#ip-week-account) 間隔內的值，根據臨界值。
+* 折線圖會根據臨界值，繪製時間間隔內每個帳戶](#devices-week-account)每週（或每月）的[裝置、每個帳戶](#locations-week-account)每週（或每月）的[位置，以及每個帳戶](#ip-week-account)每週（或每月）的[IP值的變更。
 
 ![](assets/historical-view.png)
 

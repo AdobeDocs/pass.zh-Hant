@@ -4,7 +4,7 @@ description: 動態使用者端註冊API
 exl-id: 06a76c71-bb19-4115-84bc-3d86ebcb60f3
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '930'
+source-wordcount: '904'
 ht-degree: 0%
 
 ---
@@ -19,8 +19,8 @@ ht-degree: 0%
 
 目前，Adobe Pass驗證識別及註冊應用程式的方式有兩種：
 
-* 瀏覽器型使用者端是透過允許註冊 [網域清單](/help/authentication/programmer-overview.md)
-* 原生應用程式使用者端(例如iOS和Android應用程式)會透過簽署的請求者機制進行註冊。
+* 以瀏覽器為基礎的使用者端已透過允許的[網域清單](/help/authentication/programmer-overview.md)登入
+* 原生應用程式使用者端(例如iOS和Android應用程式)會透過已簽署的請求者機制進行註冊。
 
 Adobe Pass驗證會建議註冊應用程式的新機制。 此機制於以下段落中說明。
 
@@ -28,11 +28,13 @@ Adobe Pass驗證會建議註冊應用程式的新機制。 此機制於以下段
 
 ### 技術原因 {#reasons}
 
-Adobe Pass驗證中的驗證機制仰賴工作階段Cookie，原因如下 [Android Chrome自訂標籤](https://developer.chrome.com/multidevice/android/customtabs){target=_blank} and [Apple Safari View Controller](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}，此目標無法再達成。
+Adobe Pass驗證中的驗證機制依賴工作階段Cookie，但由於[Android Chrome自訂標籤](https://developer.chrome.com/multidevice/android/customtabs){target=_blank}和[Apple Safari檢視控制器](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller){target=_blank}，此目標無法再達成。
 
-由於存在這些限制，Adobe會為所有使用者端引入新的註冊機制。 此變數以OAuth 2.0 RFC為基礎，包含下列步驟：
+由於存在這些限制，Adobe會為所有使用者端引入新的註冊機制。 它以OAuth 2.0 RFC為基礎，包含
+，共執行下列步驟：
 
-1. 從TVE儀表板擷取軟體陳述式
+1. 從TVE擷取軟體陳述式
+儀表板
 1. 取得使用者端認證
 1. 取得存取權杖
 
@@ -44,13 +46,13 @@ Adobe Pass驗證中的驗證機制仰賴工作階段Cookie，原因如下 [Andro
 >
 >使用軟體陳述式時，將不再需要已簽署的請求者ID機制。
 
-如需如何建立軟體陳述式的詳細資訊，請造訪 [在TVE儀表板中註冊使用者端](/help/authentication/dynamic-client-registration.md).
+如需有關如何建立軟體陳述式的詳細資訊，請造訪[TVE儀表板中的使用者端註冊](/help/authentication/dynamic-client-registration.md)。
 
 ### 取得使用者端認證 {#clientCredentials}
 
 從TVE Dashboard擷取軟體陳述式後，您需要向Adobe Pass授權伺服器註冊應用程式。 執行/register呼叫並擷取您的唯一使用者端識別碼，以執行此操作。
 
-**請求**
+**要求**
 
 | HTTP呼叫 |                    |
 |-----------|--------------------|
@@ -80,7 +82,7 @@ Adobe Pass驗證中的驗證機制仰賴工作階段Cookie，原因如下 [Andro
 | client_secret | 字串 | 強制 |
 | client_id_issued_at | 長 | 強制 |
 | redirect_uris | 字串清單 | 強制 |
-| grant_types | 字串清單<br/> **接受的值**<br/> `client_credentials`：由不安全的使用者端使用，例如Android SDK。 | 強制 |
+| grant_types | 字串清單<br/> **接受值**<br/> `client_credentials`：由不安全的使用者端使用，例如Android SDK。 | 強制 |
 | 錯誤 | **接受的值**<ul><li>invalid_request</li><li>invalid_redirect_uri</li><li>invalid_software_statement</li><li>unapproved_software_statement</li></ul> | 錯誤流程中的必要專案 |
 
 
@@ -157,7 +159,7 @@ Pragma: no-cache
 >
 >目前，存取權杖有24小時的存留時間。
 
-**請求**
+**要求**
 
 
 | **HTTP呼叫** | |
@@ -177,7 +179,7 @@ Pragma: no-cache
 | --- | --- | --- |
 | `access_token` | 您用來呼叫Adobe Pass API的存取權杖值 | 強制 |
 | `expires_in` | access_token過期前的秒數 | 強制 |
-| `token_type` | 權杖的型別 **持有者** | 強制 |
+| `token_type` | 語彙基元&#x200B;**持有者**&#x200B;的型別 | 強制 |
 | `created_at` | 權杖的問題時間 | 強制 |
 | **回應標頭** | | |
 | `Content-Type` | application/json | 強制 |
@@ -232,9 +234,9 @@ Pragma: no-cache
 
 ## 執行驗證要求 {#autheticationRequests}
 
-使用存取權杖執行Adobe Pass [驗證API呼叫](/help/authentication/initiate-authentication.md). 為此，需要以下列方式之一將存取權杖新增到API請求中：
+使用存取權杖執行Adobe Pass [驗證API呼叫](/help/authentication/initiate-authentication.md)。 為此，需要以下列方式之一將存取權杖新增到API請求中：
 
-* 將新的查詢引數新增到請求中。 此新引數稱為 **access_token**.
+* 將新的查詢引數新增到請求中。 該新引數稱為&#x200B;**access_token**。
 
 * 透過將新的HTTP標頭新增到請求：授權：持有人。 建議您使用HTTP標頭，因為查詢字串傾向於顯示在伺服器記錄中。
 
@@ -248,7 +250,7 @@ Pragma: no-cache
 
 ### 執行驗證要求範例：
 
-**正在傳送存取權杖作為請求引數：**
+**正在傳送存取權杖做為要求引數：**
 
 ```HTTPS
 GET adobe-services/config?access_token=<access_token>&requestor_id=... HTTP/1.1
@@ -256,7 +258,7 @@ GET adobe-services/config?access_token=<access_token>&requestor_id=... HTTP/1.1
 Host: sp.auth.adobe.com
 ```
 
-**以HTTP標頭傳送存取權杖：**
+**正在傳送存取權杖做為HTTP標頭：**
 
 ```HTTPS
 POST adobe-services/sessionDevice?device_id=platformDeviceId HTTP/1.1

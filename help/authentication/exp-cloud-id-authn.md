@@ -4,7 +4,7 @@ description: 在Adobe Pass驗證中使用Experience CloudID
 exl-id: 03354c01-5aad-4d81-beee-1c3834599134
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '397'
+source-wordcount: '396'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ Experience CloudID （簡稱ECID）是Adobe Experience Cloud為您的應用程�
 
 ### JS SDK {#js-sdk}
 
-若是JavaScript，您需要在對應中將ECID作為第三個引數傳遞給setRequestor呼叫。
+針對JavaScript，您必須在對應中將ECID作為第三個引數傳遞至setRequestor呼叫。
 
 **使用範例：**
 
@@ -61,7 +61,7 @@ accessEnabler.setOptions(
 
 ### Android/fireTV SDK {#android-sdk}
 
-對於Android/fireTV SDK，此機制類似於iOS。 只有引數名稱不同。 此API已記錄在此處。
+Android/fireTV SDK的機制類似於iOS。 只有引數名稱不同。 此API已記錄在此處。
 
 **使用範例：**
 
@@ -76,7 +76,7 @@ accessEnabler.setOptions(options);
 
 ### 無使用者端API {#clientless-api}
 
-透過REST API使用Adobe Pass時， **ECID** 值應傳送 **在所有API上** 作為引數，名為 **&#39;ap_vi&#39;**.
+透過Adobe Pass的REST API使用時，應在所有API **上**&#x200B;將&#x200B;**ECID**&#x200B;值當作名為&#x200B;**&#39;ap_vi&#39;**&#x200B;的引數傳送。
 
 **使用範例：**
 

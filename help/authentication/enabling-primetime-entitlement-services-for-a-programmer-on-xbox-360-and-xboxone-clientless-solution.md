@@ -4,7 +4,7 @@ description: 在Xbox 360和XboxOne無使用者端上啟用程式設計師的Adob
 exl-id: ff7254de-9ea4-4c27-a186-d1c2eea12222
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '444'
+source-wordcount: '453'
 ht-degree: 0%
 
 ---

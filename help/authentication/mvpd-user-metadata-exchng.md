@@ -4,7 +4,7 @@ description: MVPD使用者中繼資料交換
 exl-id: 8bce6acc-cd33-476c-af5e-27eb2239cad1
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '943'
+source-wordcount: '940'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ MVPD會維護其客戶的使用者特定中繼資料，這些中繼資料在某�
 
 目前，程式設計師API、Adobe Pass驗證和MVPD授權器都僅支援通道層級的授權。 通道在程式設計師的getAuthorization() API呼叫中指定為純文字字串。 此字串會一直傳播至MVPD的授權後端：
 
-從程式設計師的應用程式或網站，使用者會選擇支援XACML的MVPD （在此範例中為「TNT」）。 如需XACML的相關資訊，請參閱 [可擴充存取控制標籤語言](https://en.wikipedia.org/wiki/XACML){target=_blank}.
+從程式設計師的應用程式或網站，使用者會選擇支援XACML的MVPD （在此範例中為「TNT」）。 如需XACML的相關資訊，請參閱[可延伸存取控制標籤語言](https://en.wikipedia.org/wiki/XACML){target=_blank}。
 程式設計師的應用程式會形成包含資源及其中繼資料的AuthZ請求。  此範例在頻道元素的媒體屬性中納入「pg」的MPAA評等：
 
 ```XML
@@ -105,13 +105,13 @@ Adobe Pass驗證會進行下列假設：
 
 ### 附註 {#notes-mvpd-progr-metadata-exch-flow}
 
-**資源標準化與驗證。** 資源ID可以純字串或MRSS字串形式傳遞。 程式設計師可以決定使用純字串格式或MRSS，但必須事先與MVPD達成協定，以便MVPD知道如何處理該資源。
+**資源標準化及驗證。**&#x200B;資源ID可以純字串或MRSS字串形式傳遞。 程式設計師可以決定使用純字串格式或MRSS，但必須事先與MVPD達成協定，以便MVPD知道如何處理該資源。
 
-**資源ID和中繼資料規格。** Adobe Pass驗證會使用RSS標準搭配Media RSS擴充功能來指定資源及其中繼資料。 Adobe Pass驗證結合Media RSS擴充功能後，可支援多種中繼資料，例如家長監護(透過 `<media:rating>`)或地理位置(`<media:location>`)。
+**資源ID和中繼資料規格。** Adobe Pass驗證使用具有Media RSS副檔名的RSS標準來指定資源及其中繼資料。 Adobe Pass驗證結合Media RSS擴充功能可支援各種中繼資料，例如家長監護（透過`<media:rating>`）或地理位置(`<media:location>`)。
 
 Adobe Pass驗證也可針對需要RSS的MVPD，支援從舊版頻道字串到對應RSS資源的透明轉換。 另一方面，Adobe Pass驗證支援將RSS+MRSS轉換為純頻道標題，適用於僅限頻道的MVPD。
 
-**Adobe Pass驗證可確保與現有整合的完整回溯相容性。** 也就是說，對於使用管道層級驗證的程式設計人員而言，Adobe Pass驗證作業會小心地在將管道ID傳送給可瞭解該格式的MVPD之前，先以必要的格式將其封裝。 反之亦然：如果程式設計師以新格式指定其所有資源，且僅針對進行通道層級授權的MVPD授權，Adobe Pass驗證會將新格式轉譯為簡單的通道字串。
+**Adobe Pass驗證可確保與現有整合的完全回溯相容性。**&#x200B;也就是說，對於使用管道層級驗證的程式設計師而言，Adobe Pass驗證在將管道ID傳送給瞭解該格式的MVPD之前，會注意以必要的格式封裝它。 反之亦然：如果程式設計師以新格式指定其所有資源，且僅針對進行通道層級授權的MVPD授權，Adobe Pass驗證會將新格式轉譯為簡單的通道字串。
 
 ## 使用者中繼資料使用案例 {#user-metadata-use-cases}
 

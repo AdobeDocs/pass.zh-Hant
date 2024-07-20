@@ -1,10 +1,10 @@
 ---
 title: Authentication iOS / tvOS 3.8.1發行說明
 description: Authentication iOS / tvOS 3.8.1發行說明
-exl-id: c403a80b-717c-4274-8d86-d96b7e81e624
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+exl-id: e1e24b47-e5b7-4706-8690-ad71dee35cb8
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '89'
+source-wordcount: '96'
 ht-degree: 0%
 
 ---
@@ -29,6 +29,6 @@ Adobe Pass驗證： iOS / tvOS 3.8.1
 
 新增儲存管理解決方案的內部架構改良。
 
-## 發行套件 {#rel=pkg-iostvos381}
+## 發行封裝{#rel=pkg-iostvos381}
 
-您可以從下載iOS/tvOS SDK v3.8.1 [此處](https://tve.zendesk.com/hc/en-us/articles/204963209).
+您可以從[這裡](https://tve.zendesk.com/hc/en-us/articles/204963209)下載iOS/tvOS SDK v3.8.1。

@@ -1,13 +1,13 @@
 ---
 title: API總覽
 description: API總覽
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '2054'
+source-wordcount: '2043'
 ht-degree: 0%
 
 ---
-
 
 # 並行監視使用API {#cmu-api-usage}
 
@@ -17,18 +17,18 @@ ht-degree: 0%
 
 ## API總覽 {#api-overview}
 
-Concurrency Monitoring Usage (CMU)實作為WOLAP （Web型） [線上分析處理](http://en.wikipedia.org/wiki/Online_analytical_processing))專案。 CMU是通用的業務報告Web API，由資料倉儲提供支援。 它用作HTTP查詢語言，可讓一般OLAP作業以RESTfully方式執行。
+並行監視使用(CMU)是以WOLAP （Web式[線上分析處理](http://en.wikipedia.org/wiki/Online_analytical_processing)）專案來實作。 CMU是通用的業務報告Web API，由資料倉儲提供支援。 它用作HTTP查詢語言，可讓一般OLAP作業以RESTfully方式執行。
 
 
 >[!NOTE]
 >
 >CMU API並非一般可用。 如需瞭解可用性問題，請聯絡您的Adobe代表。
 
-CMU API提供基礎OLAP立方結構的階層檢視。 每個資源([維度](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics) 在維度階層中，對應為URL路徑區段)，產生報表包含（彙總） [量度](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics) 用於目前的選取範圍。 每個資源都指向其父資源（用於累計）及其子資源（用於向下鑽研）。 切片和切割是透過將維度釘選到特定值或範圍的查詢字串引數實現的。
+CMU API提供基礎OLAP立方結構的階層檢視。 每個資源（[維度](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics)，在維度階層中，對應為URL路徑區段）會產生包含（彙總） [個量度](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics)的報表，以用於目前的選取專案。 每個資源都指向其父資源（用於累計）及其子資源（用於向下鑽研）。 切片和切割是透過將維度釘選到特定值或範圍的查詢字串引數實現的。
 
 REST API會根據維度路徑、提供的篩選器和選取的量度，在請求中指定的時間間隔內提供可用資料（如果未提供，則會退回預設值）。 時間範圍不會套用至不包含時間維度（年、月、日、小時、分鐘、秒）的報表。
 
-端點URL根路徑會傳回單一記錄中的整體彙總量度，以及可用向下切入選項的連結。 API版本會對應為端點URI路徑的尾端區段。 例如， https://mgmt.auth.adobe.com/cmu/*v2* 表示使用者端將存取WOLAP版本2。
+端點URL根路徑會傳回單一記錄中的整體彙總量度，以及可用向下切入選項的連結。 API版本會對應為端點URI路徑的尾端區段。 例如，https://mgmt.auth.adobe.com/cmu/*v2*&#x200B;表示使用者端將存取WOLAP版本2。
 
 可透過回應中所包含的連結來探索可用的URL路徑。 有效的URL路徑會被保留，以對應基礎向下鑽研樹狀結構中包含（預先）彙總量度的路徑。 /dimension1/dimension2/dimension3格式的路徑將反映這三個維度（相當於SQL子句GROUP BY dimension1、dimension2、dimension3）的預先彙總。 如果這樣的預先彙總不存在，且系統無法即時運算它，則API將傳回「404找不到」回應。
 
@@ -36,11 +36,11 @@ REST API會根據維度路徑、提供的篩選器和選取的量度，在請求
 
 下列向下展開樹狀結構說明CMU 2.0中可用的維度（資源）：
 
-**CM租使用者可用的Dimension**
+CM租使用者可使用&#x200B;**個Dimension**
 
 ![](assets/new_breakdown.png)
 
-A `GET` 至 `https://mgmt.auth.adobe.com/cmu/v2` API端點將傳回包含以下內容的表示法：
+`https://mgmt.auth.adobe.com/cmu/v2` API端點的`GET`將傳回包含：
 
 * 可用根目錄向下鑽研路徑的連結：
 
@@ -62,10 +62,10 @@ A `GET` 至 `https://mgmt.auth.adobe.com/cmu/v2` API端點將傳回包含以下�
 
 下列篩選選項可供使用：
 
-* **等於** 將維度名稱設為查詢字串中的特定值可提供篩選器。
-* **在** 透過使用不同的值多次新增相同的dimension-name引數可以指定篩選器： dimension=value1&amp;dimension=value2
-* **不等於** 篩選器必須使用「！」 維度名稱后的符號，會產生&#39;！=&#39; &quot;operator&quot;： dimension！=value
-* **不在……之內** 篩選器需要&#39;！=&#39;運運算元使用多次，每個值各使用一次： dimension！=value1&amp;dimension！=value2&amp;...
+* 將維度名稱設定為查詢字串中的特定值，即可提供&#x200B;**等於**&#x200B;篩選器。
+* 透過使用不同的值多次新增相同的維度名稱引數，可以指定&#x200B;**IN**&#x200B;篩選器： dimension=value1&amp;dimension=value2
+* **不等於**&#x200B;篩選器必須使用&#39;！&#39; 維度名稱后的符號，會產生&#39;！=&#39; &quot;operator&quot;： dimension！=value
+* **NOT IN**&#x200B;篩選器需要&#39;！=&#39;運運算元使用多次，每個值各使用一次： dimension！=value1&amp;dimension！=value2&amp;...
 
 
 查詢字串中的維度名稱也有特殊用法：如果維度名稱用作無值的查詢字串引數，這會指示API傳回報表中包含該維度的投影。
@@ -78,7 +78,7 @@ CMU查詢範例：
 | /dimension1/dimension2/dimension3？dimension1=value1&amp;dimension1=value2 | 從投影中選取*，其中dimension1在(&#39;value1&#39;， &#39;value2&#39;) GROUP BY dimension1， dimension2， dimension3 |
 | /dimension1/dimension2/dimension3？dimension1！=value1 | 從投影中選取*，其中dimension1 &lt;> &#39;value1&#39;依dimension1、dimension2、dimension3分組 |
 | /dimension1/dimension2/dimension3？dimension1！=value1&amp;dimension2！=value2 | 從投影中選取*，其中維度1不在(&#39;value1&#39;， &#39;value2&#39;)群組依據dimension1， dimension2， dimension3 |
-| 假設沒有直接路徑： /dimension1/dimension3，但有路徑： /dimension1/dimension2/dimension3  </br></br> /dimension1？dimension3 | 選取*從投影群組BY dimension1，dimension3 |
+| 假設沒有直接路徑： /dimension1/dimension3，但有路徑： /dimension1/dimension2/dimension3 </br></br> /dimension1？dimension3 | 選取*從投影群組BY dimension1，dimension3 |
 
 >[!NOTE]
 >
@@ -130,8 +130,8 @@ CMU API保留的查詢字串引數：
 使用者端可使用下列內容交涉策略（優先順序由清單中的位置指定 — 優先順序）：
 
 1. URL路徑的最後一個區段後面會加上「副檔名」：例如/cmu/v2/tenant/year/month/day.xml。 如果URL包含查詢字串，則副檔名必須位於問號之前： `/cmu/v2/tenant/year/month/day.csv?mvpd=SomeMVPD`
-1. 格式查詢字串引數：例如 `/cmu/report?format=json`
-1. 標準HTTP Accept標頭：例如 `Accept: application/xml`
+1. 格式查詢字串引數： `/cmu/report?format=json`
+1. 標準HTTP Accept標頭：例如`Accept: application/xml`
 
 「擴充功能」和查詢引數都支援下列值：
 
@@ -144,7 +144,7 @@ CMU API保留的查詢字串引數：
 
 ## 超文字應用程式語言(HAL) {#hypertext-app-lang}
 
-針對JSON和XML，裝載將編碼為HAL，如下所述： `http://stateless.co/hal_specification.html`.
+針對JSON和XML，裝載將編碼為HAL，如下所述： `http://stateless.co/hal_specification.html`。
 
 實際報表（稱為「報表」的巢狀標籤/屬性）包含實際記錄清單，其中包含所有已選取/適用的維度和量度及其值，編碼如下：
 
@@ -174,9 +174,9 @@ CMU API保留的查詢字串引數：
 
 對於XML和JSON格式，記錄中的欄位（維度和量度）順序未指定，但是一致的（所有記錄的順序將相同）。 不過，使用者端不應依賴記錄中欄位的任何特定順序。
 
-資源連結（JSON中的「本身」和XML中的「href」資源屬性）包含目前路徑和用於內嵌報告的查詢字串。 查詢字串將會顯示所有隱含和明確的引數，因此裝載將會明確指出使用的時間間隔、隱含的篩選器（如果有的話）等等。 資源內的其餘連結將包含可以依循的所有可用區段，以向下鑽研目前的資料。 也會提供彙總連結，且會指向父路徑（如果有的話）。 此 `href` 向下切入/向上連結的值僅包含URL路徑（其中不包含查詢字串，因此使用者端需要視需要附加它）。 請注意，並非目前資源使用（或暗示）的所有查詢字串引數都適用於「向上彙整」或「向下鑽研」連結（例如，篩選器可能不適用於子資源或超級資源）。
+資源連結（JSON中的「本身」和XML中的「href」資源屬性）包含目前路徑和用於內嵌報告的查詢字串。 查詢字串將會顯示所有隱含和明確的引數，因此裝載將會明確指出使用的時間間隔、隱含的篩選器（如果有的話）等等。 資源內的其餘連結將包含可以依循的所有可用區段，以向下鑽研目前的資料。 也會提供彙總連結，且會指向父路徑（如果有的話）。 向下切入/向上彙整連結的`href`值只包含URL路徑（它不包含查詢字串，因此使用者端需要視需要附加它）。 請注意，並非目前資源使用（或暗示）的所有查詢字串引數都適用於「向上彙整」或「向下鑽研」連結（例如，篩選器可能不適用於子資源或超級資源）。
 
-範例(假設我們有一個稱為使用者端的量度，而且有一個預先彙總 `year/month/day/...`)：
+範例（假設我們有一個稱為使用者端的量度，且有`year/month/day/...`的預先彙總）：
 
 * `https://mgmt.auth.adobe.com/cmu/v2/year/month.xml`
 
@@ -228,11 +228,11 @@ CMU API保留的查詢字串引數：
 report__<start-date>_<end-date>_<filter-values,...>.csv
 ```
 
-CSV將包含一個標題列，然後報告資料作為後續列。 標題列將包含所有維度，以及後面的所有量度。 報表資料的排序順序會反映在維度的順序中。 因此，如果資料依D1排序，然後依D2排序，CSV標題看起來會像這樣： `D1, D2, ...metrics....`
+CSV將包含一個標題列，然後報告資料作為後續列。 標題列將包含所有維度，以及後面的所有量度。 報表資料的排序順序會反映在維度的順序中。 因此，如果資料依D1排序，然後依D2排序，則CSV標頭看起來會像這樣： `D1, D2, ...metrics....`
 
 標題列中的欄位順序將反映表格資料的排序順序。
 
-範例： https://mgmt.auth.adobe.com/cmu/v2/year/month.csv將產生一個名為 ```report__2012-07-20_2012-08-20_1000.csv``` 包含下列內容：
+範例： https://mgmt.auth.adobe.com/cmu/v2/year/month.csv將產生一個名為```report__2012-07-20_2012-08-20_1000.csv```的檔案，其內容如下：
 
 | 年 | 月 | 使用者端 |
 |:----:|:-----:|:-------:|
@@ -241,14 +241,14 @@ CSV將包含一個標題列，然後報告資料作為後續列。 標題列將�
 
 ## 資料新鮮度 {#data-freshness}
 
-雖然請求包含Last-Modified標頭，但 **不會** 反映內文中報表的上次更新時間。 一般報表會定期計算，規則如下：
+雖然要求包含Last-Modified標頭，但&#x200B;**並非**&#x200B;反映內文中的報告上次更新的時間。 一般報表會定期計算，規則如下：
 
-* 如果時間詳細程度為 **年** 或 **月**，則報告每2天更新一次
-* 如果時間詳細程度為 **天**，則報告每3小時更新一次
-* 如果時間詳細程度為 **小時**，則報告會每小時更新一次
-* 如果時間詳細程度為 **分鐘**，則報告會每分鐘更新一次
+* 如果時間詳細程度是&#x200B;**年**&#x200B;或&#x200B;**月**，則報告會每2天更新一次
+* 如果時間詳細程度為&#x200B;**天**，則報告會每3小時更新一次
+* 如果時間詳細程度是&#x200B;**小時**，則報告會每小時更新一次
+* 如果時間詳細程度為&#x200B;**分鐘**，則報告會每分鐘更新一次
 
-此 **活動層級** 和 **並行層級** 報表會每天更新，無論時間詳細程度為何。
+**活動層級**&#x200B;和&#x200B;**並行層級**&#x200B;報告每天都會更新，無論時間詳細程度為何。
 
 ## GZIP壓縮 {#gzip-compression}
 

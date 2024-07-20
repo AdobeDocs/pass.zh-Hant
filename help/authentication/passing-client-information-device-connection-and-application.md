@@ -4,8 +4,8 @@ description: 傳遞使用者端資訊（裝置、連線和應用程式）
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '1681'
-ht-degree: 0%
+source-wordcount: '1643'
+ht-degree: 1%
 
 ---
 
@@ -31,31 +31,31 @@ ht-degree: 0%
 
 使用者端資訊包含：
 
-* **裝置** 使用者嘗試使用程式設計師內容之裝置的軟硬體屬性資訊。
-* **連線** 使用者連線至Adobe Pass Authentication Services和/或程式設計人員服務時所使用之裝置的連線屬性相關資訊（例如伺服器對伺服器實作）。
-* **應用** 關於使用者嘗試使用程式設計師內容之已註冊應用程式的資訊。
+* **裝置**&#x200B;使用者嘗試使用程式設計師內容之裝置的軟硬體屬性資訊。
+* **連線**&#x200B;使用者連線至Adobe Pass Authentication Services和/或程式設計師服務（例如伺服器對伺服器實作）之裝置連線屬性的相關資訊。
+* **應用程式**&#x200B;使用者嘗試使用程式設計師內容之註冊應用程式的資訊。
 
 使用者端資訊是使用下表呈現的金鑰建置的JSON物件。
 
 >[!NOTE]
 >
->下列專案 **金鑰** 為 **強制** 要在使用者端資訊JSON物件中傳送： **模型**， **osName**.
+>下列&#x200B;**金鑰**&#x200B;是使用者端資訊JSON物件中要傳送的&#x200B;**必要**： **模型**，**osName**。
 >
->下列按鍵有 **受限制** 值： `primaryHardwareType`， `osName`， `osFamily`， `browserName`， `browserVendor`， `connectionSecure`.
+>下列金鑰有&#x200B;**限制的**&#x200B;值： `primaryHardwareType`、`osName`、`osFamily`、`browserName`、`browserVendor`、`connectionSecure`。
 
 |   | 索引鍵 | 受限制 | 說明 | 可能的值 |
 |---|---|---|---|---|
-|            | primaryHardwaretype | #是 | 裝置的主要硬體型別。 | #限制值： Camera DataCollectionTerminal Desktop EmbeddedNetworkModule eReader遊戲主機GeolocationTracker眼鏡MediaPlayer手機支付終端機PluginModem SetTopBox TV Tablet WirelessHotspot腕錶未知 |
+|            | primaryHardwaretype | #是 | 裝置的主要硬體型別。 | #值受到限制：                                                                     相機                                                      DataCollectionTerminal                                                      案頭                                                      嵌入式網路模組                                                      電子閱讀器                                                      遊戲主控台                                                      GeolocationTracker                                                      眼鏡                                                      MediaPlayer                                                      行動電話                                                      支付終端機                                                      PluginModem                                                      SetTopBox                                                      TV                                                      平板電腦                                                      WirelessHotspot                                                      手錶                                                      未知 |
 | #mandatory | 模型 | 否 | 裝置的型號名稱。 | 例如iPhone、SM-G930V、AppleTV等。 |
 |            | 版本 | 否 | 裝置的版本。 | 例如2.0.1等。 |
 |            | 製造商 | 否 | 裝置的製造公司/組織。 | 例如三星、LG、ZTE、華為、摩托羅拉、Apple等。 |
 |            | 廠商 | 否 | 裝置的銷售公司/組織。 | 例如Apple、Samsung、LG、Google等。 |
-| #mandatory | osName | #是 | 裝置的作業系統(OS)名稱。 | #限制值： Android Chrome OS Linux Mac OS X OpenBSD Roku OS Windows iOS tvOS webOS |
-|            | osFamily | 是 | 裝置的作業系統(OS)群組名稱。 | #值受到限制： Android BSD Linux PlayStation OS Roku OS Symbian Tizen Windows iOS macOS tvOS webOS |
-|            | osVendor | 否 | 裝置的作業系統(OS)供應商。 | Amazon Apple Google LG Microsoft Mozilla Nintendo Nokia Roku Samsung Sony Tizen Project |
+| #mandatory | osName | #是 | 裝置的作業系統(OS)名稱。 | #值受到限制：                                                   Android                   Chrome作業系統                   Linux                   Mac作業系統                   OS X                   OpenBSD                   Roku OS                   Windows                   iOS                   tvOS                   webOS |
+|            | osFamily | 是 | 裝置的作業系統(OS)群組名稱。 | #值受到限制：                                                   Android                   BSD                   Linux                   PlayStation作業系統                   Roku OS                   Symbian                   Tizen                   Windows                   iOS                   macOS                   tvOS                   webOS |
+|            | osVendor | 否 | 裝置的作業系統(OS)供應商。 | Amazon                   Apple                   Google                   LG                   Microsoft                   Mozilla                   任天堂                   Nokia                   Roku                   Samsung                   Sony                   Tizen專案 |
 |            | osVersion | 否 | 裝置的作業系統(OS)版本。 | 例如10.2、9.0.1等。 |
-|            | browserName | #是 | 瀏覽器的名稱。 | #值受到限制： Android瀏覽器Chrome Edge Firefox Internet Explorer Opera Safari SeaMonkey Symbian瀏覽器 |
-|            | browserVendor | #是 | 瀏覽器的建置公司/組織。 | #限制值： Amazon Apple Google Microsoft Motorola Mozilla Netscape Nintendo Nokia Samsung Sony Ericsson |
+|            | browserName | #是 | 瀏覽器的名稱。 | #值受到限制：                                                   Android瀏覽器                   Chrome                   Edge                   Firefox                   Internet Explorer                   Opera                   Safari                   SeaMonke                   Symbian Browser |
+|            | browserVendor | #是 | 瀏覽器的建置公司/組織。 | #值受到限制：                                                   Amazon                   Apple                   Google                   Microsoft                   摩托羅拉                   Mozilla                   Netscape                   任天堂                   Nokia                   Samsung                   Sony Ericsson |
 |            | browserVersion | 否 | 裝置的瀏覽器版本。 | 例如60.0.3112 |
 |            | userAgent | 否 | 裝置的使用者代理。 | 例如Mozilla/5.0 (Macintosh；Intel Mac OS X 10_12_3) AppleWebKit/602.4.8 （KHTML，如Gecko）版本/10.0.3 Safari/602.4.8 |
 |            | displaywidth | 否 | 裝置的實體熒幕寬度。 |                                                                                                                                                                                                                                                                                                                                                           |
@@ -65,7 +65,7 @@ ht-degree: 0%
 |            | connectionIp | 否 | 用於傳送HTTP要求的裝置IP。 | 例如8.8.4.4 |
 |            | connectionPort | 否 | 用於傳送HTTP要求的裝置連線埠。 | 例如53124 |
 |            | connectionType | 否 | 網路連線型別。 | 例如WiFi、LAN、3G、4G、5G |
-|            | connectionSecure | #是 | 網路連線安全性狀態。 | #限制值： true — 若是安全網路false — 若是公用熱點 |
+|            | connectionSecure | #是 | 網路連線安全性狀態。 | #值受到限制：                                                   true — 在安全網路的情況下                   false — 在公開熱點的情況下 |
 |            | applicationId | 否 | 應用程式的唯一識別碼。 | 例如CNN |
 
 ## API參考 {#api-ref}
@@ -76,52 +76,52 @@ ht-degree: 0%
 
 Adobe Pass驗證服務支援以下列方式接收使用者端資訊：
 
-* 作為 **標題： &quot;X-Device-Info&quot;**
-* 作為 **查詢引數： &quot;device_info&quot;**
-* 作為 **post引數： &quot;device_info&quot;**
+* 作為&#x200B;**標頭： &quot;X-Device-Info&quot;**
+* 作為&#x200B;**查詢引數： &quot;device_info&quot;**
+* 作為&#x200B;**貼文引數： &quot;device_info&quot;**
 
 >[!IMPORTANT]
 >
->在所有三個案例中，標題或引數的裝載必須是 **Base64編碼和URL編碼**.
+>在這三種情況中，標頭或引數的承載必須是&#x200B;**Base64編碼和URL編碼**。
 
 **SDK**
 
-#### JavaScript SDK {#js-sdk}
+#### JAVASCRIPT SDK {#js-sdk}
 
 AccessEnabler JavaScript SDK預設會建置使用者端資訊JSON物件，除非覆寫，否則會傳遞至Adobe Pass驗證服務。
 
-AccessEnabler JavaScript SDK支援 **僅覆寫** 使用者端資訊JSON物件的「applicationId」金鑰透過 [setRequestor](/help/authentication/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options))的 *applicationId* options引數。
+AccessEnabler JavaScript SDK僅支援&#x200B;**透過[setRequestor](/help/authentication/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options))的&#x200B;*applicationId*選項引數，覆寫使用者端資訊JSON物件中的&quot;applicationId&quot;金鑰**。
 
 >[!CAUTION]
 >
->此 `applicationId` 引數值必須是純文字字串值。
->如果程式設計師應用程式決定傳遞applicationId，其餘的使用者端資訊金鑰仍會由AccessEnabler JavaScript SDK計算。
+>`applicationId`引數值必須是純文字字串值。
+>如果程式設計師應用程式決定傳遞applicationId，則其餘的使用者端資訊金鑰仍會由AccessEnabler JavaScript SDK計算。
 
 #### iOS/tvOS SDK {#ios-tvos-sdk}
 
 AccessEnabler iOS/tvOS SDK預設會建置使用者端資訊JSON物件，除非覆寫，否則會傳遞至Adobe Pass驗證服務。
 
-AccessEnabler iOS/tvOS SDK支援 **覆寫整個** 使用者端資訊JSON物件，透過 [setOptions](/help/authentication/iostvos-sdk-api-reference.md#setoptions)的裝置資訊引數。
+AccessEnabler iOS/tvOS SDK支援&#x200B;**透過[setOptions](/help/authentication/iostvos-sdk-api-reference.md#setoptions)的device_info引數覆寫整個**&#x200B;使用者端資訊JSON物件。
 
 >[!CAUTION]
 >
->此 *device_info* 引數值必須是 **Base64編碼** *NSString* 值。
+>*device_info*&#x200B;引數值必須是&#x200B;**Base64編碼** *NSString*&#x200B;值。
 >
->如果程式設計師應用程式決定傳遞 *device_info*，則由AccessEnabler iOS/tvOS SDK運算出的所有使用者端資訊金鑰將會覆寫。 因此，計算並傳遞儘可能多的索引鍵值非常重要。 如需實作的詳細資訊，請參閱 [概觀](#pass-client-info-overview) 表格和 [iOS/tvOS逐步指南](#ios-tvos).
+>如果程式設計師應用程式決定傳遞&#x200B;*device_info*，則會覆寫AccessEnabler iOS/tvOS SDK所計算的所有使用者端資訊金鑰。 因此，計算並傳遞儘可能多的索引鍵值非常重要。 如需實作的詳細資訊，請參閱[總覽](#pass-client-info-overview)表格和[iOS/tvOS逐步指南](#ios-tvos)。
 
 #### Android/FireOS SDK {#and-fire-os-sdk}
 
-此 `AccessEnabler` Android/FireOS SDK預設會建置使用者端資訊JSON物件，除非覆寫，否則會傳遞至Adobe Pass驗證服務。
+`AccessEnabler` Android/FireOS SDK預設會建置使用者端資訊JSON物件，除非覆寫，否則會傳遞至Adobe Pass驗證服務。
 
-此 `AccessEnabler` Android/FireOS SDK支援 **覆寫整個** 使用者端資訊JSON物件，透過 [setOptions](/help/authentication/android-sdk-api-reference.md#setOptions)的/[setOptions](/help/authentication/amazon-fireos-native-client-api-reference.md#fire_setOption)的 `device_info` 引數。
+`AccessEnabler` Android/FireOS SDK支援&#x200B;**透過[setOptions](/help/authentication/android-sdk-api-reference.md#setOptions)的/[setOptions](/help/authentication/amazon-fireos-native-client-api-reference.md#fire_setOption)的`device_info`引數覆寫整個**&#x200B;使用者端資訊JSON物件。
 
 >[!NOTE]
 >
->此 `device_info` 引數值必須是 **Base64編碼** 字串值。
+>`device_info`引數值必須是&#x200B;**Base64編碼**&#x200B;字串值。
 
 >[!IMPORTANT]
 >
->如果程式設計師應用程式決定傳遞 `device_info`，然後由計算的所有使用者端資訊金鑰 `AccessEnabler` 將覆寫Android/FireOS SDK。 因此，計算並傳遞儘可能多的索引鍵值非常重要。 如需實作的詳細資訊，請參閱 [概觀](#pass-client-info-overview) 表格和 [Android](#android) 和 [FireOS](#fire-tv) 逐步指南。
+>如果程式設計師應用程式決定傳遞`device_info`，則會覆寫`AccessEnabler` Android/FireOS SDK所計算的所有使用者端資訊金鑰。 因此，計算並傳遞儘可能多的索引鍵值非常重要。 如需實作的詳細資訊，請參閱[總覽](#pass-client-info-overview)表格以及[Android](#android)和[FireOS](#fire-tv)逐步指南。
 
 ## 逐步指南 {#cookbooks}
 
@@ -129,41 +129,41 @@ AccessEnabler iOS/tvOS SDK支援 **覆寫整個** 使用者端資訊JSON物件�
 
 >[!IMPORTANT]
 >
->標示為的金鑰  **！** 為強制傳送。
+>以&#x200B;**標籤的金鑰！**&#x200B;為強制傳送。
 
 ### Android {#android}
 
 裝置資訊的建構方式如下：
 
-|   | 索引鍵 | 來源 | 值（範例） |
+|   | 索引鍵 | Source | 值（範例） |
 |---|---------------|-----------------------------|---------------|
-| ! | 模型 | Build.MODEL | GT-I9505 |
+| ！ | 模型 | Build.MODEL | GT-I9505 |
 |   | 廠商 | Build.BRAND | samsung |
 |   | 製造商 | Build.MANUFACTURER | samsung |
-| ! | 版本 | Build.DEVICE | jflte |
+| ！ | 版本 | Build.DEVICE | jflte |
 |   | displaywidth | DisplayMetrics.widthPixels | 600 |
 |   | displayheight | DisplayMetrics.heightPixels | 800 |
-| ! | osName | 硬式編碼 | Android |
-| ! | osVersion | Build.VERSION.RELEASE | 5.0.1 |
+| ！ | osName | 硬式編碼 | Android |
+| ！ | osVersion | Build.VERSION.RELEASE | 5.0.1 |
 
 連線資訊的建構方式如下：
 
-|   | 索引鍵 | 來源 | 值（範例） |
+|   | 索引鍵 | Source | 值（範例） |
 |---|---|---|---|
-| ! | connectionType | `<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>` `getSystemService(Context.CONNECTIVITY_SERVICE).getActiveNetworkInfo().getType()` | `"WIFI","BLUETOOTH","MOBILE","ETHERNET","VPN","DUMMY","MOBILE_DUN","WIMAX","notAccessible"` |
+| ！ | connectionType | `<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>` `getSystemService(Context.CONNECTIVITY_SERVICE).getActiveNetworkInfo().getType()` | `"WIFI","BLUETOOTH","MOBILE","ETHERNET","VPN","DUMMY","MOBILE_DUN","WIMAX","notAccessible"` |
 |   | connectionSecure |                                                                                                                                                           |                                                                                           |
 
 應用程式資訊的建構方式如下：
 
-|   | 索引鍵 | 來源 | 值（範例） |
+|   | 索引鍵 | Source | 值（範例） |
 |---|---------------|-----------|--------------|
 |   | applicationId | 硬式編碼 | CNN |
 
 >[!IMPORTANT]
 >
-必須將裝置、連線和應用程式資訊新增至相同的JSON物件。 之後，產生的物件必須 **Base64編碼**. 此外，若是Adobe Pass驗證REST API，該值必須為 **URL已編碼**.
+必須將裝置、連線和應用程式資訊新增至相同的JSON物件。 之後，產生的物件必須是&#x200B;**Base64編碼**。 此外，若是Adobe Pass驗證REST API，該值必須為&#x200B;**URL編碼**。
 
-**程式碼範例**
+**範常式式碼**
 
 ```JAVA
 private JSONObject computeClientInformation() {
@@ -241,72 +241,72 @@ private JSONObject computeClientInformation() {
 >[!NOTE]
 >
 **資源：**
-* 公用類別 [版本編號](https://developer.android.com/reference/android/os/Build.html){target=_blank} （位於Java開發人員檔案中）。
+* Java開發人員檔案中的公用類別[建置](https://developer.android.com/reference/android/os/Build.html){target=_blank}。
 
 ### FireTV {#fire-tv}
 
 裝置資訊的建構方式如下：
 
-|   | 索引鍵 | 來源 | 值（例如） |
+|   | 索引鍵 | Source | 值（例如） |
 |---|---------------|-----------------------------|--------------|
-| ! | 模型 | Build.MODEL | AFTM |
+| ！ | 模型 | Build.MODEL | AFTM |
 |   | 廠商 | Build.BRAND | Amazon |
 |   | 製造商 | Build.MANUFACTURER | Amazon |
-| ! | 版本 | Build.DEVICE | montoya |
+| ！ | 版本 | Build.DEVICE | montoya |
 |   | displaywidth | DisplayMetrics.widthPixels |              |
 |   | displayheight | DisplayMetrics.heightPixels |              |
-| ! | osName | 硬式編碼 | Android |
-| ! | osVersion | Build.VERSION.RELEASE | 5.1.1 |
+| ！ | osName | 硬式編碼 | Android |
+| ！ | osVersion | Build.VERSION.RELEASE | 5.1.1 |
 
 連線資訊的建構方式如下：
 
-|   | 索引鍵 | 來源 | 值（範例） |
+|   | 索引鍵 | Source | 值（範例） |
 |---|------------------|--------|---------------|
-| ! | connectionType |        |               |
+| ！ | connectionType |        |               |
 |   | connectionSecure |        |               |
 
 應用程式資訊的建構方式如下：
 
-|   | 索引鍵 | 來源 | 值（範例） |
+|   | 索引鍵 | Source | 值（範例） |
 |---|---------------|-----------|--------------|
 |   | applicationId | 硬式編碼 | CNN |
 
 >[!IMPORTANT]
 >
-必須將裝置、連線和應用程式資訊新增至相同的JSON物件。 之後，產生的物件必須 **Base64編碼**. 此外，若是Adobe Pass驗證REST API，該值必須為 **URL已編碼**.
+必須將裝置、連線和應用程式資訊新增至相同的JSON物件。 之後，產生的物件必須是&#x200B;**Base64編碼**。 此外，若是Adobe Pass驗證REST API，該值必須為&#x200B;**URL編碼**。
 
 >[!NOTE]
 >
 **資源：**
-* 公用類別 [建置](https://developer.android.com/reference/android/os/Build.html){target=_blank} （位於Android開發人員檔案中）。
+* Android開發人員檔案中的公用類別[組建](https://developer.android.com/reference/android/os/Build.html){target=_blank}。
 * [識別FireTV裝置](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html){target=_blank}
 
 ### iOS/tvOS {#ios-tvos}
 
 裝置資訊的建構方式如下：
 
-|   | 索引鍵 | 來源 | 值（範例） |
+|   | 索引鍵 | Source | 值（範例） |
 |---|---------------|------------------------|--------------|
-| ! | 模型 | uname.machine | iPhone |
+| ！ | 模型 | uname.machine | iPhone |
 |   | 廠商 | 硬式編碼 | Apple |
 |   | 製造商 | 硬式編碼 | Apple |
-| ! | 版本 | uname.machine | 8,1 |
+| ！ | 版本 | uname.machine | 8,1 |
 |   | displaywidth | UIScreen.mainScreen | 320 |
 |   | displayheight | UIScreen.mainScreen | 568 |
-| ! | osName | UIDevice.systemName | iOS |
-| ! | osVersion | UIDevice.systemVersion | 10.2 |
+| ！ | osName | UIDevice.systemName | iOS |
+| ！ | osVersion | UIDevice.systemVersion | 10.2 |
 
 連線資訊的建構方式如下：
 
-|   | 索引鍵 | 來源 | 值（範例） |
+|   | 索引鍵 | Source | 值（範例） |
 |---|------------------|-------------------------------------------|--------------|
-| ! | connectionType | [連線能力currentReachableStatus] |              |
+| ！ | connectionType | [連線能力currentReachableStatus] |              |
 |   | connectionSecure |                                           |              |
 
 
 應用程式資訊的建構方式如下：
 
-|   | 索引鍵 | 來源 | 值（範例） |
+|   | 索引鍵 | Source | 值（範例） |
 |---|---------------|-----------|--------------|
 |   | applicationId | 硬式編碼 | CNN |
 
@@ -314,7 +314,7 @@ private JSONObject computeClientInformation() {
 >
 必須將裝置、連線和應用程式資訊新增至相同的JSON物件。 之後，產生的物件必須經過Base64編碼。 此外，在使用Adobe Pass驗證REST API時，值必須經過URL編碼。
 
-**程式碼範例**
+**範常式式碼**
 
 ```C
 + (NSString *)computeClientInformation {        
@@ -393,69 +393,69 @@ private JSONObject computeClientInformation() {
 
 裝置資訊的建構方式如下：
 
-| 索引鍵 | 來源 | 值（範例） |                 |
+| 索引鍵 | Source | 值（範例） |                 |
 |-----|---------------|--------------------------------------------|-----------------|
-| ! | 模型 | 硬式編碼 | &quot;Roku&quot; |
+| ！ | 模型 | 硬式編碼 | &quot;Roku&quot; |
 |     | 廠商 | ifDeviceInfo.GetModelDetails().VendorName | &quot;Sharp&quot;、&quot;Roku&quot; |
 |     | 製造商 | ifDeviceInfo.GetModelDetails().VendorName | &quot;Sharp&quot;、&quot;Roku&quot; |
-| ! | 版本 | ifDeviceInfo.GetModelDetails().ModelNumber | 「5303X」 |
+| ！ | 版本 | ifDeviceInfo.GetModelDetails().ModelNumber | 「5303X」 |
 |     | displaywidth | ifDeviceInfo.GetDisplaySize().w | 1920 |
 |     | displayheight | ifDeviceInfo.GetDisplaySize().h | 1080 |
-| ! | osName | 硬式編碼 | &quot;Roku&quot; |
-| ! | osVersion | ifDeviceInfo.getVersion() |                 |
+| ！ | osName | 硬式編碼 | &quot;Roku&quot; |
+| ！ | osVersion | ifDeviceInfo.getVersion() |                 |
 
 連線資訊的建構方式如下：
 
-|   | 索引鍵 | 來源 | 值（範例） |
+|   | 索引鍵 | Source | 值（範例） |
 |---|---|---|---|
-| ! | connectionType | ifDeviceInfo.GetConnectionType() | 「WifiConnection」、「WiredConnection」 |
+| ！ | connectionType | ifDeviceInfo.GetConnectionType() | 「WifiConnection」、「WiredConnection」 |
 |   | connectionSecure | 硬式編碼 | 如果連線有線，則為true |
 
 應用程式資訊的建構方式如下：
 
-|   | 索引鍵 | 來源 | 值（範例） |
+|   | 索引鍵 | Source | 值（範例） |
 |---|---------------|-----------|--------------|
 |   | applicationId | 硬式編碼 | CNN |
 
 >[!IMPORTANT]
 >
-必須將裝置、連線和應用程式資訊新增至相同的JSON物件。 之後，產生的物件必須 **Base64編碼**. 此外，在使用Adobe Pass驗證REST API時，值必須經過URL編碼。
+必須將裝置、連線和應用程式資訊新增至相同的JSON物件。 之後，產生的物件必須是&#x200B;**Base64編碼**。 此外，在使用Adobe Pass驗證REST API時，值必須經過URL編碼。
 
 >[!NOTE]
 >
-如需詳細資訊，請參閱 [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md)
+如需詳細資訊，請參閱[ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md)
 
 ### XBOX 1/360 {#xbox}
 
 裝置資訊的建構方式如下：
 
-|   | 索引鍵 | 來源 | 值（範例） |
+|   | 索引鍵 | Source | 值（範例） |
 |---|---|---|---|
-| ! | 模型 | EasClientDeviceInformation.SystemProductName |                 |
+| ！ | 模型 | EasClientDeviceInformation.SystemProductName |                 |
 |   | 廠商 | 硬式編碼 | Microsoft |
 |   | 製造商 | 硬式編碼 | Microsoft |
-| ! | 版本 | EasClientDeviceInformation.SystemHardwareVersion |                 |
+| ！ | 版本 | EasClientDeviceInformation.SystemHardwareVersion |                 |
 |   | displaywidth | DisplayInformation.ScreenWidthInRawPixels | 1920 |
 |   | displayheight | DisplayInformation.ScreenHeightInRawPixels | 1080 |
-| ! | osName | EasClientDeviceInformation.OperatingSystem |                 |
-| ! | osVersion | EasClientDeviceInformation.SystemFirmwareVersion |                 |
+| ！ | osName | EasClientDeviceInformation.OperatingSystem |                 |
+| ！ | osVersion | EasClientDeviceInformation.SystemFirmwareVersion |                 |
 
 連線資訊的建構方式如下：
 
-|   | 索引鍵 | 來源 | 範例 |
+|   | 索引鍵 | Source | 範例 |
 |---|---|---|---|
-| ! | connectionType |                                                   |                   |
+| ！ | connectionType |                                                   |                   |
 |   | connectionSecure | 網路驗證型別 | 「無」、「Wpa」等 |
 
 應用程式資訊的建構方式如下：
 
-| 索引鍵 | 來源 | 值（範例） |
+| 索引鍵 | Source | 值（範例） |
 |---|---|---|
 | applicationId | 硬式編碼 | CNN |
 
 >[!IMPORTANT]
 >
-必須將裝置、連線和應用程式資訊新增至相同的JSON物件。 之後，產生的物件必須 **Base64編碼**. 此外，若是Adobe Pass驗證REST API，該值必須為 **URL已編碼**.
+必須將裝置、連線和應用程式資訊新增至相同的JSON物件。 之後，產生的物件必須是&#x200B;**Base64編碼**。 此外，若是Adobe Pass驗證REST API，該值必須為&#x200B;**URL編碼**。
 
 **資源**
 

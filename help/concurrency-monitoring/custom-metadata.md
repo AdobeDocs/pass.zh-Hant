@@ -1,14 +1,13 @@
 ---
 title: 自訂中繼資料
 description: 自訂中繼資料
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 0cfd1158-8c6c-47c2-b838-5490ff4bf0ce
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '367'
 ht-degree: 0%
 
 ---
-
-
 
 # 自訂中繼資料 {#cm}
 
@@ -40,10 +39,9 @@ ht-degree: 0%
 
 1. 客戶決定傳送引數群組，其值為「SPORTS」和「KIDS」。
 1. 應用程式將需要執行此動作：
-   * 若為體育頻道，在資料流初始化時，應用程式會傳送 ***type=SPORTS*** 作為查詢引數
-   * 對於具有兒童相關內容的頻道，在資料流初始化時，應用程式將會傳送 ***type=KIDS*** 作為查詢引數
+   * 若為體育頻道，在資料流初始化時，應用程式會傳送&#x200B;***type=SPORTS***&#x200B;作為查詢引數
+   * 對於具有兒童相關內容的頻道，在資料流初始化時，應用程式會傳送&#x200B;***type=KIDS***&#x200B;作為查詢引數
 1. 然後可以定義類似這樣的原則：
    * `GROUP by type HAVING COUNT(streamID) < 4) IF type=KIDS`
    * `GROUP by type HAVING COUNT(streamID) < 2) IF type=SPORTS`
 1. 這基本上代表當使用者觀看運動時，他/她無法在超過1部裝置上執行此操作，但當使用者觀看兒童內容時，最多允許在3部裝置上檢視。
-

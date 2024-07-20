@@ -1,13 +1,13 @@
 ---
 title: 節流機制
 description: 瞭解Adobe Pass驗證中使用的節流機制。 在此頁面中探索此機制的概觀。
-source-git-commit: 4f81f39427d87e4274c27d8f1b4bd1eb366d9abb
+exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '987'
 ht-degree: 0%
 
 ---
-
 
 # 節流機制 {#throttling-mechanism}
 
@@ -40,7 +40,7 @@ Pass Authentication引進節流機制，以確保在客戶的使用者之間公�
 
 伺服器對伺服器實作必須使用「X-Forwarded-For」標頭機制轉送其使用者端的IP位址。
 
-您可以找到更多有關如何傳遞X-Forwarded-For標頭的詳細資料 [此處](rest-api-cookbook-servertoserver.md).
+您可以在[這裡](rest-api-cookbook-servertoserver.md)找到更多有關如何傳遞X-Forwarded-For標頭的詳細資料。
 
 ### 實際限制和端點
 
@@ -76,19 +76,19 @@ Pass Authentication引進節流機制，以確保在客戶的使用者之間公�
 
 #### setRequestor
 
-使用達到節流閥限制時 `setRequestor` 函式中，SDK會傳回CFG429錯誤代碼，透過 `errorHandler` 回撥。
+從SDK使用`setRequestor`函式達到節流限制時，SDK會透過`errorHandler`回呼傳回CFG429錯誤代碼。
 
 #### getAuthorization
 
-使用達到節流閥限制時 `getAuthorization` 函式中，SDK會傳回Z100錯誤代碼，透過 `errorHandler` 回撥。
+從SDK使用`getAuthorization`函式達到節流限制時，SDK會透過`errorHandler`回呼傳回Z100錯誤代碼。
 
 #### checkPreauthorizedResources
 
-使用達到節流閥限制時 `checkPreauthorizedResources` 函式中，SDK會傳回P100錯誤代碼，透過 `errorHandler` 回撥。
+從SDK使用`checkPreauthorizedResources`函式達到節流限制時，SDK會透過`errorHandler`回呼傳回P100錯誤代碼。
 
 #### getMetadata
 
-使用達到節流閥限制時 `getMetadata` 函式中，SDK會透過傳回空白回應 `setMetadataStatus` 回撥。
+當從SDK使用`getMetadata`函式達到節流限制時，SDK將透過`setMetadataStatus`回呼傳回空白回應。
 
 如需各個特定實作的詳細資訊，請參閱特定的SDK檔案。
 
@@ -135,7 +135,7 @@ p3p: CP="NOI DSP COR CURa ADMa DEVa OUR BUS IND UNI COM NAV STA"
 
 使用自訂實作（包括伺服器對伺服器實作）與Pass Authentication API互動的客戶，應確保他們可以擷取其使用者IP位址並正確轉寄，進一步使用X-Forwarded-For標頭以傳遞Authentication API。
 
-另請參閱 [此處](rest-api-cookbook-servertoserver.md) 以取得更多詳細資料。
+如需詳細資訊，請參閱[這裡](rest-api-cookbook-servertoserver.md)。
 
 ### 回應新的回應代碼
 

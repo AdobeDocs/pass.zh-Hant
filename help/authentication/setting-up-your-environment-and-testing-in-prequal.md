@@ -4,7 +4,7 @@ description: 在預備中設定您的環境及測試
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '473'
+source-wordcount: '477'
 ht-degree: 0%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 0%
 >
 >本頁面上的內容僅供參考。 使用此 API 需要 Adobe Systems 的最新許可證。 不允許未經授權的使用。
 
-本技術說明的目的是説明我們的合作夥伴設置他們的環境，並開始測試部署在Adobe Systems資格預審環境上的新版本編號。
+本技術說明的目的是幫助我們的合作伙伴設置他們的環境，並開始測試部署在Adobe Systems資格預審環境上的新版本編號。
 
-由於有兩種版本編號風格：生產和 ****** 暫 ***存，*** 因此在此檔我們將聚焦生產設置，並提到所有步驟對於暫存都是相同的，只是 URL 不同。
+由於有兩種版本編號風格：生產和&#x200B;******&#x200B;暫&#x200B;***存，***&#x200B;因此在此文件我們將聚焦生產設置，並提到所有步驟對於暫存都是相同的，只是 URL 不同。
 
 步驟1和2是在其中一台測試機上設置測試 環境，步驟3是對基本流程的驗證，步驟4和5提供了一些測試指南。
 
@@ -30,7 +30,7 @@ ht-degree: 0%
 
 * 若要尋找可用於欺騙的負載平衡器IP，請執行以下命令：
 
-* **在Windows上**
+* 在Windows **上的**
 
   ```cmd
   C:\>nslookup sp-prequal.auth.adobe.com
@@ -60,7 +60,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> 這些 IP 位址將來可能會更改，並且對於不同地理區域的使用者，它們可能不同。
+> 這些IP位址將來可能會更改，並且對於不同地理區域的使用者，它們可能不同。
 
 
 ## 步驟 2.  欺騙要生產的資格預審環境 {#spoofing-the-prequalification-environment}
@@ -70,16 +70,16 @@ ht-degree: 0%
 * 詐騙生產設定檔
    * 52.13.71.11 http://entitlement.auth.adobe.com， http://sp.auth.adobe.com， http://api.auth.adobe.com
 
-**在Android上詐騙：** 若要在Android上詐騙，您必須使用Android模擬器。
+**在Android上詐騙：**&#x200B;若要在Android上詐騙，您必須使用Android模擬器。
 
-* 一旦設定好詐騙功能，您就可以將一般URL用於生產和測試設定檔： (也就是說， `http://sp.auth-staging.adobe.com` 和 `http://entitlement.auth-staging.adobe.com` 而且您實際上會點選 *資格預審環境/生產* 的URL。
+* 一旦設定好詐騙，您就可以將一般URL用於生產和測試設定檔： （即`http://sp.auth-staging.adobe.com`和`http://entitlement.auth-staging.adobe.com`），而且您實際上將會點選*新組建的&#x200B;*預先資格環境/生產*。
 
 
 ## 步驟3.  確認您指向正確的環境 {#Verify-you-are-pointing-to-the-right-environment}
 
 **這是一個簡單的步驟：**
 
-* 載入 [ 權利環境 ](https://entitlement-prequal.auth.adobe.com/environment.html) 和 [ 權利 ](https://entitlement.auth.adobe.com/environment.html) 。 它們應返回相同的回應。
+* 加載 [權利環境](https://entitlement-prequal.auth.adobe.com/environment.html) 和 [權利](https://entitlement.auth.adobe.com/environment.html)。 它們應返回相同的回應。
 
 
 ## 步驟 4.  使用程式師的網站執行簡單的身份驗證/授權流程 {#peform-a-simple-auth-flow}
@@ -88,11 +88,11 @@ ht-degree: 0%
 
 ## 步驟 5.  使用程式師的網站執行場景測試 {#perform-scenario-testing-using-programmer-website}
 
-* 完成環境設置並確保基本驗證-授權流正常工作後，可以繼續測試更複雜的方案。
+* 完成環境設置並確保基本身份驗證-授權流正常工作后，可以繼續測試更複雜的方案。
 
 
 ## 步驟6.  使用API測試網站執行測試 {#perform-testing-using-api-testing-site}
 
-* 如果您想更深入探究測試Adobe Pass驗證，建議您使用 [API測試網站](http://entitlement-prequal.auth.adobe.com/apitest/api.html).
+* 如果您想更深入測試Adobe Pass驗證，建議您使用[API測試網站](http://entitlement-prequal.auth.adobe.com/apitest/api.html)。
 
-您可以在API測試網站找到更多詳細資料 [如何使用Adobe的API測試網站測試驗證和授權流程](/help/authentication/test-authn-authz-flows-using-adobes-api-test-site.md).
+您可以在[找到更多有關API測試網站的詳細資料。如何使用Adobe的API測試網站](/help/authentication/test-authn-authz-flows-using-adobes-api-test-site.md)來測試驗證和授權流程。

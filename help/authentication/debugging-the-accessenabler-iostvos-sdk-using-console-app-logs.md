@@ -4,7 +4,7 @@ description: 使用主控台應用程式記錄檔對AccessEnabler iOS/tvOS SDK�
 exl-id: 0dad325e-db15-4ea0-a87a-75409eaf8d46
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '551'
+source-wordcount: '553'
 ht-degree: 0%
 
 ---
@@ -28,13 +28,13 @@ AccessEnabler iOS/tvOS記錄機制的用途是發出有用的訊息，用於疑�
 
 從AccessEnabler iOS/tvOS 3.5.0版開始，記錄機制會匯入下列改善作為變更：
 
-* AccessEnabler架構使用Apple的建議方式 [OSLog](https://developer.apple.com/documentation/os/oslog) 實作。
+* AccessEnabler架構使用Apple建議的[OSLog](https://developer.apple.com/documentation/os/oslog)實作。
 
-* AccessEnabler架構匯入了根據子系統篩選主控台應用程式記錄檔的功能： **com.adobe.pass.AccessEnabler**. SDK發出的所有訊息均屬於com.adobe.pass.AccessEnabler。
+* AccessEnabler架構引入依據子系統&#x200B;**com.adobe.pass.AccessEnabler**&#x200B;篩選主控台應用程式記錄檔的功能。 SDK發出的所有訊息均屬於com.adobe.pass.AccessEnabler。
 
-* AccessEnabler架構匯入了根據任何（前置詞）篩選主控台應用程式記錄檔的功能： **[AccessEnabler]**. SDK發出的所有訊息都會加上前置詞 [AccessEnabler].
+* AccessEnabler架構引入依據任何（前置詞）篩選主控台應用程式記錄檔的功能： **[AccessEnabler]**。 SDK發出的所有訊息都會加上前置詞[AccessEnabler]。
 
-* AccessEnabler架構匯入了根據類別篩選主控台應用程式記錄檔的功能： **偵錯**， **錯誤** 搭配上述兩個條件之一：「子系統」或「任何」（前置詞）。
+* AccessEnabler架構引入依據類別： **debug**、**error**&#x200B;以及上述兩個條件的任何一個來篩選主控台應用程式記錄檔的功能： Subsystem或Any （前置詞）。
 
 ## 使用主控台應用程式記錄檔進行除錯
 
@@ -45,30 +45,30 @@ AccessEnabler iOS/tvOS記錄機制的用途是發出有用的訊息，用於疑�
 
 #### 包含 {#including}
 
-首先，為了能夠檢視您AccessEnabler架構所發出的任何記錄訊息 **必須** 在主控台應用程式的「動作」區段中，選取「包含資訊訊息」和「包含除錯訊息」，如下圖所示。
+首先，為了能夠檢視AccessEnabler架構所發出的任何記錄訊息，您&#x200B;**必須**&#x200B;在主控台應用程式的「動作」區段中選取「包含資訊訊息」和「包含偵錯訊息」，如下圖所示。
 
 ![](assets/include-info-debug-msg.png)
 
 
-為了能夠偵錯AccessEnabler iOS/tvOS SDK和 **另請參閱** AccessEnabler架構記錄檔可以：
+為了能夠偵錯AccessEnabler iOS/tvOS SDK的功能和&#x200B;**檢視** AccessEnabler架構記錄，您可以：
 
-* 在主控台應用程式中搜尋，使用 **子系統** 選項等於com.adobe.pass.AccessEnabler值，如下圖所示。
+* 使用等於com.adobe.pass.AccessEnabler值的&#x200B;**Subsystem**&#x200B;選項在主控台應用程式中搜尋，如下圖所示。
 
 ![](assets/subsys-console-app.png)
 
-* 在主控台應用程式中搜尋，使用 **任何** 選項包含
-  [AccessEnabler] 值，如下圖所示。
+* 使用&#x200B;**任何**選項(包含
+  [AccessEnabler]值，如下圖所示。
 
 ![](assets/any-optn-console-app.png)
 
-除了上述兩個條件外，您也可以使用 **類別** 結合使用中的選項 **子系統** 或 **任何（前置詞）** 以明確搜尋 **偵錯** 或 **錯誤** AccessEnabler iOS/tvOS SDK所發出的層級訊息。
+除了上述兩個條件以外，您也可以搭配&#x200B;**子系統**&#x200B;或&#x200B;**任何（前置詞）**&#x200B;使用&#x200B;**類別**&#x200B;選項，明確搜尋AccessEnabler iOS/tvOS SDK發出的&#x200B;**偵錯**&#x200B;或&#x200B;**錯誤**&#x200B;層級訊息。
 
 #### 排除
 
-為了能夠更妥善地偵錯其他元件和 **排除** AccessEnabler架構記錄檔可以：
+為了能夠更好地偵錯其他元件的功能和&#x200B;**排除** AccessEnabler架構記錄檔，您可以：
 
-* 在主控台應用程式中搜尋，使用 **子系統** 不等於com.adobe.pass.AccessEnabler值的選項。
-* 在主控台應用程式中搜尋，使用 **任何** 不包含 [AccessEnabler] 值。
+* 使用不等於com.adobe.pass.AccessEnabler值的&#x200B;**子系統**&#x200B;選項在主控台應用程式中搜尋。
+* 使用不包含[AccessEnabler]值的&#x200B;**Any**&#x200B;選項在主控台應用程式中搜尋。
 
 ## 報告問題
 
@@ -77,4 +77,4 @@ AccessEnabler iOS/tvOS記錄機制的用途是發出有用的訊息，用於疑�
 * 請試著提供重製步驟。
 * 請嘗試提供發生問題的作業系統版本和裝置型號。
 * 請嘗試提供遇到問題的AccessEnabler iOS/tvOS SDK版本。
-* 請嘗試使用下列兩個選項之一，擷取並附加所有AccessEnabler iOS/tvOS SDK記錄訊息： [包含](#including) 區段。
+* 請嘗試使用[包含](#including)區段中顯示的兩個選項之一，擷取並附加所有AccessEnabler iOS/tvOS SDK記錄訊息。

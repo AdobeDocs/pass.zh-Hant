@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # 共用帳戶報表 {#shared-accounts-reports}
 
-「共用科目報表」提供另一組圖表與圖表，以反映目前節段的共用行為與沖銷。 例如， **[!UICONTROL Over Moderate Probability]** 和 **[!UICONTROL Over Low Probability]** 用於目前區段。
+「共用科目報表」提供另一組圖表與圖表，以反映目前節段的共用行為與沖銷。 例如，目前區段的&#x200B;**[!UICONTROL Over Moderate Probability]**&#x200B;和&#x200B;**[!UICONTROL Over Low Probability]**。
 
 ## 帳戶共用機率 {#accounts-sharing-probability}
 
@@ -23,7 +23,7 @@ ht-degree: 0%
 * 低(20%-40%)
 * 極低(0%-20%)
 
-紅線會標籤在「 」中選取的臨界值範圍 [目前區段中的科目超過臨界值](#threshold-selector) 面板和淺紅色區域包含超過該臨界值的所有帳戶總數。
+紅線標示目前區段](#threshold-selector)面板中[帳戶超過臨界值選取的臨界值範圍，淺紅色區域包含超過該臨界值的所有帳戶總數。
 
 ![](assets/accounts-sharing-probability-pie.png)
 
@@ -41,13 +41,13 @@ ht-degree: 0%
 
 此面板可讓您選取上方環形圖和長條圖的臨界值範圍。 四個選項包括：
 
-* 帳戶 **非常低** 共用 **機率**
+* 帳號&#x200B;**超低**&#x200B;共用&#x200B;**機率**
 
-* 帳戶 **過低** 共用 **機率**
+* 帳號&#x200B;**低**&#x200B;共用&#x200B;**機率**
 
-* 帳戶 **超過稽核** 共用 **機率**
+* 帳號&#x200B;**超過稽核**&#x200B;共用&#x200B;**機率**
 
-* 帳戶 **過高的** 共用 **機率**
+* 帳號&#x200B;**超過高**&#x200B;共用&#x200B;**機率**
 
 ![](assets/threshold-selector-shared-accounts.png)
 
@@ -77,7 +77,7 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->您可以放大代表一組以上郵遞區號的橫條，以 **+** （加）號（例如10+），方法是按兩下。
+>您可以放大代表一組以上郵遞區號之長條，以&#x200B;**+** （加號） （例如10+）表示，方法是按兩下這些長條。
 
 
 ## 每個帳戶的每個期間的區段 — 地理範圍 {#geo-span-period-account}
@@ -88,8 +88,8 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> 您可以放大代表一組以上地理距離的橫條，以 **+** （加）號（例如1000+），方法是按兩下。
+> 您可以按兩下長條圖，放大代表一組以上地理距離的長條，以&#x200B;**+** （加號） （例如，1000+）表示。
 
 >[!MORELIKETHIS]
 >
->* 瞭解如何使用匯出所選區段中前1000名訂閱者的報表（使用共用帳戶報表中的篩選器） [匯出前1000個帳戶](/help/accountiq/export-acc-information.md) 選項。
+>* 瞭解如何使用[匯出前1000個帳戶](/help/accountiq/export-acc-information.md)選項，使用共用帳戶報表中的篩選器，匯出所選區段中前1000名訂閱者的報表。

@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## 解決方案 {#solution-prevent-mvpd-sel-dialog}
 
-解決方法是在下列情況下執行區塊清單 `displayProviderDialog()` 稱為。
+解決方案是在呼叫`displayProviderDialog()`時執行區塊清單。
 
 例如，如果您希望CableCompany_1和CableCompany_2不要顯示在MVPD選取器中，您可以執行如下範例所示的操作。
 

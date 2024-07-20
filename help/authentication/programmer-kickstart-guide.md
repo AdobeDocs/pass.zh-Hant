@@ -4,7 +4,7 @@ description: 程式設計師快速入門手冊
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '971'
+source-wordcount: '972'
 ht-degree: 0%
 
 ---
@@ -21,12 +21,12 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->這是程式設計師（內容提供者）的Kickstart指南。 如果您是多頻道視訊程式設計經銷商(MVPD)，請務必參閱 [MVPD快速入門手冊](/help/authentication/mvpd-kickstart-guide.md).
+>這是程式設計師（內容提供者）的Kickstart指南。 如果您是多頻道視訊程式設計經銷商(MVPD)，請務必參閱[MVPD快速入門手冊](/help/authentication/mvpd-kickstart-guide.md)。
 
 
 Adobe Pass驗證聯絡人：
 
-* 支援 — 針對所有問題、事件或功能要求 `tve-support@adobe.com`
+* 支援 — 針對所有問題、事件或功能要求，`tve-support@adobe.com`
 * 您的專案開始之前，系統會將「啟用」聯絡人指派給專案。
 
 下列資訊概述讓我們開始穩定有效率工作的一些重要步驟。 我們的目標是針對我們如何與合作夥伴合作達成整合提供說明和期望。 請注意「您將提供」/「Adobe將會提供」下方的各個專案章節。 這些清單會以檢查清單的方式列出，或在我們完成專案時提供指南。
@@ -50,9 +50,9 @@ Adobe Pass驗證聯絡人：
 Adobe將提供：
 
 * 部署指南： **`https://tve.zendesk.com/entries/498741-tve-deployment-guide`**
-* 存取我們的Zendesk客戶支援系統。 您也可以在這裡找到有關某些流程的範例、資訊和影片教學課程。 若要在Zendesk上存取此檔案，以及張貼在該處的其他檔案，您必須註冊並建立帳戶，網址為 `https://tve.zendesk.com/home`. 您可以註冊的使用者數量沒有限制。  您可以在任何已歸檔票證上檢視和共用評論。 所有支援問題皆應傳送至 `tve-support@adobe.com`.
+* 存取我們的Zendesk客戶支援系統。 您也可以在這裡找到有關某些流程的範例、資訊和影片教學課程。 若要在Zendesk上存取此檔案以及張貼在該處的其他檔案，您必須在`https://tve.zendesk.com/home`註冊並建立帳戶。 您可以註冊的使用者數量沒有限制。  您可以在任何已歸檔票證上檢視和共用評論。 所有支援問題皆應傳送給`tve-support@adobe.com`。
 * [程式設計師整合指南](/help/authentication/programmer-integration-guide-overview.md)
-* 媒體權杖驗證器程式庫： `https://tve.zendesk.com/entries/471323-media-token-validator-library`.
+* 媒體權杖驗證器程式庫： `https://tve.zendesk.com/entries/471323-media-token-validator-library`。
 
 ## 測試環境設定 {#test-env-setup}
 
@@ -77,19 +77,19 @@ Adobe將設定帳戶，而Adobe將提供：
 * **兩組認證**：
    * AuthN + AuthZ ：已驗證和授權使用者的登入/密碼
    * AuthN + Non-AuthZ ：已驗證但未授權的使用者登入/密碼
-* **資源ID**. 這是將會透過AuthZ通訊協定以MVPD驗證的特定內容識別碼。 可以在頻道、節目、集數或資產層級，應該與您的MVPD商定。
+* **資源識別碼**。 這是將會透過AuthZ通訊協定以MVPD驗證的特定內容識別碼。 可以在頻道、節目、集數或資產層級，應該與您的MVPD商定。
 
 Adobe Pass驗證支援MRSS型中繼資料結構，這表示資源ID可以視需要而具體，且可包含特定MVPD的唯一識別碼。
 
 **新的MVPD整合**：請務必記住，您選擇的MVPD在完成任何整合時都會發揮不可或缺的作用。 Adobe需要根據每個MVPD的規格為其撰寫程式碼。 在這些步驟完成之前，您將無法從對話方塊中選取該MVPD，或完成您的產品測試。 Adobe需要提前排程這項工作，以配合下一個可用的衝刺。 （如需目前排程資訊，請參閱發行行事曆。）
 
-**現有的MVPD整合**：如果您選擇的MVPD已使用Adobe設定，則連線步驟應更簡單（更快），且通常可透過變更設定來達到連線。
+**現有的MVPD整合**：如果您選擇的MVPD已使用Adobe設定，則連線步驟應該會簡單得多（更快），而且通常可透過變更設定來達成連線。
 
 >[!NOTE]
 >
 >MVPD仍需啟用程式設計師，並簽署任何相關的商業交易。
 
-**含MVPD的QE**：所有整合都會涉及聯合QE，而且由於一般使用者最終是MVPD的客戶，因此許多人會在推送「即時」前設定測試週期。 由於這涉及MVPD資源的排程，因此這是可能的延遲區域。
+使用MVPD的&#x200B;**QE**：所有整合都將涉及聯合QE，由於一般使用者最終是MVPD的客戶，因此許多使用者在推送「即時」之前已設定測試週期。 由於這涉及MVPD資源的排程，因此這是可能的延遲區域。
 
 <!--
 >[RELATEDINFORMATION]

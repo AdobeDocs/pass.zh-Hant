@@ -4,7 +4,7 @@ description: Authentication iOS / tvOS 3.7.0發行說明
 exl-id: 19c1179e-16b1-4608-954f-25b0980d7ad9
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '117'
+source-wordcount: '126'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Adobe Pass驗證： iOS / tvOS 3.7.0
 
 當應用程式在背景或裝置被鎖定時，允許鑰匙圈儲存作業，以增加AccessEnabler架構使用方式的改善。 例如，這可以促進AirPlay的實作。
 
-## 發行套件 {#rel=pkg-iostvos370}
+## 發行封裝{#rel=pkg-iostvos370}
 
 您可以從這裡下載iOS/tvOS SDK v3.7.0。
 

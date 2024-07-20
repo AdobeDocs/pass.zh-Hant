@@ -28,15 +28,16 @@ ht-degree: 0%
 ## `public void preauthorize(PreauthorizeRequest request, AccessEnablerCallback<PreauthorizeResponse> callback);`
 
 
-**說明：**
+**描述：**
 
 **可用性：** v3.6.0+
 
 **引數：**
 
-- *PreauthorizeRequest*：用於定義請求的產生器物件
+- *PreauthorizeRequest*：用來定義要求的產生器物件
 - AccessEnablerCallback ：用於傳回API回應的回呼
-- PreauthorizeResponse ：用來傳回API回應內容的物件
+- PreauthorizeResponse ：用來傳回API的物件
+回應內容
 
 
 ### 公用類別PreauthorizeRequest {#androidpreauthorizerequest}
@@ -62,7 +63,7 @@ ht-degree: 0%
     ///
 ```
 
-**公用產生器setResources(List\&lt;string> resources)**
+**公用產生器setResources（List\&lt;String\>資源）**
 
 ```
     ///
@@ -84,7 +85,7 @@ ht-degree: 0%
 ```
 
 
-**公用產生器disableFeatures(Set\&lt;preauthorizerequest.feature>
+**公用產生器disableFeatures(Set\&lt;PreauthorizeRequest.Feature\>
 功能)**
 
 ```
@@ -105,7 +106,7 @@ ht-degree: 0%
     ///
 ```
 
-**公用PreauthorizeRequest build()**
+**公用PreauthorizeRequest建置()**
 
 **列舉PreauthorizeRequest.Feature**
 

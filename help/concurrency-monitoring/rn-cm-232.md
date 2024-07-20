@@ -1,13 +1,13 @@
 ---
 title: Adobe Pass Concurrency Monitoring 2.3.2發行說明
 description: Adobe Pass Concurrency Monitoring 2.3.2發行說明
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: 3996da45-498c-482a-b374-3cda1c5df2f7
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '130'
-ht-degree: 0%
+source-wordcount: '141'
+ht-degree: 1%
 
 ---
-
 
 # Adobe Pass Concurrency Monitoring 2.3.2發行說明 {#cm-232}
 
@@ -22,7 +22,7 @@ ht-degree: 0%
    * mvpd — 在呼叫URL中報告的MVPD
    * 管道 — 自訂中繼資料管道
    * 平台 — 自訂中繼資料applicationPlatform
-* 與以下專案相關的新量度 **串流持續時間** 可在「使用情況報表」中使用。 新量度可用來建立串流持續時間的長條圖。 目前提供下列時間間隔（分鐘）：
+* 與&#x200B;**串流持續時間**&#x200B;相關的新量度可在使用狀況報告中使用。 新量度可用來建立串流持續時間的長條圖。 目前提供下列時間間隔（分鐘）：
    * duration_0-15
    * duration_15-30
    * duration_30-60

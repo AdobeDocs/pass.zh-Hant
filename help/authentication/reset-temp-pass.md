@@ -1,9 +1,10 @@
 ---
 title: 重設暫時通過
 description: 重設暫時通過
-source-git-commit: 4ae0b17eff2dfcf0aaa5d11129dfd60743f6b467
+exl-id: ab39e444-eab2-4338-8d09-352a1d5135b6
+source-git-commit: 28d432891b7d7855e83830f775164973e81241fc
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '439'
 ht-degree: 0%
 
 ---
@@ -16,33 +17,36 @@ ht-degree: 0%
 >
 >若要使用Reset Temp Pass API，您需要：
 >- 請要求支援小組為您註冊的應用程式提供軟體宣告
->- 取得存取權杖依據 [動態使用者端註冊](dynamic-client-registration.md)
+>- 根據[動態使用者端註冊](dynamic-client-registration.md)取得存取權杖
 > 
 
-為了 **重設特定的暫時傳遞**， Adobe Pass驗證為程式設計師提供 *公共* 網頁API：
+為了&#x200B;**重設特定的Temp Pass**，Adobe Pass驗證為程式設計師提供&#x200B;*公用*&#x200B;網頁API：
 
-- **環境：** 指定將接收重設暫時通過網路呼叫的Adobe付費電視通過伺服器端點。 可能的值： **先決條件** (*mgmt-prequal.auth.adobe.com*)， **版本** (*mgmt.auth.adobe.com*)或 **自訂** (保留給Adobe內部測試)。
-- **OAuth2存取Token：** 必須有OAuth2權杖，才能授權程式設計師進行Adobe付費電視驗證。 此代號可以從 [動態使用者端註冊](dynamic-client-registration.md).
-- **暫存傳遞ID：** 要重設的暫時傳遞MVPD的唯一ID。（程式設計師可以使用多個Temp Pass MVPD，並且想要重設特定的MVPD）
-- **一般金鑰：** 部分Temp Pass MVPD (即 [促銷臨時傳遞](promotional-temp-pass.md))。
+- **環境：**&#x200B;指定將接收重設暫時通過網路呼叫的Adobe付費電視傳遞伺服器端點。 可能的值： **Prequal** (*mgmt-prequal.auth.adobe.com*)、**Release** (*mgmt.auth.adobe.com*)或&#x200B;**Custom** (保留給Adobe內部測試)。
+- **OAuth2存取權杖：**&#x200B;必須有OAuth2權杖才能授權程式設計師進行Adobe付費電視驗證。 可從[Dynamic Client Registration](dynamic-client-registration.md)取得此權杖。
+- **暫時傳遞ID：**&#x200B;要重設的暫時傳遞MVPD的唯一識別碼。（程式設計師可以使用多個Temp Pass MVPD，並且想要重設特定的MVPD）
+- **一般金鑰：**&#x200B;某些Temp Pass MVPD （亦即[促銷暫存MVPD](promotional-temp-pass.md)）。
 
-上述所有引數(除了 *一般金鑰*)為必填欄位。 以下是引數和關聯網路呼叫的範例（範例採用*curl *命令的形式）：
+上述所有引數（除了&#x200B;*泛型索引鍵*）都是必要引數。 以下是引數和關聯網路呼叫的範例（範例採用*curl *命令的形式）：
 
-- **環境：** 發行版本(*mgmt.auth.adobe.com*)
-- **OAuth2存取Token：** &lt;access_token> 從 [動態使用者端註冊](dynamic-client-registration.md)
-- **程式設計師ID：** 參照
+- **環境：**&#x200B;版本(*mgmt.auth.adobe.com*)
+- **OAuth2存取權杖：** &lt;access_token>來自[動態使用者端註冊](dynamic-client-registration.md)
+- **程式設計師識別碼：**&#x200B;參考
 - **暫存傳遞ID：** TempPassREF
-- **一般金鑰：** null （未提供值）
+- **泛型索引鍵：** null （未提供值）
 
 ```curl
 curl -X DELETE -H "Authorization:Bearer <access_token_here>" "https://mgmt.auth.adobe.com/reset-tempass/v3/reset?device_id=f23804a37802993fdc8e28a7f244dfe088b6a9ea21457670728e6731fa639991&requestor_id=REF&mvpd_id=TempPassREF"
 ```
 
-將會向發出DELETEHTTP要求 **/reset** 端點，傳遞 *OAuth2存取Token* 在Authorization標頭和 *裝置ID*， *要求者ID* 和 *暫存傳遞ID (MVPD ID)* 作為引數。
+將向&#x200B;**/reset**&#x200B;端點發出DELETE的HTTP要求，在授權標頭中傳遞&#x200B;*OAuth2存取權杖*，並將&#x200B;*裝置ID*、*要求者ID*&#x200B;和&#x200B;*暫時傳遞ID (MVPD ID)*&#x200B;作為引數。
 
-如果程式設計師為 *一般金鑰*，則會執行另一個HTTP呼叫(這次是 **/reset/generic** 端點)，傳遞 *一般金鑰* 內部 *key* 要求引數。
+如果程式設計師提供&#x200B;*泛型金鑰*&#x200B;的值，將會執行另一個HTTP呼叫（這次是至&#x200B;**/reset/泛型**&#x200B;端點），在&#x200B;*key*&#x200B;要求引數中傳遞&#x200B;*泛型金鑰*。
 
-例如，設定 *一般金鑰* 至電子郵件地址雜湊（適用於支援這類功能的暫時傳遞MVPD）將產生以下HTTP呼叫(電子郵件為 `user@domain.com` 其SHA-256雜湊為 `f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7`)：
+例如，將&#x200B;*一般金鑰*設定為電子郵件地址雜湊(針對
+暫時傳遞MVPD支援此類功能)將產生
+接聽HTTP呼叫(電子郵件是`user@domain.com`其SHA-256
+雜湊為`f7ee5ec7312165148b69fcca1d29075b14b8aef0b5048a332b18b88d09069fb7`)：
 
 ```curl
 curl -X DELETE -H "Authorization:Bearer <access_token_here>"
@@ -50,7 +54,7 @@ curl -X DELETE -H "Authorization:Bearer <access_token_here>"
 ```
 
 
-為了 **重設所有裝置的特定Temp Pass**， Adobe Pass驗證為程式設計師提供 *公共* 網頁API：
+為了&#x200B;**重設所有裝置的特定Temp Pass**，Adobe Pass驗證為程式設計師提供&#x200B;*公用*&#x200B;網頁API：
 
 ```url
 DELETE https://mgmt.auth.adobe.com/reset-tempass/v3/reset
@@ -65,7 +69,7 @@ DELETE https://mgmt.auth.adobe.com/reset-tempass/v3/reset
    - 前述 — mgmt-prequal.auth.adobe.com
 - **路徑：** /reset-tempass/v3/reset
 - **查詢引數：** `device_id=all&requestor_id=REQUESTOR_ID&mvpd_id=TEMPPASS_MVPD_ID`
-- **標頭：** 授權：持有人 &lt;access_token_here>
+- **標頭：**&#x200B;授權：持有人&lt;access_token_here>
 - **回應：**
    - 成功 — HTTP 204
    - 失敗：

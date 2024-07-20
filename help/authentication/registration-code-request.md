@@ -19,17 +19,17 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> REST API實作受限於 [節流機制](/help/authentication/throttling-mechanism.md)
+> REST API實作已由[節流機制](/help/authentication/throttling-mechanism.md)限制
 
-&lt;reggie_fqdn>：
+&lt;REGGIE_FQDN>：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生產 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 正在暫存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>：
+&lt;SP_FQDN>：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生產 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 正在暫存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -37,9 +37,9 @@ ht-degree: 0%
 
 傳回隨機產生的註冊代碼和登入頁面URI。
 
-| 端點 | 已呼叫  </br>作者： | 輸入   </br>引數 | HTTP  </br>方法 | 回應 | HTTP  </br>回應 |
+| 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;reggie_fqdn>/reggie/v1/{requestor}/regcode</br>例如：</br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | 串流應用程式</br>或</br>程式設計師服務 | 1.請求者  </br>    （路徑元件）</br>2.  deviceId （雜湊）   </br>    （必要）</br>3.  device_info/X-Device-Info （必要）</br>4.  mvpd （可選）</br>5.  ttl （選擇性）</br>6.  _deviceType_</br> 7.  _deviceuser_ （已棄用）</br>8.  _appId_ （已棄用） | POST | 包含註冊代碼的XML或JSON，以及失敗時的資訊或錯誤詳細資料。 請參閱下面的結構描述和範例。 | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode</br>例如：</br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | 串流應用程式</br>或</br>程式設計師服務 | 1.要求者</br>    （路徑元件）</br>2。  deviceId （雜湊）   </br>    （必要）</br>3。  device_info/X-Device-Info （必要）</br>4。  mvpd （選用）</br>5。  ttl （選擇性）</br>6。  _deviceType_</br> 7。  _deviceUser_ （已棄用）</br>8。  _appId_ （已棄用） | POST | 包含註冊代碼的XML或JSON，以及失敗時的資訊或錯誤詳細資料。 請參閱下面的結構描述和範例。 | 201 |
 
 {style="table-layout:auto"}
 
@@ -47,12 +47,12 @@ ht-degree: 0%
 | --- | --- |
 | 要求者 | 此作業有效的程式設計師要求者ID。 |
 | deviceId | 裝置識別碼位元組。 |
-| device_info/</br>X-Device-Info | 串流裝置資訊。</br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數潛在的大小以及GETURL長度的限制，應該在http標頭中作為X-Device-Info傳遞。 </br>如需詳細資訊，請參閱 [傳遞裝置和連線資訊](/help/authentication/passing-client-information-device-connection-and-application.md). |
+| device_info/</br>X-Device-Info | 串流裝置資訊。</br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數的潛在大小以及GETURL長度的限制，它應該作為X-Device-Info傳遞到http標頭。 </br>檢視[傳遞裝置和連線資訊](/help/authentication/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
 | mvpd | 此作業適用的MVPD ID。 |
-| ttl | 此regcode應在秒記憶體留多久。</br>**注意**：ttl允許的最大值為36000秒（10小時）。 較高的值會導致400 HTTP回應（錯誤請求）。 如果 `ttl` 留空，Adobe Pass驗證會設定30分鐘的預設值。 |
-| _deviceType_ | 裝置型別（例如Roku、PC）。</br>若此引數設定正確，ESM提供的量度會 [依裝置型別劃分](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type) 使用無使用者端時，以便執行不同型別的分析，例如Roku、AppleTV和Xbox。</br>請參閱， [在傳遞量度中使用無使用者端裝置型別引數的好處&#x200B;](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**注意**：device_info會取代此引數。 |
-| _deviceuser_ | 裝置使用者識別碼。 |
-| _appId_ | 應用程式id/名稱。 </br>**注意**：device_info會取代此引數。 |
+| ttl | 此regcode應在秒記憶體留多久。</br>**注意**： ttl允許的最大值為36000秒（10小時）。 較高的值會導致400 HTTP回應（錯誤請求）。 如果`ttl`留空，Adobe Pass驗證會設定30分鐘的預設值。 |
+| _deviceType_ | 裝置型別（例如Roku、PC）。</br>若此引數設定正確，ESM提供的量度在使用Clienless時，會針對每個裝置型別](/help/authentication/entitlement-service-monitoring-overview.md#clientless_device_type)進行[劃分，因此可以執行不同型別的分析，例如Roku、AppleTV和Xbox。</br>檢視，[在傳遞量度中使用無使用者端裝置型別引數的好處&#x200B;](/help/authentication/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**注意**： device_info將會取代此引數。 |
+| _deviceUser_ | 裝置使用者識別碼。 |
+| _appId_ | 應用程式id/名稱。 </br>**注意**： device_info會取代此引數。 |
 
 {style="table-layout:auto"}
 
@@ -61,14 +61,14 @@ ht-degree: 0%
 >
 >**串流裝置IP位址**
 ></br>
->對於使用者端對伺服器實作，串流裝置IP位址會與此呼叫一併隱含傳送。  針對伺服器對伺服器實作，其中 **regcode** 呼叫是程式設計人員服務，而不是串流裝置，以下標題必須是傳遞串流裝置IP位址的必要條件：
+>對於使用者端對伺服器實作，串流裝置IP位址會與此呼叫一併隱含傳送。  對於伺服器對伺服器實作，其中發出&#x200B;**regcode**&#x200B;呼叫是程式設計人員服務，而不是串流裝置，以下標頭是傳遞串流裝置IP位址的必要專案：
 >
 >
 >```
 >X-Forwarded-For : <streaming_device_ip> 
 >```
 >
->位置 `<streaming\_device\_ip>` 是串流裝置的公用IP位址。
+>其中`<streaming\_device\_ip>`是串流裝置的公用IP位址。
 ></br></br>
 >範例：</br>
 >

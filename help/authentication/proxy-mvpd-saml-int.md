@@ -5,7 +5,7 @@ exl-id: 6c83e703-d8cd-476b-8514-05b8230902be
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
 source-wordcount: '711'
-ht-degree: 1%
+ht-degree: 0%
 
 ---
 
@@ -65,7 +65,7 @@ ht-degree: 1%
 
 在SAML AuthN請求中，Proxy整合包括下列需要由MVPD Proxy處理的額外屬性。  若要代表代理的MVPD正確處理要求者，並呈現正確的登入體驗，此屬性是必要的。 （此屬性會在下列範例要求中強調顯示。）
 
-**範圍設定屬性**  — 包含包含包含特定MVPD_ID和MVPD名稱的IDPEntry專案。  這代表使用者實際從程式設計工具選擇器選取的MVPD，並符合Proxy Web服務中指定的MVPD_ID。
+**領域設定屬性** — 包含包含特定MVPD_ID和MVPD名稱的IDPEntry專案。  這代表使用者實際從程式設計工具選擇器選取的MVPD，並符合Proxy Web服務中指定的MVPD_ID。
 
 RequestorID有額外的範圍設定屬性，可用於自訂程式設計師特定品牌的登入（如有需要）。 或者，也可僅用於請求來源的分析。
 
@@ -75,7 +75,7 @@ RequestorID有額外的範圍設定屬性，可用於自訂程式設計師特定
 * 名稱限定詞
 
 
-**範例AuthN請求**
+**範例AuthN要求**
 
 ```XML
 <samlp:AuthnRequest
@@ -170,7 +170,7 @@ RequestorID有額外的範圍設定屬性，可用於自訂程式設計師特定
 
 在AuthZ回應中，ISSUER必須符合SAML回應中的ISSUER，該回應應該是Proxied MVPD識別碼。
 
-**範例AuthZ XACML請求**
+**範例AuthZ XACML要求**
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>

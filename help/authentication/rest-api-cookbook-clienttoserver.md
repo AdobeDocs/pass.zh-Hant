@@ -18,14 +18,14 @@ ht-degree: 0%
 
 ## 概觀 {#overview}
 
-本檔案逐步說明程式設計師的工程團隊如何整合「智慧型裝置」（遊戲機、智慧型電視應用程式、機上盒等） 使用REST API服務進行Adobe Pass驗證。 此使用者端對伺服器方法使用REST API （而非使用者端SDK），可讓不同平台有更廣泛的支援，針對這些平台，開發大量不重複SDK將不可行。 如需無使用者端解決方案運作方式的廣泛技術概覽，請參閱 [無使用者端技術概覽](/help/authentication/rest-api-overview.md).
+本檔案逐步說明程式設計師的工程團隊如何整合「智慧型裝置」（遊戲機、智慧型電視應用程式、機上盒等） 使用REST API服務進行Adobe Pass驗證。 此使用者端對伺服器方法使用REST API （而非使用者端SDK），可讓不同平台有更廣泛的支援，針對這些平台，開發大量不重複SDK將不可行。 如需無使用者端解決方案運作方式的廣泛技術概覽，請參閱[無使用者端技術概覽](/help/authentication/rest-api-overview.md)。
 
 
 此方法需要兩個元件（串流應用程式和AuthN應用程式）才能完成所需的流程：串流應用程式中的啟動、註冊、授權和檢視媒體流程，以及AuthN應用程式中的驗證流程。
 
 ### 節流機制
 
-Adobe Pass驗證REST API由 [節流機制](/help/authentication/throttling-mechanism.md).
+Adobe Pass驗證REST API受[節流機制](/help/authentication/throttling-mechanism.md)所控管。
 
 ## 元件 {#components}
 
@@ -44,13 +44,13 @@ Adobe Pass驗證REST API由 [節流機制](/help/authentication/throttling-mecha
 
 
 
-此流程中使用的其他辭彙定義於 [字彙表](/help/authentication/glossary.md).
+流程中使用的其他辭彙已在[字彙表](/help/authentication/glossary.md)中定義。
 
 ## 流程{#flows}
 
 ### 動態使用者端註冊(DCR)
 
-Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe Pass服務之間的使用者端通訊。 DCR流程是獨立的、相依的且為必備的流程，可在以下位置找到： [動態使用者端註冊](/help/authentication/dynamic-client-registration.md)
+Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe Pass服務之間的使用者端通訊。 DCR流程是獨立、相依和先決條件流程，可以在[動態使用者端註冊](/help/authentication/dynamic-client-registration.md)中找到
 
 
 ### 串流（智慧型裝置）應用程式流程
@@ -65,7 +65,7 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
 3. 發出Check-authentication呼叫以檢視裝置是否已驗證。  例如： [`<SP_FQDN>/api/v1/checkauthn [device ID]`](/help/authentication/check-authentication-token.md)
 
-4. 如果 `checkauthn` 呼叫成功，從步驟2開始進行授權流程。  如果失敗，請啟動「註冊流程」。
+4. 如果`checkauthn`呼叫成功，請從步驟2開始進行授權流程。  如果失敗，請啟動「註冊流程」。
 
 
 
@@ -83,7 +83,7 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
 #### 授權流程
 
-1. 使用者從第二熒幕應用程式返回，並按裝置上的「繼續」按鈕。 或者，您可以實作輪詢機制來檢查驗證狀態，但Adobe Pass驗證建議使用繼續按鈕方法來取代輪詢。 <!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> 例如： [\&lt;sp _fqdn=&quot;&quot;>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md)
+1. 使用者從第二熒幕應用程式返回，並按裝置上的「繼續」按鈕。 或者，您可以實作輪詢機制來檢查驗證狀態，但Adobe Pass驗證建議使用繼續按鈕方法來取代輪詢。 <!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)-->例如： [\&lt;SP\_FQDN\>/api/v1/tokens/authn](/help/authentication/retrieve-authentication-token.md)
 
 2. 傳送GET請求至Adobe Pass驗證授權服務以啟動授權。 例如： `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
 
@@ -109,9 +109,11 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
    a.您的應用程式會檢查媒體是否受到保護。
 
-   b.如果媒體受到保護，您的應用程式會啟動上方的「授權(AuthZ)」流程。
+   b.如果媒體受到保護，您的應用程式會啟動授權
+(AuthZ)流量高於。
 
-   c.如果媒體未受保護，則播放媒體給使用者。
+   c.如果媒體未受保護，則播放的媒體
+使用者。
 
 3. 播放媒體。
 
@@ -139,7 +141,7 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
 對於不需要使用者輸入認證的TempPass和Promotional TempPass實作，可以直接在串流應用程式中實作驗證。
 
-**為了使用此API，串流應用程式需要確定裝置ID的唯一性，因為這會用於識別權杖，以及選用的額外資料。**
+**為了使用此API，串流應用程式需要確定裝置ID的唯一性，因為這是用來識別權杖以及選用的額外資料。**
 
 
 ![](assets/temp-pass-promo-temppass.png)

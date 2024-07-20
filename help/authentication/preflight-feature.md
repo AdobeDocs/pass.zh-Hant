@@ -4,7 +4,7 @@ description: 預檢功能，如何啟用、疑難排解或解決問題
 exl-id: 9e4ec343-371f-4116-915f-191e5f42cb47
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '498'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,9 @@ PreAuthorization API的外部介面未變更，程式設計師的應用程式中
 
 預檢資源的計算方式有三種：
 
-* **MVPD的分叉及連線方法**：這涉及Adobe向MVPD發出多個授權呼叫（使用者端仍須進行一個預檢呼叫）。
-* **頻道排列**： MVPD會在SAML驗證回應中公開登入使用者的頻道行，且Adobe會據此傳回授權資源。 SAML追蹤器中的SAML authN回應應該會公開該清單。
-* **多頻道授權**：使用者端和Adobe驗證作業都會針對一組資源對MVPD發出單一呼叫。
+* **將方法分叉並加入MVPD**：這涉及Adobe對MVPD進行多個授權呼叫（使用者端仍須進行一個預檢呼叫）。
+* **頻道組合**： MVPD在SAML驗證回應中公開登入使用者的頻道組合，且Adobe會根據此資訊傳回授權資源。 SAML追蹤器中的SAML authN回應應該會公開該清單。
+* **多頻道授權**：使用者端和Adobe授權都會針對一組資源對MVPD發出單一呼叫。
 
 不論MVPD為何，使用者端應用程式都將透過傳遞一組資源ID，對預檢端點(checkPreauthorizedResources API)進行單一呼叫。 根據MVPD支援的上述方法之一，Adobe將傳回預先授權的resourceID。
 

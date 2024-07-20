@@ -4,7 +4,7 @@ description: 使用無使用者端API逐步指南的Amazon FireOS SSO
 exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '762'
+source-wordcount: '755'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 本檔案的第二部分說明實施Adobe Pass驗證無使用者端API的主要步驟。
 
-如需無使用者端解決方案運作方式的廣泛技術概覽，請參閱 [REST API總覽](/help/authentication/rest-api-overview.md). 如需整體架構和首次實作的相關支援，Adobe是慣用的聯絡方式。
+如需無使用者端解決方案運作方式的廣泛技術概覽，請參閱[REST API概覽](/help/authentication/rest-api-overview.md)。 如需整體架構和首次實作的相關支援，Adobe是慣用的聯絡方式。
 
 ## Amazon無使用者端SSO {#AMZ-Clientless-SSO}
 
@@ -37,10 +37,10 @@ Amazon無使用者端SSO實作相當簡單，而且大致上等同於一般的Ad
 
 ### 如何建置應用程式以使用Amazon SDK {#Build-entries}
 
-* 下載並複製最新版本 [Amazon Stub SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar) 並置於/SSOEnabler資料夾中，與app目錄平行
+* 將最新的[Amazon Stub SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar)下載並複製到與應用程式目錄平行的/SSOEnabler資料夾
 * 更新資訊清單/Gradle檔案以使用程式庫：
 
-  **將下列行新增至資訊清單檔案：**
+  **將下列行加入您的資訊清單檔案：**
 
   ```Java
   <uses-library android:name="com.amazon.ottssotokenlib" android:required="false"/\>
@@ -65,7 +65,7 @@ Amazon無使用者端SSO實作相當簡單，而且大致上等同於一般的Ad
 
 * 處理缺少Amazon隨附應用程式的問題：
 
-  雖然不太可能，但如果您的應用程式正在執行的Amazon裝置上沒有隨附，您應該會在下列類別的執行階段遇到ClassNotFoundException： `com.amazon.ottssotokenlib.SSOEnabler`.
+  雖然不太可能，但若您的應用程式執行中的Amazon裝置上沒有隨附，您應該會在下列類別的執行階段遇到ClassNotFoundException： `com.amazon.ottssotokenlib.SSOEnabler`。
 
   如果發生此情況，您只需要略過裝載步驟，並退回一般PrimeTime流程即可。 SSO將不會啟用，但一般驗證流程將正常進行。
 
@@ -113,7 +113,7 @@ Amazon無使用者端SSO實作相當簡單，而且大致上等同於一般的Ad
 
 * 此API將透過初始期間設定的回呼提供回應。
 
-  **例如**. 使用在初始化期間建立的單一例項呼叫：
+  **Ex**。 使用在初始化期間建立的單一例項呼叫：
 
   ```JAVA
   ssoEnabler.getSSOTokenAsync().
@@ -145,13 +145,13 @@ Amazon無使用者端SSO實作相當簡單，而且大致上等同於一般的Ad
 
 ### Adobe Pass無使用者端API更新以使用動態使用者端註冊 {#clientlessdcr}
 
-如果您是第一次實作，請參閱 **無使用者端技術概覽** 和聯絡Adobe以備您需要支援時使用。
+如果這是您的第一個實作，請參閱&#x200B;**無使用者端技術概覽**，並聯絡Adobe以備您需要支援時使用。
 
 Adobe無使用者端API需要應用程式使用動態使用者端註冊，才能呼叫Adobe伺服器。
 
-* 若要在應用程式中使用Dynamic Client Registration，請依照以下說明操作： [Dynamic Client Registration Management註冊應用程式](/help/authentication/dynamic-client-registration-management.md).
+* 若要在應用程式中使用Dynamic Client Registration，請依照[Dynamic Client Registration Management中的指示來註冊應用程式](/help/authentication/dynamic-client-registration-management.md)。
 
-* 若要實作動態使用者端註冊API以對Adobe Pass伺服器執行驗證和授權請求，請依照以下說明操作： [動態使用者端註冊API](/help/authentication/dynamic-client-registration-api.md) .
+* 若要實作Dynamic Client Registration API以對Adobe Pass伺服器執行驗證和授權要求，請依照[Dynamic Client Registration API](/help/authentication/dynamic-client-registration-api.md)中的指示操作。
 
 ### Adobe Pass無使用者端API更新以使用Amazon SSO {#clientlesssso}
 
@@ -181,7 +181,7 @@ Adobe無使用者端API需要應用程式使用動態使用者端註冊，才能
 
 **範例：**
 
-**以自訂標題傳送**
+**以自訂標頭傳送**
 
 ```HTTPS
 GET /adobe-services/config/requestor HTTP/1.1 Host: sp-preprod.auth.adobe.com
@@ -189,7 +189,7 @@ GET /adobe-services/config/requestor HTTP/1.1 Host: sp-preprod.auth.adobe.com
 Adobe-Subject-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.JlBFhNhNCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA
 ```
 
-**以查詢引數傳送**
+**正在以查詢引數的形式傳送**
 
 ```HTTPS
 GET /adobe-services/config/requestor?ast=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.JlBFhNhNCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA

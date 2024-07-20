@@ -1,13 +1,13 @@
 ---
 title: 實作模型
 description: 實作模型
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: 3bcb63ba-9b4a-4df4-8d24-e520b8830a10
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
 source-wordcount: '62'
 ht-degree: 0%
 
 ---
-
 
 # 實作模型 {#imp-models}
 

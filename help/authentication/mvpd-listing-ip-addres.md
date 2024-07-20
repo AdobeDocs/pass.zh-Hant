@@ -4,8 +4,8 @@ description: MVPD IP位址清單
 exl-id: be18084c-22f5-47b5-b088-d9032681113d
 source-git-commit: 7a44fc9254171f2e3063d3d67cdf790e12dc10fa
 workflow-type: tm+mt
-source-wordcount: '146'
-ht-degree: 18%
+source-wordcount: '147'
+ht-degree: 0%
 
 ---
 

@@ -17,15 +17,15 @@ ht-degree: 0%
 
 ## 問題 {#issue}
 
-使用者正在經歷驗證流程，當他們成功與提供者輸入認證後，系統會將他們重新導向回錯誤頁面、搜尋頁面或其他自訂頁面，以通知他們 `adobepass.ios.app` 找不到/無法解析。
+使用者正在通過驗證流程，當他們成功與提供者輸入認證後，就會重新導向回到錯誤頁面、搜尋頁面或其他自訂頁面，通知他們找不到/無法解析`adobepass.ios.app`。
 
 ## 說明 {#explanation}
 
-在iOS上， `adobepass.ios.app` 會作為最終重新導向URL使用，以指出AuthN流程已完成。 此時，應用程式需要向AccessEnabler提出要求，才能取得AuthN權杖並完成AuthN流程。
+在iOS上，`adobepass.ios.app`是作為最終重新導向URL，以指出AuthN流程已完成。 此時，應用程式需要向AccessEnabler提出要求，才能取得AuthN權杖並完成AuthN流程。
 
-問題是 `adobepass.ios.app` 不存在，並且會在中觸發錯誤訊息 `webView`. 舊版iOS DemoApp假設此錯誤一律會在AuthN流程結束時觸發，並設定為據此處理(`indidFailLoadWithError`)。
+問題是`adobepass.ios.app`實際上不存在，將在`webView`中觸發錯誤訊息。 舊版iOS DemoApp假設此錯誤一律會在AuthN流程結束時觸發，且已設定為據以處理(`indidFailLoadWithError`)。
 
-**注意：** 此問題已在較新版本的DemoApp (隨iOS SDK下載提供)中修正。
+**注意：**&#x200B;此問題已在較新版本的DemoApp (包含在iOS SDK下載中)中修正。
 
 很遺憾，此假設不正確。 有些所謂的「智慧」DNS或Proxy伺服器不會簡單地傳遞所引發的錯誤，而是會執行下列其中一項作業：
 
@@ -36,7 +36,7 @@ ht-degree: 0%
 
 ## 解決方案 {#solution}
 
-請勿做出與DemoApp相同的假設。 而是在執行請求之前擷取請求(在 `shouldStartLoadWithRequest`)並妥善處理。
+請勿做出與DemoApp相同的假設。 而是在執行要求之前（在`shouldStartLoadWithRequest`中）攔截要求，並適當地處理要求。
 
 如何在執行請求前截獲請求的範例：
 
@@ -60,6 +60,6 @@ return YES;
 
 請注意下列事項：
 
-- 從未使用 `adobepass.ios.app` 直接在程式碼中的任一處執行。 請改用常數 `ADOBEPASS_REDIRECT_URL`
-- 此 `return NO;` 陳述式將阻止頁面載入
-- 請務必確認 `getAuthenticationToken` 呼叫在程式碼中只會呼叫一次。 多個呼叫 `getAuthenticationToken` 將會導致未定義的結果。
+- 絕對不要在程式碼的任何位置直接使用`adobepass.ios.app`。 改為使用常數`ADOBEPASS_REDIRECT_URL`
+- `return NO;`陳述式將阻止頁面載入
+- 絕對請確定`getAuthenticationToken`呼叫在您的程式碼中只呼叫一次。 對`getAuthenticationToken`的多次呼叫將會導致未定義的結果。

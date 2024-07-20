@@ -1,15 +1,15 @@
 ---
-title: JavaScript SDK總覽
-description: JavaScript SDK總覽
+title: JavaScript SDK概觀
+description: JavaScript SDK概觀
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '510'
 ht-degree: 0%
 
 ---
 
-# JavaScript SDK總覽 {#javascript-sdk-overview}
+# JavaScript SDK概觀 {#javascript-sdk-overview}
 
 >[!NOTE]
 >
@@ -19,25 +19,25 @@ ht-degree: 0%
 
 Adobe強烈建議您移轉至AccessEnabler程式庫的最新JS v4.x。
 
-Adobe Pass驗證JavaScript整合在熟悉的JS Web應用程式開發環境中，為程式設計師提供無所不在的TV解決方案。 整合的主要元件是您的「高階」應用程式（使用者互動、視訊簡報），以及Adobe提供的「低階」 AccessEnabler資料庫，此資料庫提供您進入權益流程的入口，並處理與Adobe Pass驗證伺服器的通訊。
+Adobe Pass Authentication JavaScript整合在熟悉的JS Web應用程式開發環境中，為程式設計師提供無所不在的TV解決方案。 整合的主要元件是您的「高階」應用程式（使用者互動、視訊簡報），以及Adobe提供的「低階」 AccessEnabler資料庫，此資料庫提供您進入權益流程的入口，並處理與Adobe Pass驗證伺服器的通訊。
 
-以下說明一般Adobe Pass驗證許可權流程： [程式設計師權益流程](/help/authentication/entitlement-flow.md)，而JavaScript整合逐步指南會引導您完成實作。 以下小節提供JavaScript AccessEnabler整合的特定說明和範例。
+一般Adobe Pass驗證軟體權利檔案流程包含在[程式設計師權利檔案流程](/help/authentication/entitlement-flow.md)中，而JavaScript整合逐步指南會引導您完成實作。 以下小節提供JavaScript AccessEnabler整合的專屬說明和範例。
 
 >[!IMPORTANT]
 >
->本檔案說明案頭Web解決方案的實作。 行動平台不支援JavaScript程式庫(例如iOS上的Safari、Android上的Chrome)。 如果您想要鎖定行動平台(iOS、Android、Windows)，請使用我們的原生SDK。
+>本檔案說明案頭Web解決方案的實作。 行動平台不支援JavaScript資料庫(例如iOS上的Safari、Android上的Chrome)。 如果您想要鎖定行動平台(iOS、Android、Windows)，請使用我們的原生SDK。
 
 ## 建立MVPD選擇對話方塊 {#creating-the-mvpd-selection-dialog}
 
 使用者若要登入其MVPD並取得驗證，您的頁面或播放器必須提供使用者識別其MVPD的方式。 會提供預設版本的MVPD選取對話方塊以供開發。 對於生產使用，您必須實作您自己的MVPD選取器。
 
-如果您已經知道客戶的提供者，您可以 [以程式設計方式設定MVPD](/help/authentication/home.md)，無需使用者互動。 技巧相同，但會略過叫用「提供者選擇器」對話方塊並要求客戶選取其MVPD的步驟。
+如果您已經知道客戶的提供者是誰，您可以[以程式設定MVPD](/help/authentication/home.md)，而不需要使用者互動。 技巧相同，但會略過叫用「提供者選擇器」對話方塊並要求客戶選取其MVPD的步驟。
 
 ## 顯示服務提供者 {#displaying-the-service-provider}
 
 下列程式碼範例示範如何探索並顯示目前客戶的服務提供者：
 
-**HTML**  — 此頁面新增區段至顯示客戶所選提供者（若已登入）的頁面：
+**HTML** — 此頁面新增區段至顯示客戶所選提供者（若已登入）的頁面：
 
 ```HTML
     <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
@@ -76,7 +76,7 @@ Adobe Pass驗證JavaScript整合在熟悉的JS Web應用程式開發環境中，
 ```
 
 
-**JavaScript** 如果使用者已登入，此JavaScript檔案會查詢目前提供者的「存取啟用程式」，並在為其保留的頁面區段中顯示結果。 也會實作MVPD選擇器對話方塊：
+**JavaScript**&#x200B;如果使用者已登入，此JavaScript檔案會查詢目前提供者的Access Enabler，並在為其保留的頁面區段中顯示結果。 也會實作MVPD選擇器對話方塊：
 
 ```JS
     $(function() {
@@ -197,13 +197,13 @@ Adobe Pass驗證JavaScript整合在熟悉的JS Web應用程式開發環境中，
 
 ## 登出 {#logout}
 
-呼叫 `logout()` 以啟動登出程式。 此方法不使用引數。 它會登出目前的使用者、清除該使用者的所有驗證和授權資訊，並從本機系統刪除所有AuthN和AuthZ權杖。
+呼叫`logout()`以啟動登出程式。 此方法不使用引數。 它會登出目前的使用者、清除該使用者的所有驗證和授權資訊，並從本機系統刪除所有AuthN和AuthZ權杖。
 
 在某些情況下，您的播放器不負責處理使用者登出：
 
 
 
-- **從未與Adobe Pass驗證整合的網站起始登出時。** 在此情況下，MVPD可以透過瀏覽器重新導向來叫用Adobe Pass驗證單一登出服務。 （目前不支援透過後通道呼叫叫用SLO。）
+- **從未與Adobe Pass驗證整合的網站啟動登出時。**&#x200B;在此情況下，MVPD可以透過瀏覽器重新導向，叫用Adobe Pass驗證單一登出服務。 （目前不支援透過後通道呼叫叫用SLO。）
 
 >[!NOTE]
 >

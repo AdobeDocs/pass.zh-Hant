@@ -23,18 +23,18 @@ ht-degree: 9%
 + [資料保留原則](data-retention-policy.md)
 + [節流機制](throttling-mechanism.md)
 + [向上呈報程式](cm-escalation-procedures.md)
-+ 並行監視使用情況 {#cmu}
++ 並行監視使用量{#cmu}
    + [並行監視使用報告](cm-usage-reports.md)
    + [並行監視使用API](cmu-api.md)
    + [並行監視使用情況API存取](cmu-api-access.md)
 + 第1版API{#v1-api}
    + [原則資訊點](policy-info-pt-versionone.md)
    + [自訂中繼資料](custom-metadata.md)
-   + 整合逐步指南 {#int-cookbooks}
+   + 整合逐步指南{#int-cookbooks}
       + [限制屬於不同擁有者的多個應用程式同時使用](restrict-concurr-usage-mult-apps.md)
       + [單一租使用者/原則和多個應用程式](single-tenant-policy-mult-app.md)
    + [實作模型](implementation-models.md)
-+ 發行說明 {#cm-release-notes}
++ 發行說明{#cm-release-notes}
    + [Concurrency Monitoring Services 3.1發行說明](rn-cm-services-31.md)
    + [Concurrency Monitoring Services 3.0發行說明](rn-cm-services-30.md)
    + [Concurrency Monitoring 2.9.6發行說明](rn-cm-296.md)

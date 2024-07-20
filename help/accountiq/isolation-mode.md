@@ -1,13 +1,13 @@
 ---
 title: 隔離模式MVPD
 description: 瞭解適用於TV Everywhere程式設計師的隔離模式MVPD
-source-git-commit: 5639319ce8915f0c33d927ca9554c405b3b2e87d
+exl-id: 7ffe4ce3-e9cb-4382-a421-bb57d1927b53
+source-git-commit: 2bb570ab14a3295d46ee6dc0d38485697d63809c
 workflow-type: tm+mt
 source-wordcount: '502'
 ht-degree: 0%
 
 ---
-
 
 # 適用於各處電視程式設計師的隔離模式MVPD {#isolation-mode-tve}
 
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ![](assets/isolation-diff-new.png)
 
-*隔離模式MVPD會識別四個不同的訂閱者，而非兩個*
+*隔離模式MVPD識別四個不同的訂閱者，而不是兩個*
 
 * 如果隔離模式MVPD的訂閱者B （例如Xfinity）使用相同裝置存取由兩個不同程式設計師提供的內容，則MVPD會將不同的識別碼與兩個不同的存取嘗試建立關聯。 似乎有兩個不同的訂閱者存取程式設計師的內容（圖中的L和M）。
 
@@ -45,7 +45,7 @@ ht-degree: 0%
 >
 > 隔離模式中的行為與標準模式不相容，隔離模式MVPD不能與其他MVPD混合，反之亦然。
 
-若要建立以隔離模式分析的區段，請拖曳隔離模式MVPD，例如 **Xfinity**，移至區段定義的MVPDs區段。
+若要建立以隔離模式分析的區段，請將隔離模式MVPD （例如&#x200B;**Xfinity**）拖曳至區段定義的MVPD區段。
 
 >[!NOTE]
 >
@@ -53,11 +53,11 @@ ht-degree: 0%
 
 ![](assets/xfinity-in-segment.png)
 
-*隔離模式中的Xfinity選項*
+隔離模式中的&#x200B;*Xfinity選項*
 
 >[!IMPORTANT]
 >
-> 在針對所有程式設計師的應用程式串流進行測量時，帳戶共用更為相關。 預期較低 **共用分數** 以及處於隔離模式時量度中的一些變化。
+> 在針對所有程式設計師的應用程式串流進行測量時，帳戶共用更為相關。 當處於隔離模式時，預期較低的&#x200B;**共用分數**&#x200B;以及量度中的一些變數。
 
 ![](assets/aggregate-sharing-isolation.png)
 

@@ -1,7 +1,8 @@
 ---
 title: Adobe Pass Authentication JavaScript 4.7.0發行說明
 description: Adobe Pass Authentication JavaScript 4.7.0發行說明
-source-git-commit: 9c491478a5560d1f9208e786de285733997bb24b
+exl-id: 07f90270-e64a-4c6b-a072-183af0f53352
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '121'
 ht-degree: 0%
@@ -24,7 +25,7 @@ Adobe Pass驗證： JavaScript 4.7.0
 
 ## 版本總覽 {#overview-javascript-sdk-470}
 
-* 移除Access Enabler JavaScript SDK 2.0.1版已棄用的安全漏洞。
+* 移除Access Enabler JavaScript SDK 2.0.1版（由於安全漏洞）。
 不再支援下列URL，且將傳回HTTP 410狀態代碼：
    * https://entitlement.auth.adobe.com/entitlement/AccessEnabler.js
    * http://entitlement.auth.adobe.com/entitlement/AccessEnabler.js

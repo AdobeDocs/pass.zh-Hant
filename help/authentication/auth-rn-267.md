@@ -1,9 +1,10 @@
 ---
 title: Adobe Pass Authentication 2.67發行說明
 description: Adobe Pass Authentication 2.67發行說明
-source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
+exl-id: d899fe96-a273-4681-90a5-bde54cc2f3b3
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '125'
+source-wordcount: '131'
 ht-degree: 0%
 
 ---
@@ -35,7 +36,7 @@ Adobe Pass驗證： adobe-pass-**2.67.0.1**
 
 ### MVPD更新 {#mvpd-updates-267}
 
-* 更新 **DirecTV波多黎各** 與Adobe整合。 如需詳細資訊，請聯絡您的TAM。
+* **DirecTV Puerto Rico**&#x200B;與Adobe整合的更新。 如需詳細資訊，請聯絡您的TAM。
 
 #### 錯誤修正 {#bug-fixes-267}
 

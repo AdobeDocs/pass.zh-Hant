@@ -1,7 +1,8 @@
 ---
 title: Adobe Pass Authentication iOS / tvOS 3.8.4發行說明
 description: Adobe Pass Authentication iOS / tvOS 3.8.4發行說明
-source-git-commit: 31620db6a05d4c7043e49c03099e9f84cdbad4fb
+exl-id: 51d38e2a-b500-402b-9583-f7b5ad6648fd
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '102'
 ht-degree: 0%
@@ -31,4 +32,4 @@ Adobe Pass驗證： iOS / tvOS 3.8.4
 
 ## 發行套件 {#rel-pkg-iostvos384}
 
-您可從下載iOS/tvOS SDK v3.8.4 [此處](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-tvOS-Native-AccessEnabler-Library).
+您可以從[這裡](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-tvOS-Native-AccessEnabler-Library)下載iOS/tvOS SDK v3.8.4。

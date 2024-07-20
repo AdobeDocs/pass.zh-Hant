@@ -43,7 +43,7 @@ ht-degree: 0%
 ```
 
 
-例如，更複雜的規範可能包含其他評等資訊。 您可以將整個RSS字串傳遞至需要資源ID的Access Enabler函式，例如 [`getAuthorization()`](/help/authentication/rest-api-reference.md)：
+例如，更複雜的規範可能包含其他評等資訊。 您可以將整個RSS字串傳遞至需要資源ID的Access Enabler函式，例如[`getAuthorization()`](/help/authentication/rest-api-reference.md)：
 
 ```rss
     var resource = 
@@ -56,7 +56,7 @@ ht-degree: 0%
     getAuthorization(resource);
 ```
 
-資源規範對Adobe Pass驗證而言是不透明的；它們只會傳遞給MVPD。 如果MVPD無法辨識或無法剖析您的資源規範，則會傳回錯誤給Adobe Pass驗證，以便將錯誤傳回 `tokenRequestFailed()` 回撥。
+資源規範對Adobe Pass驗證而言是不透明的；它們只會傳遞給MVPD。 如果MVPD無法辨識或無法剖析您的資源規範，則會傳回錯誤給Adobe Pass驗證，以便將錯誤傳回`tokenRequestFailed()`回呼。
 
 <!--
 ## Related Information {#related}

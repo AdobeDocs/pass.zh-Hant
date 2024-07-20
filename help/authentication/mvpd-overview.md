@@ -4,7 +4,7 @@ description: MVPD概覽
 exl-id: b918550b-96a8-4e80-af28-0a2f63a02396
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '2736'
+source-wordcount: '2734'
 ht-degree: 0%
 
 ---
@@ -71,7 +71,8 @@ Adobe Pass驗證是一項託管服務，可根據MVPD和程式設計師所需的
 Adobe Pass驗證透過軟體即服務(SaaS)模式提供，並可讓一般使用者、MVPD和程式設計師之間進行更安全的通訊，以驗證內容的權益。 服務的核心元件包括：
 
 伺服器端 — 託管的Adobe Pass驗證伺服器。 這是應用程式伺服器，會與MVPD的驗證系統進行後端通道（伺服器對伺服器）通訊。
-使用者端：使用者端存取啟用程式 — 存取啟用程式是載入程式設計師的網頁或播放器應用程式中的小型檔案。 它為程式設計師的內容檢視應用程式提供權利API，並與Adobe Pass驗證伺服器通訊。
+使用者端：
+使用者端Access Enabler - Access Enabler是載入程式設計師網頁或播放器應用程式中的小型檔案。 它為程式設計師的內容檢視應用程式提供權利API，並與Adobe Pass驗證伺服器通訊。
 無使用者端網路服務（適用於不支援Web功能的裝置） - RESTful網路服務，為智慧型電視、遊戲主機和機上盒等裝置提供軟體授權API。
 
 >[!NOTE]
@@ -122,7 +123,7 @@ Adobe Pass驗證為無法轉譯網頁的裝置提供無使用者端網頁服務�
 * 它提供以下形式：
    * Flash Player執行階段可執行的SWF檔案
    * 由瀏覽器直接執行的JS檔案
-   * 適用於各種平台(包括iOS、Android和Xbox)的原生存取啟用程式。
+   * 適用於各種平台的原生Access Enabler，包括iOS、Android和Xbox。
 
 ### Adobe代管的後端伺服器 {#backend}
 
@@ -139,11 +140,11 @@ Adobe Pass驗證權利解決方案的中心，在於產生特定資料片段，�
 
 在驗證/授權工作流程期間會核發三種型別的權杖。 其中兩個是「長期」的，可提供使用者觀看體驗的連續性。 第三個是短期代號，可支援業界最佳實務，以透過串流擷取來減少詐騙。 權杖的存留時間(「TTL」)值是根據MVPD與程式設計師之間的協定所設定。 您可以決定最適合您的企業和客戶的TTL值。
 
-**長效驗證權杖**. 客戶使用Adobe Pass驗證成功登入其MVPD帳戶後，驗證就會成功。 Adobe Pass驗證接著會產生與請求裝置繫結的長期驗證(「authN」)權杖，以及（根據MVPD）可匿名識別使用者的全域唯一識別碼(「GUID」)。
+**長期驗證權杖**。 客戶使用Adobe Pass驗證成功登入其MVPD帳戶後，驗證就會成功。 Adobe Pass驗證接著會產生與請求裝置繫結的長期驗證(「authN」)權杖，以及（根據MVPD）可匿名識別使用者的全域唯一識別碼(「GUID」)。
 
-**長效授權權杖**. 在成功授權後，Adobe Pass驗證會建立長效授權(「authZ」)權杖。 此權杖無法攜帶，因為它繫結到請求裝置和特定的受保護資源（例如頻道、影集或集數）。 Access Enabler會使用長效的authZ權杖，建立用於實際檢視存取的短效媒體權杖。
+**長期授權權杖**。 在成功授權後，Adobe Pass驗證會建立長效授權(「authZ」)權杖。 此權杖無法攜帶，因為它繫結到請求裝置和特定的受保護資源（例如頻道、影集或集數）。 Access Enabler會使用長效的authZ權杖，建立用於實際檢視存取的短效媒體權杖。
 
-**短期媒體代號**. 使用者獲得授權後，Adobe Pass驗證會產生authZ權杖，並使用該token產生單次使用、短暫的媒體權杖，由Adobe簽署並加密，以避免在交換期間遭到竄改。 因為短期權杖會透過Access Enabler API或無使用者端Web服務向內嵌網站公開，在提供受保護資源的存取權之前，程式設計師的媒體伺服器必須使用Adobe Pass驗證元件（媒體權杖驗證器）來驗證權杖。
+**短期媒體權杖**。 使用者獲得授權後，Adobe Pass驗證會產生authZ權杖，並使用該token產生單次使用、短暫的媒體權杖，由Adobe簽署並加密，以避免在交換期間遭到竄改。 因為短期權杖會透過Access Enabler API或無使用者端Web服務向內嵌網站公開，在提供受保護資源的存取權之前，程式設計師的媒體伺服器必須使用Adobe Pass驗證元件（媒體權杖驗證器）來驗證權杖。
 
 ## MVPD整合生命週期 {#lifecycle}
 
@@ -151,7 +152,7 @@ Adobe Pass驗證權利解決方案的中心，在於產生特定資料片段，�
 
 ![](assets/mvpd-int-lifecycle.png)
 
-*圖：MVPD整合生命週期*
+*圖： MVPD整合生命週期*
 
 ## 權益流程圖 {#chart}
 
@@ -159,28 +160,28 @@ Adobe Pass驗證權利解決方案的中心，在於產生特定資料片段，�
 
 ![](assets/authn-authz-entitlmnt-flow.png)
 
-*圖：使用Adobe Pass驗證確認權益的程式*
+*圖：使用Adobe Pass驗證確認軟體權利檔案的程式*
 
 ## 驗證步驟 {#authn-steps}
 
 下列步驟提供Adobe Pass驗證流程的範例。  這是軟體權利檔案程式的一部分，程式設計師會在此程式中判斷使用者是否為MVPD的有效客戶。  在此案例中，使用者是MVPD的有效訂閱者。  使用者正嘗試使用程式設計師的Flash應用程式檢視受保護的內容：
 
-1. 使用者瀏覽至程式設計師的網頁，該網頁會將程式設計師的Flash應用程式和Adobe Pass驗證存取啟用程式元件載入到使用者的電腦上。 Flash應用程式會使用Access Enabler設定程式設計師的識別碼並進行Adobe Pass驗證，而Adobe Pass驗證會為該程式設計師（「請求者」）設定存取啟用碼的設定和狀態資料。 執行任何其他API呼叫之前，存取啟用程式必須從伺服器接收此資料。  技術說明：程式設計師使用Access Enabler的 `setRequestor()` 方法；如需詳細資訊，請參閱 [程式設計師整合指南](/help/authentication/programmer-integration-guide-overview.md).
+1. 使用者瀏覽至程式設計師的網頁，該網頁會將程式設計師的Flash應用程式和Adobe Pass驗證存取啟用程式元件載入到使用者的電腦上。 Flash應用程式會使用Access Enabler設定程式設計師的識別碼並進行Adobe Pass驗證，而Adobe Pass驗證會為該程式設計師（「請求者」）設定存取啟用碼的設定和狀態資料。 執行任何其他API呼叫之前，存取啟用程式必須從伺服器接收此資料。  技術備註：程式設計師使用Access Enabler的`setRequestor()`方法設定其身分；如需詳細資訊，請參閱[程式設計師整合指南](/help/authentication/programmer-integration-guide-overview.md)。
 1. 當使用者嘗試檢視程式設計師的受保護內容時，程式設計師的應用程式會向使用者顯示MVPD清單，使用者可從中選擇提供者。
 1. 系統會將使用者重新導向至Adobe Pass驗證伺服器，其中會建立使用者所選MVPD的加密SAML要求。 此要求會以代表程式設計師的驗證要求形式傳送給MVPD。 根據MVPD的系統，使用者的瀏覽器會重新導向至MVPD的網站以登入，或在程式設計師的應用程式中建立登入iFrame。
 1. 在任何一種情況下（重新導向或iFrame），MVPD都會接受要求並顯示其登入頁面。
 1. 使用者使用MVPD登入，MVPD會驗證使用者作為付費客戶的狀態，然後MVPD會建立自己的HTTP工作階段。
 1. 驗證使用者後，MVPD會建立回應（SAML和加密），MVPD會將其傳回Adobe Pass驗證。
-1. Adobe Pass驗證會收到MVPD回應，看到有Adobe Pass驗證HTTP工作階段開啟，驗證 [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language) 來自MVPD的回應，並重新導向回程式設計師的網站。
+1. Adobe Pass驗證會收到MVPD回應、發現Adobe Pass驗證HTTP工作階段已開啟、驗證MVPD的[SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language)回應，並重新導向回程式設計師的網站。
 1. 程式設計師的網站已重新載入，存取啟用程式已重新載入，程式設計師再次呼叫setRequestor()。  需要對setRequestor()進行第二次呼叫，因為目前的設定已變更 — 現在有旗標顯示，通知Access Enabler伺服器上正在等候產生AuthN權杖。
 1. 存取啟用程式發現擱置驗證，並向Adobe Pass驗證伺服器要求Token。 Token是透過叫用Flash Player的DRM功能從伺服器擷取。
 1. AuthN權杖儲存在程式設計師的Flash PlayerLSO快取中；驗證現已完成，且工作階段已在Adobe Pass驗證伺服器上損毀。
 
 ## 授權步驟 {#authz-steps}
 
-下列步驟會從上一節繼續進行([驗證步驟](#authn-steps))：
+下列步驟從上一節繼續（[驗證步驟](#authn-steps)）：
 
-1. 當使用者嘗試存取程式設計師受保護的內容時，程式設計師的應用程式會先檢查使用者本機電腦或裝置上的AuthN權杖。  如果該Token不存在，則 [驗證步驟](#authn-steps) 以上步驟如下。  如果有AuthN權杖，授權流程會由程式設計師的應用程式進行，起始對存取啟用程式的呼叫，並要求取得使用者對受保護內容特定專案的檢視許可權。
+1. 當使用者嘗試存取程式設計師受保護的內容時，程式設計師的應用程式會先檢查使用者本機電腦或裝置上的AuthN權杖。  如果該Token不存在，則執行上述[驗證步驟](#authn-steps)。  如果有AuthN權杖，授權流程會由程式設計師的應用程式進行，起始對存取啟用程式的呼叫，並要求取得使用者對受保護內容特定專案的檢視許可權。
 1. 受保護內容的特定專案由「資源識別碼」表示。  這可以是簡單的字串或較複雜的結構，但在任何情況下，資源識別碼的性質都是預先在程式設計師和MVPD之間商定。  程式設計師的應用程式會將資源識別碼傳遞給Access Enabler。  存取啟用程式會檢查使用者本機電腦或裝置上的AuthZ權杖。  如果沒有AuthZ權杖，存取啟用程式會將要求傳遞至後端Adobe Pass驗證伺服器。
 1. Adobe Pass驗證伺服器使用標準化通訊協定與MVPDs授權端點通訊。  如果MVPD的回應指出使用者有權檢視受保護的內容，則Adobe Pass驗證伺服器會建立AuthZ權杖並將其傳回存取啟用程式，以將AuthZ權杖儲存在使用者的電腦上。
 1. 將AuthZ權杖儲存在使用者的電腦或裝置上，程式設計師的應用程式會呼叫存取啟用程式，以從Adobe Pass驗證伺服器取得媒體權杖，並將該權杖提供給程式設計師的應用程式。

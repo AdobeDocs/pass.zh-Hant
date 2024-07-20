@@ -4,7 +4,7 @@ description: 使用Charles代理
 exl-id: bb38543f-f6bc-4b5a-91b8-41bc51ee4c56
 source-git-commit: 19ed211c65deaa1fe97ae462065feac9f77afa64
 workflow-type: tm+mt
-source-wordcount: '457'
+source-wordcount: '369'
 ht-degree: 0%
 
 ---
@@ -30,13 +30,13 @@ ht-degree: 0%
 
 檢視流量的方式有兩種：
 
-1. **結構**  — 請求會依主機分組
-1. **序列**  — 要求會以呼叫的順序列出
+1. **結構** — 要求依主機分組
+1. **序列** — 要求會以呼叫的順序列出
 
 
 ## SSL和憑證 {#ssl-and-certificates}
 
-啟用SSL代理 `\[ *Proxy -\> Proxy Settings... -\> SSL* \]`
+啟用SSL代理`\[ *Proxy -\> Proxy Settings... -\> SSL* \]`
 
 勾選「啟用SSL代理」核取方塊，然後新增所有HTTPS位置。
 
@@ -45,17 +45,17 @@ ht-degree: 0%
 
 
 
-- SSL代理 —  <http://www.charlesproxy.com/documentation/proxying/ssl-proxying/>
-- SSL憑證 —  <http://www.charlesproxy.com/documentation/using-charles/ssl-certificates/>
+- SSL代理 — <http://www.charlesproxy.com/documentation/proxying/ssl-proxying/>
+- SSL憑證 — <http://www.charlesproxy.com/documentation/using-charles/ssl-certificates/>
 - 從行動裝置使用SSL代理 — 請參閱下文。
 
 
-## 忽略/排除主機 {#ignore-/-exclude-hosts}
+## 忽略/排除主機{#ignore-/-exclude-hosts}
 
 如果您的輸出變得過於雜亂，您可以選擇忽略或排除位置。您可以執行下列任一項作業來忽略或排除位置：
 
 - 以滑鼠右鍵按一下您要忽略的請求，然後選取「忽略」
-- 手動新增要排除的位置 `\[ *Proxy -\> Recording Settings... -\> Exclude* \]`
+- 手動新增要從`\[ *Proxy -\> Recording Settings... -\> Exclude* \]`排除的位置
 
 
 ## DNS詐騙 {#dns-spoffing}
@@ -77,7 +77,7 @@ ht-degree: 0%
 
 
 
-透過對應遠端，您可以將「傳入」要求重新導向至不同的端點。 此功能最常見的使用案例是「對應」 `AccessEnabler.swf` 至 `AccessEnablerDebug.swf:`
+透過對應遠端，您可以將「傳入」要求重新導向至不同的端點。 此功能最常見的使用案例是「對應」`AccessEnabler.swf`至`AccessEnablerDebug.swf:`
 
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/MapRemote.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/MapRemoteAdd.PNG)
 
@@ -95,13 +95,13 @@ ht-degree: 0%
 
 #### iPhone的SSL連線 {#ssl-connection-from-iphone}
 
-瀏覽至 <http://charlesproxy.com/charles.crt> 從您的iOS裝置。  這會啟動憑證安裝對話方塊：
+從您的iOS裝置瀏覽至<http://charlesproxy.com/charles.crt>。  這會啟動憑證安裝對話方塊：
 
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate1\(1\)。PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate2\(1\)。PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate3.PNG)
 
 </br>
 
-按一下 `\[ *Install*... *Install*... *Done* \]` 以完成憑證安裝。
+按一下`\[ *Install*... *Install*... *Done* \]`以完成憑證的安裝。
 
 <http://www.charlesproxy.com/documentation/faqs/ssl-connections-from-within-iphone-applications/>
 
@@ -109,7 +109,7 @@ ht-degree: 0%
 
 #### 從iOS裝置使用Charles {#using-charles-from-an-ios-device}
 
-在您的iOS裝置上選取 `\[ *Settings* -\> *Wi-FI* -\> (*YOUR\_WIFI\_NETWORK)* \]`. 按一下網路旁的藍色小箭頭，然後向下移至HTTP Proxy並選取「手動」：
+在您的iOS裝置上選取`\[ *Settings* -\> *Wi-FI* -\> (*YOUR\_WIFI\_NETWORK)* \]`。 按一下網路旁的藍色小箭頭，然後向下移至HTTP Proxy並選取「手動」：
 
 
 </br>
@@ -125,7 +125,8 @@ ht-degree: 0%
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy3.PNG)
 
 </br>
-按一下「允許」以允許裝置使用Charles代理其所有請求。
+按一下「允許」以允許裝置使用Charles代理所有其
+要求。
 
 <http://www.charlesproxy.com/documentation/faqs/using-charles-from-an-iphone/>
 
@@ -139,9 +140,9 @@ ht-degree: 0%
 <https://tve.zendesk.com/entries/22135907-ios-authentication-error-adobepass-ios-app-cannot-be-found>
 
 
-## 使用Charles for Android
+## 在Android中使用Charles
 
 <http://www.charlesproxy.com/documentation/configuration/browser-and-system-configuration>
 
 
-瀏覽至 [Charles Proxy](http://charlesproxy.com/charles.crt) （從您的Android裝置）。
+從您的Android裝置瀏覽至[Charles Proxy](http://charlesproxy.com/charles.crt)。

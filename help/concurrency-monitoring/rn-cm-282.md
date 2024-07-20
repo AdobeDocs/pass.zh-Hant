@@ -1,19 +1,19 @@
 ---
 title: Adobe Pass並行監控 — 2.8.2發行說明
 description: Adobe Pass並行監控 — 2.8.2發行說明
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: bc1086ba-cd75-4c00-8632-33b8178b429b
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '48'
+source-wordcount: '55'
 ht-degree: 0%
 
 ---
-
 
 # Adobe Pass並行監控 — 2.8.2發行說明 {#cm-rns-282}
 
 此頁面說明此版本的新功能、變更和已知問題：
 
-**發行日期：** 11/06/2018
+**發行日期：** 2018年11月6日
 
 ## 版本總覽 {#overview}
 

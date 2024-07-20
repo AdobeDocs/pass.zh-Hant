@@ -4,7 +4,7 @@ description: 透過被動驗證的SSO
 exl-id: ce45899f-6e94-4bb0-a2c1-51f03bd66d8d
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '776'
+source-wordcount: '778'
 ht-degree: 0%
 
 ---
@@ -76,7 +76,8 @@ Adobe Pass驗證可啟用應用程式/網站之間的單一登入(SSO)。 使用
 
 
 
-SAML要求範例以下是被動驗證N流程的SAML要求範例：
+SAML要求範例
+以下是被動式authN流程的SAML要求範例：
 
 
 ```xml

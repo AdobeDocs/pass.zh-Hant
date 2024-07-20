@@ -4,7 +4,7 @@ description: 在選擇對話方塊中允許MVPD
 exl-id: 2c0e0f06-ddc6-4bea-90dc-d7ef8e78d27e
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '129'
+source-wordcount: '128'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## 解決方案 {#solution}
 
-在 `displayProviderDialog()` 回呼，Adobe Pass驗證會傳回與所選程式設計人員（請求者ID）整合的所有MVPD。 但程式設計師可以在MVPD的傳回陣列上套用篩選，並且只顯示同時在這兩個清單中的專案。
+在`displayProviderDialog()`回呼中，Adobe Pass驗證會傳回與所選程式設計員（要求者ID）整合的所有MVPD。 但程式設計師可以在MVPD的傳回陣列上套用篩選，並且只顯示同時在這兩個清單中的專案。
 
 ## 範例 {#example}
 

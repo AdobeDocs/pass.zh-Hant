@@ -4,7 +4,7 @@ description: 最低系統需求
 exl-id: 57b21e2a-abd7-4b4b-85f1-25584a850e40
 source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
 workflow-type: tm+mt
-source-wordcount: '434'
+source-wordcount: '446'
 ht-degree: 0%
 
 ---
@@ -34,22 +34,22 @@ Adobe Pass鼓勵我們的客戶和合作夥伴考慮升級至最新版本，除�
 
 | 網頁/行動瀏覽器(†) | 支援的版本 |
 |---|---|
-| Google Chrome | **70** 或更新版本 |
-| Mozilla Firefox | **57** 或更新版本 |
-| Apple Safari | **14** 或更新版本 |
-| Microsoft Edge | **100** 或更新版本 |
+| Google Chrome | **70**&#x200B;或更新版本 |
+| Mozilla Firefox | **57**&#x200B;或更新版本 |
+| Apple Safari | **14**&#x200B;或更新版本 |
+| Microsoft Edge | **100**&#x200B;或更新版本 |
 
 (†)Adobe建議不要使用私人或無痕模式。
 
 | 作業系統 | 支援的版本 |
 |---|---|
 | *Android* | **7.0** (Nougat)或更新版本 |
-| *iOS* | **14** 或更新版本 |
-| *iPadOS* | **14** 或更新版本 |
-| *tvOS* | **14** 或更新版本 |
-| *Fire OS* | **5 (Android 5.1)** 或更新版本 |
-| *Mac作業系統* | **10.13** 或更新版本 |
-| *Microsoft Windows* | **10** 或更新版本 |
+| *iOS* | **14**&#x200B;或更新版本 |
+| *iPadOS* | **14**&#x200B;或更新版本 |
+| *tvOS* | **14**&#x200B;或更新版本 |
+| *引發作業系統* | **5 (Android 5.1)**&#x200B;或更新版本 |
+| *Mac作業系統* | **10.13**&#x200B;或更新版本 |
+| *Microsoft Windows* | **10**&#x200B;或更新版本 |
 
 
 
@@ -62,7 +62,7 @@ Adobe Pass鼓勵我們的客戶和合作夥伴考慮升級至最新版本，除�
 ## 無使用者端(REST)實作的裝置需求 {#general_clientless_reqs}
 
 
-任何會透過無使用者端實作使用Adobe Pass驗證服務的裝置 **必須能夠**：
+任何將透過無使用者端實作使用Adobe Pass驗證服務的裝置&#x200B;**必須能夠**：
 
 * 提供唯一的雜湊裝置ID。 如果裝置未提供唯一的雜湊裝置ID，那麼它必須能夠儲存由Adobe Pass驗證提供的唯一ID。 裝置應該能夠永久儲存其本機儲存體中的唯一ID，並在呼叫Adobe Pass驗證API時提供唯一ID作為裝置ID。
 * 使用HMAC-SHA1演演算法產生數位簽名

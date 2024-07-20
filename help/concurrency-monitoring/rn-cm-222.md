@@ -1,13 +1,13 @@
 ---
 title: Adobe Pass Concurrency Monitoring 2.2.2發行說明
 description: Adobe Pass Concurrency Monitoring 2.2.2發行說明
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+exl-id: 32a333bf-557e-48d0-bfcd-770f3879fe34
+source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
 workflow-type: tm+mt
-source-wordcount: '70'
-ht-degree: 0%
+source-wordcount: '77'
+ht-degree: 2%
 
 ---
-
 
 # Adobe Pass Concurrency Monitoring 2.2.2發行說明 {#cm-222}
 

@@ -4,7 +4,7 @@ description: 服務提供者範圍
 exl-id: 730c43e1-46c0-4eec-b562-b1ad93cce6d3
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '313'
+source-wordcount: '314'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## 概觀 {#overview}
 
-Adobe Pass驗證與MVPD整合的預設實作是根據 **OLCA規格**. OLCA規格（6.5，主體識別碼）的「驗證需求」區段指出，您可以指示服務提供者(SP)的「主體」識別碼範圍。 （主體識別碼是MVPD傳回SP的模糊化使用者ID。）  在Adobe Pass驗證整合中，MVPD必須啟用SP驗證要求的範圍。
+Adobe Pass驗證與MVPD整合的預設實作是以&#x200B;**OLCA規格**&#x200B;為基礎。 OLCA規格（6.5，主體識別碼）的「驗證需求」區段指出，您可以指示服務提供者(SP)的「主體」識別碼範圍。 （主體識別碼是MVPD傳回SP的模糊化使用者ID。）  在Adobe Pass驗證整合中，MVPD必須啟用SP驗證要求的範圍。
 
 由於Adobe Pass驗證扮演了程式設計師的SP角色，因此必須實作自訂，以啟用驗證請求的SP範圍設定。  必須這樣做，MVPD才能識別傳遞給MVPD的身分提供者(IdP)的SAML宣告中的網路品牌。  範圍設定可透過下一節中說明的兩種方式之一來實施。
 
@@ -25,9 +25,9 @@ Adobe Pass驗證與MVPD整合的預設實作是根據 **OLCA規格**. OLCA規格
 
 Adobe Pass驗證支援以下兩種方式來啟用驗證請求的SP領域設定：
 
-* **SAML簽發者方法。**  在此方法中，「請求者ID」會附加至SAML驗證請求中的SAML簽發者字串。
+* **SAML簽發者方法。**&#x200B;在此方法中，「要求者ID」會附加至SAML驗證要求中的SAML簽發者字串。
 
-* **自訂範圍設定屬性方法。**  在此方法中，「請求者ID」會明確包含在SAML驗證請求中，作為自訂「範圍」屬性。
+* **自訂範圍屬性方法。**&#x200B;在此方法中，「要求者ID」會明確包含在SAML驗證要求中，作為自訂「範圍」屬性。
 
 >[!NOTE]
 >
@@ -35,7 +35,7 @@ Adobe Pass驗證支援以下兩種方式來啟用驗證請求的SP領域設定�
 
 ### SAML簽發者方法 {#saml-issuer-approach}
 
-此方法使用SAML `<Issuer>` 元素，如下所示：
+此方法在SAML驗證請求中使用SAML `<Issuer>`元素，如以下程式碼片段所示：
 
 ```xml
 ...

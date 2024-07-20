@@ -34,7 +34,7 @@ Adobe Pass驗證的使用者端元件。 Adobe Pass驗證為每個支援的平�
 
 ## AuthZ權杖 {#authz-token}
 
-授權權杖，在使用者獲得授權可檢視受保護的內容後，由Adobe Pass驗證產生。 AuthZ權杖儲存在Adobe Pass驗證伺服器上，並用於產生 [短期媒體Token](#short-lived-token).
+授權權杖，在使用者獲得授權可檢視受保護的內容後，由Adobe Pass驗證產生。 AuthZ權杖儲存在Adobe Pass驗證伺服器上，用來產生[短期媒體權杖](#short-lived-token)。
 
 ## 管道ID （已棄用） {#channel_id}
 
@@ -56,7 +56,7 @@ Adobe Pass驗證檔案中使用的術語，指的是使用Adobe Pass驗證註冊
 
 ## GUID {#guid}
 
-另請參閱 [使用者ID](#user-id).
+請參閱[使用者ID](#user-id)。
 
 ## IdP {#idp}
 
@@ -72,15 +72,15 @@ Adobe提供的資料庫，程式設計師可使用此資料庫來驗證Adobe Pas
 
 ## MVPD ID {#mvpd-id}
 
-另請參閱 [使用者ID](#user-id).
+請參閱[使用者ID](#user-id)。
 
-## 合作夥伴ID {#partner-id}
+## 合作夥伴 ID {#partner-id}
 
 Adobe傳遞給MVPD的識別碼，MVPD會用它來識別代表Adobe Pass驗證請求驗證的人員。 有時用於為特定程式設計師設定其UI，有時用於所有程式設計師的設定UI相同，這取決於MVPD的需求。
 
 ## 付費電視提供者 {#pay-tv-provider}
 
-同義字 [MVPD](#mvpd).
+與[MVPD](#mvpd)同義。
 
 ## 程式設計師 {#programmer}
 
@@ -96,15 +96,15 @@ Adobe傳遞給MVPD的識別碼，MVPD會用它來識別代表Adobe Pass驗證請
 
 ## 要求者ID {#requestor-id}
 
-唯一識別 [程式設計師](#programmer) Adobe Pass （帳戶、品牌、管道或屬性）。 此ID是在帳戶初始設定期間由程式設計師和Adobe決定。 在網頁上，要求者ID與已列入白名單的網域相關聯；將會拒絕任何使用來自外部網域的ID的呼叫。 程式設計師也會將請求者ID用於Analytics。 通常每個程式設計師只有一個要求者ID。 與請求者ID相關的另一項功能是，程式設計師必須向Adobe提供公開憑證，因為setRequestor API呼叫預期會傳送加密資料，用於驗證Adobe Pass驗證系統中的程式設計師。
+在Adobe Pass驗證中唯一識別[程式設計師](#programmer) （帳戶、品牌、管道或屬性）。 此ID是在帳戶初始設定期間由程式設計師和Adobe決定。 在網頁上，要求者ID與已列入白名單的網域相關聯；將會拒絕任何使用來自外部網域的ID的呼叫。 程式設計師也會將請求者ID用於Analytics。 通常每個程式設計師只有一個要求者ID。 與請求者ID相關的另一項功能是，程式設計師必須向Adobe提供公開憑證，因為setRequestor API呼叫預期會傳送加密資料，用於驗證Adobe Pass驗證系統中的程式設計師。
 
 ## 資源ID {#resource-id}
 
-用來識別 [程式設計師](#programmer) 至MVPD。 這是程式設計師和MVPD之間所共識；Adobe Pass驗證會透過未觸及的傳遞資源ID，因此所有MVPD都必須相同。 只要MVPD知道每個ID代表的意義，程式設計師就可以使用多個資源ID。
+將[程式設計員](#programmer)識別為MVPD的字串或mRSS資源。 這是程式設計師和MVPD之間所共識；Adobe Pass驗證會透過未觸及的傳遞資源ID，因此所有MVPD都必須相同。 只要MVPD知道每個ID代表的意義，程式設計師就可以使用多個資源ID。
 
 ## SessionGUID {#sessionGUID}
 
-另請參閱 [使用者ID](#user-id).
+請參閱[使用者ID](#user-id)。
 
 ## 短期媒體Token {#short-lived-token}
 
@@ -116,7 +116,7 @@ Adobe Pass驗證檔案中使用的術語，指稱機上盒、遊戲主機和智�
 
 ## SP{#sp}
 
-服務提供者；這通常指 *角色* SP的ID，由Adobe Pass驗證播放，代表程式設計師與整合 [MVPD](#mvpd).
+服務提供者；這通常指的是Adobe Pass驗證所扮演的SP的&#x200B;*角色*，代表程式設計師與[MVPD](#mvpd)整合。
 
 ## 暫時通過 {#temp-pass}
 
@@ -132,7 +132,7 @@ Adobe Pass驗證檔案中使用的術語，指稱機上盒、遊戲主機和智�
 
 ## 使用者ID {#user-id}
 
-唯一識別程式設計師應用程式的使用者，但源自MVPD。 針對不同的使用案例以不同的形式提供。 另請參閱 [瞭解在程式設計師總覽中的使用者ID](/help/authentication/programmer-overview.md#user-ids).
+唯一識別程式設計師應用程式的使用者，但源自MVPD。 針對不同的使用案例以不同的形式提供。 請參閱[瞭解程式設計師概觀中的使用者ID](/help/authentication/programmer-overview.md#user-ids)。
 
 ## 允許清單 {#whitelist}
 

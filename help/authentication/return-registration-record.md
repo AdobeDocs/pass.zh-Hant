@@ -17,19 +17,19 @@ ht-degree: 2%
 
 >[!NOTE]
 >
-> REST API實作受限於 [節流機制](/help/authentication/throttling-mechanism.md)
+> REST API實作已由[節流機制](/help/authentication/throttling-mechanism.md)限制
 
 ## REST API端點 {#clientless-endpoints}
 
 `<REGGIE_FQDN>`：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生產 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 正在暫存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 `<SP_FQDN>`：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生產 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 正在暫存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 
 
@@ -43,9 +43,9 @@ ht-degree: 2%
 
 
 
-| 端點 | 已呼叫  </br>作者： | 輸入   </br>引數 | HTTP  </br>方法 | 回應 | HTTP  </br>回應 |
+| 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| `<REGGIE_FQDN>`；/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>例如：<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJCFK？format=xml | 串流應用程式</br></br>或</br></br>程式設計師服務 | 1.請求者  </br>    （路徑元件）</br>2.  註冊代碼  </br>    （路徑元件） | GET | 包含註冊代碼和資訊的XML或JSON。 請參閱下面的結構描述和範例。 | 200 |
+| `<REGGIE_FQDN>`；/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>例如：<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJCFK？format=xml | 串流應用程式</br></br>或</br></br>程式設計師服務 | 1.要求者</br>    （路徑元件）</br>2。  註冊代碼</br>    （路徑元件） | GET | 包含註冊代碼和資訊的XML或JSON。 請參閱下面的結構描述和範例。 | 200 |
 
 {style="table-layout:auto"}
 

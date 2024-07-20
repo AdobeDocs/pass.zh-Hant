@@ -4,7 +4,7 @@ description: 如何將MVPD登入頁面從iFrame移轉至快顯視窗
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '686'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 * [Adobe Pass Authentication and Safari login issues](https://tve.helpdocsonline.com/adobe-pass)
 * [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)-->
 
-Adobe Pass驗證團隊 **建議實作快顯/新視窗登入頁面** 而非Firefox和Safari上的iFrame版本。  不過，如果您要實作Internet Explorer的登入頁面，您可能會遇到快顯視窗實作的問題。 IE問題是因為以下事實所造成：當使用者在快顯視窗中使用他們的MVPD進行驗證後，Adobe Pass驗證會強制上層頁面重新導向，而這會被Internet Explorer視為快顯封鎖程式。 Adobe Pass驗證團隊 **建議實作Internet Explorer的iFrame登入**.
+Adobe Pass驗證團隊&#x200B;**建議在Firefox和Safari上實作快顯視窗/新視窗登入頁面**，而非iFrame版本。  不過，如果您要實作Internet Explorer的登入頁面，您可能會遇到快顯視窗實作的問題。 IE問題是因為以下事實所造成：當使用者在快顯視窗中使用他們的MVPD進行驗證後，Adobe Pass驗證會強制上層頁面重新導向，而這會被Internet Explorer視為快顯封鎖程式。 Adobe Pass驗證團隊&#x200B;**建議為Internet Explorer**&#x200B;實作iFrame登入。
 
 此技術備註中顯示的範常式式碼使用iFrame和快顯視窗的混合實作 — 在Internet Explorer上開啟iFrame，並在其他瀏覽器上開啟快顯視窗。
 
@@ -32,7 +32,7 @@ Adobe Pass驗證團隊 **建議實作快顯/新視窗登入頁面** 而非Firefo
 
 ## iFrame中具有登入頁面的MVPD選擇器 {#mvpd-pickr-iframe}
 
-HTML先前的程式碼範例顯示包含 &lt;div> 標籤會與關閉iFrame按鈕一起建立iFrame：
+先前的程式碼範例顯示HTML頁面，其中包含要建立iFrame的&lt;div>標籤以及「關閉iFrame」按鈕：
 
 ```HTML
 <body> 
@@ -48,7 +48,7 @@ HTML先前的程式碼範例顯示包含 &lt;div> 標籤會與關閉iFrame按鈕
 </body>
 ```
 
-以下是相關聯的 **JavaScript** 程式碼：
+以下是相關的&#x200B;**JavaScript**&#x200B;代碼：
 
 ```JavaScript
 /*
@@ -105,7 +105,7 @@ function setSelectedProvider(providerID) {
 
 ## 在快顯視窗中具有登入頁面的MVPD選擇器 {#mvpd-pickr-popup}
 
-因為我們不會使用 **iFrame** HTML程式碼將不再包含iFrame或關閉iFrame的按鈕。 先前包含iFrame的div - **mvpddiv**  — 將保留，並用於下列專案：
+由於我們不會再使用&#x200B;**iFrame**，因此HTML程式碼將不會包含iFrame或關閉iFrame的按鈕。 先前包含iFrame的div - **mvpddiv** — 將會保留並用於下列專案：
 
 * 通知使用者MVPD登入頁面已在快顯視窗焦點遺失時開啟
 * 提供連結，以重新取得快顯視窗的焦點
@@ -134,9 +134,9 @@ function setSelectedProvider(providerID) {
 </body>
 ```
 
-MVPD清單將顯示在名為的div中 **選取器** 作為選擇 **-mvpdList**.
+MVPD清單將顯示在名為&#x200B;**picker**&#x200B;的div中，作為選取的&#x200B;**-mvpdList**。
 
-將使用新的API回呼 —  **setConfig(configXML)**. 呼叫setRequestor(requestorID)函式之後會觸發回呼。 此回呼會傳回與先前設定的requestorID整合的MVPD清單。 在回呼方法中，會剖析傳入的XML，並快取MVPD清單。 也會建立MVPD選擇器，但不會顯示。
+將使用新的API回呼 — **setConfig(configXML)**。 呼叫setRequestor(requestorID)函式之後會觸發回呼。 此回呼會傳回與先前設定的requestorID整合的MVPD清單。 在回呼方法中，會剖析傳入的XML，並快取MVPD清單。 也會建立MVPD選擇器，但不會顯示。
 
 ```JavaScript
 var mvpdList;  // The list of cached MVPDs
@@ -181,13 +181,13 @@ function displayProviderDialog(providers) {
 
 使用者從選擇器選取MVPD後，需要建立快顯視窗。 如果使用about：blank或其他網域上的頁面建立快顯視窗，有些瀏覽器可能會封鎖快顯視窗，因此建議使用載入AccessEnabler的主機名稱來開啟快顯視窗。
 
-在iFrame實作中，重設驗證流程已由btnCloseIframe按鈕和JavaScript函式closeIframeAction()完成，但現在已無法再裝飾iFrame。 因此，觀看快顯視窗關閉的時間（由使用者或完成驗證流程）也會獲得相同的行為。 已新增程式碼片段，萬一使用者失去快顯視窗的焦點時也有幫助：
+在iFrame實作中，重設驗證流程是由btnCloseIframe按鈕和JavaScript函式closeIframeAction()所完成，但現在已無法再裝飾iFrame。 因此，觀看快顯視窗關閉的時間（由使用者或完成驗證流程）也會獲得相同的行為。 已新增程式碼片段，萬一使用者失去快顯視窗的焦點時也有幫助：
 
 ```HTML
 "<a href="javascript:mvpdWindow.focus();">Click here to open it.</a>".
 ```
 
-在createIFrame()回呼上 **mvpddiv** 將會顯示div。
+在createIFrame()回呼上，將會顯示&#x200B;**mvpddiv** div。
 
 ```JavaScript
 function createIFrame(width, height) {
@@ -230,5 +230,5 @@ function checkClosed() {
 >
 >* 程式碼範例包含所用要求者ID - &#39;REF&#39;的硬式編碼變數，該變數應被真正的程式設計人員要求者ID取代。
 >* 程式碼範例只會從與所使用要求者ID關聯的白名單網域中正確執行。
->* 由於整個程式碼都可供下載，此技術備註中顯示的程式碼已遭截斷。 如需完整範例，請參閱 **JS iFrame與快顯視窗範例**.
->* 外部JavaScript程式庫是從 [Google託管服務](https://developers.google.com/speed/libraries/).
+>* 由於整個程式碼都可供下載，此技術備註中顯示的程式碼已遭截斷。 如需完整的範例，請參閱&#x200B;**JS iFrame與快顯範例**。
+>* 外部JavaScript資料庫是從[Google託管服務](https://developers.google.com/speed/libraries/)連結。

@@ -34,9 +34,9 @@ ht-degree: 0%
 
 ## 技術概覽 {#technical-overviews}
 
-* AccessEnabler JavaScript SDK總覽
+* AccessEnabler JavaScript SDK概覽
 * AccessEnabler iOS/tvOS SDK概覽
-* AccessEnabler Android SDK總覽
+* AccessEnabler Android SDK概覽
 * REST API總覽
 
 這些範本的適用對象是負責處理Adobe Pass驗證整合技術層面的軟體工程師。

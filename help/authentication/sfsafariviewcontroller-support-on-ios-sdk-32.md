@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# iOS SDK 3.2+上的SFSafariViewController支援 {#sfsafariviewcontroller-support-on-ios-sdk-3.2}
+# iOS SDK 3.2+ {#sfsafariviewcontroller-support-on-ios-sdk-3.2}上的SFSafariViewController支援
 
 >[!NOTE]
 >
@@ -35,9 +35,9 @@ SDK 3.1版會自動從應用程式的根檢視控制器顯示SFSafariViewControl
 若要手動管理SVC，實作人員必須執行下列步驟：
 
 
-1. 呼叫 **setOptions([&quot;handleSVC&quot;：true])** AccessEnabler初始化之後（請確定在驗證開始前執行此呼叫）。 這樣會啟用「手動」SVC管理，SDK不會自動呈現SVC，而是在需要時呼叫 **navigate(toUrl：*{url}* useSVC：true)**.
+1. 在AccessEnabler初始化之後呼叫&#x200B;**setOptions([&quot;handleSVC&quot;：true])** （請確定在驗證開始之前執行此呼叫）。 這會啟用「手動」SVC管理，SDK不會自動呈現SVC，而是在需要時呈現     呼叫&#x200B;**導覽(toUrl：*{url}* useSVC：true)**。
 
-1. 實作選用回呼 **`navigateToUrl:useSVC:`** 在實施內，您必須使用提供的URL以SFSafariViewController執行個體建立svc執行個體，並將其顯示在畫面上：
+1. 在實作中實作選擇性回呼&#x200B;**`navigateToUrl:useSVC:`**，您必須使用提供的URL使用SFSafariViewController執行個體建立svc執行個體，並在熒幕上顯示：
 
    ```obj-c
    func navigate(toUrl url: String!, useSVC: Bool) {
@@ -50,11 +50,11 @@ SDK 3.1版會自動從應用程式的根檢視控制器顯示SFSafariViewControl
    ***附註：***
 
    - *您可以用任何想要的方式自訂SFSafariViewController。 例如，在iOS 11+上，您可以將「完成」標籤變更為「取消」。*
-   - *為了能夠關閉svc，您需要它的參考，請勿在&#x200B;**navigateToUrl：useSVC***
-   - *使用您自己的「myController」檢視控制器*
+   - *為了能夠關閉svc，您需要它的參考，請勿在&#x200B;**navigateToUrl：useSVC***的範圍中建立它
+   - *對「myController」使用您自己的檢視控制器*
 
 
-1. 在您應用程式的委派實作中 **application（\_app： UIAapplication，開啟URL： URL，選項： \[UIAapplicationOpenURLOptionsKey： Any\]） -\> Bool**，新增程式碼以關閉svc。 您應該已經有可呼叫的程式碼 **accessEnabler.handleExternalURL()**. 新增以下專案：
+1. 在您應用程式的&#x200B;**應用程式（\_app： UIApplication的委派實作中，開啟URL： URL，選項： \[UIApplicationOpenURLOptionsKey： Any\]） -\> Bool**，新增程式碼以關閉svc。 您應該已經有呼叫&#x200B;**accessEnabler.handleExternalURL()**&#x200B;的程式碼。 新增以下專案：
 
    ```obj-c
    if(svc != nil) {
@@ -65,7 +65,7 @@ SDK 3.1版會自動從應用程式的根檢視控制器顯示SFSafariViewControl
    同樣地，svc是您在步驟2建立的SFSafariViewController的參照。
 
 
-1. 實作 **safariViewControllerDidFinish（\_控制器： SFSafariViewController）** 從 **SFSafariViewControllerDelegate** 以捕捉使用者何時使用「完成」按鈕取消svc。 在此函式中，若要通知SDK驗證已取消，您必須呼叫：
+1. 從&#x200B;**SFSafariViewControllerDelegate**&#x200B;實作&#x200B;**safariViewControllerDidFinish(\_ controller： SFSafariViewController)**，以便在使用者使用[完成]按鈕取消svc時捕獲。 在此函式中，若要通知SDK驗證已取消，您必須呼叫：
 
    ```obj-c
    accessEnabler.setSelectedProvider(nil)

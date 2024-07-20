@@ -4,7 +4,7 @@ description: 不需重新整理的登入和登出
 exl-id: 3ce8dfec-279a-4d10-93b4-1fbb18276543
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1772'
+source-wordcount: '1761'
 ht-degree: 0%
 
 ---
@@ -44,18 +44,18 @@ ht-degree: 0%
 
 Adobe Pass驗證Web使用者端有兩種驗證方式，視MVPD的需求而定：
 
-1. **整頁重新導向 —** 使用者從程式設計師網站上的MVPD選擇器選取提供者（已設定全頁重新導向）後， `setSelectedProvider(<mvpd>)` 會在AccessEnabler上叫用，並將使用者重新導向至MVPD的登入頁面。 在使用者提供有效認證後，他會被重新導向回程式設計師的網站。 AccessEnabler已初始化，並在執行期間從Adobe Pass驗證擷取驗證Token `setRequestor`.
-1. **iFrame/彈出式視窗 —** 使用者選取提供者（已透過iFrame設定）後， `setSelectedProvider(<mvpd>)` 會在AccessEnabler上叫用。 此動作將會觸發 `createIFrame(width, height)` 回呼，通知程式設計師以名稱建立iFrame （或快顯視窗，視瀏覽器/偏好設定而定） `"mvpdframe"` 以及提供的維度。 建立iFrame/快顯視窗後，AccessEnabler會在iFrame/快顯視窗中載入MVPD的登入頁面。 使用者提供有效的認證，而iFrame/快顯視窗會重新導向至Adobe Pass驗證，而後者會傳回JS程式碼片段，關閉iFrame/快顯視窗並重新載入上層頁面（程式設計師網站）。 類似於流程1，驗證權杖在以下期間擷取： `setRequestor`.
+1. **整頁重新導向 —**&#x200B;使用者選取提供者之後    （已設定全頁重新導向）從    程式設計師的網站`setSelectedProvider(<mvpd>)`會在AccessEnabler上叫用，且使用者會重新導向至MVPD的登入頁面。 在使用者提供有效認證後，他會被重新導向回程式設計師的網站。 AccessEnabler已初始化，並在`setRequestor`期間從Adobe Pass驗證擷取驗證Token。
+1. **iFrame /彈出式視窗 —**&#x200B;當使用者選取提供者（已設定iFrame）後，會在AccessEnabler上叫用`setSelectedProvider(<mvpd>)`。 此動作將觸發`createIFrame(width, height)`回呼，通知程式設計師以名稱`"mvpdframe"`和提供的維度建立iFrame （或快顯視窗，視瀏覽器/偏好設定而定）。 建立iFrame/快顯視窗後，AccessEnabler會在iFrame/快顯視窗中載入MVPD的登入頁面。 使用者提供有效的認證，而iFrame/快顯視窗會重新導向至Adobe Pass驗證，而後者會傳回JS程式碼片段，關閉iFrame/快顯視窗並重新載入上層頁面（程式設計師網站）。 與流程1類似，驗證權杖是在`setRequestor`期間擷取。
 
-此 `displayProviderDialog` 回呼(觸發者： `getAuthentication`/`getAuthorization`)會傳回MVPD清單及其適當的設定。 此 `iFrameRequired` MVPD的屬性可讓程式設計師知道它是否應該啟動流程1或流程2。 請注意，程式設計師只需要對流程2採取額外的動作（建立iFrame/快顯視窗）。
+`displayProviderDialog`回呼（由`getAuthentication`/`getAuthorization`觸發）傳回MVPD清單及其適當的設定。 MVPD的`iFrameRequired`屬性可讓程式設計師知道它應該啟動流程1還是流程2。 請注意，程式設計師只需要對流程2採取額外的動作（建立iFrame/快顯視窗）。
 
 **取消驗證**
 
 此外，在某些情況下，使用者會透過關閉登入頁面來明確取消驗證流程。 以下是情境和程式設計師的建議解決方案：
 
-1. **整頁重新導向 —** 登入頁面關閉時，使用者需要再次導覽至程式設計師的網站，並從頭開始整個流程。 在此案例中，程式設計師端不需要任何明確動作。
-1. **iFrame -** 建議程式設計師將iFrame託管於 `div` 或類似的UI元件)附加了關閉按鈕。 當使用者按下「關閉」按鈕時，程式設計師會摧毀iFrame以及相關聯的UI，並執行 `setSelectedProvider(null)`. 此呼叫可讓AccessEnabler清除其內部狀態，並讓使用者能夠起始後續驗證流程。 `setAuthenticationStatus` 和 `sendTrackingData(AUTHENTICATION_DETECTION...)` 將會觸發以表示失敗的驗證流程（兩者皆開啟） `getAuthentication` 和 `getAuthorization`)。
-1. **快顯視窗 —** 有些瀏覽器無法準確偵測視窗關閉事件，因此這裡需要採取不同的方法（與上述iFrame流程相反）。 Adobe建議程式設計師初始化計時器，定期驗證登入快顯視窗是否存在。 如果視窗不存在，程式設計師可以確定使用者手動取消登入流程，並且程式設計師可以繼續呼叫 `setSelectedProvider(null)`. 觸發的回呼與上方流程2中的相同。
+1. **全頁重新導向 —**&#x200B;當登入頁面關閉時，使用者需要再次導覽至程式設計師的網站，並從頭開始整個流程。 在此案例中，程式設計師端不需要任何明確動作。
+1. **iFrame -**&#x200B;建議程式設計師將iFrame託管於附有「關閉」按鈕的`div` （或類似的UI元件）內。 當使用者按下[關閉]按鈕時，程式設計師會毀損iFrame以及相關的UI並執行`setSelectedProvider(null)`。 此呼叫可讓AccessEnabler清除其內部狀態，並讓使用者能夠起始後續驗證流程。 將觸發`setAuthenticationStatus`和`sendTrackingData(AUTHENTICATION_DETECTION...)`，以表示失敗的驗證流程（在`getAuthentication`和`getAuthorization`上）。
+1. **快顯視窗 —**&#x200B;有些瀏覽器無法準確偵測視窗關閉事件，因此在這裡必須採取不同的方法（與上述iFrame流程相反）。 Adobe建議程式設計師初始化計時器，定期驗證登入快顯視窗是否存在。 如果視窗不存在，程式設計師可以確定使用者已手動取消登入流程，而且程式設計師可以繼續呼叫`setSelectedProvider(null)`。 觸發的回呼與上方流程2中的相同。
 
 </br>
 
@@ -75,7 +75,7 @@ AccessEnabler的登出API會清除程式庫的本機狀態，並在目前的索�
 >
 >改良的無重新整理登入和登出流程需要瀏覽器支援現代化的HTML5技術，包括網頁傳訊。
 
-上述的驗證（登入）和登出流程都可在每個流程完成後重新載入首頁面，以提供類似的使用者體驗。  目前的功能旨在透過提供不需重新整理（背景）的登入和登出來改善使用者體驗。 程式設計師可以透過傳遞兩個布林值旗標(`backgroundLogin` 和 `backgroundLogout`)到 `configInfo` 的引數 `setRequestor` API。 預設會停用背景登入/登出（提供與先前實作的相容性）。
+上述的驗證（登入）和登出流程都可在每個流程完成後重新載入首頁面，以提供類似的使用者體驗。  目前的功能旨在透過提供不需重新整理（背景）的登入和登出來改善使用者體驗。 程式設計師可以透過將兩個布林值旗標（`backgroundLogin`和`backgroundLogout`）傳遞給`setRequestor` API的`configInfo`引數來啟用/停用背景登入和登出。 預設會停用背景登入/登出（提供與先前實作的相容性）。
 
 **範例：**
 
@@ -92,13 +92,13 @@ AccessEnabler的登出API會清除程式庫的本機狀態，並在目前的索�
 
 以下幾點說明原始驗證流程和改進流程之間的轉換：
 
-1. 完整頁面重新導向會由執行MVPD登入的新瀏覽器標籤取代。 需要程式設計師建立新標籤(透過 `window.open`)已命名 `mvpdwindow` 當使用者選取MVPD (使用 `iFrameRequired = false`)。 然後程式設計師執行 `setSelectedProvider(<mvpd>)`，可讓AccessEnabler在新標籤中載入MVPD登入URL。 使用者提供有效認證後，Adobe Pass驗證將關閉索引標籤，並將window.postMessage傳送至程式設計師的網站，以通知AccessEnabler驗證流程已完成。 系統會觸發下列回呼：
+1. 完整頁面重新導向會由執行MVPD登入的新瀏覽器標籤取代。 當使用者選取MVPD （具有`iFrameRequired = false`）時，程式設計師必須建立名為`mvpdwindow`的新索引標籤（透過`window.open`）。 程式設計師接著執行`setSelectedProvider(<mvpd>)`，允許AccessEnabler在新索引標籤中載入MVPD登入URL。 使用者提供有效認證後，Adobe Pass驗證將關閉索引標籤，並將window.postMessage傳送至程式設計師的網站，以通知AccessEnabler驗證流程已完成。 系統會觸發下列回呼：
 
-   - 如果流程是由以下人員啟動： `getAuthentication`： `setAuthenticationStatus` 和 `sendTrackingData(AUTHENTICATION_DETECTION...)` 將會觸發，以表示驗證成功/失敗。
+   - 如果流程是由`getAuthentication`起始： `setAuthenticationStatus`且會觸發`sendTrackingData(AUTHENTICATION_DETECTION...)`以表示驗證成功/失敗。
 
-   - 如果流程是由以下人員啟動： `getAuthorization`： `setToken/tokenRequestFailed` 和 `sendTrackingData(AUTHORIZATION_DETECTION...)` 將會觸發，以表示授權成功/失敗。
+   - 如果流程是由`getAuthorization`起始： `setToken/tokenRequestFailed`且會觸發`sendTrackingData(AUTHORIZATION_DETECTION...)`以表示授權成功/失敗。
 
-1. iFrame/彈出式視窗流程大致維持不變，差異在於使用者提供有效認證後，不會重新載入上層頁面。 iFrame/快顯視窗會在登入後自動關閉， `window.postMessage` 會傳送至上層頁面，通知AccessEnabler流程已完成。 系統會觸發與先前流程相同的回呼， **加上下列新回呼：`destroyIFrame`**. 此 `destroyIFrame` callback可讓程式設計師移除任何關聯的/輔助元件，例如UI裝飾。 舊驗證流程不需要存在此回呼，因為登入完成後，Adobe Pass驗證會重新載入程式設計師的頁面，因此會摧毀該頁面上的所有UI元件。
+1. iFrame/彈出式視窗流程大致維持不變，差異在於使用者提供有效認證後，不會重新載入上層頁面。 iFrame/快顯視窗會在登入後自動關閉，並傳送`window.postMessage`至上層頁面，通知AccessEnabler流程已完成。 觸發的回呼與上一個流程相同，**加上下列新回呼：`destroyIFrame`**。 `destroyIFrame`回呼可讓程式設計師移除任何相關/輔助元件的iFrame，例如UI裝飾。 舊驗證流程不需要存在此回呼，因為登入完成後，Adobe Pass驗證會重新載入程式設計師的頁面，因此會摧毀該頁面上的所有UI元件。
 
 </br>
 
@@ -112,11 +112,11 @@ AccessEnabler的登出API會清除程式庫的本機狀態，並在目前的索�
 
 以下是取消驗證的流程：
 
-1. **瀏覽器索引標籤 —** 由於索引標籤基本上是新視窗，因此擷取其關閉事件的限制，與案例3中從舊驗證流程討論的限制相同。 此外，這裡無法使用計時器方法，因為無法區分使用者手動關閉的標籤和在登入流程結束時自動關閉的標籤。 此處的解決方案是讓AccessEnabler在使用者取消流程時保持「無訊息」（不觸發回呼）。 此外，程式設計師不需要採取任何特定動作。 使用者將能夠啟動另一個驗證流程，而不會收到「多重驗證請求錯誤」錯誤（此錯誤已在背景登入的AccessEnabler中停用）。
+1. **瀏覽器索引標籤 —**&#x200B;由於索引標籤基本上是新視窗，因此擷取其關閉事件與情境3中從舊驗證流程中討論的限制相同。 此外，這裡無法使用計時器方法，因為無法區分使用者手動關閉的標籤和在登入流程結束時自動關閉的標籤。 此處的解決方案是讓AccessEnabler在使用者取消流程時保持「無訊息」（不觸發回呼）。 此外，程式設計師不需要採取任何特定動作。 使用者將能夠啟動另一個驗證流程，而不會收到「多重驗證請求錯誤」錯誤（此錯誤已在背景登入的AccessEnabler中停用）。
 
-1. **iFrame -** 程式設計師可以從舊的驗證流程（從iFrame建立包裝函式UI和觸發的相關「關閉」按鈕）中採取情境2中討論的方法 `setSelectedProvider(null)`. 雖然此方法不再是強烈的要求（如上述案例1所述，背景登入可允許多個驗證流程），但Adobe仍建議使用。
+1. **iFrame -**&#x200B;程式設計師可以從舊的驗證流程（從iFrame建立包裝函式UI和觸發至`setSelectedProvider(null)`的相關「關閉」按鈕）採用案例2中討論的方法。 雖然此方法不再是強烈的要求（如上述案例1所述，背景登入可允許多個驗證流程），但Adobe仍建議使用。
 
-1. **快顯視窗 —** 這等同於上方的「瀏覽器」分頁流程。
+1. **快顯視窗 —**&#x200B;此程式與上方的[瀏覽器]索引標籤流程相同。
 
 </br>
 
@@ -124,11 +124,11 @@ AccessEnabler的登出API會清除程式庫的本機狀態，並在目前的索�
 
 新的登出流程將在隱藏的iFrame中執行，因此會消除完整頁面重新導向。  這是可行的，因為使用者不需要在MVPD的登出頁面上採取特定動作。
 
-登出流程完成後，系統會將iFrame重新導向至自訂Adobe Pass驗證端點。 這會提供JS程式碼片段，執行 `window.postMessage` 通知父系，通知AccessEnabler登出已完成。 系統會觸發下列回呼： `setAuthenticationStatus()` 和 `sendTrackingData(AUTHENTICATION_DETECTION ...)`，表示使用者不再驗證。
+登出流程完成後，系統會將iFrame重新導向至自訂Adobe Pass驗證端點。 這會向父系提供執行`window.postMessage`的JS程式碼片段，通知AccessEnabler登出已完成。 已觸發下列回呼： `setAuthenticationStatus()`和`sendTrackingData(AUTHENTICATION_DETECTION ...)`，表示使用者已不再驗證。
 
 下圖顯示不需重新整理的流程，可讓使用者在不重新整理應用程式首頁面的情況下登入其MVPD：
 
-**改善（不需重新整理）驗證/登出流程**
+**已改善（不需重新整理）驗證/登出流程**
 
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/AE_with_no_refresh_web.png)
 
@@ -142,13 +142,13 @@ AccessEnabler的登出API會清除程式庫的本機狀態，並在目前的索�
 
 以下為程式設計師在實作不需重新整理的登入和登出之TempPass時需要注意的事項：
 
-- 在開始驗證之前，只需要為非TempPass MVPD建立iFrame或快顯視窗。 程式設計師可藉由讀取 `tempPass` MVPD物件的屬性(傳回 `setConfig()` / `displayProviderDialog()`)。
+- 在開始驗證之前，只需要為非TempPass MVPD建立iFrame或快顯視窗。 程式設計師可以讀取MVPD物件的`tempPass`屬性（由`setConfig()` / `displayProviderDialog()`傳回），以偵測MVPD是否為TempPass。
 
-- 此 `createIFrame()` 回呼必須包含TempPass的檢查，並且僅在MVPD不是TempPass時才執行其邏輯。
+- `createIFrame()`回呼必須包含對TempPass的檢查，而且只有在MVPD不是TempPass時才執行其邏輯。
 
-- 此 `destroyIFrame()` 回呼必須包含TempPass的檢查，並且僅在MVPD不是TempPass時才執行其邏輯。
+- `destroyIFrame()`回呼必須包含對TempPass的檢查，而且只有在MVPD不是TempPass時才執行其邏輯。
 
-- 此 `setAuthenticationStatus()` 和 `sendTrackingData()` 在驗證完成後叫用回呼（與一般MVPD的「不重新整理」流程完全相同）。
+- 在驗證完成之後叫用`setAuthenticationStatus()`和`sendTrackingData()`回呼（與一般MVPD的無重新整理流程完全相同）。
 
 >[!NOTE]
 >

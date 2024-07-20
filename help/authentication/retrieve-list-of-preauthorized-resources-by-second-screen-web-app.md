@@ -17,19 +17,19 @@ ht-degree: 0%
 
 >[!NOTE]
 >
-> REST API實作受限於 [節流機制](/help/authentication/throttling-mechanism.md)
+> REST API實作已由[節流機制](/help/authentication/throttling-mechanism.md)限制
 
 ## REST API端點 {#clientless-endpoints}
 
-&lt;reggie_fqdn>：
+&lt;REGGIE_FQDN>：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生產 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 正在暫存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-&lt;sp_fqdn>：
+&lt;SP_FQDN>：
 
-* 生產 —  [api.auth.adobe.com](http://api.auth.adobe.com/)
-* 分段 —  [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
+* 生產 — [api.auth.adobe.com](http://api.auth.adobe.com/)
+* 正在暫存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
 </br>
 
@@ -40,9 +40,9 @@ ht-degree: 0%
 有兩組API：一組用於串流應用程式或程式設計人員服務，另一組用於第二熒幕網頁應用程式。 本頁面說明AuthN應用程式的API。
 
 
-| 端點 | 已呼叫  </br>作者： | 輸入   </br>引數 | HTTP  </br>方法 | 回應 | HTTP  </br>回應 |
+| 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;sp_fqdn>/api/v1/preauthorize/{註冊代碼} | 驗證模組 | 1.註冊代碼  </br>    （路徑元件）</br>2.  要求者（必要）</br>3.  資源清單（必要） | GET | 包含個別預先授權決定或錯誤詳細資料的XML或JSON。 請參閱下列範例。 | 200 — 成功</br></br>400 — 錯誤請求</br></br>401 — 未獲授權</br></br>405 — 不允許的方法  </br></br>412 — 先決條件失敗</br></br>500 — 內部伺服器錯誤 |
+| &lt;SP_FQDN>/api/v1/preauthorize/{註冊代碼} | 驗證模組 | 1.註冊代碼</br>    （路徑元件）</br>2。  要求者（必要）</br>3。  資源清單（必要） | GET | 包含個別預先授權決定或錯誤詳細資料的XML或JSON。 請參閱下列範例。 | 200 — 成功</br></br>400 — 錯誤的請求</br></br>401 — 未獲授權</br></br>405 — 不允許的方法</br></br>412 — 先決條件失敗</br></br>500 — 內部伺服器錯誤 |
 
 
 

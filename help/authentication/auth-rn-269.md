@@ -1,7 +1,8 @@
 ---
 title: Adobe Pass Authentication 2.69發行說明
 description: Adobe Pass Authentication 2.69發行說明
-source-git-commit: 4417c5c50873c73c615f9845cadd4a42c26f3068
+exl-id: d031c4c5-dbd5-4a77-b298-a53b992cc4c5
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '215'
 ht-degree: 0%
@@ -32,7 +33,7 @@ Adobe Pass驗證： adobe-pass-**2.69**
 
 * 已修補安全性漏洞。
 * 增強透過動態使用者端註冊(DCR)重設Temp Pass安全性層。
-   * 如需詳細資訊，請參閱此處： [重設暫時通過](reset-temp-pass.md)
+   * 您可以在這裡找到更多詳細資料： [重設臨時密碼](reset-temp-pass.md)
 * 平台識別報告的增強功能。
 
 #### REST API {#rest-apis}
@@ -49,5 +50,5 @@ Adobe Pass驗證： adobe-pass-**2.69**
 
 #### JavaScript SDK 4.7.0 {#js-sdk}
 
-* 移除Access Enabler JavaScript SDK 2.0.1版已棄用的安全漏洞。
-   * 如需詳細資訊，請遵循連結： [Adobe Pass Authentication JavaScript 4.7.0發行說明](authn-rn-javascript-470.md)
+* 移除Access Enabler JavaScript SDK 2.0.1版（由於安全漏洞）。
+   * 如需詳細資訊，請參閱連結： [Adobe Pass Authentication JavaScript 4.7.0發行說明](authn-rn-javascript-470.md)

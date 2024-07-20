@@ -1,7 +1,8 @@
 ---
 title: Adobe Pass Authentication JavaScript 3.5.0發行說明
 description: Adobe Pass Authentication JavaScript 3.5.0發行說明
-source-git-commit: 7057aeda34b4fe0d059912ab0a71ea856427654c
+exl-id: 580839ef-4265-422f-8508-339bb8cdd636
+source-git-commit: 8552a62f4d6d80ba91543390bf0689d942b3a6f4
 workflow-type: tm+mt
 source-wordcount: '105'
 ht-degree: 0%
@@ -25,7 +26,7 @@ Adobe Pass驗證： JavaScript 3.5.0
 
 ## 版本總覽 {#overview-javascript-sdk-350}
 
-* 更新以支援SameSite Cookie的新原則（詳細資料） [此處](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site-00))。
+* 更新以支援SameSite Cookie的新原則（詳見[此處](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site-00)）。
 
 
 ## 發行套件 {#rel-pkg-javascript-sdk-350}

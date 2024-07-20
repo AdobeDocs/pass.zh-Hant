@@ -4,7 +4,7 @@ description: 單一登入支援
 exl-id: edc3719e-c627-464c-9b10-367a425698c6
 source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
 workflow-type: tm+mt
-source-wordcount: '1135'
+source-wordcount: '1144'
 ht-degree: 0%
 
 ---
@@ -42,17 +42,17 @@ ht-degree: 0%
 
 ### Xbox 360和Xbox One的注意事項 {#notes-xbox-360}
 
-* **Xbox 360**- Xbox 360仰賴即時服務提供內嵌deviceID的權杖。 Live Service會圖層顯示於deviceID的appID值中，使其範圍僅限定在應用程式中。 對於Xbox 360，Microsoft提供了Adobe Java程式庫來協助剖析權杖。
+* **Xbox 360**- Xbox 360仰賴Live Service提供內嵌deviceID的權杖。 Live Service會圖層顯示於deviceID的appID值中，使其範圍僅限定在應用程式中。 對於Xbox 360，Microsoft提供了Adobe Java程式庫來協助剖析權杖。
 
-* **Xbox One** — 將發行使用發佈者的憑證/金鑰加密並由Microsoft簽署的JSON Web權杖。 Adobe會從名為DPI （裝置配對ID）的引數擷取deviceID，此引數與Xbox 360引數PDID （合作夥伴裝置ID）不同。 PDID也存在於Xbox One中，但此新引數「Device Pairwise ID」(DPI)將取代。
+* **Xbox One** — 將發行JSON Web權杖，以發行者的憑證/金鑰加密，並由Microsoft簽署。 Adobe會從名為DPI （裝置配對ID）的引數擷取deviceID，此引數與Xbox 360引數PDID （合作夥伴裝置ID）不同。 PDID也存在於Xbox One中，但此新引數「Device Pairwise ID」(DPI)將取代。
 
 
 ### 停用SSO {#disable-sso}
 
 在某些情況下，某些應用程式或網站會想要停用SSO以滿足進階業務案例。
 
-* **適用於JS與原生SDK** - Adobe Pass驗證支援團隊可以為要求者ID / MVPD配對停用SSO。 不需要在網站或原生應用程式中執行任何工作。  Adobe Pass驗證支援團隊停用SSO後，使用指定RequestorId / MVPD配對執行的驗證，將不會與使用不同請求者ID的網站或應用程式共用。 此外，具有不同要求者ID的現有驗證對於已停用SSO的要求者ID / MVPD組合而言將無效。 技術上，SSO停用是透過將AuthN權杖繫結到特定的請求者ID / MVPD組合來完成。
-* **適用於無使用者端API**  — 您可以在REST呼叫中指定非空白的appId引數，以停用無使用者端驗證流程中的SSO。 您可以使用任何字串當作值，前提是該字串對於請求者ID而言是唯一的。 請注意，對於無使用者端API，程式設計師/實行者必須變更網站或應用程式，以新增此要求者特有的引數。
+* **對於JS與原生SDK** - Adobe Pass驗證支援團隊可以停用要求者ID / MVPD配對的SSO。 不需要在網站或原生應用程式中執行任何工作。  Adobe Pass驗證支援團隊停用SSO後，使用指定RequestorId / MVPD配對執行的驗證，將不會與使用不同請求者ID的網站或應用程式共用。 此外，具有不同要求者ID的現有驗證對於已停用SSO的要求者ID / MVPD組合而言將無效。 技術上，SSO停用是透過將AuthN權杖繫結到特定的請求者ID / MVPD組合來完成。
+* **針對無使用者端API** — 您可以在REST呼叫中指定非空白的appId引數，以停用無使用者端驗證流程中的SSO。 您可以使用任何字串當作值，前提是該字串對於請求者ID而言是唯一的。 請注意，對於無使用者端API，程式設計師/實行者必須變更網站或應用程式，以新增此要求者特有的引數。
 
 >[!IMPORTANT]
 >
