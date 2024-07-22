@@ -351,7 +351,7 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已啟用</td>
     <td>
 
-    ```JavaScript
+    &quot;&quot;&quot;JavaScript
     
     {
     `decisions`： [
@@ -477,7 +477,7 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已啟用</td>
     <td>
 
-    ```JavaScript
+    &quot;JavaScript
     {
     `決定`： [
     {
