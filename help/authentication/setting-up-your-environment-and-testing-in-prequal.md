@@ -2,28 +2,28 @@
 title: 在預備中設定您的環境及測試
 description: 在預備中設定您的環境及測試
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 3a6a5633c728398a3847ee3e341e82aba915f0d9
 workflow-type: tm+mt
 source-wordcount: '477'
 ht-degree: 0%
 
 ---
 
-# 在資格預審中設置環境和測試{#setting-up-your-environment-and-testing-in-prequal}
+# 在「資格前」設定您的環境和測試{#setting-up-your-environment-and-testing-in-prequal}
 
 >[!NOTE]
 >
->本頁面上的內容僅供參考。 使用此 API 需要 Adobe Systems 的最新許可證。 不允許未經授權的使用。
+>本頁面上的內容僅供資訊之用。 使用此API需要Adobe目前的授權。 不允許未經授權的使用。
 
-本技術說明的目的是幫助我們的合作伙伴設置他們的環境，並開始測試部署在Adobe Systems資格預審環境上的新版本編號。
+此技術說明的目的在於協助我們的合作夥伴設定環境，並開始測試部署於Adobe資格前環境的新組建。
 
-由於有兩種版本編號風格：生產和&#x200B;******&#x200B;暫&#x200B;***存，***&#x200B;因此在此文件我們將聚焦生產設置，並提到所有步驟對於暫存都是相同的，只是 URL 不同。
+由於有兩種組建： ***製作*** 和 ***中轉***，在本檔中，我們將專注於製作設定，並提到所有步驟都與中繼步驟相同，只有 URL 不同。
 
-步驟1和2是在其中一台測試機上設置測試 環境，步驟3是對基本流程的驗證，步驟4和5提供了一些測試指南。
+步驟 1 和 2 是在其中一部測試計算機上設定測試環境，步驟 3 即驗證基本流程，而步驟 4 和 5 會呈現一些測試指南。
 
 >[!IMPORTANT]
 >
-> 每次要更改測試環境（從暫存切換到生產設定檔或相反）時，執行步驟 1 和 2 非常重要
+> 每次您要變更測試環境時，請務必執行步驟 1 和 2 （從階段切換到生產描述檔或其他方式）
 
 
 ## 步驟1. 將傳遞網域解析為IP {#resolving-pass-domain-to-an-ip}
@@ -56,19 +56,19 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->被排除在答案之外的網域，因為它們不相關，並且可能因用戶而異用戶。
+>網域排除在答案之外，因為它們不相關，而且可能因使用者而有所不同。
 
 >[!IMPORTANT]
 >
-> 這些IP位址將來可能會更改，並且對於不同地理區域的使用者，它們可能不同。
+> 這些IP位址未來可能會有所變動，而不同地理區域的使用者可能並不相同。
 
 
-## 步驟 2.  欺騙要生產的資格預審環境 {#spoofing-the-prequalification-environment}
+## 步驟 2.  欺騙要製作的資格前環境 {#spoofing-the-prequalification-environment}
 
-* *編輯 c：\\windows\\System32\\drivers\\etc\\hosts* 檔案 （在 Windows 中） 或 */etc/hosts* 檔案 （在 Macintosh/Linux/Android 上），並新增下列項目：
+* *編輯 c：\\windows\System32\\drivers\etc\\* hosts 檔案 （Windows） 或 */etc/hosts* 檔案 （在 Macintosh/Linux/Android 上），然後新增下列專案：
 
-* 詐騙生產設定檔
-   * 52.13.71.11 http://entitlement.auth.adobe.com， http://sp.auth.adobe.com， http://api.auth.adobe.com
+* Spoof 生產描述檔
+   * 52.13.71.11 entitlement.auth.adobe.com sp.auth.adobe.com api.auth.adobe.com
 
 **在Android上詐騙：**&#x200B;若要在Android上詐騙，您必須使用Android模擬器。
 
@@ -79,16 +79,16 @@ ht-degree: 0%
 
 **這是一個簡單的步驟：**
 
-* 加載 [權利環境](https://entitlement-prequal.auth.adobe.com/environment.html) 和 [權利](https://entitlement.auth.adobe.com/environment.html)。 它們應返回相同的回應。
+* 載入 [權益預先質量的環境](https://entitlement-prequal.auth.adobe.com/environment.html) 和 [權益](https://entitlement.auth.adobe.com/environment.html)。 應傳回相同的回應。
 
 
-## 步驟 4.  使用程式師的網站執行簡單的身份驗證/授權流程 {#peform-a-simple-auth-flow}
+## 步驟 4.  使用程式人員的網站執行簡單的驗證/授權流程 {#peform-a-simple-auth-flow}
 
-* 此步驟需要程式師的網站位址和一些有效的 MVPD 憑據（用戶它已經過身份驗證和授權）。
+* 此步驟需要程式人員的網站位址和一些有效的 MVPD 認證 （經過驗證及授權的使用者）。
 
-## 步驟 5.  使用程式師的網站執行場景測試 {#perform-scenario-testing-using-programmer-website}
+## 步驟 5.  使用程式代碼的網站執行情境測試 {#perform-scenario-testing-using-programmer-website}
 
-* 完成環境設置並確保基本身份驗證-授權流正常工作后，可以繼續測試更複雜的方案。
+* 完成環境設定並確保基本驗證授權流程正常運作后，您可以繼續測試更複雜的情況。
 
 
 ## 步驟6.  使用API測試網站執行測試 {#perform-testing-using-api-testing-site}
