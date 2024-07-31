@@ -2,7 +2,7 @@
 title: MVPD整合功能
 description: MVPD整合功能
 exl-id: fcd65940-9a86-49b2-9d52-9031fb763338
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: e4567dd870790d11b9c5904d635fc00bdd1a23d2
 workflow-type: tm+mt
 source-wordcount: '1733'
 ht-degree: 2%
@@ -84,8 +84,8 @@ Adobe Pass驗證支援各處電視的新興標準。 它符合&#x200B;**CableLab
 | 3.3 | 內嵌帳戶註冊 | MVPD提供一種方法，可內嵌建立與同盟AuthN流程的新帳戶。 | A |                                                                                                                                                           |
 | 3.4 | 內嵌說明/支援 | MVPD提供一種在同盟AuthN流程期間提供協助的方法。 | A |                                                                                                                                                           |
 | 3.5 | 以資料機為基礎的住家驗證 | 當裝置位於已註冊型號的本機網路時，MVPD會自動驗證裝置（僅限ISP MVPD）。 | B | 這項優先順序較低，因為這是許多人尚未支援的最佳化功能，而且對於降低欺詐和家長監控會產生一些挑戰 |
-您現在可以使用「檔案/貼上表格資料……」對話方塊直接匯入Markdown表格程式碼。
 
+您現在可以使用「檔案/貼上表格資料……」對話方塊直接匯入Markdown表格程式碼。
 
 
 ## 4. Analytics功能 {#analytics-features}
