@@ -1,7 +1,7 @@
 ---
 title: 建立驗證工作階段
 description: REST API V2 — 建立驗證工作階段
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: 4afd8492c77fdceae3c2504ba392fbcfc0979b22
 workflow-type: tm+mt
 source-wordcount: '966'
 ht-degree: 1%
@@ -13,19 +13,19 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
-> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+>此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
 >[!IMPORTANT]
 >
-> REST API V2實作受到[節流機制](/help/authentication/throttling-mechanism.md)檔案的限制。
+>REST API V2實作受到[節流機制](/help/authentication/throttling-mechanism.md)檔案的限制。
 
 ## 請求 {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">路徑</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">路徑引數</th>
+      <th style="background-color: #EFF2F7;">路徑引數</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">服務提供者</td>
@@ -48,9 +48,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">主體引數</th>
+      <th style="background-color: #EFF2F7;">主體引數</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">mvpd</td>
@@ -82,9 +82,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">標頭</th>
+      <th style="background-color: #EFF2F7;">標頭</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Authorization</td>
@@ -164,10 +164,10 @@ ht-degree: 1%
 
 ## 回應 {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">程式碼</th>
-      <th style="background-color: #EFF2F7; width: 20%;">文字</th>
+      <th style="background-color: #EFF2F7;">程式碼</th>
+      <th style="background-color: #EFF2F7;">文字</th>
       <th style="background-color: #EFF2F7;">說明</th>
    </tr>
    <tr>
@@ -209,11 +209,11 @@ ht-degree: 1%
 
 ### 成功 {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">標頭</th>
+      <th style="background-color: #EFF2F7;">標頭</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">狀態</td>
@@ -226,19 +226,19 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">內文</th>
+      <th style="background-color: #EFF2F7;">內文</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
          具有以下屬性的JSON物件：
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">屬性</th>
+               <th style="background-color: #EFF2F7;">屬性</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
@@ -246,9 +246,9 @@ ht-degree: 1%
                   串流裝置完成驗證流程所需執行的動作。
                   <br/><br/>
                   可能的值包括：
-                  <table>
+                  <table style="table-layout:auto">
                      <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">值</th>
+                        <th style="background-color: #EFF2F7;">值</th>
                         <th style="background-color: #EFF2F7;"></th>
                      </tr>
                      <tr>
@@ -272,9 +272,9 @@ ht-degree: 1%
                   串流裝置必須執行的互動型別，才能使用「actionName」屬性所指定的動作繼續流程。
                   <br/><br/>
                   可能的值包括：
-                  <table>
+                  <table style="table-layout:auto">
                      <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">值</th>
+                        <th style="background-color: #EFF2F7;">值</th>
                         <th style="background-color: #EFF2F7;"></th>
                      </tr>
                      <tr>
@@ -325,11 +325,11 @@ ht-degree: 1%
 
 ### 錯誤 {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">標頭</th>
+      <th style="background-color: #EFF2F7;">標頭</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">狀態</td>
@@ -342,9 +342,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">內文</th>
+      <th style="background-color: #EFF2F7;">內文</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">錯誤</td>

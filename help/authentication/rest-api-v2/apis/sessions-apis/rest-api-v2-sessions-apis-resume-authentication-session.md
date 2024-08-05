@@ -1,7 +1,7 @@
 ---
 title: 繼續驗證工作階段
 description: REST API V2 — 繼續驗證工作階段
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: 4afd8492c77fdceae3c2504ba392fbcfc0979b22
 workflow-type: tm+mt
 source-wordcount: '755'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # 繼續驗證工作階段 {#resume-authentication-session}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
