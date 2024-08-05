@@ -1,9 +1,9 @@
 ---
 title: 使用程式碼擷取驗證工作階段
 description: REST API V2 — 使用程式碼擷取驗證工作階段
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
 workflow-type: tm+mt
-source-wordcount: '398'
+source-wordcount: '409'
 ht-degree: 2%
 
 ---
@@ -13,7 +13,11 @@ ht-degree: 2%
 
 >[!NOTE]
 >
->此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+
+>[!IMPORTANT]
+>
+> REST API V2實作受到[節流機制](/help/authentication/throttling-mechanism.md)檔案的限制。
 
 ## 請求 {#request}
 
