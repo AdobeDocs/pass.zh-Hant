@@ -1,15 +1,19 @@
 ---
 title: 單一登入 — 平台身分 — 流程
 description: REST API V2 — 單一登入 — 平台身分 — 流程
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '1793'
+source-wordcount: '1819'
 ht-degree: 0%
 
 ---
 
 
 # 使用平台身分流程的單一登入 {#single-sign-on-platform-identity-full-flows}
+
+>[!NOTE]
+>
+> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
 平台識別方法可讓多個應用程式使用唯一的平台識別碼，在使用Adobe Pass服務時，在裝置或平台層級達成單一登入(SSO)。
 

@@ -1,15 +1,19 @@
 ---
 title: 基本預先授權 — 主要應用程式 — 流程
 description: REST API V2 — 基本預先授權 — 主要應用程式 — 流程
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '459'
+source-wordcount: '485'
 ht-degree: 0%
 
 ---
 
 
 # 主要應用程式內執行的基本預先授權流程 {#basic-preauthorization-flow-performed-within-primary-application}
+
+>[!NOTE]
+>
+> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
 Adobe Pass驗證許可權內的&#x200B;**預先授權流程**&#x200B;可讓串流應用程式判斷MVPD是否允許或拒絕使用者存取資源清單。 此驗證可確保應用程式可以向使用者呈現有關他們可能有資格檢視的內容的準確資訊。
 

@@ -1,15 +1,19 @@
 ---
 title: 基本驗證 — 次要應用程式 — 流量
 description: 基本驗證 — REST API V2 — 次要應用程式 — 流程
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '1719'
+source-wordcount: '1745'
 ht-degree: 0%
 
 ---
 
 
 # 在次要應用程式內執行的基本驗證流程 {#basic-authentication-flow-performed-within-secondary-application}
+
+>[!NOTE]
+>
+> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
 Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應用程式驗證使用者是否擁有有效的MVPD帳戶。 此程式要求使用者擁有作用中的MVPD帳戶，並在MVPD登入頁面上輸入有效的登入認證。
 

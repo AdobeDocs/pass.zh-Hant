@@ -1,15 +1,19 @@
 ---
 title: 基本授權 — 主要應用程式 — 流程
 description: REST API V2 — 基本授權 — 主要應用程式 — 流程
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '566'
+source-wordcount: '592'
 ht-degree: 0%
 
 ---
 
 
 # 主要應用程式內執行的基本授權流程 {#basic-authorization-flow-performed-within-primary-application}
+
+>[!NOTE]
+>
+> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
 Adobe Pass驗證許可權內的&#x200B;**授權流程**&#x200B;可讓串流應用程式判斷MVPD是否允許或拒絕使用者串流內容的請求。 如果決定為`Permit`，回應會包含媒體權杖。 Adobe Pass伺服器會簽署媒體權杖，並容許串流應用程式在發行串流之前，使用媒體權杖驗證器程式庫來檢查其真實性。
 

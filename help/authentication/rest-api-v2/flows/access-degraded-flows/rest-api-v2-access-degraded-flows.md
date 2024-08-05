@@ -1,15 +1,19 @@
 ---
 title: 存取流程降級
 description: REST API V2 — 降級存取流程
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '1568'
+source-wordcount: '1594'
 ht-degree: 0%
 
 ---
 
 
 # 存取流程效能降低 {#degraded-access-flows}
+
+>[!NOTE]
+>
+> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
 降級提供暫時略過特定MVPD驗證和授權端點。 通常，程式設計師會起始此動作，但無論誰觸發降級事件，此動作取決於與受影響MVPD預先作出的安排。
 

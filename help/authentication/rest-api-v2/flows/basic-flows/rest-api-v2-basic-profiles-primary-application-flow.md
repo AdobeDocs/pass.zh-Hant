@@ -1,15 +1,19 @@
 ---
 title: 基本設定檔 — 主要應用程式 — 流量
 description: REST API V2 — 基本設定檔 — 主要應用程式 — 流量
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '927'
+source-wordcount: '953'
 ht-degree: 0%
 
 ---
 
 
 # 主要應用程式內執行的基本設定檔流程 {#basic-profiles-flow-primary-application}
+
+>[!NOTE]
+>
+> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
 Adobe Pass驗證許可權內的&#x200B;**設定檔流程**&#x200B;可讓串流應用程式存取作用中使用者登入的相關資訊。
 

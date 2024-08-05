@@ -1,15 +1,19 @@
 ---
 title: 頁首 — AP-TempPass-Identity
 description: REST API V2 — 標題 — AP-TempPass-Identity
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
 workflow-type: tm+mt
-source-wordcount: '58'
-ht-degree: 3%
+source-wordcount: '84'
+ht-degree: 2%
 
 ---
 
 
 # 頁首 — AP-TempPass-Identity {#header-ap-temppass-identity}
+
+>[!NOTE]
+>
+> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
 ## 概觀 {#overview}
 
