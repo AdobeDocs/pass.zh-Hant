@@ -1,7 +1,7 @@
 ---
 title: 擷取合作夥伴驗證請求
 description: REST API V2 — 擷取合作夥伴驗證請求
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '1104'
 ht-degree: 0%
@@ -11,7 +11,7 @@ ht-degree: 0%
 
 # 擷取合作夥伴驗證請求 {#retrieve-partner-authentication-request}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
@@ -123,7 +123,7 @@ ht-degree: 0%
       <td>
         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>檔案中說明夥伴方法的單一登入裝載的產生。
         <br/><br/>
-        如需有關使用合作夥伴啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-partner-flows.md">使用合作夥伴的單一登入流程</a>檔案。</td>
+        如需有關使用合作夥伴啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">使用合作夥伴的單一登入流程</a>檔案。</td>
       <td>可選</td>
    </tr>
    <tr>

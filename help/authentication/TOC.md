@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: c3aa2a24b242669ce0818b95ec34de2adec8001b
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
-source-wordcount: '1125'
+source-wordcount: '1137'
 ht-degree: 2%
 
 ---
@@ -54,6 +54,7 @@ ht-degree: 2%
          + [臨時通票和促銷臨時通票的免費預覽](free-preview-for-temp-pass-and-promotional-temp-pass.md)
    + REST API V2 {#rest-api-v2}
       + API {#rest-api-v2-apis}
+         + [REST API V2 - API — 概觀](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
          + 設定{#rest-api-v2-configuration-apis}
             + [擷取特定服務提供者的設定](./rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
          + 工作階段{#rest-api-v2-sessions-apis}
@@ -62,8 +63,8 @@ ht-degree: 2%
             + [擷取驗證工作階段](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
          + 設定檔{#rest-api-v2-profiles-apis}
             + [擷取設定檔](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
-            + [擷取特定mvpd的設定檔](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles-for-specific-mvpd.md)
-            + [擷取特定程式碼的設定檔](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles-for-specific-code.md)
+            + [擷取特定mvpd的設定檔](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
+            + [擷取特定程式碼的設定檔](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
          + 決定{#rest-api-v2-decisions-apis}
             + [使用特定mvpd擷取授權決策](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
             + [使用特定mvpd擷取預先授權決定](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
@@ -73,23 +74,24 @@ ht-degree: 2%
             + [擷取合作夥伴驗證請求](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
             + [使用合作夥伴驗證回應擷取設定檔](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
       + 流程{#rest-api-v2-flows}
-         + 基本流程{#rest-api-v2-basic-flows}
-            + [主要應用程式內執行的基本設定檔流程](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
-            + [在次要應用程式內執行的基本設定檔流程](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
-            + [主要應用程式內執行的基本驗證流程](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
-            + [在次要應用程式內執行的基本驗證流程](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
-            + [主要應用程式內執行的基本授權流程](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
-            + [主要應用程式內執行的基本預先授權流程](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
-            + [主要應用程式內執行的基本登出流程](./rest-api-v2/flows/basic-flows/rest-api-v2-basic-logout-primary-application-flow.md)
+         + [REST API V2 — 流程 — 概觀](./rest-api-v2/flows/rest-api-v2-flows-overview.md)
+         + 基本存取流程{#rest-api-v2-basic-access-flows}
+            + [主要應用程式內執行的基本設定檔流程](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
+            + [在次要應用程式內執行的基本設定檔流程](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+            + [主要應用程式內執行的基本驗證流程](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
+            + [在次要應用程式內執行的基本驗證流程](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
+            + [主要應用程式內執行的基本授權流程](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
+            + [主要應用程式內執行的基本預先授權流程](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
+            + [主要應用程式內執行的基本登出流程](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-logout-primary-application-flow.md)
          + 降級存取流程{#rest-api-v2-degraded-access-flows}
-            + [存取流程效能降低](rest-api-v2/flows/access-degraded-flows/rest-api-v2-access-degraded-flows.md)
+            + [存取流程效能降低](rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)
          + 暫時存取流程{#rest-api-v2-temporary-access-flows}
-            + [暫時存取流程](rest-api-v2/flows/access-temporary-flows/rest-api-v2-access-temporary-flows.md)
-         + 單一登入流程{#rest-api-v2-single-sign-on-flows}
-            + [使用合作夥伴流程的單一登入](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-partner-flows.md)
-            + [使用平台身分流程的單一登入](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
-            + [使用服務權杖流程的單一登入](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-service-token-flows.md)
-            + [單一登出流程](./rest-api-v2/flows/single-sign-on-flows/rest-api-v2-single-sign-on-logout-flow.md)
+            + [暫時存取流程](rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)
+         + 單一登入存取流程{#rest-api-v2-single-sign-on-access-flows}
+            + [使用合作夥伴流程的單一登入](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)
+            + [使用平台身分流程的單一登入](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)
+            + [使用服務權杖流程的單一登入](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md)
+            + [單一登出流程](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
       + 附錄{#rest-api-v2-appendix}
          + 標頭{#rest-api-v2-appendix-headers}
             + [標頭 — AD-Service-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)

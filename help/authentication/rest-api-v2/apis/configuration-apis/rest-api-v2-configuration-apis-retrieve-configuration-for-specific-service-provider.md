@@ -1,7 +1,7 @@
 ---
 title: 擷取特定服務提供者的設定
 description: REST API V2 — 擷取特定服務提供者的設定
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '521'
 ht-degree: 2%
@@ -11,7 +11,7 @@ ht-degree: 2%
 
 # 擷取特定服務提供者的設定 {#retrieve-configuration-for-specific-service-provider}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 

@@ -1,15 +1,15 @@
 ---
-title: 使用合作夥伴驗證回應擷取設定檔
-description: REST API V2 — 使用合作夥伴驗證回應擷取設定檔
+title: 擷取特定程式碼的設定檔
+description: REST API V2 — 擷取特定程式碼的設定檔
 source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
-source-wordcount: '729'
+source-wordcount: '570'
 ht-degree: 1%
 
 ---
 
 
-# 使用合作夥伴驗證回應擷取設定檔 {#retrieve-profile-using-partner-authentication-response}
+# 擷取特定程式碼的設定檔 {#retrieve-profile-for-specific-code}
 
 >[!IMPORTANT]
 >
@@ -29,12 +29,12 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">路徑</td>
-      <td>/api/v2/{serviceProvider}/profiles/sso/{partner}</td>
+      <td>/api/v2/{serviceProvider}/profiles/{code}</td>
       <td></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">方法</td>
-      <td>POST</td>
+      <td>GET</td>
       <td></td>
    </tr>
    <tr>
@@ -47,23 +47,9 @@ ht-degree: 1%
       <td>在上線流程中與服務提供者相關聯的內部唯一識別碼。</td>
       <td><i>必填</i></td>
    </tr>
-    <tr>
-      <td style="background-color: #DEEBFF;">合作夥伴</td>
-      <td>提供與Adobe Pass驗證流程整合的單一登入架構的合作夥伴名稱(例如Apple)。</td>
-      <td><i>必填</i></td>
-   </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">主體引數</th>
-      <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">SAMLResponse</td>
-      <td>
-        合作夥伴驗證回應，包含建立和儲存合作夥伴設定檔所需的使用者中繼資料。
-        <br/><br/>
-        值必須是Base64編碼和之後的URL編碼。
-      </td>
+      <td style="background-color: #DEEBFF;">程式碼</td>
+      <td>在串流裝置上建立驗證工作階段後取得的驗證代碼。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -75,41 +61,6 @@ ht-degree: 1%
       <td style="background-color: #DEEBFF;">Authorization</td>
       <td>產生持有人權杖承載在<a href="../../../dynamic-client-registration-api.md">動態使用者端註冊</a>檔案中進行了說明。</td>
       <td><i>必填</i></td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">Content-Type</td>
-      <td>
-         所傳送資源的接受媒體型別。
-         <br/><br/>
-         它必須是application/x-www-form-urlencoded。
-      </td>
-      <td><i>必填</i></td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">AP-Device-Identifier</td>
-      <td>在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>檔案中說明裝置識別碼裝載的產生。</td>
-      <td><i>必填</i></td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">X-Device-Info</td>
-      <td>
-         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>檔案中說明裝置資訊裝載的產生。
-         <br/><br/>
-         強烈建議您在應用程式的裝置平台允許明確提供有效值時，一律使用此值。
-         <br/><br/>
-         提供此屬性時，Adobe Pass驗證後端會以隱含方式將明確設定的值與擷取的值合併（預設為）。
-         <br/><br/>
-         若未提供，Adobe Pass驗證後端將會以隱含方式使用擷取的值（依預設）。
-      </td>
-      <td><i>必填</i></td>
-   </tr>
-   <tr>
-      <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
-      <td>
-        在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>檔案中說明夥伴方法的單一登入裝載的產生。
-        <br/><br/>
-        如需有關使用合作夥伴啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">使用合作夥伴的單一登入流程</a>檔案。</td>
-      <td>可選</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
@@ -147,8 +98,8 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;">說明</th>
    </tr>
    <tr>
-      <td>201</td>
-      <td>已建立</td>
+      <td>200</td>
+      <td>確定</td>
       <td>
         回應本文包含有效設定檔的地圖，該地圖可能為空白。
       </td>
@@ -193,7 +144,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">狀態</td>
-      <td>201</td>
+      <td>200</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -209,10 +160,10 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">設定檔</td>
       <td>
-         JSON包含索引鍵、值配對的對應。
-         <br/><br/>
-         索引鍵元素由下列值定義：
-         <table>
+        JSON包含索引鍵、值配對的對應。
+        <br/><br/>
+        索引鍵元素由下列值定義：
+        <table>
             <tr>
                <th style="background-color: #EFF2F7; width: 20%;">值</th>
                <th style="background-color: #EFF2F7"></th>
@@ -253,16 +204,25 @@ ht-degree: 1%
                         <th style="background-color: #EFF2F7;"></th>
                      </tr>
                      <tr>
-                        <td style="background-color: #DEEBFF;">Apple</td>
+                        <td style="background-color: #DEEBFF;">mvpd<br/><br/>，例如Spectrum、Cablevision等。</td>
                         <td>
                             設定檔的建立是因為：
                             <ul>
-                                <li>使用合作夥伴Apple的單一登入</li>
+                                <li>基本驗證</li>
+                            </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="background-color: #DEEBFF;">Adobe</td>
+                        <td>
+                            設定檔的建立是因為：
+                            <ul>
+                                <li>存取許可權降低</li>
+                                <li>暫時存取</li>
                             </ul>
                         </td>
                      </tr>
                   </table>
-               </td>
                <td><i>必填</i></td>
             </tr>
             <tr>
@@ -277,16 +237,33 @@ ht-degree: 1%
                         <th style="background-color: #EFF2F7;"></th>
                      </tr>
                      <tr>
-                        <td style="background-color: #DEEBFF;">appleSSO</td>
+                        <td style="background-color: #DEEBFF;">一般</td>
                         <td>
                             設定檔的建立是因為：
                             <ul>
-                                <li>使用合作夥伴Apple的單一登入</li>
+                                <li>基本驗證</li>
+                            </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="background-color: #DEEBFF;">已降級</td>
+                        <td>
+                            設定檔的建立是因為：
+                            <ul>
+                                <li>存取許可權降低</li>
+                            </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td style="background-color: #DEEBFF;">暫時</td>
+                        <td>
+                            設定檔的建立是因為：
+                            <ul>
+                                <li>暫時存取</li>
                             </ul>
                         </td>
                      </tr>
                   </table>
-               </td>
                <td><i>必填</i></td>
             </tr>
             <tr>
@@ -345,40 +322,34 @@ ht-degree: 1%
 
 ## 範例 {#samples}
 
-### 1. Apple SSO已啟用且有效的SAML回應
+### 1.執行基本驗證後，擷取次要裝置上現有及有效的已驗證設定檔
 
 >[!BEGINTABS]
 
 >[!TAB 要求]
 
 ```JSON
-POST /api/v2/REF30/profiles/sso/Apple
+GET /api/v2/REF30/profiles/Cablevision/XTC98W
  
 Authorization: Bearer ....
 AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
-X-Device-Info: ....
-AP-Partner-Framework-Status: ewogICAidXNlcl9wZXJtaXNzaW9ucyIgOiB7fSwKICAgIm12cGRfc3RhdHVzIiA6IHt9Cn0=
-Content-Type: application/x-www-form-urlencoded
+X-Device-Info ....
 Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
-
-Body:
-
-SAMLResponse=PHNhbWxwOlJlc3BvbnNlIHhtbG5zOnNhbWxwPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6cHJvdG9jb2wiIH...
 ```
 
 >[!TAB 回應]
 
 ```JSON
 HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
  
 {
     "profiles" : {
         "Cablevision" : {
             "notBefore" : 1623943955,
             "notAfter" : 1623951155,
-            "issuer" : "Apple",
-            "type" : "appleSSO",
+            "issuer" : "Cablevision",
+            "type" : "regular",
             "attributes" : {
                 "userId" : {
                     "value" : "BASE64_value_userId",
@@ -391,100 +362,15 @@ HTTP/1.1 200 OK
                 "zip" : {
                     "value" : "BASE64_value_zip",
                     "state" : "enc"
-                }       
+                },
+                "parental-controls" : {
+                    "value" : BASE64_value_parental-controls,
+                    "state" : "plain"
+                }
             }
         }
      }
-}  
-```
-
->[!ENDTABS]
-
-### 2.降級整合的AppleSSO設定檔
-
->[!BEGINTABS]
-
->[!TAB 要求]
-
-```JSON
-POST /api/v2/REF30/profiles/sso/Apple HTTP/1.1
- 
-Authorization: Bearer ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
-X-Device-Info: ....
-AP-Partner-Framework-Status: ewogICAidXNlcl9wZXJtaXNzaW9ucyIgOiB7fSwKICAgIm12cGRfc3RhdHVzIiA6IHt9Cn0=
-Content-Type: application/x-www-form-urlencoded
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
-
-Body:
-
-SAMLResponse=PHNhbWxwOlJlc3BvbnNlIHhtbG5zOnNhbWxwPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6cHJvdG9jb2wiIH...
-```
-
->[!TAB 回應]
-
-```JSON
-HTTP/1.1 200 OK
- 
-{
-   "profiles":{
-      "WOW":{
-         "notBefore":1706636062704,
-         "notAfter":1706696062704,
-         "issuer":"Adobe",
-         "type":"degraded",
-         "attributes":{
-            "userID":{
-               "value":"95cf93bcd183214ac9e4433153cb8a9d180a463128c0a5d26f202e8c",
-               "state":"plain"
-            }
-         }
-      }
-   }
 }
-```
-
->[!ENDTABS]
-
-### 3.當SAML回應無效時，Apple SSO流程
-
->[!BEGINTABS]
-
->[!TAB 要求]
-
-```JSON
-POST /api/v2/REF30/profiles/sso/Apple HTTP/1.1 
- 
-Authorization: Bearer ....
-AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
-X-Device-Info: ....
-AP-Partner-Framework-Status: ewogICAidXNlcl9wZXJtaXNzaW9ucyIgOiB7fSwKICAgIm12cGRfc3RhdHVzIiA6IHt9Cn0=
-Content-Type: application/x-www-form-urlencoded
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
-
-Body:
-        
-SAMLResponse=PHNhbWxwOlJlc3BvbnNlIHhtbG5zOnNhbWxwPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6cHJvdG9jb2wiIH...
-```
-
->[!TAB 回應]
-
-```JSON
-HTTP/1.1 403 OK
-Content-Type: application/json; charset=utf-8
-    
-{
-    "errors" : [
-        {
-            "code": "invalid_mvpd_response",
-            "message": "The saml mvpd response is not valid",
-            "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
-            "action": "none"        
-        } 
-    ]
-}   
 ```
 
 >[!ENDTABS]

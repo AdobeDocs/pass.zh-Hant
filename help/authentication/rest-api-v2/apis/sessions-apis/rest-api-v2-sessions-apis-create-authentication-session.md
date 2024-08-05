@@ -1,7 +1,7 @@
 ---
 title: 建立驗證工作階段
 description: REST API V2 — 建立驗證工作階段
-source-git-commit: 4598aaa0827b943de83a9e7d847227edf6b0b387
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '966'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # 建立驗證工作階段 {#create-authentication-session}
 
->[!NOTE]
+>[!IMPORTANT]
 >
 > 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
@@ -134,7 +134,7 @@ ht-degree: 1%
       <td>
         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Platform-Subject-Token</a>檔案中說明Platform Identity方法單一登入裝載的產生Adobe。
         <br/><br/>
-        如需使用平台身分識別啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台身分識別流程單一登入</a>檔案。
+        如需使用平台身分識別啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台身分識別流程單一登入</a>檔案。
       </td>
       <td>可選</td>
    </tr>
@@ -143,7 +143,7 @@ ht-degree: 1%
       <td>
         <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>檔案中說明服務權杖方法的單一登入裝載的產生。
         <br/><br/>
-        如需使用服務權杖啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服務權杖流程進行單一登入</a>檔案。
+        如需使用服務權杖啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服務權杖流程進行單一登入</a>檔案。
       <td>可選</td>
    </tr>
    <tr>

@@ -1,7 +1,7 @@
 ---
 title: 標頭 — AD-Service-Token
 description: REST API V2 — 標題 — AD-Service-Token
-source-git-commit: 4d1ce1301d6baf7309e8ee52c43b02403aa2fab9
+source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 1%
@@ -21,7 +21,7 @@ ht-degree: 1%
 
 此標頭是專為使用服務權杖方法的已啟用單一登入(SSO)流程中所設計。
 
-如需有關使用服務權杖方法的單一登入(SSO)啟用流程的詳細資訊，請參閱[使用服務權杖流程的單一登入](../../flows/single-sign-on-flows/rest-api-v2-single-sign-on-service-token-flows.md)檔案。
+如需有關使用服務權杖方法的單一登入(SSO)啟用流程的詳細資訊，請參閱[使用服務權杖流程的單一登入](../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md)檔案。
 
 ## 語法 {#syntax}
 
