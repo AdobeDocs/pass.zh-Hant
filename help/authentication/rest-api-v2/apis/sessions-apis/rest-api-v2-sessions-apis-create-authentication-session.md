@@ -1,9 +1,9 @@
 ---
 title: 建立驗證工作階段
 description: REST API V2 — 建立驗證工作階段
-source-git-commit: 9c04ec17c848d6734dc2ca2d6357ed5fb49341ec
+source-git-commit: cf479236cbd43d5e4585bf0eac18a12dbe4bc6c4
 workflow-type: tm+mt
-source-wordcount: '967'
+source-wordcount: '965'
 ht-degree: 1%
 
 ---
@@ -246,24 +246,20 @@ ht-degree: 1%
                   串流裝置完成驗證流程所需執行的動作。
                   <br/><br/>
                   可能的值包括：
-                  <table style="table-layout:auto">
-                     <tr>
-                        <th style="background-color: #EFF2F7;">值</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">驗證</td>
-                        <td>串流裝置或其他裝置需要在使用者代理程式中開啟提供的URL。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">繼續</td>
-                        <td>串流裝置或其他裝置需要提供遺失的引數，並使用程式碼繼續驗證工作階段。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">授權</td>
-                        <td>串流裝置可以直接繼續進行決定流程。</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>驗證</b></li>
+                    <ul>
+                        <li>串流裝置或其他裝置需要在使用者代理程式中開啟提供的URL。</li>
+                    </ul>
+                    <li><b>繼續</b></li>
+                    <ul>
+                        <li>串流裝置或其他裝置需要提供遺失的引數，並使用程式碼繼續驗證工作階段。</li>
+                    </ul>
+                    <li><b>授權</b></li>
+                    <ul>
+                        <li>串流裝置可以直接繼續進行決定流程。</li>
+                    </ul>
+                  </ul>
                <td><i>必填</i></td>
             </tr>
             <tr>
@@ -272,20 +268,16 @@ ht-degree: 1%
                   串流裝置必須執行的互動型別，才能使用「actionName」屬性所指定的動作繼續流程。
                   <br/><br/>
                   可能的值包括：
-                  <table style="table-layout:auto">
-                     <tr>
-                        <th style="background-color: #EFF2F7;">值</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">直接</td>
-                        <td>使用可用於使用者端實作的HTTP使用者端，以直接呼叫提供的URL來繼續此流程。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">互動式</td>
-                        <td>流程會使用使用者代理程式繼續導覽至提供的URL。</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>互動式</b></li>
+                    <ul>
+                        <li>流程會使用使用者代理程式繼續導覽至提供的URL。</li>
+                    </ul>
+                    <li><b>直接</b></li>
+                    <ul>
+                        <li>使用可用於使用者端實作的HTTP使用者端，以直接呼叫提供的URL來繼續此流程。</li>
+                    </ul>
+                  </ul>
                <td><i>必填</i></td>
             </tr>
             <tr>
