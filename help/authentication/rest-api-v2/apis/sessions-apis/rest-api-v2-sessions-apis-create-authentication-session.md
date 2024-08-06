@@ -1,23 +1,23 @@
 ---
 title: 建立驗證工作階段
 description: REST API V2 — 建立驗證工作階段
-source-git-commit: cf479236cbd43d5e4585bf0eac18a12dbe4bc6c4
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '965'
+source-wordcount: '964'
 ht-degree: 1%
 
 ---
 
 
-# 建立驗證工作階段 — 測試 {#create-authentication-session}
+# 建立驗證工作階段 {#create-authentication-session}
 
 >[!IMPORTANT]
 >
->此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
 >[!IMPORTANT]
 >
->REST API V2實作受到[節流機制](/help/authentication/throttling-mechanism.md)檔案的限制。
+> REST API V2實作受到[節流機制](/help/authentication/throttling-mechanism.md)檔案的限制。
 
 ## 請求 {#request}
 
@@ -247,18 +247,9 @@ ht-degree: 1%
                   <br/><br/>
                   可能的值包括：
                   <ul>
-                    <li><b>驗證</b></li>
-                    <ul>
-                        <li>串流裝置或其他裝置需要在使用者代理程式中開啟提供的URL。</li>
-                    </ul>
-                    <li><b>繼續</b></li>
-                    <ul>
-                        <li>串流裝置或其他裝置需要提供遺失的引數，並使用程式碼繼續驗證工作階段。</li>
-                    </ul>
-                    <li><b>授權</b></li>
-                    <ul>
-                        <li>串流裝置可以直接繼續進行決定流程。</li>
-                    </ul>
+                    <li><b>驗證</b><br/>串流裝置或其他裝置需要在使用者代理程式中開啟提供的URL。</li>
+                    <li><b>繼續</b><br/>串流裝置或其他裝置需要提供遺漏的引數，並使用程式碼繼續驗證工作階段。</li>
+                    <li><b>授權</b><br/>串流裝置可以直接進行決定流程。</li>
                   </ul>
                <td><i>必填</i></td>
             </tr>
@@ -269,14 +260,8 @@ ht-degree: 1%
                   <br/><br/>
                   可能的值包括：
                   <ul>
-                    <li><b>互動式</b></li>
-                    <ul>
-                        <li>流程會使用使用者代理程式繼續導覽至提供的URL。</li>
-                    </ul>
-                    <li><b>直接</b></li>
-                    <ul>
-                        <li>使用可用於使用者端實作的HTTP使用者端，以直接呼叫提供的URL來繼續此流程。</li>
-                    </ul>
+                    <li><b>互動式</b><br/>流程繼續使用使用者代理程式導覽至提供的URL。</li>
+                    <li><b>直接</b><br/>流程會繼續使用使用者端實作可用的HTTP使用者端直接呼叫提供的URL。</li>
                   </ul>
                <td><i>必填</i></td>
             </tr>

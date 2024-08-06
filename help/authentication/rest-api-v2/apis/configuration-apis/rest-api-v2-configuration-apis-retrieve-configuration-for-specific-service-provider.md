@@ -1,7 +1,7 @@
 ---
 title: 擷取特定服務提供者的設定
 description: REST API V2 — 擷取特定服務提供者的設定
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
 source-wordcount: '521'
 ht-degree: 2%
@@ -21,11 +21,11 @@ ht-degree: 2%
 
 ## 請求 {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">路徑</td>
@@ -38,9 +38,9 @@ ht-degree: 2%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">路徑引數</th>
+      <th style="background-color: #EFF2F7;">路徑引數</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">服務提供者</td>
@@ -48,9 +48,9 @@ ht-degree: 2%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">查詢參數</th>
+      <th style="background-color: #EFF2F7;">查詢參數</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">設定檔</td>
@@ -58,9 +58,9 @@ ht-degree: 2%
       <td>可選</td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">標頭</th>
+      <th style="background-color: #EFF2F7;">標頭</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Authorization</td>
@@ -114,10 +114,10 @@ ht-degree: 2%
 
 ## 回應 {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">程式碼</th>
-      <th style="background-color: #EFF2F7; width: 20%;">文字</th>
+      <th style="background-color: #EFF2F7;">程式碼</th>
+      <th style="background-color: #EFF2F7;">文字</th>
       <th style="background-color: #EFF2F7;">說明</th>
    </tr>
    <tr>
@@ -159,11 +159,11 @@ ht-degree: 2%
 
 ### 成功 {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">標頭</th>
+      <th style="background-color: #EFF2F7;">標頭</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">狀態</td>
@@ -176,19 +176,19 @@ ht-degree: 2%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">內文</th>
+      <th style="background-color: #EFF2F7;">內文</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
          JSON包含元素清單，每個元素都具有下列屬性：
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">屬性</th>
+               <th style="background-color: #EFF2F7;">屬性</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                 <td style="background-color: #DEEBFF;">裝置</td>
@@ -207,62 +207,32 @@ ht-degree: 2%
             </tr>
             <tr>
                 <td style="background-color: #DEEBFF;">要求者</td>
-                <td>JSON具有以下屬性：
-                <table>
-                    <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">屬性</th>
-                    </tr>
-                    <tr>
-                        <td>id</td>
-                    </tr>
-                    <tr>
-                        <td>名稱</td>
-                    </tr>
-                    <tr>
-                        <td>網域</td>
-                    </tr>
-                </table>
+                <td>
+                    具有以下屬性的JSON物件：
+                    <ul>
+                        <li><b>id</b></li>
+                        <li><b>名稱</b></li>
+                        <li><b>網域</b></li>
+                    </ul>
                 </td>
                 <td><i>必填</i></td>
             </tr>
             <tr>
                 <td style="background-color: #DEEBFF;">mvpds</td>
-                <td>JSON具有以下屬性：
-                <table>
-                    <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">屬性</th>
-                    </tr>
-                    <tr>
-                        <td>id</td>
-                    </tr>
-                    <tr>
-                        <td>顯示名稱</td>
-                    </tr>
-                    <tr>
-                        <td>logoUrl</td>
-                    </tr>
-                    <tr>
-                        <td>istemppass</td>
-                    </tr>
-                    <tr>
-                        <td>isProxy</td>
-                    </tr>
-                    <tr>
-                        <td>boardingStatus</td>
-                    </tr>
-                    <tr>
-                        <td>platformMappingId</td>
-                    </tr>
-                    <tr>
-                        <td>enablePlatformServices</td>
-                    </tr>
-                    <tr>
-                        <td>displayInPlatformPicker</td>
-                    </tr>
-                    <tr>
-                        <td>enforcePlatformPermissions</td>
-                    </tr>
-                </table>
+                <td>
+                    具有以下屬性的JSON物件：
+                    <ul>
+                        <li><b>id</b></li>
+                        <li><b>顯示名稱</b></li>
+                        <li><b>logoUr</b></li>
+                        <li><b>istemppass</b></li>
+                        <li><b>isProxy</b></li>
+                        <li><b>boardingStatus</b></li>
+                        <li><b>platformMappingId</b></li>
+                        <li><b>enablePlatformServices</b></li>
+                        <li><b>displayInPlatformPicker</b></li>
+                        <li><b>enforcePlatformPermissions</b></li>
+                    </ul>
                 </td>
                 <td><i>必填</i></td>
             </tr>
@@ -278,11 +248,11 @@ ht-degree: 2%
 
 ### 錯誤 {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">標頭</th>
+      <th style="background-color: #EFF2F7;">標頭</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">狀態</td>
@@ -295,9 +265,9 @@ ht-degree: 2%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">內文</th>
+      <th style="background-color: #EFF2F7;">內文</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">錯誤</td>

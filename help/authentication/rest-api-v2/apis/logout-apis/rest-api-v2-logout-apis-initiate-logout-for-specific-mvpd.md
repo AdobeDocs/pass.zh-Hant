@@ -1,9 +1,9 @@
 ---
 title: 啟動特定mvpd的登出
 description: REST API V2 — 啟動特定mvpd的登出
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '911'
+source-wordcount: '909'
 ht-degree: 1%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 1%
 
 ## 請求 {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">路徑</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">路徑引數</th>
+      <th style="background-color: #EFF2F7;">路徑引數</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">服務提供者</td>
@@ -53,9 +53,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">查詢參數</th>
+      <th style="background-color: #EFF2F7;">查詢參數</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
@@ -67,9 +67,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">標頭</th>
+      <th style="background-color: #EFF2F7;">標頭</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Authorization</td>
@@ -141,10 +141,10 @@ ht-degree: 1%
 
 ## 回應 {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">程式碼</th>
-      <th style="background-color: #EFF2F7; width: 20%;">文字</th>
+      <th style="background-color: #EFF2F7;">程式碼</th>
+      <th style="background-color: #EFF2F7;">文字</th>
       <th style="background-color: #EFF2F7;">說明</th>
    </tr>
    <tr>
@@ -186,11 +186,11 @@ ht-degree: 1%
 
 ### 成功 {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">標頭</th>
+      <th style="background-color: #EFF2F7;">標頭</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">狀態</td>
@@ -203,9 +203,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">內文</th>
+      <th style="background-color: #EFF2F7;">內文</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">登出</td>
@@ -213,11 +213,11 @@ ht-degree: 1%
          JSON包含索引鍵、值配對的對應。
          <br/><br/>
          索引鍵元素由下列值定義：
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">值</th>
+               <th style="background-color: #EFF2F7;">值</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
@@ -225,11 +225,11 @@ ht-degree: 1%
                <td><i>必填</i></td>
          </table>
          值元素由下列屬性定義：
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">屬性</th>
+               <th style="background-color: #EFF2F7;">屬性</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
@@ -237,47 +237,11 @@ ht-degree: 1%
                   串流裝置完成登出流程所需執行的動作。
                   <br/><br/>
                   可能的值包括：
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">值</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">登出</td>
-                        <td>
-                            串流裝置需要在使用者代理程式中開啟提供的URL。
-                            <br/><br/>
-                            此動作適用於下列情況：
-                            <ul>
-                                <li>使用登出端點登出MVPD</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">complete</td>
-                        <td>
-                            串流裝置不需要執行任何後續動作。
-                            <br/><br/>
-                            此動作適用於下列情況：
-                            <ul>\
-                                <li>不使用登出端點登出MVPD （虛擬登出功能）</li>
-                                <li>在存取效能降低期間登出</li>
-                                <li>在暫時存取期間登出</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">無效</td>
-                        <td>
-                            串流裝置不需要執行任何後續動作。
-                            <br/><br/>
-                            此動作適用於下列情況：
-                            <ul>
-                                <li>找不到有效的設定檔時，登出MVPD</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>登出</b><br/>串流裝置需要在使用者代理程式中開啟提供的URL。<br/>此動作適用於下列情況：使用登出端點登出MVPD。</li>
+                    <li><b>完成</b><br/>串流裝置不需要執行任何後續動作。<br/>此動作適用於下列情況：在沒有登出端點（虛擬登出功能）的情況下登出MVPD、在存取降級期間登出、在暫時存取期間登出。</li>
+                    <li><b>無效</b><br/>串流裝置不需要執行任何後續動作。<br/>此動作適用於下列情況：找不到有效的設定檔時登出MVPD。</li>
+                  </ul>  
                <td><i>必填</i></td>
             </tr>
             <tr>
@@ -286,31 +250,10 @@ ht-degree: 1%
                   串流裝置必須執行的互動型別，才能使用「actionName」屬性所指定的動作繼續流程。
                   <br/><br/>
                   可能的值包括：
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">值</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">互動式</td>
-                        <td>
-                            此型別適用於'actionName'屬性的下列值：
-                            <ul>
-                                <li>登出</li>
-                            </ul>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">無</td>
-                        <td>
-                            此型別適用於'actionName'屬性的下列值：
-                            <ul>
-                                <li>complete</li>
-                                <li>無效</li>
-                            </ul>
-                        </td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>互動式</b><br/>此型別適用於'actionName'屬性的下列值： <b>登出</b>。</li>
+                    <li><b>none</b><br/>此型別適用於'actionName'屬性的下列值： <b>complete</b>，<b>invalid</b>。</li>
+                  </ul>
                <td><i>必填</i></td>
             </tr>
             <tr>
@@ -325,8 +268,8 @@ ht-degree: 1%
                   <br/><br/>
                   'actionName'屬性的下列值沒有這個值：
                   <ul>
-                    <li>complete</li>
-                    <li>無效</li>
+                    <li><b>complete</b></li>
+                    <li><b>無效</b></li>
                   </ul>
                </td>
                <td>可選</td>
@@ -338,11 +281,11 @@ ht-degree: 1%
 
 ### 錯誤 {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">標頭</th>
+      <th style="background-color: #EFF2F7;">標頭</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">狀態</td>
@@ -355,9 +298,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">內文</th>
+      <th style="background-color: #EFF2F7;">內文</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">錯誤</td>

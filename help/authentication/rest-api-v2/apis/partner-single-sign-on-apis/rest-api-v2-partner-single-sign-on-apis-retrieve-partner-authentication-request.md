@@ -1,10 +1,10 @@
 ---
 title: 擷取合作夥伴驗證請求
 description: REST API V2 — 擷取合作夥伴驗證請求
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '1104'
-ht-degree: 0%
+source-wordcount: '1092'
+ht-degree: 1%
 
 ---
 
@@ -21,11 +21,11 @@ ht-degree: 0%
 
 ## 請求 {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">路徑</td>
@@ -38,9 +38,9 @@ ht-degree: 0%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">路徑引數</th>
+      <th style="background-color: #EFF2F7;">路徑引數</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">服務提供者</td>
@@ -53,9 +53,9 @@ ht-degree: 0%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">主體引數</th>
+      <th style="background-color: #EFF2F7;">主體引數</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">domainName</td>
@@ -82,9 +82,9 @@ ht-degree: 0%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">標頭</th>
+      <th style="background-color: #EFF2F7;">標頭</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Authorization</td>
@@ -155,10 +155,10 @@ ht-degree: 0%
 
 ## 回應 {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">程式碼</th>
-      <th style="background-color: #EFF2F7; width: 20%;">文字</th>
+      <th style="background-color: #EFF2F7;">程式碼</th>
+      <th style="background-color: #EFF2F7;">文字</th>
       <th style="background-color: #EFF2F7;">說明</th>
    </tr>
    <tr>
@@ -200,11 +200,11 @@ ht-degree: 0%
 
 ### 成功 {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">標頭</th>
+      <th style="background-color: #EFF2F7;">標頭</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">狀態</td>
@@ -217,19 +217,19 @@ ht-degree: 0%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">內文</th>
+      <th style="background-color: #EFF2F7;">內文</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
          具有以下屬性的JSON物件：
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">屬性</th>
+               <th style="background-color: #EFF2F7;">屬性</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
@@ -237,36 +237,12 @@ ht-degree: 0%
                   串流裝置完成驗證流程所需執行的動作。
                   <br/><br/>
                   可能的值包括：
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">值</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">partner_profile</td>
-                        <td>串流裝置可使用提供的合作夥伴驗證請求來取得合作夥伴驗證回應，該回應可用於擷取設定檔。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">驗證</td>
-                        <td>
-                            當合作夥伴單一登入流程無法繼續時，串流裝置可能會回覆為基本驗證流程。
-                            <br/><br/>
-                            串流裝置或其他裝置需要在使用者代理程式中開啟提供的URL。
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">繼續</td>
-                        <td>
-                            當合作夥伴單一登入流程無法繼續時，串流裝置可能會回覆為基本驗證流程。
-                            <br/><br/>
-                            串流裝置或其他裝置需要提供遺失的引數，並使用程式碼繼續驗證工作階段。
-                        </td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">授權</td>
-                        <td>串流裝置可以直接繼續進行決定流程。</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>partner_profile</b><br/>串流裝置可使用提供的合作夥伴驗證要求來取得合作夥伴驗證回應，以擷取設定檔。</li>
+                    <li><b>驗證</b><br/>當合作夥伴單一登入流程無法繼續時，串流裝置可以回覆為基本驗證流程。<br/>串流裝置或其他裝置需要在使用者代理程式中開啟提供的URL。</li>
+                    <li><b>繼續</b><br/>當合作夥伴單一登入流程無法繼續時，串流裝置可以回覆為基本驗證流程。<br/>串流裝置或其他裝置需要提供遺漏的引數，並使用程式碼繼續驗證工作階段。</li>
+                    <li><b>授權</b><br/>串流裝置可以直接進行決定流程。</li>
+                  </ul>
                <td><i>必填</i></td>
             </tr>
             <tr>
@@ -275,20 +251,10 @@ ht-degree: 0%
                   串流裝置必須執行的互動型別，才能使用「actionName」屬性所指定的動作繼續流程。
                   <br/><br/>
                   可能的值包括：
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">值</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">直接</td>
-                        <td>使用可用於使用者端實作的HTTP使用者端，以直接呼叫提供的URL來繼續此流程。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">互動式</td>
-                        <td>流程會使用使用者代理程式繼續導覽至提供的URL。</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>互動式</b><br/>流程繼續使用使用者代理程式導覽至提供的URL。</li>
+                    <li><b>直接</b><br/>流程會繼續使用使用者端實作可用的HTTP使用者端直接呼叫提供的URL。</li>
+                  </ul>
                <td><i>必填</i></td>
             </tr>
             <tr>
@@ -322,38 +288,11 @@ ht-degree: 0%
                     當合作夥伴單一登入流程可以繼續時，此欄位就會出現。
                     <br/><br/>
                     具有以下屬性的JSON物件：
-                    <table>
-                        <tr>
-                            <th style="background-color: #EFF2F7; width: 30%;">屬性</th>
-                            <th style="background-color: #EFF2F7;"></th>
-                        </tr>
-                        <tr>
-                            <td style="background-color: #DEEBFF;">type</td>
-                            <td>
-                                表示MVPD支援的通訊協定型別。
-                                <br/><br/>
-                                可能的值包括：
-                                <table>
-                                    <tr>
-                                        <th style="background-color: #EFF2F7; width: 30%;">值</th>
-                                        <th style="background-color: #EFF2F7;"></th>
-                                    </tr>
-                                    <tr>
-                                        <td style="background-color: #DEEBFF;">saml</td>
-                                        <td>MVPD支援SAML通訊協定。</td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="background-color: #DEEBFF;">請求</td>
-                            <td>SAML要求。</td>
-                        </tr>
-                        <tr>
-                            <td style="background-color: #DEEBFF;">屬性</td>
-                            <td>SAML要求屬性。</td>
-                        </tr>
-                    </table>
+                    <ul>
+                        <li><b>type</b><br/>表示MVPD支援的通訊協定型別（僅限SAML）。</li>
+                        <li><b>要求</b><br/>SAML要求。</li>
+                        <li><b>屬性</b><br/>SAML要求屬性。</li>
+                    </ul>
                </td>
                <td>可選</td>
             </tr>
@@ -378,11 +317,11 @@ ht-degree: 0%
 
 ### 錯誤 {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">標頭</th>
+      <th style="background-color: #EFF2F7;">標頭</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">狀態</td>
@@ -395,9 +334,9 @@ ht-degree: 0%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">內文</th>
+      <th style="background-color: #EFF2F7;">內文</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">錯誤</td>

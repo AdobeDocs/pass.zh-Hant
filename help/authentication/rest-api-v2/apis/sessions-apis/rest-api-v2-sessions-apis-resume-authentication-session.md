@@ -1,9 +1,9 @@
 ---
 title: 繼續驗證工作階段
 description: REST API V2 — 繼續驗證工作階段
-source-git-commit: 4afd8492c77fdceae3c2504ba392fbcfc0979b22
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '753'
 ht-degree: 1%
 
 ---
@@ -21,11 +21,11 @@ ht-degree: 1%
 
 ## 請求 {#request}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">HTTP</th>
+      <th style="background-color: #EFF2F7;">HTTP</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">路徑</td>
@@ -38,9 +38,9 @@ ht-degree: 1%
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">路徑引數</th>
+      <th style="background-color: #EFF2F7;">路徑引數</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">服務提供者</td>
@@ -53,9 +53,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">主體引數</th>
+      <th style="background-color: #EFF2F7;">主體引數</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">mvpd</td>
@@ -87,9 +87,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">標頭</th>
+      <th style="background-color: #EFF2F7;">標頭</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Authorization</td>
@@ -134,10 +134,10 @@ ht-degree: 1%
 
 ## 回應 {#response}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 10%;">程式碼</th>
-      <th style="background-color: #EFF2F7; width: 20%;">文字</th>
+      <th style="background-color: #EFF2F7;">程式碼</th>
+      <th style="background-color: #EFF2F7;">文字</th>
       <th style="background-color: #EFF2F7;">說明</th>
    </tr>
    <tr>
@@ -179,11 +179,11 @@ ht-degree: 1%
 
 ### 成功 {#success}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">標頭</th>
+      <th style="background-color: #EFF2F7;">標頭</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">狀態</td>
@@ -191,19 +191,19 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">內文</th>
+      <th style="background-color: #EFF2F7;">內文</th>
       <th style="background-color: #EFF2F7"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
          具有以下屬性的JSON物件：
-         <table>
+         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7; width: 20%;">屬性</th>
+               <th style="background-color: #EFF2F7;">屬性</th>
                <th style="background-color: #EFF2F7"></th>
-               <th style="background-color: #EFF2F7; width: 15%;"></th>
+               <th style="background-color: #EFF2F7;"></th>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
@@ -211,24 +211,11 @@ ht-degree: 1%
                   串流裝置完成驗證流程所需執行的動作。
                   <br/><br/>
                   可能的值包括：
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">值</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">驗證</td>
-                        <td>串流裝置或其他裝置需要在使用者代理程式中開啟提供的URL。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">重試</td>
-                        <td>串流裝置或其他裝置需要提供遺失的引數，然後使用程式碼再次嘗試恢複驗證工作階段。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">授權</td>
-                        <td>串流裝置可以直接繼續進行決定流程。</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>驗證</b><br/>串流裝置或其他裝置需要在使用者代理程式中開啟提供的URL。</li>
+                    <li><b>重試</b><br/>串流裝置或其他裝置需要提供遺漏的引數，然後使用程式碼重試繼續驗證工作階段。</li>
+                    <li><b>授權</b><br/>串流裝置可以直接進行決定流程。</li>
+                  </ul> 
                <td><i>必填</i></td>
             </tr>
             <tr>
@@ -237,20 +224,10 @@ ht-degree: 1%
                   串流裝置必須執行的互動型別，才能使用「actionName」屬性所指定的動作繼續流程。
                   <br/><br/>
                   可能的值包括：
-                  <table>
-                     <tr>
-                        <th style="background-color: #EFF2F7; width: 30%;">值</th>
-                        <th style="background-color: #EFF2F7;"></th>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">直接</td>
-                        <td>使用可用於使用者端實作的HTTP使用者端，以直接呼叫提供的URL來繼續此流程。</td>
-                     </tr>
-                     <tr>
-                        <td style="background-color: #DEEBFF;">互動式</td>
-                        <td>流程會使用使用者代理程式繼續導覽至提供的URL。</td>
-                     </tr>
-                  </table>
+                  <ul>
+                    <li><b>互動式</b><br/>流程繼續使用使用者代理程式導覽至提供的URL。</li>
+                    <li><b>直接</b><br/>流程會繼續使用使用者端實作可用的HTTP使用者端直接呼叫提供的URL。</li>
+                  </ul>
                <td><i>必填</i></td>
             </tr>
             <tr>
@@ -290,11 +267,11 @@ ht-degree: 1%
 
 ### 錯誤 {#error}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">標頭</th>
+      <th style="background-color: #EFF2F7;">標頭</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">狀態</td>
@@ -307,9 +284,9 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7; width: 15%;">內文</th>
+      <th style="background-color: #EFF2F7;">內文</th>
       <th style="background-color: #EFF2F7;"></th>
-      <th style="background-color: #EFF2F7; width: 10%;"></th>
+      <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">錯誤</td>

@@ -1,7 +1,7 @@
 ---
 title: 基本驗證 — 主要應用程式 — 流量
 description: REST API V2 — 基本驗證 — 主要應用程式 — 流量
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
 workflow-type: tm+mt
 source-wordcount: '894'
 ht-degree: 0%
@@ -91,6 +91,8 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
    >
    > * _必要_&#x200B;引數和標頭必須有效。
    > * 提供的`serviceProvider`與`mvpd`之間的整合必須是作用中。
+   > 
+   > <br/>
    > 
    > 如果驗證失敗，將會產生錯誤回應，提供可遵守[增強錯誤碼](../../../enhanced-error-codes.md)檔案的額外資訊。
 
