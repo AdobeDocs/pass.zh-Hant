@@ -1,7 +1,7 @@
 ---
 title: 擷取特定程式碼的設定檔
 description: REST API V2 — 擷取特定程式碼的設定檔
-source-git-commit: c849882286c88d16a5652717d381700287c53277
+source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
 workflow-type: tm+mt
 source-wordcount: '571'
 ht-degree: 1%

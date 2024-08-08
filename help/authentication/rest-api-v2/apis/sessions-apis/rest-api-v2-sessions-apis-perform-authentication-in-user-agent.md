@@ -1,7 +1,7 @@
 ---
 title: 在使用者代理程式中執行驗證
 description: REST API V2 — 在使用者代理程式中執行驗證
-source-git-commit: c849882286c88d16a5652717d381700287c53277
+source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
 workflow-type: tm+mt
 source-wordcount: '230'
 ht-degree: 3%
