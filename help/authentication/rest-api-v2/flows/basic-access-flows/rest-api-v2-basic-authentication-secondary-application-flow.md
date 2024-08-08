@@ -1,9 +1,9 @@
 ---
 title: 基本驗證 — 次要應用程式 — 流量
 description: REST API V2 — 基本驗證 — 次要應用程式 — 流量
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
-source-wordcount: '1756'
+source-wordcount: '2000'
 ht-degree: 0%
 
 ---
@@ -109,7 +109,46 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
 
    如果Adobe Pass後端未識別有效的設定檔，串流應用程式會顯示可用於在次要應用程式中繼續驗證工作階段的`code`。
 
+1. **驗證驗證碼：**&#x200B;次要應用程式會驗證所提供的使用者`code`，以確保它可以在使用者代理程式中繼續進行MVPD驗證。
+
+   >[!IMPORTANT]
+   >
+   > 如需下列詳細資訊，請參閱[擷取驗證工作階段資訊](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) API檔案：
+   >
+   > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`和`code`
+   > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`
+   > * 所有&#x200B;_選用的_&#x200B;引數和標頭
+
+1. **傳回有關驗證工作階段的資訊：**&#x200B;工作階段端點回應包含以下資料：
+   * `existing`屬性包含已經提供的現有引數。
+   * `missing`屬性包含遺漏的引數，需要提供這些引數才能完成驗證流程。
+
+   >[!IMPORTANT]
+   >
+   > 請參閱[擷取驗證工作階段資訊](../../apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) API檔案，以取得工作階段驗證回應中所提供資訊的詳細資訊。
+   >
+   > <br/>
+   >
+   > 「工作階段」端點會驗證請求資料，以確保符合基本條件：
+   >
+   > * _必要_&#x200B;引數和標頭必須有效。
+   >
+   > <br/>
+   >
+   > 如果驗證失敗，將會產生錯誤回應，提供可遵守[增強錯誤碼](../../../enhanced-error-codes.md)檔案的額外資訊。
+
+   >[!NOTE]
+   >
+   > 建議：次要應用程式可通知使用者，在錯誤回應指出遺失驗證工作階段的情況下，所使用的`code`無效，並建議使用者以新的驗證工作階段重試。
+
 1. **在使用者代理程式中開啟URL：**&#x200B;次要應用程式會開啟使用者代理程式，以載入自行計算的`url`，向驗證端點提出要求。 此流程可能包含數個重新導向，最終將使用者帶往MVPD登入頁面並提供有效認證。
+
+   >[!IMPORTANT]
+   >
+   > 如需下列詳細資訊，請參閱使用者代理程式](../../apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) API檔案中的[執行驗證：
+   >
+   > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`和`code`
+   > * 所有&#x200B;_選用的_&#x200B;引數和標頭
 
 1. **完成MVPD驗證：**&#x200B;如果驗證流程成功，使用者代理程式互動會在Adobe Pass後端儲存一般設定檔，並到達提供的`redirectUrl`。
 
@@ -231,6 +270,10 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
    > <br/>
    > 
    > 如果驗證失敗，將會產生錯誤回應，提供可遵守[增強錯誤碼](../../../enhanced-error-codes.md)檔案的額外資訊。
+
+   >[!NOTE]
+   >
+   > 建議：次要應用程式可通知使用者，在錯誤回應指出遺失驗證工作階段的情況下，所使用的`code`無效，並通知他們使用新的工作階段重試。
 
 1. **指示現有的設定檔：**&#x200B;工作階段端點回應包含下列資料：
    * `actionName`屬性已設定為「授權」。

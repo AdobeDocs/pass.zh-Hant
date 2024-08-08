@@ -1,7 +1,7 @@
 ---
 title: 繼續驗證工作階段
 description: REST API V2 — 繼續驗證工作階段
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
 source-wordcount: '753'
 ht-degree: 1%
@@ -47,7 +47,7 @@ ht-degree: 1%
       <td>在上線流程中與服務提供者相關聯的內部唯一識別碼。</td>
       <td><i>必填</i></td>
    </tr>
-    <tr>
+   <tr>
       <td style="background-color: #DEEBFF;">程式碼</td>
       <td>在串流裝置上建立驗證工作階段後取得的驗證代碼。</td>
       <td><i>必填</i></td>

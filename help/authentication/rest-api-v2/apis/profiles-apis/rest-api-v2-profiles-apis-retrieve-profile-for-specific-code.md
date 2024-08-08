@@ -1,9 +1,9 @@
 ---
 title: 擷取特定程式碼的設定檔
 description: REST API V2 — 擷取特定程式碼的設定檔
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: c849882286c88d16a5652717d381700287c53277
 workflow-type: tm+mt
-source-wordcount: '570'
+source-wordcount: '571'
 ht-degree: 1%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">路徑</td>
-      <td>/api/v2/{serviceProvider}/profiles/{code}</td>
+      <td>/api/v2/{serviceProvider}/profiles/code/{code}</td>
       <td></td>
    </tr>
    <tr>
