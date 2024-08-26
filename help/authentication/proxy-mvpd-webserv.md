@@ -2,29 +2,28 @@
 title: Proxy MVPD Web服務
 description: Proxy MVPD Web服務
 exl-id: f75cbc4d-4132-4ce8-a81c-1561a69d1d3a
-source-git-commit: f8cef3c41fb7132204c4fa499301c3010f62ca14
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
 source-wordcount: '1003'
 ht-degree: 0%
 
 ---
 
+
 # Proxy MVPD Web服務 {#proxy-mvpd-wbservice}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
->若要使用Proxy MVPD Web服務，您需要：
->- 請要求支援小組為您註冊的應用程式提供軟體宣告
->- 根據[動態使用者端註冊](dynamic-client-registration.md)取得存取權杖
-> 
+> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
->[!NOTE]
+>[!IMPORTANT]
 >
->若要使用Proxy MVPD Web服務，您需要：
->- 請要求支援小組為您註冊的應用程式提供軟體宣告
->- 根據[動態使用者端註冊](dynamic-client-registration.md)取得存取權杖
-> 
+> 在使用Proxy MVPD Web服務之前，請先確定符合下列先決條件：
+>
+> * 依照[擷取使用者端認證](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) API檔案中的說明取得使用者端認證。
+> * 依照[擷取存取權杖](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) API檔案中的說明取得存取權杖。
+>
+> 請參閱[Dynamic Client Registration Overview](./dcr-api/dynamic-client-registration-overview.md)檔案，以取得有關如何建立註冊的應用程式及下載軟體陳述式的詳細資訊。
 
 ## 概觀 {#overview-proxy-mvpd-webserv}
 
@@ -232,7 +231,7 @@ Adobe已定義下列可接受的格式，以便向我們的公用Web服務發佈
 
 請求必須符合下列規則，才能視為有效：
 
- — 要求標頭必須包含來自[動態使用者端註冊](dynamic-client-registration.md)的安全性Oauth2存取權杖。
+ — 要求標頭必須包含依照[擷取存取權杖](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) API檔案中的說明所取得的安全性Oauth2存取權杖。
  — 要求必須來自允許的特定IP位址。
  — 要求必須透過SSL通訊協定傳送。
 

@@ -1,9 +1,9 @@
 ---
 title: 擷取特定服務提供者的設定
 description: REST API V2 — 擷取特定服務提供者的設定
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '521'
+source-wordcount: '523'
 ht-degree: 2%
 
 ---
@@ -64,18 +64,18 @@ ht-degree: 2%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Authorization</td>
-      <td>產生持有人權杖承載在<a href="../../../dynamic-client-registration-api.md">動態使用者端註冊</a>檔案中進行了說明。</td>
+      <td>在<a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">授權</a>標標頭檔案中說明了持有人權杖承載的產生。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Device-Identifier</td>
-      <td>在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>檔案中說明裝置識別碼裝載的產生。</td>
+      <td>在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>標標頭檔案中說明裝置識別碼裝載的產生。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>檔案中說明裝置資訊裝載的產生。
+         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>標題檔案中會說明裝置資訊承載的產生。
          <br/><br/>
          強烈建議您在應用程式的裝置平台允許明確提供有效值時，一律使用此值。
          <br/><br/>
@@ -138,7 +138,7 @@ ht-degree: 2%
       <td>401</td>
       <td>未獲授權</td>
       <td>
-        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../dynamic-client-registration-api.md">動態使用者端註冊</a>檔案。
+        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../dcr-api/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。
       </td>
    </tr>
    <tr>

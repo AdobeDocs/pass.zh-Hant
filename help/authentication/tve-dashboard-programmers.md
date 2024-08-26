@@ -2,9 +2,9 @@
 title: 程式設計師
 description: 瞭解TVE儀表板中的程式設計師及其設定。
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '717'
+source-wordcount: '701'
 ht-degree: 0%
 
 ---
@@ -120,11 +120,11 @@ TVE儀表板的&#x200B;**程式設計人員**&#x200B;區段可讓您檢視和管
 
 ### 註冊的應用程式 {#registered-applications}
 
-此標籤提供應用程式註冊的清單。 檢視[動態使用者端註冊管理](/help/authentication/dynamic-client-registration-management.md)，以取得詳細資訊。
+此標籤提供應用程式註冊的清單。
 
 ### 自訂配置 {#custom-schemes}
 
-此索引標籤會顯示自訂配置清單。 檢視[iOS/tvOS應用程式註冊](/help/authentication/iostvos-application-registration.md)和[動態使用者端註冊管理](/help/authentication/dynamic-client-registration-management.md)，以取得詳細資訊。
+此索引標籤會顯示自訂配置清單。 檢視[iOS/tvOS應用程式註冊](/help/authentication/iostvos-application-registration.md)。
 
 ## 新增程式設計師 {#add-new-programmer}
 

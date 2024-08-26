@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1142'
+source-wordcount: '1149'
 ht-degree: 2%
 
 ---
@@ -95,12 +95,13 @@ ht-degree: 2%
             + [單一登出流程](rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-logout-flow.md)
       + 附錄{#rest-api-v2-appendix}
          + 標頭{#rest-api-v2-appendix-headers}
+            + [頁首 — 授權](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)
+            + [頁首 — AP-Device-Identifier](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
+            + [頁首 — X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
             + [標頭 — AD-Service-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
             + [標題 — Adobe-Subject-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
-            + [頁首 — AP-Device-Identifier](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
             + [頁首 — AP-Partner-Framework-Status](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
             + [頁首 — AP-TempPass-Identity](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
-            + [頁首 — X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
    + AccessEnabler SDK {#accessenabler-sdk}
       + JavaScript SDK {#javascriptsdk}
          + [JavaScript SDK概觀](javascript-sdk-overview.md)
@@ -175,7 +176,7 @@ ht-degree: 2%
    + 暫時傳遞{#temp-pass}
       + [暫時通過](temp-pass.md)
       + [促銷臨時傳遞](promotional-temp-pass.md)
-      + [重設暫存傳遞](reset-temp-pass.md)
+      + [重設暫時通過](reset-temp-pass.md)
    + 單一登入{#sso}
       + [單一登入支援](sso-support.md)
       + [透過被動驗證的SSO](sso-passive-authn.md)
@@ -188,10 +189,13 @@ ht-degree: 2%
    + 報告{#error-reportn}時發生錯誤
       + [錯誤報告](error-reporting.md)
       + [增強的錯誤碼](enhanced-error-codes.md)
-   + 使用者端註冊{#client-regn}
-      + [動態使用者端註冊](dynamic-client-registration.md)
-      + [動態使用者端註冊API](dynamic-client-registration-api.md)
-      + [動態使用者端註冊管理](dynamic-client-registration-management.md)
+   + 使用者端註冊{#dcr-api}
+      + [動態使用者端註冊概觀](./dcr-api/dynamic-client-registration-overview.md)
+      + API {#dcr-api-apis}
+         + [擷取使用者端認證](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
+         + [擷取存取權杖](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+      + 流程{#dcr-api-flows}
+         + [動態使用者端註冊流程](./dcr-api/flows/dynamic-client-registration-flow.md)
    + 降級服務{#degrn-service}
       + [降級API概觀](degradation-api-overview.md)
    + 隱私權準備{#privacy-readiness}
@@ -282,4 +286,3 @@ ht-degree: 2%
    + [報表](/help/authentication/tve-dashboard-reports.md)
    + [變更記錄](/help/authentication/tve-dashboard-changes-log.md)
 + [字彙表](glossary.md)
-

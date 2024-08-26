@@ -2,9 +2,9 @@
 title: REST API逐步指南（伺服器對伺服器）
 description: Rest API逐步指南伺服器到伺服器。
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: ea064031c3a1fee3298d85cf442c40bd4bb56281
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1847'
+source-wordcount: '1844'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ Adobe Pass驗證REST API受[節流機制](/help/authentication/throttling-mechan
 ### 動態使用者端註冊(DCR)
 
 
-Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe Pass服務之間的使用者端通訊。 DCR流程是獨立、相依和先決條件流程，可以在[動態使用者端註冊](/help/authentication/dynamic-client-registration.md)中找到。
+Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe Pass服務之間的使用者端通訊。 DCR流程是獨立的，並在[Dynamic Client Registration Overview](./dcr-api/dynamic-client-registration-overview.md)檔案中說明。
 
 
 ### 驗證(authN)

@@ -2,9 +2,9 @@
 title: 頻道
 description: 瞭解TVE Dashboard中的管道及其各種設定。
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: c2dcea9e4170a3e10654bcd3f8d2f5cdb82c9603
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1140'
+source-wordcount: '1124'
 ht-degree: 0%
 
 ---
@@ -206,11 +206,11 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 ### 註冊的應用程式 {#registered-applications}
 
-此標籤提供應用程式註冊的清單。 檢視[動態使用者端註冊管理](/help/authentication/dynamic-client-registration-management.md)以取得詳細資訊。
+此標籤提供應用程式註冊的清單。
 
 ### 自訂配置 {#custom-schemes}
 
-此索引標籤會顯示自訂配置清單。 檢視[iOS/tvOS應用程式註冊](/help/authentication/iostvos-application-registration.md)和[動態使用者端註冊管理](/help/authentication/dynamic-client-registration-management.md)以取得詳細資訊。
+此索引標籤會顯示自訂配置清單。 檢視[iOS/tvOS應用程式註冊](/help/authentication/iostvos-application-registration.md)。
 
 ## 新增頻道 {#add-new-channel}
 

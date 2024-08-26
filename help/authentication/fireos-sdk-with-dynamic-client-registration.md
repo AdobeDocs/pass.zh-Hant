@@ -2,12 +2,13 @@
 title: 具動態使用者端註冊的Amazon FireOS SDK
 description: 具動態使用者端註冊的Amazon FireOS SDK
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1145'
+source-wordcount: '1146'
 ht-degree: 0%
 
 ---
+
 
 # 具動態使用者端註冊的Amazon FireOS SDK {#amazon-fireos-sdk-with-dynamic-client-registration}
 
@@ -21,7 +22,7 @@ ht-degree: 0%
 
 已修改適用於FireTV的FireOS AccessEnabler SDK，以啟用驗證而不使用工作階段Cookie。 由於越來越多的瀏覽器限制對Cookie的存取，因此需要另一種方法來允許驗證。
 
-**FireOS SDK 3.0.4**&#x200B;以[動態使用者端註冊](/help/authentication/dynamic-client-registration.md)取代目前以已簽署的請求者ID和工作階段Cookie驗證為基礎的應用程式註冊機制。
+**FireOS SDK 3.0.4**&#x200B;以[動態使用者端註冊概述](./dcr-api/dynamic-client-registration-overview.md)取代目前以已簽署的請求者ID和工作階段Cookie驗證為基礎的應用程式註冊機制。
 
 
 ## API變更 {#API}

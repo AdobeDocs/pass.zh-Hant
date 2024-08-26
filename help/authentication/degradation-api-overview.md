@@ -2,29 +2,28 @@
 title: 降級API概觀
 description: 降級API概觀
 exl-id: c7d6685b-a235-42eb-9c9c-0ffa1747f614
-source-git-commit: f918d7f9f7b2af5b4364421f6703211e413eafb4
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '427'
 ht-degree: 0%
 
 ---
 
+
 # 降級API概觀 {#degradation-api-overview}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
->若要使用Degradation API，您需要：
->- 請要求支援小組為您註冊的應用程式提供軟體宣告
->- 根據[動態使用者端註冊](dynamic-client-registration.md)取得存取權杖
-> 
+> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
->[!NOTE]
+>[!IMPORTANT]
 >
->若要使用Degradation API，您需要：
->- 請要求支援小組為您註冊的應用程式提供軟體宣告
->- 根據[動態使用者端註冊](dynamic-client-registration.md)取得存取權杖
-> 
+> 在使用降級API之前，請確定您符合下列先決條件：
+>
+> * 依照[擷取使用者端認證](./dcr-api/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) API檔案中的說明取得使用者端認證。
+> * 依照[擷取存取權杖](./dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md) API檔案中的說明取得存取權杖。
+>
+> 請參閱[Dynamic Client Registration Overview](./dcr-api/dynamic-client-registration-overview.md)檔案，以取得有關如何建立註冊的應用程式及下載軟體陳述式的詳細資訊。
 
 ## 一般資訊 {#general_info}
 
@@ -42,7 +41,7 @@ ht-degree: 0%
 
  — 此功能設計為與使用狀況監控API搭配使用，可提供每個MVPD的驗證和授權數目、平均授權延遲，以及完整服務概覽所需其他度量的即時資訊。
  — 此功能不允許略過AdobePrimetim驗證服務。 如果Adobe Pass驗證失敗，服務內沒有機制可用來讓使用者檢視內容。 不過，網站或應用程式可自行繞過Adobe Pass驗證。
--Adobe目前不會直接觸發效能降低 — 決定必須一律由已透過MVPD同意此類條件的特定程式設計師負責。 未來，如果可以使用MVPD達成協定（SLA保護），Adobe Pass驗證可能會主動觸發降級規則。
+-Adobe目前不會直接觸發效能降低 — 決定必須一律由已透過MVPD同意此類條件的特定程式設計師負責。 未來，如果能透過MVPD達成協定(SLA保護)，Adobe Pass驗證可能會主動觸發降級規則。
 
 <!--
 ## Related Information {#related}

@@ -2,9 +2,9 @@
 title: 具Dynamic Client註冊的Android SDK
 description: 具Dynamic Client註冊的Android SDK
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '1277'
+source-wordcount: '1278'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 0%
 
 ## 動態使用者端註冊 {#DCR}
 
-Android SDK v3.0+將使用[動態使用者端註冊](/help/authentication/dynamic-client-registration.md)中定義的動態使用者端註冊程式。
+Android SDK v3.0+將使用[動態使用者端註冊概述](./dcr-api/dynamic-client-registration-overview.md)中定義的動態使用者端註冊程式。
 
 
 ## 功能示範 {#Demo}

@@ -2,9 +2,9 @@
 title: 使用無使用者端API逐步指南的Amazon FireOS SSO
 description: 使用無使用者端API逐步指南的Amazon FireOS SSO
 exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '755'
+source-wordcount: '761'
 ht-degree: 0%
 
 ---
@@ -149,9 +149,9 @@ Amazon無使用者端SSO實作相當簡單，而且大致上等同於一般的Ad
 
 Adobe無使用者端API需要應用程式使用動態使用者端註冊，才能呼叫Adobe伺服器。
 
-* 若要在應用程式中使用Dynamic Client Registration，請依照[Dynamic Client Registration Management中的指示來註冊應用程式](/help/authentication/dynamic-client-registration-management.md)。
+* 若要在應用程式中使用Dynamic Client Registration，請依照[Dynamic Client Registration Management](./dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management)中的指示建立註冊的應用程式並下載軟體陳述式。
 
-* 若要實作Dynamic Client Registration API以對Adobe Pass伺服器執行驗證和授權要求，請依照[Dynamic Client Registration API](/help/authentication/dynamic-client-registration-api.md)中的指示操作。
+* 若要實作Dynamic Client Registration API以對Adobe Pass伺服器執行驗證和授權要求，請依照[Dynamic Client Registration Flow](./dcr-api/flows/dynamic-client-registration-flow.md)中的指示進行。
 
 ### Adobe Pass無使用者端API更新以使用Amazon SSO {#clientlesssso}
 

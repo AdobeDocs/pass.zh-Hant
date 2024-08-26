@@ -1,9 +1,9 @@
 ---
 title: 擷取設定檔
 description: REST API V2 — 擷取設定檔
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '824'
+source-wordcount: '829'
 ht-degree: 1%
 
 ---
@@ -54,18 +54,18 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Authorization</td>
-      <td>產生持有人權杖承載在<a href="../../../dynamic-client-registration-api.md">動態使用者端註冊</a>檔案中進行了說明。</td>
+      <td>在<a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">授權</a>標標頭檔案中說明了持有人權杖承載的產生。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Device-Identifier</td>
-      <td>在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>檔案中說明裝置識別碼裝載的產生。</td>
+      <td>在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md">AP-Device-Identifier</a>標標頭檔案中說明裝置識別碼裝載的產生。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>檔案中說明裝置資訊裝載的產生。
+         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>標題檔案中會說明裝置資訊承載的產生。
          <br/><br/>
          強烈建議您在應用程式的裝置平台允許明確提供有效值時，一律使用此值。
          <br/><br/>
@@ -89,7 +89,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
       <td>
-        在<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Platform-Subject-Token</a>檔案中說明Platform Identity方法單一登入裝載的產生Adobe。
+        在<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Platform-Subject-Token</a>標標頭檔案中會說明Platform Identity方法單一登入裝載的產生Adobe。
         <br/><br/>
         如需使用平台身分識別啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台身分識別流程單一登入</a>檔案。
       </td>
@@ -98,7 +98,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>檔案中說明服務權杖方法的單一登入裝載的產生。
+        服務權杖方法的單一登入裝載產生過程在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>標標頭檔案中進行了說明。
         <br/><br/>
         如需使用服務權杖啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服務權杖流程進行單一登入</a>檔案。
       </td>
@@ -107,7 +107,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
       <td>
-        在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>檔案中說明夥伴方法的單一登入裝載的產生。
+        在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>標標頭檔案中會說明Partner方法單一登入裝載的產生方式。
         <br/><br/>
         如需有關使用合作夥伴啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">使用合作夥伴的單一登入流程</a>檔案。</td>
       <td>可選</td>
@@ -154,7 +154,7 @@ ht-degree: 1%
       <td>401</td>
       <td>未獲授權</td>
       <td>
-        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../dynamic-client-registration-api.md">動態使用者端註冊</a>檔案。
+        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../dcr-api/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。
       </td>
    </tr>
    <tr>

@@ -2,9 +2,9 @@
 title: Primetime TVE儀表板使用手冊
 description: Primetime TVE儀表板使用手冊
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: c6afb9b080ffe36344d7a3d658450e9be767be61
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '4377'
+source-wordcount: '5504'
 ht-degree: 0%
 
 ---
@@ -112,12 +112,11 @@ TVE Dashboard提供兩個名為「預合格」（預合格）和「發行」的�
   包含與可用MVPD的整合清單，以及可啟用或不可使用的每個整合的狀態。 按一下特定專案，即可導覽至整合頁面。
 * **已註冊的應用程式**
 
-  包含應用程式註冊清單。 如需詳細資訊，請檢閱檔案[動態使用者端註冊管理](/help/authentication/dynamic-client-registration-management.md)。
+  包含應用程式註冊清單。 如需詳細資訊，請檢閱檔案[動態使用者端註冊管理](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management)。
 
 * **自訂配置**
 
-  包含自訂配置清單。 如需詳細資訊，請參閱[iOS/tvOS應用程式註冊](/help/authentication/iostvos-application-registration.md)和[動態使用者端註冊管理](/help/authentication/dynamic-client-registration-management.md)
-
+  包含自訂配置清單。 如需詳細資訊，請參閱[iOS/tvOS應用程式註冊](/help/authentication/iostvos-application-registration.md)和[動態使用者端註冊管理](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management)
 
 #### 新增/刪除網域 {#add-delete-domains}
 
@@ -126,6 +125,50 @@ TVE Dashboard提供兩個名為「預合格」（預合格）和「發行」的�
 ![新增網域至選取的頻道區段](assets/add-domain-to-channel-sec.png)
 
 *圖：頻道中的[網域]索引標籤*
+
+#### 在管道層級建立註冊的應用程式 {#create-registered-application-channel-level}
+
+若要在管道層級建立註冊的應用程式，請導覽至「管道」功能表，然後選擇要為其建立應用程式的管道。 接著，瀏覽至「註冊的應用程式」標籤後，按一下「新增應用程式」按鈕。
+
+![](./assets/reg-new-app-channel-level.png)
+
+如下圖所示，您應填寫的欄位包括：
+
+* **應用程式名稱** — 應用程式的名稱
+
+* **已指派給管道** — 如下所示，與程式設計師層級執行的相同動作相比，這裡稍有不同的是「已指派管道」下拉式清單，此下拉式清單未啟用，因此沒有選項可將註冊的應用程式繫結到目前管道以外的其他管道。
+
+* **應用程式版本** — 預設會設為「1.0.0」，但強烈建議您使用自己的應用程式版本加以修改。 最佳做法是，如果您決定變更應用程式的版本，請透過為其建立新的註冊應用程式來反映該版本。
+
+* **應用程式平台** — 要連結的應用程式平台。 您可以選擇選取全部或多個值。
+
+* **網域名稱** — 要連結的應用程式網域。 下拉式清單中的網域是來自您所有管道的所有網域的統一選擇。 您可以選擇從清單中選取多個網域。 網域的含義是重新導向URL [RFC6749](https://tools.ietf.org/html/rfc6749)。 在使用者端註冊程式中，使用者端應用程式可請求允許使用重新導向URL來結束驗證流程。 當使用者端應用程式要求特定的重新導向URL時，將會根據與軟體陳述式關聯的這個註冊應用程式中列出的網域進行驗證。
+
+![](./assets/new-reg-app-channel.png)
+
+在欄位中填入適當的值後，您必須按一下「完成」，應用程式才會儲存在設定中。
+
+請注意，沒有&#x200B;**選項可修改已建立的應用程式**。 如果發現已建立的某個應用程式不再符合需求，則需要建立新的註冊應用程式，並搭配其符合需求的使用者端應用程式使用。
+
+##### 下載軟體宣告 {#download-software-statement-channel-level}
+
+![](./assets/reg-app-list.png)
+
+按一下需要軟體陳述式之清單專案上的[下載]按鈕將產生文字檔。 此檔案將包含類似於以下範例輸出的內容。
+
+![](./assets/download-software-statement.png)
+
+以「software_statement」為檔案前置詞並加入目前時間戳記，可唯一識別檔案名稱。
+
+請注意，對於相同的註冊應用程式，每次按一下下載按鈕時都會收到不同的軟體陳述式，但這不會使先前為此應用程式取得的軟體陳述式失效。 發生此情況是因為會根據動作要求即時產生。
+
+有關下載動作有一個&#x200B;**限制**。 如果在建立註冊的應用程式後不久按一下[下載]按鈕以請求軟體陳述式，而且此陳述式尚未儲存，且設定json未同步，則頁面底部會顯示下列錯誤訊息。
+
+![](./assets/error-sw-statement-notready.png)
+
+這會包裝從核心收到的HTTP 404 Not Found錯誤碼，因為已註冊應用程式的ID尚未傳播，而核心並不知道該專案。
+
+解決方案是在建立已註冊的應用程式後，最多等待2分鐘讓設定同步。 發生此情況後，將無法再收到錯誤訊息，且包含軟體陳述式的文字檔將可供下載。
 
 ### 程式設計師 {#tve-db-programmers-section}
 
@@ -147,12 +190,57 @@ TVE Dashboard提供兩個名為「預合格」（預合格）和「發行」的�
 
 * **已註冊的應用程式**
 
-  包含應用程式註冊清單。 如需詳細資訊，請參閱[動態使用者端註冊管理](/help/authentication/dynamic-client-registration-management.md)。
+  包含應用程式註冊清單。 如需詳細資訊，請參閱[動態使用者端註冊管理](/help/authentication/dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management)。
 
 * **自訂配置**
 
-  包含自訂配置清單。 如需詳細資訊，請參閱[iOS/tvOS應用程式註冊](/help/authentication/iostvos-application-registration.md)和[動態使用者端註冊管理](/help/authentication/dynamic-client-registration-management.md)。
+  包含自訂配置清單。 如需詳細資訊，請參閱[iOS/tvOS應用程式註冊](/help/authentication/iostvos-application-registration.md)。
 
+#### 在程式設計人員層級建立註冊的應用程式 {#create-registered-application-programmer-level}
+
+移至&#x200B;**程式設計師** > **已註冊的應用程式**&#x200B;標籤。
+
+![](./assets/reg-app-progr-level.png)
+
+在[已註冊的應用程式]索引標籤中，按一下[新增應用程式]****。 在新視窗中填寫必填欄位。
+
+如下圖所示，您應填寫的欄位包括：
+
+* **應用程式名稱** — 應用程式的名稱
+
+* **指派給頻道** — 您的頻道名稱，此應用程式連結到的t</span>o。 下拉式遮罩中的預設設定是&#x200B;**所有色版。**&#x200B;介面可讓您選取一個通道或所有通道。
+
+* **應用程式版本** — 預設會設為「1.0.0」，但強烈建議您使用自己的應用程式版本加以修改。 最佳做法是，如果您決定變更應用程式的版本，請透過為其建立新的註冊應用程式來反映該版本。
+
+* **應用程式平台** — 要連結的應用程式平台。 您可以選擇選取全部或多個值。
+
+* **網域名稱** — 要連結的應用程式網域。 下拉式清單中的網域是來自您所有管道的所有網域的統一選擇。 您可以選擇從清單中選取多個網域。 網域的含義是重新導向URL [RFC6749](https://tools.ietf.org/html/rfc6749)。 在使用者端註冊程式中，使用者端應用程式可請求允許使用重新導向URL來結束驗證流程。 當使用者端應用程式要求特定的重新導向URL時，將會根據與軟體陳述式關聯的這個註冊應用程式中列出的網域進行驗證。
+
+![](./assets/new-reg-app.png)
+
+在欄位中填入適當的值後，您必須按一下「完成」，應用程式才會儲存在設定中。
+
+請注意，沒有&#x200B;**選項可修改已建立的應用程式**。 如果發現已建立的某個應用程式不再符合需求，則需要建立新的註冊應用程式，並搭配其符合需求的使用者端應用程式使用。
+
+##### 下載軟體宣告 {#download-software-statement-programmer-level}
+
+![](./assets/reg-app-list.png)
+
+按一下需要軟體陳述式之清單專案上的[下載]按鈕將產生文字檔。 此檔案將包含類似於以下範例輸出的內容。
+
+![](./assets/download-software-statement.png)
+
+以「software_statement」為檔案前置詞並加入目前時間戳記，可唯一識別檔案名稱。
+
+請注意，對於相同的註冊應用程式，每次按一下下載按鈕時都會收到不同的軟體陳述式，但這不會使先前為此應用程式取得的軟體陳述式失效。 發生此情況是因為會根據動作要求即時產生。
+
+有關下載動作有一個&#x200B;**限制**。 如果在建立註冊的應用程式後不久按一下「下載」按鈕以請求軟體陳述式，而且此陳述式尚未儲存，且設定json未同步，則下列錯誤訊息將顯示在頁面底部。
+
+![](./assets/error-sw-statement-notready.png)
+
+這會包裝從核心收到的HTTP 404 Not Found錯誤碼，因為已註冊應用程式的ID尚未傳播，而核心並不知道該專案。
+
+解決方案是在建立已註冊的應用程式後，最多等待2分鐘讓設定同步。 發生此情況後，將無法再收到錯誤訊息，且包含軟體陳述式的文字檔將可供下載。
 
 ### 整合 {#tve-db-integrations-sec}
 

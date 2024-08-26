@@ -2,9 +2,9 @@
 title: Android應用程式註冊
 description: Android應用程式註冊
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: 1b8371a314488335c68c82882c930b7c19aa64ad
+source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
 workflow-type: tm+mt
-source-wordcount: '585'
+source-wordcount: '586'
 ht-degree: 0%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 從3.0版的Android AccessEnabler SDK開始，我們正在變更Adobe伺服器的驗證機制。 我們不使用公開金鑰和秘密系統來簽署requestorID，而是引入軟體陳述式字串概念，可用來取得存取權杖，以供SDK稍後對伺服器發出所有呼叫時使用。 除了軟體宣告之外，您還需要為應用程式建立深層連結。
 
-如需詳細資訊，請參閱[動態使用者端註冊](/help/authentication/dynamic-client-registration.md)
+如需詳細資訊，請參閱[動態使用者端註冊概述](./dcr-api/dynamic-client-registration-overview.md)。
 
 ## 什麼是軟體宣告？ {#what}
 
@@ -57,7 +57,7 @@ ht-degree: 0%
 
    下載文字檔。 將其內容當做您的軟體宣告使用。
 
-如需詳細資訊，請參閱[動態使用者端註冊管理](/help/authentication/dynamic-client-registration-management.md)
+如需詳細資訊，請參閱[動態使用者端註冊管理](./dcr-api/dynamic-client-registration-overview.md#dynamic-client-registration-management)。
 
 ### 如果您沒有AdobeTVE儀表板的存取權
 
