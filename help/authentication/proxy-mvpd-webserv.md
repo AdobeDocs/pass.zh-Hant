@@ -2,9 +2,9 @@
 title: Proxy MVPD Web服務
 description: Proxy MVPD Web服務
 exl-id: f75cbc4d-4132-4ce8-a81c-1561a69d1d3a
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 186335e27c05b2e0dd553607715a625376d9f299
 workflow-type: tm+mt
-source-wordcount: '1003'
+source-wordcount: '1027'
 ht-degree: 0%
 
 ---
@@ -239,14 +239,14 @@ Adobe已定義下列可接受的格式，以便向我們的公用Web服務發佈
 
 Curl範例：
 
-`curl -X GET -H "Authorization: Bearer <access_token_here>" "https://mgmt-prequal.auth-staging.adobe.com/control/v3/proxiedMvpds"`
+`curl -X GET -H "Authorization: Bearer <access_token_here>" "https://mgmt-prequal.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier&gt;/mvpds"`
 
 ## Adobe Pass驗證環境的Proxy MVPD Web服務端點 {#proxy-mvpd-wevserv-endpoints}
 
-- **生產URL：** https://mgmt.auth.adobe.com/control/v3/proxiedMvpds
-- **暫存URL：** https://mgmt.auth-staging.adobe.com/control/v3/proxiedMvpds
-- **PreQual-Production URL：** https://mgmt-prequal.auth.adobe.com/control/v3/proxiedMvpds
-- **PreQual-Staging URL：** https://mgmt-prequal.auth-staging.adobe.com/control/v3/proxiedMvpds
+- **生產URL：** https://mgmt.auth.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+- **中繼網址：** https://mgmt.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+- **PreQual-Production URL：** https://mgmt-prequal.auth.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
+- **PreQual-Staging URL：** https://mgmt-prequal.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier>/mvpds
 
 <!--
 >[!RELATEDINFORMATION]
