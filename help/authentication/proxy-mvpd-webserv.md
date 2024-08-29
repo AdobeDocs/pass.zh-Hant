@@ -2,7 +2,7 @@
 title: Proxy MVPD Web服務
 description: Proxy MVPD Web服務
 exl-id: f75cbc4d-4132-4ce8-a81c-1561a69d1d3a
-source-git-commit: 186335e27c05b2e0dd553607715a625376d9f299
+source-git-commit: 6cd7093862b2a343d8105ba4d8e493851e93b87e
 workflow-type: tm+mt
 source-wordcount: '1027'
 ht-degree: 0%
@@ -239,7 +239,7 @@ Adobe已定義下列可接受的格式，以便向我們的公用Web服務發佈
 
 Curl範例：
 
-`curl -X GET -H "Authorization: Bearer <access_token_here>" "https://mgmt-prequal.auth-staging.adobe.com/control/v3/mvpd-proxies/&lt;proxy-mvpd-identifier&gt;/mvpds"`
+`curl -X GET -H "Authorization: Bearer <access_token_here>" "https://mgmt-prequal.auth-staging.adobe.com/control/v3/mvpd-proxies/<proxy-mvpd-identifier>/mvpds"`
 
 ## Adobe Pass驗證環境的Proxy MVPD Web服務端點 {#proxy-mvpd-wevserv-endpoints}
 
