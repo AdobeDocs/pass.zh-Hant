@@ -2,9 +2,9 @@
 title: 並行監視使用報告
 description: 並行監視使用報告
 exl-id: 20220436-e748-4b22-8e7c-e074e0bfe242
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: 36da78fd66cfbc86e7bea7575c757fef536c0755
 workflow-type: tm+mt
-source-wordcount: '757'
+source-wordcount: '799'
 ht-degree: 0%
 
 ---
@@ -21,9 +21,9 @@ ht-degree: 0%
 
 **並行監視使用量報告**&#x200B;服務可透過REST API使用，API可提供客戶應用程式報告的並行使用量深入分析。
 
-## 必要條件 {#usage-rep-prerequisites}
+## 先決條件 {#usage-rep-prerequisites}
 
-若要存取「並行監視使用報告」產品，客戶必須首先連絡並行監視[支援團隊](mailto:tve-support@adobe.com)，他們將執行必要的步驟以允許您存取API產品。
+若要存取「並行監視使用報告」產品，客戶必須首先連絡並行監視[支援團隊](mailto:tve-support@adobe.com)，他們將執行必要的步驟以允許您存取API產品。 有關[CMU API存取](/help/concurrency-monitoring/cmu-api-access.md)的更多詳細資料。
 
 ## 一般報表度量與劃分 {#general-rep-metrics-breakdown}
 
@@ -54,12 +54,12 @@ ht-degree: 0%
 ### 使用情況報表使用者可依下列維度篩選上述量度： {#dimensions-2-filter-metrics}
 
 | Dimension名稱 | 說明 |
-|:---|:---|
+|:---------------|:------------------------------------------------------------------------------------------------------------------|
 | 年 | 4位數的年份 |
 | 月 | 月份(1-12) |
 | 天 | 當月日期(1-31) |
 | 小時 | 一天中的第幾個小時 |
-| 分鐘 | 一小時中的第幾分鐘 |
+| 分鐘 | 一小時中的第幾分鐘[^1] |
 | 應用計畫 | 在用來管理階段作業的「並行監視」中註冊的應用程式名稱 |
 | application-id | 在用來管理工作階段的並行監視中註冊的應用程式ID |
 | 頻道 | 在工作階段初始化期間傳送的管道中繼資料（如果未傳送中繼資料，則標籤為未知） |
@@ -88,3 +88,9 @@ ht-degree: 0%
 | 並行層級 | 代表在工作階段初始化階段&#x200B;**為使用者核准的任何不同**&#x200B;串流活動，以便能夠觀察使用者開啟了多少並行串流&#x200B;****，並瞭解套用特定並行限制的影響 |
 | 活動層級 | 代表使用者的任何不同&#x200B;**串流活動（不論其狀態為何：已啟動、作用中、已停止、已拒絕）**，以便能夠觀察使用者嘗試開啟的並行串流數量，並瞭解套用特定並行限制的影響 |
 | mvpd | 工作階段管理中提供的MVPD |
+
+### 報表範例
+
+為達到最佳資料準確度，建議您在此頁面上呈現的報告[CMU報告範例](/help/concurrency-monitoring/cm-usage-reports-examples.md)
+
+[^1]：預設不提供分鐘報告。 請連絡並行監視[支援團隊](mailto:tve-support@adobe.com)以要求他們。

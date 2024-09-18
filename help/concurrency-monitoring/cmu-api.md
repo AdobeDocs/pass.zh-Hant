@@ -2,7 +2,7 @@
 title: API總覽
 description: API總覽
 exl-id: 3fe6f6d8-5b2f-47e5-a8da-06fb18a5d46b
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: 301825253b21746684df9b6372a239b03305d50e
 workflow-type: tm+mt
 source-wordcount: '2043'
 ht-degree: 0%
@@ -24,7 +24,7 @@ ht-degree: 0%
 >
 >CMU API並非一般可用。 如需瞭解可用性問題，請聯絡您的Adobe代表。
 
-CMU API提供基礎OLAP立方結構的階層檢視。 每個資源（[維度](/help/authentication/entitlement-service-monitoring-overview.md#progr-filter-metrics)，在維度階層中，對應為URL路徑區段）會產生包含（彙總） [個量度](/help/authentication/entitlement-service-monitoring-overview.md#programmers-can-monitor-the-following-metrics)的報表，以用於目前的選取專案。 每個資源都指向其父資源（用於累計）及其子資源（用於向下鑽研）。 切片和切割是透過將維度釘選到特定值或範圍的查詢字串引數實現的。
+CMU API提供基礎OLAP立方結構的階層檢視。 每個資源（[維度](/help/concurrency-monitoring/cm-usage-reports.md#dimensions-2-filter-metrics)，在維度階層中，對應為URL路徑區段）會產生包含（彙總） [個量度](/help/concurrency-monitoring/cm-usage-reports.md#monitor-metrics)的報表，以用於目前的選取專案。 每個資源都指向其父資源（用於累計）及其子資源（用於向下鑽研）。 切片和切割是透過將維度釘選到特定值或範圍的查詢字串引數實現的。
 
 REST API會根據維度路徑、提供的篩選器和選取的量度，在請求中指定的時間間隔內提供可用資料（如果未提供，則會退回預設值）。 時間範圍不會套用至不包含時間維度（年、月、日、小時、分鐘、秒）的報表。
 
