@@ -1,13 +1,13 @@
 ---
 title: Dynamic Client註冊概述
 description: Dynamic Client註冊概述
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
+source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
 workflow-type: tm+mt
 source-wordcount: '840'
 ht-degree: 0%
 
 ---
-
 
 # Dynamic Client註冊概述 {#dynamic-client-registration-overview}
 
@@ -53,7 +53,7 @@ Adobe Pass提供動態使用者端註冊服務，可讓您存取以下受保護�
 
 動態使用者端註冊管理程式可讓在特定平台上執行且需要存取特定Adobe Pass Authentication API的使用者端應用程式，透過[Adobe Pass TVE Dashboard](https://console.auth.adobe.com/)註冊。
 
-Adobe Pass TVE Dashboard是供Adobe Pass驗證客戶（程式設計師）管理其設定和資料的工具。 此自助儀表板可啟用[Adobe Pass TVE儀表板使用手冊](../tve-dashboard-user-guide.md)檔案中說明的一系列功能。
+Adobe Pass TVE Dashboard是供Adobe Pass驗證客戶（程式設計師）管理其設定和資料的工具。 此自助儀表板可啟用[Adobe Pass TVE儀表板使用手冊](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)檔案中說明的一系列功能。
 
 如果您可以存取[Adobe Pass TVE儀表板](https://console.auth.adobe.com/)，請依照下列各節中的步驟建立註冊的應用程式並下載軟體陳述式。
 
@@ -67,12 +67,12 @@ Adobe Pass TVE Dashboard是供Adobe Pass驗證客戶（程式設計師）管理�
 
 * **程式設計師層級**
 
-  程式設計人員層級的註冊程式可讓您建立已註冊的應用程式，連結至所有可用管道或選定的管道子集。 如需詳細資訊，請參閱[TVE儀表板使用手冊](../tve-dashboard-user-guide.md)檔案中的[在程式設計人員層級](../tve-dashboard-user-guide.md#create-registered-application-programmer-level)建立註冊的應用程式。
+  程式設計人員層級的註冊程式可讓您建立已註冊的應用程式，連結至所有可用管道或選定的管道子集。 如需詳細資訊，請參閱[TVE儀表板使用手冊](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)檔案中的[在程式設計人員層級](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#create-registered-application-programmer-level)建立註冊的應用程式。
 
 
 * **頻道層級**
 
-  頻道層級的註冊程式可讓您建立僅連結至目前所選頻道的已註冊應用程式。 如需更多詳細資料，請參閱[TVE儀表板使用手冊](../tve-dashboard-user-guide.md)檔案中的[在頻道層級](../tve-dashboard-user-guide.md#create-registered-application-channel-level)建立註冊的應用程式。
+  頻道層級的註冊程式可讓您建立僅連結至目前所選頻道的已註冊應用程式。 如需更多詳細資料，請參閱[TVE儀表板使用手冊](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)檔案中的[在頻道層級](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#create-registered-application-channel-level)建立註冊的應用程式。
 
 >[!IMPORTANT]
 >
@@ -92,11 +92,11 @@ Adobe Pass TVE Dashboard是供Adobe Pass驗證客戶（程式設計師）管理�
 
 * **程式設計師層級**
 
-  如需更多詳細資料，請參閱[TVE儀表板使用手冊](../tve-dashboard-user-guide.md)檔案中的[下載程式設計人員層級](../tve-dashboard-user-guide.md#download-software-statement-programmer-level)的軟體陳述式。
+  如需更多詳細資料，請參閱[TVE儀表板使用手冊](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)檔案中的[下載程式設計人員層級](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#download-software-statement-programmer-level)的軟體陳述式。
 
 * **頻道層級**
 
-  如需更多詳細資料，請參閱[TVE儀表板使用手冊](../tve-dashboard-user-guide.md)檔案中的[下載頻道層級](../tve-dashboard-user-guide.md#download-software-statement-channel-level)的軟體陳述式。
+  如需更多詳細資料，請參閱[TVE儀表板使用手冊](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)檔案中的[下載頻道層級](../tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md#download-software-statement-channel-level)的軟體陳述式。
 
 軟體陳述式是JSON Web權杖(`JWT`)，其中包含您的使用者端應用程式軟體作為套件組合的資訊。 向[擷取使用者端認證](./apis/dynamic-client-registration-apis-retrieve-client-credentials.md) API顯示時，軟體陳述式會使用JSON Web簽章(`JWS`)進行數位簽署。
 

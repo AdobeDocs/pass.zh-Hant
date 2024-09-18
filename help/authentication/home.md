@@ -2,7 +2,7 @@
 title: 歡迎使用Adobe&amp；reg；通過驗證！
 description: 歡迎使用Adobe&amp；reg；通過驗證概述
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: 6699f37915551a19252dc84b6a37cc4565011fd5
+source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
 workflow-type: tm+mt
 source-wordcount: '331'
 ht-degree: 0%
@@ -27,7 +27,7 @@ Adobe Pass Authentication是TV Everywhere的權益解決方案，提供模組化
 
 | **個精選專案** |
 |-|
-| <ul><li>[iOS的單一登入](/help/authentication/apple-sso-overview.md)</li><li>[促銷臨時通票](/help/authentication/promotional-temp-pass.md)</li><li>[家用驗證(HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[HBA資訊圖形](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Adobe Pass TVE儀表板使用手冊](/help/authentication/tve-dashboard-user-guide.md)</li></ul> |
+| <ul><li>[iOS的單一登入](/help/authentication/apple-sso-overview.md)</li><li>[促銷臨時通票](/help/authentication/promotional-temp-pass.md)</li><li>[家用驗證(HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[HBA資訊圖形](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Adobe Pass TVE儀表板使用手冊](/help/authentication/tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)</li></ul> |
 
 | 程式設計師的&#x200B;**** | MVPD的&#x200B;**** |
 |------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
