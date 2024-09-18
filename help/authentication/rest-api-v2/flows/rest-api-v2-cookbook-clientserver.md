@@ -1,7 +1,7 @@
 ---
 title: REST API V2 — 逐步指南 — 使用者端/伺服器實作步驟
 description: REST API V2 — 逐步指南 — 使用者端/伺服器實作步驟
-source-git-commit: 5ba888b35731ef64b3dd1878f2fa55083989f857
+source-git-commit: 5ba538bdb13d121ba27005df82d4ae604f912241
 workflow-type: tm+mt
 source-wordcount: '698'
 ht-degree: 0%
@@ -26,6 +26,7 @@ ht-degree: 0%
 ## A.註冊階段 {#registration-phase}
 
 ### 步驟1：註冊您的應用程式 {#step-1-register-your-application}
+
 應用程式若要能夠呼叫Adobe Pass REST API V2，它需要API安全性層所需的存取權杖。
 若要取得存取Token，應用程式必須依照所述步驟進行：
 [動態使用者端註冊](./dynamic-client-registration.md)
@@ -33,6 +34,7 @@ ht-degree: 0%
 ## B.驗證階段 {#authentication-phase}
 
 ### 步驟2：檢查現有的已驗證設定檔 {#step-2-check-for-existing-authenticated-profiles}
+
 串流應用程式檢查現有的已驗證設定檔： <b>/api/v2/{serviceProvider}/設定檔</b><br>
 （[擷取已驗證的設定檔](./apis/profiles-apis/rest-api-v2-retrieve-authenticated-profiles.md)）
 
@@ -49,6 +51,7 @@ ht-degree: 0%
       * 如果找到設定檔，串流應用程式可能會繼續到<a href="#preauthorization-phase">C。預先授權階段</a>或<a href="#authorization-phase">D。授權階段</a>
 
 ### 步驟3：驗證使用者 {#step-3-authenticate-the-user}
+
 使用瀏覽器或第二熒幕Web應用程式：
 
 * 選項1。 串流應用程式可以開啟瀏覽器或Web檢視、載入URL以進行驗證，且使用者會登陸需要提交認證的MVPD登入頁面
@@ -57,6 +60,7 @@ ht-degree: 0%
    * 使用者輸入登入/密碼，最終重新導向顯示成功頁面
 
 ### 步驟4：檢查已驗證的設定檔 {#step-4-check-for-authenticated-profiles}
+
 串流應用程式會檢查是否有MVPD驗證，以在瀏覽器或第二個畫面中完成
 
 * 建議在<b>/api/v2/{serviceProvider}/profiles/{mvpd}</b><br>上每15秒輪詢一次
@@ -70,8 +74,10 @@ ht-degree: 0%
 ## C.預先授權階段 {#preauthorization-phase}
 
 ### 步驟5：檢查預先授權的資源 {#step-5-check-for-preauthorized-resources}
+
 串流應用程式準備顯示已驗證身分的使用者可用的影片，且可檢查
 存取這些資源。
+
 * 步驟為選用，如果應用程式想要篩選驗證使用者套件中無法提供的資源，則會執行此步驟
 * 呼叫<b>/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}</b><br>
 （[使用特定MVPD擷取預先授權決定](.apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)）
@@ -80,6 +86,7 @@ ht-degree: 0%
 ## D.授權階段 {#authorization-phase}
 
 ### 步驟6：檢查授權的資源 {#step-6-check-for-authorized-resources}
+
 串流應用程式準備播放使用者選取的視訊/資產/資源。
 
 * 每個播放開始都需要執行步驟
@@ -91,6 +98,7 @@ ht-degree: 0%
 ## E.登出階段 {#logout-phase}
 
 ### 步驟7：登出 {#step-7-logout}
+
 串流裝置：使用者想要從MVPD登出
 
 * 呼叫<b>/api/v2/{serviceProvider}/logout/{mvpd}</b><br>
