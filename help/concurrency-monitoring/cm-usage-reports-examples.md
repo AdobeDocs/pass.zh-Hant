@@ -1,9 +1,9 @@
 ---
 title: 並行監視使用報告範例
 description: 並行監視使用報告範例
-source-git-commit: 7adfa5c803d27ac63f4fde64cf86edfb6bfca9cd
+source-git-commit: ca9bfb964ad7e7437bbea4704bca4ac5105874f1
 workflow-type: tm+mt
-source-wordcount: '2387'
+source-wordcount: '2374'
 ht-degree: 0%
 
 ---
@@ -67,8 +67,6 @@ ht-degree: 0%
 | 活動層級每日報告 | &quot;year&quot;、&quot;month&quot;、&quot;day&quot;、&quot;activity-level&quot; | cmu/v2/year/month/day/activity-level | &quot;activity-level&quot;， &quot;users&quot; |
 | 每個租使用者的活動層級每日報告 | &quot;year&quot;、&quot;month&quot;、&quot;day&quot;、&quot;activity-level&quot;、&quot;tenant&quot; | cmu/v2/year/month/day/activity-level/tenant | &quot;activity-level&quot;、&quot;tenant&quot;、&quot;users&quot; |
 | 每個租使用者mvpd的活動層級每日報告 | &quot;year&quot;、&quot;month&quot;、&quot;day&quot;、&quot;activity-level&quot;、&quot;tenant&quot;、&quot;mvpd&quot; | cmu/v2/year/month/day/activity-level/tenant/mvpd | &quot;activity-level&quot;、&quot;tenant&quot;、&quot;mvpd&quot;、&quot;users&quot; |
-
-*TODO：如果並行和活動層級報表正確，請洽詢BG *
 
 ## 每小時報表範例 {#hourly-reports-examples}
 
