@@ -2,9 +2,9 @@
 title: CMU API存取
 description: CMU API存取
 exl-id: 8d216703-aabc-489e-93fe-d4d105616b1d
-source-git-commit: 52c0ffe75f6ac9fda3da39ff08b0dc4c5d5ca428
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '407'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -27,20 +27,22 @@ ht-degree: 0%
 ## 存取程式步驟 {#access-procedure-steps}
 
 1. 在Adobe Pass DCR伺服器中擁有註冊的應用程式。 如需此步驟，請連絡我們的[支援團隊](mailto:tve-support@adobe.com)。
+
 2. 取得軟體宣告
-   1. 前往TVE儀表板<a href="https://console-preprod.auth.adobe.com/#!/" target="_blank">生產前</a>或<a href="https://console.auth.adobe.com/" target="_blank">生產</a>
+   1. 前往[Adobe Pass TVE儀表板](https://experience.adobe.com/#/pass/authentication)
    2. 選取程式設計師
-   3. 前往應用程式標籤
+   3. 移至&#x200B;*已註冊的應用程式*&#x200B;標籤
    4. 選取應用程式
-   5. 按一下DownLoad Software Statement以取得與下列擷取類似的檔案
+   5. 在您要取得軟體陳述式的註冊應用程式列上按一下下載，然後將其儲存為本機電腦上的檔案
       <figure>
-          <img src="assets/software_statement_1_download.png"
+          <img src="assets/programmer-download-software-statement-button.png"
                alt="下載軟體宣告">
-       </figure>
+      </figure>
+
       <figure>
           <img src="assets/software_statement_2.png"
                alt="軟體陳述式範例">
-       </figure>
+      </figure>
 
 3. 取得存取權杖
    1. 使用上述軟體陳述式並執行以下呼叫，取得使用者端憑證。 如此將可取得client_id - client_secret配對，藉以取得存取權杖。

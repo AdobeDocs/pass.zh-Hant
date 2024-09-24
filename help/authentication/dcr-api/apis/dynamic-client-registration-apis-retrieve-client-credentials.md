@@ -1,13 +1,13 @@
 ---
 title: 擷取使用者端認證
 description: Dynamic Client Registration API — 擷取使用者端認證
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: 0b39768b-25b8-47b9-8080-59c56fb829fb
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '431'
-ht-degree: 1%
+source-wordcount: '0'
+ht-degree: 0%
 
 ---
-
 
 # 擷取使用者端認證 {#retrieve-client-credentials}
 
@@ -45,7 +45,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">software_statement</td>
       <td>
-            與從<a href="https://console.auth.adobe.com/">Adobe Pass TVE Dashboard</a>建立和下載的註冊應用程式關聯的軟體陳述式。
+            與從<a href="https://experience.adobe.com/#/pass/authentication">Adobe Pass TVE Dashboard</a>建立和下載的註冊應用程式關聯的軟體陳述式。
             <br/><br/>
             已註冊應用程式的管理在<a href="../dynamic-client-registration-overview.md">動態使用者端註冊概述</a>檔案中有所說明。
       </td>

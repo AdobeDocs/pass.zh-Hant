@@ -2,9 +2,9 @@
 title: Android應用程式註冊
 description: Android應用程式註冊
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '586'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 ### 如果您能存取Adobe的TVE控制面板
 
-1. 開啟瀏覽器並導覽至[Adobe Pass TVE儀表板](https://console.auth.adobe.com)。
+1. 開啟瀏覽器並導覽至[Adobe Pass TVE儀表板](https://experience.adobe.com/#/pass/authentication)。
 
 1. 導覽至&#x200B;**[!UICONTROL Channels]**&#x200B;區段，然後選取您的頻道。
 

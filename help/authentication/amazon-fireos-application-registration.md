@@ -2,9 +2,9 @@
 title: Amazon FireOS應用程式註冊
 description: Amazon FireOS應用程式註冊
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 0%
 
 ### 如果您能存取Adobe的TVE控制面板：
 
-1. 開啟瀏覽器並導覽至`https://console.auth.adobe.com`。
+1. 開啟瀏覽器並導覽至`https://experience.adobe.com/#/pass/authentication`。
 
 1. 導覽至&#x200B;**[!UICONTROL Channels]**&#x200B;區段，然後選取您的頻道。
 

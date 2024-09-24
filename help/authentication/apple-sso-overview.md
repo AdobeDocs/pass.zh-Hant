@@ -2,9 +2,9 @@
 title: Apple SSO概觀
 description: Apple SSO概觀
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
-source-git-commit: 59672b44074c472094ed27a23d6bfbcd7654c901
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '1417'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Apple提供的API可讓使用者在裝置系統層級登入其電視提供者帳
 
 </br>
 
-## 必要條件 {#Prerequisites}
+## 先決條件 {#Prerequisites}
 
 必要條件可能適用於一或多個與TVE業務相關的實體，例如程式設計師、MVPD、Adobe Pass驗證或Apple。
 
@@ -39,7 +39,7 @@ Apple提供的API可讓使用者在裝置系統層級登入其電視提供者帳
 
 1. 將[視訊訂閱者單一登入權利](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_video-subscriber-single-sign-on)設定為其Apple開發人員帳戶。 請連絡Apple，為您的Apple團隊識別碼啟用[視訊訂閱者帳戶架構](https://developer.apple.com/documentation/videosubscriberaccount)。
 
-1. 透過[Adobe Primetime TVE Dashboard](https://console.auth.adobe.com/)，為每個所需的整合(Channel x MVPD)和所需的平台(iOS / tvOS)啟用單一登入（是）。
+1. 透過[Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication)，為每個所需的整合(Channel x MVPD)和所需的平台(iOS / tvOS)啟用單一登入（是）。
 
 1. 使用Apple驗證團隊提供的下列兩個解決方案之一，整合Adobe Pass SSO工作流程：
 
@@ -90,7 +90,7 @@ MVPD必須：
 ## 常見問題集 {#FAQ}
 
 1. 如果Apple SSO工作流程發生問題，使用AccessEnabler iOS/tvOS SDK的應用程式是否能夠回覆為一般驗證流程？
-   - 這是可能的，但需要在[Adobe Primetime TVE儀表板](https://console.auth.adobe.com/)上執行設定變更。 必須將&#x200B;*啟用單一登入*&#x200B;設定在&#x200B;*NO*，才能使用所需的整合(Channel x MVPD)和所需的平台(iOS/tvOS)。
+   - 這是可能的，但需要在[Adobe Pass TVE儀表板](https://experience.adobe.com/#/pass/authentication)上執行設定變更。 必須將&#x200B;*啟用單一登入*&#x200B;設定在&#x200B;*NO*，才能使用所需的整合(Channel x MVPD)和所需的平台(iOS/tvOS)。
    - 應用程式只有在呼叫[setRequestor](/help/authentication/iostvos-sdk-api-reference.md#setReqV3) API之後，才能確認組態變更，以防它使用AccessEnabler iOS/tvOS SDK。
 1. 應用程式會知道透過其他裝置或其他應用程式上的平台SSO登入而導致驗證發生的時間嗎？
    - 將無法取得此資訊。
@@ -98,13 +98,13 @@ MVPD必須：
    - 此資訊屬於使用者中繼資料金鑰： *tokenSource*&#x200B;的一部分，在此案例中應傳回字串值： &quot;Apple&quot;。
 1. 如果使用者使用未與應用程式整合的MVPD前往iOS/iPadOS上的&#x200B;*`Settings -> TV Provider`*&#x200B;或tvOS區段上的&#x200B;*`Settings -> Accounts -> TV Provider`*&#x200B;登入，會發生什麼情況？
    - 當使用者啟動應用程式時，將不會透過Apple SSO工作流程驗證使用者。 因此，應用程式必須退回一般驗證流程，並顯示自己的MVPD選擇器。
-1. 如果使用者使用MVPD (在適用於iOS/tvOS平台的[iOS TVE儀表板](https://console.auth.adobe.com/)的&#x200B;*NO*&#x200B;上設定&#x200B;*啟用單一登入*)登入Adobe Primetime/iPadOS上的&#x200B;*`Settings -> TV Provider`*&#x200B;或tvOS區段上的&#x200B;*`Settings -> Accounts -> TV Provider`*，會發生什麼情況？
+1. 如果使用者使用MVPD (在適用於iOS/tvOS平台的[iOS TVE儀表板](https://experience.adobe.com/#/pass/authentication)的&#x200B;*NO*&#x200B;上設定&#x200B;*啟用單一登入*)登入Adobe Pass/iPadOS上的&#x200B;*`Settings -> TV Provider`*&#x200B;或tvOS區段上的&#x200B;*`Settings -> Accounts -> TV Provider`*，會發生什麼情況？
    - 當使用者啟動應用程式時，將不會透過Apple SSO工作流程驗證使用者。 因此，應用程式必須退回一般驗證流程，並顯示自己的MVPD選擇器。
 1. 如果使用者有Apple未上線（不支援）的MVPD，但存在於Apple選擇器中，會發生什麼情況？
    - 當使用者啟動應用程式時，使用者將僅透過Apple SSO工作流程選取MVPD，而未完成驗證流程。 因此，應用程式必須退回一般驗證流程，但可以使用已選取的MVPD。
 1. 如果使用者有Apple未上線（不支援）的MVPD，會發生什麼情況？
    - 當使用者啟動應用程式時，使用者會透過Apple SSO工作流程選取「其他電視提供者」選擇器。 因此，應用程式必須退回一般驗證流程，並顯示自己的MVPD選擇器。
-1. 如果使用者的MVPD透過[Adobe Primetime TVE Dashboard](https://console.auth.adobe.com/)的媒體降級，會發生什麼情況？
+1. 如果使用者的MVPD透過[Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication)的媒體降級，會發生什麼情況？
    - 當使用者啟動應用程式時，將會透過降級機制(而非透過Apple SSO工作流程)來驗證使用者。
    - 使用者應該可以順暢地使用體驗，而若應用程式使用AccessEnabler iOS/tvOS SDK，則會透過&#x200B;*N010*&#x200B;警告程式碼通知應用程式。
 1. MVPD使用者ID在Apple SSO和非Apple SSO驗證流程之間會變更嗎？

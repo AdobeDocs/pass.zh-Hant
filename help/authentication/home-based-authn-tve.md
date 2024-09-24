@@ -2,9 +2,9 @@
 title: 適用於所有電視的家用驗證
 description: 適用於所有電視的家用驗證
 exl-id: abdc7724-4290-404a-8f93-953662cdc2bc
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
 workflow-type: tm+mt
-source-wordcount: '1638'
+source-wordcount: '0'
 ht-degree: 0%
 
 ---
@@ -115,7 +115,7 @@ SAML驗證通訊協定的HBA驗證流程說明
 ## 如何啟動HBA {#how-to-activate-hba}
 
 * **OAuth通訊協定：**
-   * 若要啟用HBA，請參閱[Adobe Pass TVE儀表板使用手冊](/help/authentication/tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)
+   * 若要啟用HBA，請參閱[Adobe Pass TVE儀表板使用手冊](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)
 * **SAML通訊協定：**在MVPD端啟用家用驗證。 程式設計師或Adobe不需要採取任何動作。
 如需支援家用驗證之MVPD的詳細資訊，請參閱MVPD的[HBA狀態](/help/authentication/hba-status-mvpds.md)。
 
@@ -156,5 +156,5 @@ SAML驗證通訊協定的HBA驗證流程說明
 * [以住家為基礎的驗證資訊圖形](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf?dc=201604260953-2640){target=_blank} — 按Adobe
 * [使用OAuth 2.0通訊協定進行驗證](/help/authentication/authn-oauth2-protocol.md)
 * [使用SAML MVPD進行驗證](/help/authentication/authn-usecase.md)
-* [Adobe Pass TVE控制面板使用手冊](/help/authentication/tve-dashboard/old-tve-dashboard/tve-dashboard-user-guide.md)
+* [Adobe Pass TVE控制面板使用手冊](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)
 * [hba_status使用者中繼資料](/help/authentication/user-metadata-feature.md#obtaining)
