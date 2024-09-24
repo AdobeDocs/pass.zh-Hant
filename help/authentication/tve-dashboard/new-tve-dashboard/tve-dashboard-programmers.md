@@ -2,9 +2,9 @@
 title: 程式設計師
 description: 瞭解TVE儀表板中的程式設計師及其設定。
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: c29af84963b010ef9d2a2d318486aae8fffccecc
 workflow-type: tm+mt
-source-wordcount: '701'
+source-wordcount: '1139'
 ht-degree: 0%
 
 ---
@@ -122,11 +122,87 @@ TVE儀表板的&#x200B;**程式設計人員**&#x200B;區段可讓您檢視和管
 
 ### 註冊的應用程式 {#registered-applications}
 
-此標籤提供應用程式註冊的清單。
+此標籤會顯示已註冊的應用程式清單。 如需有關註冊應用程式使用方式的詳細資訊，請參閱[動態使用者端註冊概觀](../../dcr-api/dynamic-client-registration-overview.md)檔案。
+
+您可以對已註冊的應用程式執行下列動作：
+
+* [新增已註冊的應用程式](#add-registered-applications)
+* [下載軟體宣告](#download-software-statement)
+
+#### 新增已註冊的應用程式 {#add-registered-applications}
+
+請依照下列步驟新增註冊的應用程式。
+
+1. 選取&#x200B;**已註冊的應用程式**&#x200B;區段右上角的&#x200B;**新增應用程式**。
+
+   ![新增應用程式](../../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-application-button.png)
+
+   *新增應用程式*
+
+1. 在&#x200B;**新增應用程式**&#x200B;對話方塊的下拉式功能表中，選取&#x200B;**指派給頻道**。
+
+   >[!IMPORTANT]
+   >
+   > 建議您建立具有更明確且有限許可權的註冊應用程式，以增強安全性並防止未經授權的存取。 因此，在建立已註冊的應用程式時，請考慮針對指派的`channel`使用較窄的選項。
+
+1. 從下拉式功能表中選取&#x200B;**平台**。
+
+   >[!IMPORTANT]
+   >
+   > 建議您建立具有更明確且有限許可權的註冊應用程式，以增強安全性並防止未經授權的存取。 因此，在建立已註冊的應用程式時，請考慮針對指派的`platforms`使用較窄的選項。
+
+1. 從下拉式功能表中選取&#x200B;**網域**。
+
+   >[!IMPORTANT]
+   >
+   > 在使用者端註冊程式中，使用者端應用程式可請求允許使用重新導向URL來結束驗證流程。 使用者端應用程式使用特定的重新導向URL時，會針對此選取專案中所挑選的`domains`進行驗證。
+
+1. 輸入應用程式的&#x200B;**名稱**。
+
+1. 輸入應用程式的&#x200B;**版本**。
+
+   >[!IMPORTANT]
+   >
+   > 建議您針對使用者端應用程式的每次重大更新建立新的註冊應用程式，以管理其生命週期和使用狀況。 如有必要，請透過我們的[Zendesk](https://adobeprimetime.zendesk.com)建立票證，並要求您的技術客戶經理(TAM)撤銷註冊的應用程式，以封鎖特定使用者端應用程式版本的功能。
+
+1. 從下拉式選單中選取&#x200B;**Type**&#x200B;值「直接」。
+
+1. 選取&#x200B;**新增應用程式**。
+
+已建立新的組態變更，且已準備好進行伺服器更新。 若要使用&#x200B;**已註冊的應用程式**&#x200B;區段中列出的新註冊應用程式，請繼續進行[檢閱及推播變更](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md)流程。
+
+#### 下載軟體宣告 {#download-software-statement}
+
+請依照下列步驟下載軟體陳述式。
+
+1. 暫留在您要從&#x200B;**已註冊的應用程式**&#x200B;清單下載軟體陳述式的已註冊應用程式上。
+
+1. 選取&#x200B;**下載**。
+
+   ![下載軟體陳述式](../../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-download-software-statement-button.png)
+
+   *下載軟體陳述式*
+
 
 ### 自訂配置 {#custom-schemes}
 
-此索引標籤會顯示自訂配置清單。 檢視[iOS/tvOS應用程式註冊](/help/authentication/iostvos-application-registration.md)。
+此索引標籤會顯示自訂配置清單。 如需自訂配置使用方式的詳細資訊，請參閱[iOS/tvOS應用程式註冊](/help/authentication/iostvos-application-registration.md)。
+
+您可以對自訂配置進行下列變更：
+
+* [產生新的自訂配置](#generate-custom-schemes)
+
+#### 產生新的自訂配置 {#generate-custom-schemes}
+
+請依照下列步驟產生新的自訂配置。
+
+1. 選取&#x200B;**產生新的自訂配置**。
+
+   ![產生新的自訂配置](../../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-custom-scheme-button.png)
+
+   *產生新的自訂配置*
+
+已建立新的組態變更，且已準備好進行伺服器更新。 若要使用&#x200B;**自訂配置**&#x200B;區段中列出的新自訂配置，請繼續進行[檢閱並推播變更](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md)流程。
 
 ## 新增程式設計師 {#add-new-programmer}
 
