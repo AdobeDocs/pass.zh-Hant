@@ -1,21 +1,21 @@
 ---
-title: REST API V2 - API — 概觀
-description: REST API V2 - API — 概觀
+title: REST API V2 API概述
+description: REST API V2 API概述
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: 94fcb4e8c94330561596cd4006738c4f4d75e371
+source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
 workflow-type: tm+mt
-source-wordcount: '141'
+source-wordcount: '144'
 ht-degree: 1%
 
 ---
 
-# REST API V2 - API — 概觀 {#rest-api-v2-apis-overview}
+# REST API V2 API概述 {#rest-api-v2-apis-overview}
 
 >[!IMPORTANT]
 >
 > 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
-若要開始使用，請瀏覽以下清單中每個專案的公開檔案。
+若要開始使用，請瀏覽下列清單中您感興趣的API公開檔案。
 
 ## 設定 {#rest-api-v2-apis-configuration}
 
@@ -27,7 +27,7 @@ ht-degree: 1%
 * [繼續驗證工作階段](sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
 * [擷取驗證工作階段](sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
 
-## 設定檔 {#rest-api-v2-apis-profiles}
+## 輪廓 {#rest-api-v2-apis-profiles}
 
 * [擷取設定檔](profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
 * [擷取特定mvpd的設定檔](profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)

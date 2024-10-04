@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: 837276ce85445da5c3877592b194e37adf35fa32
+source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
 workflow-type: tm+mt
-source-wordcount: '1165'
+source-wordcount: '1169'
 ht-degree: 2%
 
 ---
@@ -53,9 +53,10 @@ ht-degree: 2%
          + [Token Exchange](token-exchange.md)
          + [臨時通票和促銷臨時通票的免費預覽](free-preview-for-temp-pass-and-promotional-temp-pass.md)
    + REST API V2 {#rest-api-v2}
-      + [REST API V2 — 概觀](./rest-api-v2/rest-api-v2-overview.md)
+      + [REST API V2概觀](./rest-api-v2/rest-api-v2-overview.md)
+      + [rest API V2字彙表](./rest-api-v2/rest-api-v2-glossary.md)
       + API {#rest-api-v2-apis}
-         + [REST API V2 - API — 概觀](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
+         + [REST API V2 API概述](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
          + 設定{#rest-api-v2-configuration-apis}
             + [擷取特定服務提供者的設定](./rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
          + 工作階段{#rest-api-v2-sessions-apis}
@@ -76,7 +77,7 @@ ht-degree: 2%
             + [擷取合作夥伴驗證請求](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
             + [使用合作夥伴驗證回應擷取設定檔](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
       + 流程{#rest-api-v2-flows}
-         + [REST API V2 — 流程 — 概觀](./rest-api-v2/flows/rest-api-v2-flows-overview.md)
+         + [REST API V2流程概述](./rest-api-v2/flows/rest-api-v2-flows-overview.md)
          + 基本存取流程{#rest-api-v2-basic-access-flows}
             + [主要應用程式內執行的基本設定檔流程](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
             + [在次要應用程式內執行的基本設定檔流程](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
