@@ -2,9 +2,9 @@
 title: 使用者中繼資料功能
 description: 使用者中繼資料功能
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: 8896fa2242664d09ddd871af8f72d8858d1f0d50
+source-git-commit: 8c5203aa4a897a5e119a9886afc64a1b1556ee4f
 workflow-type: tm+mt
-source-wordcount: '1644'
+source-wordcount: '1654'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 0%
 - 在驗證和授權流程期間傳遞給程式設計師的應用程式
 - 值會儲存在權杖中
 - 如果不同的MVPD提供不同格式的資料，則可標準化值
-- 部分引數可使用程式設計人員的金鑰（例如郵遞區號）加密
+- 部分引數可使用程式設計人員的金鑰（例如郵遞區號）加密，請參閱[加密的使用者中繼資料憑證](./user-metadata-certificate.md)以產生加密憑證
 - 特定值可透過設定變更由Adobe提供
 
 ## 取得使用者中繼資料 {#obtaining}
