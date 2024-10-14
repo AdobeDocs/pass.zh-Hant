@@ -1,13 +1,13 @@
 ---
 title: 擷取特定程式碼的設定檔
 description: REST API V2 — 擷取特定程式碼的設定檔
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
-source-wordcount: '571'
-ht-degree: 1%
+source-wordcount: '573'
+ht-degree: 2%
 
 ---
-
 
 # 擷取特定程式碼的設定檔 {#retrieve-profile-for-specific-code}
 
@@ -265,8 +265,8 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">錯誤</td>
-      <td>錯誤提供附加資訊以遵守<a href="../../../enhanced-error-codes.md">增強型錯誤碼</a>檔案。</td>
+      <td style="background-color: #DEEBFF;"></td>
+      <td>回應內文可能會提供其他錯誤資訊，這些資訊會遵守<a href="../../../enhanced-error-codes.md">增強型錯誤碼</a>檔案。</td>
       <td><i>必填</i></td>
    </tr>
 </table>

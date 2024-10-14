@@ -4,7 +4,7 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: 8c5203aa4a897a5e119a9886afc64a1b1556ee4f
+source-git-commit: 6c328eb2c635a1d76fc7dae8148a4de291c126e0
 workflow-type: tm+mt
 source-wordcount: '1174'
 ht-degree: 2%
@@ -113,8 +113,8 @@ ht-degree: 2%
          + [JavaScript SDK API參考](javascript-sdk-api-reference.md)
          + 准則{#js-sdk-guidelines}
             + [不需重新整理的登入和登出](refreshless-login-and-logout.md)
-         + JavaScript API {#js-api}
-            + [預先授權](js-preauthorize.md)
+         + JavaScript API {#javascript-sdk-api}
+            + [預先授權](preauthorize-api-javascript-sdk.md)
       + iOS/tvOS SDK {#ios-sdk}
          + [iOS/tvOS SDK總覽](iostvos-sdk-overview.md)
          + [iOS/tvOS SDK逐步指南](iostvos-sdk-cookbook.md)
@@ -124,8 +124,8 @@ ht-degree: 2%
             + 移轉准則{#migration-guidelines}
                + [iOS/tvOS v3.x移轉指南](iostvos-v3x-migration-guide.md)
             + [iOS/tvOS儲存完整性檢查](iostvos-sdk-storage-integrity-checks.md)
-         + iOS/tvOS API {#ios-tvos-api}
-            + [預先授權](preauthorize.md)
+         + iOS/tvOS API {#ios-tvos-sdk-api}
+            + [預先授權](preauthorize-api-ios-tvos-sdk.md)
       + Android SDK {#androidsdk}
          + [Android SDK概觀](android-sdk-overview.md)
          + [Android SDK逐步指南](android-sdk-cookbook.md)
@@ -133,8 +133,8 @@ ht-degree: 2%
          + 准則{#androidguidelines}
             + [Android應用程式註冊](android-application-registration.md)
             + [具Dynamic Client註冊的Android SDK](android-sdk-with-dynamic-client-registration.md)
-         + Android API{#androidapi}
-            + [預先授權](preauthorize-android.md)
+         + Android API{#android-sdk-api}
+            + [預先授權](preauthorize-api-android-sdk.md)
       + Amazon FireOS SDK {#fireossdk}
          + [Amazon FireOS SSO — 程式設計師啟動指南](amazon-firetv-sso-programmer-kickoff-guide.md)
          + [使用無使用者端API逐步指南的Amazon FireOS SSO](amazon-fireos-sso-using-clientless-api-cookbook.md)
