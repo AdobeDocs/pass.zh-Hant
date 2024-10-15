@@ -1,13 +1,13 @@
 ---
 title: 暫時存取流程
 description: REST API V2 — 暫時存取流程
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
+source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
 workflow-type: tm+mt
-source-wordcount: '3210'
+source-wordcount: '3215'
 ht-degree: 0%
 
 ---
-
 
 # 暫時存取流程 {#temporary-access-flows}
 
@@ -34,7 +34,7 @@ TempPass可讓程式設計師提供對其受保護內容的暫時存取，而不
 
 ## 使用基本TempPass擷取授權決定 {#retrieve-authorization-decisions-using-basic-temppass}
 
-### 必要條件 {#prerequisites-retrieve-authorization-decisions-using-basic-temppass}
+### 先決條件 {#prerequisites-retrieve-authorization-decisions-using-basic-temppass}
 
 使用基本TempPass擷取授權決定之前，請確定符合下列先決條件：
 
@@ -101,7 +101,7 @@ TempPass可讓程式設計師提供對其受保護內容的暫時存取，而不
 
 ## 使用促銷TempPass擷取授權決定 {#retrieve-authorization-decisions-using-promotional-temppass}
 
-### 必要條件 {#prerequisites-retrieve-authorization-decisions-using-promotional-temppass}
+### 先決條件 {#prerequisites-retrieve-authorization-decisions-using-promotional-temppass}
 
 使用提升TempPass擷取授權決定之前，請確定符合下列先決條件：
 
@@ -179,7 +179,7 @@ TempPass可讓程式設計師提供對其受保護內容的暫時存取，而不
 
 ## 使用促銷臨時傳遞消耗資源的最大數量 {#consume-maximum-number-of-resources-using-promotional-temppass}
 
-### 必要條件 {#prerequisites-consume-maximum-number-of-resources-using-promotional-temppass}
+### 先決條件 {#prerequisites-consume-maximum-number-of-resources-using-promotional-temppass}
 
 在使用促銷TempPass使用最大數量的資源之前，請確定符合下列先決條件：
 
@@ -355,7 +355,7 @@ TempPass可讓程式設計師提供對其受保護內容的暫時存取，而不
 
 ## 當基本或促銷的TempPass過期時，擷取授權決定 {#retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 
-### 必要條件 {#prerequisites-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
+### 先決條件 {#prerequisites-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 
 在擷取基本或促銷TempPass過期時的授權決定之前，請確定符合下列先決條件：
 
@@ -369,7 +369,7 @@ TempPass可讓程式設計師提供對其受保護內容的暫時存取，而不
 > <br/>
 > 
 > * 在提供的`serviceProvider`與`mvpd`之間，必須套用基本或促銷性TempPass的有效組態設定。
-> * 為基本或促銷TempPass設定的存留時間(TTL)已過期。
+> * 為基本或促銷設定的存留時間(TTL)已超過暫時存取持續時間限制。
 
 ### 工作流程 {#workflow-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 
@@ -439,7 +439,7 @@ TempPass可讓程式設計師提供對其受保護內容的暫時存取，而不
 >
 > 基本的TempPass可選擇設定檔端點查詢。
 
-### 必要條件 {#prerequisites-retrieve-profile-for-basic-temppass}
+### 先決條件 {#prerequisites-retrieve-profile-for-basic-temppass}
 
 在擷取基本TempPass的設定檔之前，請確定符合下列必要條件：
 
@@ -509,7 +509,7 @@ TempPass可讓程式設計師提供對其受保護內容的暫時存取，而不
 >
 > 促銷臨時傳遞的設定檔端點查詢為選用。
 
-### 必要條件 {#prerequisites-retrieve-profile-for-promotional-temppass}
+### 先決條件 {#prerequisites-retrieve-profile-for-promotional-temppass}
 
 在擷取提升TempPass的設定檔之前，請先確認是否符合下列必要條件：
 

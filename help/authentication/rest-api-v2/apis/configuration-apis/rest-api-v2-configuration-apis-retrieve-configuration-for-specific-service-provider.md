@@ -2,9 +2,9 @@
 title: 擷取特定服務提供者的設定
 description: REST API V2 — 擷取特定服務提供者的設定
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: 3eab67e93d0af83a4d896b966743ad0bc53883e3
+source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
 workflow-type: tm+mt
-source-wordcount: '525'
+source-wordcount: '515'
 ht-degree: 2%
 
 ---
@@ -278,139 +278,27 @@ ht-degree: 2%
 
 ## 範例 {#samples}
 
-### 1.擷取SDK實施的設定資訊
+### 1.擷取特定服務提供者的組態
 
 >[!BEGINTABS]
 
 >[!TAB 要求]
 
-```JSON
-GET /api/v2/configuration/REF30
+```HTTPS
+GET /api/v2/REF30/configuration/ HTTP/1.1
 
-Authorization: Bearer: ....
-X-Device-Info .....
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
 ```
 
 >[!TAB 回應]
 
-```JSON
+```HTTPS
 HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8  
- 
-{
-    "device": "unknown",
-    "clientType": "html5",
-    "os": "Unknown",
-    "requestor": {
-        "id": "REF30",
-        "name": "Reference site only in 30",
-        "domains": [
-            {
-                "name": "adobe.com",
-                "mvpdInitiated": false
-            },
-            {
-                "name": "adobe.io",
-                "mvpdInitiated": false
-            },
-            {
-                "name": "adobepass.com",
-                "mvpdInitiated": false
-            },
-            {
-                "name": "adobeptime.com",
-                "mvpdInitiated": false
-            },
-            {
-                "name": "anvilcreative.com",
-                "mvpdInitiated": false
-            },
-            {
-                "name": "testadobe.com",
-                "mvpdInitiated": false
-            }
-        ],
-        "mvpds": [
-            {
-                "id": "AdobePass_SMI",
-                "displayName": "Adobe Pass SMI",
-                "logoUrl": "https://blogs.adobe.com/conversations/files/2010/08/adobe-logo.jpg",
-                "authPerAggregator": false
-            },
-            {
-                "id": "TempPass_TEST40",
-                "displayName": "Adobe Temp Pass Test 3 min",
-                "logoUrl": "https://entitlement.auth.adobe.com/entitlement/noLogo.png",
-                "authPerAggregator": true,
-                "isTempPass": true
-            },
-            {
-                "id": "TempPass_TEST44",
-                "displayName": "Adobe Temp Pass Test 30 min",
-                "logoUrl": "https://entitlement.auth.adobe.com/entitlement/noLogo.png",
-                "authPerAggregator": true,
-                "isTempPass": true
-            },
-            {
-                "id": "AdobeShibboleth",
-                "displayName": "AdobeShibboleth",
-                "logoUrl": "https://entitlement.auth.adobe.com/entitlement/adobe.png"
-            },
-            {
-                "id": "ATTOTT",
-                "displayName": "DIRECTV STREAM",
-                "logoUrl": "https://entitlement.auth.adobe.com/entitlement/directvstream.jpg"
-            },
-            {
-                "id": "ElasticSSO",
-                "displayName": "ElasticSSO",
-                "logoUrl": "https://entitlement.auth.adobe.com/entitlement/noLogo.png",
-                "authPerAggregator": false
-            },
-            {
-                "id": "TempPass",
-                "displayName": "Temp-Pass",
-                "logoUrl": "https://entitlement.auth.adobe.com/entitlement/noLogo.png",
-                "passiveAuthnEnabled": false,
-                "authPerAggregator": true,
-                "isTempPass": true
-            },
-            {
-                "id": "Comcast_SSO_Perf",
-                "displayName": "Xfinity Perf",
-                "logoUrl": "https://login.comcast.net/static/images/ci/tve/mvpd_comcast_logo112x33.gif",
-                "authPerAggregator": true,
-                "authPerBrowserSession": true
-            }
-        ]
-    }
-}  
-```
 
->[!ENDTABS]
-
-### 2.擷取rest api實施的設定資訊
-
->[!BEGINTABS]
-
->[!TAB 要求]
-
-```JSON
-GET /api/v2/configuration/REF30
-
-Authorization: Bearer: ....
-X-Device-Info .....
-Accept: application/json
-User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 14.5 like Mac OS X; en_US)
-```
-
->[!TAB 回應]
-
-```JSON
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8  
+Content-Type: application/json;charset=UTF-8
  
 {
     "device": "unknown",
