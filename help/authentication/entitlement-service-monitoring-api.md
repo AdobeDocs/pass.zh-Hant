@@ -2,9 +2,9 @@
 title: 權益服務監控API
 description: 權益服務監控API
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 8fa1e63619f4e22794d701a218c77649f73d9f60
 workflow-type: tm+mt
-source-wordcount: '2070'
+source-wordcount: '2027'
 ht-degree: 0%
 
 ---
@@ -36,13 +36,13 @@ ESM API提供基礎OLAP立方結構的階層檢視。 每個資源（[維度](#e
 
 REST API會根據維度路徑、提供的篩選器和選取的量度，在請求中指定的時間間隔內提供可用資料（如果未提供，則會退回預設值）。 時間範圍不會套用至不包含時間維度（年、月、日、小時、分鐘、秒）的報表。
 
-端點URL根路徑會傳回單一記錄中的整體彙總量度，以及可用向下切入選項的連結。 API版本會對應為端點URI路徑的尾端區段。 例如，`https://mgmt.auth.adobe.com/*v2*`表示使用者端將存取WOLAP版本2。
+端點URL根路徑會傳回單一記錄中的整體彙總量度，以及可用向下切入選項的連結。 API版本會對應為端點URI路徑的尾端區段。 例如，`https://mgmt.auth.adobe.com/esm/v3`表示使用者端將存取WOLAP版本3。
 
 可透過回應中所包含的連結來探索可用的URL路徑。 有效的URL路徑會被保留，以對應基礎向下鑽研樹狀結構中包含（預先）彙總量度的路徑。 格式`/dimension1/dimension2/dimension3`的路徑將反映這三個維度的預先彙總（相當於SQL `clause GROUP` BY `dimension1`， `dimension2`， `dimension3`）。 如果這樣的預先彙總不存在，且系統無法即時運算它，則API將傳回「404找不到」回應。
 
 ## 向下鑽研樹狀結構 {#drill-down-tree}
 
-下列向下鑽研樹狀結構說明ESM 2.0中可供[程式設計人員](#progr-dimensions)和[MVPD](#mvpd-dimensions)使用的維度（資源）。
+下列向下鑽研樹狀結構說明ESM 3.0中可供[程式設計人員](#progr-dimensions)和[MVPD](#mvpd-dimensions)使用的維度（資源）。
 
 
 ### 程式設計師可用的Dimension {#progr-dimensions}
@@ -63,13 +63,13 @@ REST API會根據維度路徑、提供的篩選器和選取的量度，在請求
 
 ![](assets/esm-mvpd-dimensions.png)
 
-`https://mgmt.auth.adobe.com/v2` API端點的GET將傳回包含：
+`https://mgmt.auth.adobe.com/esm/v3` API端點的GET將傳回包含：
 
 * 可用根目錄向下鑽研路徑的連結：
 
-   * `<link rel="drill-down" href="/v2/dimensionA"/>`
+   * `<link rel="drill-down" href="/v3/dimensionA"/>`
 
-   * `<link rel="drill-down" href="/v2/dimensionB"/>`
+   * `<link rel="drill-down" href="/v3/dimensionB"/>`
 
 * 所有量度的摘要（彙總值） (預設值
 間隔，因為未提供查詢字串引數，請參閱下文)。
@@ -119,8 +119,8 @@ REST API會根據維度路徑、提供的篩選器和選取的量度，在請求
 ### ESM API保留的查詢字串引數
 
 | 引數 | 可選 | 說明 | 預設值 | 範例 |
-| --- | ---- | --- | ---- | --- |
-| access_token | 是 | 在啟用IMS OAuth保護的情況下，IMS權杖可作為標準授權持有人權杖或查詢字串引數傳遞。 | 無 | access_token=XXXXXX |
+| --- | ---- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ---- | --- |
+| access_token | 是 | DCR權杖可作為標準授權持有人權杖傳遞。 | 無 | access_token=XXXXXX |
 | dimension-name | 是 | 任何維度名稱 — 包含在目前URL路徑或任何有效的子路徑中；此值將視為等於篩選器。 如果未提供值，即使指定尺寸未包含或鄰近目前路徑，也會強制將指定尺寸包含在輸出中 | 無 | someDimension=someValue&amp;someOtherDimension |
 | 結束 | 是 | 報表的結束時間（以毫秒為單位） | 伺服器的目前時間 | end=2012-07-30 |
 | 格式 | 是 | 用於內容交涉（具有相同效果，但優先順序低於路徑「副檔名」 — 請參閱下文）。 | 無：內容交涉將嘗試其他策略 | format=json |
@@ -128,8 +128,7 @@ REST API會根據維度路徑、提供的篩選器和選取的量度，在請求
 | 量度 | 是 | 要傳回的量度名稱清單（以逗號分隔）；這應該用於篩選可用量度的子集（以減少裝載大小），以及強制執行API以傳回包含請求量度的投影（而不是預設的最佳投影）。 | 若未提供此引數，將會傳回目前投影可用的所有量度。 | metrics=m1，m2 |
 | 開始 | 是 | 報表的開始時間設為ISO8601；若僅提供字首，伺服器會填入剩餘的部分：例如，start=2012會導致start=2012-01-01:00:00:00 | 伺服器以自我連結的方式報告；伺服器會根據選取的時間詳細程度，嘗試提供合理的預設值 | start=2012-07-15 |
 
-目前唯一可用的HTTP方法是GET。 支援OPTIONS/
-未來版本可能會提供HEAD方法。
+目前唯一可用的HTTP方法是GET。
 
 ## ESM API狀態代碼 {#esm-api-status-codes}
 
@@ -156,7 +155,7 @@ REST API會根據維度路徑、提供的篩選器和選取的量度，在請求
 
 使用者端可使用下列內容交涉策略（優先順序由清單中的位置指定 — 優先順序）：
 
-1. URL路徑的最後一個區段後面附加了「副檔名」：例如`/esm/v2/media-company/year/month/day.xml`。 如果URL包含查詢字串，則副檔名必須位於問號之前： `/esm/v2/media-company/year/month/day.csv?mvpd= SomeMVPD`
+1. URL路徑的最後一個區段後面附加了「副檔名」：例如`/esm/v3/media-company/year/month/day.xml`。 如果URL包含查詢字串，則副檔名必須位於問號之前： `/esm/v3/media-company/year/month/day.csv?mvpd= SomeMVPD`
 1. 格式查詢字串引數： `/esm/report?format=json`
 1. 標準HTTP Accept標頭：例如`Accept: application/xml`
 
@@ -205,13 +204,13 @@ REST API會根據維度路徑、提供的篩選器和選取的量度，在請求
 
 範例（假設我們有一個名為`clients`的量度，而且有`year/month/day/...`的預先彙總）：
 
-* https://mgmt.auth.adobe.com/esm/v2/year/month.xml
+* https://mgmt.auth.adobe.com/esm/v3/year/month.xml
 
 ```XML
-   <resource href="/esm/v2/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21">
+   <resource href="/esm/v3/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21">
    <links>
-   <link rel="roll-up" href="/esm/v2/year"/>
-   <link rel="drill-down" href="/esm/v2/year/month/day"/>
+   <link rel="roll-up" href="/esm/v3/year"/>
+   <link rel="drill-down" href="/esm/v3/year/month/day"/>
    </links>
    <report>
    <record month="6" year="2012" clients="205"/>
@@ -220,19 +219,19 @@ REST API會根據維度路徑、提供的篩選器和選取的量度，在請求
    </resource>
 ```
 
-* https://mgmt.auth.adobe.com/esm/v2/year/month.json
+* https://mgmt.auth.adobe.com/esm/v3/year/month.json
 
   ```JSON
       {
         "_links" : {
           "self" : {
-            "href" : "/esm/v2/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21"
+            "href" : "/esm/v3/year/month?start=2012-07-20T00:00:00&end=2012-08-20T14:35:21"
           },
           "roll-up" : {
-            "href" : "/esm/v2/year"
+            "href" : "/esm/v3/year"
           },
           "drill-down" : {
-            "href" : "/esm/v2/year/month/day"
+            "href" : "/esm/v3/year/month/day"
           }
         },
         "report" : [ {
@@ -260,7 +259,7 @@ CSV將包含一個標題列，然後報告資料作為後續列。 標題列將�
 標題列中的欄位順序將反映表格資料的排序順序。
 
 
-範例： https://mgmt.auth.adobe.com/v2/year/month.csv將產生一個名為`report__2012-07-20_2012-08-20_1000.csv`的檔案，其內容如下：
+範例： https://mgmt.auth.adobe.com/esm/v3/year/month.csv將產生一個名為`report__2012-07-20_2012-08-20_1000.csv`的檔案，其內容如下：
 
 
 | 年 | 月 | 使用者端 |
@@ -273,8 +272,6 @@ CSV將包含一個標題列，然後報告資料作為後續列。 標題列將�
 成功的HTTP回應包含`Last-Modified`標頭，指出上次更新內文中的報告的時間。 缺少Last-Modified標題表示報表資料是即時計算的。
 
 通常來說，粗粒度資料的更新頻率會低於細粒度資料（例如，以分鐘計數值或每小時數值可能會比每日數值更新，尤其是針對無法根據較小粒度計算的量度，例如不重複計數）。
-
-未來版本的ESM可能會提供標準的「If-Modified-Since」標頭，讓使用者端可執行條件式GET。
 
 ## GZIP壓縮 {#gzip-compression}
 
