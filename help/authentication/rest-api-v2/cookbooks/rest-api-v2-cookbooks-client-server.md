@@ -1,9 +1,9 @@
 ---
 title: REST API V2逐步指南（使用者端對伺服器）
 description: REST API V2逐步指南（使用者端對伺服器）
-source-git-commit: 709835276710ec4b92abec3e39aaecae99872e77
+source-git-commit: 0d6693d51887c9e794401e984f3a4075be091ee5
 workflow-type: tm+mt
-source-wordcount: '689'
+source-wordcount: '695'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## 在使用者端應用程式中實作REST API V2的步驟 {#steps-to-implement-the-rest-api-v2-in-client-side-applications}
 
-若要實作Adobe Pass REST API V2，您必須依照下列步驟分組至階段。
+若要實作Adobe Pass REST API V2，您必須依照下列步驟（分為幾個階段）進行。
 
 ## A.註冊階段 {#registration-phase}
 
@@ -40,12 +40,12 @@ ht-degree: 0%
 
 * 如果找不到設定檔，且串流應用程式實作TempPass流程
    * 請遵循如何實作[暫時存取流程](../flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)的檔案
-* 如果找不到設定檔，串流應用程式會實作驗證流程
-   * 串流應用程式擷取可用於serviceProvider的MVPD清單： <b>/api/v2/{serviceProvider}/configuration</b><br>
+* 如果找不到設定檔，且串流應用程式實作驗證流程
+   * 串流應用程式會擷取適用於serviceProvider的MVPD清單： <b>/api/v2/{serviceProvider}/configuration</b><br>
 （[擷取可用的MVPD清單](../apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)）
    * 串流應用程式可能會在MVPD清單上實作篩選，並只顯示想要用來隱藏其他MVPD （TempPass、測試MVPD、開發中的MVPD等）
-   * 串流應用程式顯示選擇器，使用者選取MVPD
-   * 串流應用程式建立工作階段： <b>/api/v2/{serviceProvider}/sessions</b><br>
+   * 串流應用程式顯示選取器，使用者選取MVPD
+   * 串流應用程式會建立工作階段： <b>/api/v2/{serviceProvider}/sessions</b><br>
 （[建立驗證工作階段](../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)）<br>
       * 會傳回用於驗證的程式碼和URL
       * 如果找到設定檔，串流應用程式可能會繼續到<a href="#preauthorization-phase">C。預先授權階段</a>或<a href="#authorization-phase">D。授權階段</a>
@@ -68,7 +68,7 @@ ht-degree: 0%
    * 如果未在串流應用程式中選取MVPD，因為MVPD選擇器出現在第二個畫面應用程式中，則應該使用程式碼<b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>進行輪詢
 （[擷取特定程式碼的已驗證設定檔](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)）
 * 輪詢不應超過30分鐘，如果達到30分鐘且串流應用程式仍處於作用中狀態，則需要起始新的工作階段，並將傳回新的程式碼和URL
-* 驗證完成後，傳回值為200且已驗證設定檔
+* 驗證完成後，傳回值為200且包含已驗證的設定檔
 * 串流應用程式可能會繼續到<a href="#preauthorization-phase">C。預先授權階段</a>或<a href="#authorization-phase">D。授權階段</a>
 
 ## C.預先授權階段 {#preauthorization-phase}
