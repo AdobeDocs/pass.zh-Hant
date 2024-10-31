@@ -1,13 +1,13 @@
 ---
 title: 單一登入 — 合作夥伴 — 流程
 description: REST API V2 — 單一登入 — 合作夥伴 — 流程
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '1317'
+source-wordcount: '1444'
 ht-degree: 0%
 
 ---
-
 
 # 使用合作夥伴流程的單一登入 {#single-sign-on-partner-flows}
 
@@ -19,9 +19,21 @@ ht-degree: 0%
 >
 > REST API V2實作受到[節流機制](/help/authentication/throttling-mechanism.md)檔案的限制。
 
+Partner方法可讓多個應用程式使用合作夥伴架構狀態裝載，以便在使用Adobe Pass服務時在裝置層級實現單一登入(SSO)。
+
+應用程式負責使用Adobe Pass系統外部的合作夥伴特定架構或程式庫來擷取合作夥伴架構狀態裝載。
+
+應用程式負責將此合作夥伴架構狀態裝載納入指定它的所有請求的`AP-Partner-Framework-Status`標頭中。
+
+如需`AP-Partner-Framework-Status`標頭的詳細資訊，請參閱[AP-Partner-Framework-Status](../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)檔案。
+
+Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使用者端應用程式的一般使用者進行合作夥伴單一登入(SSO)。
+
+如需Apple平台單一登入(SSO)的詳細資訊，請參閱[Apple SSO逐步指南(REST API V2)](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v2.md)檔案。
+
 ## 擷取合作夥伴驗證請求 {#retrieve-partner-authentication-request}
 
-### 必要條件 {#prerequisites-retrieve-partner-authentication-request}
+### 先決條件 {#prerequisites-retrieve-partner-authentication-request}
 
 擷取合作夥伴驗證請求之前，請先確定符合下列先決條件：
 
@@ -61,7 +73,7 @@ ht-degree: 0%
    > 如需下列詳細資訊，請參閱[擷取合作夥伴驗證要求](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md) API檔案：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`和`partner`
-   > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`和`AP-Partner-Framework-Status`
+   > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`、`Content-Type`、`X-Device-Info`和`AP-Partner-Framework-Status`
    > * 所有&#x200B;_選用的_&#x200B;標頭和引數
    >
    > <br/>
@@ -138,7 +150,7 @@ ht-degree: 0%
 
 ## 使用合作夥伴驗證回應擷取設定檔 {#retrieve-profile-using-partner-authentication-response}
 
-### 必要條件 {#prerequisites-retrieve-profile-using-partner-authentication-response}
+### 先決條件 {#prerequisites-retrieve-profile-using-partner-authentication-response}
 
 使用合作夥伴驗證回應擷取設定檔之前，請確定符合下列先決條件：
 
@@ -175,7 +187,7 @@ ht-degree: 0%
    > 如需下列詳細資訊，請參閱[使用合作夥伴驗證回應](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) API檔案：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`、`partner`和`SAMLResponse`
-   > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`和`AP-Partner-Framework-Status`
+   > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`、`Content-Type`、`X-Device-Info`和`AP-Partner-Framework-Status`
    > * 所有&#x200B;_選用的_&#x200B;標頭和引數
    >
    > <br/>

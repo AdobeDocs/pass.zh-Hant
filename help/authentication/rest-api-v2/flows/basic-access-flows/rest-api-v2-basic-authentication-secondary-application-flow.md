@@ -1,13 +1,13 @@
 ---
 title: 基本驗證 — 次要應用程式 — 流量
 description: REST API V2 — 基本驗證 — 次要應用程式 — 流量
-source-git-commit: d59afc0384a1c3617143efcef4ab5fb1a323e511
+exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '2000'
 ht-degree: 0%
 
 ---
-
 
 # 在次要應用程式內執行的基本驗證流程 {#basic-authentication-flow-performed-within-secondary-application}
 
@@ -40,7 +40,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
 
 ## 使用預先選取的mvpd在次要應用程式內執行驗證 {#perform-authentication-within-secondary-application-with-preselected-mvpd}
 
-### 必要條件 {#prerequisites-perform-authentication-within-secondary-application-with-preselected-mvpd}
+### 先決條件 {#prerequisites-perform-authentication-within-secondary-application-with-preselected-mvpd}
 
 在啟動主要應用程式內的驗證流程，並透過次要應用程式內的使用者互動完成驗證流程之前，請確定符合下列先決條件：
 
@@ -137,7 +137,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
    >
    > 如果驗證失敗，將會產生錯誤回應，提供可遵守[增強錯誤碼](../../../enhanced-error-codes.md)檔案的額外資訊。
 
-   >[!NOTE]
+   >[!TIP]
    >
    > 建議：次要應用程式可通知使用者，在錯誤回應指出遺失驗證工作階段的情況下，所使用的`code`無效，並通知他們使用新的工作階段重試。
 
@@ -162,7 +162,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
    > * 所有&#x200B;_選用的_&#x200B;引數和標頭
 
-   >[!NOTE]
+   >[!TIP]
    >
    > 建議：串流應用程式可以使用`code`實作輪詢機制，以檢查一般設定檔是否已成功產生並儲存。
 
@@ -184,7 +184,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
 
 ## 在次要應用程式內執行驗證，而不預先選取mvpd {#perform-authentication-within-secondary-application-without-preselected-mvpd}
 
-### 必要條件 {#prerequisites-perform-authentication-within-secondary-application-without-preselected-mvpd}
+### 先決條件 {#prerequisites-perform-authentication-within-secondary-application-without-preselected-mvpd}
 
 在啟動主要應用程式內的驗證流程，並透過次要應用程式內的使用者互動完成驗證流程之前，請確定符合下列先決條件：
 
@@ -271,7 +271,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
    > 
    > 如果驗證失敗，將會產生錯誤回應，提供可遵守[增強錯誤碼](../../../enhanced-error-codes.md)檔案的額外資訊。
 
-   >[!NOTE]
+   >[!TIP]
    >
    > 建議：次要應用程式可通知使用者，在錯誤回應指出遺失驗證工作階段的情況下，所使用的`code`無效，並通知他們使用新的工作階段重試。
 
@@ -300,7 +300,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
    > * 所有&#x200B;_選用的_&#x200B;引數和標頭
 
-   >[!NOTE]
+   >[!TIP]
    >
    > 建議：串流應用程式可以使用`code`實作輪詢機制，以檢查一般設定檔是否已成功產生並儲存。
 

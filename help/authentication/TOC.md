@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: 2f5e511f774e1a2d8b8b60084844edfe27be6c76
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '1181'
+source-wordcount: '1199'
 ht-degree: 2%
 
 ---
@@ -56,28 +56,28 @@ ht-degree: 2%
       + [REST API V2概觀](./rest-api-v2/rest-api-v2-overview.md)
       + [rest API V2字彙表](./rest-api-v2/rest-api-v2-glossary.md)
       + API {#rest-api-v2-apis}
-         + [REST API V2 API概述](./rest-api-v2/apis/rest-api-v2-apis-overview.md)
+         + [REST API V2 API概述](rest-api-v2/apis/rest-api-v2-apis-overview.md)
          + 設定{#rest-api-v2-configuration-apis}
-            + [擷取特定服務提供者的設定](./rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
+            + [擷取特定服務提供者的設定](rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)
          + 工作階段{#rest-api-v2-sessions-apis}
-            + [建立驗證工作階段](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
-            + [繼續驗證工作階段](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
-            + [擷取驗證工作階段](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
-            + [在使用者代理程式中執行驗證](./rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)
+            + [建立驗證工作階段](rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
+            + [繼續驗證工作階段](rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
+            + [擷取驗證工作階段](rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
+            + [在使用者代理程式中執行驗證](rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)
          + 設定檔{#rest-api-v2-profiles-apis}
-            + [擷取設定檔](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
-            + [擷取特定mvpd的設定檔](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
-            + [擷取特定程式碼的設定檔](./rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
+            + [擷取設定檔](rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
+            + [擷取特定mvpd的設定檔](rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
+            + [擷取特定程式碼的設定檔](rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
          + 決定{#rest-api-v2-decisions-apis}
-            + [使用特定mvpd擷取授權決策](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
-            + [使用特定mvpd擷取預先授權決定](./rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
+            + [使用特定mvpd擷取授權決策](rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
+            + [使用特定mvpd擷取預先授權決定](rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
          + 登出{#rest-api-v2-logout-apis}
-            + [啟動特定mvpd的登出](./rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
+            + [啟動特定mvpd的登出](rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)
          + 合作夥伴單一登入{#rest-api-v2-partner-single-sign-on-apis}
             + [擷取合作夥伴驗證請求](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
             + [使用合作夥伴驗證回應擷取設定檔](rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
       + 流程{#rest-api-v2-flows}
-         + [REST API V2流程概述](./rest-api-v2/flows/rest-api-v2-flows-overview.md)
+         + [REST API V2流程概述](rest-api-v2/flows/rest-api-v2-flows-overview.md)
          + 基本存取流程{#rest-api-v2-basic-access-flows}
             + [主要應用程式內執行的基本設定檔流程](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
             + [在次要應用程式內執行的基本設定檔流程](rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
@@ -99,13 +99,13 @@ ht-degree: 2%
          + [REST API V2逐步指南（使用者端對伺服器）](rest-api-v2/cookbooks/rest-api-v2-cookbooks-client-server.md)
       + 附錄{#rest-api-v2-appendix}
          + 標頭{#rest-api-v2-appendix-headers}
-            + [頁首 — 授權](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)
-            + [頁首 — AP-Device-Identifier](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
-            + [頁首 — X-Device-Info](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
-            + [標頭 — AD-Service-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
-            + [標題 — Adobe-Subject-Token](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
-            + [頁首 — AP-Partner-Framework-Status](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
-            + [頁首 — AP-TempPass-Identity](./rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
+            + [頁首 — 授權](rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)
+            + [頁首 — AP-Device-Identifier](rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)
+            + [頁首 — X-Device-Info](rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)
+            + [標頭 — AD-Service-Token](rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md)
+            + [標題 — Adobe-Subject-Token](rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)
+            + [頁首 — AP-Partner-Framework-Status](rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)
+            + [頁首 — AP-TempPass-Identity](rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + AccessEnabler SDK {#accessenabler-sdk}
       + JavaScript SDK {#javascriptsdk}
          + [JavaScript SDK概觀](javascript-sdk-overview.md)
@@ -136,20 +136,24 @@ ht-degree: 2%
          + Android API{#android-sdk-api}
             + [預先授權](preauthorize-api-android-sdk.md)
       + Amazon FireOS SDK {#fireossdk}
-         + [Amazon FireOS SSO — 程式設計師啟動指南](amazon-firetv-sso-programmer-kickoff-guide.md)
-         + [使用無使用者端API逐步指南的Amazon FireOS SSO](amazon-fireos-sso-using-clientless-api-cookbook.md)
          + [Amazon FireOS技術概覽](amazon-fireos-technical-overview.md)
          + [Amazon FireOS整合逐步指南](amazon-fireos-integration-cookbook.md)
          + [Amazon FireOS API參考](amazon-fireos-native-client-api-reference.md)
          + [Amazon FireOS應用程式註冊](amazon-fireos-application-registration.md)
          + [具有動態使用者端註冊的FireOS SDK](fireos-sdk-with-dynamic-client-registration.md)
-   + 平台SSO {#platform-sso}
-      + Apple SSO {#apple-sso}
-         + [Apple SSO概觀](apple-sso-overview.md)
-         + [Apple SSO逐步指南(REST API)](apple-sso-cookbook-rest-api.md)
-         + [Apple SSO逐步指南(iOS/tvOS SDK)](apple-sso-cookbook-iostvos-sdk.md)
-      + Roku SSO {#roku-sso}
-         + [Roku SSO](roku-sso-overview.md)
+         + [Amazon FireOS SSO — 程式設計師啟動指南](amazon-firetv-sso-programmer-kickoff-guide.md)
+   + 單一登入{#sso}
+      + 合作夥伴單一登入{#partner-sso}
+         + Apple單一登入{#apple-sso}
+            + [Apple SSO概觀](single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-overview.md)
+            + [Apple SSO逐步指南(REST API V2)](single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v2.md)
+            + [Apple SSO逐步指南(REST API V1)](single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v1.md)
+            + [Apple SSO逐步指南(iOS/tvOS SDK)](single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-iostvos-sdk.md)
+      + 平台單一登入{#platform-sso}
+         + Amazon單一登入{#amazon-sso}
+            + [Amazon SSO逐步指南(REST API V1)](single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
+         + Roku單一登入{#roku-sso}
+            + [Roku SSO概觀](single-sign-on/platform-single-sign-on/roku-single-sign-on/roku-sso-overview.md)
    + 內容中繼資料{#content-metadata}
       + [識別受保護的資源](identify-protected-resources.md)
    + 內容伺服器整合{#content-serv-int}

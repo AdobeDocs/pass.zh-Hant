@@ -2,9 +2,9 @@
 title: 歡迎使用Adobe&amp；reg；通過驗證！
 description: 歡迎使用Adobe&amp；reg；通過驗證概述
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: 7107d4a915113fb237602143aafc350b776c55d6
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '0'
+source-wordcount: '331'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Adobe Pass Authentication是TV Everywhere的權益解決方案，提供模組化
 
 | **個精選專案** |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <ul><li>[iOS的單一登入](/help/authentication/apple-sso-overview.md)</li><li>[促銷臨時通票](/help/authentication/promotional-temp-pass.md)</li><li>[家用驗證(HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[HBA資訊圖形](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Adobe Pass TVE儀表板使用手冊](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
+| <ul><li>[iOS的單一登入](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-overview.md)</li><li>[促銷臨時通票](/help/authentication/promotional-temp-pass.md)</li><li>[家用驗證(HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[HBA資訊圖形](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Adobe Pass TVE儀表板使用手冊](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
 
 | 程式設計師的&#x200B;**** | MVPD的&#x200B;**** |
 |------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|

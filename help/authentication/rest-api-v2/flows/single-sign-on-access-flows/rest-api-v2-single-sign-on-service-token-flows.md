@@ -1,13 +1,13 @@
 ---
 title: 單一登入 — 服務權杖 — 流程
 description: REST API V2 — 單一登入 — 服務權杖 — 流程
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '1848'
 ht-degree: 0%
 
 ---
-
 
 # 使用服務權杖流程的單一登入{#single-sign-on-service-token-full-flows}
 
@@ -32,7 +32,7 @@ Service Token方法可讓多個應用程式使用唯一的使用者識別碼，�
 
 ## 使用服務權杖，透過單一登入執行驗證 {#performing-authentication-flow-using-service-token-single-sign-on-method}
 
-### 必要條件 {#prerequisites-scenario-performing-authentication-flow-using-service-token-single-sign-on-method}
+### 先決條件 {#prerequisites-scenario-performing-authentication-flow-using-service-token-single-sign-on-method}
 
 在使用服務權杖透過單一登入執行驗證流程之前，請確保符合以下先決條件：
 
@@ -120,7 +120,7 @@ Service Token方法可讓多個應用程式使用唯一的使用者識別碼，�
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
    > * 所有&#x200B;_選用的_&#x200B;引數和標頭
 
-   >[!NOTE]
+   >[!TIP]
    >
    > 建議：串流應用程式可以等待使用者代理程式到達提供的`redirectUrl`，以檢查一般設定檔是否已成功產生並儲存。
 
@@ -206,7 +206,7 @@ Service Token方法可讓多個應用程式使用唯一的使用者識別碼，�
 
 ## 使用服務權杖透過單一登入擷取授權決策 {#performing-authorization-flow-using-service-token-single-sign-on-method}
 
-### 必要條件 {#prerequisites-scenario-performing-authorization-flow-using-service-token-single-sign-on-method}
+### 先決條件 {#prerequisites-scenario-performing-authorization-flow-using-service-token-single-sign-on-method}
 
 在使用服務權杖透過單一登入執行授權流程之前，請確保符合以下先決條件：
 

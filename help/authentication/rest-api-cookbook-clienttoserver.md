@@ -2,9 +2,9 @@
 title: REST API逐步指南（使用者端對伺服器）
 description: Rest API逐步指南使用者端至伺服器。
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 3cff9d143eedb35155aa06c72d53b951b2d08d39
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '876'
 ht-degree: 0%
 
 ---
@@ -130,12 +130,18 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
 1. 將使用者傳回您的智慧裝置應用程式，以完成授權流程。
 
-## 平台SSO {#platform-sso}
+## 合作夥伴單一登入 {#partner-sso}
 
-某些平台提供單一登入(SSO)的專屬支援。 您可以找到各個平台的實作詳細資料：
+某些裝置提供合作夥伴單一登入(SSO)的專屬支援：
 
-* [APPLE SSO](/help/authentication/apple-sso-cookbook-rest-api.md)
-* AMAZON SSO
+* [APPLE SSO](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-cookbook-rest-api-v1.md)
+
+## 平台單一登入 {#platform-sso}
+
+某些裝置提供平台單一登入(SSO)的專屬支援：
+
+* [AMAZON SSO](./single-sign-on/platform-single-sign-on/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
+* [Roku SSO](./single-sign-on/platform-single-sign-on/roku-single-sign-on/roku-sso-overview.md)
 
 ## REST API的TempPass和Promotification TempPass {#temppass}
 

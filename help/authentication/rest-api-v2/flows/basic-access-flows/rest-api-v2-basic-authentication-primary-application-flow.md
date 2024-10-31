@@ -1,13 +1,13 @@
 ---
 title: 基本驗證 — 主要應用程式 — 流量
 description: REST API V2 — 基本驗證 — 主要應用程式 — 流量
-source-git-commit: dc9fab27c7eced2be5dd9f364ab8f2d64f8e4177
+exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '894'
 ht-degree: 0%
 
 ---
-
 
 # 主要應用程式內執行的基本驗證流程 {#basic-authentication-flow-performed-within-primary-application}
 
@@ -40,7 +40,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
 
 ## 在主要應用程式內執行驗證 {#perform-authentication-within-primary-application}
 
-### 必要條件 {#prerequisites-perform-authentication-within-primary-application}
+### 先決條件 {#prerequisites-perform-authentication-within-primary-application}
 
 在透過主要應用程式內的使用者互動執行驗證之前，請確定符合下列先決條件：
 
@@ -121,7 +121,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
    > * 所有&#x200B;_選用的_&#x200B;引數和標頭
 
-   >[!NOTE]
+   >[!TIP]
    >
    > 建議：串流應用程式可以等待使用者代理程式到達提供的`redirectUrl`，以檢查一般設定檔是否已成功產生並儲存。
 

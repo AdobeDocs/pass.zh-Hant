@@ -1,13 +1,13 @@
 ---
 title: 單一登入 — 平台身分 — 流程
 description: REST API V2 — 單一登入 — 平台身分 — 流程
-source-git-commit: 150e064d0287eaac446c694fb5a2633f7ea4b797
+exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
+source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
 workflow-type: tm+mt
 source-wordcount: '1830'
 ht-degree: 0%
 
 ---
-
 
 # 使用平台身分流程的單一登入 {#single-sign-on-platform-identity-full-flows}
 
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 ## 使用平台身分識別透過單一登入執行驗證 {#perform-authentication-through-single-sign-on-using-platform-identity}
 
-### 必要條件 {#prerequisites-perform-authentication-through-single-sign-on-using-platform-identity}
+### 先決條件 {#prerequisites-perform-authentication-through-single-sign-on-using-platform-identity}
 
 在使用平台身分識別透過單一登入執行驗證流程之前，請確定符合以下先決條件：
 
@@ -117,7 +117,7 @@ ht-degree: 0%
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
    > * 所有&#x200B;_選用的_&#x200B;引數和標頭
 
-   >[!NOTE]
+   >[!TIP]
    >
    > 建議：串流應用程式可以等待使用者代理程式到達提供的`redirectUrl`，以檢查一般設定檔是否已成功產生並儲存。
 
@@ -203,7 +203,7 @@ ht-degree: 0%
 
 ## 使用平台身分識別透過單一登入擷取授權決策{#performing-authorization-flow-using-platform-identity-single-sign-on-method}
 
-### 必要條件 {#prerequisites-scenario-performing-authorization-flow-using-platform-identity-single-sign-on-method}
+### 先決條件 {#prerequisites-scenario-performing-authorization-flow-using-platform-identity-single-sign-on-method}
 
 在使用平台身分識別透過單一登入執行授權流程之前，請確保符合以下先決條件：
 
