@@ -1,7 +1,7 @@
 ---
 title: REST API V2逐步指南（伺服器對伺服器）
 description: REST API V2逐步指南（伺服器對伺服器）
-source-git-commit: e1e1835d0d523377c48b39170919f7120cc3ef90
+source-git-commit: c17e52dd52fa14c50d59945598d1913f02be2468
 workflow-type: tm+mt
 source-wordcount: '1566'
 ht-degree: 0%
@@ -186,4 +186,4 @@ Adobe Pass服務可在分散於美國各地的多個資料中心執行。  為�
 
 ## 相關資訊 {#related}
 
-* [REST API V2參考](/help/authentication/rest-api-v2/rest-api-v2-flows-overview.md)
+* [REST API V2參考](/help/authentication/rest-api-v2/rest-api-v2-overview.md)
