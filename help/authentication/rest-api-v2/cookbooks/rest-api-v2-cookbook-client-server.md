@@ -1,13 +1,13 @@
 ---
 title: REST API V2逐步指南（使用者端對伺服器）
 description: REST API V2逐步指南（使用者端對伺服器）
-source-git-commit: e1e1835d0d523377c48b39170919f7120cc3ef90
+exl-id: 6a5a89d2-ea54-4f9c-9505-e575ced4301c
+source-git-commit: 563e0b17de3be9290a661242355b4835b8c386e1
 workflow-type: tm+mt
-source-wordcount: '695'
+source-wordcount: '699'
 ht-degree: 0%
 
 ---
-
 
 # REST API V2逐步指南（使用者端對伺服器） {#rest-api-v2-cookbook-clientserver}
 
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 應用程式若要能夠呼叫Adobe Pass REST API V2，它需要API安全性層所需的存取權杖。
 
-若要取得存取Token，應用程式必須依照說明的步驟進行： [動態使用者端註冊](../../dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+若要取得存取Token，應用程式必須依照[動態使用者端註冊](../../dcr-api/apis/dynamic-client-registration-apis-retrieve-access-token.md)檔案中所述的步驟進行。
 
 ## B.驗證階段 {#authentication-phase}
 
@@ -56,7 +56,7 @@ ht-degree: 0%
 
 * 選項1。 串流應用程式可以開啟瀏覽器或Web檢視、載入URL以進行驗證，且使用者會登陸需要提交認證的MVPD登入頁面
    * 使用者輸入登入/密碼，最終重新導向顯示成功頁面
-* 選項2。 串流應用程式無法開啟瀏覽器而只顯示程式碼。 <b>需要開發個別的Web應用程式</b>，要求使用者輸入程式碼、建置並開啟URL： <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
+* 選項2。 串流應用程式無法開啟瀏覽器而只顯示程式碼。 <b>需要開發個別的Web應用程式</b>，以要求使用者輸入程式碼、建置並開啟URL： <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
    * 使用者輸入登入/密碼，最終重新導向顯示成功頁面
 
 ### 步驟4：檢查已驗證的設定檔 {#step-4-check-for-authenticated-profiles}
@@ -67,7 +67,7 @@ ht-degree: 0%
 （[擷取特定MVPD的已驗證設定檔](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)）
    * 如果未在串流應用程式中選取MVPD，因為MVPD選擇器出現在第二個畫面應用程式中，則應該使用程式碼<b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>進行輪詢
 （[擷取特定程式碼的已驗證設定檔](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)）
-* 輪詢不應超過30分鐘，如果達到30分鐘且串流應用程式仍處於作用中狀態，則需要起始新的工作階段，並將傳回新的程式碼和URL
+* 如果輪詢時間達到30分鐘，且串流應用程式仍在作用中，則需要起始新工作階段，並傳回新的程式碼和URL，則輪詢不應超過30分鐘
 * 驗證完成後，傳回值為200且包含已驗證的設定檔
 * 串流應用程式可能會繼續到<a href="#preauthorization-phase">C。預先授權階段</a>或<a href="#authorization-phase">D。授權階段</a>
 
@@ -78,7 +78,7 @@ ht-degree: 0%
 串流應用程式準備顯示已驗證身分的使用者可用的影片，且可檢查
 存取這些資源。
 
-* 如果應用程式想要篩選驗證的使用者套件中無法提供的資源，步驟為選擇性並執行
+* 如果應用程式想要篩選掉已驗證的使用者套件中無法提供的資源，則步驟為選擇性並執行
 * 呼叫<b>/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}</b><br>
 （[使用特定MVPD擷取預先授權決定](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)）
 
@@ -91,7 +91,7 @@ ht-degree: 0%
 * 每個播放開始都需要執行步驟
 * 呼叫<b>/api/v2/{serviceProvider}/decision/authorize/{mvpd}</b><br>
 （[使用特定MVPD擷取授權決定](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)）
-   * 決定= &#39;允許&#39; ，串流裝置開始串流
+   * 決定= &#39;允許&#39;，串流裝置開始串流
    * 決定= &#39;拒絕&#39;，串流裝置會通知使用者它無法存取該視訊
 
 ## E.登出階段 {#logout-phase}
