@@ -2,9 +2,9 @@
 title: 增強的錯誤碼
 description: 增強的錯誤碼
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+source-git-commit: ce9659074bfa3fac3ea62a70a6da470f15bad3fe
 workflow-type: tm+mt
-source-wordcount: '2593'
+source-wordcount: '2606'
 ht-degree: 2%
 
 ---
@@ -313,6 +313,7 @@ _(*)對於某些錯誤，多個動作可能是可能的解決方案，但「acti
 |                              | *invalid_header_pfs_permission_access_not_granted* | 400 | 未授予來自合作夥伴框架狀態標頭的許可權存取狀態值。 |
 |                              | *invalid_header_pfs_provider_id_not_determined* | 400 | 合作夥伴架構狀態標頭中的提供者ID值與已知的mvpd沒有關聯。 |
 |                              | *invalid_header_pfs_provider_id_mismatch* | 400 | 合作夥伴架構狀態標頭中的提供者ID值與以引數形式傳送的mvpd不相符。 |
+|                              | *invalid_header_pfs_provider_info_expired* | 400 | 夥伴架構狀態標頭中的提供者資訊已過期。 |
 |                              | *無效整合* | 400 | 指定的服務提供者與mvpd之間的整合不存在或已停用。 |
 |                              | *invalid_authentication_session* | 400 | 與此請求關聯的驗證工作階段遺失或無效。 |
 |                              | *preauthorization_denied_by_mvpd* | 403 | MVPD在要求指定資源的預先授權時傳回「拒絕」決定。 |
