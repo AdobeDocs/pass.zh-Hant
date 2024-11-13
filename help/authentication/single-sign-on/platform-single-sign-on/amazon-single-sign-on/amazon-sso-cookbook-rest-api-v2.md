@@ -1,23 +1,22 @@
 ---
-title: Amazon SSO逐步指南(REST API V1)
-description: Amazon SSO逐步指南(REST API V1)
-exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
+title: Amazon SSO逐步指南(REST API V2)
+description: Amazon SSO逐步指南(REST API V2)
 source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
 workflow-type: tm+mt
-source-wordcount: '590'
+source-wordcount: '542'
 ht-degree: 0%
 
 ---
 
-# Amazon SSO逐步指南(REST API V1) {#amazon-sso-cookbook-rest-api-v1}
+# Amazon SSO逐步指南(REST API V2) {#amazon-sso-cookbook-rest-api-v2}
 
 >[!IMPORTANT]
 >
 >此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
-Adobe Pass Authentication REST API V1支援在FireOS上執行之使用者端應用程式的一般使用者之平台單一登入(SSO)。
+Adobe Pass Authentication REST API V2支援在FireOS上執行之使用者端應用程式的一般使用者使用平台單一登入(SSO)。
 
-此檔案可作為提供高階檢視的現有[REST API V1總覽](/help/authentication/rest-api-overview.md)的延伸。
+此檔案可作為現有[REST API V2總覽](/help/authentication/rest-api-v2/rest-api-v2-overview.md)的延伸，提供高階檢視和說明如何使用平台識別流程實作[單一登入的檔案](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md)。
 
 ## 使用平台身分流程的Amazon單一登入 {#cookbook}
 
@@ -139,56 +138,31 @@ Amazon SSO SDK提供同步和非同步API來取得SSO權杖（平台身分）裝
 
 ### 工作流程 {#workflow}
 
-針對Amazon驗證端點發出的所有HTTP請求中，都必須有Adobe Pass SSO權杖（平台身分）裝載：
+針對Amazon驗證REST API V2端點發出的所有HTTP請求中，都必須有Adobe Pass SSO權杖（平台身分）裝載：
 
 ```
-/adobe-services/*
-/reggie/*
-/api/*
+/api/v2/*
 ```
+
+Adobe Pass驗證REST API V2支援下列方法來接收SSO權杖（平台身分）裝載，此為裝置範圍或平台範圍的識別碼：
+
+* 作為標頭，名稱為： `Adobe-Subject-Token`
 
 >[!IMPORTANT]
 > 
-> 串流應用程式可能會略過在`/authenticate`呼叫上傳送Amazon SSO權杖（平台身分）裝載，因為它是在`/regcode`呼叫上提供的。
-
-Adobe Pass驗證支援以下方法來接收SSO權杖（平台身分）裝載，該裝載為裝置範圍或平台範圍的識別碼：
-
-* 作為標頭，名稱為： `Adobe-Subject-Token`
-* 作為查詢引數，名稱為： `ast`
-* 作為名為`ast`的張貼引數
-
->[!IMPORTANT]
->
-> 如果以查詢引數的形式傳送，則整個URL可能會變得很長並被拒絕。
->
-> 如果以查詢/張貼引數的形式傳送，則在產生請求簽名時必須包含此引數。
+> 如需`Adobe-Subject-Token`標頭的詳細資訊，請參閱[Adobe-Subject-Token](/help/authentication/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)檔案。
 
 #### 範例
 
 **以標頭傳送**
 
 ```HTTPS
-GET /api/v1/config/{requestorId} HTTP/1.1 
+GET /api/v2/{serviceProvider}/sessions HTTP/1.1 
 Host: sp-preprod.auth.adobe.com
 
 Adobe-Subject-Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.JlBFhNhNCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA
 ```
 
-**正在以查詢引數的形式傳送**
-
-```HTTPS
-GET /api/v1/config/{requestorId}?ast=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.JlBFhNhNCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA HTTP/1.1
-Host: sp.auth.adobe.com
-```
-
-**正在以張貼引數的形式傳送**
-
-```HTTPS
-POST /api/v1/config/{requestorId}?ast=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJyb2t1IiwiaWF0IjoxNTExMzY4ODAyLCJleHAiOjE1NDI5MDQ4MDIsImF1ZCI6ImFkb2JlIiwic3ViIjoiNWZjYzMwODctYWJmZi00OGU4LWJhZTgtODQzODViZTFkMzQwIiwiZGlkIjoiY2FmZjQ1ZDAtM2NhMy00MDg3LWI2MjMtNjFkZjNhMmNlOWM4In0.Jl\_BFhN\_h\_NCJCDXLwBjy5tt3PtPcqbMKEIGZ6sr2NA HTTP/1.1
-Host: sp.auth.adobe.com 
-Content-Type: multipart/form-data;
-```
-
 >[!IMPORTANT]
 >
-> 如果`Adobe-Subject-Token`標頭或`ast`引數值遺失或無效，則Adobe Pass驗證將處理要求而不考慮單一登入。
+> 如果`Adobe-Subject-Token`標頭值遺失或無效，則Adobe Pass驗證將處理請求而不考慮單一登入。

@@ -1,9 +1,10 @@
 ---
 title: Apple SSO逐步指南(REST API V2)
 description: Apple SSO逐步指南(REST API V2)
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
+source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
 workflow-type: tm+mt
-source-wordcount: '3402'
+source-wordcount: '3410'
 ht-degree: 0%
 
 ---
@@ -16,11 +17,11 @@ ht-degree: 0%
 
 Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使用者端應用程式的一般使用者進行合作夥伴單一登入(SSO)。
 
-此檔案可作為現有REST API V2檔案的延伸，說明如何使用合作夥伴流程](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)實作[單一登入。
+此檔案可作為現有[REST API V2總覽](/help/authentication/rest-api-v2/rest-api-v2-overview.md)的延伸，提供高階檢視和說明如何使用合作夥伴流程](/help/authentication/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)實作[單一登入的檔案。
 
-## 使用合作夥伴流程的Apple單一登入 {#apple-sso-cookbook-rest-api-v2-cookbook}
+## 使用合作夥伴流程的Apple單一登入 {#cookbook}
 
-### 先決條件 {#apple-sso-cookbook-rest-api-v2-prerequisites}
+### 先決條件 {#prerequisites}
 
 繼續使用合作夥伴流程進行Apple單一登入之前，請確定符合下列先決條件：
 
@@ -40,7 +41,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 >
 > * 串流應用程式已完成適用於程式設計師的[上線必要條件](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-overview.md#apple-sso-prerequisites-programmer)，且為啟用Apple單一登入使用者體驗所需。
 
-### 工作流程 {#apple-sso-cookbook-rest-api-v2-workflow}
+### 工作流程 {#workflow}
 
 執行指定的步驟，使用合作夥伴流程來實作Apple單一登入，如下圖所示。
 
