@@ -1,9 +1,10 @@
 ---
 title: rest API V2字彙表
 description: rest API V2字彙表
-source-git-commit: dd3451f8761ce6183e9a11099fb3094abae09466
+exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
+source-git-commit: 1370554c66116a357970fb05c046608e261f0ed3
 workflow-type: tm+mt
-source-wordcount: '1872'
+source-wordcount: '1964'
 ht-degree: 0%
 
 ---
@@ -34,6 +35,8 @@ ht-degree: 0%
 
 驗證碼可由[主要（程式設計人員）應用程式](#primary-application)或[次要（程式設計人員）應用程式](#secondary-application)使用，以完成[驗證](#authentication)程式、擷取[驗證工作階段](#session)的相關資訊，或存取使用者[設定檔](#profile)。
 
+與先前使用之註冊代碼的同義字。
+
 #### 驗證工作階段 {#session}
 
 驗證工作階段是Adobe Pass驗證概念，可儲存使用者從[程式設計員](#programmer)應用程式啟動（或繼續）的驗證程式相關資訊，並由[驗證代碼](#code)唯一識別。
@@ -45,6 +48,10 @@ ht-degree: 0%
 授權是允許使用者在使用[MVPD](#mvpd)驗證使用者許可權後，根據擁有的[MVPD](#mvpd)訂閱，從[程式設計員](#programmer)目錄存取受保護內容（[資源](#resource)）的程式。
 
 ### C {#c}
+
+#### 使用者端認證 {#client-credentials}
+
+使用者端認證是一組在[動態使用者端註冊(DCR)](#dcr)程式期間產生的唯一值，其用途是取得[存取權杖](#access-token)。
 
 #### 設定 {#configuration}
 
@@ -114,6 +121,8 @@ DCR會傳遞給[程式設計師](#programmer)，作為Adobe Pass驗證服務，�
 
 媒體權杖已傳遞給[程式設計師](#programmer)，然後程式設計師會驗證它，以確保該[資源](#resource)的存取安全性。
 
+與使用短授權Token的前一個詞同義。
+
 #### 媒體權杖驗證器 {#media-token-verifier}
 
 媒體權杖驗證器是由Adobe Pass驗證所分配的程式庫，負責驗證[媒體權杖](#media-token)的真實性。
@@ -138,7 +147,15 @@ MVPD由在MVPD和Adobe之間的上線流程中定義的唯一值來識別。
 
 #### 預先授權 {#preauthorization}
 
-預先授權是允許使用者在使用[MVPD](#mvpd)驗證使用者許可權後，從有權存取的[程式設計員](#programmer)目錄預覽[資源](#resource)清單的程式。
+預先授權是允許使用者在使用[MVPD](#mvpd)驗證使用者許可權後，從他們有權存取的[程式設計員](#programmer)目錄預覽[資源](#resource)子集的程式。
+
+與[預檢](#preflight)同義字。
+
+#### 預檢 {#preflight}
+
+預檢是允許使用者從[程式設計人員](#programmer)目錄預覽他們有權存取的[資源](#resource)子集的程式（在使用[MVPD](#mvpd)驗證使用者許可權後）。
+
+與[預先授權](#preauthorization)同義字。
 
 #### 主要（程式設計師）應用程式 {#primary-application}
 
@@ -147,6 +164,8 @@ MVPD由在MVPD和Adobe之間的上線流程中定義的唯一值來識別。
 #### 個人資料 {#profile}
 
 設定檔是Adobe Pass驗證概念，可儲存關於使用者驗證開始日期和結束日期、[使用者的中繼資料](#user-metadata)以及指出取得驗證方法的其他欄位（例如，「一般」、「已降級」、「暫時」、「單一登入」等）的相關資訊。
+
+與先前使用之驗證Token的同義字。
 
 #### 程式設計師 {#programmer}
 
@@ -270,7 +289,7 @@ TV Everywhere (TVE) Dashboard是提供給[程式設計師](#programmer)的Adobe 
 
 #### 使用者中繼資料 {#user-metadata}
 
-使用者中繼資料是指使用者特有的屬性（例如郵遞區號、家長分級、使用者ID等） 由[MVPD](#mvpd)維護，並由Adobe Pass驗證提供作為[設定檔](#profile)之一部份的專案。
+使用者中繼資料是指由[MVPD](#mvpd)維護且由Adobe Pass驗證提供作為[設定檔](#profile)一部分的使用者特定屬性（例如郵遞區號、家長分級、使用者ID等）。
 
 如需詳細資訊，請參閱[使用者中繼資料](/help/authentication/user-metadata-feature.md)檔案。
 

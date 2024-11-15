@@ -2,7 +2,7 @@
 title: TVE儀表板整合
 description: 瞭解您的管道和MVPD之間的整合，以及如何管理整合。
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
-source-git-commit: acff285f7db1bdd32d5da3e01a770d9581d3ba75
+source-git-commit: 1370554c66116a357970fb05c046608e261f0ed3
 workflow-type: tm+mt
 source-wordcount: '2093'
 ht-degree: 0%
@@ -328,7 +328,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 [檢閱並推播變更](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-review-push-changes.md)後，才會建立新的整合。
 
 
-## 停用整合 {#disable-integratgion}
+## 停用整合 {#disable-integration}
 
 若要停用整合，請執行下列步驟：
 

@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
+source-git-commit: 1370554c66116a357970fb05c046608e261f0ed3
 workflow-type: tm+mt
-source-wordcount: '1210'
+source-wordcount: '1214'
 ht-degree: 2%
 
 ---
@@ -55,6 +55,7 @@ ht-degree: 2%
    + REST API V2 {#rest-api-v2}
       + [REST API V2概觀](./rest-api-v2/rest-api-v2-overview.md)
       + [rest API V2字彙表](./rest-api-v2/rest-api-v2-glossary.md)
+      + [REST API V2常見問題集](./rest-api-v2/rest-api-v2-faqs.md)
       + API {#rest-api-v2-apis}
          + [REST API V2 API概述](rest-api-v2/apis/rest-api-v2-apis-overview.md)
          + 設定{#rest-api-v2-configuration-apis}
