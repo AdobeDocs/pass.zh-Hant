@@ -2,9 +2,9 @@
 title: Apple SSO逐步指南(REST API V2)
 description: Apple SSO逐步指南(REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: e5ef8c0cba636ac4d2bda1abe0e121d0ecc1b795
+source-git-commit: dbf68d75962e3e34f0c569c409f8c98ae6b9e036
 workflow-type: tm+mt
-source-wordcount: '3410'
+source-wordcount: '3442'
 ht-degree: 0%
 
 ---
@@ -508,7 +508,10 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
    > * 所有&#x200B;_選用的_&#x200B;引數和標頭
 
-1. **指示下一個動作：** Adobe Pass登出端點回應包含必要的資料，可引導串流應用程式瞭解下一個動作。
+1. **指示下一個動作：** Adobe Pass登出端點回應包含必要的資料，可引導串流應用程式執行下一個動作：
+   * `url`屬性遺失，因為使用者需要與夥伴（系統）層級互動以完成登出流程。
+   * `actionName`屬性設定為「partner_logout」。
+   * `actionType`屬性設定為&quot;partner_interactive&quot;。
 
    >[!IMPORTANT]
    >

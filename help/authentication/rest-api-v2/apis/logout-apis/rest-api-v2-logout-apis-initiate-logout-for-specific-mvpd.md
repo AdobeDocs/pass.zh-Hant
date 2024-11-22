@@ -2,9 +2,9 @@
 title: 啟動特定mvpd的登出
 description: REST API V2 — 啟動特定mvpd的登出
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: ca8eaff83411daab5f136f01394e1d425e66f393
+source-git-commit: dbf68d75962e3e34f0c569c409f8c98ae6b9e036
 workflow-type: tm+mt
-source-wordcount: '941'
+source-wordcount: '1006'
 ht-degree: 1%
 
 ---
@@ -239,6 +239,7 @@ ht-degree: 1%
                   可能的值包括：
                   <ul>
                     <li><b>登出</b><br/>串流裝置需要在使用者代理程式中開啟提供的URL。<br/>此動作適用於下列情況：使用登出端點登出MVPD。</li>
+                    <li><b>partner_logout</b><br/>串流裝置必須同時通知使用者從合作夥伴（系統）層級登出。<br/>此動作適用於下列情況：當設定檔型別為「appleSSO」時登出MVPD。</li>
                     <li><b>完成</b><br/>串流裝置不需要執行任何後續動作。<br/>此動作適用於下列情況：在沒有登出端點（虛擬登出功能）的情況下登出MVPD、在存取降級期間登出、在暫時存取期間登出。</li>
                     <li><b>無效</b><br/>串流裝置不需要執行任何後續動作。<br/>此動作適用於下列情況：找不到有效的設定檔時登出MVPD。</li>
                   </ul>  
@@ -252,6 +253,7 @@ ht-degree: 1%
                   可能的值包括：
                   <ul>
                     <li><b>互動式</b><br/>此型別適用於'actionName'屬性的下列值： <b>登出</b>。</li>
+                    <li><b>partner_interactive</b><br/>此型別適用於'actionName'屬性的下列值： <b>partner_logout</b>。</li>
                     <li><b>none</b><br/>此型別適用於'actionName'屬性的下列值： <b>complete</b>，<b>invalid</b>。</li>
                   </ul>
                <td><i>必填</i></td>
@@ -476,7 +478,43 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5.在套用降級時起始特定mvpd的登出
+### 5.為特定mvpd起始登出，包括透過使用合作夥伴(Apple)單一登入取得的設定檔
+
+>[!BEGINTABS]
+
+>[!TAB 要求]
+
+```HTTPS
+GET /api/v2/REF30/logout/Cablevision?redirectUrl=https%3A%2F%2Fadobe.com HTTP/1.1
+
+    Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjNGZjM2U3ZS0xMmQ5LTQ5NWQtYjc0Mi02YWVhYzhhNDkwZTciLCJuYmYiOjE3MjQwODc4NjgsImlzcyI6ImF1dGguYWRvYmUuY29tIiwic2NvcGVzIjoiYXBpOmNsaWVudDp2MiIsImV4cCI6MTcyNDEwOTQ2OCwiaWF0IjoxNzI0MDg3ODY4fQ.DJ9GFl_yKAp2Qw-NVcBeRSnxIhqrwxhns5T5jU31N2tiHxCucKLSQ5guBygqkkJx6D0N_93f50meEEyfb7frbHhVHHwmRjHYjkfrWqHCpviwVjVZKKwl8Y3FEMb0bjKIB8p_E3txX9IbzeNGWRufZBRh2sxB5Q9B7XYINpVfh8s_sFvskrbDu5c01neCx5kEagEW5CtE0_EXTgEb5FSr_SfQG3UUu_iwlkOggOh_kOP_5GueElf9jn-bYBMnpObyN5s-FzuHDG5Rtac5rvcWqVW2reEqFTHqLI4rVC7UKQb6DSvPBPV4AgrutAvk30CYgDsOQILVyrjniincp7r9Ww
+    AP-Device-Identifier: fingerprint YmEyM2QxNDEtZDcxNS01NjFjLTk0ZjQtZTllNGM5NjZiMWVi
+    X-Device-Info: ewoJInByaW1hcnlIYXJkd2FyZVR5cGUiOiAiU2V0VG9wQm94IiwKCSJtb2RlbCI6ICJUViA1dGggR2VuIiwKCSJtYW51ZmFjdHVyZXIiOiAiQXBwbGUiLAoJIm9zTmFtZSI6ICJ0dk9TIgoJIm9zVmVuZG9yIjogIkFwcGxlIiwKCSJvc1ZlcnNpb24iOiAiMTEuMCIKfQ==
+    Accept: application/json
+    User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
+```
+
+>[!TAB 回應]
+
+```HTTPS
+HTTP/1.1 200 OK
+
+Content-Type: application/json;charset=UTF-8
+
+{
+   "logouts": {
+      "Cablevision": {
+         "actionName": "partner_logout",
+         "actionType": "partner_interactive",
+         "mvpd": "Cablevision"
+      }
+   }
+}
+```
+
+>[!ENDTABS]
+
+### 6.在套用降級時起始特定mvpd的登出
 
 >[!BEGINTABS]
 
@@ -512,7 +550,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 6.啟動基本或促銷臨時傳遞的登出（不需要）
+### 7.啟動基本或促銷臨時傳遞的登出（不需要）
 
 >[!BEGINTABS]
 
