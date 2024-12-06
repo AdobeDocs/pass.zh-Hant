@@ -2,7 +2,7 @@
 title: 歡迎使用Adobe&amp；reg；通過驗證！
 description: 歡迎使用Adobe&amp；reg；通過驗證概述
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: 21b4ad42709351eac1c2089026f84a43deb50f8a
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '331'
 ht-degree: 0%
@@ -26,16 +26,16 @@ Adobe Pass Authentication是TV Everywhere的權益解決方案，提供模組化
 ## 熱門說明和常見問答 {#help-faqs}
 
 | **個精選專案** |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <ul><li>[iOS的單一登入](/help/authentication/single-sign-on/partner-single-sign-on/apple-single-sign-on/apple-sso-overview.md)</li><li>[促銷臨時通票](/help/authentication/promotional-temp-pass.md)</li><li>[家用驗證(HBA)](/help/authentication/home-based-authn-tve.md)</li><li>[HBA資訊圖形](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Adobe Pass TVE儀表板使用手冊](/help/authentication/tve-dashboard/new-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <ul><li>[iOS的單一登入](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)</li><li>[促銷臨時通票](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)</li><li>[家用驗證(HBA)](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authn-tve.md)</li><li>[HBA資訊圖形](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Adobe Pass TVE儀表板使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
 
 | 程式設計師的&#x200B;**** | MVPD的&#x200B;**** |
-|------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| <ul><li>[程式設計師Kickstart指南](/help/authentication/programmer-kickstart-guide.md)</li><li>[使用者中繼資料](/help/authentication/user-metadata.md)</li></ul> | <ul><li>[MVPD Kickstart指南](/help/authentication/mvpd-kickstart-guide.md)</li><li>[驗證](/help/authentication/authn-usecase.md)</li><li>[授權](/help/authentication/authz-usecase.md)</li><li>[登出](/help/authentication/usecase-mvpd-logout.md)</li></ul> |
+|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <ul><li>[程式設計師Kickstart指南](/help/authentication/kickstart/programmer-kickstart-guide.md)</li><li>[使用者中繼資料](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)</li></ul> | <ul><li>[MVPD Kickstart指南](/help/authentication/kickstart/mvpd-kickstart-guide.md)</li><li>[驗證](/help/authentication/integration-guide-mvpds/authn-usecase.md)</li><li>[授權](/help/authentication/integration-guide-mvpds/authz-usecase.md)</li><li>[登出](/help/authentication/integration-guide-mvpds/usecase-mvpd-logout.md)</li></ul> |
 | 原生應用程式使用者端的&#x200B;**** | 每個人&#x200B;**** |
-| <ul><li>[iOS技術概覽](/help/authentication/iostvos-sdk-overview.md)</li><li>[Android技術概覽](/help/authentication/android-sdk-overview.md)</li></ul> | <ul><li>[技術檔案](/help/authentication/technical-paper.md)</li><li>[提升程式](/help/authentication/escalation-procedures.md)</li><li>[字彙表](/help/authentication/glossary.md)</li></ul> |
-| 智慧型裝置&#x200B;**** | |
-| <ul><li>[無使用者端技術概覽](/help/authentication/rest-api-overview.md)</li><li>[無使用者端API](/help/authentication/rest-api-reference.md)</li></ul> | |
+| <ul><li>[iOS技術概覽](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Android技術概覽](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[技術檔案](/help/authentication/kickstart/technical-paper.md)</li><li>[提升程式](/help/authentication/notes-technical/escalation-procedures.md)</li><li>[字彙表](/help/authentication/kickstart/glossary.md)</li></ul> |
+| 智慧型裝置&#x200B;**** |                                                                                                                                                                                                                                                                                                                                                                       |
+| <ul><li>[無使用者端技術概覽](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/rest-api-overview.md)</li><li>[無使用者端API](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)</li></ul> |                                                                                                                                                                                                                                                                                                                                                                       |
 
 >[!IMPORTANT]
 >
@@ -43,7 +43,7 @@ Adobe Pass Authentication是TV Everywhere的權益解決方案，提供模組化
 >
 >[傳送電子郵件給支援團隊](mailto:tve-support@adobe.com)也是任何問題或事件報告的第一個步驟。
 >
->如果您有[SEVERITY 1 LIVE](/help/authentication/escalation-procedures.md)問題，而且您已傳送電子郵件給我們，30分鐘沒有回應，請參閱[向上呈報程式](/help/authentication/escalation-procedures.md)檔案以取得要撥打的電話號碼。
+>如果您有[SEVERITY 1 LIVE](/help/authentication/notes-technical/escalation-procedures.md)問題，而且您已傳送電子郵件給我們，30分鐘沒有回應，請參閱[向上呈報程式](/help/authentication/notes-technical/escalation-procedures.md)檔案以取得要撥打的電話號碼。
 >
 
 

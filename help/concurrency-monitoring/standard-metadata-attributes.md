@@ -2,7 +2,7 @@
 title: 標準中繼資料屬性
 description: 標準中繼資料屬性
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '1053'
 ht-degree: 0%
@@ -24,7 +24,7 @@ Concurrency Monitoring API強制使用者端傳送下列值做為任何有效初
 |-------------|---------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------|
 | applicationId | 75b4-431b-adb2-eb6b9e546013 | 授權標頭 | 整合時的Zendesk票證 |
 | mvpdName | Sample_MVPD | URI路徑 | 使用者選取MVPD時，從設定端點進行Adobe Pass驗證 |
-| accountId | 12345 | URI路徑 | 使用者登入後的Adobe Pass Authentication upstreamUserID中繼資料[使用者Metadata upstreamUserID - Adobe Pass驗證](/help/authentication/user-metadata-feature.md) |
+| accountId | 12345 | URI路徑 | 使用者登入後的Adobe Pass Authentication upstreamUserID中繼資料[使用者Metadata upstreamUserID - Adobe Pass驗證](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md) |
 
 
 ## 中繼資料屬性 {#metadata-attr}
