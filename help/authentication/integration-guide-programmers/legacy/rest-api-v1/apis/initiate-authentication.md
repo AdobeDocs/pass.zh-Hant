@@ -2,14 +2,14 @@
 title: 啟動驗證
 description: 啟動驗證
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '291'
+source-wordcount: '292'
 ht-degree: 0%
 
 ---
 
-# 啟動驗證 {#initiate-authentication}
+# （舊版）起始驗證 {#initiate-authentication}
 
 >[!NOTE]
 >
@@ -36,13 +36,13 @@ ht-degree: 0%
 
 ## 說明 {#description}
 
-透過通知MVPD選取事件來啟動驗證程式。 在Adobe Pass驗證資料庫上建立記錄，在從MVPD收到成功回應時進行調節。
+透過通知MVPD選擇事件來啟動驗證流程。 在Adobe Pass驗證資料庫上建立記錄，並在從MVPD收到成功回應時進行調節。
 
 
 
 | 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/驗證 | 驗證模組 | 1. requestor_id （必要）</br>2。  mso_id （必要）</br>3。  reg_code （必要）</br>4。  domain_name （必要）</br>5。  noflash=true - </br>    （必要，剩餘引數）</br>6。  no_iframe=true （必要，剩餘引數）</br>7。  額外的引數（選擇性）</br>8。  redirect_url （必要） | GET | 系統會將「登入Web應用程式」重新導向至MVPD登入頁面。 | 302 （完整重新導向實作） |
+| &lt;SP_FQDN>/api/v1/驗證 | 驗證模組 | 1. requestor_id （必要）</br>2。  mso_id （必要）</br>3。  reg_code （必要）</br>4。  domain_name （必要）</br>5。  noflash=true - </br>    （必要，剩餘引數）</br>6。  no_iframe=true （必要，剩餘引數）</br>7。  額外的引數（選擇性）</br>8。  redirect_url （必要） | GET | 系統會將登入網頁應用程式重新導向至MVPD登入頁面。 | 302 （完整重新導向實作） |
 
 {style="table-layout:auto"}
 
@@ -50,7 +50,7 @@ ht-degree: 0%
 | 輸入引數 | 說明 |
 | --- | --- |
 | requestor_id | 此作業有效的程式設計師要求者。 |
-| mso_id | 此作業適用的MVPD ID。 |
+| mso_id | 此操作有效的MVPD ID。 |
 | reg_code | Reggie服務產生的註冊代碼。 |
 | domain_name | 原始網域。 |
 | redirect_url | 驗證完成後的登入Webapp重新導向url。 |
@@ -93,7 +93,7 @@ ht-degree: 0%
 
 * `domain_name`引數的值必須設定為向Adobe Pass驗證註冊的其中一個網域名稱。 如需詳細資訊，請參閱[註冊與初始化](/help/authentication/kickstart/programmer-overview.md)。
 
-* [避免在/authenticate請求中使用&#39;&amp;&#39;reg\_code （技術說明）](/help/authentication/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
+* [避免在/authenticate請求中使用&#39;&amp;&#39;reg\_code （技術說明）](/help/authentication/integration-guide-programmers/legacy/notes-technical/clientless-avoid-using-reg-code-in-authenticate-request.md)
 
 * `redirect_url`引數必須是順序中的最後一個引數
 

@@ -2,14 +2,14 @@
 title: Amazon FireOS技術概覽
 description: Amazon FireOS技術概覽
 exl-id: 939683ee-0dd9-42ab-9fde-8686d2dc0cd0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '2166'
+source-wordcount: '2167'
 ht-degree: 0%
 
 ---
 
-# Amazon FireOS技術概覽 {#amazon-fireos-technical-overview}
+# （舊版） Amazon FireOS技術概覽 {#amazon-fireos-technical-overview}
 
 >[!NOTE]
 >
@@ -46,8 +46,8 @@ AccessEnabler支援的所有權益工作流程都假設您先前已呼叫[`setRe
 
 1. 您的頁面或播放器會呼叫[getAuthentication()](#getAuthN)來啟動驗證工作流程，以檢查有效的快取驗證權杖。 這個方法有選擇性的`redirectURL`引數；如果您沒有提供`redirectURL`的值，在成功驗證之後，使用者會回到初始化驗證的URL。
 1. AccessEnabler決定目前的驗證狀態。 如果使用者目前已經驗證，AccessEnabler會呼叫您的`setAuthenticationStatus()`回呼函式，傳遞表示成功的驗證狀態（下方的步驟7）。
-1. 如果使用者未驗證，則AccessEnabler會透過判斷使用者的上次驗證嘗試是否在指定的MVPD上成功來繼續驗證流程。 如果已快取MVPD ID且`canAuthenticate`旗標為true，或已使用[`setSelectedProvider()`](#setSelectedProvider)選取MVPD，則不會使用MVPD選取對話方塊提示使用者。 驗證流程會繼續使用MVPD的快取值（也就是上次成功驗證期間使用的MVPD）。 系統會呼叫後端伺服器的網路，並將使用者重新導向至MVPD登入頁面（下方的步驟6）。
-1. 如果未快取MVPD ID，而且未使用[`setSelectedProvider()`](#setSelectedProvider)選取MVPD，或`canAuthenticate`旗標設定為false，則會呼叫[`displayProviderDialog()`](#displayProviderDialog)回呼。 此回呼會引導您的頁面或播放器建立UI，向使用者顯示可從中進行選擇的MVPD清單。 提供了一系列MVPD物件，其中包含您建置MVPD選取器所需的資訊。 每個MVPD物件描述MVPD實體，並包含MVPD的ID （例如XFINITY、AT\&amp;T等）和可以找到MVPD標誌的URL等資訊。
+1. 如果使用者未驗證，AccessEnabler會判斷使用者的上次驗證嘗試在指定的MVPD中是否成功，以繼續驗證流程。 如果已快取MVPD ID且`canAuthenticate`旗標為true或使用[`setSelectedProvider()`](#setSelectedProvider)選取了MVPD，則不會使用MVPD選取對話方塊提示使用者。 驗證流程會繼續使用MVPD的快取值(即上次成功驗證期間使用的MVPD)。 系統會呼叫後端伺服器的網路，並將使用者重新導向至MVPD登入頁面（下方的步驟6）。
+1. 如果未快取任何MVPD ID，而且未使用[`setSelectedProvider()`](#setSelectedProvider)選取任何MVPD，或`canAuthenticate`標幟設定為false，則會呼叫[`displayProviderDialog()`](#displayProviderDialog)回呼。 此回呼會引導您的頁面或播放器建立UI，向使用者顯示可從中進行選擇的MVPD清單。 提供了一系列MVPD物件，其中包含您建置MVPD選擇器所需的資訊。 每個MVPD物件都說明MVPD實體，並包含MVPD的ID （例如XFINITY、AT\&amp;T等）和可以找到MVPD標誌的URL等資訊。
 1. 選取特定MVPD後，您的頁面或播放器必須通知AccessEnabler使用者的選擇。 對於非Flash使用者端，一旦使用者選取想要的MVPD，您就會透過呼叫[`setSelectedProvider()`](#setSelectedProvider)方法通知AccessEnabler使用者選取範圍。 Flash使用者端改為分派型別&quot;`mvpdSelection`&quot;的共用`MVPDEvent`，傳遞選取的提供者。
 1. 若為Amazon應用程式，將忽略[`navigateToUrl()`](#navigagteToUrl)回呼。 Access Enabler程式庫可協助存取通用WebView控制項，以驗證使用者。
 1. 透過`WebView`，使用者到達MVPD的登入頁面並輸入其認證。 請注意，在此傳輸期間會發生數個重新導向作業。
@@ -80,7 +80,7 @@ Adobe Pass驗證權利解決方案的核心是在成功完成驗證和授權工�
 
 #### 驗證Token
 
-- **適用於FireOS**&#x200B;的AccessEnabler 1.10.1是以Android 1.9.1的AccessEnabler為基礎 — 此SDK引進了權杖儲存的新方法，可啟用多個Programmer-MVPD貯體，因此可啟用多個驗證權杖。
+- **適用於FireOS**&#x200B;的AccessEnabler 1.10.1是以Android 1.9.1的AccessEnabler為基礎 — 此SDK引進了一種新的權杖儲存方法，可啟用多個程式設計師 — MVPD貯體，因此可啟用多個驗證權杖。
 
 #### 授權Token
 
@@ -104,12 +104,12 @@ Token必須持續存在於相同應用程式的連續執行中。 這表示取�
 - 權杖的TTL尚未過期
 - 權杖的簽發者包含在允許的身分提供者清單中
 
-權杖儲存可支援多個Programmer-MVPD組合，仰賴可儲存多個驗證權杖的多層級巢狀對應結構。 此新儲存裝置不會以任何方式影響AccessEnabler公用API，而且不需要程式設計師端進行變更。 以下範例說明這項較新的功能：
+權杖儲存可支援多個程式設計人員 — MVPD組合，仰賴可儲存多個驗證權杖的多層級巢狀對應結構。 此新儲存裝置不會以任何方式影響AccessEnabler公用API，而且不需要程式設計師端進行變更。 以下範例說明這項較新的功能：
 
 1. 開啟App1 （由Programmer1開發）。
 1. 使用MVPD1 （與程式設計工具1整合）進行驗證。
 1. 暫停/關閉目前的應用程式，然後開啟App2 （由Programmer2開發）。
-1. 我們假設Programmer2未與MVPD2整合；因此，使用者將不會在App2中驗證。
+1. 我們假設Programmer2未與MVPD2整合，因此「不會」在App2中驗證使用者。
 1. 在App2中使用MVPD2 （已與Programmer2整合）進行驗證。
 1. 切換回App1；使用者仍將透過程式設計員1進行驗證。
 

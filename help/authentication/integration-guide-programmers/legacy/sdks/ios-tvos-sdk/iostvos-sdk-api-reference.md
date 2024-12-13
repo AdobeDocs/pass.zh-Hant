@@ -2,14 +2,14 @@
 title: iOS/tvOS API參考
 description: iOS/tvOS API參考
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '6933'
+source-wordcount: '6934'
 ht-degree: 0%
 
 ---
 
-# iOS/tvOS SDK API參考 {#iostvos-sdk-api-reference}
+# （舊版） iOS/tvOS SDK API參考 {#iostvos-sdk-api-reference}
 
 >[!NOTE]
 >
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## 簡介 {#intro}
 
-本頁說明適用於Adobe Pass驗證的iOS/tvOS Native Client所公開的方法和回呼函式。 此處說明的方法和回呼函式定義於`AccessEnabler.h`和`EntitlementDelegate.h`標頭檔案中；您可以在iOS AccessEnabler SDK的下列位置找到它們： `[SDK directory]/AccessEnabler/headers/api/`
+本頁說明適用於Adobe Pass驗證的iOS/tvOS Native Client所公開的方法和回呼函式。 此處說明的方法和回呼函式定義於`AccessEnabler.h`和`EntitlementDelegate.h`標頭檔案中；您可以在iOS AccessEnabler SDK中找到它們，網址為： `[SDK directory]/AccessEnabler/headers/api/`
 
 
 相關檔案：
@@ -58,7 +58,7 @@ ht-degree: 0%
 
 * [`getAuthentication:filter`](#getAuthN_filter)，[`getAuthentication:withData:`](#getAuthN)[andFilter](#getAuthN_filter) — 啟動完整驗證工作流程。
 
-* [`displayProviderDialog:`](#dispProvDialog) — 通知您的應用程式將適當的UI元素例項化，以便使用者選取MVPD。
+* [`displayProviderDialog:`](#dispProvDialog) — 通知您的應用程式具現化適當的UI元素，讓使用者選取MVPD。
 
 * [`setSelectedProvider:`](#setSelProv) — 通知AccessEnabler使用者的MVPD選取專案。
 
@@ -102,7 +102,7 @@ ht-degree: 0%
 
 * [`sendTrackingData:forEventType:`](#sendTracking) — 傳遞追蹤資料資訊。
 
-* [`MVPD`](#mvpd) - MVPD類別。 [包含有關MVPD]的資訊
+* [`MVPD`](#mvpd) - MVPD類別。 [包含MVPD的相關資訊]
 
 ### init：softwareStatement {#initWithSoftwareStatement}
 
@@ -163,10 +163,10 @@ ht-degree: 0%
 * *options*：包含全域SDK選項的NSDictionary。 目前提供下列選項：
    * **applicationProfile** — 它可用來根據這個值設定伺服器組態。
    * **visitorID** -Experience Cloud識別碼服務。 此值稍後可用於進階分析報表。
-   * **handleSVC** — 布林值，表示程式設計師是否會處理SFSafariViewControllers。 如需詳細資訊，請參閱iOS SDK 3.2+](/help/authentication/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的[SFSafariViewController支援。
-      * 若設為&#x200B;**false，**，SDK會自動向一般使用者顯示SFSafariViewController。 SDK會進一步導覽至MVPD登入頁面URL。
+   * **handleSVC** — 布林值，表示程式設計師是否會處理SFSafariViewControllers。 如需詳細資訊，請參閱iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的[SFSafariViewController支援。
+      * 若設為&#x200B;**false，** SDK會自動向一般使用者顯示SFSafariViewController。 SDK會進一步導覽至MVPD登入頁面URL。
       * 若設為&#x200B;**true，** SDK將&#x200B;**NOT**&#x200B;自動向一般使用者顯示SFSafariViewController。 SDK將進一步觸發&#x200B;**navigate(toUrl：{url}， useSVC：YES)**。
-* **device\_info** — 使用者端資訊，如[傳遞使用者端資訊](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md)中所述。
+* **device\_info** — 使用者端資訊，如[傳遞使用者端資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中所述。
 
 [回到頂端……](#apis)
 
@@ -182,7 +182,7 @@ ht-degree: 0%
 如果未使用`urls`引數，則產生的網路呼叫會鎖定預設服務提供者URL：AdobeRELEASE/生產環境。
 
 
-如果為`urls`引數提供了值，則產生的網路呼叫會鎖定`urls`引數中提供的所有URL。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD，AccessEnabler會記住關聯服務提供者的URL。 所有後續的軟體權利檔案要求都會導向在設定階段與目標MVPD配對之服務提供者相關聯的URL。
+如果為`urls`引數提供了值，則產生的網路呼叫會鎖定`urls`引數中提供的所有URL。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD， AccessEnabler會記住關聯服務提供者的URL。 所有後續的軟體權利檔案請求都會導向在設定階段與目標MVPD配對之服務提供者相關聯的URL。
 
 | API呼叫：要求者設定 |
 | --- |
@@ -201,7 +201,7 @@ ht-degree: 0%
 **引數：**
 
 * *requestorID*：與程式設計師相關聯的唯一識別碼。 首次向Adobe Pass驗證服務註冊時，請將Adobe指派的唯一ID傳遞至您的網站。
-* *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 這樣做時，MVPD清單會由來自所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是先回應且支援該MVPD的提供者。
+* *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 若這麼做，MVPD清單將由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是說，第一個回應並支援該MVPD的提供者。
 
 >[!NOTE]
 >
@@ -223,7 +223,7 @@ ht-degree: 0%
 
 如果未使用`urls`引數，則產生的網路呼叫會鎖定預設服務提供者URL：AdobeRELEASE/生產環境。
 
-如果為`urls`引數提供了值，則產生的網路呼叫會鎖定`urls`引數中提供的所有URL。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD，AccessEnabler會記住關聯服務提供者的URL。 所有後續的軟體權利檔案要求都會導向在設定階段與目標MVPD配對之服務提供者相關聯的URL。
+如果為`urls`引數提供了值，則產生的網路呼叫會鎖定`urls`引數中提供的所有URL。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD， AccessEnabler會記住關聯服務提供者的URL。 所有後續的軟體權利檔案請求都會導向在設定階段與目標MVPD配對之服務提供者相關聯的URL。
 
 | API呼叫：要求者設定 |
 | --- |
@@ -241,7 +241,7 @@ ht-degree: 0%
 
 * *requestorID*：與程式設計師相關聯的唯一識別碼。 首次向Adobe Pass驗證服務註冊時，請將Adobe指派的唯一ID傳遞至您的網站。
 * *signedRequestorID*： **此引數存在於iOS AccessEnabler 1.2或更新版本中。**&#x200B;以您的私密金鑰數位簽署的請求者ID復本。<!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->。
-* *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 這樣做時，MVPD清單會由來自所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是先回應且支援該MVPD的提供者。
+* *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 若這麼做，MVPD清單將由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是說，第一個回應並支援該MVPD的提供者。
 
 **附註：**&#x200B;如果未使用`serviceProviders`引數呼叫，程式庫將會從預設服務提供者（亦即，`https://sp.auth.adobe.com`用於生產設定檔，或`https://sp.auth-staging.adobe.com`用於暫存設定檔）擷取組態。 如果提供`serviceProviders`引數，它必須是URL的陣列。組態資訊會從所有指定的端點擷取並合併。 如果不同的服務提供者回應中存在重複的資訊，衝突會以回應時間最快的伺服器來解決（亦即，以回應時間最短的伺服器優先）。
 
@@ -260,7 +260,7 @@ ht-degree: 0%
 
 如果未使用`urls`引數，則產生的網路呼叫會鎖定預設服務提供者URL：AdobeRELEASE/生產環境。
 
-如果為`urls`引數提供了值，則產生的網路呼叫會鎖定`urls`引數中提供的所有URL。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD，AccessEnabler會記住關聯服務提供者的URL。 所有後續的軟體權利檔案要求都會導向在設定階段與目標MVPD配對之服務提供者相關聯的URL。
+如果為`urls`引數提供了值，則產生的網路呼叫會鎖定`urls`引數中提供的所有URL。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD， AccessEnabler會記住關聯服務提供者的URL。 所有後續的軟體權利檔案請求都會導向在設定階段與目標MVPD配對之服務提供者相關聯的URL。
 
 
 
@@ -312,7 +312,7 @@ ht-degree: 0%
 
 * *requestorID*：與程式設計師相關聯的唯一識別碼。 第一次使用時，請將Adobe指派的唯一ID傳遞至您的網站   已向Adobe Pass驗證服務註冊。
 * *signedRequestorID*： **此引數存在於iOS AccessEnabler中   版本1.2和更新版本。**&#x200B;以您的私密金鑰數位簽署的請求者ID復本。<!--For more details, see [Registering Native Clients](https://tve.helpdocsonline.com/registering-native-clients)-->。
-* *url*：選用引數；預設為Adobe服務提供者   已使用(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 這樣做時，MVPD清單會由來自所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是先回應且支援該MVPD的提供者。
+* *url*：選用引數；預設為Adobe服務提供者   已使用(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 若這麼做，MVPD清單將由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是說，第一個回應並支援該MVPD的提供者。
 * secret和publicKey：用來簽署第二個熒幕呼叫的秘密和公開金鑰。 如需詳細資訊，請參閱[無使用者端檔案](#create_dev)。
 
 如果未使用`serviceProviders`引數呼叫，程式庫將會從預設服務提供者(亦即，生產設定檔的`https://sp.auth.adobe.com`或暫存設定檔的https://sp.auth-staging.adobe.com)擷取組態。 如果提供`serviceProviders`引數，它必須是URL的陣列。組態資訊會從所有指定的端點擷取並合併。 如果不同的服務提供者回應中存在重複的資訊，衝突會以回應時間最快的伺服器來解決（亦即，以回應時間最短的伺服器優先）。
@@ -408,10 +408,10 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 **描述：**&#x200B;啟動完整驗證工作流程。 首先檢查驗證狀態。 如果尚未驗證，則會啟動驗證流程狀態機器：
 
-* 如果上次驗證嘗試成功，則MVPD   已略過選取階段且   已觸發[`navigateToUrl:`](#nav2url)回呼。 此   應用程式會使用此回呼來例項化WebView控制項，該控制項會以MVPD的登入頁面顯示使用者。 **[注意：截至Access Enabler 1.5，此功能無法使用，因為SDK]存在限制。**
-* 如果上次驗證嘗試不成功，或使用者明確登出，則[`displayProviderDialog:`](#dispProvDialog)回呼為   已觸發。 您的應用程式會使用此回呼來顯示MVPD選取UI。 此外，您的應用程式必須透過[`setSelectedProvider:`](#setSelProv)方法通知AccessEnabler程式庫有關使用者的MVPD選取專案，以繼續驗證流程。
+* 如果上次驗證嘗試成功，則MVPD   已略過選取階段且   已觸發[`navigateToUrl:`](#nav2url)回呼。 此   應用程式會使用此回呼來例項化WebView控制項，該控制項會向使用者顯示MVPD的登入頁面。 **[注意：截至Access Enabler 1.5，此功能無法使用，因為SDK]中的限制。**
+* 如果上次驗證嘗試不成功，或使用者明確登出，則[`displayProviderDialog:`](#dispProvDialog)回呼為   已觸發。 您的應用程式會使用此回呼來顯示MVPD選擇UI。 此外，您的應用程式必須透過[`setSelectedProvider:`](#setSelProv)方法通知AccessEnabler程式庫有關使用者的MVPD選取專案，以繼續驗證流程。
 
-由於在MVPD登入頁面上驗證使用者的認證，您的應用程式必須監督使用者在MVPD登入頁面上驗證時發生的多個重新導向操作。 輸入正確的認證時，會將WebView控制項重新導向至由`ADOBEPASS_REDIRECT_URL`常數定義的自訂URL。 此URL不打算由WebView載入。 應用程式必須攔截此URL，並將此事件解譯為登入階段完成的訊號。 然後，它應該將控制項交給AccessEnabler，以完成驗證流程（透過呼叫[handleExternalURL](#handleExternalURL)方法）。
+由於使用者的認證是在MVPD登入頁面上驗證的，因此您的應用程式必須監控使用者在MVPD登入頁面進行驗證時發生的多個重新導向操作。 輸入正確的認證時，會將WebView控制項重新導向至由`ADOBEPASS_REDIRECT_URL`常數定義的自訂URL。 此URL不打算由WebView載入。 應用程式必須攔截此URL，並將此事件解譯為登入階段完成的訊號。 然後，它應該將控制項交給AccessEnabler，以完成驗證流程（透過呼叫[handleExternalURL](#handleExternalURL)方法）。
 
 最後，驗證狀態會透過[`setAuthenticationStatus:errorCode:`](#setAuthNStatus)回呼傳達給應用程式。
 
@@ -475,7 +475,7 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 **描述：**&#x200B;啟動完整驗證工作流程。 首先檢查驗證狀態。 如果尚未驗證，則會啟動驗證流程狀態機器：
 
-* 如果目前的要求者至少有一個支援SSO的MVPD，將會呼叫[presentTvProviderDialog()](#presentTvDialog)。 如果沒有任何MVPD支援SSO，則傳統驗證流程將開始，而篩選引數將被忽略。
+* 如果目前的要求者至少有一個支援SSO的MVPD，將會呼叫[presentTvProviderDialog()](#presentTvDialog)。 如果任何MVPD都不支援SSO，傳統驗證流程就會開始，而篩選引數會被忽略。
 * 使用者完成之後，將會觸發Apple SSO流程[`dismissTvProviderDialog()`](#dismissTvDialog)，而且驗證程式將會完成。
 
 最後，驗證狀態會透過[`setAuthenticationStatus:errorCode:`](#setAuthNStatus)回呼傳達給應用程式。
@@ -526,7 +526,7 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 * *forceAuthn*：指定是否應該啟動驗證流程的標幟，無論使用者是否已驗證。
 * *資料*：包含要傳送至Pay-TV pass服務之索引鍵值組的字典。 Adobe可使用此資料來啟用未來的功能，而不需變更SDK。
-* 篩選器：包含兩個MVPD ID清單的字典，應會顯示在Apple SSO對話方塊中。 任何不支援SSO的MVPD將被忽略，但順序將被遵守。 字典必須有兩個索引鍵：
+* 篩選器：包含兩個MVPD ID清單的字典，應顯示在Apple SSO對話方塊中。 任何不支援SSO的MVPD都會被忽略，但順序將會被遵守。 字典必須有兩個索引鍵：
    * TV\_PROVIDERS：包含所有應該出現在選擇器中的MVPD的清單
    * FEATURED\_TV\_PROVIDERS：包含所有應在選擇器中標示為精選的MVPD的清單。 此清單中的MVPD也必須在TV\_PROVIDERS清單中指定。
 
@@ -578,7 +578,7 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 * *forceAuthn*：指定是否應該啟動驗證流程的標幟，無論使用者是否已驗證。
 * *資料*：包含要傳送至Pay-TV pass服務之索引鍵值組的字典。 Adobe可使用此資料來啟用未來的功能，而不需變更SDK。
-* 篩選器：應顯示在Apple SSO對話方塊中的MVPD ID清單。 任何不支援SSO的MVPD將被忽略，但順序將被遵守。
+* 篩選器：應顯示在MVPD SSO對話方塊中的Apple ID清單。 任何不支援SSO的MVPD都會被忽略，但順序將會被遵守。
 
 已觸發&#x200B;**回呼：** `setAuthenticationStatus:errorCode:, presentTvProviderDialog, dismissTvProviderDialog`
 
@@ -591,7 +591,7 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 **檔案：** AccessEnabler/headers/EntitlementDelegate.h
 
-**說明**&#x200B;由AccessEnabler觸發的回呼，通知應用程式必須具現化適當的UI元素，才能讓使用者選取想要的MVPD。 回呼會提供MVPD物件清單，內含其他資訊，可協助您正確建立選取專案UI面板（例如指向MVPD標誌的URL、好記的顯示名稱等）
+**說明**&#x200B;由AccessEnabler觸發的回呼，通知應用程式必須具現化適當的UI元素，才能讓使用者選取想要的MVPD。 回呼會提供MVPD物件清單，內含其他資訊，有助於正確建立選取專案UI面板(例如指向MVPD標誌的URL、好記的顯示名稱等)
 
 使用者選取想要的MVPD後，上層應用程式必須呼叫`setSelectedProvider:`並傳遞與使用者選取專案相對應的MVPD識別碼，以恢複驗證流程。
 
@@ -618,7 +618,7 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 **引數**：
 
-* *mvpds*：包含MVPD相關資訊的MVPD物件清單，應用程式可使用此清單來建置MVPD選取專案UI元素。
+* *mvpds*：包含MVPD相關資訊的MVPD物件清單，應用程式可使用此清單來建置MVPD選擇UI元素。
 
 **觸發者：** `getAuthentication`，[`getAuthentication:withData:`](#getAuthN)，`getAuthorization:`，[`getAuthorization:withData:`](#getAuthZ)
 
@@ -631,9 +631,9 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 **檔案：** AccessEnabler/headers/AccessEnabler.h
 
-**描述：**&#x200B;您的應用程式呼叫這個方法，以告知存取啟用程式使用者的MVPD選擇。 應用程式可以使用此方法來選取或變更用於驗證的服務提供者。
+**描述：**&#x200B;您的應用程式呼叫此方法，以告知存取啟用程式使用者的MVPD選擇。 應用程式可以使用此方法來選取或變更用於驗證的服務提供者。
 
-如果選取的MVPD是TempPass MVPD，它會自動透過該MVPD進行驗證，之後不需要呼叫getAuthentication()。
+如果選取的MVPD是TempPass MVPD，它隨後將自動使用該MVPD進行驗證，而無需呼叫getAuthentication()。
 
 請注意，這不適用於促銷暫時傳遞，因為getAuthentication()方法有額外的引數。
 
@@ -709,7 +709,7 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 **檔案：** AccessEnabler/headers/EntitlementDelegate.h
 
-**描述：**&#x200B;若您的應用程式先前透過[setOptions(\[&quot;handleSVC&quot;：true&quot;\])](#setOptions)呼叫啟用手動Safari檢視控制器(SVC)處理，且只有MVPD需要Safari檢視控制器(SVC)時，AccessEnabler會觸發回呼，而非`navigateToUrl:`回呼。 對於所有其他MVPD，將會呼叫`navigateToUrl:`回呼。 如需如何管理Safari檢視控制器(SVC)的詳細資訊，請參閱iOS SDK 3.2+](/help/authentication/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的[SFSafariViewController支援。
+**描述：**&#x200B;若您的應用程式先前透過[setOptions(\[&quot;handleSVC&quot;：true&quot;\])](#setOptions)呼叫啟用手動Safari檢視控制器(SVC)處理，且只有MVPD需要Safari檢視控制器(SVC)時，AccessEnabler會觸發回呼，而非`navigateToUrl:`回呼。 對於所有其他MVPD，將會呼叫`navigateToUrl:`回呼。 如需如何管理Safari檢視控制器(SVC)的詳細資訊，請參閱iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的[SFSafariViewController支援。
 
 與`navigateToUrl:`回呼類似，`navigateToUrl:useSVC:`由AccessEnabler觸發，要求您的應用程式將`SFSafariViewController`控制器具現化，並載入回呼的&#x200B;**`url`**&#x200B;引數中提供的URL。 回呼會傳遞代表驗證端點的URL或登出端點的URL的&#x200B;**`url`**&#x200B;引數，以及指定應用程式必須使用`SFSafariViewController`的&#x200B;**`useSVC`**&#x200B;引數。
 
@@ -788,7 +788,7 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 **檔案：** AccessEnabler/headers/AccessEnabler.h
 
-**描述：**&#x200B;從後端伺服器要求驗證Token，以完成驗證流程。 應用程式只應呼叫這個方法，以回應以下事件：主控MVPD登入頁面的WebView控制項被重新導向至由`ADOBEPASS_REDIRECT_URL`常數定義的自訂URL。
+**描述：**&#x200B;從後端伺服器要求驗證Token，以完成驗證流程。 應用程式只應呼叫這個方法，以回應託管MVPD登入頁面的WebView控制項被重新導向至由`ADOBEPASS_REDIRECT_URL`常數定義的自訂URL的事件。
 
 
 <table class="pass_api_table">
@@ -1159,7 +1159,7 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
    * `USER_NOT_AUTHORIZED_ERROR` — 使用者無法授權
 指定資源的
 * *description*：有關失敗情況的其他詳細資料。 如果此描述性字串因任何原因而無法使用，Adobe Pass驗證會傳送空白字串&#x200B;**(&quot;)**。\
-  MVPD可使用此字串來傳遞自訂錯誤訊息或銷售相關訊息。 例如，如果拒絕訂閱者的資源授權，MVPD會傳送訊息，例如：「您目前沒有封裝中此通道的存取權。 若要升級您的封裝，請按一下&#x200B;**這裡**。」 此訊息會由Adobe Pass驗證透過此回呼傳送給程式設計師，程式設計師可以選擇顯示或忽略此訊息。 Adobe Pass驗證也可以使用此引數來提供可能導致錯誤的狀況通知。 例如，「與提供者的授權服務通訊時發生網路錯誤」。
+  MVPD可使用此字串來傳遞自訂錯誤訊息或銷售相關訊息。 例如，如果訂閱者拒絕對資源的授權，MVPD可以傳送訊息，例如：「您目前沒有封裝中此頻道的存取權。 若要升級您的封裝，請按一下&#x200B;**這裡**。」 此訊息會由Adobe Pass驗證透過此回呼傳送給程式設計師，程式設計師可以選擇顯示或忽略此訊息。 Adobe Pass驗證也可以使用此引數來提供可能導致錯誤的狀況通知。 例如，「與提供者的授權服務通訊時發生網路錯誤」。
 
 **觸發者：** `checkAuthorization:`，[`checkAuthorization:withData:`](#checkAuthZ)，`getAuthorization:`，[`getAuthorization:withData:`](#getAuthZ)
 
@@ -1248,7 +1248,7 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 **檔案：** AccessEnabler/headers/EntitlementDelegate.h
 
-**描述**&#x200B;由AccessEnabler觸發的回呼，將目前所選MVPD的相關資訊傳送給應用程式。
+**描述**&#x200B;由AccessEnabler觸發的回呼，此回呼會將目前所選MVPD的相關資訊傳送給應用程式。
 
 <table class="pass_api_table">
 <colgroup>
@@ -1287,7 +1287,7 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 程式設計師可以使用兩種中繼資料型別：
 
 * 靜態中繼資料（驗證權杖TTL、授權權杖TTL和裝置ID）
-* 使用者中繼資料（使用者特定資訊，例如使用者ID、郵遞區號；可在驗證和授權流程中從MVPD傳遞至使用者裝置）
+* 使用者中繼資料(使用者特定資訊，例如使用者ID、郵遞區號；可在驗證和授權流程中從MVPD傳遞至使用者的裝置)
 
 <table class="pass_api_table">
 <colgroup>
@@ -1319,12 +1319,12 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
       * `zip` — 郵遞區號清單
       * `householdID` — 家庭識別碼。 在MVPD不支援附屬帳戶的情況下，這將與`userID`相同。
       * `maxRating` — 使用者最大家長分級的集合
-      * `userID` — 使用者識別碼。 如果MVPD支援附屬帳戶，且使用者不是主帳戶，則`userID`將不同於`householdID.`
+      * `userID` — 使用者識別碼。 如果MVPD支援附屬帳戶，且使用者不是主要帳戶，則`userID`將與`householdID.`不同
       * `channelID` — 使用者有權檢視的管道清單。
 
   >[!NOTE]
   >
-  >程式設計師實際可用的使用者中繼資料取決於MVPD提供的內容。 此清單將隨著新的中繼資料可用並新增到Adobe Pass驗證系統中而展開。
+  >程式設計師實際可用的使用者中繼資料取決於MVPD提供的功能。 此清單將隨著新的中繼資料可用並新增到Adobe Pass驗證系統中而展開。
 
 已觸發&#x200B;**回呼：** [`setMetadataStatus:encrypted:forKey:andArguments:`](#setMetaStatus)
 
@@ -1338,7 +1338,7 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 **檔案：** AccessEnabler/headers/EntitlementDelegate.h
 
-如果目前的要求者支援至少一個支援SSO的MVPD，在呼叫[getAuthentication()](#getAuthN)之後，AccessEnabler會觸發&#x200B;**描述**&#x200B;回呼。
+如果目前的要求者支援至少一個支援SSO的MVPD，呼叫[getAuthentication()](#getAuthN)後AccessEnabler會觸發&#x200B;**描述**&#x200B;回呼。
 
 <table class="pass_api_table">
 <colgroup>
@@ -1473,20 +1473,20 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 **檔案：** AccessEnabler/headers/model/MVPD.h
 
-**描述**&#x200B;描述MVPD物件。 可用於取得MVPD屬性的相關資訊。
+**描述**&#x200B;說明MVPD物件。 可用來取得MVPD屬性的相關資訊。
 
 **可用性：** v1.0+ [boardingStatus屬性可從v2.2]取得
 
 **屬性**：
 
-* (NSString) ID - MVPD ID。
+* (NSString) ID - MVPD Id。
 * (NSString) displayName - MVPD名稱。 [這應該用於顯示在選擇器中]
 * (NSString) logoURL - MVPD標誌位址。
 * （布林值） enablePlatformServices — 如果為true，則MVPD支援[Apple SSO](#presentTvDialog)之類的SSO服務。
 * (NSString) boardingStatus — 可以有3個值：
    * 無 — MVPD不支援Apple SSO。
-   * 選取器 — MVPD會顯示在Apple選取器中，但驗證流程會由Adobe完成。
-   * 支援 — Apple完全支援MVPD，且將使用Apple的SSO代號。
+   * 選取器 — MVPD會顯示在Apple選取器中，但驗證流程會依Adobe完成。
+   * 支援 — Apple完全支援MVPD，並將使用Apple的SSO代號。
 
 [回到頂端……](#apis)
 
@@ -1532,7 +1532,7 @@ AccessEnabler會觸發其他回呼，而此回呼不一定與權益流程相關�
 * *event*：正在追蹤之事件的程式碼。 追蹤事件型別共有三種：
    * **authorizationDetection：**&#x200B;任何時候授權權杖要求傳回（事件為`TRACKING_AUTHORIZATION`）
    * **authenticationDetection：**&#x200B;在任何驗證檢查發生時（事件為`TRACKING_AUTHENTICATION`）
-   * **mvpdSelection：** （當使用者在MVPD選擇表單中選取MVPD時） （事件為`TRACKING_GET_SELECTED_PROVIDER`）
+   * **mvpdSelection：**&#x200B;當使用者在MVPD選擇表單中選取MVPD （事件為`TRACKING_GET_SELECTED_PROVIDER`）時
 * *資料*：與報告事件相關的其他資料。 此資料會以值清單的形式呈現。
 
 **觸發者：** `checkAuthentication`，`getAuthentication`，[`getAuthentication:withData:`](#getAuthN)，`checkAuthorization:`，[`checkAuthorization:withData:`](#checkAuthZ)，`getAuthorization:`，[`getAuthorization:withData:`](#getAuthZ)，`setSelectedProvider:`

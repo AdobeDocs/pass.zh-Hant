@@ -2,14 +2,14 @@
 title: Android SDK逐步指南
 description: Android SDK逐步指南
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1681'
+source-wordcount: '1682'
 ht-degree: 0%
 
 ---
 
-# Android SDK逐步指南 {#android-sdk-cookbook}
+# （舊版） Android SDK逐步指南 {#android-sdk-cookbook}
 
 >[!NOTE]
 >
@@ -203,7 +203,7 @@ Android資料庫(AccessEnabler)
 ### F.登出流程 {#logout_flow}
 
 1. 呼叫[`logout()`](#$logout)將使用者登出。\
-   AccessEnabler會清除目前MVPD的所有快取值和權杖，這些值及權杖適用於目前的要求者以及具有「單一登入」的要求者。 清除快取之後，AccessEnabler會進行伺服器呼叫以清除伺服器端工作階段。  請注意，由於伺服器呼叫可能會導致SAML重新導向至IdP （這允許IdP端的工作階段清理），此呼叫必須在所有重新導向之後。 因此，必須在WebView控制項中處理這個呼叫。
+   AccessEnabler會清除目前MVPD的所有快取值和權杖，以供目前的要求者使用，也可供具有單一登入要求的要求者使用。 清除快取之後，AccessEnabler會進行伺服器呼叫以清除伺服器端工作階段。  請注意，由於伺服器呼叫可能會導致SAML重新導向至IdP （這允許IdP端的工作階段清理），此呼叫必須在所有重新導向之後。 因此，必須在WebView控制項中處理這個呼叫。
 
    a.遵循與驗證工作流程相同的模式，AccessEnabler網域會向UI應用程式層提出要求（透過`navigateToUrl()`回呼）以建立WebView控制項，並指示該控制項在後端伺服器上載入登出端點的URL。
 
@@ -217,4 +217,4 @@ Android資料庫(AccessEnabler)
 
 [這裡](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AndroidSSOUserFlows.pdf)您有一份檔案，說明使用多個MVPD時的行為，以及使用者從應用程式登出時發生的情況。
 
-使用Android SDK 2.0.0以上版本時，可使用此描述的行為。
+使用Android SDK版本>= 2.0.0時，可使用此描述的行為。

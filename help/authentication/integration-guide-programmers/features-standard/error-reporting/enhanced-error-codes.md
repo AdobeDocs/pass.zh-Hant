@@ -2,9 +2,9 @@
 title: 增強的錯誤碼
 description: 增強的錯誤碼
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '2606'
+source-wordcount: '2610'
 ht-degree: 2%
 
 ---
@@ -18,14 +18,14 @@ ht-degree: 2%
 增強的「錯誤碼」代表Adobe Pass驗證功能，可向整合以下專案的使用者端應用程式提供其他錯誤資訊：
 
 * Adobe Pass驗證REST API：
-   * [REST API v1](../../legacy/rest-api-v1/apis/rest-api-overview.md)
    * [REST API v2](../../rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+   * [（舊版） REST API v1](../../legacy/rest-api-v1/rest-api-overview.md)
 * Adobe Pass驗證SDK預先授權API：
-   * [JavaScript SDK （預先授權API）](../../legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
-   * [iOS/tvOS SDK （預先授權API）](../../legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
-   * [Android SDK （預先授權API）](../../legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
+   * [（舊版） JavaScript SDK （預先授權API）](../../legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
+   * [（舊版） iOS/tvOS SDK （預先授權API）](../../legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
+   * [（舊版） Android SDK （預先授權API）](../../legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
 
-  _(*) Preauthorize API是唯一支援增強型錯誤碼的Adobe Pass Authentication SDK API。_
+  _(*) Preauthorize API是唯一支援增強型錯誤碼的Adobe Pass驗證SDK API。_
 
 >[!IMPORTANT]
 >
@@ -256,42 +256,6 @@ _(*)對於某些錯誤，多個動作可能是可能的解決方案，但「acti
 
 ## 清單 {#enhanced-error-codes-lists}
 
-### REST API v1 {#enhanced-error-codes-lists-rest-api-v1}
-
-下表列出使用者端應用程式在與Adobe Pass驗證REST API v1整合時可能遇到的增強型錯誤代碼。
-
-| 動作 | 程式碼 | 狀態 | 訊息 |
-|--------------------|---------------------------------------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **無** | *invalid_requestor* | 400 | 要求者引數遺失或無效。 |
-|                    | *invalid_device_info* | 400 | 裝置資訊遺失或無效。 |
-|                    | *invalid_device_id* | 400 | 裝置識別碼遺失或無效。 |
-|                    | *missing_resource* | 400， 412 | 缺少資源引數。 |
-|                    | *格式錯誤的authz_request* | 400， 412 | 授權要求為空值或無效。 |
-|                    | *preauthorization_denied_by_mvpd* | 403 | MVPD在要求指定資源的預先授權時傳回「拒絕」決定。 |
-|                    | *authorization_denied_by_mvpd* | 403 | MVPD在要求指定資源的授權時傳回「拒絕」決定。 |
-|                    | *authorization_denied_by_parental_controls* | 403 | MVPD因為指定資源的家長監護設定，而傳回「拒絕」決定。 |
-|                    | *內部錯誤* | 400， 405， 500 | 由於內部伺服器錯誤，請求失敗。 |
-| **組態** | *未知的整合* | 400， 412 | 指定的程式設計師和身分提供者之間的整合不存在。 使用TVE Dashboard建立所需的整合。 |
-|                    | *太多資源* | 403 | 授權或預先授權要求失敗，因為查詢的資源太多。 請聯絡支援團隊，以正確設定授權和預先授許可權制。 |
-| **驗證** | *authentication_session_issuer_mismatch* | 400 | 授權要求失敗，因為授權流程所指示的MVPD與發出驗證工作階段的MVPD不同。 使用者必須使用所需的MVPD重新驗證才能繼續。 |
-|                    | *authorization_denied_by_hba_policies* | 403 | MVPD因為家用驗證原則而傳回「拒絕」決定。 目前的驗證是使用家用驗證流程(HBA)取得的，但裝置在請求指定資源的授權時已不在家中。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
-|                    | *authorization_denied_by_session_invalidated* | 403 | 身分提供者已使驗證工作階段失效。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
-|                    | *identity_not_recovered_by_mvpd* | 403 | 授權要求失敗，因為MVPD無法辨識使用者身分。 |
-|                    | *authentication_session_invalidated* | 403 | 身分提供者已使驗證工作階段失效。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
-|                    | *authentication_session_missing* | 403， 412 | 無法擷取與此要求關聯的驗證工作階段。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
-|                    | *authentication_session_expired* | 403， 412 | 目前的驗證工作階段已過期。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
-|                    | *preauthorization_authentication_session_missing* | 412 | 無法擷取與此要求關聯的驗證工作階段。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
-|                    | *preauthorization_authentication_session_expired* | 412 | 目前的驗證工作階段已過期。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
-| **授權** | *authorization_not_found* | 403， 404 | 找不到指定資源的授權。 使用者必須取得新授權才能繼續。 |
-|                    | *authorization_expired* | 410 | 指定資源的先前授權已過期。 使用者必須取得新授權才能繼續。 |
-| **重試** | *network_received_error* | 403 | 從關聯的合作夥伴服務擷取回應時發生讀取錯誤。 重試請求可能會解決問題。 |
-|                    | *network_connection_timeout* | 403 | 與關聯的合作夥伴服務發生連線逾時。 重試請求可能會解決問題。 |
-|                    | *excepted_execution_time_exceeded* | 403 | 請求未在允許的最長時間內完成。 重試請求可能會解決問題。 |
-
-### SDK預先授權API {#enhanced-error-codes-lists-sdks-preauthorize-api}
-
-請參閱前[節](#enhanced-error-codes-list-rest-api-v1)，瞭解使用者端應用程式在與Adobe Pass Authentication SDK整合時，預先授權API可能會遇到的可能增強型錯誤碼。
-
 ### REST API v2 {#enhanced-error-codes-lists-rest-api-v2}
 
 下表列出使用者端應用程式在與Adobe Pass Authentication REST API v2整合時可能遇到的增強型錯誤代碼。
@@ -316,9 +280,9 @@ _(*)對於某些錯誤，多個動作可能是可能的解決方案，但「acti
 |                              | *invalid_header_pfs_provider_info_expired* | 400 | 夥伴架構狀態標頭中的提供者資訊已過期。 |
 |                              | *無效整合* | 400 | 指定的服務提供者與mvpd之間的整合不存在或已停用。 |
 |                              | *invalid_authentication_session* | 400 | 與此請求關聯的驗證工作階段遺失或無效。 |
-|                              | *preauthorization_denied_by_mvpd* | 403 | MVPD在要求指定資源的預先授權時傳回「拒絕」決定。 |
-|                              | *authorization_denied_by_mvpd* | 403 | MVPD在要求指定資源的授權時傳回「拒絕」決定。 |
-|                              | *authorization_denied_by_parental_controls* | 403 | MVPD因為指定資源的家長監護設定，而傳回「拒絕」決定。 |
+|                              | *preauthorization_denied_by_mvpd* | 403 | 請求指定資源的預先授權時，MVPD傳回「拒絕」決定。 |
+|                              | *authorization_denied_by_mvpd* | 403 | 請求指定資源的授權時，MVPD已傳回「拒絕」決定。 |
+|                              | *authorization_denied_by_parental_controls* | 403 | 由於指定資源的家長監護設定，MVPD已傳回「拒絕」決定。 |
 |                              | *authorization_denied_by_degradation_rule* | 403 | 指定的服務提供者與mvpd之間的整合已套用降級規則，該規則會拒絕對所要求資源的授權。 |
 |                              | *內部伺服器錯誤* | 500 | 由於內部伺服器錯誤，請求失敗。 |
 | **組態** | *太多資源* | 403 | 授權或預先授權要求失敗，因為查詢的資源太多。 請聯絡支援團隊，以正確設定授權和預先授許可權制。 |
@@ -339,12 +303,48 @@ _(*)對於某些錯誤，多個動作可能是可能的解決方案，但「acti
 |                              | *authenticated_profile_invalid* | 403 | 與此請求相關聯的已驗證設定檔已失效。 |
 |                              | *temporary_access_duration_limit_exceeded* | 403 | 已超過暫時存取持續時間限制。 |
 |                              | *temporary_access_resources_limit_exceeded* | 403 | 已超過暫時存取資源限制。 |
-|                              | *authorization_denied_by_hba_policies* | 403 | MVPD因為家用驗證原則而傳回「拒絕」決定。 目前的驗證是透過家用驗證流程取得，但裝置在請求指定資源的授權時已不在家中。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
+|                              | *authorization_denied_by_hba_policies* | 403 | 由於家用驗證原則，MVPD已傳回「拒絕」決定。 目前的驗證是透過家用驗證流程取得，但裝置在請求指定資源的授權時已不在家中。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
 |                              | *authorization_denied_by_session_invalidated* | 403 | 身分提供者已使驗證工作階段失效。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
-|                              | *identity_not_recovered_by_mvpd* | 403 | 授權要求失敗，因為MVPD無法辨識使用者身分。 |
+|                              | *identity_not_recovered_by_mvpd* | 403 | 由於MVPD無法辨識使用者身分，授權要求失敗。 |
 | **重試** | *network_received_error* | 403 | 從關聯的合作夥伴服務擷取回應時發生讀取錯誤。 重試請求可能會解決問題。 |
 |                              | *network_connection_timeout* | 403 | 與關聯的合作夥伴服務發生連線逾時。 重試請求可能會解決問題。 |
 |                              | *excepted_execution_time_exceeded* | 403 | 請求未在允許的最長時間內完成。 重試請求可能會解決問題。 |
+
+### REST API v1 {#enhanced-error-codes-lists-rest-api-v1}
+
+下表列出使用者端應用程式在與Adobe Pass驗證REST API v1整合時可能遇到的增強型錯誤代碼。
+
+| 動作 | 程式碼 | 狀態 | 訊息 |
+|--------------------|---------------------------------------------------|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **無** | *invalid_requestor* | 400 | 要求者引數遺失或無效。 |
+|                    | *invalid_device_info* | 400 | 裝置資訊遺失或無效。 |
+|                    | *invalid_device_id* | 400 | 裝置識別碼遺失或無效。 |
+|                    | *missing_resource* | 400， 412 | 缺少資源引數。 |
+|                    | *格式錯誤的authz_request* | 400， 412 | 授權要求為空值或無效。 |
+|                    | *preauthorization_denied_by_mvpd* | 403 | 請求指定資源的預先授權時，MVPD傳回「拒絕」決定。 |
+|                    | *authorization_denied_by_mvpd* | 403 | 請求指定資源的授權時，MVPD已傳回「拒絕」決定。 |
+|                    | *authorization_denied_by_parental_controls* | 403 | 由於指定資源的家長監護設定，MVPD已傳回「拒絕」決定。 |
+|                    | *內部錯誤* | 400， 405， 500 | 由於內部伺服器錯誤，請求失敗。 |
+| **組態** | *未知的整合* | 400， 412 | 指定的程式設計師和身分提供者之間的整合不存在。 使用TVE Dashboard建立所需的整合。 |
+|                    | *太多資源* | 403 | 授權或預先授權要求失敗，因為查詢的資源太多。 請聯絡支援團隊，以正確設定授權和預先授許可權制。 |
+| **驗證** | *authentication_session_issuer_mismatch* | 400 | 授權要求失敗，因為針對授權流程指示的MVPD與發出驗證工作階段的不同。 使用者必須使用所需的MVPD重新驗證才能繼續。 |
+|                    | *authorization_denied_by_hba_policies* | 403 | 由於家用驗證原則，MVPD已傳回「拒絕」決定。 目前的驗證是使用家用驗證流程(HBA)取得的，但裝置在請求指定資源的授權時已不在家中。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
+|                    | *authorization_denied_by_session_invalidated* | 403 | 身分提供者已使驗證工作階段失效。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
+|                    | *identity_not_recovered_by_mvpd* | 403 | 由於MVPD無法辨識使用者身分，授權要求失敗。 |
+|                    | *authentication_session_invalidated* | 403 | 身分提供者已使驗證工作階段失效。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
+|                    | *authentication_session_missing* | 403， 412 | 無法擷取與此要求關聯的驗證工作階段。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
+|                    | *authentication_session_expired* | 403， 412 | 目前的驗證工作階段已過期。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
+|                    | *preauthorization_authentication_session_missing* | 412 | 無法擷取與此要求關聯的驗證工作階段。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
+|                    | *preauthorization_authentication_session_expired* | 412 | 目前的驗證工作階段已過期。 使用者必須使用支援的MVPD重新驗證才能繼續。 |
+| **授權** | *authorization_not_found* | 403， 404 | 找不到指定資源的授權。 使用者必須取得新授權才能繼續。 |
+|                    | *authorization_expired* | 410 | 指定資源的先前授權已過期。 使用者必須取得新授權才能繼續。 |
+| **重試** | *network_received_error* | 403 | 從關聯的合作夥伴服務擷取回應時發生讀取錯誤。 重試請求可能會解決問題。 |
+|                    | *network_connection_timeout* | 403 | 與關聯的合作夥伴服務發生連線逾時。 重試請求可能會解決問題。 |
+|                    | *excepted_execution_time_exceeded* | 403 | 請求未在允許的最長時間內完成。 重試請求可能會解決問題。 |
+
+### SDK預先授權API {#enhanced-error-codes-lists-sdks-preauthorize-api}
+
+請參閱前[節](#enhanced-error-codes-list-rest-api-v1)，瞭解使用者端應用程式在與Adobe Pass Authentication SDK整合時，預先授權API可能會遇到的可能增強型錯誤碼。
 
 ## 回應處理 {#enhanced-error-codes-response-handling}
 
@@ -368,4 +368,4 @@ _(*)對於某些錯誤，多個動作可能是可能的解決方案，但「acti
 
 1. **驗證和授權**：對於與驗證和授權相關的錯誤，您必須視需要提示使用者重新驗證或取得新的授權。
 
-1. **使用者意見反應**：選擇性，使用人類可讀的「訊息」和（可能的）「詳細資料」欄位，通知使用者此問題。 「詳細資料」文字訊息可能會從MVPD預先授權或授權端點傳遞，或在套用降級規則時從程式設計師傳遞。
+1. **使用者意見反應**：選擇性，使用人類可讀的「訊息」和（可能的）「詳細資料」欄位，通知使用者此問題。 「詳細資料」文字訊息可能會從MVPD預先授權或授權端點傳遞，或從程式設計師在套用降級規則時傳遞。

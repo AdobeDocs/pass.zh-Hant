@@ -2,14 +2,14 @@
 title: iOS/tvOS逐步指南
 description: iOS/tvOS逐步指南
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '2402'
+source-wordcount: '2403'
 ht-degree: 0%
 
 ---
 
-# iOS/tvOS SDK逐步指南 {#iostvos-sdk-cookbook}
+# （舊版） iOS/tvOS SDK逐步指南 {#iostvos-sdk-cookbook}
 
 >[!NOTE]
 >
@@ -177,7 +177,7 @@ I. [使用Apple SSO的登出流程](#logout_flow_with_AppleSSO) </br>
 
 1. 關閉UIWebView/WKWebView或SFSafariViewController控制器，並呼叫AccessEnabler的`handleExternalURL:url` API方法，該方法會指示AccessEnabler從後端伺服器擷取驗證權杖。
 
-1. （選擇性）呼叫[`checkPreauthorizedResources(resources)`](#$checkPreauth)以檢查使用者有權檢視哪些資源。 `resources`引數是與使用者的驗證Token關聯的受保護資源陣列。 從使用者的MVPD取得的授權資訊的一種用途是裝飾您的UI （例如，受保護內容旁邊的鎖定/解鎖符號）。
+1. （選擇性）呼叫[`checkPreauthorizedResources(resources)`](#$checkPreauth)以檢查使用者有權檢視哪些資源。 `resources`引數是與使用者的驗證Token關聯的受保護資源陣列。 從使用者MVPD取得的授權資訊用途之一，是裝飾您的UI （例如，受保護內容旁的鎖定/解鎖符號）。
 
    * **觸發器：** [`preauthorizedResources()`](#preauthResources)回呼
    * **執行點：**&#x200B;在完成驗證流程之後
@@ -189,7 +189,7 @@ I. [使用Apple SSO的登出流程](#logout_flow_with_AppleSSO) </br>
 1. 呼叫[`getAuthentication()`](#$getAuthN)以啟動驗證流程，或取得使用者已驗證的確認。
    **觸發器：**
 
-   * [presentTvProviderDialog()](#presentTvDialog)回呼（若使用者未驗證，且目前要求者至少擁有支援SSO的MVPD）。 如果沒有任何MVPD支援SSO，則會使用傳統驗證流程。
+   * [presentTvProviderDialog()](#presentTvDialog)回呼(若使用者未驗證，且目前要求者至少擁有支援SSO的MVPD)。 如果沒有任何MVPD支援SSO，則會使用傳統驗證流程。
 
 1. 使用者選取提供者後，AccessEnabler程式庫會取得驗證權杖，其中包含Apple VSA架構提供的資訊。
 
@@ -208,7 +208,7 @@ I. [使用Apple SSO的登出流程](#logout_flow_with_AppleSSO) </br>
 驗證流程，或取得使用者已在的確認
 已驗證。
    **觸發器：**
-   * [`presentTvProviderDialog()`](#presentTvDialog)回呼（若使用者未驗證，且目前要求者至少擁有支援SSO的MVPD）。 如果沒有任何MVPD支援SSO，則會使用傳統驗證流程。
+   * [`presentTvProviderDialog()`](#presentTvDialog)回呼(若使用者未驗證，且目前要求者至少擁有支援SSO的MVPD)。 如果沒有任何MVPD支援SSO，則會使用傳統驗證流程。
 
 1. 使用者選取提供者後，將會呼叫[`status()`](#status_callback_implementation)回呼。 將會提供註冊碼，且AccessEnabler程式庫會開始輪詢伺服器，以順利進行第二個熒幕驗證。
 

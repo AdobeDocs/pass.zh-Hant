@@ -2,14 +2,14 @@
 title: 註冊頁面
 description: 註冊頁面
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '493'
+source-wordcount: '494'
 ht-degree: 0%
 
 ---
 
-# 註冊頁面 {#registration-page}
+# （舊版）註冊頁面 {#registration-page}
 
 ## REST API端點 {#clientless-endpoints}
 
@@ -49,8 +49,8 @@ ht-degree: 0%
 | Accept | 標頭<br>值： application/json | 指出使用者端應該能夠瞭解的內容型別 |
 | 要求者 | 查詢引數 | 此作業有效的程式設計師要求者ID。 |
 | deviceId | 查詢引數 | 裝置識別碼位元組。 |
-| device_info/<br>X-Device-Info | device_info：內文<br> X-Device-Info：標頭 | 串流裝置資訊。<br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數的潛在大小以及GETURL長度的限制，它應該作為X-Device-Info傳遞到http標頭。 <br>檢視[傳遞裝置和連線資訊](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
-| mvpd | 查詢引數 | 此作業適用的MVPD ID。 |
+| device_info/<br>X-Device-Info | device_info：內文<br> X-Device-Info：標頭 | 串流裝置資訊。<br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數的潛在大小以及GETURL長度的限制，它應該作為X-Device-Info傳遞到http標頭。 <br>檢視[傳遞裝置和連線資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
+| mvpd | 查詢引數 | 此操作有效的MVPD ID。 |
 | ttl | 查詢引數 | 此regcode應在秒記憶體留多久。<br>**注意**： ttl允許的最大值為36000秒（10小時）。 較高的值會導致400 HTTP回應（錯誤請求）。 如果`ttl`留空，Adobe Pass驗證會設定30分鐘的預設值。 |
 | _deviceType_ | 查詢引數 | 已棄用，不應使用。 |
 | _deviceUser_ | 查詢引數 | 已棄用，不應使用。 |

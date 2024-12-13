@@ -2,14 +2,14 @@
 title: 擷取驗證Token
 description: 擷取驗證Token
 exl-id: 7fb03854-edad-41e7-b218-1858fc071876
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '274'
+source-wordcount: '275'
 ht-degree: 0%
 
 ---
 
-# 擷取驗證Token {#retrieve-authentication-token}
+# （舊版）擷取驗證Token {#retrieve-authentication-token}
 
 >[!NOTE]
 >
@@ -48,7 +48,7 @@ ht-degree: 0%
 | --- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 要求者 | 此作業有效的程式設計師要求者ID。 |
 | deviceId | 裝置識別碼位元組。 |
-| device_info/</br></br>X-Device-Info | 串流裝置資訊。</br></br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數的潛在大小以及GETURL長度的限制，它應該作為X-Device-Info傳遞到http標頭。 </br></br>檢視[傳遞裝置和連線資訊](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
+| device_info/</br></br>X-Device-Info | 串流裝置資訊。</br></br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數的潛在大小以及GETURL長度的限制，它應該作為X-Device-Info傳遞到http標頭。 </br></br>檢視[傳遞裝置和連線資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
 | _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>**注意**： device_info會取代此引數。 |
 | _deviceUser_ | 裝置使用者識別碼。</br></br>**注意**：若使用，deviceUser的值應該與[建立註冊代碼](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)要求中的值相同。 |
 | _appId_ | 應用程式id/名稱。 </br></br>**注意**： device_info會取代此引數。 若已使用，`appId`應具有與[建立註冊代碼](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)要求中相同的值。 |

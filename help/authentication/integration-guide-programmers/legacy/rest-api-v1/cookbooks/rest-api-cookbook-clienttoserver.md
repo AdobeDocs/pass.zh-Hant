@@ -2,14 +2,14 @@
 title: REST API逐步指南（使用者端對伺服器）
 description: Rest API逐步指南使用者端至伺服器。
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '876'
+source-wordcount: '877'
 ht-degree: 0%
 
 ---
 
-# REST API逐步指南（使用者端對伺服器） {#rest-api-cookbook-client-to-server}
+# （舊版） REST API逐步指南（使用者端對伺服器） {#rest-api-cookbook-client-to-server}
 
 >[!NOTE]
 >
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## 概觀 {#overview}
 
-本檔案逐步說明程式設計師的工程團隊，如何使用REST API服務整合「智慧型裝置」（遊戲主機、智慧型電視應用程式、機上盒等）與Adobe Pass驗證。 此使用者端對伺服器方法使用REST API （而非使用者端SDK），可讓不同平台有更廣泛的支援，針對這些平台，開發大量不重複SDK將不可行。 如需無使用者端解決方案運作方式的廣泛技術概覽，請參閱[無使用者端技術概覽](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/rest-api-overview.md)。
+本檔案逐步說明程式設計師的工程團隊，如何使用REST API服務整合「智慧型裝置」（遊戲主機、智慧型電視應用程式、機上盒等）與Adobe Pass驗證。 這種使用者端對伺服器方法使用REST API，而不是使用者端SDK，可讓不同平台有更廣泛的支援，針對這些平台，開發大量不重複SDK將不可行。 如需無使用者端解決方案運作方式的廣泛技術概覽，請參閱[無使用者端技術概覽](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)。
 
 
 此方法需要兩個元件（串流應用程式和AuthN應用程式）才能完成所需的流程：串流應用程式中的啟動、註冊、授權和檢視媒體流程，以及AuthN應用程式中的驗證流程。
@@ -36,11 +36,11 @@ Adobe Pass驗證REST API受[節流機制](/help/authentication/integration-guide
 | 型別 | 元件 | 說明 |
 | --- | --- | --- |
 | 串流裝置 | 串流應用程式 | 位在使用者串流裝置上並播放已驗證視訊的程式設計師應用程式。 |
-| | \[Optional\]驗證模組 | 如果串流裝置具有使用者代理程式（亦即Web瀏覽器），則AuthN模組會負責在MVPD IdP上驗證使用者。 |
+| | \[Optional\]驗證模組 | 如果串流裝置具有使用者代理程式（即網頁瀏覽器），則AuthN模組會負責在MVPD IdP上驗證使用者。 |
 | \[Optional\] AuthN裝置 | AuthN應用程式 | 如果串流裝置沒有使用者代理程式（亦即Web瀏覽器），則AuthN應用程式為程式設計人員網頁應用程式，可使用網頁瀏覽器從個別使用者的裝置進行存取。 |
-| Adobe基礎結構 | Adobe Pass服務 | 與MVPD IdP和AuthZ服務整合，並提供驗證和授權決定的服務。 |
-| MVPD基礎結構 | MVPD IdP | MVPD端點，提供認證型驗證服務來驗證其使用者的身分。 |
-| | MVPD AuthZ服務 | MVPD端點會根據使用者的訂閱、家長監護等提供授權決策。 |
+| Adobe基礎結構 | Adobe Pass服務 | 此服務會與MVPD IdP和AuthZ服務整合，並提供驗證和授權決策。 |
+| MVPD基礎結構 | MVPD IdP | MVPD端點，提供認證型驗證服務以驗證其使用者的身分。 |
+| | MVPD AuthZ服務 | MVPD端點，可根據使用者的訂閱、家長監護等提供授權決策。 |
 
 
 
@@ -134,13 +134,13 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
 某些裝置提供合作夥伴單一登入(SSO)的專屬支援：
 
-* [APPLE SSO](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v1.md)
+* [APPLE SSO](/help/authentication/integration-guide-programmers/legacy/sso-access/apple-sso-cookbook-rest-api-v1.md)
 
 ## 平台單一登入 {#platform-sso}
 
 某些裝置提供平台單一登入(SSO)的專屬支援：
 
-* [AMAZON SSO](../../../features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v1.md)
+* [AMAZON SSO](../../sso-access/amazon-sso-cookbook-rest-api-v1.md)
 * [Roku SSO](../../../features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
 
 ## REST API的TempPass和Promotification TempPass {#temppass}

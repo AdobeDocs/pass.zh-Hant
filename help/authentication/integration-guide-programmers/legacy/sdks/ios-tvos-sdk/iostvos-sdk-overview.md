@@ -1,15 +1,15 @@
 ---
-title: iOS/tvOS SDK總覽
-description: iOS/tvOS SDK總覽
+title: iOS/tvOS SDK概觀
+description: iOS/tvOS SDK概觀
 exl-id: b02a6234-d763-46c0-bc69-9cfd65917a19
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '3731'
+source-wordcount: '3732'
 ht-degree: 0%
 
 ---
 
-# iOS/tvOS SDK總覽 {#iostvos-sdk-overview}
+# （舊版） iOS/tvOS SDK概觀 {#iostvos-sdk-overview}
 
 >[!NOTE]
 >
@@ -25,7 +25,7 @@ iOS AccessEnabler是Objective C iOS/tvOS資料庫，可讓行動應用程式使�
 
 ## iOS和tvOS需求 {#reqs}
 
-如需iOS和tvOS平台以及Adobe Pass驗證的目前技術需求，請參閱[平台/裝置/工具需求](#ios)，並參閱SDK下載隨附的發行說明。 在本頁面的其餘部分中，您會看到註解適用於特定SDK版本及更新版本之變更的部分。 例如，以下是有關1.7.5 SDK的合法附註：
+如需iOS和tvOS平台以及Adobe Pass驗證的目前技術需求，請參閱[平台/裝置/工具需求](#ios)，並參閱SDK下載內容中的發行說明。 在本頁面的其餘部分中，您會看到註解適用於特定SDK版本及更新版本的變更的區段。 例如，以下是有關1.7.5 SDK的合法附註：
 
 ## 瞭解原生使用者端工作流程 {#flows}
 
@@ -61,9 +61,9 @@ AccessEnabler支援的所有權益工作流程都假設您先前已呼叫[`setRe
 
 1. 您的應用程式會呼叫AccessEnabler的`getAuthentication() `API方法來啟動驗證工作流程，此方法會檢查有效的快取驗證Token。
 1. 如果使用者目前已經驗證，AccessEnabler會呼叫您的[`setAuthenticationStatus()`](#setAuthNStatus)回呼函式，傳遞表示成功的驗證狀態，並結束流程。
-1. 如果使用者目前未驗證，則AccessEnabler會透過判斷使用者的上次驗證嘗試是否在指定的MVPD上成功來繼續驗證流程。 如果已快取MVPD ID且`canAuthenticate`旗標為true，或已使用[`setSelectedProvider()`](#setSelProv)選取MVPD，則不會使用MVPD選取對話方塊提示使用者。 驗證流程會繼續使用MVPD的快取值（也就是上次成功驗證期間使用的MVPD）。 系統會呼叫後端伺服器的網路，並將使用者重新導向至MVPD登入頁面（下方的步驟6）。
-1. 如果未快取MVPD ID，而且未使用[`setSelectedProvider()`](#setSelProv)選取MVPD，或`canAuthenticate`旗標設定為false，則會呼叫[`displayProviderDialog()`](#dispProvDialog)回呼。 此回呼會指示您的應用程式建立UI，向使用者顯示可供選擇的MVPD清單。 提供了一系列MVPD物件，其中包含您建置MVPD選取器所需的資訊。 每個MVPD物件描述MVPD實體，並包含MVPD的ID （例如XFINITY、AT\&amp;T等）和可以找到MVPD標誌的URL等資訊。
-1. 選取特定的MVPD後，您的應用程式必須通知AccessEnabler使用者的選擇。 一旦使用者選取想要的MVPD，您就會透過呼叫[`setSelectedProvider()`](#setSelProv)方法通知AccessEnabler使用者選取範圍。
+1. 如果使用者目前未驗證，AccessEnabler會判斷使用者的上次驗證嘗試在指定的MVPD中是否成功，以繼續驗證流程。 如果已快取MVPD ID且`canAuthenticate`旗標為true或使用[`setSelectedProvider()`](#setSelProv)選取了MVPD，則不會使用MVPD選取對話方塊提示使用者。 驗證流程會繼續使用MVPD的快取值(即上次成功驗證期間使用的MVPD)。 系統會呼叫後端伺服器的網路，並將使用者重新導向至MVPD登入頁面（下方的步驟6）。
+1. 如果未快取任何MVPD ID，而且未使用[`setSelectedProvider()`](#setSelProv)選取任何MVPD，或`canAuthenticate`標幟設定為false，則會呼叫[`displayProviderDialog()`](#dispProvDialog)回呼。 此回呼會指示您的應用程式建立UI，向使用者顯示可供選擇的MVPD清單。 提供了一系列MVPD物件，其中包含您建置MVPD選擇器所需的資訊。 每個MVPD物件都說明了一個MVPD實體，並包含MVPD的ID （例如XFINITY、AT\&amp;T等）和可以找到MVPD標誌的URL等資訊。
+1. 選取特定MVPD後，您的應用程式必須通知AccessEnabler使用者所做的選擇。 一旦使用者選取想要的MVPD，您就會透過呼叫[`setSelectedProvider()`](#setSelProv)方法通知AccessEnabler使用者選取範圍。
 1. iOS AccessEnabler會呼叫您的`navigateToUrl:`回呼或`navigateToUrl:useSVC:`回呼，以將使用者重新導向至MVPD登入頁面。 透過觸發其中一個，AccessEnabler會向您的應用程式發出要求，要求建立`UIWebView/WKWebView or SFSafariViewController`控制器並載入回呼`url`引數中提供的URL。 這是後端伺服器上驗證端點的URL。 對於tvOS AccessEnabler，會使用`statusDictionary`引數呼叫[status()](#status_callback_implementation)回呼，並立即開始輪詢第二個熒幕驗證。 `statusDictionary`包含需要用於第二個熒幕驗證的`registration code`。
 1. 若是iOS AccessEnabler，使用者會登陸MVPD的登入頁面，透過應用程式`UIWebView/WKWebView or SFSafariViewController `控制器的媒體輸入其認證。 請注意，在此傳輸期間會發生數個重新導向作業，且您的應用程式必須監視控制器在多重重新導向作業期間載入的URL。
 1. 若是iOS AccessEnabler，當`UIWebView/WKWebView or SFSafariViewController`控制器載入特定自訂URL時，您的應用程式必須關閉控制器並呼叫AccessEnabler的`handleExternalURL:url `API方法。 請注意，這個特定自訂URL實際上無效，控制器並非打算實際載入此URL。 應用程式必須將其解譯為驗證流程已完成，且關閉`UIWebView/WKWebView or SFSafariViewController`控制器是安全的訊號。 如果您的應用程式需要使用`SFSafariViewController `控制器，則特定自訂URL是由`application's custom scheme`所定義（例如： `adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`），否則此特定自訂URL是由`ADOBEPASS_REDIRECT_URL`常數（即`adobepass://ios.app`）所定義。
@@ -127,13 +127,13 @@ Adobe Pass驗證權利解決方案的核心是在成功完成驗證和授權工�
 
 #### 驗證Token
 
-- **AccessEnabler 1.7：**&#x200B;此SDK引入新的權杖儲存方法，可啟用多個Programmer-MVPD貯體，因此可啟用多個驗證Token。 現在，「每位請求者的驗證」案例和一般的驗證流程都會使用相同的儲存配置。 兩者之間唯一的差異在於執行驗證的方式：「每個請求者的驗證」包含一項新的改進（被動驗證），使AccessEnabler能夠基於儲存體中的驗證權杖存在（針對不同的程式設計人員）執行後端通道驗證。 使用者只需驗證一次，此工作階段將用於取得其他應用程式中的驗證權杖。 此後端管道流程會在[`setRequestor()`](#setReq)呼叫期間發生，且對程式設計師來說大部分是透明的。 **然而，這裡有一個重要的需求：程式設計師必須從主要使用者介面執行緒呼叫setRequestor()。**
-- **AccessEnabler 1.6和較舊版本：**&#x200B;驗證權杖在裝置上的快取方式取決於與目前MVPD相關聯的「**每個請求者的驗證」**&#x200B;旗標：
+- **AccessEnabler 1.7：**&#x200B;此SDK推出新的權杖儲存方法，可啟用多個程式設計人員 — MVPD貯體，因此可啟用多個驗證權杖。 現在，「每位請求者的驗證」案例和一般的驗證流程都會使用相同的儲存配置。 兩者之間唯一的差異在於執行驗證的方式：「每個請求者的驗證」包含一項新的改進（被動驗證），使AccessEnabler能夠基於儲存體中的驗證權杖存在（針對不同的程式設計人員）執行後端通道驗證。 使用者只需驗證一次，此工作階段將用於取得其他應用程式中的驗證權杖。 此後端管道流程會在[`setRequestor()`](#setReq)呼叫期間發生，且對程式設計師來說大部分是透明的。 **然而，這裡有一個重要的需求：程式設計師必須從主要使用者介面執行緒呼叫setRequestor()。**
+- **AccessEnabler 1.6和更舊版本：**&#x200B;驗證權杖在裝置上的快取方式取決於與目前MVPD相關聯的「**每個請求者的驗證」**&#x200B;旗標：
 
 <!-- end list -->
 
-1. 如果「每個請求者的驗證」功能已停用，則單一驗證權杖會儲存在全域作業範圍中；此權杖會在與目前MVPD整合的所有應用程式之間共用。
-1. 如果「每個請求者的驗證」功能已啟用，那麼權杖會明確關聯到執行驗證流程的「程式設計師」（權杖不會儲存在全域作業範圍中，而是儲存在只能看到該程式設計師應用程式的私人檔案中）。 更具體來說，將會停用不同應用程式之間的單一登入(SSO)；當切換至新的應用程式時，使用者需要明確執行驗證流程（假設第二個應用程式的程式設計師已整合至目前的MVPD，而且本機快取中沒有該程式設計師的驗證權杖）。
+1. 如果「每位請求者驗證」功能已停用，則單一驗證Token會儲存在本機全域剪貼簿中；此Token會與整合至目前MVPD的所有應用程式共用。
+1. 如果「每個請求者的驗證」功能已啟用，那麼權杖會明確關聯到執行驗證流程的「程式設計師」（權杖不會儲存在全域作業範圍中，而是儲存在只能看到該程式設計師應用程式的私人檔案中）。 更具體來說，將會停用不同應用程式之間的單一登入(SSO)；使用者在切換至新應用程式時，需要明確執行驗證流程(前提是第二個應用程式的程式設計師已整合至目前的MVPD，而且本機快取中沒有該程式設計師的驗證權杖)。
 
 
 
@@ -186,7 +186,7 @@ iOS AccessEnabler程式庫會將權杖資料儲存在名為&#x200B;*貼上板*&#
 
 - 如果2個應用程式之間的套件組合種子ID/團隊ID是由相同的布建設定檔產生，則它們是相同的。 如需詳細資訊，請前往此連結：
   [http://developer.apple.com/library/ios/\#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html](http://developer.apple.com/library/ios/#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html)
-- 無論使用什麼Adobe Pass Authentication SDK，iOS 7都會出現這種「跨SSO」限制。
+- 無論使用哪種Adobe Pass驗證SDK，iOS 7都會出現這種「跨SSO」限制。
 
 請閱讀此技術說明以瞭解在iOS 7和更新版本上設定SSO的詳細資訊（此技術說明適用於Access Enabler v1.8和更新版本）： <https://tve.zendesk.com/entries/58233434-Configuring-Pay-TV-pass-SSO-on-iOS>
 
@@ -194,13 +194,13 @@ iOS AccessEnabler程式庫會將權杖資料儲存在名為&#x200B;*貼上板*&#
 
 ### 權杖儲存(AccessEnabler 1.7)
 
-從AccessEnabler 1.7開始，權杖儲存體可支援多個Programmer-MVPD組合，依賴可容納多個驗證權杖的多層巢狀對應結構。 此新儲存裝置不會以任何方式影響AccessEnabler公用API，而且不需要程式設計師端進行變更。 以下是範例，
+從AccessEnabler 1.7開始，權杖儲存可支援多個程式設計人員 — MVPD組合，依賴可容納多個驗證權杖的多層巢狀對應結構。 此新儲存裝置不會以任何方式影響AccessEnabler公用API，而且不需要程式設計師端進行變更。 以下是範例，
 說明了這項新功能：
 
 1. 開啟App1 （由Programmer1開發）。
 1. 使用MVPD1 （與程式設計工具1整合）進行驗證。
 1. 暫停/關閉目前的應用程式，然後開啟App2 （由Programmer2開發）。
-1. 我們假設Programmer2未與MVPD2整合；因此，使用者將不會在App2中驗證。
+1. 我們假設Programmer2未與MVPD2整合，因此「不會」在App2中驗證使用者。
 1. 在App2中使用MVPD2 （已與Programmer2整合）進行驗證。
 1. 切換回App1；使用者仍將透過程式設計員1進行驗證。
 
@@ -208,7 +208,7 @@ iOS AccessEnabler程式庫會將權杖資料儲存在名為&#x200B;*貼上板*&#
 
 
 
-從某個程式設計人員/MVPD工作階段登出將會清除整個基礎儲存空間，包括裝置上的所有其他程式設計人員/MVPD驗證權杖。 另一方面，取消驗證流程（叫用[`setSelectedProvider(null)`](#setSelProv)）將不會清除基礎儲存體，但只會影響目前的程式設計員/MVPD驗證嘗試（透過清除目前程式設計員的MVPD）。
+從某個程式設計人員/MVPD工作階段登出後，將會清除整個基礎儲存空間，包括裝置上的所有其他程式設計人員/MVPD驗證權杖。 另一方面，取消驗證流程（叫用[`setSelectedProvider(null)`](#setSelProv)）將不會清除基礎儲存體，但只會影響目前的程式設計人員/MVPD驗證嘗試(透過清除目前程式設計人員的MVPD)。
 
 
 

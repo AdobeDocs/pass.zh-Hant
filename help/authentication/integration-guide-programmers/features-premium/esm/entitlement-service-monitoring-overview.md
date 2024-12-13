@@ -2,7 +2,7 @@
 title: 軟體權利檔案服務監視概觀
 description: 軟體權利檔案服務監視概觀
 exl-id: ebd5d650-0a32-4583-9045-5156356494e2
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '1303'
 ht-degree: 0%
@@ -42,7 +42,7 @@ ESM API並非為一般可用功能。  如需瞭解可用性問題，請聯絡�
 | authz成功 | 成功的授權數目 |
 | authz失敗 | MVPD在應用程式層級拒絕授權的數目 |
 | authz-rejected | Adobe服務提供者視為惡意授權，且因DoS攻擊預防而拒絕的授權嘗試次數 |
-| authz延遲 | 在MVPD端點上花費的總毫秒數 |
+| authz延遲 | MVPD端點所花費的總毫秒數 |
 | media-token | 產生的簡短媒體代號數量（與播放要求數量一致） |
 | 不重複帳戶 | 在選取的時間間隔內執行權利(AuthN / AuthZ)動作的不重複使用者數目。 （此量度只有在要求每日值時才會顯示。） </br>這是為每個個別資料中心計算的。 當未要求「dc」維度時，將不會顯示此量度。 |
 | 不重複工作階段 | 在選取的時間間隔內，對Adobe Pass驗證服務執行驗證流程呼叫的唯一工作階段數目。 （此量度只有在要求每日值時才會顯示。） </br>這是為每個個別資料中心計算的。 當未要求「dc」維度時，將不會顯示此量度。 |
@@ -72,10 +72,10 @@ ESM API並非為一般可用功能。  如需瞭解可用性問題，請聯絡�
 | os系列 | 裝置上執行的作業系統 |
 | browser-family | 用於存取Adobe Pass驗證的使用者代理程式 |
 | cdt | 裝置平台（替代方案），目前用於無使用者端。 </br>值可以是： </br> - N/A — 事件並非源自無使用者端SDK </br> — 未知 — 由於無使用者端API的deviceType引數是選用的，因此有些呼叫不包含任何值。 </br> — 任何透過無使用者端API傳送的其他值，例如xbox、appletv、roku等。</br> |
-| platform-version | 無使用者端SDK的版本 |
+| platform-version | Clienless SDK版本 |
 | os-type | 裝置上執行的作業系統，替代方案（目前未使用） |
 | browser-version | 使用者代理程式版本 |
-| nsdk | 使用的使用者端SDK (android、fireTV、js、iOS、tvOS、非sdk) |
+| nsdk | SDK使用的使用者端(android、fireTV、js、iOS、tvOS、non-sdk) |
 | nsdk-version | Adobe Pass驗證使用者端SDK的版本 |
 | 事件 | Adobe Pass驗證事件名稱 |
 | 原因 | Adobe Pass驗證所報告的失敗原因 |
@@ -83,7 +83,7 @@ ESM API並非為一般可用功能。  如需瞭解可用性問題，請聯絡�
 | 平台 | 裝置識別的平台。 可能的值： </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> — 等 |
 | application-name | 在TVE Dashboard中為設定為要使用的DCR註冊應用程式設定的應用程式名稱。 |
 | application-version | 在TVE Dashboard中為設定為要使用的DCR註冊應用程式設定的應用程式版本。 |
-| customer-app | 透過[裝置資訊](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md)傳遞的自訂應用程式識別碼。 |
+| customer-app | 透過[裝置資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)傳遞的自訂應用程式識別碼。 |
 | content-category | 您的應用程式要求的內容類別。 |
 
 ## MVPD的ESM {#esm-for-mvpds}
@@ -100,7 +100,7 @@ ESM API並非為一般可用功能。  如需瞭解可用性問題，請聯絡�
 | authz成功 | 成功的授權數目 |
 | authz失敗 | MVPD在應用程式層級拒絕授權的數目 |
 | authz-rejected | Adobe服務提供者視為惡意授權，且因DoS攻擊預防而拒絕的授權嘗試次數 |
-| authz延遲 | 在MVPD端點上花費的總毫秒數 |
+| authz延遲 | MVPD端點所花費的總毫秒數 |
 
 ### MVPD可依下列維度篩選上述量度：
 
@@ -115,16 +115,16 @@ ESM API並非為一般可用功能。  如需瞭解可用性問題，請聯絡�
 | 請求者ID | 用來執行軟體權利檔案要求的要求者ID |
 | eap | 透過外部系統執行驗證流程時的外部驗證提供者。 </br>值可以是： </br> - N/A - Adobe Pass驗證所提供的驗證</br> - Apple — 提供驗證的外部系統是Apple |
 | cdt | 裝置平台（替代方案），目前用於無使用者端。 </br>值可以是： </br> - N/A — 事件並非源自無使用者端SDK </br> — 未知 — 由於無使用者端API的deviceType引數是選用的，因此有些呼叫不包含任何值。 </br> — 任何透過無使用者端API傳送的其他值，例如xbox、appletv、roku等。</br> |
-| sdk-type | 使用的使用者端SDK (Flash、HTML5、Android原生、iOS、無使用者端等) |
+| sdk-type | SDK使用的使用者端(Flash、HTML5、Android原生、iOS、無使用者端等) |
 | 平台 | 裝置識別的平台。 可能的值： </br> - Android </br> - FireTV </br> - Roku </br> - iOS </br> - tvOS </br> — 等 |
-| nsdk | 使用的使用者端SDK (android、fireTV、js、iOS、tvOS、非sdk) |
+| nsdk | SDK使用的使用者端(android、fireTV、js、iOS、tvOS、non-sdk) |
 | nsdk-version | Adobe Pass驗證使用者端SDK的版本 |
 
 ## 使用案例 {#use-cases}
 
 ESM資料可用於下列使用案例：
 
-- **監控** — 操作或監控團隊可以建立每分鐘呼叫API的儀表板或圖表。 使用顯示的資訊，他們可以在問題出現的一分鐘偵測問題(使用Adobe Pass驗證或MVPD)。
+- **監控** — 操作或監控團隊可以建立每分鐘呼叫API的儀表板或圖表。 使用顯示的資訊，他們可以在問題出現的一分鐘偵測問題(Adobe Pass驗證或MVPD)。
 
 - **偵錯/品質測試** — 由於資料也會依平台、裝置、瀏覽器和OS進行劃分，因此分析使用模式可以找出特定組合上的問題（例如OSX上的Safari）。
 

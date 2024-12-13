@@ -2,14 +2,14 @@
 title: 使用者中繼資料
 description: 使用者中繼資料
 exl-id: 3d7b6429-972f-4ccb-80fd-a99870a02f65
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '496'
 ht-degree: 0%
 
 ---
 
-# 使用者中繼資料 {#user-metadata}
+# （舊版）使用者中繼資料 {#user-metadata}
 
 >[!NOTE]
 >
@@ -35,7 +35,7 @@ ht-degree: 0%
 
 ## 說明 {#description}
 
-擷取MVPD所共用的有關已驗證使用者的中繼資料。
+擷取MVPD所分享有關已驗證使用者的中繼資料。
 
 
 | 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
@@ -47,8 +47,8 @@ ht-degree: 0%
 |------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 要求者 | 此作業有效的程式設計師要求者ID。 |
 | deviceId | 裝置識別碼位元組。 |
-| device_info/<p>X-Device-Info | 串流裝置資訊。</br></br> **注意：**&#x200B;這可以作為URL引數傳遞device_info，但由於此引數可能的大小以及GETURL的長度限制，應該在http標頭中作為X-Device-Info傳遞。 </br></br>檢視[傳遞裝置和連線資訊](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
-| _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>若此引數設定正確，ESM提供的量度在使用Clienless時可依每個裝置型別](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#progr-filter-metrics)進行[劃分，因此可針對Roku、AppleTV、Xbox等執行不同型別的分析。</br></br>檢視[在Pass量度中使用無使用者端裝置型別引數的好處](/help/authentication/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md) </br></br> **注意：** `device_info`會取代此引數。 |
+| device_info/<p>X-Device-Info | 串流裝置資訊。</br></br> **注意：**&#x200B;這可以作為URL引數傳遞device_info，但由於此引數可能的大小以及GETURL的長度限制，應該在http標頭中作為X-Device-Info傳遞。 </br></br>檢視[傳遞裝置和連線資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
+| _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>若此引數設定正確，ESM提供的量度在使用Clienless時可依每個裝置型別](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#progr-filter-metrics)進行[劃分，因此可針對Roku、AppleTV、Xbox等執行不同型別的分析。</br></br>檢視[在Pass量度中使用無使用者端裝置型別引數的好處](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md) </br></br> **注意：** `device_info`會取代此引數。 |
 | _deviceUser_ | 裝置使用者識別碼。</br></br> **注意：**&#x200B;若使用，`deviceUser`應該與[建立註冊代碼](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)要求中的值相同。 |
 | _appId_ | 應用程式id/名稱。</br></br> **注意：** `device_info`會取代此引數。 若已使用，`appId`應具有與[建立註冊代碼](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)要求中相同的值。 |
 

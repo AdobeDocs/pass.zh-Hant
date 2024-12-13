@@ -2,14 +2,14 @@
 title: 傳回註冊記錄
 description: 傳回註冊記錄
 exl-id: 7b9e63a2-59b6-4123-a19b-ee1f021219ea
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '253'
 ht-degree: 2%
 
 ---
 
-# 傳回註冊記錄 {#return-registration-record}
+# （舊版）退貨註冊記錄 {#return-registration-record}
 
 >[!NOTE]
 >

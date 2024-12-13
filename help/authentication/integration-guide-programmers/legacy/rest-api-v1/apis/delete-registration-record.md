@@ -2,14 +2,14 @@
 title: 刪除註冊記錄
 description: 刪除註冊資源
 exl-id: 42707070-2e1f-4847-93fd-30025aef56c1
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '153'
+source-wordcount: '154'
 ht-degree: 1%
 
 ---
 
-# 刪除註冊記錄 {#delete-registration-record}
+# （舊版）刪除註冊記錄 {#delete-registration-record}
 
 >[!NOTE]
 >

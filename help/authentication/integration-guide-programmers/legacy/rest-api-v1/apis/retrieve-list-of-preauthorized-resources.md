@@ -2,14 +2,14 @@
 title: 擷取預先授權的資源清單
 description: 擷取預先授權的資源清單
 exl-id: 3821378c-bab5-4dc9-abd7-328df4b60cc3
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '369'
+source-wordcount: '370'
 ht-degree: 0%
 
 ---
 
-# 擷取預先授權的資源清單 {#retrieve-list-of-preauthorized-resources}
+# （舊版）擷取預先授權資源清單 {#retrieve-list-of-preauthorized-resources}
 
 >[!NOTE]
 >
@@ -50,8 +50,8 @@ ht-degree: 0%
 | 要求者 | 此作業有效的程式設計師要求者ID。 |
 | deviceId | 裝置識別碼位元組。 |
 | 資源清單 | 字串，包含以逗號分隔的resourceId清單，用於識別使用者可能可以存取且可由MVPD授權端點辨識的內容。 |
-| device_info/</br></br>X-Device-Info | 串流裝置資訊。</br></br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數的潛在大小以及GETURL長度的限制，它應該作為X-Device-Info傳遞到http標頭。 </br></br>檢視[傳遞裝置和連線資訊](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
-| _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>若此引數設定正確，ESM提供的量度在使用Clienless時，會針對每個裝置型別](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)進行[劃分，因此可以執行不同型別的分析，例如Roku、AppleTV和Xbox。</br></br>檢視[在傳遞量度中使用無使用者端裝置型別引數的好處&#x200B;](/help/authentication/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： `device_info`將會取代此引數。 |
+| device_info/</br></br>X-Device-Info | 串流裝置資訊。</br></br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數的潛在大小以及GETURL長度的限制，它應該作為X-Device-Info傳遞到http標頭。 </br></br>檢視[傳遞裝置和連線資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
+| _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>若此引數設定正確，ESM提供的量度在使用Clienless時，會針對每個裝置型別](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)進行[劃分，因此可以執行不同型別的分析，例如Roku、AppleTV和Xbox。</br></br>檢視[在傳遞量度中使用無使用者端裝置型別引數的好處&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： `device_info`將會取代此引數。 |
 | _deviceUser_ | 裝置使用者識別碼。 |
 | _appId_ | 應用程式id/名稱。 </br></br>**注意**： device_info會取代此引數。 |
 

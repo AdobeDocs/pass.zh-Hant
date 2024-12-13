@@ -2,14 +2,14 @@
 title: iOS/tvOS API預先授權
 description: iOS/tvOS API預先授權
 exl-id: 79c596a4-0e38-4b6c-bb85-f97c6af45ed8
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '391'
+source-wordcount: '392'
 ht-degree: 0%
 
 ---
 
-# 預先授權 {#preauthorize}
+# （舊版）預先授權 {#preauthorize}
 
 >[!NOTE]
 >
@@ -27,7 +27,7 @@ ht-degree: 0%
 >
 >增強的錯誤報告功能會為被拒絕的預先授權決定新增其他錯誤資訊，因為必須在Adobe Pass驗證設定端啟用該功能，所以可依請求使用。
 
-如果因為Adobe Pass Authentication SDK錯誤或Adobe Pass Authentication Services發生錯誤，而無法服務預先授權API要求，則無論上述設定為何，其他錯誤資訊和任何資源都不會納入預先授權API回應結果中。
+如果因為Adobe Pass驗證SDK錯誤或發生Adobe Pass驗證服務錯誤，而無法服務預先授權API請求，則無論上述設定為何，其他錯誤資訊和任何資源都不會納入預先授權API回應結果中。
 
 </br>
 
@@ -273,7 +273,7 @@ Adobe Pass驗證服務在服務預先授權API要求時發生錯誤
 
 #### 失敗
 
-Adobe Pass Authentication SDK在服務預先授權API要求時點選錯誤
+Adobe Pass驗證SDK在服務「預先授權API」請求時點選錯誤
 
 ```JSON
     {

@@ -1,16 +1,16 @@
 ---
-title: 具動態使用者端註冊的Amazon FireOS SDK
-description: 具動態使用者端註冊的Amazon FireOS SDK
+title: Amazon FireOS SDK搭配Dynamic Client註冊
+description: Amazon FireOS SDK搭配Dynamic Client註冊
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1146'
+source-wordcount: '1147'
 ht-degree: 0%
 
 ---
 
 
-# 具動態使用者端註冊的Amazon FireOS SDK {#amazon-fireos-sdk-with-dynamic-client-registration}
+# （舊版） Amazon FireOS SDK含Dynamic Client註冊 {#amazon-fireos-sdk-with-dynamic-client-registration}
 
 >[!NOTE]
 >
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 ## <span id=""></span>簡介 {#Intro}
 
-已修改適用於FireTV的FireOS AccessEnabler SDK，以啟用驗證而不使用工作階段Cookie。 由於越來越多的瀏覽器限制對Cookie的存取，因此需要另一種方法來允許驗證。
+已修改適用於FireTV的FireOS AccessEnabler SDK ，以啟用驗證而不使用工作階段Cookie。 由於越來越多的瀏覽器限制對Cookie的存取，因此需要另一種方法來允許驗證。
 
 **FireOS SDK 3.0.4**&#x200B;以[動態使用者端註冊概述](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)取代目前以已簽署的請求者ID和工作階段Cookie驗證為基礎的應用程式註冊機制。
 
@@ -46,7 +46,7 @@ ht-degree: 0%
 **附註**
 
 - 無效的softwareStatement將導致應用程式無法初始化AccessEnabler或註冊Adobe Pass驗證和授權的應用程式
-- FireTV的redirectUrl引數由SDK設定為adobepass://android.app，因為驗證是由唯一的AccessEnabler執行個體處理。
+- FireTV的redirectUrl引數由SDK設定為adobepass://android.app ，因為驗證是由唯一的AccessEnabler執行個體處理。
 
 ### setRequestor
 
@@ -56,7 +56,7 @@ ht-degree: 0%
 
 如果未使用&#x200B;*url*&#x200B;引數，則產生的網路呼叫會鎖定預設服務提供者URL：Adobe發行生產環境。
 
-如果提供&#x200B;*url*&#x200B;引數的值，則產生的網路呼叫會鎖定&#x200B;*url*&#x200B;引數中提供的所有URL。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD，「存取啟用程式」會記住關聯服務提供者的URL。 所有後續的軟體權利檔案要求都會導向在設定階段與目標MVPD配對之服務提供者相關聯的URL。
+如果提供&#x200B;*url*&#x200B;引數的值，則產生的網路呼叫會鎖定&#x200B;*url*&#x200B;引數中提供的所有URL。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD，「存取啟用程式」會記住關聯服務提供者的URL。 所有後續的軟體權利檔案請求都會導向在設定階段與目標MVPD配對之服務提供者相關聯的URL。
 
 | API呼叫：要求者設定 |
 | --- |
@@ -73,7 +73,7 @@ ht-degree: 0%
 **引數：**
 
 - *requestorID*：與頻道關聯的唯一識別碼。 首次向Adobe Pass驗證服務註冊時，請將Adobe指派的唯一ID傳遞至您的網站。
-- *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 這樣做時，MVPD清單會由來自所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是先回應且支援該MVPD的提供者。
+- *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 若這麼做，MVPD清單將由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是說，第一個回應並支援該MVPD的提供者。
 
 已棄用：
 
@@ -117,10 +117,10 @@ ht-degree: 0%
 
 - a. setRequestor(requestor\_id)
 
-  SDK將會執行下列操作：
+  SDK將執行下列操作：
 
-   - 註冊應用程式：使用&#x200B;**software\_statement**，SDK將會取得&#x200B;**client\_id， client\_secret， client\_id\_issued\_at， redirect\_uris， grant\_types**。 此資訊會儲存在應用程式的內部儲存中。
-   - 使用client\_id、client\_secret和grant\_type=&quot;client\_credentials&quot;取得&#x200B;**access\_token**。 SDK呼叫Adobe Pass伺服器時，都會使用此access\_token。
+   - 註冊應用程式：使用&#x200B;**software\_statement**，SDK將取得&#x200B;**client\_id， client\_secret， client\_id\_issued\_at， redirect\_uris， grant\_types**。 此資訊會儲存在應用程式的內部儲存中。
+   - 使用client\_id、client\_secret和grant\_type=&quot;client\_credentials&quot;取得&#x200B;**access\_token**。 此access\_token將用於SDK對Adobe Pass伺服器進行的每次呼叫。
 
 | 權杖錯誤回應： |  |  |
 |--- | --- | --- |
@@ -128,14 +128,14 @@ ht-degree: 0%
 | HTTP 400 （錯誤請求） | {&quot;error&quot;： &quot;invalid\_client&quot;} | 使用者端驗證失敗，因為使用者端不明。 SDK *必須*&#x200B;再次向授權伺服器註冊。 |
 | HTTP 400 （錯誤請求） | {&quot;error&quot;： &quot;unauthorized\_client&quot;} | 已驗證的使用者端無權使用此授權授予型別。 |
 
-- 如果MVPD需要被動驗證，會開啟WebView以使用該MVPD執行被動驗證，並在完成時關閉
+- 如果MVPD需要被動驗證，WebView將會開啟以使用該MVPD被動執行，並在完成後關閉
 
 - b. checkAuthorization()
 
    - *true* ：移至[授權]
-   - *false* ：移至[選取MVPD]
+   - *false* ：前往選取MVPD
 
-- c. getAuthentication ：SDK會在呼叫引數中包含&#x200B;**access_token**
+- c. getAuthentication ： SDK將在呼叫引數中包含&#x200B;**access_token**
 
    - 記憶的mvpd ：前往setSelectedProvider(mvpd\_id)
    - 未選取mvpd ： displayProviderDialog
@@ -154,14 +154,14 @@ ht-degree: 0%
 
 - f.登出：
 
-   - SDK將會刪除目前請求者的有效Token （由其他應用程式取得而非透過SSO取得的驗證將維持有效）
-   - SDK將會開啟Chrome自訂標籤以存取mvpd\_id登出端點。 完成後，Chrome自訂標籤將關閉
+   - SDK將刪除目前請求者的有效Token （由其他應用程式取得而非透過SSO取得的驗證仍有效）
+   - SDK將開啟Chrome自訂標籤以存取mvpd\_id登出端點。 完成後，Chrome自訂標籤將關閉
    - URL配置會建立為「adobepass://logout」，以擷取登出完成時的時間
    - 登出會觸發sendTrackingData(new Event(EVENT\_LOGOUT，USER\_NOT\_AUTHENTICATED\_ERROR)和回呼：setAuthenticationStatus(0，&quot;Logout&quot;)
 
 
 
-**注意：**&#x200B;因為每個呼叫都需要&#x200B;**access_token**，SDK會處理下列可能的錯誤碼。
+**注意：**&#x200B;由於每個呼叫都需要&#x200B;**access_token**，以下可能的錯誤碼已在SDK中處理。
 
 | 錯誤回應 |  |  |
 |--- | --- | --- |

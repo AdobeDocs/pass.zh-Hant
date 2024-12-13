@@ -2,14 +2,14 @@
 title: 預先授權
 description: JavaScript預先授權
 exl-id: b7493ca6-1862-4cea-a11e-a634c935c86e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1465'
+source-wordcount: '1466'
 ht-degree: 0%
 
 ---
 
-# 預先授權 {#js-preauthorize}
+# （舊版）預先授權 {#js-preauthorize}
 
 >[!NOTE]
 >
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 預先授權API方法可供應用程式用來取得一或多個資源的預先授權決定。 預先授權API要求應該用於UI提示和/或內容篩選。 在允許使用者存取指定的資源之前，必須先提出實際的授權API要求。
 
-如果Adobe Pass驗證服務處理預先授權API請求時發生未預期的錯誤（例如網路問題，以及MVPD授權端點無法使用），則受影響資源的一或多個個別錯誤資訊將會納入作為預先授權API回應結果的一部分。
+如果Adobe Pass驗證服務處理預先授權API請求時發生未預期的錯誤(例如網路問題，以及MVPD授權端點無法使用)，則受影響資源的一或多個個別錯誤資訊將會作為「預先授權API」回應結果的一部分納入。
 
 ### public preauthorize(request： PreauthorizeRequest， callback： AccessEnablerCallback&lt;any>)： void {#preauth-method}
 
@@ -72,7 +72,7 @@ public func build() -> PreauthorizeRequest
 * 此方法會在每次呼叫時將新的`PreauthorizeRequest`物件具現化。
 * 此方法會使用目前`PreauthorizeRequestBuilder`物件執行個體（此方法呼叫的接收者）內容中預先設定的值。
 * 請記住，此方法不會產生任何副作用，
-* 因此，它不會變更SDK的狀態或`PreauthorizeRequestBuilder`物件執行個體（此方法呼叫的接收者）的狀態。
+* 因此，它不會變更SDK的狀態或`PreauthorizeRequestBuilder`物件執行個體的狀態，此物件執行個體是此方法呼叫的接收者。
 * 這表示對相同接收器的這個方法後續呼叫將建立不同的新`PreauthorizeRequest`物件執行個體，但若值設定為`PreauthorizeRequestBuilder`，且未在呼叫之間修改，則具有相同的資訊。
 * 如果您不需要更新任何提供的資訊（資源與快取），您可以針對預先授權API的多重用途重複使用PreauthorizeRequest執行個體。
 * `@returns {PreauthorizeRequest}`
@@ -87,7 +87,7 @@ public func build() -> PreauthorizeRequest
 
 #### onFailure（結果： T）； {#on-failure-result}
 
-* 無法服務預先授權API請求時，SDK呼叫的失敗回呼。
+* 當無法服務預先授權API請求時，SDK呼叫的失敗回呼。
 * 結果會產生包含狀態的失敗結果。
 * `@param {T} result`
 
@@ -117,12 +117,12 @@ public func build() -> PreauthorizeRequest
 
 #### 公開訊息：字串； {#public-msg-string}
 
-* 在某些情況下由MVPD授權端點或程式設計人員降級規則提供的詳細訊息。
+* 在某些情況下由MVPD授權端點或程式設計師降級規則提供的詳細訊息。
 * 可能保留空字串或`null`值。
 
 #### 公開詳細資料：字串； {#public-details-strng}
 
-* 儲存詳細訊息，在某些情況下，該訊息由MVPD授權端點或程式設計人員降級規則提供。
+* 儲存詳細訊息，該訊息在某些情況下由MVPD授權端點或程式設計師降級規則提供。
 * 可能保留空字串或`null`值。
 
 
@@ -277,32 +277,32 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已啟用</td>
     <td>
 
-    ``JavaScript
+    ```JavaScript
     {
-    `decisions`： [
+    `decisions&quot;： [
     {
-    `id`： &quot;RES01&quot;，
+    `id&quot;： &quot;RES01&quot;，
     `authorized&quot;： true
     }，
     {
-    `id`： &quot;RES02&quot;，
+    `id&quot;： &quot;RES02&quot;，
     `authorized&quot;： false，
     `error&quot;： {
     `status&quot;： 403，
     `code&quot;： &quot;preauthorization_denied_by_mvpd&quot;，
-    `message&quot;： &quot;MVPD在請求時傳回\`Pref決定指定資源的授權。」，
-    「helpUrl」：「https://experienceleague.adobe.com/docs/primetime/authentication/home.html」，
-    「action」：「none」
+    `message&quot;： &quot;MVPD在要求預先授權時傳回\`拒絕決定指定的資源。」，
+    「helpUrl」： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
+    &quot;action&quot;： &quot;none&quot;
     }
     }，
     {
-    「id」：「RES03」，
-    「authorized」： true
+    &quot;id&quot;： &quot;RES03&quot;，
+    &quot;authorized&quot;： true
     }，
     ]
     }
     
-    」&#39;
+    &quot;&#39;
 
 </td>
   </tr>
@@ -362,8 +362,8 @@ accessEnablerApi.preauthorize(request, callback);
     `status&quot;： 403，
     `code&quot;： &quot;preauthorization_denied_by_mvpd&quot;，
     `message&quot;： &quot;MVPD在請求指定資源的預先授權時傳回\&quot;Deny\&quot;決定。&quot;，
-    `helpUrl&quot;： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
-    `action&quot;： &quot;none&quot;： &quot;none&quot;
+    `helpUrl`： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
+    `action&quot;： &quot;none&quot;
     }
     }，
     {
@@ -374,7 +374,8 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;code&quot;： &quot;preauthorization_denied_by_mvpd&quot;，
     &quot;message&quot;： &quot;MVPD在請求指定資源的預授權時返回了\&quot;Deny\&quot;決定。&quot;，
     &quot;helpUrl&quot;： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
-    &quot;action&quot;： &quot;none&quot; 3}}
+    &quot;action&quot;： &quot;none&quot;
+    }
     }，
     {
     &quot;id&quot;： &quot;RES03&quot;，
@@ -382,8 +383,7 @@ accessEnablerApi.preauthorize(request, callback);
     &quot;error&quot;： {
     &quot;status&quot;： 403，
     &quot;code&quot;： &quot;maximum_execution_time_exceeded&quot;，
-    &quot;message&quot;： &quot;請求未在允許的最長時間內完成。 
-    重試請求可能會解決此問題。」，
+    &quot;message&quot;： &quot;請求未在允許的最長時間內完成。 重試請求可能會解決此問題。」，
     「helpUrl」： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
     &quot;action&quot;： &quot;retry&quot;
     }
@@ -391,7 +391,7 @@ accessEnablerApi.preauthorize(request, callback);
     ]
     }
     
-    ```
+    &quot;&#39;
 
 </td>
   </tr>
@@ -504,7 +504,7 @@ accessEnablerApi.preauthorize(request, callback);
     }
     ]
     }
-    ```
+    &quot;&#39;
 
 </td>
   </tr>

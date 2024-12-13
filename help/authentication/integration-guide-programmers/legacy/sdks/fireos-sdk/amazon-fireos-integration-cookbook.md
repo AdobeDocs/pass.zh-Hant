@@ -2,14 +2,14 @@
 title: Amazon FireOS整合逐步指南
 description: Amazon FireOS整合逐步指南
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1424'
+source-wordcount: '1425'
 ht-degree: 0%
 
 ---
 
-# Amazon FireOS整合逐步指南 {#amazon-fireos-integration-cookbook}
+# （舊版） Amazon FireOS整合逐步指南 {#amazon-fireos-integration-cookbook}
 
 >[!NOTE]
 >

@@ -2,14 +2,14 @@
 title: Amazon FireOS Native Client API參考
 description: Amazon FireOS Native Client API參考
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '3428'
+source-wordcount: '3429'
 ht-degree: 0%
 
 ---
 
-# Amazon FireOS Native Client API參考 {#amazon-fireos-native-client-api-reference}
+# （舊版） Amazon FireOS Native Client API參考 {#amazon-fireos-native-client-api-reference}
 
 >[!NOTE]
 >
@@ -19,9 +19,9 @@ ht-degree: 0%
 
 ## 簡介 {#intro}
 
-本檔案詳細說明適用於Adobe Pass驗證的Amazon FireOS SDK所公開的方法和回呼，其支援Adobe Pass驗證。 這裡說明的方法和回呼函式在AccessEnabler.h和EntitlementDelegate.h標頭檔案中定義。
+本檔案詳細說明適用於Adobe Pass驗證的Amazon FireOS SDK (支援Adobe Pass驗證)所公開的方法和回呼。 這裡說明的方法和回呼函式在AccessEnabler.h和EntitlementDelegate.h標頭檔案中定義。
 
-如需最新的Amazon FireOS AccessEnabler SDK，請參閱<https://tve.zendesk.com/hc/en-us/articles/115005561623-fire-TV-Native-AccessEnabler-Library>。
+請參閱<https://tve.zendesk.com/hc/en-us/articles/115005561623-fire-TV-Native-AccessEnabler-Library>以取得最新的Amazon FireOS AccessEnabler SDK。
 
 >[!NOTE]
 >
@@ -93,7 +93,7 @@ ht-degree: 0%
 
 如果未使用&#x200B;*url*&#x200B;引數，則產生的網路呼叫會鎖定預設服務提供者URL：Adobe發行/生產環境。
 
-如果提供&#x200B;*url*&#x200B;引數的值，則產生的網路呼叫會鎖定&#x200B;*url*&#x200B;引數中提供的所有URL。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD，「存取啟用程式」會記住關聯服務提供者的URL。 所有後續的軟體權利檔案要求都會導向在設定階段與目標MVPD配對之服務提供者相關聯的URL。
+如果提供&#x200B;*url*&#x200B;引數的值，則產生的網路呼叫會鎖定&#x200B;*url*&#x200B;引數中提供的所有URL。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD，「存取啟用程式」會記住關聯服務提供者的URL。 所有後續的軟體權利檔案請求都會導向在設定階段與目標MVPD配對之服務提供者相關聯的URL。
 
 | API呼叫：要求者設定 |
 | --- |
@@ -113,7 +113,7 @@ ht-degree: 0%
 **引數：**
 
 - *requestorID*：與程式設計師相關聯的唯一識別碼。 首次向Adobe Pass驗證服務註冊時，請將Adobe指派的唯一ID傳遞至您的網站。
-- *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 這樣做時，MVPD清單會由來自所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是先回應且支援該MVPD的提供者。
+- *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 若這麼做，MVPD清單將由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是說，第一個回應並支援該MVPD的提供者。
 
 已觸發&#x200B;**回呼：** `setRequestorComplete()`
 
@@ -155,7 +155,7 @@ ht-degree: 0%
 
 ### setOptions {#fire_setOption}
 
-**描述：**&#x200B;設定全域SDK選項。 它接受&#x200B;**Map\&lt;String， String\>**&#x200B;做為引數。 來自對應的值會連同SDK發出的每個網路呼叫一併傳遞至伺服器。
+**描述：**&#x200B;設定全域SDK選項。 它接受&#x200B;**Map\&lt;String， String\>**&#x200B;做為引數。 來自對應的值會連同SDK發出的每個網路呼叫一起傳遞至伺服器。
 
 這些值將會傳遞至伺服器，不受目前流量（驗證/授權）的影響。 如果您想要變更值，可以隨時呼叫此方法。
 
@@ -180,7 +180,7 @@ ht-degree: 0%
 
 **描述：**&#x200B;檢查驗證狀態。 其做法是在本機權杖儲存空間中搜尋有效的驗證權杖。 呼叫此方法不會執行任何網路呼叫。 應用程式會使用它來查詢使用者的驗證狀態並相應地更新UI （即更新登入/登出UI）。 驗證狀態是透過&#x200B;[*setAuthenticationStatus()*](#setAuthNStatus)&#x200B;回呼傳送給應用程式。
 
-如果MVPD支援「每個請求者的驗證」功能，則多個驗證權杖可以儲存在裝置上。
+如果MVPD支援「每位請求者驗證」功能，則多個驗證權杖可以儲存在裝置上。
 
 | API呼叫：檢查驗證狀態 |
 | --- |
@@ -198,10 +198,10 @@ ht-degree: 0%
 
 **描述：**&#x200B;啟動完整驗證工作流程。 首先檢查驗證狀態。 如果尚未驗證，則會啟動驗證流程狀態機器：
 
-- 如果上次驗證嘗試成功，則會略過MVPD選取階段，且WebView控制項會向使用者顯示MVPD的登入頁面。
-- 如果上次驗證嘗試不成功，或使用者明確登出，則會觸發&#x200B;[*displayProviderDialog()*](#displayProviderDialog)&#x200B;回呼。 您的應用程式會使用此回呼來顯示MVPD選取UI。 此外，您的應用程式必須透過[setSelectedProvider()](#setSelectedProvider)方法通知Access Enabler程式庫有關使用者的MVPD選擇，以繼續驗證流程。
+- 如果上次驗證嘗試成功，則會跳過MVPD選擇階段，且WebView控制項會為使用者顯示MVPD的登入頁面。
+- 如果上次驗證嘗試不成功，或使用者明確登出，則會觸發&#x200B;[*displayProviderDialog()*](#displayProviderDialog)&#x200B;回呼。 您的應用程式會使用此回呼來顯示MVPD選擇UI。 此外，您的應用程式也需要透過[setSelectedProvider()](#setSelectedProvider)方法通知存取啟用程式庫有關使用者的MVPD選取專案，以繼續驗證流程。
 
-如果MVPD支援「每個請求者的驗證」功能，則多個驗證權杖可以儲存在裝置上（每個程式設計師一個）。
+如果MVPD支援「每位請求者的驗證」功能，則多個驗證權杖可以儲存在裝置上（每位程式設計師一個）。
 
 最後，驗證狀態會透過&#x200B;*setAuthenticationStatus()*&#x200B;回呼與應用程式通訊。
 
@@ -228,9 +228,9 @@ ht-degree: 0%
 
 ### displayProviderDialog {#displayProviderDialog}
 
-**說明**&#x200B;由Access Enabler觸發的回呼，通知應用程式必須具現化適當的UI元素，才能讓使用者選取想要的MVPD。 回呼會提供MVPD物件清單，內含其他資訊，可協助您正確建立選取專案UI面板（例如指向MVPD標誌的URL、好記的顯示名稱等）
+**說明**&#x200B;由Access Enabler觸發的回呼，通知應用程式必須具現化適當的UI元素，才能讓使用者選取想要的MVPD。 回呼會提供MVPD物件清單，內含其他資訊，有助於正確建立選取專案UI面板(例如指向MVPD標誌的URL、好記的顯示名稱等)
 
-使用者選取想要的MVPD之後，上層應用程式必須呼叫&#x200B;*setSelectedProvider()*&#x200B;並傳遞與使用者選取專案相對應的MVPD識別碼，以恢複驗證流程。
+使用者選取想要的MVPD後，需要上層應用程式來繼續驗證流程，方法是呼叫&#x200B;*setSelectedProvider()*&#x200B;並傳遞與使用者選取專案相對應的MVPD識別碼。
 
 
 | **回呼：顯示MVPD選取專案UI** |
@@ -241,7 +241,7 @@ ht-degree: 0%
 
 **引數**：
 
-- *mvpds*：包含MVPD相關資訊的MVPD物件清單，應用程式可使用此清單來建置MVPD選取專案UI元素。
+- *mvpds*：包含MVPD相關資訊的MVPD物件清單，應用程式可使用此清單來建置MVPD選擇UI元素。
 
 **觸發者：** `getAuthentication(), getAuthorization()`
 
@@ -249,7 +249,7 @@ ht-degree: 0%
 
 ### setselectedprovider {#setSelectedProvider}
 
-**描述：**&#x200B;您的應用程式呼叫這個方法，以告知存取啟用程式使用者的MVPD選擇。 將&#x200B;*null*&#x200B;作為引數傳遞時，Access Enabler會將目前的MVPD重設為null值。
+**描述：**&#x200B;您的應用程式呼叫此方法，以告知存取啟用程式使用者的MVPD選擇。 將&#x200B;*null*&#x200B;作為引數傳遞時，存取啟用程式會將目前的MVPD重設為null值。
 
 | **API呼叫：設定目前選取的提供者** |
 | --- |
@@ -265,7 +265,7 @@ ht-degree: 0%
 
 ### navigateToUrl {#navigagteToUrl}
 
-**說明：**&#x200B;由Android SDK上的Access Enabler觸發的回呼。 在Amazon FireOS SDK上應忽略它。
+**描述：**&#x200B;由Android SDK上的存取啟用程式觸發的回呼。 在Amazon FireOS SDK上應忽略它。
 
 | **回呼：顯示MVPD登入頁面** |
 | --- |
@@ -293,7 +293,7 @@ ht-degree: 0%
 
 **引數：**
 
-- *Cookie*：在目標網域上設定的Cookie （如需參考實作，請參閱SDK中的示範應用程式）。
+- *Cookie*：在目標網域上設定的Cookie (如需參考實作，請參閱SDK中的示範應用程式)。
 
 已觸發&#x200B;**回呼：** `setAuthenticationStatus(), sendTrackingData()`
 
@@ -449,7 +449,7 @@ ht-degree: 0%
 - *resourceId*：已取得授權的資源
 - *errorCode*：與失敗案例關聯的錯誤碼。 可能的值：
    - `AccessEnabler.USER_NOT_AUTHORIZED_ERROR` — 使用者無法授權指定的資源
-- *errorDescription*：有關失敗案例的其他詳細資料。 如果此描述性字串因任何原因而無法使用，Adobe Pass驗證會傳送空白字串>**(&quot;)**。  MVPD可使用此字串來傳遞自訂錯誤訊息或銷售相關訊息。 例如，如果拒絕訂閱者的資源授權，MVPD會傳送訊息，例如：「您目前沒有封裝中此通道的存取權。 如果您想要升級您的套件，請按這裡。」 此訊息會由Adobe Pass驗證透過此回呼傳送給程式設計師，程式設計師可以選擇顯示或忽略此訊息。 Adobe Pass驗證也可以使用此引數來提供可能導致錯誤的狀況通知。 例如，「與提供者的授權服務通訊時發生網路錯誤。」
+- *errorDescription*：有關失敗案例的其他詳細資料。 如果此描述性字串因任何原因而無法使用，Adobe Pass驗證會傳送空白字串>**(&quot;)**。  MVPD可使用此字串來傳遞自訂錯誤訊息或銷售相關訊息。 例如，如果訂閱者拒絕對資源的授權，MVPD可以傳送訊息，例如：「您目前沒有封裝中此頻道的存取權。 如果您想要升級您的套件，請按這裡。」 此訊息會由Adobe Pass驗證透過此回呼傳送給程式設計師，程式設計師可以選擇顯示或忽略此訊息。 Adobe Pass驗證也可以使用此引數來提供可能導致錯誤的狀況通知。 例如，「與提供者的授權服務通訊時發生網路錯誤。」
 
 **觸發者：** `checkAuthorization(), getAuthorization()`
 
@@ -489,9 +489,9 @@ ht-degree: 0%
 
 ### selectedprovider {#selectedProvider}
 
-**描述：**&#x200B;由Access Enabler觸發的回呼，將目前所選MVPD的相關資訊傳送給應用程式。
+**描述：**&#x200B;由Access Enabler觸發的回呼，此回呼會將目前所選MVPD的相關資訊傳送給應用程式。
 
-| **回呼：目前所選MVPD的相關資訊** |
+| **回撥：目前所選MVPD的相關資訊** |
 | --- |
 | ```public void selectedProvider(Mvpd mvpd)``` |
 
@@ -518,7 +518,7 @@ ht-degree: 0%
 程式設計師可以使用兩種中繼資料型別：
 
 - 靜態中繼資料（驗證權杖TTL、授權權杖TTL和裝置ID）
-- 使用者中繼資料（使用者特定資訊，例如使用者ID和郵遞區號；在驗證和/或授權流程中從MVPD傳遞至使用者裝置）
+- 使用者中繼資料(使用者特定資訊，例如使用者ID和郵遞區號；在驗證和/或授權流程中從MVPD傳遞至使用者的裝置)
 
 **引數：**
 
@@ -528,12 +528,12 @@ ht-degree: 0%
    - 如果索引鍵是`METADATA_KEY_DEVICE_ID`，則會進行查詢以取得目前的裝置識別碼。 請注意，此功能預設為停用，程式設計師應聯絡Adobe以取得有關啟用和費用的資訊。
    - 如果索引鍵是`METADATA_KEY_USER_META`，而且引數包含名稱= `METADATA_KEY_USER_META`且值= `[metadata_name]`的SerializableNameValuePair物件，則會針對使用者中繼資料進行查詢。 目前可用的使用者中繼資料型別清單：
       - `zip` — 郵遞區號
-      - `householdID` — 家庭識別碼。 如果MVPD不支援附屬帳戶，這將會與`userID`相同。
+      - `householdID` — 家庭識別碼。 如果MVPD不支援附屬帳戶，這與`userID`相同。
       - `maxRating` — 使用者的家長評等上限
-      - `userID` — 使用者識別碼。 如果MVPD支援附屬帳戶，且使用者不是主帳戶，
+      - `userID` — 使用者識別碼。 如果MVPD支援附屬帳戶，且使用者不是主要帳戶，
       - `channelID` — 使用者有權檢視的管道清單
 
-程式設計師實際可用的使用者中繼資料取決於MVPD提供的內容。  此清單將進一步展開，因為新的中繼資料已推出並新增至Adobe Pass驗證系統。
+程式設計師實際可用的使用者中繼資料取決於MVPD提供的功能。  此清單將進一步展開，因為新的中繼資料已推出並新增至Adobe Pass驗證系統。
 
 已觸發&#x200B;**回呼：** [`setMetadataStatus()`](#setMetadaStatus)
 
@@ -649,7 +649,7 @@ Access Enabler會觸發其他回呼，而此回呼不一定與權益流程相關
 - *event*：正在追蹤的事件。 追蹤事件型別共有三種：
    - **authorizationDetection：**&#x200B;當授權權杖要求傳回時（事件型別為`EVENT_AUTHZ_DETECTION`）
    - **authenticationDetection：**&#x200B;任何時候發生驗證檢查時（事件型別為`EVENT_AUTHN_DETECTION`）
-   - **mvpdSelection：** (當使用者在MVPD選擇表單中選取MVPD （事件型別為`EVENT_MVPD_SELECTION`）)
+   - **mvpdSelection：**&#x200B;當使用者在MVPD選擇表單中選取MVPD （事件型別為`EVENT_MVPD_SELECTION`）時
 - *資料*：與報告事件相關的其他資料。 此資料會以值清單的形式呈現。
 
 下列是解譯&#x200B;*資料*&#x200B;陣列中值的指示：

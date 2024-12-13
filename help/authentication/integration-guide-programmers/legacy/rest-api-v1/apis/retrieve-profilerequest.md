@@ -2,14 +2,14 @@
 title: 擷取Platform SSO設定檔要求
 description: 擷取Platform SSO設定檔要求
 exl-id: 44fd4e26-4d9a-4607-ac2c-b85d848f5fc6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '189'
+source-wordcount: '190'
 ht-degree: 1%
 
 ---
 
-# 擷取Platform SSO設定檔要求 {#retrieve-platform-sso-profile-request}
+# （舊版）擷取平台SSO設定檔請求 {#retrieve-platform-sso-profile-request}
 
 >[!NOTE]
 >
@@ -46,5 +46,5 @@ ht-degree: 1%
 | 輸入引數 | 說明 |
 | --------------- | -------------------------------------------------------------------------------------------------------- |
 | 要求者 | 此作業有效的程式設計師要求者ID。 |
-| mvpd | 此作業適用的MVPD ID。 |
+| mvpd | 此操作有效的MVPD ID。 |
 | deviceType | 我們正嘗試為其取得設定檔請求的Apple平台。  **iOS**&#x200B;或&#x200B;**tvOS**。 |

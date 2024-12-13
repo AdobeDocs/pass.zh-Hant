@@ -2,14 +2,14 @@
 title: 不需重新整理的登入和登出
 description: 不需重新整理的登入和登出
 exl-id: 3ce8dfec-279a-4d10-93b4-1fbb18276543
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1761'
+source-wordcount: '1762'
 ht-degree: 0%
 
 ---
 
-# 不需重新整理的登入和登出 {#tefresh-less-login-and-logout}
+# （舊版）不需重新整理的登入和登出 {#tefresh-less-login-and-logout}
 
 >[!NOTE]
 >
@@ -44,10 +44,10 @@ ht-degree: 0%
 
 Adobe Pass驗證Web使用者端有兩種驗證方式，視MVPD的需求而定：
 
-1. **整頁重新導向 —**&#x200B;使用者選取提供者之後    （已設定全頁重新導向）從    程式設計師的網站`setSelectedProvider(<mvpd>)`會在AccessEnabler上叫用，且使用者會重新導向至MVPD的登入頁面。 在使用者提供有效認證後，他會被重新導向回程式設計師的網站。 AccessEnabler已初始化，並在`setRequestor`期間從Adobe Pass驗證擷取驗證Token。
+1. **整頁重新導向 —**&#x200B;使用者選取提供者之後    MVPD （已使用整頁重新導向進行設定）    程式設計師的網站`setSelectedProvider(<mvpd>)`會在AccessEnabler上叫用，且使用者會重新導向至MVPD的登入頁面。 在使用者提供有效認證後，他會被重新導向回程式設計師的網站。 AccessEnabler已初始化，並在`setRequestor`期間從Adobe Pass驗證擷取驗證Token。
 1. **iFrame /彈出式視窗 —**&#x200B;當使用者選取提供者（已設定iFrame）後，會在AccessEnabler上叫用`setSelectedProvider(<mvpd>)`。 此動作將觸發`createIFrame(width, height)`回呼，通知程式設計師以名稱`"mvpdframe"`和提供的維度建立iFrame （或快顯視窗，視瀏覽器/偏好設定而定）。 建立iFrame/快顯視窗後，AccessEnabler會在iFrame/快顯視窗中載入MVPD的登入頁面。 使用者提供有效的認證，而iFrame/快顯視窗會重新導向至Adobe Pass驗證，而後者會傳回JS程式碼片段，關閉iFrame/快顯視窗並重新載入上層頁面（程式設計師網站）。 與流程1類似，驗證權杖是在`setRequestor`期間擷取。
 
-`displayProviderDialog`回呼（由`getAuthentication`/`getAuthorization`觸發）傳回MVPD清單及其適當的設定。 MVPD的`iFrameRequired`屬性可讓程式設計師知道它應該啟動流程1還是流程2。 請注意，程式設計師只需要對流程2採取額外的動作（建立iFrame/快顯視窗）。
+`displayProviderDialog`回呼（由`getAuthentication`/`getAuthorization`觸發）傳回MVPD清單及其適當的設定。 MVPD的`iFrameRequired`屬性可讓程式設計師知道應啟動流程1或流程2。 請注意，程式設計師只需要對流程2採取額外的動作（建立iFrame/快顯視窗）。
 
 **取消驗證**
 
@@ -61,7 +61,7 @@ Adobe Pass驗證Web使用者端有兩種驗證方式，視MVPD的需求而定：
 
 ## 原始登出流程 {#orig_logout}
 
-AccessEnabler的登出API會清除程式庫的本機狀態，並在目前的索引標籤/視窗中載入MVPD的登出URL。 瀏覽器會導覽至MVPD的登出端點，當程式完成時，會將使用者重新導向回程式設計師的網站。 使用者唯一需要的動作是按下「登出」按鈕/連結並起始流程；MVPD的登出端點不需要使用者互動。
+AccessEnabler的登出API會清除程式庫的本機狀態，並在目前索引標籤/視窗中載入MVPD的登出URL。 瀏覽器會導覽至MVPD的登出端點，在完成程式後，系統會將使用者重新導向回程式設計師的網站。 代表使用者需執行的唯一動作是按下「登出」按鈕/連結並起始流程；在MVPD的登出端點上不需要使用者互動。
 
 **原始驗證/登出流程以及頁面重新整理**
 
@@ -92,7 +92,7 @@ AccessEnabler的登出API會清除程式庫的本機狀態，並在目前的索�
 
 以下幾點說明原始驗證流程和改進流程之間的轉換：
 
-1. 完整頁面重新導向會由執行MVPD登入的新瀏覽器標籤取代。 當使用者選取MVPD （具有`iFrameRequired = false`）時，程式設計師必須建立名為`mvpdwindow`的新索引標籤（透過`window.open`）。 程式設計師接著執行`setSelectedProvider(<mvpd>)`，允許AccessEnabler在新索引標籤中載入MVPD登入URL。 使用者提供有效認證後，Adobe Pass驗證將關閉索引標籤，並將window.postMessage傳送至程式設計師的網站，以通知AccessEnabler驗證流程已完成。 系統會觸發下列回呼：
+1. 全頁重新導向功能將由執行MVPD登入的全新瀏覽器標籤取代。 當使用者選取MVPD （具有`iFrameRequired = false`）時，程式設計師必須建立名為`mvpdwindow`的新索引標籤（透過`window.open`）。 程式設計師接著執行`setSelectedProvider(<mvpd>)`，允許AccessEnabler在新標籤中載入MVPD登入URL。 使用者提供有效認證後，Adobe Pass驗證將關閉索引標籤，並將window.postMessage傳送至程式設計師的網站，以通知AccessEnabler驗證流程已完成。 系統會觸發下列回呼：
 
    - 如果流程是由`getAuthentication`起始： `setAuthenticationStatus`且會觸發`sendTrackingData(AUTHENTICATION_DETECTION...)`以表示驗證成功/失敗。
 
@@ -104,7 +104,7 @@ AccessEnabler的登出API會清除程式庫的本機狀態，並在目前的索�
 
 >[!IMPORTANT]
 > 
->您必須將MVPD登入iFrame或快顯視窗載入為包含AccessEnabler執行個體的頁面的直接子頁面。 如果MVPD登入iFrame或彈出式視窗在包含AccessEnabler執行個體的頁面下方巢狀內嵌兩個或多個層級，則流程可能會掛起。 例如，如果您的iFrame位於首頁面和MVPD iFrame (Page =\> iFrame =\> MVPD iFrame)之間，則登入流程可能會失敗。
+>您必須將MVPD登入iFrame或快顯視窗載入為包含AccessEnabler例項之頁面的直接子頁面。 如果MVPD登入iFrame或彈出式視窗在包含AccessEnabler例項的頁面下方巢狀內嵌兩個或多個層級，則流程可能會擱置。 例如，如果您的iFrame位在主要頁面和MVPD iFrame (頁面=\> iFrame =\> MVPD iFrame)之間，則登入流程可能會失敗。
 
 </br>
 
@@ -126,7 +126,7 @@ AccessEnabler的登出API會清除程式庫的本機狀態，並在目前的索�
 
 登出流程完成後，系統會將iFrame重新導向至自訂Adobe Pass驗證端點。 這會向父系提供執行`window.postMessage`的JS程式碼片段，通知AccessEnabler登出已完成。 已觸發下列回呼： `setAuthenticationStatus()`和`sendTrackingData(AUTHENTICATION_DETECTION ...)`，表示使用者已不再驗證。
 
-下圖顯示不需重新整理的流程，可讓使用者在不重新整理應用程式首頁面的情況下登入其MVPD：
+下圖顯示不需重新整理的流程，可供使用者在不重新整理應用程式首頁面的情況下登入其MVPD：
 
 **已改善（不需重新整理）驗證/登出流程**
 
@@ -144,9 +144,9 @@ AccessEnabler的登出API會清除程式庫的本機狀態，並在目前的索�
 
 - 在開始驗證之前，只需要為非TempPass MVPD建立iFrame或快顯視窗。 程式設計師可以讀取MVPD物件的`tempPass`屬性（由`setConfig()` / `displayProviderDialog()`傳回），以偵測MVPD是否為TempPass。
 
-- `createIFrame()`回呼必須包含對TempPass的檢查，而且只有在MVPD不是TempPass時才執行其邏輯。
+- `createIFrame()`回呼必須包含對TempPass的檢查，並且僅在MVPD不是TempPass時才執行其邏輯。
 
-- `destroyIFrame()`回呼必須包含對TempPass的檢查，而且只有在MVPD不是TempPass時才執行其邏輯。
+- `destroyIFrame()`回呼必須包含對TempPass的檢查，並且僅在MVPD不是TempPass時才執行其邏輯。
 
 - 在驗證完成之後叫用`setAuthenticationStatus()`和`sendTrackingData()`回呼（與一般MVPD的無重新整理流程完全相同）。
 

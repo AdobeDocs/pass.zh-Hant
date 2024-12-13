@@ -2,14 +2,14 @@
 title: JavaScript SDK逐步指南
 description: JavaScript SDK逐步指南
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '934'
+source-wordcount: '935'
 ht-degree: 0%
 
 ---
 
-# JavaScript SDK逐步指南 {#javascript-sdk-cookbook}
+# （舊版） JavaScript SDK逐步指南 {#javascript-sdk-cookbook}
 
 >[!NOTE]
 >
@@ -51,7 +51,7 @@ ht-degree: 0%
 
 - `displayProviderDialog(mvpds)`
 
-  **觸發器：** `getAuthentication(),`僅當使用者尚未選取提供者(MVPD)且尚未驗證時
+  **觸發器：** `getAuthentication(),`僅限使用者尚未選取提供者(MVPD)且尚未驗證時
 mvpds引數是使用者可用的提供者陣列。
 
 - `setAuthenticationStatus(status, errorcode)`

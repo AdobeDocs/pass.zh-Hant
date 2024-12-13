@@ -2,14 +2,14 @@
 title: 提供MVPD清單
 description: 提供MVPD清單
 exl-id: db2d8f19-d0b9-4195-bf0b-f9de0d96062b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '232'
+source-wordcount: '233'
 ht-degree: 2%
 
 ---
 
-# 提供MVPD清單 {#provide-mvpd-list}
+# （舊版）提供MVPD清單 {#provide-mvpd-list}
 
 >[!NOTE]
 >
@@ -60,5 +60,5 @@ ht-degree: 2%
 * **enablePlatformServices （布林值）：**&#x200B;旗標，指出是否透過Platform SSO整合此MVPD
 * **boardingStatus （字串）：**&#x200B;旗標，指出MVPD是否完全支援Platform SSO （支援）或MVPD是否只出現在平台選擇器（選擇器）中
 * **displayInPlatformPicker （布林值）：**&#x200B;此MVPD是否出現在平台選擇器中
-* **platformMappingId （字串）：**&#x200B;平台已知的此MVPD識別碼
+* **platformMappingId （字串）：**&#x200B;此MVPD的識別碼（由平台所知）
 * **requiredMetadataFields （字串陣列）：**&#x200B;使用者中繼資料欄位在成功登入時應該可以使用

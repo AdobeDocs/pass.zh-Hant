@@ -2,9 +2,9 @@
 title: Apple SSO概觀
 description: Apple SSO概觀
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '1256'
+source-wordcount: '1260'
 ht-degree: 0%
 
 ---
@@ -51,13 +51,13 @@ Adobe Pass驗證與Apple合作，為iPhone、iPad和Apple電視擁有者在電�
 
      請參閱[Apple SSO逐步指南(REST API V2)](apple-sso-cookbook-rest-api-v2.md)檔案。
 
-   * Adobe Pass Authentication REST API V1支援合作夥伴單一登入(SSO)。
+   * 舊版Adobe Pass驗證REST API V1支援合作夥伴單一登入(SSO)。
 
-     請參閱[Apple SSO逐步指南(REST API V1)](apple-sso-cookbook-rest-api-v1.md)檔案。
+     請參閱[（舊版） Apple SSO逐步指南(REST API V1)](../../../../legacy/sso-access/apple-sso-cookbook-rest-api-v1.md)檔案。
 
-   * Adobe Pass Authentication AccessEnabler iOS/tvOS SDK支援合作夥伴單一登入(SSO)。
+   * 舊版Adobe Pass Authentication AccessEnabler iOS/tvOS SDK支援合作夥伴單一登入(SSO)。
 
-     請參閱[Apple SSO逐步指南(iOS/tvOS SDK)](apple-sso-cookbook-iostvos-sdk.md)檔案。
+     請參閱[ （舊版） Apple SSO逐步指南(iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)檔案。
 
 ### MVPD {#apple-sso-prerequisites-mvpd}
 
@@ -90,12 +90,12 @@ Adobe Pass驗證與Apple合作，為iPhone、iPad和Apple電視擁有者在電�
 
 * 如果使用者使用未與應用程式整合的MVPD前往iOS/iPadOS上的&#x200B;*`Settings -> TV Provider`*&#x200B;或tvOS上的&#x200B;*`Settings -> Accounts -> TV Provider`*&#x200B;區段登入，會發生什麼情況？
 
-  當使用者啟動應用程式時，將不會透過Apple SSO工作流程驗證使用者。 因此，應用程式必須回覆為一般驗證流程，並顯示自己的MVPD選擇器。
+  當使用者啟動應用程式時，將不會透過Apple SSO工作流程驗證使用者。 因此，應用程式必須回覆為一般驗證流程，並顯示自己的MVPD選取器。
 
 
-* 如果使用者使用透過iOS/tvOS平台的[iOS TVE儀表板](https://experience.adobe.com/#/pass/authentication)在&#x200B;**NO**&#x200B;上設定的&#x200B;**啟用單一登入**&#x200B;的MVPD，移至Adobe Pass/iPadOS上的&#x200B;*`Settings -> TV Provider`*&#x200B;或tvOS上的&#x200B;*`Settings -> Accounts -> TV Provider`*&#x200B;區段進行登入，會發生什麼情況？
+* 如果使用者使用透過iOS/tvOS平台的[Adobe Pass TVE儀表板](https://experience.adobe.com/#/pass/authentication)在&#x200B;**NO**&#x200B;上設定&#x200B;**啟用單一登入**&#x200B;的MVPD，移至iOS/iPadOS上的&#x200B;*`Settings -> TV Provider`*&#x200B;或tvOS上的&#x200B;*`Settings -> Accounts -> TV Provider`*&#x200B;區段進行登入，會發生什麼情況？
 
-  當使用者啟動應用程式時，將不會透過Apple SSO工作流程驗證使用者。 因此，應用程式必須回覆為一般驗證流程，並顯示自己的MVPD選擇器。
+  當使用者啟動應用程式時，將不會透過Apple SSO工作流程驗證使用者。 因此，應用程式必須回覆為一般驗證流程，並顯示自己的MVPD選取器。
 
 
 * 如果使用者有Apple未上線（不支援）的MVPD，但存在於Apple選擇器中，會發生什麼情況？
@@ -105,7 +105,7 @@ Adobe Pass驗證與Apple合作，為iPhone、iPad和Apple電視擁有者在電�
 
 * 如果使用者有Apple未上線（不支援）的MVPD，會發生什麼情況？
 
-  當使用者啟動應用程式時，使用者會透過Apple SSO工作流程選取「其他電視提供者」選擇器。 因此，應用程式必須回覆為一般驗證流程，並顯示自己的MVPD選擇器。
+  當使用者啟動應用程式時，使用者會透過Apple SSO工作流程選取「其他電視提供者」選擇器。 因此，應用程式必須回覆為一般驗證流程，並顯示自己的MVPD選取器。
 
 
 * 如果使用者的MVPD透過[Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication)的媒體降級，會發生什麼情況？
@@ -120,9 +120,9 @@ Adobe Pass驗證與Apple合作，為iPhone、iPad和Apple電視擁有者在電�
 
 * 驗證TTL是否會有任何變更？
 
-  Adobe Pass驗證將繼續遵循程式設計師整合每個MVPD所需的TTL。 透過Apple SSO從一個程式設計人員應用程式導覽至另一個程式設計人員應用程式時，第二個應用程式將擁有其對應程式設計人員x MVPD整合的TTL （它不會共用第一個驗證之應用程式的TTL）
+  Adobe Pass驗證將繼續遵循程式設計師整合每個MVPD所需的TTL。 透過Apple SSO從一個程式設計人員應用程式導覽至另一個程式設計人員應用程式時，第二個應用程式將擁有其對應程式設計人員x MVPD整合的TTL （不會共用第一個驗證之應用程式的TTL）
 
 |                                      | Adobe Pass驗證TTL已過期 | Adobe Pass驗證TTL有效 |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| **Apple的裝置Token TTL已過期** | 使用者未驗證（MVPD選擇器應會出現） | 使用者已完成驗證，且TTL為其Adobe Pass驗證權杖/設定檔的剩餘時間 |
+| **Apple的裝置Token TTL已過期** | 使用者未驗證(MVPD選擇器應會出現) | 使用者已完成驗證，且TTL為其Adobe Pass驗證權杖/設定檔的剩餘時間 |
 | **Apple的裝置Token TTL有效** | 使用者會透過在TVE儀表板中指定的TTL以無訊息方式驗證，並取得另一個Adobe Pass驗證權杖/設定檔 | 使用者已完成驗證，且TTL為其Adobe Pass驗證權杖/設定檔的剩餘時間 |

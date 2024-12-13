@@ -2,14 +2,14 @@
 title: 依第二熒幕Web應用程式檢查驗證流程
 description: 依第二熒幕Web應用程式檢查驗證流程
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '211'
+source-wordcount: '212'
 ht-degree: 0%
 
 ---
 
-# 依第二熒幕Web應用程式檢查驗證流程 {#check-authentication-flow-by-second-screen-web-app}
+# （舊版）依第二熒幕Web應用程式檢查驗證流程 {#check-authentication-flow-by-second-screen-web-app}
 
 >[!NOTE]
 >
@@ -35,7 +35,7 @@ ht-degree: 0%
 
 ## 說明 {#description}
 
-第二個熒幕登入Web應用程式應使用此API，以確認Adobe Pass驗證已確認從MVPD成功登入。 我們建議先呼叫此API，再向一般使用者顯示成功訊息，指示他/她繼續前往裝置主控台，以繼續執行工作流程。
+第二個畫面登入網頁應用程式應使用此API，以確認Adobe Pass驗證已確認從MVPD成功登入。 我們建議先呼叫此API，再向一般使用者顯示成功訊息，指示他/她繼續前往裝置主控台，以繼續執行工作流程。
 
 
 | 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |

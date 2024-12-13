@@ -2,14 +2,14 @@
 title: MVPD直接整合計畫
 description: MVPD直接整合計畫
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '1071'
 ht-degree: 0%
 
 ---
 
-# MVPD快速入門手冊：MVPD直接整合計畫 {#mvpd-dir-int-plan}
+# MVPD kickstart指南：MVPD直接整合計畫 {#mvpd-dir-int-plan}
 
 >[!NOTE]
 >
@@ -35,14 +35,14 @@ ht-degree: 0%
 
 ## 2.功能 {#features}
 
-Adobe將設定每週狀態通話，以討論和追蹤整合的整體排程、步驟、時間表和實施詳細資訊。 在此階段中，Adobe會檢閱MVPD的規格。 其結果應該是詳細說明了MVPD所需的所有功能的規格頁面。 MVPD會傳送規格檔案給Adobe，詳細說明MVPD的驗證/授權實作。
+Adobe將設定每週狀態通話，以討論和追蹤整合的整體排程、步驟、時間表和實施詳細資訊。 在此階段，Adobe會檢閱MVPD的規格。 其結果應該是規格頁面，其中詳細說明MVPD所需的所有功能。 MVPD會傳送規格檔案給Adobe，詳細說明MVPD的驗證/授權實施。
 
 要釐清的專案，請參閱[MVPD整合功能](/help/authentication/integration-guide-mvpds/mvpd-integr-features.md)。
 
 目前需要詳細說明幾項設定：
 
 * **MVPD的標誌URL** — 這是具有下列維度的檔案： 112 x 33畫素。 當使用者按一下「登入」按鈕以選取他們的付費電視提供者時，程式設計師在其網站上顯示標誌。
-* **TTL （存留時間）值** - TTL通常由MVPD在驗證/授權程式期間設定。 不過，Adobe可以覆寫這些TTL值，並根據程式設計師和MVPD雙方同意的內容提供不同的值。
+* **TTL （存留時間）值** - TTL通常由MVPD在驗證/授權程式期間設定。 不過，Adobe可以覆寫這些TTL值，並根據程式設計師和MVPD雙方所同意的內容提供不同的值。
 * **顯示名稱** — 當使用者按一下[登入]按鈕以選取他們的付費電視提供者時，程式設計師會在其網站上顯示此名稱。
 * **測試認證** — 兩個設定檔（測試階段和生產）都應該有測試認證的清單。
 
@@ -79,7 +79,7 @@ Adobe將設定每週狀態通話，以討論和追蹤整合的整體排程、步
 
 >[!NOTE]
 >
->請注意，授權是按資源執行。 授權交易通常使用ID字串執行，從程式設計師的網站傳遞，代表使用者請求授權的管道。 此資源ID是在程式設計師和MVPD之間建立，可視需要提供精細度。
+>請注意，授權是按資源執行。 授權交易通常使用ID字串執行，從程式設計師的網站傳遞，代表使用者請求授權的管道。 此資源ID是在程式設計師和MVPD之間建立，可視需要提供精細粒度。
 
 ## 6.Adobe環境 {#adobe-env}
 
@@ -88,7 +88,7 @@ Adobe為開發流程的不同階段提供不同的環境：
 * **資格預審** (PRE-QUAL)： PRE-QUAL環境包含下一個發行候選專案。 Adobe在將整合升級至發行環境之前，最初在此環境中整合新合作夥伴。 合作夥伴有兩星期的時間可在PRE-QUAL環境中測試，且必須明確要求變更PRE-QUAL設定(請聯絡您的Adobe代表以取得變更要求流程的詳細資訊)。 錯誤修正會在此環境中觸發新部署。
 * **版本** （版本）：Adobe目前的生產組建已部署至此處的即時環境。
 
-如需有關如何使用Adobe環境的詳細資訊，請參閱[瞭解Adobe環境](/help/authentication/notes-technical/understanding-the-adobe-environments.md)
+如需有關如何使用Adobe環境的詳細資訊，請參閱[瞭解Adobe環境](/help/authentication/notes-technical/environments/understanding-the-adobe-environments.md)
 
 ## 7.中繼部署 {#stag-env}
 
@@ -98,13 +98,13 @@ MVPD需要在其QA/中繼環境/測試環境中執行相同的部署。
 
 ## 8.測試與疑難排解 {#tes-troubleshoot}
 
-在此階段中，會Adobe和MVPD測試並疑難排解整合。 為協助測試整合，Adobe Pass驗證團隊可使用Adobe的API測試網站。 若要進一步瞭解如何使用Adobe API測試網站，請參閱[使用Adobe API測試網站測試驗證與授權流程](/help/authentication/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)。
+在此階段，請Adobe和MVPD測試並疑難排解整合問題。 為協助測試整合，Adobe Pass驗證團隊可使用Adobe的API測試網站。 若要進一步瞭解如何使用Adobe API測試網站，請參閱[使用Adobe API測試網站測試驗證與授權流程](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)。
 
-當測試和疑難排解成功完成時，會在Adobe的發行預備環境中啟用整合。 此時，Adobe可以將MVPD與實際程式設計師整合。
+當測試和疑難排解成功完成時，會在Adobe的發行預備環境中啟用整合。 此時，Adobe可以將MVPD與實際的程式設計師整合。
 
 ## 9.生產部署 {#prod-dep}
 
-* MVPD必須先部署在生產設定檔中，才能測試連線。
+* MVPD必須先在生產設定檔中部署，才能測試連線。
 
 * Adobe會部署在預備性生產環境中。
 

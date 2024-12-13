@@ -2,14 +2,14 @@
 title: JavaScript SDK概觀
 description: JavaScript SDK概觀
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '510'
+source-wordcount: '511'
 ht-degree: 0%
 
 ---
 
-# JavaScript SDK概觀 {#javascript-sdk-overview}
+# （舊版） JavaScript SDK概觀 {#javascript-sdk-overview}
 
 >[!NOTE]
 >
@@ -27,11 +27,11 @@ Adobe Pass Authentication JavaScript整合在熟悉的JS Web應用程式開發�
 >
 >本檔案說明案頭Web解決方案的實作。 行動平台不支援JavaScript資料庫(例如iOS上的Safari、Android上的Chrome)。 如果您想要鎖定行動平台(iOS、Android、Windows)，請使用我們的原生SDK。
 
-## 建立MVPD選擇對話方塊 {#creating-the-mvpd-selection-dialog}
+## 建立MVPD選取範圍對話方塊 {#creating-the-mvpd-selection-dialog}
 
-使用者若要登入其MVPD並取得驗證，您的頁面或播放器必須提供使用者識別其MVPD的方式。 會提供預設版本的MVPD選取對話方塊以供開發。 對於生產使用，您必須實作您自己的MVPD選取器。
+使用者若要登入其MVPD並獲得驗證，您的頁面或播放器必須為使用者提供識別其MVPD的方式。 為開發提供了MVPD選擇對話方塊的預設版本。 若用於生產，您必須實作您自己的MVPD選取器。
 
-如果您已經知道客戶的提供者是誰，您可以[以程式設定MVPD](/help/authentication/home.md)，而不需要使用者互動。 技巧相同，但會略過叫用「提供者選擇器」對話方塊並要求客戶選取其MVPD的步驟。
+如果您已經知道客戶的提供者是誰，您可以[以程式設計方式設定MVPD](/help/authentication/home.md)，而不需要使用者互動。 技巧相同，但會略過叫用「提供者選擇器」對話方塊並要求客戶選取其MVPD的步驟。
 
 ## 顯示服務提供者 {#displaying-the-service-provider}
 

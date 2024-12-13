@@ -2,7 +2,7 @@
 title: 報表
 description: 瞭解資料如何在TVE儀表板報表中彙總。
 exl-id: d8ba48de-d743-4dc2-866c-7d6e3ff94773
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%
@@ -45,7 +45,7 @@ AuthN TTL報告(也稱為驗證存留時間(TTL))會顯示您的管道與所有[
 
 >[!IMPORTANT]
 >
-> 當MVPD強制使用AuthN TTL值(而非Adobe Pass驗證設定)時，會使用MVPD設定的&#x200B;**預留位置**。
+> 當MVPD強制執行AuthN TTL值(而非Adobe Pass驗證設定)時，會使用MVPD設定的&#x200B;**預留位置**。
 
 選取「**匯出報表**」，將資料儲存為本機電腦上的CSV檔案。
 
@@ -81,7 +81,7 @@ SSO報表（也稱為單一登入）會顯示針對所有[平台](#platforms)上
 >
 > * 使用者平台設定：封鎖第三方Cookie的選項。
 > * 使用者決策：使用者拒絕平台存取其電視提供者訂閱。
-> * MVPD設定： MVPD要求每個通道的驗證。
+> * MVPD設定： MVPD要求驗證每個管道。
 
 選取「**匯出報表**」，將資料儲存為本機電腦上的CSV檔案。
 
@@ -111,7 +111,7 @@ SSO報表（也稱為單一登入）會顯示針對所有[平台](#platforms)上
 
 * **平台未識別**：當Adobe Pass驗證服務偵測到未知的裝置型別時，顯示套用至程式設計工具實作的值。
 
-若要進一步瞭解如何與Adobe Pass Authentication REST API或SDK共用所需的裝置型別（例如&#x200B;**Roku**），請檢視[傳遞使用者端資訊](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md)的機制。
+若要進一步瞭解如何與Adobe Pass Authentication REST API或SDK共用所需的裝置型別（例如&#x200B;**Roku**），請檢視[傳遞使用者端資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)的機制。
 
 >[!IMPORTANT]
 >

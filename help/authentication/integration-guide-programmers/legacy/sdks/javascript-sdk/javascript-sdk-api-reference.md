@@ -2,14 +2,14 @@
 title: JavaScript SDK API參考
 description: JavaScript SDK API參考
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '2860'
+source-wordcount: '2861'
 ht-degree: 0%
 
 ---
 
-# JavaScript SDK API參考 {#javascript-sdk-api-reference}
+# （舊版） JavaScript SDK API參考 {#javascript-sdk-api-reference}
 
 >[!NOTE]
 >
@@ -40,12 +40,12 @@ ht-degree: 0%
 
 - *端點* — 此引數是選用的。 可以是下列其中一個值：
 
-   - 陣列，可讓您為Adobe提供的驗證和授權服務指定端點（不同的例項可能會用於偵錯）。 若提供多個URL，MVPD清單會由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是先回應且支援該MVPD的提供者。 根據預設（如果未指定值），會使用Adobe服務提供者(<http://sp.auth.adobe.com/>)。
+   - 陣列，可讓您為Adobe提供的驗證和授權服務指定端點（不同的例項可能會用於偵錯）。 若提供多個URL，MVPD清單將由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是說，第一個回應並支援該MVPD的提供者。 根據預設（如果未指定值），會使用Adobe服務提供者(<http://sp.auth.adobe.com/>)。
 
   範例：
    - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
 
-- *選項* — 包含應用程式ID值、訪客ID值無重新整理設定（背景登入登出）和MVPD設定(iFrame)的JSON物件。 所有值均為選用。
+- *選項* — 包含應用程式ID值、訪客ID值重新整理較少設定（背景登出登出）和MVPD設定(iFrame)的JSON物件。 所有值均為選用。
    1. 若指定，系統會在資料庫執行的所有網路呼叫上報告Experience CloudvisitorID。 此值稍後可用於進階分析報表。
    2. 如果指定應用程式的唯一識別碼 — `applicationId` — 則會將該值新增至應用程式進行的所有後續呼叫，作為X-Device-Info HTTP標頭的一部分。 稍後可以使用適當的查詢從[ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)報表擷取此值。
 
@@ -60,7 +60,7 @@ ht-degree: 0%
   })
 ```
 
-- 程式設計師可以覆寫在Adobe Pass驗證中設定的MVPD設定，方法是指定登入（*iFrameRequired*&#x200B;索引鍵）和iFrame維度（*iFrameWidth*&#x200B;和&#x200B;*iFrameHeight*&#x200B;索引鍵）是否需要iFrame。 JSON物件有下列範本：
+- 程式設計師可以覆寫Adobe Pass驗證中設定的MVPD設定，方法是指定登入（*iFrameRequired*&#x200B;索引鍵）和iFrame維度（*iFrameWidth*&#x200B;和&#x200B;*iFrameHeight*&#x200B;索引鍵）是否需要iFrame。 JSON物件有下列範本：
 
 ```JSON
     {  
@@ -84,14 +84,14 @@ ht-degree: 0%
 ```
 
 
-上述範本中的所有最上層金鑰都是選用的，且具有預設值（*backgroundLogin*、*backgroundLogut*&#x200B;預設為false，而mvpdConfig為null — 表示不會覆寫MVPD設定）。
+上述範本中的所有最上層金鑰都是選用的，且具有預設值(*backgroundLogin*、*backgroundLogut*&#x200B;預設為false，而mvpdConfig為null — 表示不會覆寫任何MVPD設定)。
 
 
 - **注意**：為上述引數指定無效的值/型別將導致未定義的行為。
 
 
 
-以下是以下情況的設定範例：啟用不需重新整理的登入和登出、將MVPD1變更為完整頁面重新導向登入（非iFrame）並將MVPD2變更為寬度為500且高度為300的iFrame登入：
+以下是以下情境的設定範例：啟用不需重新整理的登入和登出、將MVPD1變更為完整頁面重新導向登入（非iFrame）以及將MVPD2變更為iFrame登入（其寬度為500而高度為300）：
 
 ```JSON
     {  
@@ -120,14 +120,14 @@ ht-degree: 0%
 
 ## getAuthorization(inResourceID， redirect_url) {#getauthorization(inresourceid,redirect_url)}
 
-**描述：**&#x200B;要求指定資源的授權。 每次客戶嘗試存取可授權資源時，請呼叫此函式，以從Access Enabler取得短期授權權杖。 資源ID會與提供授權的MVPD商定。
+**描述：**&#x200B;要求指定資源的授權。 每次客戶嘗試存取可授權資源時，請呼叫此函式，以從Access Enabler取得短期授權權杖。 資源ID需與提供授權的MVPD協定。
 
 使用目前客戶的快取驗證Token。 如果找不到此類Token，會先起始驗證程式，然後繼續授權。
 
 **引數：**
 
 - `inResourceID` — 使用者要求授權的資源識別碼。
-- `redirect_url` — 可選擇提供重新導向URL，讓MVPD的授權程式將使用者傳回至該頁面，而非啟動授權的頁面。
+- `redirect_url` — 可選擇提供重新導向URL，讓MVPD的授權程式將使用者傳回該頁面，而非啟動授權的頁面。
 
 
 已觸發&#x200B;**回呼：** [setToken()](#settokeninrequestedresourceid-intoken-settokeninrequestedresourceidintoken)成功，[tokenRequestFailed](#tokenrequestfailedinrequestedresourceid-inrequesterrorcode-inrequestdetailederrormessage-tokenrequestfailedinrequestedresourceidinrequesterrorcodeinrequestdetailederrormessage)失敗
@@ -150,7 +150,7 @@ ht-degree: 0%
 
 **引數：**
 
-- redirect_url — 可選擇性地提供重新導向URL，讓MVPD的驗證處理作業將使用者傳回該頁面，而非啟動驗證的頁面。
+- redirect_url — 可選擇提供重新導向URL，讓MVPD的驗證程式將使用者傳回該頁面，而非起始驗證的頁面。
 
 已觸發&#x200B;**回呼：** [setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[displayProviderDialog()](#displayproviderdialogproviders-displayproviderdialogproviders)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
@@ -197,18 +197,18 @@ ht-degree: 0%
 
 **引數：**
 
-- *資源*： resources引數是應檢查授權的資源陣列。 清單中的每個元素應為代表資源ID的字串。 資源ID受到與`getAuthorization()`呼叫中的資源ID相同的限制，也就是說，它是程式設計師與MVPD或媒體RSS片段之間建立的議定值。
+- *資源*： resources引數是應檢查授權的資源陣列。 清單中的每個元素應為代表資源ID的字串。 資源ID受到與`getAuthorization()`呼叫中的資源ID相同的限制，也就是說，這是程式設計師與MVPD之間建立的商定值，或媒體RSS片段。
 
 </br>
 
 ## checkPreauthorizedResources(resources-cache=true) {#checkPreauthorizedResources(resources-cache=true)}
 
-此API變體從JS SDK 4.0版開始提供使用
+自JS SDK 4.0版開始，即可使用此API變體
 
 
 **引數：**
 
-- *資源*： resources引數是應檢查授權的資源陣列。 清單中的每個元素應為代表資源ID的字串。 資源ID受到與`getAuthorization()`呼叫中的資源ID相同的限制，也就是說，它是程式設計師與MVPD或媒體RSS片段之間建立的議定值。
+- *資源*： resources引數是應檢查授權的資源陣列。 清單中的每個元素應為代表資源ID的字串。 資源ID受到與`getAuthorization()`呼叫中的資源ID相同的限制，也就是說，這是程式設計師與MVPD之間建立的商定值，或媒體RSS片段。
 
 - *快取*：檢查預先授權的資源時，是否要使用內部快取。 這是選用引數，預設為&#x200B;**true**。 如果為true，則行為與上述API相同，這表示對此函式的後續呼叫將使用內部快取來解析預先授權的資源。 傳遞此引數的&#x200B;**false**&#x200B;將會停用內部快取，導致每次呼叫&#x200B;**checkPreauthorizedResources** API時都進行伺服器呼叫。
 
@@ -226,7 +226,7 @@ ht-degree: 0%
 中繼資料有兩種型別：
 
 - **靜態** （驗證權杖TTL、授權權杖TTL和裝置ID）
-- **使用者中繼資料** （這包含在驗證和/或授權流程期間，從MVPD傳遞至使用者裝置的使用者特定資訊）
+- **使用者中繼資料** (這包含在驗證和/或授權流程期間，從MVPD傳遞至使用者裝置的使用者特定資訊)
 
 **更多資訊：** [使用者中繼資料](#UserMetadata)
 
@@ -249,7 +249,7 @@ ht-degree: 0%
 
    - `"maxRating"` — 使用者的家長評等上限
 
-   - `"userID"` — 使用者識別碼。 在MVPD支援附屬帳戶，且使用者不是主要帳戶的情況下，userID將會與householdID不同。
+   - `"userID"` — 使用者識別碼。 在MVPD支援子帳戶，而使用者不是主要帳戶的情況下，userID將會與householdID不同。
 
    - `"channelID"` — 使用者有權檢視的管道清單
 
@@ -302,7 +302,7 @@ ht-degree: 0%
 
 ## setSelectedProvider(providerid) {#setSelectedProvider}
 
-**說明：**&#x200B;當使用者從您的提供者選擇UI選取MVPD時，呼叫此函式以將提供者選擇傳送至Access Enabler，或呼叫此函式並附上null引數，以防使用者未選取提供者而解除您的提供者選擇UI。
+**說明：**&#x200B;當使用者從您的提供者選擇UI選取MVPD時，呼叫此函式，以將提供者選擇傳送至Access Enabler，或使用null引數呼叫此函式，以防使用者未選取提供者而解除您的提供者選擇UI。
 
 **個回呼
 已觸發：**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
@@ -319,7 +319,7 @@ ht-degree: 0%
 
 此函式為非同步函式，並傳回其結果至`selectedProvider()`回呼函式。
 
-- **MVPD**&#x200B;目前選取的MVPD，若未選取MVPD，則為Null。
+- **MVPD**&#x200B;目前選取的MVPD，如果未選取MVPD，則為Null。
 - **AE_State**&#x200B;目前客戶的驗證結果為「New User」、「User Not Authenticated」或「User Authenticated」
 
 已觸發&#x200B;**回呼：** [selectedProvider()](#getselectedprovider-getselectedprovider)
@@ -374,7 +374,7 @@ ht-degree: 0%
 
 **引數：**
 
-- *configXML*：儲存目前REQUESTOR （包括MVPD清單）之組態的xml物件。
+- *configXML*：儲存目前REQUESTOR (包括MVPD清單)之組態的xml物件。
 
 
 **觸發者：** [setRequestor()](#setrequestor-inrequestorid-endpoints-optionssetreq)
@@ -409,7 +409,7 @@ ht-degree: 0%
 
 ## createIFrame(inWidth， inHeight) {#createIFrame(inWidth,inHeight)}
 
-**描述：**&#x200B;如果使用者選取的MVPD需要iFrame才能顯示其驗證登入頁面UI，請實作此回呼。
+**說明：**&#x200B;如果使用者選取的MVPD需要iFrame才能顯示其驗證登入頁面UI，請實作此回呼。
 
 **觸發者：**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
@@ -423,7 +423,7 @@ ht-degree: 0%
 
 >[!NOTE]
 > 
->如果您使用目前的[進階錯誤報告](/help/authentication/integration-guide-programmers/features-standard/error-reporting/error-reporting.md)系統，則可以忽略傳送至此函式的errorCode引數。  不過，isAuthenticated旗標仍可用於追蹤軟體權利檔案流程中使用者的驗證狀態
+>如果您使用目前的[進階錯誤報告](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)系統，則可以忽略傳送至此函式的errorCode引數。  不過，isAuthenticated旗標仍可用於追蹤軟體權利檔案流程中使用者的驗證狀態
 
 
 **引數：**
@@ -479,14 +479,14 @@ ht-degree: 0%
 |  | 2：存取啟用程式使用者端型別 |
 |  | 3：作業系統 |
 | authenticationDetection | 0：權杖要求是否成功(true/false) |
-|  | 1： MVPD ID |
+|  | 1：MVPD ID |
 |  | 2： GUID |
 |  | 3：權杖已位於快取中(true/false) |
 |  | 4：裝置型別 |
 |  | 5：存取啟用程式使用者端型別 |
 |  | 6：作業系統 |
 | authorizationDetection | 0：權杖要求是否成功(true/false) |
-|  | 1： MVPD ID |
+|  | 1：MVPD ID |
 |  | 2： GUID |
 |  | 3：權杖已位於快取中(true/false) |
 |  | 4：錯誤 |
@@ -517,7 +517,7 @@ ht-degree: 0%
 
 ## tokenRequestFailed(inRequestedResourceID， inRequestErrorCode， inRequestDetailedErrorMessage) {#token-request-failed-error-msg}
 
-**描述：**&#x200B;實作此回呼以在授權或檢查授權要求失敗時發出訊號。 可選擇由MVPD用來提供自訂訊息，由程式設計師顯示。
+**描述：**&#x200B;實作此回呼以在授權或檢查授權要求失敗時發出訊號。 可選擇供MVPD使用，以提供由程式設計師顯示的自訂訊息。
 
 >[!IMPORTANT]
 >
@@ -527,7 +527,7 @@ ht-degree: 0%
 
 - *inRequestedResourceID* — 提供授權請求所使用的資源識別碼的字串。
 - *inRequestErrorCode* — 顯示Adobe Pass驗證錯誤碼的字串，指出失敗的原因；可能的值是「使用者未驗證錯誤」和「使用者未授權錯誤」；如需詳細資訊，請參閱下方的「回呼錯誤碼」。
-- *inRequestDetailedErrorMessage* — 適用於顯示的額外描述性字串。 如果此描述性字串因任何原因而無法使用，Adobe Pass驗證會傳送空白字串&#x200B;**(&quot;)**。  MVPD可使用此功能傳遞自訂錯誤訊息或銷售相關訊息。 例如，如果訂閱者拒絕對資源的授權，MVPD可能會以`*inRequestDetailedErrorMessage*`回覆，例如： **&quot;您目前沒有封裝中此頻道的存取權。 如果您想要升級套件，請按一下\*這裡\*。」**&#x200B;訊息由Adobe Pass驗證透過此回呼傳遞至程式設計師的網站。 然後程式設計師可以選擇顯示或忽略它。 Adobe Pass驗證也可以使用`*inRequestDetailedErrorMessage*`來通知程式設計師可能導致錯誤的情況。 例如，**「與提供者的授權服務通訊時發生網路錯誤」。**
+- *inRequestDetailedErrorMessage* — 適用於顯示的額外描述性字串。 如果此描述性字串因任何原因而無法使用，Adobe Pass驗證會傳送空白字串&#x200B;**(&quot;)**。  MVPD可使用此功能傳遞自訂錯誤訊息或銷售相關訊息。 例如，如果訂閱者被拒絕授權資源，MVPD可能會以`*inRequestDetailedErrorMessage*`回覆，例如： **&quot;您目前無法存取封裝中的這個管道。 如果您想要升級套件，請按一下\*這裡\*。」**&#x200B;訊息由Adobe Pass驗證透過此回呼傳遞至程式設計師的網站。 然後程式設計師可以選擇顯示或忽略它。 Adobe Pass驗證也可以使用`*inRequestDetailedErrorMessage*`來通知程式設計師可能導致錯誤的情況。 例如，**「與提供者的授權服務通訊時發生網路錯誤」。**
 
 
 
@@ -609,7 +609,7 @@ ht-degree: 0%
 
 **描述：**&#x200B;實作此回撥以接收目前選取的MVPD以及封裝在`result`引數中的目前使用者驗證結果。 `result`引數是具有下列屬性的物件：
 
-- **MVPD**&#x200B;目前選取的MVPD，若未選取MVPD，則為Null。
+- **MVPD**&#x200B;目前選取的MVPD，如果未選取MVPD，則為Null。
 - **AE\_State**&#x200B;目前使用者、「新使用者」、「使用者未驗證」或「使用者已驗證」其中之一的驗證結果
 
 **觸發者：** [getSelectedProvider()](#getSelProv)

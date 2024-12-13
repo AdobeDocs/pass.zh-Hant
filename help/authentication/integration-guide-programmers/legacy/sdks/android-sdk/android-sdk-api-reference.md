@@ -2,14 +2,14 @@
 title: Android SDK API參考
 description: Android SDK API參考
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
 workflow-type: tm+mt
-source-wordcount: '4537'
+source-wordcount: '4538'
 ht-degree: 0%
 
 ---
 
-# Android SDK API參考 {#android-sdk-api-reference}
+# （舊版） Android SDK API參考 {#android-sdk-api-reference}
 
 >[!NOTE]
 >
@@ -84,7 +84,7 @@ ht-degree: 0%
 
 如果未使用&#x200B;*url*&#x200B;引數，則產生的網路呼叫會鎖定預設服務提供者URL：Adobe發行/生產環境。
 
-如果提供&#x200B;*url*&#x200B;引數的值，則產生的網路呼叫會鎖定&#x200B;*url*&#x200B;引數中提供的所有URL。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD，「存取啟用程式」會記住關聯服務提供者的URL。 所有後續的軟體權利檔案要求都會導向在設定階段與目標MVPD配對之服務提供者相關聯的URL。
+如果提供&#x200B;*url*&#x200B;引數的值，則產生的網路呼叫會鎖定&#x200B;*url*&#x200B;引數中提供的所有URL。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD，「存取啟用程式」會記住關聯服務提供者的URL。 所有後續的軟體權利檔案請求都會導向在設定階段與目標MVPD配對之服務提供者相關聯的URL。
 
 | API呼叫：要求者設定 |
 | --- |
@@ -105,7 +105,7 @@ ht-degree: 0%
 
 - *signedRequestorID*：以您的私密金鑰數位簽署的請求者ID復本。<!--For more details. see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->。
 
-- *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 這樣做時，MVPD清單會由來自所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是先回應且支援該MVPD的提供者。
+- *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 若這麼做，MVPD清單將由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是說，第一個回應並支援該MVPD的提供者。
 
 已觸發&#x200B;**回呼：** `setRequestorComplete()`
 
@@ -143,7 +143,7 @@ ht-degree: 0%
 
 ### setOptions {#setOptions}
 
-**描述：**&#x200B;設定全域SDK選項。 它接受&#x200B;**Map\&lt;String， String\>**&#x200B;做為引數。 來自對應的值會連同SDK發出的每個網路呼叫一併傳遞至伺服器。
+**描述：**&#x200B;設定全域SDK選項。 它接受&#x200B;**Map\&lt;String， String\>**&#x200B;做為引數。 來自對應的值會連同SDK發出的每個網路呼叫一起傳遞至伺服器。
 
 這些值將會傳遞至伺服器，不受目前流量（驗證/授權）的影響。 如果您想要變更值，可以隨時呼叫此方法。
 
@@ -159,7 +159,7 @@ ht-degree: 0%
    - **applicationProfile** — 它可用來根據這個值設定伺服器組態。
    - **ap_vi** -Experience Cloud識別碼(visitorID)。 此值稍後可用於進階分析報表。
    - **ap_ai** - Advertising ID
-   - **device_info** — 使用者端資訊，如下所述： [傳遞使用者端資訊裝置連線與應用程式](/help/authentication/integration-guide-programmers/passing-client-information-device-connection-and-application.md)。
+   - **device_info** — 使用者端資訊，如下所述： [傳遞使用者端資訊裝置連線與應用程式](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)。
 
 [回到頂端……](#apis)
 
@@ -168,7 +168,7 @@ ht-degree: 0%
 
 **描述：**&#x200B;檢查驗證狀態。 其做法是在本機權杖儲存空間中搜尋有效的驗證權杖。 此方法不會執行任何網路呼叫，我們建議您在主要執行緒上呼叫它。 應用程式會使用它來查詢使用者的驗證狀態並相應地更新UI （即更新登入/登出UI）。 驗證狀態是透過&#x200B;[*setAuthenticationStatus()*](#setAuthNStatus)&#x200B;回呼傳送給應用程式。
 
-如果MVPD支援「每個請求者的驗證」功能，則多個驗證權杖可以儲存在裝置上。  如需有關此功能的詳細資訊，請參閱Android技術概觀中的[快取指引](#$caching)區段。
+如果MVPD支援「每位請求者驗證」功能，則多個驗證權杖可以儲存在裝置上。  如需有關此功能的詳細資訊，請參閱Android技術概觀中的[快取指引](#$caching)區段。
 
 | API呼叫：檢查驗證狀態 |
 | --- |
@@ -187,12 +187,12 @@ ht-degree: 0%
 
 **描述：**&#x200B;啟動完整驗證工作流程。 首先檢查驗證狀態。 如果尚未驗證，則會啟動驗證流程狀態機器：
 
-- 如果上次驗證嘗試成功，則會略過MVPD選取階段並觸發&#x200B;[*navigateToUrl()*](#navigagteToUrl)&#x200B;回呼。 應用程式會使用此回呼來例項化WebView控制項，該控制項會以MVPD的登入頁面顯示使用者。
-- 如果上次驗證嘗試不成功，或使用者明確登出，則會觸發&#x200B;[*displayProviderDialog()*](#displayProviderDialog)&#x200B;回呼。 您的應用程式會使用此回呼來顯示MVPD選取UI。 此外，您的應用程式必須透過[setSelectedProvider()](#setSelectedProvider)方法通知Access Enabler程式庫有關使用者的MVPD選擇，以繼續驗證流程。
+- 如果上次驗證嘗試成功，則會略過MVPD選取階段並觸發&#x200B;[*navigateToUrl()*](#navigagteToUrl)&#x200B;回呼。 應用程式會使用此回呼來例項化WebView控制項，該控制項會向使用者顯示MVPD的登入頁面。
+- 如果上次驗證嘗試不成功，或使用者明確登出，則會觸發&#x200B;[*displayProviderDialog()*](#displayProviderDialog)&#x200B;回呼。 您的應用程式會使用此回呼來顯示MVPD選擇UI。 此外，您的應用程式也需要透過[setSelectedProvider()](#setSelectedProvider)方法通知存取啟用程式庫有關使用者的MVPD選取專案，以繼續驗證流程。
 
-由於在MVPD登入頁面上驗證使用者的認證，您的應用程式必須監督使用者在MVPD登入頁面上驗證時發生的多個重新導向操作。 輸入正確的認證時，WebView控制項會重新導向至由&#x200B;*AccessEnabler.ADOBEPASS\_REDIRECT\_URL*&#x200B;常數定義的自訂URL。 此URL不打算由WebView載入。 應用程式必須攔截此URL，並將此事件解譯為登入階段完成的訊號。 然後，它應該將控制項移交給存取啟用程式，以便完成驗證流程(透過呼叫&#x200B;*getAuthenticationToken()*&#x200B;方法)。
+由於使用者的認證是在MVPD登入頁面上驗證的，因此您的應用程式必須監控使用者在MVPD登入頁面進行驗證時發生的多個重新導向操作。 輸入正確的認證時，WebView控制項會重新導向至由&#x200B;*AccessEnabler.ADOBEPASS\_REDIRECT\_URL*&#x200B;常數定義的自訂URL。 此URL不打算由WebView載入。 應用程式必須攔截此URL，並將此事件解譯為登入階段完成的訊號。 然後，它應該將控制項移交給存取啟用程式，以便完成驗證流程(透過呼叫&#x200B;*getAuthenticationToken()*&#x200B;方法)。
 
-如果MVPD支援「每個請求者的驗證」功能，則多個驗證權杖可以儲存在裝置上（每個程式設計師一個）。  如需有關此功能的詳細資訊，請參閱Android技術概觀中的[快取指引](#$caching)區段。
+如果MVPD支援「每位請求者的驗證」功能，則多個驗證權杖可以儲存在裝置上（每位程式設計師一個）。  如需有關此功能的詳細資訊，請參閱Android技術概觀中的[快取指引](#$caching)區段。
 
 最後，驗證狀態會透過&#x200B;*setAuthenticationStatus()*&#x200B;回呼與應用程式通訊。
 
@@ -222,9 +222,9 @@ ht-degree: 0%
 
 ### displayProviderDialog {#displayProviderDialog}
 
-**說明**&#x200B;由Access Enabler觸發的回呼，通知應用程式必須具現化適當的UI元素，才能讓使用者選取想要的MVPD。 回呼會提供MVPD物件清單，內含其他資訊，可協助您正確建立選取專案UI面板（例如指向MVPD標誌的URL、好記的顯示名稱等）
+**說明**&#x200B;由Access Enabler觸發的回呼，通知應用程式必須具現化適當的UI元素，才能讓使用者選取想要的MVPD。 回呼會提供MVPD物件清單，內含其他資訊，有助於正確建立選取專案UI面板(例如指向MVPD標誌的URL、好記的顯示名稱等)
 
-使用者選取想要的MVPD之後，上層應用程式必須呼叫&#x200B;*setSelectedProvider()*&#x200B;並傳遞與使用者選取專案相對應的MVPD識別碼，以恢複驗證流程。
+使用者選取想要的MVPD後，需要上層應用程式來繼續驗證流程，方法是呼叫&#x200B;*setSelectedProvider()*&#x200B;並傳遞與使用者選取專案相對應的MVPD識別碼。
 
 >[!NOTE]
 >
@@ -240,7 +240,7 @@ ht-degree: 0%
 
 **引數**：
 
-- *mvpds*：包含MVPD相關資訊的MVPD物件清單，應用程式可使用此清單來建置MVPD選取專案UI元素。
+- *mvpds*：包含MVPD相關資訊的MVPD物件清單，應用程式可使用此清單來建置MVPD選擇UI元素。
 
 **觸發者：** `getAuthentication(), getAuthorization()`
 
@@ -249,9 +249,9 @@ ht-degree: 0%
 
 ### setselectedprovider {#setSelectedProvider}
 
-**描述：**&#x200B;您的應用程式呼叫這個方法，以告知存取啟用程式使用者的MVPD選擇。 應用程式可以使用此方法來選取或變更用於驗證的服務提供者。
+**描述：**&#x200B;您的應用程式呼叫此方法，以告知存取啟用程式使用者的MVPD選擇。 應用程式可以使用此方法來選取或變更用於驗證的服務提供者。
 
-如果選取的MVPD是TempPass MVPD，它會自動透過該MVPD進行驗證，之後不需要呼叫getAuthentication()。
+如果選取的MVPD是TempPass MVPD，它隨後將自動使用該MVPD進行驗證，而無需呼叫getAuthentication()。
 
 請注意，這不適用於促銷暫時傳遞，因為getAuthentication()方法有額外的引數。
 
@@ -272,9 +272,9 @@ ht-degree: 0%
 
 ### navigateToUrl {#navigagteToUrl}
 
-**已棄用：**&#x200B;從Android SDK 3.0開始，只有在裝置上沒有Chrome自訂標籤時，才會使用navigateToUrl
+**已棄用：**&#x200B;從Android SDK 3.0開始，只有在裝置上不存在Chrome自訂標籤時，才會使用navigateToUrl
 
-**描述：**&#x200B;由Access Enabler觸發的回呼，通知應用程式使用者必須顯示MVPD登入頁面才能輸入其認證。 Access Enabler會以引數形式傳遞MVPD登入頁面的URL。 您的應用程式必須將WebView控制項例項化，並將其導向此URL。 此外，應用程式必須監視WebView控制項載入的URL，並攔截以`AccessEnabler.ADOBEPASS_REDIRECT_URL (deprecated)`常數定義的自訂URL為目標的重新導向作業。 發生此事件時，應用程式必須關閉或隱藏WebView控制項，並呼叫&#x200B;*getAuthenticationToken()*&#x200B;方法，將控制項交還給Access Enabler程式庫。 Access Enabler會從後端伺服器擷取驗證Token，並將其儲存在本機的權杖儲存體中，藉此完成驗證流程。
+**說明：**&#x200B;存取啟用程式所觸發的回呼，會通知應用程式使用者必須顯示MVPD登入頁面才能輸入其認證。 Access Enabler會以引數形式傳遞MVPD登入頁面的URL。 您的應用程式必須將WebView控制項例項化，並將其導向此URL。 此外，應用程式必須監視WebView控制項載入的URL，並攔截以`AccessEnabler.ADOBEPASS_REDIRECT_URL (deprecated)`常數定義的自訂URL為目標的重新導向作業。 發生此事件時，應用程式必須關閉或隱藏WebView控制項，並呼叫&#x200B;*getAuthenticationToken()*&#x200B;方法，將控制項交還給Access Enabler程式庫。 Access Enabler會從後端伺服器擷取驗證Token，並將其儲存在本機的權杖儲存體中，藉此完成驗證流程。
 
 >[!WARNING]
 >
@@ -299,7 +299,7 @@ ht-degree: 0%
 
 **已棄用：**&#x200B;從Android SDK 3.0開始，由於Chrome自訂標籤用於驗證，因此應用程式不再使用此方法。
 
-**描述：**&#x200B;從後端伺服器要求驗證Token，以完成驗證流程。 應用程式只應呼叫這個方法，以回應以下事件：主控MVPD登入頁面的WebView控制項被重新導向至由`AccessEnabler.ADOBEPASS_REDIRECT_URL`常數定義的自訂URL。
+**描述：**&#x200B;從後端伺服器要求驗證Token，以完成驗證流程。 應用程式只應呼叫這個方法，以回應託管MVPD登入頁面的WebView控制項被重新導向至由`AccessEnabler.ADOBEPASS_REDIRECT_URL`常數定義的自訂URL的事件。
 
 | API呼叫：擷取驗證Token |
 | --- |
@@ -309,7 +309,7 @@ ht-degree: 0%
 
 **引數：**
 
-- *Cookie*：在目標網域上設定的Cookie （如需參考實作，請參閱SDK中的示範應用程式）。
+- *Cookie*：在目標網域上設定的Cookie (如需參考實作，請參閱SDK中的示範應用程式)。
 
 已觸發&#x200B;**回呼：** `setAuthenticationStatus()`，`sendTrackingData()`
 
@@ -500,7 +500,7 @@ ht-degree: 0%
    - `AccessEnablerConstants.USER_NOT_AUTHORIZED_ERROR` — 使用者無法授權指定的資源
 - *errorDescription*：有關失敗案例的其他詳細資料。 如果此描述性字串因任何原因而無法使用，Adobe Pass驗證會傳送空白字串&#x200B;**(&quot;)**。
 
-  MVPD可使用此字串來傳遞自訂錯誤訊息或銷售相關訊息。 例如，如果拒絕訂閱者的資源授權，MVPD會傳送訊息，例如：「您目前沒有封裝中此通道的存取權。 如果您想要升級您的套件，請按這裡。」 此訊息會由Adobe Pass驗證透過此回呼傳送給程式設計師，程式設計師可以選擇顯示或忽略此訊息。 Adobe Pass驗證也可以使用此引數來提供可能導致錯誤的狀況通知。 例如，「與提供者的授權服務通訊時發生網路錯誤。」
+  MVPD可使用此字串來傳遞自訂錯誤訊息或銷售相關訊息。 例如，如果訂閱者拒絕對資源的授權，MVPD可以傳送訊息，例如：「您目前沒有封裝中此頻道的存取權。 如果您想要升級您的套件，請按這裡。」 此訊息會由Adobe Pass驗證透過此回呼傳送給程式設計師，程式設計師可以選擇顯示或忽略此訊息。 Adobe Pass驗證也可以使用此引數來提供可能導致錯誤的狀況通知。 例如，「與提供者的授權服務通訊時發生網路錯誤。」
 
 **觸發者：** `checkAuthorization(), getAuthorization()`
 
@@ -520,8 +520,8 @@ ht-degree: 0%
 
 已觸發&#x200B;**回呼：**
 
-- 適用於3.0之前的SDK版本的`navigateToUrl()`
-- SDK版本> 3.0的`setAuthenticationStatus()`
+- 適用於SDK 3.0之前版本的`navigateToUrl()`
+- 適用於SDK 3.0版的`setAuthenticationStatus()`
 
 
 [返回Android API...](#api)
@@ -546,7 +546,7 @@ ht-degree: 0%
 
 ### <span id="selectedProvider"></span>selectedProvider
 
-**描述：**&#x200B;由Access Enabler觸發的回呼，將目前所選MVPD的相關資訊傳送給應用程式。
+**描述：**&#x200B;由Access Enabler觸發的回呼，此回呼會將目前所選MVPD的相關資訊傳送給應用程式。
 
 | 回呼：目前所選MVPD的相關資訊 |
 | --- |
@@ -577,7 +577,7 @@ ht-degree: 0%
 程式設計師可以使用兩種中繼資料型別：
 
 - 靜態中繼資料（驗證權杖TTL、授權權杖TTL和裝置ID）
-- 使用者中繼資料（使用者特定資訊，例如使用者ID和郵遞區號；在驗證和/或授權流程中從MVPD傳遞至使用者裝置）
+- 使用者中繼資料(使用者特定資訊，例如使用者ID和郵遞區號；在驗證和/或授權流程中從MVPD傳遞至使用者的裝置)
 
 **引數：**
 
@@ -585,11 +585,11 @@ ht-degree: 0%
    - 如果索引鍵是`METADATA_KEY_USER_META`，而且引數包含名稱= `METADATA_ARG_USER_META`且值= `[metadata_name]`的SerializableNameValuePair物件，則會針對使用者中繼資料進行查詢。 目前可用的使用者中繼資料型別清單：
       - `zip` — 郵遞區號
 
-      - `householdID` — 家庭識別碼。 如果MVPD不支援附屬帳戶，這將會與`userID`相同。
+      - `householdID` — 家庭識別碼。 如果MVPD不支援附屬帳戶，這與`userID`相同。
 
       - `maxRating` — 使用者的家長評等上限
 
-      - `userID` — 使用者識別碼。 如果MVPD支援附屬帳戶，且使用者不是主帳戶，則`userID`將不同於`householdID`。
+      - `userID` — 使用者識別碼。 如果MVPD支援附屬帳戶，且使用者不是主要帳戶，則`userID`將與`householdID`不同。
 
       - `channelID` — 使用者有權檢視的管道清單
    - 如果索引鍵是`METADATA_KEY_DEVICE_ID`，則會進行查詢以取得目前的裝置識別碼。 請注意，此功能預設為停用，程式設計師應聯絡Adobe以取得有關啟用和費用的資訊。
@@ -600,13 +600,13 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->對於SDK 3.4.0，可從com.adobe.adobepass.accessenabler.api.profile.UserProfileService取得常數： `METADATA_KEY_USER_META, METADATA_KEY_DEVICE_ID, METADATA_KEY_TTL_AUTHZ, METADATA_KEY_TTL_AUTHN`。
+>若為SDK 3.4.0，可從com.adobe.adobepass.accessenabler.api.profile.UserProfileService取得常數： `METADATA_KEY_USER_META, METADATA_KEY_DEVICE_ID, METADATA_KEY_TTL_AUTHZ, METADATA_KEY_TTL_AUTHN`。
 
 
 
 >[!NOTE]
 >
->程式設計師實際可用的使用者中繼資料取決於MVPD提供的內容。  此清單將進一步展開，因為新的中繼資料已推出並新增至Adobe Pass驗證系統。
+>程式設計師實際可用的使用者中繼資料取決於MVPD提供的功能。  此清單將進一步展開，因為新的中繼資料已推出並新增至Adobe Pass驗證系統。
 
 已觸發&#x200B;**回呼：** [`setMetadataStatus()`](#setMetadaStatus)
 
@@ -732,7 +732,7 @@ Access Enabler會觸發其他回呼，而此回呼不一定與權益流程相關
 - *event*：正在追蹤的事件。 追蹤事件型別共有三種：
    - **authorizationDetection：**&#x200B;當授權權杖要求傳回時（事件型別為`EVENT_AUTHZ_DETECTION`）
    - **authenticationDetection：**&#x200B;任何時候發生驗證檢查時（事件型別為`EVENT_AUTHN_DETECTION`）
-   - **mvpdSelection：** (當使用者在MVPD選擇表單中選取MVPD （事件型別為`EVENT_MVPD_SELECTION`）)
+   - **mvpdSelection：**&#x200B;當使用者在MVPD選擇表單中選取MVPD （事件型別為`EVENT_MVPD_SELECTION`）時
 - *資料*：與報告事件相關的其他資料。 此資料會以值清單的形式呈現。
 
 下列是解譯&#x200B;*資料*中值的指示
