@@ -2,9 +2,9 @@
 title: 無用戶端 API 實施 - 錯誤代碼/消息，可能的原因/原因
 description: 無用戶端 API 實施 - 錯誤代碼/消息，可能的原因/原因
 exl-id: 616e35fc-9b72-422b-9a05-e6248bd52490
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '205'
+source-wordcount: '227'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >本頁面上的內容僅供參考。 使用此 API 需要 Adobe Systems 的最新許可證。 不允許未經授權的使用。
+
+>[!IMPORTANT]
+>
+> 確保您隨時了解產品公告](/help/authentication/product-announcements.md)頁面中[匯總的最新Adobe Pass Authentication產品公告和停用時程表。
 
 </br>
 
@@ -33,7 +37,7 @@ ht-degree: 0%
 1. 您可能會遇到跨網域 指令碼 的問題
 1. 適當的欺騙應該添加到 /etc/hosts 檔案
 
-## 錯誤： 400 請求無效
+## 錯誤： 400錯誤請求
 
 ### 原因：
 
@@ -51,9 +55,9 @@ ht-degree: 0%
 
 ### 原因：
 
-1. 用戶名稱和密碼不符
-2. 登入可能已被停用
-3. 檢查登入是用於生產或測試
+1. 使用者名稱和密碼不符
+2. 登入可能已停用
+3. 檢查登入是用於生產還是測試。
 
 
 <!--

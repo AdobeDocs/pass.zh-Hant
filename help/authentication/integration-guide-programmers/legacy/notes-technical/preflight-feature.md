@@ -2,9 +2,9 @@
 title: 預檢功能，如何啟用、疑難排解或解決問題
 description: 預檢功能，如何啟用、疑難排解或解決問題
 exl-id: 9e4ec343-371f-4116-915f-191e5f42cb47
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '499'
+source-wordcount: '521'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+
+>[!IMPORTANT]
+>
+> 請務必隨時瞭解彙總在[產品公告](/help/authentication/product-announcements.md)頁面中的最新Adobe Pass驗證產品公告和淘汰時間表。
 
 Adobe Pass驗證計算preAuthorizeResources的方式已變更。 PreAuthorization API有新的實作。 此實作會取代僅包含進行多個授權呼叫的舊解決方案。
 PreAuthorization API的外部介面未變更，程式設計師的應用程式中不需要更新。

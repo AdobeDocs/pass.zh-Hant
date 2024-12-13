@@ -2,9 +2,9 @@
 title: 使用主控台應用程式記錄檔對AccessEnabler iOS/tvOS SDK進行除錯
 description: 使用主控台應用程式記錄檔對AccessEnabler iOS/tvOS SDK進行除錯
 exl-id: 0dad325e-db15-4ea0-a87a-75409eaf8d46
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '576'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,9 @@ ht-degree: 0%
 >
 >此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
+>[!IMPORTANT]
+>
+> 請務必隨時瞭解彙總在[產品公告](/help/authentication/product-announcements.md)頁面中的最新Adobe Pass驗證產品公告和淘汰時間表。
 
 ## 概觀
 

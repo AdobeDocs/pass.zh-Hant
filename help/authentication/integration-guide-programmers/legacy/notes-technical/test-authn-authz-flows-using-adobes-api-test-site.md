@@ -2,9 +2,9 @@
 title: 如何使用Adobe的API測試網站測試驗證和授權流程
 description: 如何使用Adobe的API測試網站測試驗證和授權流程
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '312'
+source-wordcount: '334'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+
+>[!IMPORTANT]
+>
+> 請務必隨時瞭解彙總在[產品公告](/help/authentication/product-announcements.md)頁面中的最新Adobe Pass驗證產品公告和淘汰時間表。
 
 為了測試AuthN和AuthZ流程，我們已準備好&#x200B;**API測試網站**，您可隨時使用。 我們的支援團隊很樂意為您提供認證。 您可以透過&#x200B;**support@tve.zendesk.com**&#x200B;聯絡我們。
 

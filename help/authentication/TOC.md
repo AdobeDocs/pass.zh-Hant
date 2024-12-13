@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1258'
+source-wordcount: '1260'
 ht-degree: 2%
 
 ---
@@ -15,6 +15,35 @@ ht-degree: 2%
 # Adobe Pass驗證說明 {#authentication}
 
 + [Adobe Pass 驗證](home.md)
++ [產品公告](product-announcements.md)
++ 產品發行{#product-releases}
+   + 2024 {#2024}
+      + [Adobe Pass Authentication 3.0.3發行說明](notes-releases/auth-rn-303.md)
+      + [Adobe Pass Authentication 3.0發行說明](notes-releases/auth-rn-300.md)
+      + [Adobe Pass Authentication 2.70發行說明](notes-releases/auth-rn-270.md)
+      + [Adobe Pass Authentication 2.69發行說明](notes-releases/auth-rn-269.md)
+      + [Adobe Pass Authentication JavaScript 4.7.0發行說明](notes-releases/authn-rn-javascript-470.md)
+      + [Adobe Pass Authentication iOS / tvOS 3.9.2發行說明](notes-releases/authn-rn-ios-tvos-392.md)
+      + [Adobe Pass Authentication iOS / tvOS 3.8.4發行說明](notes-releases/authn-rn-ios-tvos-384.md)
+   + 2023 {#2023}
+      + [Adobe Pass Authentication 2.68發行說明](notes-releases/auth-rn-268.md)
+      + [Adobe Pass Authentication 2.67發行說明](notes-releases/auth-rn-267.md)
+      + [Adobe Pass Authentication 2.66發行說明](notes-releases/auth-rn-266.md)
+      + [Adobe Pass Authentication 2.65.1發行說明](notes-releases/auth-rn-2651.md)
+      + [Adobe Pass Authentication 2.65發行說明](notes-releases/auth-rn-265.md)
+      + [Adobe Pass Authentication 2.64.1發行說明](notes-releases/auth-rn-2641.md)
+      + [Adobe Pass Authentication iOS / tvOS 3.8.3發行說明](notes-releases/authn-rn-ios-tvos-383.md)
+      + [Adobe Pass Authentication iOS / tvOS 3.8.2發行說明](notes-releases/authn-rn-ios-tvos-382.md)
+      + [Adobe Pass Authentication iOS / tvOS 3.8.1發行說明](notes-releases/authn-rn-ios-tvos-381.md)
+      + [Adobe Pass Authentication Android 3.7.3發行說明](notes-releases/authn-rn-android-373.md)
+   + 2022 {#2022}
+      + [Adobe Pass Authentication 2.64發行說明](notes-releases/auth-rn-264.md)
+      + [Adobe Pass Authentication 2.63發行說明](notes-releases/auth-rn-263.md)
+      + [Adobe Pass Authentication 2.62.1發行說明](notes-releases/auth-rn-2621.md)
+      + [Adobe Pass Authentication JavaScript 4.6.0發行說明](notes-releases/authn-rn-javascript-460.md)
+   + 2021 {#2021}
+      + [Adobe Pass Authentication JavaScript 4.4.0發行說明](notes-releases/authn-rn-javascript-440.md)
+      + [Adobe Pass Authentication iOS / tvOS 3.7.0發行說明](notes-releases/authn-rn-ios-tvos-370.md)
 + Kickstart {#kickstart}
    + [技術檔案](kickstart/technical-paper.md)
    + [程式設計師概觀](kickstart/programmer-overview.md)
@@ -119,7 +148,7 @@ ht-degree: 2%
          + [促銷臨時傳遞](integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)
          + [重設暫時通過](integration-guide-programmers/features-premium/temporary-access/reset-temp-pass.md)
       + 存取許可權降級{#degraded-access}
-         + [降級API總覽](integration-guide-programmers/features-premium/degraded-access/degradation-api-overview.md)
+         + [降級API概觀](integration-guide-programmers/features-premium/degraded-access/degradation-api-overview.md)
       + ESM {#esm}
          + [軟體權利檔案服務監視概觀](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)
          + [權益服務監視API](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
@@ -261,34 +290,6 @@ ht-degree: 2%
    + [整合](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md)
    + [報表](/help/authentication/user-guide-tve-dashboard/tve-dashboard-reports.md)
    + [變更記錄](/help/authentication/user-guide-tve-dashboard/tve-dashboard-changes-log.md)
-+ 發行說明{#release-notes}
-   + 2024 {#release-notes-2024}
-      + [Adobe Pass Authentication 3.0.3發行說明](notes-releases/auth-rn-303.md)
-      + [Adobe Pass Authentication 3.0發行說明](notes-releases/auth-rn-300.md)
-      + [Adobe Pass Authentication 2.70發行說明](notes-releases/auth-rn-270.md)
-      + [Adobe Pass Authentication 2.69發行說明](notes-releases/auth-rn-269.md)
-      + [Adobe Pass Authentication JavaScript 4.7.0發行說明](notes-releases/authn-rn-javascript-470.md)
-      + [Adobe Pass Authentication iOS / tvOS 3.9.2發行說明](notes-releases/authn-rn-ios-tvos-392.md)
-      + [Adobe Pass Authentication iOS / tvOS 3.8.4發行說明](notes-releases/authn-rn-ios-tvos-384.md)
-   + 2023 {#release-notes-2023}
-      + [Adobe Pass Authentication 2.68發行說明](notes-releases/auth-rn-268.md)
-      + [Adobe Pass Authentication 2.67發行說明](notes-releases/auth-rn-267.md)
-      + [Adobe Pass Authentication 2.66發行說明](notes-releases/auth-rn-266.md)
-      + [Adobe Pass Authentication 2.65.1發行說明](notes-releases/auth-rn-2651.md)
-      + [Adobe Pass Authentication 2.65發行說明](notes-releases/auth-rn-265.md)
-      + [Adobe Pass Authentication 2.64.1發行說明](notes-releases/auth-rn-2641.md)
-      + [Adobe Pass Authentication iOS / tvOS 3.8.3發行說明](notes-releases/authn-rn-ios-tvos-383.md)
-      + [Adobe Pass Authentication iOS / tvOS 3.8.2發行說明](notes-releases/authn-rn-ios-tvos-382.md)
-      + [Adobe Pass Authentication iOS / tvOS 3.8.1發行說明](notes-releases/authn-rn-ios-tvos-381.md)
-      + [Adobe Pass Authentication Android 3.7.3發行說明](notes-releases/authn-rn-android-373.md)
-   + 2022 {#release-notes-2022}
-      + [Adobe Pass Authentication 2.64發行說明](notes-releases/auth-rn-264.md)
-      + [Adobe Pass Authentication 2.63發行說明](notes-releases/auth-rn-263.md)
-      + [Adobe Pass Authentication 2.62.1發行說明](notes-releases/auth-rn-2621.md)
-      + [Adobe Pass Authentication JavaScript 4.6.0發行說明](notes-releases/authn-rn-javascript-460.md)
-   + 2021 {#release-notes-2021}
-      + [Adobe Pass Authentication JavaScript 4.4.0發行說明](notes-releases/authn-rn-javascript-440.md)
-      + [Adobe Pass Authentication iOS / tvOS 3.7.0發行說明](notes-releases/authn-rn-ios-tvos-370.md)
 + 技術說明{#tech-notes}
    + 環境{#environments}
       + [瞭解Adobe環境](notes-technical/environments/understanding-the-adobe-environments.md)

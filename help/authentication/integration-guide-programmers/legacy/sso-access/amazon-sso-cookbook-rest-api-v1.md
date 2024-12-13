@@ -2,9 +2,9 @@
 title: Amazon SSO逐步指南(REST API V1)
 description: Amazon SSO逐步指南(REST API V1)
 exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '591'
+source-wordcount: '613'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 >此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+
+>[!IMPORTANT]
+>
+> 請務必隨時瞭解彙總在[產品公告](/help/authentication/product-announcements.md)頁面中的最新Adobe Pass驗證產品公告和淘汰時間表。
 
 Adobe Pass Authentication REST API V1支援在FireOS上執行之使用者端應用程式的一般使用者之平台單一登入(SSO)。
 

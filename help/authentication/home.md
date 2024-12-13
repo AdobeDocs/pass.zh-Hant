@@ -2,26 +2,20 @@
 title: 歡迎使用Adobe&amp；reg；通過驗證！
 description: 歡迎使用Adobe&amp；reg；通過驗證概述
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '331'
+source-wordcount: '296'
 ht-degree: 0%
 
 ---
 
 # 歡迎使用Adobe®通過驗證 {#pt-auth-overview}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+> 請務必隨時瞭解彙總在[產品公告](/help/authentication/product-announcements.md)頁面中的最新Adobe Pass驗證產品公告和淘汰時間表。
 
 Adobe Pass Authentication是TV Everywhere的權益解決方案，提供模組化架構，用於判斷要求存取資源的人是否有權使用資源。 為了參與Adobe Pass驗證許可權解決方案，內容提供者（程式設計人員）和付費電視提供者(MVPD)將其許可權系統與Adobe Pass驗證工作流程整合。 本檔案網站提供整合流程的詳細資訊，以及現有合作夥伴的秘訣。
-
-您的意見反應一定會受到讚賞！
-
->[!NOTE]
->
->此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
 ## 熱門說明和常見問答 {#help-faqs}
 
@@ -39,13 +33,11 @@ Adobe Pass Authentication是TV Everywhere的權益解決方案，提供模組化
 
 >[!IMPORTANT]
 >
->如果您找不到答案，請&#x200B;[**傳送電子郵件給我們**](mailto:tve-support@adobe.com)。
+> 如果您找不到答案，請&#x200B;[**傳送電子郵件給我們**](mailto:tve-support@adobe.com)。
 >
->[傳送電子郵件給支援團隊](mailto:tve-support@adobe.com)也是任何問題或事件報告的第一個步驟。
+> [傳送電子郵件給支援團隊](mailto:tve-support@adobe.com)也是任何問題或事件報告的第一個步驟。
 >
->如果您有[SEVERITY 1 LIVE](/help/authentication/kickstart/escalation-procedures.md)問題，而且您已傳送電子郵件給我們，30分鐘沒有回應，請參閱[向上呈報程式](/help/authentication/kickstart/escalation-procedures.md)檔案以取得要撥打的電話號碼。
->
-
+> 如果您有[SEVERITY 1 LIVE](/help/authentication/kickstart/escalation-procedures.md)問題，且您已傳送電子郵件給我們，30分鐘沒有回應，請參閱[向上呈報程式](/help/authentication/kickstart/escalation-procedures.md)檔案以取得要撥打的電話號碼。
 
 ## 尋找您需要的專案 {#how-to-search}
 

@@ -2,9 +2,9 @@
 title: 傳遞使用者端資訊（裝置、連線和應用程式）
 description: 傳遞使用者端資訊（裝置、連線和應用程式）
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1644'
+source-wordcount: '1666'
 ht-degree: 1%
 
 ---
@@ -15,6 +15,9 @@ ht-degree: 1%
 >
 >此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
+>[!IMPORTANT]
+>
+> 請務必隨時瞭解彙總在[產品公告](/help/authentication/product-announcements.md)頁面中的最新Adobe Pass驗證產品公告和淘汰時間表。
 
 ## 範圍 {#pass-client-info-scope}
 

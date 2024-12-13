@@ -2,9 +2,9 @@
 title: 瞭解使用者ID
 description: 瞭解使用者ID
 exl-id: 813a8501-db72-4850-a387-c8db6120db80
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '625'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,10 @@ ht-degree: 0%
 >[!NOTE]
 >
 >此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+
+>[!IMPORTANT]
+>
+> 請務必隨時瞭解彙總在[產品公告](/help/authentication/product-announcements.md)頁面中的最新Adobe Pass驗證產品公告和淘汰時間表。
 
 在概念上，每個起始權利流程的使用者都與單一不重複的使用者ID相關聯。 不過，在軟體權利檔案流程的過程中，該使用者ID可能會以不同方式呈現，端視您從哪個API取得該ID而定。
 
