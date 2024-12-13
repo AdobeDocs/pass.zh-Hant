@@ -2,9 +2,9 @@
 title: REST API參考
 description: Rest api參考
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 3e69473bdb9818416e67b03e6c35d24dc3e0f991
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '647'
 ht-degree: 2%
 
 ---
@@ -66,7 +66,7 @@ Adobe Pass驗證REST API受[節流機制](/help/authentication/integration-guide
 | 10. | [&lt;SP_FQDN>/api/v1/checkauthn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md) | 指出裝置是否具有未過期的AuthN權杖。 |                                                                                             | Adobe Pass </br>驗證</br>服務 | 智慧型裝置 |
 | 11. | [&lt;SP_FQDN>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) | 如果找到，則傳回AuthN權杖。 |                                                                                             | Adobe Pass </br>驗證</br>服務 | 智慧型裝置 |
 | 12. | [&lt;SP_FQDN>/api/v1/tokens/authz](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authorization-token.md) | 如果找到，則傳回AuthZ權杖。 |                                                                                             | Adobe Pass </br>驗證</br>服務 | 智慧型裝置 |
-| 13. | [&lt;SP_FQDN>/api/v1/tokens/media](/help/authentication/integration-guide-programmer/rest-apis/rest-api-v1/apis/obtain-short-media-token.md | 如果找到，則傳回短媒體權杖 — 與/api/v1/mediatoken相同 |                                                                                             | Adobe Pass </br>驗證</br>服務 | 智慧型裝置 |
+| 13. | [&lt;SP_FQDN>/api/v1/tokens/media](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md) | 如果找到，則傳回短媒體權杖 — 與/api/v1/mediatoken相同 |                                                                                             | Adobe Pass </br>驗證</br>服務 | 智慧型裝置 |
 | 14. | [&lt;SP_FQDN>/api/v1/mediatoken](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/obtain-short-media-token.md) | 取得短媒體Token |                                                                                             | Adobe Pass </br>驗證</br>服務 | 智慧型裝置 |
 | 15. | [&lt;SP_FQDN>/api/v1/preauthorize](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md) | 擷取預先授權的資源清單 |                                                                                             | Adobe Pass </br>驗證</br>服務 | 智慧型裝置 |
 | 16. | [&lt;SP_FQDN>/api/v1/preauthorize/{code}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md) | 擷取預先授權資源的清單 |                                                                                             | Adobe Pass </br>驗證</br>服務 | 登入網頁應用程式 |
