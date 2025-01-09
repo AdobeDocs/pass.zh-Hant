@@ -2,9 +2,9 @@
 title: REST API逐步指南（使用者端對伺服器）
 description: Rest API逐步指南使用者端至伺服器。
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '899'
+source-wordcount: '888'
 ht-degree: 0%
 
 ---
@@ -44,10 +44,6 @@ Adobe Pass驗證REST API受[節流機制](/help/authentication/integration-guide
 | Adobe基礎結構 | Adobe Pass服務 | 此服務會與MVPD IdP和AuthZ服務整合，並提供驗證和授權決策。 |
 | MVPD基礎結構 | MVPD IdP | MVPD端點，提供認證型驗證服務以驗證其使用者的身分。 |
 | | MVPD AuthZ服務 | MVPD端點，可根據使用者的訂閱、家長監護等提供授權決策。 |
-
-
-
-流程中使用的其他辭彙已在[字彙表](/help/authentication/kickstart/glossary.md)中定義。
 
 ## 流程{#flows}
 

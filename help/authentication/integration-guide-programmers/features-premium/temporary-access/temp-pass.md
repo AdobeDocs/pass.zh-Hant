@@ -2,7 +2,7 @@
 title: 暫時通過
 description: 暫時通過
 exl-id: 1df14090-8e71-4e3e-82d8-f441d07c6f64
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '2243'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## 功能摘要 {#tempass-featur-summary}
 
-Temp Pass可讓程式設計師為沒有MVPD帳戶憑證的使用者提供對其受保護內容的暫時存取權。  臨時傳遞包括以下功能：
+Temp Pass可讓程式設計師為沒有MVPD帳戶憑證的使用者，提供對其受保護內容的暫時存取權。  臨時傳遞包括以下功能：
 
 * Temp Pass可設定為提供暫時存取權，以涵蓋各種案例，包括：
    * 程式設計師可以提供其網站的每日短片（例如10分鐘預覽）。
@@ -25,8 +25,8 @@ Temp Pass可讓程式設計師為沒有MVPD帳戶憑證的使用者提供對其�
    * 程式設計師可以提供前兩個案例的組合；例如，第一天的初始較長的檢視期間，隨後是一連串的短期期間，這些期間在隨後的某些天每天重複。
 * 程式設計師指定其暫時通過的持續時間（存留時間或TTL）。
 * 暫時傳遞會依請求者操作。  例如，NBC可以為請求者「NBCOlympics」設定4小時的暫時傳遞。
-* 程式設計師可以重設授與特定請求者的所有Token。  用來實作Temp Pass的「臨時MVPD」必須設定為啟用「每個請求者的驗證」。
-* **暫時傳遞存取權已授與特定裝置上的個別使用者**。 在使用者的Temp Pass存取過期後，該使用者將無法取得相同裝置上的暫時存取權，直到該使用者過期的[授權Token](/help/authentication/kickstart/glossary.md#authz-token)從Adobe Pass驗證伺服器上清除為止。
+* 程式設計師可以重設授與特定請求者的所有Token。  用於實作Temp Pass的「臨時MVPD」必須設定為啟用「每個請求者的驗證」。
+* **暫時傳遞存取權已授與特定裝置上的個別使用者**。 在使用者的「暫時傳遞」存取權到期後，該使用者將無法暫時存取相同的裝置，直到該使用者的授權權杖到期時從Adobe Pass驗證伺服器上清除為止。
 
 
 >[!NOTE]
@@ -43,7 +43,7 @@ Temp Pass可讓程式設計師為沒有MVPD帳戶憑證的使用者提供對其�
 * **驗證/授權** — 在Temp Pass流程中，您將MVPD指定為「Temp Pass」。  Adobe Pass驗證不會與Temp Pass流程中的實際MVPD通訊，因此「Temp Pass」MVPD會授權任何資源。 程式設計師可以指定可使用Temp Pass存取的資源，就像他們對其網站上的其他資源所做的一樣。 媒體驗證器程式庫可照常使用，以驗證Temp Pass短媒體權杖，並在播放前強制執行資源檢查。
 * **在暫時傳遞流程中追蹤資料** — 關於暫時傳遞權利流程期間追蹤資料的兩點：
    * 從Adobe Pass驗證傳遞至您&#x200B;**sendTrackingData()**&#x200B;回呼的追蹤ID是裝置ID的雜湊。
-   * 由於Temp Pass流程中使用的MVPD ID是「Temp Pass」，因此相同的MVPD ID會傳回&#x200B;**sendTrackingData()**。 大多數程式設計師可能會想要以不同的方式處理「暫時通過」量度和實際的MVPD量度。 這需要在您的Analytics實作中進行一些額外工作。
+   * 由於Temp Pass流程中使用的MVPD ID是「Temp Pass」，因此相同的MVPD ID會傳回&#x200B;**sendTrackingData()**。 大多數程式設計師可能會想要以不同的方式處理暫時通過量度與實際MVPD量度。 這需要在您的Analytics實作中進行一些額外工作。
 
 下圖顯示「暫時通過」流程：
 
@@ -53,18 +53,18 @@ Temp Pass可讓程式設計師為沒有MVPD帳戶憑證的使用者提供對其�
 
 ## 實作暫時傳遞 {#implement-tempass}
 
-在Adobe Pass驗證端，Temp Pass是在參與的程式設計師伺服器設定中新增名為「TempPass」的偽MVPD來實作。  這個偽MVPD的作用就像一個實際的MVPD，它會暫時授予程式設計師受保護內容的存取權。
+在Adobe Pass驗證端，Temp Pass是在參與的程式設計師伺服器設定中新增名為「TempPass」的偽MVPD來實作。  這個偽MVPD的作用就像實際的MVPD，會暫時授予程式設計師受保護內容的存取權。
 
 在程式設計師方面，Temp Pass的實作方式如下，適用於MVPD用於驗證的兩種情況：
 
-* 程式設計師頁面&#x200B;**上的** iFrame。 不論MVPD的驗證型別為何，暫時傳遞都能運作，但若是iFrame案例，則需要執行其他步驟來取消目前的驗證流程，並使用暫時傳遞進行驗證。 這些步驟顯示在下面的[iFrame登入](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass.md)中。
-* **重新導向至MVPD登入頁面**。 在更傳統的情況下，在開始使用MVPD進行驗證之前會顯示用於觸發Temp Pass的UI，此時無需採取任何特殊步驟。 Temp Pass應被視為一般MVPD。
+* 程式設計師頁面&#x200B;**上的** iFrame。 無論MVPD的驗證型別為何，Temp Pass都能運作，但若是iFrame案例，則需要執行其他步驟以取消目前的驗證流程，並使用Temp Pass進行驗證。 這些步驟顯示在下面的[iFrame登入](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass.md)中。
+* **重新導向至MVPD登入頁面**。 在更傳統的情況下，在開始使用MVPD驗證之前會顯示觸發暫時傳遞的UI，無需採取任何特殊步驟。 臨時傳遞的待遇應該與一般MVPD相同。
 
 下列幾點適用於兩種實施情境：
 
-* 只有尚未要求暫時通過授權的使用者，才應該在MVPD選擇器中顯示「暫時通過」。 在Cookie上保留標幟可封鎖後續請求的顯示。 只要使用者未清除瀏覽器快取，此功能就會運作。 如果使用者清除其瀏覽器快取，選擇器中會再次顯示「Temp Pass」，使用者將能夠再次請求。 只有在「暫時通過」時間尚未過期時，才會授予存取權。
+* 「臨時通過」應僅對尚未請求臨時通過授權的使用者顯示在MVPD選擇器中。 在Cookie上保留標幟可封鎖後續請求的顯示。 只要使用者未清除瀏覽器快取，此功能就會運作。 如果使用者清除其瀏覽器快取，選擇器中會再次顯示「Temp Pass」，使用者將能夠再次請求。 只有在「暫時通過」時間尚未過期時，才會授予存取權。
 * 當使用者透過Temp Pass請求存取時，Adobe Pass驗證伺服器將不會在驗證過程中執行其常用的安全性宣告標籤語言(SAML)請求。 而是會在每次在權杖對裝置有效時叫用驗證端點時，使其傳回成功。
-* Temp Pass過期時，其使用者將不再經過驗證，因為在Temp Pass流程中，驗證權杖和授權權杖具有相同到期日。 為了向使用者說明其Temp Pass已過期，程式設計師必須在呼叫`setRequestor()`後立即擷取選取的MVPD，然後照常呼叫`checkAuthentication()`。 在`setAuthenticationStatus()`回呼中，可以執行檢查以判斷驗證狀態是否為0，如此一來，如果選取的MVPD為「TempPass」，則可以向使用者顯示訊息，指出其Temp Pass工作階段已過期。
+* Temp Pass過期時，其使用者將不再經過驗證，因為在Temp Pass流程中，驗證權杖和授權權杖具有相同到期日。 為了向使用者說明其Temp Pass已過期，程式設計師必須在呼叫`setRequestor()`後立即擷取選取的MVPD，然後照常呼叫`checkAuthentication()`。 在`setAuthenticationStatus()`回呼中，可以執行檢查以判斷驗證狀態是否為0，以便如果選取的MVPD為「TempPass」，則可以向使用者顯示訊息，指出其Temp Pass工作階段已過期。
 * 如果使用者在到期前刪除Temp Pass權杖，後續權益檢查將產生TTL等於剩餘時間的權杖。
 * 如果使用者在到期後刪除暫時傳遞Token，後續軟體權利檔案檢查將傳回「使用者未授權」。
 
@@ -215,7 +215,7 @@ Temp Pass可讓程式設計師為沒有MVPD帳戶憑證的使用者提供對其�
 **第一次要求暫時傳遞：**
 
 1. 使用者存取程式設計師頁面並按一下登入連結。
-1. MVPD選擇器開啟，使用者從清單中選擇MVPD。
+1. MVPD選取器隨即開啟，使用者可從清單中選擇MVPD。
 1. 隨即顯示驗證iFrame。 此iFrame包含「暫時通過」連結。
 1. 使用者按一下「Temp Pass」，程式設計師就會將標幟新增至Cookie，以防止使用者在後續造訪頁面時看到「Temp Pass」連結。
 1. Temp Pass驗證請求到達Adobe Pass驗證伺服器，伺服器會產生驗證權杖。 TTL等於程式設計師為暫存階段設定的時段。
@@ -227,7 +227,7 @@ Temp Pass可讓程式設計師為沒有MVPD帳戶憑證的使用者提供對其�
 **若要在回訪的Temp Pass使用者刪除瀏覽器Cookie後再次要求Temp Pass：**
 
 1. 使用者存取程式設計師的頁面並按一下登入連結。
-1. MVPD選擇器開啟，使用者從清單中選擇MVPD。
+1. MVPD選取器隨即開啟，使用者可從清單中選擇MVPD。
 1. 隨即顯示驗證iFrame。 此iFrame包含「暫時傳遞」連結（使用者已刪除原始Cookie，因此程式設計師不確定使用者之前是否按過「暫時傳遞」連結）。
 1. 使用者再次按一下「暫時傳遞」按鈕，程式設計師就會再次將標幟新增至Cookie，以防止使用者在後續造訪頁面時看到「暫時傳遞」連結。
 1. Temp Pass驗證請求到達Adobe Pass驗證伺服器，這些伺服器會產生驗證Token。 TTL現在是暫時通過的剩餘時間（目前時間以及與裝置ID相關聯的到期時間之間的差值）。
@@ -238,7 +238,7 @@ Temp Pass可讓程式設計師為沒有MVPD帳戶憑證的使用者提供對其�
 
 ### 自動登入範例 {#auto-login-sample}
 
-以下範例說明使用者造訪網站時，使用TempPass自動登入的情況。 使用者可以隨時選擇使用一般MVPD登入，如果TempPass已過期則會收到警告：
+以下範例說明使用者造訪網站時，使用TempPass自動登入的情況。 使用者可以隨時選擇使用一般的MVPD登入，如果TempPass已過期，系統會發出警告：
 
 ```HTML
 <html>
@@ -476,7 +476,7 @@ Temp Pass可讓程式設計師為沒有MVPD帳戶憑證的使用者提供對其�
 
 某些事件需要分階段免費存取內容，例如免費存取的初始間隔（例如4小時），然後是每日免費存取（例如，後續每一天為10分鐘）。  為了讓程式設計師實作此情境，他們必須安排其Adobe連絡人，以便為程式設計師設定兩個暫時的MVPD。
 
-此範例情境（初始4小時的免費工作階段，接著每日10分鐘的免費工作階段）Adobe會設定名為TempPass1的MVPD，其存留時間(TTL)為4小時，以及後續期間的TempPass2的TTL為10分鐘。  兩者都與程式設計師的請求者ID相關聯。
+此範例情境（初始4小時的免費工作階段，接著每日10分鐘的免費工作階段）Adobe會設定名為TempPass1的MVPD，其存留時間(TTL)為4小時，並為後續期間的TTL為10分鐘。  兩者都與程式設計師的請求者ID相關聯。
 
 ### 程式設計師實作 {#mult-tempass-prog-impl}
 
@@ -493,7 +493,7 @@ Temp Pass可讓程式設計師為沒有MVPD帳戶憑證的使用者提供對其�
 
 ## 重設所有暫時傳遞 {#reset-all-tempass}
 
-某些商業規則需要定期清除臨時通行證，或臨時重設針對特定請求者ID和MVPD ID簽發的所有臨時通行證。 此功能支援下列使用案例：
+某些商業規則需要定期清除臨時通行證，或臨時重設針對特定請求者ID和MVPD ID核發的所有臨時通行證。 此功能支援下列使用案例：
 
 * 每日10分鐘的臨時通過（臨時通過必須在一天開始時重置）
 * 在突發新聞期間，所有使用者都可以使用暫時傳遞。 （突發新聞一開始，所有裝置都必須重設此「暫時通過」。）

@@ -2,9 +2,9 @@
 title: REST API逐步指南（伺服器對伺服器）
 description: Rest API逐步指南伺服器到伺服器。
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '1867'
+source-wordcount: '1856'
 ht-degree: 0%
 
 ---
@@ -42,10 +42,6 @@ Adobe Pass驗證REST API受[節流機制](/help/authentication/integration-guide
 | Adobe基礎結構 | Adobe Pass服務 | 此服務會與MVPD IdP和AuthZ服務整合，並提供驗證和授權決策。 |
 | MVPD基礎結構 | MVPD IdP | MVPD端點，提供認證型驗證服務以驗證其使用者的身分。 |
 | | MVPD AuthZ服務 | MVPD端點，可根據使用者的訂閱、家長監護等提供授權決策。 |
-
-
-此流程中使用的其他辭彙定義於
-[字彙表](/help/authentication/kickstart/glossary.md)。
 
 ## 流程 {#flows}
 
@@ -197,10 +193,3 @@ Adobe Pass服務可在分散於美國各地的多個資料中心執行。  為�
 程式設計師服務必須在快取時遵守authN和authZ TTL，並在收到通知時使authN或authZ工作階段失效。
 
 程式設計師必須維護與Adobe共用的憑證。
-
-<!--
-## Related Information {#related}
-
-* [REST API Reference](/help/authentication/rest-api-reference.md)
-* [Glossary of Terms](/help/authentication/adobe-pass-glossary.md)
--->

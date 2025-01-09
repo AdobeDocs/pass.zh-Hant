@@ -2,7 +2,7 @@
 title: 程式設計師
 description: 瞭解TVE儀表板中的程式設計師及其設定。
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1139'
 ht-degree: 0%
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 >此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
-TVE儀表板的&#x200B;**程式設計人員**&#x200B;區段可讓您檢視和管理連結至您帳戶權益的[程式設計人員](/help/authentication/kickstart/glossary.md#programmer)的設定。 您也可以根據您的需求[新增程式設計師](#add-new-programmer)。
+TVE儀表板的&#x200B;**程式設計人員**&#x200B;區段可讓您檢視和管理連結至您帳戶權益的[程式設計人員](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#programmer)的設定。 您也可以根據您的需求[新增程式設計師](#add-new-programmer)。
 
 左側面板中的&#x200B;**程式設計人員**&#x200B;索引標籤會顯示現有程式設計人員的清單，其詳細資料如下：
 

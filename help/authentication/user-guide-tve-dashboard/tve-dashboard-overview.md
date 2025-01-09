@@ -2,9 +2,9 @@
 title: TVE儀表板概觀
 description: 瞭解TVE控制面板和資源。
 exl-id: 91baeb34-a32a-4dc3-94d8-f6cfca59dc4e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '303'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
    * 平台類別，例如&#x200B;*桌上型電腦、行動裝置和電視連線裝置*
    * 平台如&#x200B;*iOS、Android™、tvOS、Roku和FireTV*
 
-  這些報表提供單一登入(SSO)支援以及MVPD和平台層級訂閱者驗證或授權工作階段持續時間的深入分析。
+  這些報表提供單一登入(SSO)支援以及MVPD和平台層級的訂閱者驗證或授權工作階段持續時間的深入分析。
 
 * **流量視覺效果**：視覺化程式設計師屬性的高階驗證和授權流量資料。
 
@@ -53,4 +53,5 @@ Adobe建議您使用下列資源來徹底瞭解流程和功能，協助您熟悉
 * [TVE技術檔案](/help/authentication/kickstart/technical-paper.md)
 * [程式設計人員Kickstart指南](/help/authentication/kickstart/programmer-kickstart-guide.md)
 * [權益流程](/help/authentication/integration-guide-programmers/entitlement-flow.md)
-* [字彙表](/help/authentication/kickstart/glossary.md)
+* [動態使用者端註冊(DCR)字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
+* [rest API v2字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)

@@ -2,9 +2,9 @@
 title: Apple SSO逐步指南(REST API V2)
 description: Apple SSO逐步指南(REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '3442'
+source-wordcount: '3443'
 ht-degree: 0%
 
 ---
@@ -189,14 +189,14 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    >
    > <br/>
    >
-   > 如果驗證失敗，將會產生錯誤回應，提供遵守[增強錯誤碼](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)的其他資訊
+   > 如果驗證失敗，將會產生錯誤回應，提供可遵守[增強錯誤碼](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)檔案的額外資訊。
 
    >[!IMPORTANT]
    >
-   > 串流應用程式在繼續下一步作業時，必須確定已處理每個MVPD提供的下列詳細資料：
+   > 串流應用程式在繼續下一步作業時，必須確定已處理每個MVPD所提供的下列詳細資料：
    >
    > * `enablePlatformServices`：指出MVPD目前是否支援Apple單一登入。
-   > * `displayInPlatformPicker`：指出MVPD是否可以在Apple選擇器中顯示。
+   > * `displayInPlatformPicker`：指出MVPD是否可顯示在Apple選擇器中。
    > * `boardingStatus`：指出MVPD是否已上線到Apple單一登入。
 
 1. **擷取合作夥伴架構狀態：**&#x200B;串流應用程式會呼叫Apple開發的[視訊訂閱者帳戶架構](https://developer.apple.com/documentation/videosubscriberaccount)，以取得使用者許可權和提供者資訊。
@@ -291,9 +291,9 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    * `authenticationRequest - request`屬性包含傳遞至合作夥伴架構的SAML要求。
    * `authenticationRequest - attributesNames`屬性包含傳遞至合作夥伴架構的SAML屬性。
 
-   如果Adobe Pass後端未識別有效的設定檔，且合作夥伴單一登入驗證通過時，串流應用程式會收到包含動作和資料的回應，並傳遞至合作夥伴架構，以使用MVPD啟動驗證流程。
+   如果Adobe Pass後端未識別有效的設定檔，且合作夥伴單一登入驗證通過時，串流應用程式會收到包含動作和資料的回應，並傳遞至合作夥伴架構，以啟動與MVPD的驗證流程。
 
-1. **使用合作夥伴架構完成MVPD驗證：**&#x200B;將先前步驟中取得的合作夥伴驗證要求（SAML要求）轉送至[視訊訂閱者帳戶架構](https://developer.apple.com/documentation/videosubscriberaccount)。 如果驗證流程成功，與MVPD的[視訊訂閱者帳戶架構](https://developer.apple.com/documentation/videosubscriberaccount)互動會產生合作夥伴驗證回應（SAML回應），此回應會連同合作夥伴架構狀態資訊一併傳回。
+1. **使用合作夥伴架構完成MVPD驗證：**&#x200B;將先前步驟取得的合作夥伴驗證要求（SAML要求）轉送至[視訊訂閱者帳戶架構](https://developer.apple.com/documentation/videosubscriberaccount)。 如果驗證流程成功，與MVPD的[視訊訂閱者帳戶架構](https://developer.apple.com/documentation/videosubscriberaccount)互動會產生合作夥伴驗證回應（SAML回應），此回應會連同合作夥伴架構狀態資訊一併傳回。
 
    >[!IMPORTANT]
    >

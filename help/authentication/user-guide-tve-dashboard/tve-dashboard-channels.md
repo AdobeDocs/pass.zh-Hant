@@ -2,7 +2,7 @@
 title: 頻道
 description: 瞭解TVE Dashboard中的管道及其各種設定。
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1556'
 ht-degree: 0%
@@ -21,7 +21,7 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 * **顯示名稱**：用於商業目的的管道品牌名稱。
 * **管道識別碼**：唯一識別碼，也稱為要求者識別碼。
-* **整合**：與[MVPD](/help/authentication/kickstart/glossary.md#mvpd)建立的連線數目。
+* **整合**：與[MVPD](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#mvpd)建立的連線數目。
 
 ![現有管道的清單](../assets/tve-dashboard/new-tve-dashboard/channels/channels-list-view.png)
 

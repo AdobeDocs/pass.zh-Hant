@@ -2,7 +2,7 @@
 title: REST API V2逐步指南（伺服器對伺服器）
 description: REST API V2逐步指南（伺服器對伺服器）
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
 source-wordcount: '1578'
 ht-degree: 0%
@@ -28,14 +28,14 @@ ht-degree: 0%
 | 型別 | 元件 | 說明 |
 |---------------------------|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 串流裝置 | 串流應用程式 | 位在使用者串流裝置上並播放已驗證視訊的程式設計師應用程式。 |
-|                           | \[Optional\]驗證模組 | 如果串流裝置具有使用者代理程式（亦即Web瀏覽器），則AuthN模組將負責在MVPD IdP上驗證使用者。 |
+|                           | \[Optional\]驗證模組 | 如果串流裝置具有使用者代理程式（即網頁瀏覽器），則AuthN模組會負責在MVPD IdP上驗證使用者。 |
 | \[Optional\] AuthN裝置 | AuthN應用程式 | 如果串流裝置沒有使用者代理程式（亦即Web瀏覽器），則AuthN應用程式為程式設計人員網頁應用程式，可使用網頁瀏覽器從個別使用者的裝置進行存取。 |
 | 程式設計師基礎結構 | 程式設計師服務 | 此服務會將串流裝置與Adobe Pass服務連結在一起，以取得驗證和授權決策。 |
-| Adobe基礎結構 | Adobe Pass服務 | 與MVPD IdP和AuthZ服務整合，並提供驗證和授權決定的服務。 |
-| MVPD基礎結構 | MVPD IdP | MVPD端點，提供認證型驗證服務來驗證其使用者的身分。 |
-|                           | MVPD AuthZ服務 | MVPD端點會根據使用者的訂閱、家長監護等提供授權決策。 |
+| Adobe基礎結構 | Adobe Pass服務 | 此服務會與MVPD IdP和AuthZ服務整合，並提供驗證和授權決策。 |
+| MVPD基礎結構 | MVPD IdP | MVPD端點，提供認證型驗證服務以驗證其使用者的身分。 |
+|                           | MVPD AuthZ服務 | MVPD端點，可根據使用者的訂閱、家長監護等提供授權決策。 |
 
-流程中使用的其他辭彙已在[字彙表](/help/authentication/kickstart/glossary.md)中定義。
+流程中使用的其他辭彙已在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)中定義。
 
 下圖說明了整個流程：
 
@@ -78,7 +78,7 @@ ht-degree: 0%
    * <b>步驟2.a：</b>程式設計師服務擷取可用於serviceProvider的MVPD清單： <b>/api/v2/{serviceProvider}/configuration</b><br>
 （[擷取可用的MVPD清單](../apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)）
    * 程式設計人員服務可能會對MVPD清單實作篩選，並只顯示想要隱藏的MVPD （TempPass、測試MVPD、開發中的MVPD等）
-   * 程式設計師服務應該傳回串流應用程式的已篩選MVPD清單，以顯示選擇器，使用者會選取MVPD
+   * 程式設計師服務應傳回已篩選的MVPD清單，讓串流應用程式顯示選取器，使用者需選取MVPD
    * 從串流應用程式中選取MVPD後，程式設計師服務會建立工作階段： <b>/api/v2/{serviceProvider}/sessions</b><br>
 （[建立驗證工作階段](../apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)）<br>
       * 系統會傳回驗證所用的程式碼和URL
@@ -89,18 +89,18 @@ ht-degree: 0%
 
 使用瀏覽器或第二個畫面網頁式應用程式：
 
-* 選項1。 串流應用程式可以開啟瀏覽器或Webview、載入URL以進行驗證，且使用者會登陸需要提交認證的MVPD登入頁面
+* 選項1。 串流應用程式可以開啟瀏覽器或Web檢視、載入URL以進行驗證，且使用者會登入MVPD登入頁面並需要提交認證
    * 使用者輸入登入/密碼，最終重新導向顯示成功頁面
 * 選項2。 串流應用程式無法開啟瀏覽器而只顯示程式碼。 <b>需要開發個別的Web應用程式AuthN_APP</b>，要求使用者輸入CODE、建置並開啟URL： <b>/api/v2/authenticate/{serviceProvider}/{CODE}</b>
    * 使用者輸入登入/密碼，最終重新導向顯示成功頁面
 
 ### 步驟4：檢查已驗證的設定檔 {#step-4-check-for-authenticated-profiles}
 
-程式設計師服務會檢查是否使用MVPD進行驗證，以在瀏覽器或第二個畫面中完成
+程式設計師服務會檢查是否有MVPD驗證，以在瀏覽器或第二個畫面中完成
 
 * 建議在<b>/api/v2/{serviceProvider}/profiles/{mvpd}</b><br>上每15秒輪詢一次
-（[擷取特定MVPD的已驗證設定檔](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)）
-   * 如果未在串流應用程式中選取MVPD，因為MVPD選擇器出現在第二個畫面應用程式中，則應該使用程式碼<b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>進行輪詢
+([擷取特定MVPD的已驗證設定檔](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md))
+   * 如果沒有在串流應用程式中選取MVPD，因為MVPD選擇器出現在第二個畫面應用程式中，輪詢應該發生在程式碼<b>/api/v2/{serviceProvider}/profiles/code/{CODE}</b><br>中
 （[擷取特定程式碼的已驗證設定檔](../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)）
 * 如果輪詢時間達到30分鐘，且串流應用程式仍在作用中，則需要起始新工作階段，並傳回新的程式碼和URL，則輪詢不應超過30分鐘
 * 驗證完成後，傳回值為200且包含已驗證的設定檔
@@ -114,7 +114,7 @@ ht-degree: 0%
 
 * 如果應用程式想要篩選掉已驗證的使用者套件中無法提供的資源，則步驟為選擇性並執行
 * 呼叫<b>/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}</b><br>
-（[使用特定MVPD擷取預先授權決定](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)）
+([使用特定MVPD擷取預先授權決定](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md))
 
 ## D.授權階段 {#authorization-phase}
 
@@ -125,7 +125,7 @@ ht-degree: 0%
 * 每個播放開始都需要執行步驟
 * 串流應用程式會將此資訊傳遞給程式設計人員服務
 * 程式設計師服務代表串流應用程式，請呼叫<b>/api/v2/{serviceProvider}/decision/authorize/{mvpd}</b><br>
-（[使用特定MVPD擷取授權決定](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)）
+([使用特定MVPD擷取授權決定](../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md))
    * 決定= &#39;允許&#39;，程式設計師服務會指示串流應用程式開始串流
    * decision = &#39;Deny&#39;，程式設計師服務會指示串流應用程式通知使用者其無法存取該視訊
    * 在此過程中，程式設計師服務可能會評估其他商業規則，並將適當的決定傳回串流應用程式
@@ -139,10 +139,10 @@ ht-degree: 0%
 * 串流應用程式會通知程式設計人員服務，它必須從MVPD登出此特定應用程式。
 * 程式設計人員服務可能會清除其儲存的已驗證使用者相關資訊
 * 程式設計師服務呼叫<b>/api/v2/{serviceProvider}/logout/{mvpd}</b><br>
-（[啟動特定MVPD的登出](../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)）
+([啟動特定MVPD的登出](../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md))
 * 如果response actionType=&#39;interactive&#39;且url出現，程式設計師服務就會將url傳回串流應用程式
 * 根據現有的功能，串流應用程式可能會在瀏覽器中開啟url （通常與驗證所用的相同）
-* 如果串流應用程式沒有瀏覽器，或它與驗證時的執行個體不同，則流量可以停止，因為MVPD工作階段不會持續存在於瀏覽器快取中。
+* 如果串流應用程式沒有瀏覽器，或是不同於驗證的應用程式例項，則流量可能會停止，因為MVPD工作階段不會持續存在瀏覽器快取中。
 
 ## 環境和功能需求{#environments}
 

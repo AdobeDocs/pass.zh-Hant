@@ -2,9 +2,9 @@
 title: 歡迎使用Adobe&amp；reg；通過驗證！
 description: 歡迎使用Adobe&amp；reg；通過驗證概述
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
 workflow-type: tm+mt
-source-wordcount: '296'
+source-wordcount: '295'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Adobe Pass Authentication是TV Everywhere的權益解決方案，提供模組化
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <ul><li>[程式設計師Kickstart指南](/help/authentication/kickstart/programmer-kickstart-guide.md)</li><li>[使用者中繼資料](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)</li></ul> | <ul><li>[MVPD Kickstart指南](/help/authentication/kickstart/mvpd-kickstart-guide.md)</li><li>[驗證](/help/authentication/integration-guide-mvpds/authn-usecase.md)</li><li>[授權](/help/authentication/integration-guide-mvpds/authz-usecase.md)</li><li>[登出](/help/authentication/integration-guide-mvpds/usecase-mvpd-logout.md)</li></ul> |
 | 原生應用程式使用者端的&#x200B;**** | 每個人&#x200B;**** |
-| <ul><li>[iOS技術概覽](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Android技術概覽](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[技術檔案](/help/authentication/kickstart/technical-paper.md)</li><li>[提升程式](/help/authentication/kickstart/escalation-procedures.md)</li><li>[字彙表](/help/authentication/kickstart/glossary.md)</li></ul> |
+| <ul><li>[iOS技術概覽](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Android技術概覽](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[技術檔案](/help/authentication/kickstart/technical-paper.md)</li><li>[提升程式](/help/authentication/kickstart/escalation-procedures.md)</li></ul> |
 | 智慧型裝置&#x200B;**** |                                                                                                                                                                                                                                                                                                                                                                       |
 | <ul><li>[無使用者端技術概覽](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)</li><li>[無使用者端API](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)</li></ul> |                                                                                                                                                                                                                                                                                                                                                                       |
 
