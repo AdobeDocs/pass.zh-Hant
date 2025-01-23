@@ -2,9 +2,9 @@
 title: 如何使用Adobe的API測試網站測試驗證和授權流程
 description: 如何使用Adobe的API測試網站測試驗證和授權流程
 exl-id: 04af4aed-35e4-44cb-98ce-7643165a8869
-source-git-commit: 811feba1f2476bdfacb20e332e33df7f7ae8ac00
+source-git-commit: 65475d6da7a1b25cb2d8ebd6229a7cb360c7ab4a
 workflow-type: tm+mt
-source-wordcount: '380'
+source-wordcount: '368'
 ht-degree: 0%
 
 ---
@@ -33,8 +33,8 @@ ht-degree: 0%
 
 1. 開啟網頁： [測試API測試](https://sp.auth-staging.adobe.com/apitest/api.html)。
 1. 載入存取啟用碼：
-   * 從下拉式選單中選取所需的AccessEnabler版本（v3或v4）、您要存取的位置（測試或生產）以及是否應處於偵錯模式
-   * 輸入您要用來測試是否使用v4的軟體陳述式
+   * 從下拉式功能表中選取您要存取它的位置（測試或生產），以及它是否應該處於偵錯模式
+   * 輸入您要測試的軟體陳述式
    * 然後按一下[**載入存取啟用程式**]按鈕。
 1. 現在將要求者識別碼值設為&quot;**requestorID**&quot;，然後按一下[setRequestor]按鈕。
 1. 之後，按下「getAuthentication」按鈕，並等待顯示選擇器顯示。
