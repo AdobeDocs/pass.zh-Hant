@@ -2,7 +2,7 @@
 title: 擷取合作夥伴驗證請求
 description: REST API V2 — 擷取合作夥伴驗證請求
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
 workflow-type: tm+mt
 source-wordcount: '1136'
 ht-degree: 1%
@@ -60,7 +60,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">domainName</td>
       <td>
-        執行MVPD登入的應用程式之原始網域。
+        執行MVPD登入之應用程式的原始網域。
         <br/><br/>
         如果串流裝置平台在提供值方面有所限制，則應用程式必須繼續驗證工作階段並提供有效值。
         <br/><br/>
@@ -71,7 +71,7 @@ ht-degree: 1%
     <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        MVPD的驗證流程完成時，使用者代理程式導覽的最終重新導向URL。
+        MVPD驗證流程完成後，使用者代理程式導覽的最終重新導向URL。
         <br/><br/>
         值必須以URL編碼。
         <br/><br/>
@@ -289,7 +289,7 @@ ht-degree: 1%
                     <br/><br/>
                     具有以下屬性的JSON物件：
                     <ul>
-                        <li><b>type</b><br/>表示MVPD支援的通訊協定型別（僅限SAML）。</li>
+                        <li><b>type</b><br/>指出MVPD支援的通訊協定型別（僅限SAML）。</li>
                         <li><b>要求</b><br/>SAML要求。</li>
                         <li><b>屬性</b><br/>SAML要求屬性。</li>
                     </ul>
@@ -425,6 +425,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authorize",
     "actionType": "direct",
+    "reasonType": "degraded",
     "url": "/api/v2/REF30/decisions/authorize/${degradedMvpd}",
     "sessionId": "14d4f239-e3b1-4a4a-b8b3-6395b968a260",
     "mvpd": "${degradedMvpd}",
@@ -474,11 +475,14 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authenticate",
     "actionType": "interactive",
+    "reasonType": "none",
     "url": "/api/v2/authenticate/REF30/OKTWW2W",
     "code": "OKTWW2W",
     "sessionId": "748f0b9e-a2ae-46d5-acd9-4b4e6d71add7",
     "mvpd": "Cablevision",
-    "serviceProvider": "REF30"
+    "serviceProvider": "REF30",
+    "notBefore": "1733735289035",
+    "notAfter": "1733737089035"
 }
 ```
 
@@ -524,6 +528,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "resume",
     "actionType": "direct",
+    "reasonType": "none",
     "missingParameters": [
           "redirectUrl"
     ],
@@ -531,7 +536,9 @@ Content-Type: application/json;charset=UTF-8
     "code": "SB7ZRIO",
     "sessionId": "1476173f-5088-43b8-b7c3-8cf3a185de0a",
     "mvpd": "Cablevision",
-    "serviceProvider": "REF30"
+    "serviceProvider": "REF30",
+    "notBefore": "1733735289035",
+    "notAfter": "1733737089035"
 }
 ```
 
