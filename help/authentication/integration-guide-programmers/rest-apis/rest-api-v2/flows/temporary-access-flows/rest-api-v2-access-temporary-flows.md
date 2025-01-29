@@ -2,7 +2,7 @@
 title: 暫時存取流程
 description: REST API V2 — 暫時存取流程
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '3215'
 ht-degree: 0%
@@ -19,9 +19,9 @@ ht-degree: 0%
 >
 > REST API V2實作受到[節流機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)檔案的限制。
 
-TempPass可讓程式設計師提供對其受保護內容的暫時存取，而不要求使用者使用有效的MVPD帳戶進行驗證。
+TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要求使用者使用有效的MVPD帳戶進行驗證。
 
-如需TempPass功能的詳細資訊，請參閱[TempPass](../../../../features-premium/temporary-access/temp-pass.md)檔案。
+如需TempPass功能的詳細資訊，請參閱[TempPass](../../../../features-premium/temporary-access/temp-pass-feature.md)檔案。
 
 臨時存取流程可讓您查詢下列案例：
 
@@ -351,7 +351,7 @@ TempPass可讓程式設計師提供對其受保護內容的暫時存取，而不
 
    >[!TIP]
    >
-   > 建議：串流應用程式可通知使用者已超過資源的最大數量，並建議使用者使用一般MVPD來啟動基本驗證流程，以繼續觀看。
+   > 建議：串流應用程式可通知使用者已超過資源的最大數量，並建議他們使用一般MVPD來啟動基本驗證流程，以繼續觀看。
 
 ## 當基本或促銷的TempPass過期時，擷取授權決定 {#retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires}
 

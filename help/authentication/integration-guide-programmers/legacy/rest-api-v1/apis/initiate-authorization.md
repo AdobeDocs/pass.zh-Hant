@@ -2,7 +2,7 @@
 title: 啟動授權
 description: 啟動授權
 exl-id: 2f8a5499-e94f-40dd-9fb0-aac8e080de66
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '446'
 ht-degree: 0%
@@ -51,7 +51,7 @@ ht-degree: 0%
 
 
 | 輸入引數 | 說明 |
-| --- | --- |
+| --- |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 要求者 | 此作業有效的程式設計師要求者ID。 |
 | deviceId | 裝置識別碼位元組。 |
 | resource | 包含resourceId （或MRSS片段）的字串，可識別使用者請求的內容並由MVPD授權端點識別。 |
@@ -59,7 +59,7 @@ ht-degree: 0%
 | _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>若此引數設定正確，ESM提供的量度在使用Clienless時可依裝置型別](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)進行[劃分，因此可針對Roku、AppleTV、Xbox等執行不同型別的分析。</br></br>檢視傳遞量度中無使用者端裝置型別引數的[優點&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： device_info將取代此引數。 |
 | _deviceUser_ | 裝置使用者識別碼。 |
 | _appId_ | 應用程式id/名稱。 </br></br>**注意**： device_info會取代此引數。 |
-| 額外的引數 | 呼叫也可能包含啟用其他功能的選用引數，例如：</br></br>* generic_data — 可啟用[促銷臨時傳遞](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)</br></br>範例： `generic_data=("email":"email@domain.com")` |
+| 額外的引數 | 呼叫也可能包含啟用其他功能的選用引數，例如：</br></br>* generic_data — 可啟用[促銷臨時傳遞](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)</br></br>範例： `generic_data=("email":"email@domain.com")` |
 
 {style="table-layout:auto"}
 

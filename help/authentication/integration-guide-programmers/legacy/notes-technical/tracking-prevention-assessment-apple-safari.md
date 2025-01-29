@@ -2,7 +2,7 @@
 title: 追蹤預防評估Apple Safari
 description: 追蹤預防評估Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
@@ -133,7 +133,7 @@ Adobe Pass Authentication Service使用並依賴Cookie做為驗證程式&#x200B;
 
 **臨時傳遞**
 
-為了緩解個人化問題並讓使用者互動，我們建議您以互動方式使用&#x200B;**[促銷暫存密碼](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)**，並提供至少一項有關使用者的額外資訊（例如電子郵件地址）。
+為了緩解個人化問題並讓使用者互動，我們建議您以互動方式使用&#x200B;**[促銷臨時傳遞](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)**，並提供至少一項有關使用者的額外資訊（例如電子郵件地址）。
 
 ## Safari 13 {#safari13}
 

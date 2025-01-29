@@ -2,9 +2,9 @@
 title: rest API V2字彙表
 description: rest API V2字彙表
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
 workflow-type: tm+mt
-source-wordcount: '1744'
+source-wordcount: '1743'
 ht-degree: 0%
 
 ---
@@ -229,13 +229,13 @@ Proxy MVPD是一間為其他MVPD提供身分服務的公司，並直接與Adobe 
 
 基本的TempPass是Adobe Pass驗證功能，可讓使用者在有限的時間記憶體取受保護的內容，而不需要使用[MVPD](#mvpd)進行驗證。
 
-如需詳細資訊，請參閱[暫時傳遞](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass.md)檔案。
+如需詳細資訊，請參閱[Basic TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#basic-temp-pass)檔案。
 
 #### TempPass促銷 {#temp-pass-promotional}
 
 提升TempPass是Adobe Pass驗證功能，可讓使用者以最大資源數量及有限的時間存取受保護內容，而不需要透過[MVPD](#mvpd)驗證。
 
-如需詳細資訊，請參閱[促銷暫存通](/help/authentication/integration-guide-programmers/features-premium/temporary-access/promotional-temp-pass.md)檔案。
+如需詳細資訊，請參閱[促銷暫時Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)檔案。
 
 #### TTL {#ttl}
 
