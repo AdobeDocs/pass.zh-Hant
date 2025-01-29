@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
-source-wordcount: '1267'
+source-wordcount: '1262'
 ht-degree: 2%
 
 ---
@@ -123,8 +123,7 @@ ht-degree: 2%
          + [識別受保護的資源](integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md)
          + [預檢授權](integration-guide-programmers/features-standard/entitlements/preflight-authz.md)
          + [如何整合媒體權杖驗證器](integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md)
-         + [使用者中繼資料](integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)
-         + [用於加密的使用者中繼資料憑證](integration-guide-programmers/features-standard/entitlements/user-metadata-certificate.md)
+         + [使用者中繼資料](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
       + 報告{#error-reporting}時發生錯誤
          + [增強的錯誤碼](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
       + 單一登入存取{#sso-access}

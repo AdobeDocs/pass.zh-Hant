@@ -2,7 +2,7 @@
 title: 擷取驗證Token
 description: 擷取驗證Token
 exl-id: 7fb03854-edad-41e7-b218-1858fc071876
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '297'
 ht-degree: 0%
@@ -49,7 +49,7 @@ ht-degree: 0%
 
 
 | 輸入引數 | 說明 |
-| --- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --- | --- |
 | 要求者 | 此作業有效的程式設計師要求者ID。 |
 | deviceId | 裝置識別碼位元組。 |
 | device_info/</br></br>X-Device-Info | 串流裝置資訊。</br></br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數的潛在大小以及GETURL長度的限制，它應該作為X-Device-Info傳遞到http標頭。 </br></br>檢視[傳遞裝置和連線資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |

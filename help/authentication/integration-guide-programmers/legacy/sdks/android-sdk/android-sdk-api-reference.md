@@ -2,7 +2,7 @@
 title: Android SDK API參考
 description: Android SDK API參考
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '4560'
 ht-degree: 0%
@@ -614,7 +614,7 @@ ht-degree: 0%
 
 已觸發&#x200B;**回呼：** [`setMetadataStatus()`](#setMetadaStatus)
 
-**更多資訊：** [使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)
+**更多資訊：** [使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)
 
 [返回Android API...](#api)
 
@@ -676,7 +676,7 @@ ht-degree: 0%
 
 **觸發者：** [`getMetadata()`](#getMetadata)
 
-**更多資訊：** [使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)
+**更多資訊：** [使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)
 
 
 [返回Android API...](#api)

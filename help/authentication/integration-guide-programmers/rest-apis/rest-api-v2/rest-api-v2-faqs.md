@@ -2,7 +2,7 @@
 title: REST API V2常見問題集
 description: REST API V2常見問題集
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '6668'
 ht-degree: 0%
@@ -126,7 +126,7 @@ ht-degree: 0%
 
 #### 3.使用者端應用程式如何取得使用者的中繼資料資訊？ {#authentication-phase-faq3}
 
-使用者端應用程式可以查詢下列端點之一，這些端點能夠傳回[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)資訊作為設定檔資訊的一部分：
+使用者端應用程式可以查詢下列端點之一，這些端點能夠傳回[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)資訊作為設定檔資訊的一部分：
 
 * [設定檔端點API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
 * [特定MVPD API的設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)

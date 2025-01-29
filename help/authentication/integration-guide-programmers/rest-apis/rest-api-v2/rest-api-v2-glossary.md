@@ -2,7 +2,7 @@
 title: rest API V2字彙表
 description: rest API V2字彙表
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '1747'
 ht-degree: 0%
@@ -275,7 +275,7 @@ TV Everywhere (TVE) Dashboard是提供給[程式設計師](#programmer)的Adobe 
 
 使用者中繼資料是指由[MVPD](#mvpd)維護且由Adobe Pass驗證提供作為[設定檔](#profile)一部分的使用者特定屬性（例如郵遞區號、家長分級、使用者ID等）。
 
-如需詳細資訊，請參閱[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata-feature.md)檔案。
+如需詳細資訊，請參閱[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)檔案。
 
 ### 版本{#v}
 

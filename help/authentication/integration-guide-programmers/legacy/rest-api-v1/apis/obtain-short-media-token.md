@@ -2,7 +2,7 @@
 title: 取得短媒體Token
 description: 取得短媒體權杖
 exl-id: 667eaaba-423e-4d54-9dbe-084b3c049e1f
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
 workflow-type: tm+mt
 source-wordcount: '393'
 ht-degree: 0%
