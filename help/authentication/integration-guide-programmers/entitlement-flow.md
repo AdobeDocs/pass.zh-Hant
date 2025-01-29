@@ -2,7 +2,7 @@
 title: 程式設計師權益流程
 description: 程式設計師權益流程
 exl-id: b1c8623a-55da-4b7b-9827-73a9fe90ebac
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
 source-wordcount: '1823'
 ht-degree: 0%
@@ -26,7 +26,7 @@ Adobe Pass驗證透過為雙方提供安全、一致的介面，調解程式設�
 
 除了這裡提供的平台中立概覽外，這裡還有無使用者端API專屬概觀：無使用者端API檔案。 AccessEnabler會在受支援的平台上以原生方式執行(在Web上執行AS / JS、在iOS上執行Objective-C，以及在Android上執行Java)。 AccessEnabler API在支援的平台上保持一致。 所有不支援AccessEnabler的平台都使用相同的無使用者端API。
 
-對於這兩種型別的介面，Adobe Pass驗證會安全地協調程式設計師的應用程式和使用者的MVPD之間的軟體權利檔案流程：
+對於這兩種型別的介面，Adobe Pass驗證會安全地協調程式設計師的應用程式和使用者的MVPD之間的權益流程：
 
 ![](../assets/prog-entitlement-flow.png)
 
@@ -35,7 +35,7 @@ Adobe Pass驗證透過為雙方提供安全、一致的介面，調解程式設�
 
 >[!IMPORTANT]
 >
->在上圖中，請注意權利流程有一部分不會透過Adobe Pass驗證伺服器： MVPD登入。 使用者必須登入其MVPD的登入頁面。 由於此要求，在無法轉譯網頁的裝置上，程式設計師的應用程式必須指示使用者切換到可支援網頁的裝置，以使用他們的MVPD登入，然後他們返回原始裝置進行剩餘的權益流程。
+>在上圖中，請注意權利流程有一部分不會透過Adobe Pass驗證伺服器： MVPD登入。 使用者必須登入其MVPD的登入頁面。 基於此要求，在無法轉譯網頁的裝置上，程式設計師的應用程式必須指示使用者切換到可支援網頁的裝置以使用其MVPD登入，之後他們才會回到原始裝置以進行剩餘的權益流程。
 
 ## 權益流程 {#entitlement-flow}
 
@@ -91,21 +91,21 @@ Adobe Pass驗證透過為雙方提供安全、一致的介面，調解程式設�
 如果下列兩點為True，則AuthN代號視為有效：
 
 * AuthN權杖未過期
-* 與AuthN權杖關聯的MVPD位於目前要求者ID的允許MVPD清單中
+* 與AuthN權杖相關聯的MVPD位於目前請求者ID的允許MVPD清單中
 
 #### 通用AccessEnabler初始驗證工作流程 {#generic-ae-initial-authn-flow}
 
 1. 您的應用程式會呼叫`getAuthentication()`來啟動驗證工作流程，以檢查有效的快取驗證Token。 這個方法有選擇性的`redirectURL`引數；如果您沒有提供`redirectURL`的值，在成功驗證之後，使用者會回到初始化驗證的URL。
 1. AccessEnabler決定目前的驗證狀態。 如果使用者目前已驗證，AccessEnabler會呼叫您的`setAuthenticationStatus()`回呼函式，傳遞驗證狀態以表示成功。
-1. 如果使用者未驗證，則AccessEnabler會透過判斷使用者的上次驗證嘗試是否在指定的MVPD上成功來繼續驗證流程。 如果已快取MVPD ID且`canAuthenticate`旗標為true，或已使用`setSelectedProvider()`選取MVPD，則不會使用MVPD選取對話方塊提示使用者。 驗證流程會繼續使用MVPD的快取值（也就是上次成功驗證期間使用的MVPD）。 系統會呼叫後端伺服器，並將使用者重新導向至MVPD登入頁面。
+1. 如果使用者未驗證，AccessEnabler會判斷使用者的上次驗證嘗試在指定的MVPD中是否成功，以繼續驗證流程。 如果已快取MVPD ID且`canAuthenticate`旗標為true或使用`setSelectedProvider()`選取了MVPD，則不會使用MVPD選取對話方塊提示使用者。 驗證流程會繼續使用MVPD的快取值(即上次成功驗證期間使用的MVPD)。 系統會向後端伺服器發出網路呼叫，並將使用者重新導向至MVPD登入頁面。
 
-1. 如果未快取MVPD ID，而且未使用`setSelectedProvider()`選取MVPD，或`canAuthenticate`旗標設定為false，則會呼叫`displayProviderDialog()`回呼。 此回呼會指示您的應用程式建立UI，向使用者顯示可從中進行選擇的MVPD清單。 提供了一系列MVPD物件，其中包含您建置MVPD選取器所需的資訊。 每個MVPD物件描述MVPD實體，並包含MVPD的ID和可以找到MVPD標誌的URL等資訊。
+1. 如果未快取任何MVPD ID，而且未使用`setSelectedProvider()`選取任何MVPD，或`canAuthenticate`標幟設定為false，則會呼叫`displayProviderDialog()`回呼。 此回呼會指示您的應用程式建立UI，向使用者顯示可從中進行選擇的MVPD清單。 提供了一系列MVPD物件，其中包含您建置MVPD選擇器所需的資訊。 每個MVPD物件都說明MVPD實體，並包含MVPD ID和可以找到MVPD標誌的URL等資訊。
 
-1. 選取MVPD後，您的應用程式必須通知AccessEnabler使用者所做的選擇。 對於非Flash使用者端，一旦使用者選取想要的MVPD，您就會透過呼叫`setSelectedProvider()`方法通知AccessEnabler使用者選取範圍。 Flash使用者端改為分派型別&quot;`mvpdSelection`&quot;的共用`MVPDEvent`，傳遞選取的提供者。
+1. 選取MVPD後，您的應用程式必須通知AccessEnabler使用者的選擇。 對於非Flash使用者端，一旦使用者選取想要的MVPD，您就會透過呼叫`setSelectedProvider()`方法通知AccessEnabler使用者選取範圍。 Flash使用者端改為分派型別&quot;`mvpdSelection`&quot;的共用`MVPDEvent`，傳遞選取的提供者。
 
-1. 當通知AccessEnabler使用者的MVPD選擇時，會進行網路呼叫至後端伺服器，並將使用者重新導向至MVPD登入頁面。
+1. 當通知AccessEnabler使用者的MVPD選擇時，會向後端伺服器發出網路呼叫，並將使用者重新導向至MVPD登入頁面。
 
-1. 在驗證工作流程中，AccessEnabler會與Adobe Pass Authentication和選取的MVPD通訊，以索取使用者的認證（使用者ID和密碼）並驗證其身分。 雖然有些MVPD會重新導向至自己的登入網站，有些則需要您在iFrame中顯示其登入頁面。 您的頁面必須包含建立iFrame的回呼，以防客戶選擇其中一個MVPD。<!-- For more information on creating a login iFrame, see  [Managing the Login IFrame](https://tve.helpdocsonline.com/managing-the-login-iframe)-->。
+1. 在驗證工作流程中，AccessEnabler會與Adobe Pass Authentication和選取的MVPD通訊，以索取使用者的憑證（使用者ID和密碼）並驗證其身分。 雖然有些MVPD會重新導向至自己的登入網站，有些則需要您在iFrame中顯示其登入頁面。 您的頁面必須包含建立iFrame的回呼，以防客戶選擇其中一個MVPD。<!-- For more information on creating a login iFrame, see  [Managing the Login IFrame](https://tve.helpdocsonline.com/managing-the-login-iframe)-->。
 
 1. 使用者成功登入後，AccessEnabler會擷取驗證Token，並通知您的應用程式驗證流程已完成。 AccessEnabler以狀態碼1呼叫`setAuthenticationStatus()`回呼，表示成功。 如果在執行這些步驟期間發生錯誤，`setAuthenticationStatus()`回呼會以狀態碼0觸發，表示驗證失敗以及對應的錯誤碼。
 
@@ -115,7 +115,7 @@ Adobe Pass驗證透過為雙方提供安全、一致的介面，調解程式設�
 
 ### 授權流程 {#authorization}
 
-授權是檢視受保護內容的先決條件。 成功的授權會產生AuthZ權杖，以及提供給程式設計師應用程式以用於安全目的的短期媒體權杖。 請注意，若要支援授權工作流程，您必須先執行必要的要求者設定，並整合[媒體權杖驗證器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md)。 完成這些步驟後，您就可以啟動授權。
+授權是檢視受保護內容的先決條件。 成功的授權會產生AuthZ權杖，以及提供給程式設計師應用程式以用於安全目的的短期媒體權杖。 請注意，若要支援授權工作流程，您必須先執行必要的要求者設定，並整合[媒體權杖驗證器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)。 完成這些步驟後，您就可以啟動授權。
 
 當使用者請求存取受保護的資源時，您的應用程式會起始授權。 您可以傳遞指定請求資源的資源ID （例如，頻道、集數等）。 您的應用程式會先檢查是否有已儲存的驗證Token。 如果找不到，您就會啟動驗證程式。
 

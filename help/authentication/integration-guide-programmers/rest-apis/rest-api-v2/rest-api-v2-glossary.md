@@ -2,9 +2,9 @@
 title: rest API V2字彙表
 description: rest API V2字彙表
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '1747'
+source-wordcount: '1744'
 ht-degree: 0%
 
 ---
@@ -115,7 +115,7 @@ ht-degree: 0%
 
 媒體權杖驗證器是由Adobe Pass驗證所分配的程式庫，負責驗證[媒體權杖](#media-token)的真實性。
 
-如需詳細資訊，請參閱[整合媒體權杖驗證器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md)檔案。
+如需詳細資訊，請參閱[媒體權杖驗證器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)檔案。
 
 #### MVPD {#mvpd}
 
@@ -183,7 +183,7 @@ Proxy MVPD是一間為其他MVPD提供身分服務的公司，並直接與Adobe 
 
 資源由程式設計師和MVPD之間議定的唯一值識別。
 
-如需詳細資訊，請參閱[識別受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md)檔案。
+如需詳細資訊，請參閱[受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers)檔案。
 
 ### S {#s}
 

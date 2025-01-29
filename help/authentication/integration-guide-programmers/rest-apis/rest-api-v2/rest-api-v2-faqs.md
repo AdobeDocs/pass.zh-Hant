@@ -2,9 +2,9 @@
 title: REST API V2常見問題集
 description: REST API V2常見問題集
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
 workflow-type: tm+mt
-source-wordcount: '6668'
+source-wordcount: '6664'
 ht-degree: 0%
 
 ---
@@ -245,7 +245,7 @@ ht-degree: 0%
 * 簡單的字串格式，例如管道（品牌）的唯一識別碼。
 * 包含其他資訊的媒體RSS (MRSS)格式，例如標題、分級和家長監護中繼資料。
 
-如需詳細資訊，請參閱[識別受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md)檔案。
+如需詳細資訊，請參閱[受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers)檔案。
 
 #### 6.使用者端應用程式一次可取得多少資源預先授權決定？ {#preauthorization-phase-faq6}
 
@@ -294,7 +294,7 @@ ht-degree: 0%
 
 媒體權杖包含以純文字傳送的已簽署字串，可從「決定授權」端點擷取。
 
-如需詳細資訊，請參閱[整合媒體權杖驗證器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-token-verifier-int.md)檔案。
+如需詳細資訊，請參閱[媒體權杖驗證器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)檔案。
 
 媒體權杖在問題時指定的有限和較短時間範圍內有效，這表示在需要再次查詢Decisions Authorize端點之前，使用者端應用程式必須使用此權杖的時間量。
 
@@ -316,7 +316,7 @@ ht-degree: 0%
 * 簡單的字串格式，例如管道（品牌）的唯一識別碼。
 * 包含其他資訊的媒體RSS (MRSS)格式，例如標題、分級和家長監護中繼資料。
 
-如需詳細資訊，請參閱[識別受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/identify-protected-resources.md)檔案。
+如需詳細資訊，請參閱[受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers)檔案。
 
 #### 6.使用者端應用程式一次可取得多少資源授權決定？ {#authorization-phase-faq6}
 
