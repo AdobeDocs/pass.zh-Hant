@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
 workflow-type: tm+mt
-source-wordcount: '1231'
+source-wordcount: '1230'
 ht-degree: 2%
 
 ---
@@ -48,7 +48,6 @@ ht-degree: 2%
    + [技術檔案](kickstart/technical-paper.md)
    + [程式設計師快速入門手冊](kickstart/programmer-kickstart-guide.md)
    + [MVPD快速入門手冊](kickstart/mvpd-kickstart-guide.md)
-   + [MVPD概觀](kickstart/mvpd-overview.md)
    + [支援程式常見問題集](kickstart/support-procedures-faqs.md)
 + 程式設計師的整合指南{#integration-guide-programmers}
    + [程式設計師整合指南](integration-guide-programmers/programmer-integration-guide-overview.md)
@@ -260,7 +259,7 @@ ht-degree: 2%
             + [（舊版）監控Adobe PassAdobePayTV Pass](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
             + [（舊版）如何使用Adobe API測試網站測試驗證和授權流程](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
 + MVPD {#integration-guide-mvpds}的整合指南
-   + [整合功能](integration-guide-mvpds/mvpd-integr-features.md)
+   + [MVPD整合指南](integration-guide-mvpds/mvpd-integration-guide-overview.md)
    + [驗證](integration-guide-mvpds/authn-usecase.md)
    + [使用OAuth 2.0通訊協定進行驗證](integration-guide-mvpds/authn-oauth2-protocol.md)
    + [Authorization](integration-guide-mvpds/authz-usecase.md)

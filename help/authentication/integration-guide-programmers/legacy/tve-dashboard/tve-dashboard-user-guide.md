@@ -2,9 +2,9 @@
 title: Primetime TVE儀表板使用手冊
 description: Primetime TVE儀表板使用手冊
 exl-id: 6f7f7901-db3a-4c68-ac6a-27082db9240a
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
 workflow-type: tm+mt
-source-wordcount: '5524'
+source-wordcount: '5517'
 ht-degree: 0%
 
 ---
@@ -287,7 +287,7 @@ TVE Dashboard提供兩個名為「預合格」（預合格）和「發行」的�
 
 若要更新現有的整合，請從「整合」區段或從「管道」區段（包含「整合」索引標籤）按一下該特定整合的表格專案。
 
-使用基本Workspace模式時，本節將允許檢視及編輯最常更新的設定，例如驗證和授權權杖TTL （存留時間）以及iFrame設定。 請記住，與支援動態定義權杖持續性TTL的MVPD的整合可能會遺失TTL設定(請參閱[MVPD整合需求](/help/authentication/integration-guide-mvpds/mvpd-integr-features.md)中的專案1.19)。
+使用基本Workspace模式時，本節將允許檢視及編輯最常更新的設定，例如驗證和授權權杖TTL （存留時間）以及iFrame設定。 請記住，與支援動態定義權杖持續性TTL的MVPD的整合可能會遺失TTL設定。
 
 
 
