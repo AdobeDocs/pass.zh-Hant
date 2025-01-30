@@ -2,9 +2,9 @@
 title: iOS/tvOS API參考
 description: iOS/tvOS API參考
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '6956'
+source-wordcount: '6942'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,6 @@ ht-degree: 0%
 
 相關檔案：
 
-* 如需基本Adobe Pass驗證權利流程的說明，請參閱[權利流程](/help/authentication/integration-guide-programmers/entitlement-flow.md)。
 * 有關如何實作Adobe Pass的逐步逐步解說
 使用此API的驗證許可權流程，請參閱[iOS整合逐步指南](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-cookbook.md)。
 * 如需最新的iOS AccessEnabler SDK，請參閱[iOS原生存取啟用程式庫](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)。

@@ -2,9 +2,9 @@
 title: TVE儀表板概觀
 description: 瞭解TVE控制面板和資源。
 exl-id: 91baeb34-a32a-4dc3-94d8-f6cfca59dc4e
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '303'
+source-wordcount: '305'
 ht-degree: 0%
 
 ---
@@ -52,6 +52,6 @@ Adobe建議您使用下列資源來徹底瞭解流程和功能，協助您熟悉
 
 * [TVE技術檔案](/help/authentication/kickstart/technical-paper.md)
 * [程式設計人員Kickstart指南](/help/authentication/kickstart/programmer-kickstart-guide.md)
-* [權益流程](/help/authentication/integration-guide-programmers/entitlement-flow.md)
+* [程式設計師整合指南概觀](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)
 * [動態使用者端註冊(DCR)字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
 * [rest API v2字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md)

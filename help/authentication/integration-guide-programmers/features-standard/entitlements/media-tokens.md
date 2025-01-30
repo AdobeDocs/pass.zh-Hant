@@ -2,9 +2,9 @@
 title: 媒體權杖
 description: 媒體權杖
 exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '653'
+source-wordcount: '667'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,9 @@ ht-degree: 0%
 >
 > 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
-媒體權杖是由Adobe Pass驗證[REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)產生的Token，此授權決定旨在提供受保護內容（資源）的檢視存取權。 媒體權杖在問題時指定的有限和較短時間範圍（幾分鐘）內有效，這表示使用者端應用程式必須驗證和使用它的時間量。
+媒體權杖是由Adobe Pass驗證[REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)產生的Token，此授權決定旨在提供受保護內容（資源）的檢視存取權。
+
+媒體權杖在問題發生時指定的有限和短時間範圍（預設為7分鐘）內有效，這表示在使用者端應用程式必須驗證和使用它之前的時間限制。 媒體權杖僅限於一次性使用，且絕對不可快取。
 
 媒體權杖由以明文傳送的公開金鑰基礎結構(PKI)為基礎的已簽署字串組成。 透過以PKI為基礎的保護，權杖會使用由憑證授權單位(CA)核發給Adobe的非對稱金鑰來簽署。
 
@@ -25,7 +27,7 @@ ht-degree: 0%
 
 ## 媒體權杖驗證器 {#media-token-verifier}
 
-Adobe Pass驗證建議程式設計師將媒體權杖傳送至整合媒體權杖驗證器程式庫的後端服務，以在起始視訊資料流之前確保安全存取。 媒體權杖的存留時間(TTL)旨在解決權杖產生伺服器和驗證伺服器之間的潛在時鐘同步問題。
+Adobe Pass驗證建議程式設計師將媒體權杖傳送至他們自己的後端服務，整合媒體權杖驗證器程式庫，以在起始視訊資料流之前確保安全存取。 媒體權杖的存留時間(TTL)旨在解決權杖產生伺服器和驗證伺服器之間的潛在時鐘同步問題。
 
 Adobe Pass驗證強烈建議不要剖析媒體權杖並直接擷取其資料，因為無法保證權杖格式，且未來可能會變更。 媒體權杖驗證器程式庫應該是唯一用於分析權杖內容的工具。
 

@@ -2,9 +2,9 @@
 title: JavaScript SDK概觀
 description: JavaScript SDK概觀
 exl-id: 8756c804-a4c1-4ee3-b2b9-be45f38bdf94
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '533'
+source-wordcount: '510'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ Adobe強烈建議您移轉至AccessEnabler程式庫的最新JS v4.x。
 
 Adobe Pass Authentication JavaScript整合在熟悉的JS Web應用程式開發環境中，為程式設計師提供無所不在的TV解決方案。 整合的主要元件是您的「高階」應用程式（使用者互動、視訊簡報），以及Adobe提供的「低階」 AccessEnabler資料庫，此資料庫提供您進入權益流程的入口，並處理與Adobe Pass驗證伺服器的通訊。
 
-一般Adobe Pass驗證軟體權利檔案流程包含在[程式設計師權利檔案流程](/help/authentication/integration-guide-programmers/entitlement-flow.md)中，而JavaScript整合逐步指南會引導您完成實作。 以下小節提供JavaScript AccessEnabler整合的專屬說明和範例。
+以下小節提供JavaScript AccessEnabler整合的專屬說明和範例。
 
 >[!IMPORTANT]
 >

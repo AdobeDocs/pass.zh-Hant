@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: ffedb5db269644c8d9c81480d27dff43bd4eb5d6
+source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '1240'
+source-wordcount: '1231'
 ht-degree: 2%
 
 ---
@@ -46,12 +46,14 @@ ht-degree: 2%
       + [Adobe Pass Authentication iOS / tvOS 3.7.0發行說明](notes-releases/authn-rn-ios-tvos-370.md)
 + Kickstart {#kickstart}
    + [技術檔案](kickstart/technical-paper.md)
-   + [程式設計師概觀](kickstart/programmer-overview.md)
-   + [MVPD概觀](kickstart/mvpd-overview.md)
    + [程式設計師快速入門手冊](kickstart/programmer-kickstart-guide.md)
    + [MVPD快速入門手冊](kickstart/mvpd-kickstart-guide.md)
+   + [MVPD概觀](kickstart/mvpd-overview.md)
    + [支援程式常見問題集](kickstart/support-procedures-faqs.md)
 + 程式設計師的整合指南{#integration-guide-programmers}
+   + [程式設計師整合指南](integration-guide-programmers/programmer-integration-guide-overview.md)
+   + [最低系統需求](integration-guide-programmers/minimum-system-requirements.md)
+   + [節流機制](integration-guide-programmers/throttling-mechanism.md)
    + REST API {#rest-apis}
       + REST API DCR {#rest-api-dcr}
          + [Dynamic Client註冊概述](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
@@ -120,9 +122,9 @@ ht-degree: 2%
                + [頁首 — AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + 標準功能{#standard-features}
       + 權利{#entitlements}
+         + [使用者中繼資料](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
          + [決定](integration-guide-programmers/features-standard/entitlements/decisions.md)
          + [媒體權杖](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
-         + [使用者中繼資料](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
       + 報告{#error-reporting}時發生錯誤
          + [增強的錯誤碼](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
       + 單一登入存取{#sso-access}
@@ -257,11 +259,6 @@ ht-degree: 2%
             + [（舊版）使用Charles Proxy](integration-guide-programmers/legacy/notes-technical/using-charles-proxy.md)
             + [（舊版）監控Adobe PassAdobePayTV Pass](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
             + [（舊版）如何使用Adobe API測試網站測試驗證和授權流程](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
-   + [程式設計師整合指南概觀](integration-guide-programmers/programmer-integration-guide-overview.md)
-   + [程式設計師權益流程](integration-guide-programmers/entitlement-flow.md)
-   + [程式設計師使用案例](integration-guide-programmers/programmer-use-cases.md)
-   + [節流機制](integration-guide-programmers/throttling-mechanism.md)
-   + [最低系統需求](integration-guide-programmers/minimum-system-requirements.md)
 + MVPD {#integration-guide-mvpds}的整合指南
    + [整合功能](integration-guide-mvpds/mvpd-integr-features.md)
    + [驗證](integration-guide-mvpds/authn-usecase.md)
