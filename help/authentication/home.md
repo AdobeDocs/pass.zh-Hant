@@ -2,9 +2,9 @@
 title: 歡迎使用Adobe&amp；reg；通過驗證！
 description: 歡迎使用Adobe&amp；reg；通過驗證概述
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 1b9847d8dcb078755fd68a6363972f8973290e52
 workflow-type: tm+mt
-source-wordcount: '292'
+source-wordcount: '293'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Adobe Pass Authentication是TV Everywhere的權益解決方案，提供模組化
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <ul><li>[程式設計師Kickstart指南](/help/authentication/kickstart/programmer-kickstart-guide.md)</li><li>[使用者中繼資料](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)</li></ul> | <ul><li>[MVPD Kickstart指南](/help/authentication/kickstart/mvpd-kickstart-guide.md)</li><li>[驗證](/help/authentication/integration-guide-mvpds/authn-usecase.md)</li><li>[授權](/help/authentication/integration-guide-mvpds/authz-usecase.md)</li><li>[登出](/help/authentication/integration-guide-mvpds/usecase-mvpd-logout.md)</li></ul> |
 | 原生應用程式使用者端的&#x200B;**** | 每個人&#x200B;**** |
-| <ul><li>[iOS技術概覽](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Android技術概覽](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[技術檔案](/help/authentication/kickstart/technical-paper.md)</li><li>[提升程式](/help/authentication/kickstart/escalation-procedures.md)</li></ul> |
+| <ul><li>[iOS技術概覽](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Android技術概覽](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[技術檔案](/help/authentication/kickstart/technical-paper.md)</li><li>[支援程式常見問題集](/help/authentication/kickstart/support-procedures-faqs.md)</li></ul> |
 | 智慧型裝置&#x200B;**** |                                                                                                                                                                                                                                                                                                                                                                       |
 | <ul><li>[無使用者端技術概覽](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)</li><li>[無使用者端API](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)</li></ul> |                                                                                                                                                                                                                                                                                                                                                                       |
 
@@ -37,7 +37,7 @@ Adobe Pass Authentication是TV Everywhere的權益解決方案，提供模組化
 >
 > [傳送電子郵件給支援團隊](mailto:tve-support@adobe.com)也是任何問題或事件報告的第一個步驟。
 >
-> 如果您有[SEVERITY 1 LIVE](/help/authentication/kickstart/escalation-procedures.md)問題，且您已傳送電子郵件給我們，30分鐘沒有回應，請參閱[向上呈報程式](/help/authentication/kickstart/escalation-procedures.md)檔案以取得要撥打的電話號碼。
+> 如果您有[SEVERITY 1 LIVE](/help/authentication/kickstart/support-procedures-faqs.md)問題，且您已傳送電子郵件給我們，30分鐘沒有回應，請參閱[向上呈報程式](/help/authentication/kickstart/support-procedures-faqs.md)檔案以取得要撥打的電話號碼。
 
 ## 尋找您需要的專案 {#how-to-search}
 

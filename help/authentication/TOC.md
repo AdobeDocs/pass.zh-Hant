@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
+source-git-commit: 1b9847d8dcb078755fd68a6363972f8973290e52
 workflow-type: tm+mt
-source-wordcount: '1249'
+source-wordcount: '1250'
 ht-degree: 2%
 
 ---
@@ -50,7 +50,7 @@ ht-degree: 2%
    + [MVPD概觀](kickstart/mvpd-overview.md)
    + [程式設計師快速入門手冊](kickstart/programmer-kickstart-guide.md)
    + [MVPD快速入門手冊](kickstart/mvpd-kickstart-guide.md)
-   + [向上呈報程式](kickstart/escalation-procedures.md)
+   + [支援程式常見問題集](kickstart/support-procedures-faqs.md)
 + 程式設計師的整合指南{#integration-guide-programmers}
    + REST API {#rest-apis}
       + REST API DCR {#rest-api-dcr}
