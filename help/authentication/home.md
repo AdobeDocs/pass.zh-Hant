@@ -1,48 +1,76 @@
 ---
-title: 歡迎使用Adobe&amp；reg；通過驗證！
-description: 歡迎使用Adobe&amp；reg；通過驗證概述
+title: 歡迎使用Adobe&amp；reg；通過驗證
+description: 歡迎使用Adobe&amp；reg；通過驗證
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: ffedb5db269644c8d9c81480d27dff43bd4eb5d6
+source-git-commit: c9e31a036a0300fabd9f75dd85d472c390d9053e
 workflow-type: tm+mt
-source-wordcount: '293'
+source-wordcount: '419'
 ht-degree: 0%
 
 ---
 
-# 歡迎使用Adobe®通過驗證 {#pt-auth-overview}
+# 歡迎使用Adobe®通過驗證 {#welcome}
 
 >[!IMPORTANT]
 >
 > 請務必隨時瞭解彙總在[產品公告](/help/authentication/product-announcements.md)頁面中的最新Adobe Pass驗證產品公告和淘汰時間表。
 
-Adobe Pass Authentication是TV Everywhere的權益解決方案，提供模組化架構，用於判斷要求存取資源的人是否有權使用資源。 為了參與Adobe Pass驗證許可權解決方案，內容提供者（程式設計人員）和付費電視提供者(MVPD)將其許可權系統與Adobe Pass驗證工作流程整合。 本檔案網站提供整合流程的詳細資訊，以及現有合作夥伴的秘訣。
+Adobe Pass Authentication是適用於TV Everywhere (TVE)的強大權益解決方案，其設計旨在簡化及保護驗證檢視者是否有權存取受保護內容的程式。 此模組化架構將內容提供者（程式設計人員）與付費電視提供者(MVPD)連線在一起，以速度、一致性和可靠性促進權益交易。
 
-## 熱門說明和常見問答 {#help-faqs}
+在TVE生態系統中，程式設計師提供內容，而MVPD則管理訂閱者資料。 這種動態可能具有挑戰性，尤其是在使用眾多MVPD的各種系統時。 Adobe Pass驗證提供單一整合點，將雙方連結至更廣泛的TVE環境，免除這些複雜工作。
 
-| **個精選專案** |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <ul><li>[iOS的單一登入](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)</li><li>[家用驗證(HBA)](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)</li><li>[HBA資訊圖形](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf)</li><li>[Adobe Pass TVE儀表板使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)</li></ul> |
+對於程式設計師而言，Adobe Pass驗證可確保合格檢視者的安全存取，同時降低軟體權利檔案驗證的技術負擔。 對於MVPD，它提供可擴充的解決方案，透過統一的介面與多個內容提供者連線，強化客戶關係並提升檢視者體驗。
 
-| 程式設計師的&#x200B;**** | MVPD的&#x200B;**** |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <ul><li>[程式設計師Kickstart指南](/help/authentication/kickstart/programmer-kickstart-guide.md)</li><li>[使用者中繼資料](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)</li></ul> | <ul><li>[MVPD Kickstart指南](/help/authentication/kickstart/mvpd-kickstart-guide.md)</li><li>[驗證](/help/authentication/integration-guide-mvpds/authn-usecase.md)</li><li>[授權](/help/authentication/integration-guide-mvpds/authz-usecase.md)</li><li>[登出](/help/authentication/integration-guide-mvpds/usecase-mvpd-logout.md)</li></ul> |
-| 原生應用程式使用者端的&#x200B;**** | 每個人&#x200B;**** |
-| <ul><li>[iOS技術概覽](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-overview.md)</li><li>[Android技術概覽](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-overview.md)</li></ul> | <ul><li>[技術檔案](/help/authentication/kickstart/technical-paper.md)</li><li>[支援程式常見問題集](/help/authentication/kickstart/support-procedures-faqs.md)</li></ul> |
-| 智慧型裝置&#x200B;**** |                                                                                                                                                                                                                                                                                                                                                                       |
-| <ul><li>[無使用者端技術概覽](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)</li><li>[無使用者端API](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)</li></ul> |                                                                                                                                                                                                                                                                                                                                                                       |
+Adobe Pass驗證身為SaaS （軟體即服務）解決方案，可加快上市時間、減少詐騙風險，並啟用順暢的跨平台內容存取，確保適當的檢視者能夠輕鬆接收適當的內容。
 
->[!IMPORTANT]
->
-> 如果您找不到答案，請&#x200B;[**傳送電子郵件給我們**](mailto:tve-support@adobe.com)。
->
-> [傳送電子郵件給支援團隊](mailto:tve-support@adobe.com)也是任何問題或事件報告的第一個步驟。
->
-> 如果您有[SEVERITY 1 LIVE](/help/authentication/kickstart/support-procedures-faqs.md)問題，且您已傳送電子郵件給我們，30分鐘沒有回應，請參閱[向上呈報程式](/help/authentication/kickstart/support-procedures-faqs.md)檔案以取得要撥打的電話號碼。
+## ??社群與更新
 
-## 尋找您需要的專案 {#how-to-search}
+* [產品公告](/help/authentication/product-announcements.md)\
+  瞭解最新的Adobe Pass驗證產品公告和淘汰時間表。
 
-* 在Adobe Pass驗證服務檯的任何地方&#x200B;**搜尋**包含此專案的結果
-檔案。
-* **透過左側導覽窗格中的資料夾階層，瀏覽**&#x200B;所有Adobe Pass驗證檔案。
-* **在導覽窗格頂端的欄位中輸入字詞，以篩選**&#x200B;資料夾階層。
-* 使用您的網頁瀏覽器，將&#x200B;**的「深層連結」加入書籤**。
+## ❓支援與疑難排解
+
+* [Zendesk客戶支援入口網站](https://tve.zendesk.com/home)\
+  登入以存取票證、提交查詢或檢視知識庫。
+
+* [支援程式常見問題集](/help/authentication/kickstart/support-procedures-faqs.md)
+關於Adobe Pass驗證支援程式的常見問題。
+
+* [動態使用者端註冊(DCR)常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)\
+  關於Adobe Pass驗證動態使用者端註冊(DCR)的常見問題。
+
+* [REST API V2常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)\
+  關於Adobe Pass驗證REST API V2的常見問題。
+
+## ??檔案
+
+程式設計師的&#x200B;**：**
+
+* [程式設計師Kickstart指南](/help/authentication/kickstart/programmer-kickstart-guide.md)\
+  開始使用Adobe Pass驗證。
+
+* [程式設計師的整合指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)\
+  瞭解如何將Adobe Pass驗證與您的程式設計師整合。
+
+MVPD的&#x200B;**：**
+
+* [MVPD Kickstart指南](/help/authentication/kickstart/mvpd-kickstart-guide.md)\
+  開始使用Adobe Pass驗證。
+
+* MVPD的[整合指南](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md)\
+  瞭解如何將Adobe Pass驗證與您的MVPD整合。
+
+*使用頁面頂端的搜尋列來搜尋特定主題，或是透過左側功能表來瀏覽。*
+
+## ??️工具與程式庫
+
+* [Adobe Developer網站](https://developer.adobe.com/adobe-pass/)\
+  存取Adobe Developer網站以試用Adobe Pass驗證REST API。
+
+* [媒體權杖驗證器](https://tve.zendesk.com/hc/en-us/articles/204963159-Media-Token-Verifier-library)\
+  整合程式庫，以驗證Adobe Pass驗證產生的媒體權杖。
+
+## ??連絡人
+
+* [連絡Adobe支援](mailto:tve-support@adobe.com)\
+  如需其他說明或業務諮詢，請傳送電子郵件給Adobe支援團隊。
