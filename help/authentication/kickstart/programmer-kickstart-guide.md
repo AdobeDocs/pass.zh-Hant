@@ -2,95 +2,89 @@
 title: 程式設計師快速入門手冊
 description: 程式設計師快速入門手冊
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: 37858fa83aecbdf443a4a6058c78e4f9246eee42
 workflow-type: tm+mt
-source-wordcount: '969'
+source-wordcount: '758'
 ht-degree: 0%
 
 ---
 
 # 程式設計師快速入門手冊 {#programmer-kickstart-guide}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
-## 簡介 {#prog-kickstart-guide-intro}
+本Kickstart指南適用於計畫將Adobe®傳遞驗證整合至其網站或應用程式的內容提供者（程式設計人員）。
 
-歡迎使用Adobe Pass Authentication for TV Everywhere。 我們期待與您合作。
+本檔案概述確保順利且有效率地開始整合程式的重要初始步驟。 此課程旨在釐清客戶的期望，並指引我們與合作夥伴協力達成成功整合。
 
->[!NOTE]
+Adobe提供一系列資源，協助您將Adobe Pass驗證整合至您的網站或應用程式。 請參考&#x200B;**「您將提供」**&#x200B;及&#x200B;**「Adobe將會提供」**&#x200B;提及以下各節。
+
+## 設定程式 {#setup-process}
+
+設定程式包括下列步驟：
+
+![Adobe®通過驗證整合程式](../assets/progr-flow-int-lifecycle.png)
+
+*Adobe®通過驗證整合程式*
+
+**您將在啟動階段提供**：
+
+* **服務提供者（要求者識別碼）**
+
+  這是字串，可唯一識別向Adobe Pass驗證提出要求的網站或應用程式的品牌。 字串本身是任意的，但需要在Adobe和程式設計師之間商定
+
+* **頻道資訊**
+
+  這是一組字串，用來識別服務提供者要求的內容管道。 在許多情況下，頻道與服務提供者是一樣的。 然而，單一識別碼可以代表多個內容管道。 這些頻道名稱字串應該與對應的有線電視頻道一致。 請注意，某些MVPD可能會在驗證和/或授權程式期間驗證此值。
+
+* **網域名稱**
+
+  此清單將包含列出的實際網域名稱，以Adobe表示服務提供者。 這樣可確保只有您授權的網域才能使用您的中繼資料存取Adobe Pass驗證。 請務必提供並清楚識別生產和中繼（測試）環境的網域名稱，因為這些名稱可能不同。
+
+**您將透過MVPD提供**：
+
+* **認證集**
+
+  這些憑證用於透過MVPD驗證和授權使用者，或僅驗證使用者。 一般而言，這些認證包含使用者名稱和密碼，MVPD會針對設定檔（測試環境和生產環境）提供這兩個專案。
+
+* **資源識別碼**
+
+  這些是服務提供者想要保護的內容頻道、節目、集數或資產的唯一識別碼。 這些識別碼用於請求授權決策，且必須與MVPD商定。
+
+>[!IMPORTANT]
 >
->這是程式設計師（內容提供者）的Kickstart指南。 如果您是多頻道視訊節目經銷商(MVPD)，請務必參閱[MVPD快速入門手冊](/help/authentication/kickstart/mvpd-kickstart-guide.md)。
-
-
-Adobe Pass驗證聯絡人：
-
-* 支援 — 針對所有問題、事件或功能要求，`tve-support@adobe.com`
-* 您的專案開始之前，系統會將「啟用」聯絡人指派給專案。
-
-下列資訊概述讓我們開始穩定有效率工作的一些重要步驟。 我們的目標是針對我們如何與合作夥伴合作達成整合提供說明和期望。 請注意「您將提供」/「Adobe將會提供」下方的各個專案章節。 這些清單會以檢查清單的方式列出，或在我們完成專案時提供指南。
-
-本檔案假設程式設計師已註冊與選定的MVPD合作夥伴合作。
-
-## 發行排程 {#release-schedule}
-
-已規劃Adobe快速入門開發週期，因此您可以檢視排程發行的時間，以及如何透過我們的開發系統推廣每個版本。
-
-每個衝刺完成之後，即可進行QE，或在UAT伺服器上看到新的實作。
-
-大約每6週會對Adobe「資格預審」伺服器發佈一次。 （這是執行最終QE時，我們保留建議下一個版本的伺服器。） 這些組建將包含自上次放置以來在短跑中完成的所有工作。 此時，合作夥伴可使用兩週QE視窗來測試此版本。
-
-假設在前兩個星期的測試期間沒有發生嚴重問題，此版本將會升級至即時生產。 這表示整合可在Adobe發行環境中使用，但合作夥伴會在公開發行時選擇。
-
-<!--For the latest release schedule information, see the Release Calendar.-->
-
-## 支援檔案 {#supp-doc}
-
-Adobe將提供：
-
-* 部署指南： **`https://tve.zendesk.com/entries/498741-tve-deployment-guide`**
-* 存取我們的Zendesk客戶支援系統。 您也可以在這裡找到有關某些流程的範例、資訊和影片教學課程。 若要在Zendesk上存取此檔案以及張貼在該處的其他檔案，您必須在`https://tve.zendesk.com/home`註冊並建立帳戶。 您可以註冊的使用者數量沒有限制。  您可以在任何已歸檔票證上檢視和共用評論。 所有支援問題皆應傳送給`tve-support@adobe.com`。
-* 媒體權杖驗證器程式庫： `https://tve.zendesk.com/entries/471323-media-token-validator-library`。
-
-## 測試環境設定 {#test-env-setup}
-
-Adobe會先使用Adobe測試網站設定您，在這裡，Adobe會作為測試用途的MVPD。 您的團隊接著可以設定測試網站，以呼叫AdobeAPI。 使用預設的MVPD選取器，然後選取「Adobe」作為idP。
-
-您將提供：
-
-1. 要求者ID。 這是字串，可唯一識別向Adobe Pass驗證提出要求的網站或應用程式的品牌。 字串本身是任意的，但需要在Adobe和程式設計師之間商定
-1. 頻道資訊。 這是一組字串，可識別要求者ID所要求的內容管道。 在許多情況下，管道和請求者ID相同。 但同一ID可能會要求您擁有多個內容管道。 頻道名稱字串應該與有線電視頻道相對應。 有些MVPD會透過AuthN和/或AuthZ通訊協定驗證此值。
-1. 網域名稱（允許用於該請求者ID）。 這將是一個實際網域名稱清單，將由Adobe列出以接受請求者ID。 這樣可確保只有您核准的網域才能存取含有您中繼資料的Adobe Pass驗證。 注意：對生產有效的網域名稱在測試/測試中可能不同，應該提供和識別這兩個名稱。
-
-Adobe將設定帳戶，而Adobe將提供：
-
-* 存取測試網站的登入和密碼
-
-## 使用MVPD進行設定 {#setup-mvpd}
-
-本節說明當您從Adobe測試網站移轉至MVPD時，需要哪些專案。
-
-您將提供(透過MVPD)：
-
-* **兩組認證**：
-   * AuthN + AuthZ ：已驗證和授權使用者的登入/密碼
-   * AuthN + Non-AuthZ ：已驗證但未授權的使用者登入/密碼
-* **資源識別碼**。 這是將會透過AuthZ通訊協定以MVPD驗證的特定內容識別碼。 可以在頻道、節目、集數或資產層級，應該與您的MVPD達成共識。
-
-Adobe Pass驗證支援MRSS型中繼資料結構，這表示資源ID可以視需要而具體，且可包含特定MVPD專屬的識別碼。
-
-**全新MVPD整合**：請務必記住，您選擇的MVPD在完成任何整合時都會發揮不可或缺的作用。 Adobe需要根據每個MVPD的規格為其撰寫程式碼。 在完成這些步驟之前，您將無法從對話方塊中選取該MVPD，或完成您的產品測試。 Adobe需要提前排程這項工作，以配合下一個可用的衝刺。 （如需目前排程資訊，請參閱發行行事曆。）
-
-**現有的MVPD整合**：如果您選擇的MVPD已使用Adobe進行設定，則連線步驟應該會簡單得多（更快），而且通常可透過變更設定來達成連線。
-
->[!NOTE]
+> 程式設計師負責與MVPD協調，以完成任何必要的業務協定。 同時，Adobe Pass驗證將與MVPD共同作業，以確保技術整合已正確建立：
 >
->MVPD仍需啟用程式設計師，並簽署任何相關的商業交易。
+> * **新MVPD**
+>
+>     如果MVPD未與Adobe整合，則必須根據MVPD的特定需求來開發自訂程式碼。 在此開發完成之前，將無法使用MVPD，並且無法繼續使用該MVPD進行產品測試。
+>
+> * **現有的MVPD**
+>
+>     如果MVPD已與Adobe整合，可大幅簡化連線流程。 在多數情況下，連線能力可透過設定調整快速建立，無需進行大量開發。
+>
+> 所有整合都需要共同品質保證(QA)工作，包括MVPD的測試，因為一般使用者最終是MVPD的客戶。 協調測試週期通常取決於MVPD的資源可用性，這可能會導致延遲。
 
-**使用MVPD的QE**：所有整合都會涉及聯合QE，而且由於一般使用者最終是MVPD的客戶，因此許多使用者在推送「即時」之前都會設定測試週期。 由於這涉及排程MVPD資源，因此可能出現延遲。
+## 存取客戶支援 {#access-customer-support}
 
-<!--
->[RELATEDINFORMATION]
->[MVPD Kickstart Guide](help\authentication\mvpd-kickstart-guide.md)
--->
+**Adobe將透過[Zendesk](https://tve.zendesk.com/home)提供**&#x200B;我們的客戶支援系統存取權。 若要存取Zendesk，您必須在https://tve.zendesk.com/home註冊並建立帳戶。 您可以註冊的使用者數目沒有限制。 註冊後，您可以在任何提交的票證上檢視和分享註解。
+
+Adobe Pass驗證團隊可協助您在整合過程中遇到任何問題或技術問題。 請透過[tve-support@adobe.com](mailto:tve-support@adobe.com)聯絡我們。
+
+## 存取檔案 {#access-documentation}
+
+**Adobe將透過[Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home)提供**&#x200B;我們的公開檔案存取權。
+
+Adobe Pass驗證團隊針對[程式設計師整合指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)區段下的可用功能和API提供完整檔案。 請參考本節下的目錄，以取得每個主題的詳細資訊連結。
+
+## 存取測試工具 {#access-testing-tool}
+
+**Adobe將透過[Adobe Developer](https://developer.adobe.com/adobe-pass/)網站提供**&#x200B;我們API探索工具的存取權。
+
+## 存取設定管理工具 {#access-configuration-management-tool}
+
+**Adobe將提供**&#x200B;存取自助服務工具，以透過[Adobe Pass TVE Dashboard](https://experience.adobe.com/pass/authentication)管理您的設定和資料。
+
+Adobe Pass驗證團隊在[TVE控制面板使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)區段下，提供使用TVE控制面板的完整檔案。 請參考本節下的目錄，以取得每個主題的詳細資訊連結。
