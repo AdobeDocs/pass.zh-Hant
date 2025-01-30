@@ -2,7 +2,7 @@
 title: 權益服務監控API
 description: 權益服務監控API
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '2027'
 ht-degree: 0%
@@ -280,12 +280,3 @@ Adobe強烈建議您在擷取ESM報表的使用者端中啟用gzip支援。 這�
 若要在您的使用者端中啟用gzip壓縮，請依照下列方式設定`Accept-Encoding:`標頭：
 
 * Accept-Encoding： gzip， deflate
-
-
-<!--
-## Related Information {#related-information}
-
-- [ESM Overview](/help/authentication/entitlement-service-monitoring-overview.md)
-- [Degradation API Overview](/help/authentication/degradation-api-overview.md)
-- [Understanding Server-side Metrics](/help/authentication/understanding-serverside-metrics.md)
--->

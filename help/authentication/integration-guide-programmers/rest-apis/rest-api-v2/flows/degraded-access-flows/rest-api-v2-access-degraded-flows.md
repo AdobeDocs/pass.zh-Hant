@@ -2,7 +2,7 @@
 title: 存取流程降級
 description: REST API V2 — 降級存取流程
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '1605'
 ht-degree: 0%
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 降級提供暫時略過特定MVPD驗證和授權端點。 通常，程式設計師會起始此動作，但無論誰觸發降級事件，此動作取決於與受影響MVPD預先作出的安排。
 
-如需有關降級功能的詳細資訊，請參閱[降級](../../../../features-premium/degraded-access/degradation-api-overview.md)檔案。
+如需有關降級功能的詳細資訊，請參閱[降級](../../../../features-premium/degraded-access/degradation-feature.md)檔案。
 
 降級存取流程可讓您查詢下列情況：
 
@@ -36,7 +36,7 @@ ht-degree: 0%
 
 在套用降級狀況時執行驗證流程之前，請確定符合下列必要條件：
 
-* 當串流應用程式需要使用MVPD登入時，必須起始驗證工作階段。
+* 串流應用程式在需要使用MVPD登入時，必須起始驗證工作階段。
 
 >[!IMPORTANT]
 > 
@@ -263,7 +263,7 @@ ht-degree: 0%
 
 *套用降級時擷取設定檔*
 
-1. **擷取特定mvpd的設定檔：**&#x200B;串流應用程式會收集所有必要資料，藉由傳送要求給設定檔端點來擷取該特定MVPD的設定檔資訊。
+1. **擷取特定mvpd的設定檔：**&#x200B;串流應用程式會傳送要求至設定檔端點，以收集所有必要資料來擷取該特定MVPD的設定檔資訊。
 
    >[!IMPORTANT]
    >

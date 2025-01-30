@@ -2,9 +2,9 @@
 title: rest API V2字彙表
 description: rest API V2字彙表
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
-source-wordcount: '1743'
+source-wordcount: '1742'
 ht-degree: 0%
 
 ---
@@ -63,7 +63,7 @@ ht-degree: 0%
 
 降級是Adobe Pass驗證功能，可讓使用者存取受保護的內容，即使其[MVPD](#mvpd)發生服務中斷亦然。
 
-如需詳細資訊，請參閱[降級API概觀](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-api-overview.md)檔案。
+如需詳細資訊，請參閱[降級功能](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)檔案。
 
 #### 裝置ID {#device-id}
 

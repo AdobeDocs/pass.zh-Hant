@@ -2,7 +2,7 @@
 title: Dynamic Client註冊概述
 description: Dynamic Client註冊概述
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
 source-wordcount: '813'
 ht-degree: 0%
@@ -20,8 +20,8 @@ ht-degree: 0%
 Adobe Pass提供動態使用者端註冊服務，可讓您存取以下受保護的API：
 
 * Adobe Pass驗證管理API：
-   * [重設Temp Pass API](../../features-premium/temporary-access/temp-pass-feature.md)
-   * [降級API](../../features-premium/degraded-access/degradation-api-overview.md)
+   * [重設Temp Pass API](../../features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+   * [降級API](../../features-premium/degraded-access/degradation-feature.md#degradation-api-access)
    * [Proxy MVPD API](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
    * [權益服務監控API](../../features-premium/esm/entitlement-service-monitoring-api.md)
 * Adobe Pass驗證REST API：
@@ -102,7 +102,7 @@ Adobe Pass TVE Dashboard是供Adobe Pass驗證客戶（程式設計師）管理�
 
 如需軟體陳述式及其運作方式的詳細說明，請參閱[RFC 7591](https://tools.ietf.org/html/rfc7591)檔案。
 
-## 動態使用者端註冊流程  {#dynamic-client-registration-flow}
+## 動態使用者端註冊流程 {#dynamic-client-registration-flow}
 
 總而言之，動態使用者端註冊授權機制包含數個步驟：
 

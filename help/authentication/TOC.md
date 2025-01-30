@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
 workflow-type: tm+mt
-source-wordcount: '1250'
+source-wordcount: '1249'
 ht-degree: 2%
 
 ---
@@ -146,7 +146,7 @@ ht-degree: 2%
       + 暫時存取{#temporary-access}
          + [TempPass功能](integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
       + 存取許可權降級{#degraded-access}
-         + [降級API概觀](integration-guide-programmers/features-premium/degraded-access/degradation-api-overview.md)
+         + [退化特徵](integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
       + ESM {#esm}
          + [軟體權利檔案服務監視概觀](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)
          + [權益服務監視API](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
