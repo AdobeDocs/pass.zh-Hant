@@ -2,7 +2,7 @@
 title: 支援程式常見問題集
 description: 支援程式常見問題集
 exl-id: 1d754e5a-d5fa-4411-8932-2a36294da6eb
-source-git-commit: 1b9847d8dcb078755fd68a6363972f8973290e52
+source-git-commit: 0ab1fc212752dd4a4d6e12a4ab1287ef74e4a282
 workflow-type: tm+mt
 source-wordcount: '777'
 ht-degree: 0%
@@ -61,7 +61,7 @@ SEVERITY 1層級事件可由Adobe或Adobe Pass驗證合作夥伴啟動。 各步
    * 說明問題的HTTP追蹤或裝置記錄
    * （選用）任何可用的熒幕擷取畫面或影片擷取畫面，示範問題
 
-1. 如果Adobe在一段時間內未回應票證，則合作夥伴可以撥打以下號碼： **1-205-693-9813**。
+1. 如果Adobe在一段時間內未回應票證，則合作夥伴可以撥打以下號碼： **1-657-312-4623**。
 
 >[!IMPORTANT]
 >
