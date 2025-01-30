@@ -2,9 +2,9 @@
 title: iOS/tvOS逐步指南
 description: iOS/tvOS逐步指南
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
-source-wordcount: '2425'
+source-wordcount: '2424'
 ht-degree: 0%
 
 ---
@@ -229,7 +229,7 @@ I. [使用Apple SSO的登出流程](#logout_flow_with_AppleSSO) </br>
 1. 呼叫[getAuthorization()](#$getAuthZ)以啟動授權流程。
 
    * **相依性：**&#x200B;與MVPD議定的有效ResourceID。
-   * 資源ID應與任何其他裝置或平台上使用的資源ID相同，且在所有MVPD上將會相同。 如需資源ID的相關資訊，請參閱[識別受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers)
+   * 資源ID應與任何其他裝置或平台上使用的資源ID相同，且在所有MVPD上將會相同。 如需資源ID的資訊，請參閱[資源識別碼](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#resource-identifier)
 
 1. 驗證驗證和授權。
 

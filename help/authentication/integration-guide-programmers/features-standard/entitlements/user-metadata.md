@@ -2,7 +2,7 @@
 title: 使用者中繼資料
 description: 使用者中繼資料
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '1793'
 ht-degree: 0%
@@ -13,7 +13,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
 使用者中繼資料是指由MVPD維護並透過Adobe Pass驗證[REST API V2](#apis)提供給程式設計師的使用者專屬[屬性](#attributes) （例如郵遞區號、家長分級、使用者ID等）。
 

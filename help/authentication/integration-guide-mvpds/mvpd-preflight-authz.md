@@ -2,7 +2,7 @@
 title: MVPD預檢授權
 description: MVPD預檢授權
 exl-id: da2e7150-b6a8-42f3-9930-4bc846c7eee9
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '750'
 ht-degree: 0%
@@ -21,9 +21,9 @@ ht-degree: 0%
 
 Adobe Pass驗證目前可透過AuthN回應屬性或多通道AuthZ要求，以兩種方式支援MVPD的預先檢視授權。  下列案例說明您可以實作預檢授權的不同方式的成本/效益：
 
-* **最佳案例案例** - MVPD會在授權階段（多通道AuthZ）提供預先授權資源的清單。
-* **最壞情況案例** — 如果MVPD不支援任何形式的多重資源授權，Adobe Pass驗證伺服器會針對資源清單中的每個資源對MVPD執行授權呼叫。 此情境會影響（與資源數量成比例）預檢授權請求的回應時間。 這可能會增加Adobe和MVPD伺服器的負載，造成效能問題。 此外，它也會產生授權請求/回應事件，而無需實際進行播放。
-* **已棄用** - MVPD會在驗證階段提供預先授權的資源清單，因此不需要網路呼叫，甚至不需要預檢要求，因為清單已快取到使用者端上。
+* **最佳案例情境** - MVPD在授權階段（多管道AuthZ）提供預先授權的資源清單。
+* **最壞情況** — 如果MVPD不支援任何形式的多重資源授權，Adobe Pass驗證伺服器會針對資源清單中的每個資源對MVPD執行授權呼叫。 此情境會影響（與資源數量成比例）預檢授權請求的回應時間。 這可能會增加Adobe和MVPD伺服器的負載，造成效能問題。 此外，它也會產生授權請求/回應事件，而無需實際進行播放。
+* **已棄用** - MVPD會在驗證階段提供預先授權的資源清單，因此不需要任何網路呼叫，甚至不需要預檢要求，因為清單已快取至使用者端。
 
 雖然MVPD不需要支援預檢授權，但以下幾節將說明Adobe Pass驗證在回覆上述最壞情況之前，可以支援的一些預檢授權方法。
 
@@ -33,7 +33,7 @@ Adobe Pass驗證目前可透過AuthN回應屬性或多通道AuthZ要求，以兩
 
 ### SAML屬性陳述式中的自訂資源清單 {#custom-res-saml-attr}
 
-IdP的SAML驗證回應應包含包含AdobePass應授權的資源名稱的AttributeStatement。  有些MVPD會以下列格式提供此資訊：
+IdP的SAML驗證回應應包含包含AdobePass應授權的資源名稱的AttributeStatement。  部分MVPD會以下列格式提供此功能：
 
 ```XML
 <saml:AttributeStatement>
@@ -50,13 +50,13 @@ IdP的SAML驗證回應應包含包含AdobePass應授權的資源名稱的Attribu
 
 ## AuthZ中的多頻道預檢 {#preflight-multich-authz}
 
-此預檢實作也與OLCA相容(Cablelab)。  驗證與授權介面1.0規格（7.5.3節和7.5.4節）說明使用SAML Assertions或XACML向MVPD請求授權資訊的方法。 對於不支援此做為驗證流程一部分的MVPD，建議使用此方式查詢授權狀態。 Adobe Pass驗證會向MVPD發出單一網路呼叫，以擷取授權資源的清單。
+此預檢實作也與OLCA相容(Cablelab)。  驗證與授權介面1.0規格（7.5.3和7.5.4節）說明使用SAML Assertions或XACML向MVPD請求授權資訊的方法。 對於不支援此做為驗證流程一部分的MVPD，建議使用此方式查詢授權狀態。 Adobe Pass驗證會向MVPD發出單一網路呼叫，以擷取授權資源清單。
 
 
-Adobe Pass驗證會從程式設計師的應用程式接收資源清單。 Adobe Pass驗證的MVPD整合接著可以發出一個AuthZ呼叫，包含所有這些資源，然後剖析回應並擷取多個允許/拒絕決策。  使用多管道AuthZ案例的預檢流程運作方式如下：
+Adobe Pass驗證會從程式設計師的應用程式接收資源清單。 Adobe Pass Authentication的MVPD整合接著可以發出一個AuthZ呼叫，包含所有這些資源，然後剖析回應並擷取多個允許/拒絕決定。  使用多管道AuthZ案例的預檢流程運作方式如下：
 
 1. 程式設計師的應用程式會透過預檢使用者端API傳送逗號分隔的資源清單，例如：「TestChannel1，TestChannel2，TestChannel3」。
-1. MVPD預檢AuthZ要求呼叫包含多個資源，且具有下列結構：
+1. MVPD預檢AuthZ請求呼叫包含多個資源，其結構如下：
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?><soap11:Envelope xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/"> 
@@ -117,7 +117,7 @@ Adobe Pass驗證會從程式設計師的應用程式接收資源清單。 Adobe 
 
 某些MVPD的授權端點支援在一個請求中對多個資源的授權，但它們不屬於多通道AuthZ中所述的情境。 這些特定的MVPD需要自訂工作。
 
-Adobe也可支援多管道授權，無需變更現有實作。  此方法需要在Adobe和MVPD技術團隊之間審查，以確保其如預期般運作。
+Adobe也可支援多管道授權，無需變更現有實作。  Adobe和MVPD技術團隊需要稽核此方法，以確保它按預期運作。
 
 ## 支援預檢授權的MVPD {#mvpds-supp-preflight-authz}
 
@@ -129,12 +129,3 @@ Adobe也可支援多管道授權，無需變更現有實作。  此方法需要�
 | 使用者中繼資料中的頻道組合 | Suddenlink HTC | 所有Synacor直接整合也可以支援此方法。 |
 | 分叉並加入 | 以上未列出的其他所有專案 | 已勾選的預設最大資源數= 5。 |
 
-<!--
-![RelatedInformation]
->* [Logout](/help/authentication/usecase-mvpd-logout.md)
->* [Authorization](/help/authentication/authz-usecase.md)
->* [MVPD Integration Features](/help/authentication/mvpd-integr-features.md)
->* [MVPD User Metadata Exchange](/help/authentication/mvpd-user-metadata-exchng.md)
->* [Preflight Authorization - Programmer Integration Guide](/help/authentication/preflight-authz.md)
->* [AuthN and AuthZ Interface 1.0 Specification](https://www.cablelabs.com/specifications/CL-SP-AUTH1.0-I04-120621.pdf){target=_blank} 
--->

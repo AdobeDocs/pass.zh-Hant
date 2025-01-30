@@ -2,7 +2,7 @@
 title: REST API V2常見問題集
 description: REST API V2常見問題集
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '6664'
 ht-degree: 0%
@@ -245,7 +245,7 @@ ht-degree: 0%
 * 簡單的字串格式，例如管道（品牌）的唯一識別碼。
 * 包含其他資訊的媒體RSS (MRSS)格式，例如標題、分級和家長監護中繼資料。
 
-如需詳細資訊，請參閱[受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers)檔案。
+如需詳細資訊，請參閱[受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources)檔案。
 
 #### 6.使用者端應用程式一次可取得多少資源預先授權決定？ {#preauthorization-phase-faq6}
 
@@ -316,7 +316,7 @@ ht-degree: 0%
 * 簡單的字串格式，例如管道（品牌）的唯一識別碼。
 * 包含其他資訊的媒體RSS (MRSS)格式，例如標題、分級和家長監護中繼資料。
 
-如需詳細資訊，請參閱[受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers)檔案。
+如需詳細資訊，請參閱[受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources)檔案。
 
 #### 6.使用者端應用程式一次可取得多少資源授權決定？ {#authorization-phase-faq6}
 

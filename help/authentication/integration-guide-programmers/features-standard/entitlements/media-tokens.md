@@ -1,9 +1,10 @@
 ---
 title: 媒體權杖
 description: 媒體權杖
-source-git-commit: dbca6c630fcbfcc5b50ccb34f6193a35888490a3
+exl-id: 7e486d2c-e078-464d-90b1-14e2cfb4d20a
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
-source-wordcount: '654'
+source-wordcount: '653'
 ht-degree: 0%
 
 ---
@@ -12,9 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
-媒體權杖是Adobe Pass驗證根據授權決定產生的權杖，旨在提供受保護內容（資源）的檢視存取權。 媒體權杖在問題時指定的有限和較短時間範圍（幾分鐘）內有效，這表示在要求擷取新媒體權杖之前，使用者端應用程式必須使用該媒體權杖的時間量。
+媒體權杖是由Adobe Pass驗證[REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)產生的Token，此授權決定旨在提供受保護內容（資源）的檢視存取權。 媒體權杖在問題時指定的有限和較短時間範圍（幾分鐘）內有效，這表示使用者端應用程式必須驗證和使用它的時間量。
 
 媒體權杖由以明文傳送的公開金鑰基礎結構(PKI)為基礎的已簽署字串組成。 透過以PKI為基礎的保護，權杖會使用由憑證授權單位(CA)核發給Adobe的非對稱金鑰來簽署。
 
@@ -49,7 +50,7 @@ Adobe Pass驗證強烈建議不要剖析媒體權杖並直接擷取其資料，�
 
 `ITokenVerifier`類別定義下列方法：
 
-* 用來驗證媒體權杖的`isValid()`方法。 它接受單一引數，[資源識別碼](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md)。 如果提供的資源識別碼為`null`，則方法只會驗證媒體權杖的真實性和有效期間。
+* 用來驗證媒體權杖的`isValid()`方法。 它接受單一引數，[資源識別碼](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#resource-identifier)。 如果提供的資源識別碼為`null`，則方法只會驗證媒體權杖的真實性和有效期間。
 
   `isValid()`方法傳回下列其中一個狀態值：
 
@@ -193,7 +194,7 @@ public class EntitlementVerifierTest {
 
 * [使用特定mvpd擷取授權決策](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
 
-請參閱上述API的&#x200B;**回應**&#x200B;和&#x200B;**範例**&#x200B;區段，瞭解授權決定和媒體權杖模型。
+請參閱上述API的&#x200B;**回應**&#x200B;和&#x200B;**範例**&#x200B;區段，瞭解授權決定和媒體權杖的結構。
 
 如需有關如何及何時整合上述API的詳細資訊，請參閱以下檔案：
 

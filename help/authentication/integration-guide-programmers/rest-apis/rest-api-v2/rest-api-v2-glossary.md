@@ -2,7 +2,7 @@
 title: rest API V2字彙表
 description: rest API V2字彙表
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: 49a6a75944549dbfb062b1be8a053e6c99c90dc9
+source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
 workflow-type: tm+mt
 source-wordcount: '1742'
 ht-degree: 0%
@@ -183,7 +183,7 @@ Proxy MVPD是一間為其他MVPD提供身分服務的公司，並直接與Adobe 
 
 資源由程式設計師和MVPD之間議定的唯一值識別。
 
-如需詳細資訊，請參閱[受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/protected-resources.md#identifiers)檔案。
+如需詳細資訊，請參閱[受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources)檔案。
 
 ### S {#s}
 
