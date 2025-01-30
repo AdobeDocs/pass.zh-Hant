@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: 1b9847d8dcb078755fd68a6363972f8973290e52
+source-git-commit: ffedb5db269644c8d9c81480d27dff43bd4eb5d6
 workflow-type: tm+mt
-source-wordcount: '1250'
+source-wordcount: '1240'
 ht-degree: 2%
 
 ---
@@ -120,8 +120,7 @@ ht-degree: 2%
                + [頁首 — AP-TempPass-Identity](integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md)
    + 標準功能{#standard-features}
       + 權利{#entitlements}
-         + [預檢授權](integration-guide-programmers/features-standard/entitlements/preflight-authz.md)
-         + [受保護的資源](integration-guide-programmers/features-standard/entitlements/protected-resources.md)
+         + [決定](integration-guide-programmers/features-standard/entitlements/decisions.md)
          + [媒體權杖](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
          + [使用者中繼資料](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
       + 報告{#error-reporting}時發生錯誤
@@ -137,8 +136,7 @@ ht-degree: 2%
             + Roku單一登入{#roku-sso}
                + [Roku SSO概觀](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
       + 以住家為基礎的驗證存取{#hba-access}
-         + [適用於所有地方電視的家庭式驗證](integration-guide-programmers/features-standard/hba-access/home-based-authn-tve.md)
-         + [MVPD的HBA狀態](integration-guide-programmers/features-standard/hba-access/hba-status-mvpds.md)
+         + [家用驗證(HBA)](integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)
       + 隱私權支援{#privacy-support}
          + [隱私權支援概述](integration-guide-programmers/features-premium/privacy-support/privacy-supp-overview.md)
          + [如何提出隱私權請求](integration-guide-programmers/features-premium/privacy-support/make-privacy-req.md)
