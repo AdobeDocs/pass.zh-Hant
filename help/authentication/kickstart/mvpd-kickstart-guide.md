@@ -1,126 +1,144 @@
 ---
-title: MVPD直接整合計畫
-description: MVPD直接整合計畫
+title: MVPD快速入門手冊
+description: MVPD快速入門手冊
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 936c1cda465dd3a9fc3f16381edb24a2b3e41779
 workflow-type: tm+mt
-source-wordcount: '1071'
+source-wordcount: '934'
 ht-degree: 0%
 
 ---
 
-# MVPD kickstart指南：MVPD直接整合計畫 {#mvpd-dir-int-plan}
-
->[!NOTE]
->
->此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
-
-## 簡介 {#mvpd-kickstart-intro}
-
-歡迎使用Adobe Pass Authentication for TV Everywhere。  我們期待與您合作。
-
->[!NOTE]
->
->這是多頻道視訊節目經銷商(MVPD)的Kickstart指南。 如果您是程式設計師（內容提供者），請參閱[程式設計師的Kickstart指南](/help/authentication/kickstart/programmer-kickstart-guide.md)。
-
-您可以隨時透過Zendesk上的Adobe Pass驗證票證系統取得支援。 您也可以在這裡找到程式的範例、檔案和影片教學課程。 若要使用[Zendesk](https://adobeprimetime.zendesk.com/)，您必須在https://tve.zendesk.com/home註冊並建立帳戶。 您可以註冊的使用者數量，以及可以在已歸檔票證上檢視或張貼評論的使用者數量沒有限制。 所有支援問題皆應傳送至： tve-support，網址為adobe.com
-
-**團隊連絡人**：
-
-**支援** — 針對所有問題、事件或功能要求&#x200B;**tve-support@adobe.com**。
-
-## 1.啟動會議 {#kickoff-meetings}
-
-這些會議的範圍是Adobe與MVPD之間開始技術性討論。 在這個程式當下，檔案必須由雙方共用。 接下來，Adobe需要在我們的票證系統(https://tve.zendesk.com/)中開啟票證，以追蹤整合狀態。
-
-## 2.功能 {#features}
-
-Adobe將設定每週狀態通話，以討論和追蹤整合的整體排程、步驟、時間表和實施詳細資訊。 在此階段，Adobe會檢閱MVPD的規格。 其結果應該是規格頁面，其中詳細說明MVPD所需的所有功能。 MVPD會傳送規格檔案給Adobe，詳細說明MVPD的驗證/授權實施。
-
-要釐清的專案，請參閱[MVPD整合功能](/help/authentication/integration-guide-mvpds/mvpd-integr-features.md)。
-
-目前需要詳細說明幾項設定：
-
-* **MVPD的標誌URL** — 這是具有下列維度的檔案： 112 x 33畫素。 當使用者按一下「登入」按鈕以選取他們的付費電視提供者時，程式設計師在其網站上顯示標誌。
-* **TTL （存留時間）值** - TTL通常由MVPD在驗證/授權程式期間設定。 不過，Adobe可以覆寫這些TTL值，並根據程式設計師和MVPD雙方所同意的內容提供不同的值。
-* **顯示名稱** — 當使用者按一下[登入]按鈕以選取他們的付費電視提供者時，程式設計師會在其網站上顯示此名稱。
-* **測試認證** — 兩個設定檔（測試階段和生產）都應該有測試認證的清單。
+# MVPD快速入門手冊 {#mvpd-kickstart-guide}
 
 >[!IMPORTANT]
 >
->每次使用者啟動權益流程時，他都會與單一、不透明、不重複的使用者ID建立關聯。  使用者ID是用來識別程式設計師應用程式的使用者，但源自MVPD。
+> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+
+本Kickstart指南適用於計畫與Adobe® Pass Authentication整合的多頻道視訊程式設計經銷商(MVPD)。
+
+本檔案概述確保順利且有效率地開始整合程式的重要初始步驟。 此課程旨在釐清客戶的期望，並指引我們與合作夥伴協力達成成功整合。
+
+Adobe提供一系列資源，協助您整合Adobe Pass驗證。 請參考&#x200B;**「您將提供」**&#x200B;及&#x200B;**「Adobe將會提供」**&#x200B;提及以下各節。
 
 >[!CAUTION]
 >
->每個MVPD的重要通知：使用者ID不應包含任何PII （個人識別資訊）、可以單獨使用或搭配其他資訊使用的資訊，以識別、聯絡或尋找使用者。
-
-## 2.中繼資料交換 {#metadata-ex}
-
-雙方需要交換所有相關環境（生產、測試等）的中繼資料。
-
-* **Adobe**
-   * 對於暫存環境Adobe的SP中繼資料，可從下列位置擷取： [驗證暫存sp中繼資料](https://sp.auth-staging.adobe.com/sp/metadata)
-   * 針對生產環境Adobe的SP中繼資料可擷取自： [驗證生產sp中繼資料](https://sp.auth.adobe.com/sp/metadata)
-
-* **MVPD**
-   * 新增中繼資料（測試/生產）的方式。
-
-## 4.允許IP清單 {#allow-ip-list}
-
-下列IP應在MVPD的防火牆中列入白名單。 請聯絡Adobe以取得IP清單。
-
-* Adobe Pass驗證需要在連線埠80和443上開啟防火牆，以允許存取受限制的資源。
-
-* MVPD需要新增驗證和授權伺服器的IP位址清單（如果發生這種情況）。
-
-## 5.開發 {#deve}
-
-開發階段的持續時間將在檢閱規格後決定，並會考慮雙方簽署的專案。 Adobe需要為授權部分寫入自訂程式碼。
-
->[!NOTE]
+> 每次使用者起始軟體權利檔案流程時，系統都會為其指派單一、不透明、不重複的使用者ID。 此ID源自MVPD，用於識別程式設計師應用程式內的使用者。
 >
->請注意，授權是按資源執行。 授權交易通常使用ID字串執行，從程式設計師的網站傳遞，代表使用者請求授權的管道。 此資源ID是在程式設計師和MVPD之間建立，可視需要提供精細粒度。
-
-## 6.Adobe環境 {#adobe-env}
-
-Adobe為開發流程的不同階段提供不同的環境：
-
-* **資格預審** (PRE-QUAL)： PRE-QUAL環境包含下一個發行候選專案。 Adobe在將整合升級至發行環境之前，最初在此環境中整合新合作夥伴。 合作夥伴有兩星期的時間可在PRE-QUAL環境中測試，且必須明確要求變更PRE-QUAL設定(請聯絡您的Adobe代表以取得變更要求流程的詳細資訊)。 錯誤修正會在此環境中觸發新部署。
-* **版本** （版本）：Adobe目前的生產組建已部署至此處的即時環境。
-
-如需有關如何使用Adobe環境的詳細資訊，請參閱[瞭解Adobe環境](/help/authentication/notes-technical/environments/understanding-the-adobe-environments.md)
-
-## 7.中繼部署 {#stag-env}
-
-根據從MVPD收到的中繼資料，Adobe將在Adobe Pass驗證系統中建立和設定新的MVPD。 這將部署在Adobe的預先測試環境中，並將由我們的測試程式設計師(TestDistributors)進行設定。
-
-MVPD需要在其QA/中繼環境/測試環境中執行相同的部署。
-
-## 8.測試與疑難排解 {#tes-troubleshoot}
-
-在此階段，請Adobe和MVPD測試並疑難排解整合問題。 為協助測試整合，Adobe Pass驗證團隊可使用Adobe的API測試網站。 若要進一步瞭解如何使用Adobe API測試網站，請參閱[使用Adobe API測試網站測試驗證與授權流程](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)。
-
-當測試和疑難排解成功完成時，會在Adobe的發行預備環境中啟用整合。 此時，Adobe可以將MVPD與實際的程式設計師整合。
-
-## 9.生產部署 {#prod-dep}
-
-* MVPD必須先在生產設定檔中部署，才能測試連線。
-
-* Adobe會部署在預備性生產環境中。
-
-* 各方現在均可在生產設定檔中測試。
-
-* 如果此時一切正常，Adobe可以將整合移至發行版本生產環境（「即時」），所有使用者都可使用。
-
-## 10.向上呈報程式 {#esc-proc}
-
-整合一旦進入生產環境，就必須提供最佳客戶體驗。 為了在伺服器故障時確保最佳回應，MVPD必須針對提請Adobe注意的問題提供向上呈報程式檔案。
-
-Adobe接著會為MVPD提供最新的Adobe Pass驗證提升程式。
-
-
-<!--- [!RELATEDINFORMATION]
+> <br/>
 >
->* [Programmer Kickstart Guide](/help/authentication/programmer-kickstart-guide.md)
->* [MVPD Integration Guide](/help/authentication/mvpd-integr-features.md)
--->
+> 使用者ID不可包含任何個人識別資訊(PII)或可單獨使用或與其他詳細資料結合使用以識別、聯絡或尋找使用者的資料。
+
+## 設定程式 {#setup-process}
+
+設定程式包括下列步驟：
+
+![Adobe®通過驗證整合程式](../assets/mvpd-int-lifecycle.png)
+
+*Adobe®通過驗證整合程式*
+
+### 啟動 {#kickoff}
+
+**您將在啟動階段提供**：
+
+* **顯示名稱**
+
+  這是提示使用者選取付費電視提供者時，程式設計師網站或應用程式上顯示的字串。
+
+* **標誌URL**
+
+  這是檔案，測量112 x 33畫素，包含程式設計師網站或應用程式提示使用者選擇付費電視提供者時顯示的標誌。
+
+* **存留時間(TTL)**
+
+  TTL是MVPD通常在驗證或授權程式中設定的值。 不過，Adobe可以覆寫這些TTL值，並根據程式設計師和MVPD雙方所同意的內容提供不同的值。
+
+* **認證集**
+
+  這些憑證用於透過MVPD驗證和授權使用者，或僅驗證使用者。 一般而言，這些證明資料包含使用者名稱和密碼，必須同時提供這兩個設定檔（測試和生產）。
+
+### 中繼資料交換(SAML) {#metadata-exchange-saml}
+
+**Adobe將在中繼資料交換階段提供**：
+
+* **中繼環境中繼資料**
+
+  可從https://sp.auth-staging.adobe.com/sp/metadata擷取Adobe的SP中繼資料。
+
+* **生產環境中繼資料**
+
+  可從https://sp.auth.adobe.com/sp/metadata擷取Adobe的SP中繼資料。
+
+**您將在中繼資料交換階段提供**：
+
+* **中繼資料**
+
+  MVPD中繼環境的中繼資料。
+
+* **生產中繼資料**
+
+  MVPD的生產環境中繼資料。
+
+### 連線能力 {#connectivity}
+
+**您將提供**&#x200B;允許列出AdobeIP的方式，因為Adobe Pass驗證需要防火牆允許流量通過連線埠80和443，以便在驗證和授權程式期間啟用對受限制資源的存取。
+
+**您將在中繼設定檔中提供**&#x200B;部署，以測試連線。
+
+### 開發 {#development}
+
+**Adobe將提供**&#x200B;個工程時間，以便與MVPD密切合作，確保技術整合已正確建立。 此程式牽涉到根據MVPD的特定需求量身打造自訂程式碼。
+
+### 在中繼環境中部署 {#deployment-staging}
+
+**Adobe將為**&#x200B;組建提供所需的程式碼更新，這些更新將首先部署在PRE-QUAL中繼環境中。 在此階段中，也會實作必要的設定變更，以整合MVPD與`TestDistributors`服務提供者以進行測試。
+
+**您和Adobe將提供**&#x200B;品質保證(QA)時間，以確保整合在PRE-QUAL測試環境中成功測試。 在此階段之後，MVPD將會移至RELEASE中繼環境，以供使用實際程式設計師進行進一步測試。
+
+### 在生產環境中部署 {#deployment-production}
+
+**您將在生產設定檔中提供**&#x200B;部署，以測試連線。
+
+**Adobe將提供**&#x200B;建置，其中包含部署在PRE-QUAL生產環境中的必要程式碼更新。
+
+**您和Adobe將提供**&#x200B;品質保證(QA)時間，以確保使用生產設定檔成功測試整合。 如果此時一切正常，Adobe可以將整合移至RELEASE生產環境（「即時」），所有使用者都可使用。
+
+>[!IMPORTANT]
+>
+> 一旦整合在RELEASE生產環境中上線，維持最佳客戶體驗便極為重要。 為了有效解決伺服器故障的情況，MVPD必須提供詳細的向上呈報程式檔案，以Adobe管理此類問題。
+>
+> 作為回報，Adobe會確保MVPD接收最新版本的Adobe Pass驗證升級程式，以簡化問題解決方案。
+
+## 環境存取權 {#access-environments}
+
+**Adobe將為開發流程的不同階段提供**&#x200B;環境存取權：
+
+* **資格預審(PRE-QUAL)**
+
+  PRE-QUAL環境會主控下一個發行候選者，並作為新合作夥伴的初始整合平台。 在改用RELEASE環境之前，合作夥伴有時間測試他們在PRE-QUAL中的整合。
+
+* **發行版本（發行版本）**
+
+  RELEASE環境會託管目前（穩定）的生產組建。
+
+有關如何使用這些環境的詳細資訊，請參閱[瞭解Adobe環境](/help/authentication/notes-technical/environments/understanding-the-adobe-environments.md)檔案。
+
+>[!IMPORTANT]
+> 
+> 依照建立的變更請求流程，必須透過您的Adobe代表明確請求對這些環境的設定變更。
+
+## 存取客戶支援 {#access-customer-support}
+
+**Adobe將透過[Zendesk](https://tve.zendesk.com/home)提供**&#x200B;我們的客戶支援系統存取權。 若要存取Zendesk，您必須在https://tve.zendesk.com/home註冊並建立帳戶。
+
+Adobe Pass驗證團隊可涵蓋我們在整合過程中可能遇到的任何問題或技術問題。 請透過[tve-support@adobe.com](mailto:tve-support@adobe.com)聯絡我們。
+
+## 存取檔案 {#access-documentation}
+
+**Adobe將透過[Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home)提供**&#x200B;我們的公開檔案存取權。
+
+Adobe Pass驗證團隊針對[MVPD整合指南](/help/authentication/kickstart/mvpd-overview.md)區段下的可用功能和工作流程提供完整檔案。 請參考本節下的目錄，以取得每個主題的詳細資訊連結。
+
+## 存取測試工具 {#access-testing-tool}
+
+**Adobe將透過[Adobe Developer](https://developer.adobe.com/adobe-pass/)網站提供**&#x200B;我們API探索工具的存取權。
