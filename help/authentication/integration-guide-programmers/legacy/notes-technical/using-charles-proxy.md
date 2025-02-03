@@ -2,9 +2,9 @@
 title: 使用Charles代理
 description: 使用Charles代理
 exl-id: bb38543f-f6bc-4b5a-91b8-41bc51ee4c56
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 175755aa7463257487b29c5f4da989cf34e91bfd
 workflow-type: tm+mt
-source-wordcount: '392'
+source-wordcount: '376'
 ht-degree: 0%
 
 ---
@@ -43,10 +43,9 @@ ht-degree: 0%
 
 勾選「啟用SSL代理」核取方塊，然後新增所有HTTPS位置。
 
-
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/ProxySettings.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/SSLSettings.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/AddHttpsLocations.PNG)
-
-
+-->
 
 - SSL代理 — <http://www.charlesproxy.com/documentation/proxying/ssl-proxying/>
 - SSL憑證 — <http://www.charlesproxy.com/documentation/using-charles/ssl-certificates/>
@@ -69,7 +68,9 @@ ht-degree: 0%
 
 嘗試將請求重新導向至不同的IP時，DNS詐騙會很有用，尤其是使用行動裝置時：
 
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/DNSSpoofing.PNG)
+-->
 
 <http://www.charlesproxy.com/documentation/tools/dns-spoofing/>
 
@@ -82,7 +83,9 @@ ht-degree: 0%
 
 透過對應遠端，您可以將「傳入」要求重新導向至不同的端點。 此功能最常見的使用案例是「對應」`AccessEnabler.swf`至`AccessEnablerDebug.swf:`
 
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/MapRemote.PNG) ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/MapRemoteAdd.PNG)
+-->
 
 <http://www.charlesproxy.com/documentation/tools/map-remote/>
 
@@ -100,7 +103,9 @@ ht-degree: 0%
 
 從您的iOS裝置瀏覽至<http://charlesproxy.com/charles.crt>。  這會啟動憑證安裝對話方塊：
 
-![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate1\(1\)。PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate2\(1\)。PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate3.PNG)
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
+![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate1\(1\).PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate2\(1\).PNG)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceSSLCertificate3.PNG)
+-->
 
 </br>
 
@@ -117,15 +122,18 @@ ht-degree: 0%
 
 </br>
 
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy1.png)![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy2.PNG)
-
+-->
 
 </br>
 您必須在此處指定執行Charles之電腦的IP和連線埠。 <span style="line-height: 1.6em;">如果您現在在iOS裝置上開啟Safari，並嘗試開啟網頁，則執行Charles的電腦上應該會出現下列快顯視窗：
 
 </br>
 
+<!-- NOTE TO WRITER - THESE IMAGES LINKS ARE BROKEN
 ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/iOSDeviceManualProxy3.PNG)
+-->
 
 </br>
 按一下「允許」以允許裝置使用Charles代理所有其
