@@ -2,9 +2,9 @@
 title: 歡迎使用Adobe&amp；reg；通過驗證
 description: 歡迎使用Adobe&amp；reg；通過驗證
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
-source-git-commit: c9e31a036a0300fabd9f75dd85d472c390d9053e
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
-source-wordcount: '419'
+source-wordcount: '423'
 ht-degree: 0%
 
 ---
@@ -14,6 +14,8 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > 請務必隨時瞭解彙總在[產品公告](/help/authentication/product-announcements.md)頁面中的最新Adobe Pass驗證產品公告和淘汰時間表。
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![直播網路研討會系列](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 Adobe Pass Authentication是適用於TV Everywhere (TVE)的強大權益解決方案，其設計旨在簡化及保護驗證檢視者是否有權存取受保護內容的程式。 此模組化架構將內容提供者（程式設計人員）與付費電視提供者(MVPD)連線在一起，以速度、一致性和可靠性促進權益交易。
 

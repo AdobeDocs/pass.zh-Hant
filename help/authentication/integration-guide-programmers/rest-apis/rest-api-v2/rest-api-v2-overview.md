@@ -2,7 +2,7 @@
 title: REST API V2概觀
 description: REST API V2概觀
 exl-id: a5595193-82c4-4033-bd98-596b4908b401
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%
@@ -13,7 +13,9 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+> 請務必隨時瞭解彙總在[產品公告](/help/authentication/product-announcements.md)頁面中的最新Adobe Pass驗證產品公告和淘汰時間表。
+
+<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![直播網路研討會系列](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 您要提高TVE應用程式的成本效益嗎？
 
