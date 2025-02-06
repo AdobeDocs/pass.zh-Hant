@@ -2,9 +2,9 @@
 title: API總覽
 description: 並行監視的API總覽
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: dd370b231acc08ea0544c0dedaa1bdb0683e378f
+source-git-commit: b30d9217e70f48bf8b8d8b5eaaa98fea257f3fc5
 workflow-type: tm+mt
-source-wordcount: '1556'
+source-wordcount: '2102'
 ht-degree: 0%
 
 ---
@@ -73,12 +73,27 @@ ID為&#x200B;**demo-app**&#x200B;的應用程式已由Adobe團隊指派一項原
 
 我們需要的所有資料都包含在回應標題中。 **Location**&#x200B;標頭代表新建立的工作階段識別碼，**Date**&#x200B;和&#x200B;**Expires**&#x200B;標頭代表用來排程應用程式進行下一個活動訊號以保持工作階段運作的值。
 
+透過每次呼叫，您都可以傳送您需要的任何中繼資料，而不只是您應用程式的必要中繼資料。 中繼資料的傳送可透過兩種方式達成：
+* 使用&#x200B;**查詢** **引數**：
+
+  ```sh
+  curl -i -XPOST -u "user:pass" "https://streams-stage.adobeprimetime.com/v2/sessions/some_idp/some_user?metadata1=value1&metadata2=value2"
+  ```
+
+* 使用&#x200B;**要求** **內文**：
+
+  ```sh
+  curl -i -XPOST -u "user:pass" https://streams-stage.adobeprimetime.com/v2/sessions/some_idp/some_user -d "metadata1=value1" -d "metadata2=value2" -H "Content-Type=application/x-www-form-urlencoded"
+  ```
+
 #### 心率 {#heartbeat}
 
 進行心率呼叫。 提供在工作階段初始化呼叫中取得的&#x200B;**工作階段ID**，以及使用的&#x200B;**主體**&#x200B;和&#x200B;**idp**&#x200B;引數。
 
 ![](assets/heartbeat.png)
 
+對於心率呼叫，您可以像在工作階段初始時一樣傳送中繼資料。 任何時候都可以新增中繼資料，並且可以用某些&#x200B;**例外狀況**&#x200B;更新先前傳送的值。 下列值設定後即無法變更： **封裝**、**通道**、**平台**、**資產識別碼**、**idp**、**mvpd**、**hba_status**、**hba**，
+**行動裝置**
 
 如果工作階段仍然有效（尚未過期或已手動刪除），您將會收到成功的結果：
 
@@ -111,8 +126,11 @@ ID為&#x200B;**demo-app**&#x200B;的應用程式已由Adobe團隊指派一項原
 
 ![](assets/get-all-running-streams-success.png)
 
-請注意&#x200B;**Expires**標頭。 這是第一個工作階段到期的時間，除非傳送心率。 OtherStreams的值為0，因為沒有其他資料流在其他租使用者的應用程式上針對此使用者執行。
+對於每個工作階段，您將取得&#x200B;**terminationCode**&#x200B;並完成中繼資料。
+
+請注意&#x200B;**Expires**標頭。 這是第一個工作階段到期的時間，除非傳送心率。
 中繼資料欄位將會填入工作階段開始時所傳送的所有中繼資料。 我們不篩選它，您會收到您傳送的所有內容。
+只要其他租使用者的應用程式共用相同原則，回應就會包含這些應用程式上執行的所有串流。
 如果您進行呼叫時沒有特定使用者的執行中工作階段，您將會收到此回應：
 
 ![](assets/get-all-running-streams-empty.png)
@@ -126,8 +144,13 @@ ID為&#x200B;**demo-app**&#x200B;的應用程式已由Adobe團隊指派一項原
 
 ![](assets/breaking-policy-frstapp.png)
 
+我們會收到409 CONFLICT回應，以及裝載中的評估結果物件。 這表示伺服器端原則不允許建立或繼續此工作階段。 回應主體會包含具有非空白的AssociatedAdvice的EvaluationResult物件，這是Advice物件的清單，其中包含每個規則違規的說明。
 
-我們會收到409 CONFLICT回應，以及裝載中的評估結果物件。 閱讀[Swagger API規格](http://docs.adobeptime.io/cm-api-v2/#evaluation-result)中評估結果的完整說明。
+應用程式應使用每個Advice執行個體所攜帶的錯誤訊息提示使用者。 此外，每個建議也會指出規則詳細資訊，例如屬性、臨界值、規則和原則名稱。 此外，衝突的值也會包含在每個值的作用中工作階段清單中。
+
+此資訊用於進階錯誤訊息格式，以及允許使用者針對衝突工作階段採取動作。
+
+每個衝突的工作階段都會附有&#x200B;**terminationCode**，可用於&#x200B;**終止該資料流的**。 如此一來，應用程式可讓使用者選擇要終止的工作階段，以嘗試取得目前工作階段的存取權。
 
 應用程式可使用評估結果中的資訊，在停止視訊時向使用者顯示特定訊息，並在需要時採取進一步的動作。 一個使用案例是停止其他現有的串流，以啟動新的串流。 這是使用特定衝突屬性的&#x200B;**衝突**&#x200B;欄位中的&#x200B;**terminationCode**&#x200B;值來完成的。 此值將在新工作階段初始化的呼叫中作為X-Terminate HTTP標頭提供。
 
@@ -136,6 +159,30 @@ ID為&#x200B;**demo-app**&#x200B;的應用程式已由Adobe團隊指派一項原
 在工作階段初始化時提供一或多個終止代碼時，呼叫將會成功，並產生新的工作階段。 然後，如果我們嘗試對其中一個已從遠端停止的工作階段發出心率，我們會收到410 GONE回應，其中包含說明工作階段已從遠端終止的評估結果裝載，例如範例中的：
 
 ![](assets/remote-termination.png)
+
+根據導致目前工作階段終止的原因，可以傳回410而不帶內文。
+
+當回應沒有內文時，410表示已嘗試對不再作用中的工作階段發出心率（或終止）呼叫（由於逾時、先前的衝突或其他原因）。 從此狀態復原的唯一方法是應用程式啟動新的工作階段。 由於沒有內文，應用程式應該會在使用者不知道的情況下處理此錯誤。
+
+另一方面，當提供回應本文時，應用程式必須檢視&#x200B;**associatedAdvice**&#x200B;屬性，以尋找&#x200B;**遠端終止**&#x200B;建議，指出以&#x200B;**終止**&#x200B;目前工作階段的明確意圖所啟動的遠端工作階段。 這應該會導致「您的工作階段被裝置/應用程式踢出」之類的錯誤訊息。
+
+### 回應內文 {#response-body}
+
+對於所有工作階段生命週期API呼叫，回應內文（出現時）將是包含下列欄位的JSON物件：
+
+![](assets/body_small.png)
+
+**建議**
+**EvaluationResult**&#x200B;將在&#x200B;**associatedAdvice**&#x200B;下包含一連串建議物件。 這些建議旨在讓應用程式為使用者顯示完整的錯誤訊息，並（可能）允許使用者採取行動。
+
+目前有兩種型別的建議（由其&#x200B;**type**&#x200B;屬性值指定）： **rule-violation**&#x200B;和&#x200B;**remote-termination**。 第一個提供了有關中斷的規則以及與目前規則衝突的工作階段的詳細資訊（包括可用於從遠端終止該工作階段的terminate屬性）。 第二個則只是說明目前的工作階段是由遠端工作階段蓄意終止，因此使用者會在達到限制時知道是誰將他們踢出。
+
+![](assets/advices.png)
+
+**義務**
+評估也可能包含一個或多個預先定義的動作，應用程式必須作為此評估的結果觸發這些動作。
+
+![](assets/obligation.png)
 
 ### 第二個應用程式 {#second-application}
 
