@@ -2,9 +2,9 @@
 title: 關於Adobe Pass Authentication與所有地方電視
 description: 關於Adobe Pass Authentication與所有地方電視
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 95e750b5c0efe5850a3ff8130f5b4bb6c5b35f57
 workflow-type: tm+mt
-source-wordcount: '6288'
+source-wordcount: '6287'
 ht-degree: 0%
 
 ---
@@ -112,7 +112,11 @@ Adobe Pass安全地協調程式設計師與付費電視提供者之間的權益�
 
 ## 建築建置區塊 {#arch-building-blocks}
 
-![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/import-pc7mz3dfnv/check.gif)以下討論驗證和授權的中心權利交易。 驗證是指向付費電視提供者確認指定使用者為已知客戶的程式。 授權是付費電視提供者確認已驗證的使用者是否擁有指定資源的有效訂閱的程式。
+<!-- BROKEN LINK
+![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/import-pc7mz3dfnv/check.gif) 
+-->
+
+以下討論驗證和授權的中心軟體權利檔案交易。 驗證是指向付費電視提供者確認指定使用者為已知客戶的程式。 授權是付費電視提供者確認已驗證的使用者是否擁有指定資源的有效訂閱的程式。
 Adobe Pass驗證包含下列基本元件：
 
 * 使用者端元件（下列其中一項）：
@@ -352,7 +356,7 @@ Access Enabler和程式設計師的網頁或播放器應用程式之間的雙向
 
 * **使用者中繼資料** — 根據MVPD和程式設計師之間的合約，MVPD可以安全地交換中繼資料，例如Zipcode、最高評分、管道ID等。 中繼資料可啟用各種使用案例，包括家長監護、體育活動的區域凍結期等。
 * **暫時免費存取** — 可讓程式設計師暫時免費存取其受保護的內容（例如，每日程式設計的簡短範例，或免費呈現大型事件）。
-* **Proxy MVPD** - MVPD可以管理自己與Adobe Pass驗證的整合，也可以代表一組相關聯的「ProxiedMVPD」管理權益程式。
+* **Proxy MVPD** - MVPD可以管理自己與Adobe Pass Authentication的整合，也可代表一組相關聯的「ProxiedMVPD」管理權益程式。
 
 ## 安全性 {#security}
 
