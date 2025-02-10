@@ -2,9 +2,9 @@
 title: REST API V2常見問題集
 description: REST API V2常見問題集
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: 747c3d9b6de537be5e7e0a0244b2b301603d9b18
 workflow-type: tm+mt
-source-wordcount: '6664'
+source-wordcount: '6460'
 ht-degree: 0%
 
 ---
@@ -19,21 +19,21 @@ ht-degree: 0%
 
 如需整體REST API V2的詳細資訊，請參閱[REST API V2概觀](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)檔案。
 
->[!MORELIKETHIS]
->
-> * [動態使用者端註冊(DCR)常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)
-
 ## 一般常見問答 {#general-faqs}
 
 如果您正在處理需要整合REST API V2的應用程式，不論是新應用程式或從[REST API V1](#migration-rest-api-v1-to-rest-api-v2)或[SDK](#migration-sdk-to-rest-api-v2)移轉的現有應用程式，請由此區段開始。
 
 如需移轉詳細資訊和步驟的詳細資訊，請參閱下一節。
 
+>[!MORELIKETHIS]
+>
+> * [動態使用者端註冊(DCR)常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md#general-faqs)
+
 ### 註冊階段常見問題集 {#registration-phase-faqs-general}
 
 +++註冊階段常見問題集
 
-請參閱[Dynamic Client Registration (DCR)常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)檔案。
+請參閱[Dynamic Client Registration (DCR)常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md#rest-api-v2-access-faqs)檔案。
 
 +++
 
@@ -375,6 +375,10 @@ ht-degree: 0%
 
 如果您使用的應用程式需要將現有應用程式移轉至REST API V2，請繼續本節內容。
 
+>[!MORELIKETHIS]
+>
+> * [動態使用者端註冊(DCR)常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md#migration-faqs)
+
 ### 一般移轉常見問題集 {#general-migration-faqs}
 
 +++一般移轉常見問題集
@@ -405,25 +409,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 因此，使用者必須在移轉至REST API V2的新使用者端應用程式中重新驗證。
 
-#### 4.使用者端應用程式可以使用現有的註冊應用程式（軟體陳述式）嗎？ {#migration-faq4}
-
-使用者端應用程式無法重複使用現有的註冊應用程式（軟體陳述式），因此必須產生並下載專用於使用REST API V2的新註冊應用程式（軟體陳述式）。
-
-您的組織管理員或代表您行事的Adobe Pass驗證代表可透過Adobe Pass [TVE控制面板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)完成此作業。
-
-如需詳細資訊，請參閱[TVE儀表板頻道使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#registered-applications)或[TVE儀表板程式設計師使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#registered-applications)檔案。
-
-目前您必須要求Adobe Pass驗證代表啟用新註冊應用程式（軟體陳述式）的REST API V2使用方式，直到Adobe Pass [TVE Dashboard](rest-api-v2-glossary.md#tve-dashboard)更新為允許此作業自我管理為止。
-
-為了區分使用REST API V2的使用者端應用程式中使用的已註冊應用程式（軟體陳述式），我們要求您將特定的尾碼新增到已註冊應用程式名稱中，例如「RESTV2」。
-
-#### 5.使用者端應用程式可以使用現有的自訂配置嗎？ {#migration-faq5}
-
-使用者端應用程式可重複使用透過Adobe Pass [TVE儀表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)產生的現有自訂配置。
-
-如需詳細資訊，請參閱[TVE儀表板頻道使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#custom-schemes)或[TVE儀表板程式設計師使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#custom-schemes)檔案。
-
-#### 6. REST API V2是否預設啟用增強式錯誤代碼？ {#migration-faq6}
+#### 4. REST API V2是否預設啟用增強式錯誤代碼？ {#migration-faq4}
 
 是。
 
