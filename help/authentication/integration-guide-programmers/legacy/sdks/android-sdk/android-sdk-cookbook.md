@@ -2,9 +2,9 @@
 title: Android SDK逐步指南
 description: Android SDK逐步指南
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 79b3856e3ab2755cc95c3fcd34121171912a5273
 workflow-type: tm+mt
-source-wordcount: '1704'
+source-wordcount: '1703'
 ht-degree: 0%
 
 ---
@@ -135,7 +135,9 @@ Android資料庫(AccessEnabler)
 
    | 注意 |     |
    | --- | --- |  
-   | ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) | 在完全建立請求者身分之前，無法完成任何權益請求。 這實際上表示，當setRequestor()仍在執行時，所有後續的軟體權利檔案要求（例如，`checkAuthentication()`）都會遭到封鎖。<br><br>您有兩個實作選項：將要求者識別資訊傳送至後端伺服器後，UI應用程式層可以選擇下列其中一種方法：<br><br>1.  等候觸發`setRequestorComplete()`回呼（AccessEnabler委派的一部分）。  此選項最能確定`setRequestor()`已完成，因此建議用於大部分實作。<br>2。  繼續而不等候`setRequestorComplete()`回呼的觸發，並開始發出權益要求。 這些呼叫(checkAuthentication、checkAuthorization、getAuthorization、getAuthorization、checkPreauthorizedResource、getMetadata、logout)會由AccessEnabler程式庫排入佇列，這將會在`setRequestor(). `之後進行實際的網路呼叫。例如，如果網路連線不穩定，此選項有時會中斷。 |
+   |  | 在完全建立請求者身分之前，無法完成任何權益請求。 這實際上表示，當setRequestor()仍在執行時，所有後續的軟體權利檔案要求（例如，`checkAuthentication()`）都會遭到封鎖。<br><br>您有兩個實作選項：將要求者識別資訊傳送至後端伺服器後，UI應用程式層可以選擇下列其中一種方法：<br><br>1.  等候觸發`setRequestorComplete()`回呼（AccessEnabler委派的一部分）。  此選項最能確定`setRequestor()`已完成，因此建議用於大部分實作。<br>2。  繼續而不等候`setRequestorComplete()`回呼的觸發，並開始發出權益要求。 這些呼叫(checkAuthentication、checkAuthorization、getAuthorization、getAuthorization、checkPreauthorizedResource、getMetadata、logout)會由AccessEnabler程式庫排入佇列，這將會在`setRequestor(). `之後進行實際的網路呼叫。例如，如果網路連線不穩定，此選項有時會中斷。 |
+
+   <!--Removed bad image link from first note cell above. ![](https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/images/icons/1313859077_lightbulb.png) -->
 
 1. 呼叫[checkAuthentication()](#$checkAuthN)以檢查現有的驗證，而不啟動完整的驗證流程。   如果此呼叫成功，您可以直接繼續進行授權流程。  如果沒有，請繼續驗證流程。
 
