@@ -2,7 +2,7 @@
 title: Adobe Pass Authentication 2.64.1發行說明
 description: Adobe Pass Authentication 2.64.1發行說明
 exl-id: b0edbd90-ebb5-40a7-9034-1699dccfadb5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '137'
 ht-degree: 0%
@@ -25,6 +25,7 @@ ht-degree: 0%
 ### 建置編號 {#build-number-2641}
 
 Adobe Pass驗證： adobe-pass-**2.64.1**
+
 發行日期： **01/31/2023 - 02/02/2023**
 
 ### 版本總覽 {#release-overview-2641}

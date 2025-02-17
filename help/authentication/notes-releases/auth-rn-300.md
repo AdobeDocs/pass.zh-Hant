@@ -2,14 +2,14 @@
 title: Adobe Pass Authentication 3.0發行說明
 description: Adobe Pass Authentication 3.0發行說明
 exl-id: 9284151a-8458-44a3-937b-35f379ca0e4e
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '199'
 ht-degree: 0%
 
 ---
 
-# Adobe Pass Authentication 3.0發行說明 {#pt-authn-300-rn}
+# Adobe Pass Authentication 3.0發行說明 {#authn-300-rn}
 
 >[!NOTE]
 >
@@ -22,14 +22,15 @@ ht-degree: 0%
 * [建置編號](#build-number-300)
 * [版本總覽](#release-overview-300)
 
-### 建置編號 {#build-number-2651}
+### 建置編號 {#build-number-300}
 
 Adobe Pass驗證： adobe-pass-**3.0**
+
 發行日期： **09/10/2024 - 09/12/2024**
 
-### 新功能 {#new-features-300}
+### 版本總覽 {#release-overview-300}
 
-#### REST API v2 {#rest-apis}
+#### REST API v2
 
 ##### 程式碼
 
@@ -48,6 +49,6 @@ Adobe Pass驗證： adobe-pass-**3.0**
 
 * 若要嘗試新的REST API v2，請參閱來自[Adobe Developer](https://developer.adobe.com/adobe-pass)網站的新Adobe Pass驗證頁面。
 
-### 錯誤修正 {#bug-fixes-300}
+#### 錯誤修正
 
 * 修正登出請求中出現時未使用重新導向URL引數的問題。

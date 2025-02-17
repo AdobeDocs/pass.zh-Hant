@@ -2,14 +2,14 @@
 title: Adobe Pass Authentication 2.65發行說明
 description: Adobe Pass Authentication 2.65發行說明
 exl-id: 12a1578f-e990-4b3b-ac3d-e356ecd20810
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
 workflow-type: tm+mt
 source-wordcount: '89'
 ht-degree: 0%
 
 ---
 
-# Adobe Pass Authentication 2.65發行說明 {#pt-authn-265-rn}
+# Adobe Pass Authentication 2.65發行說明 {#authn-265-rn}
 
 >[!NOTE]
 >
@@ -20,13 +20,14 @@ ht-degree: 0%
 ## 伺服器端和Web使用者端 {#server-side-web-clients-265}
 
 * [建置編號](#build-number-265)
-* [新功能](#new-features-265)
+* [版本總覽](#release-overview-265)
 
 ### 建置編號 {#build-number-265}
 
 Adobe Pass驗證： adobe-pass-**2.65**
+
 發行日期： **25/04/2023 - 27/04/2023**
 
-### 新功能 {#new-features-265}
+### 版本總覽 {#release-overview-265}
 
 此版本延續了內部架構的改良功能。
