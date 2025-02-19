@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
+source-git-commit: 4ad5ea619f64a78a72f69228c9ae3c83a7b66f24
 workflow-type: tm+mt
-source-wordcount: '1230'
+source-wordcount: '1246'
 ht-degree: 2%
 
 ---
@@ -17,6 +17,9 @@ ht-degree: 2%
 + [Adobe Pass 驗證](home.md)
 + [產品公告](product-announcements.md)
 + 產品發行{#product-releases}
+   + 2025 {#2025}
+      + [Adobe Pass Authentication 3.1.0發行說明](notes-releases/auth-rn-310.md)
+      + [Adobe Pass Authentication JavaScript 4.7.1發行說明](notes-releases/authn-rn-javascript-471.md)
    + 2024 {#2024}
       + [Adobe Pass Authentication 3.0.3發行說明](notes-releases/auth-rn-303.md)
       + [Adobe Pass Authentication 3.0發行說明](notes-releases/auth-rn-300.md)
@@ -152,7 +155,7 @@ ht-degree: 2%
          + [伺服器端量度](integration-guide-programmers/features-premium/esm/understanding-serverside-metrics.md)
       + 分析{#analytics}
          + [將Adobe Pass驗證伺服器端資料整合至Adobe Analytics](integration-guide-programmers/features-premium/analytics/integrate-authn-servr-data-analytics.md)
-         + [在Adobe Pass驗證中使用Experience CloudID](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
+         + [在Adobe Pass驗證中使用Experience Cloud ID](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
    + 舊版{#legacy}
       + （舊版） REST API V1 {#rest-api-v1}
          + [（舊版） REST API V1概覽](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
@@ -256,7 +259,7 @@ ht-degree: 2%
             + [（舊版）防止MVPD出現在選取範圍對話方塊](integration-guide-programmers/legacy/notes-technical/prevent-mvpd-selectn-dialog.md)
          + （舊版）疑難排解{#troubleshooting}
             + [（舊版）使用Charles Proxy](integration-guide-programmers/legacy/notes-technical/using-charles-proxy.md)
-            + [（舊版）監控Adobe PassAdobePayTV Pass](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
+            + [（舊版）監控Adobe Pass Adobe PayTV Pass](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
             + [（舊版）如何使用Adobe API測試網站測試驗證和授權流程](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
 + MVPD {#integration-guide-mvpds}的整合指南
    + [MVPD整合指南](integration-guide-mvpds/mvpd-integration-guide-overview.md)
