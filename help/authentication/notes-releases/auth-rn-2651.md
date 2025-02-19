@@ -2,18 +2,18 @@
 title: Adobe Pass Authentication 2.65.1發行說明
 description: Adobe Pass Authentication 2.65.1發行說明
 exl-id: 28d112db-b038-4d11-93c5-d6ab67a29700
-source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
+source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '182'
+source-wordcount: '178'
 ht-degree: 0%
 
 ---
 
 # Adobe Pass Authentication 2.65.1發行說明 {#authn-2651-rn}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+> 請務必隨時瞭解彙總在[產品公告](/help/authentication/product-announcements.md)頁面中的最新Adobe Pass驗證產品公告和淘汰時間表。
 
 此頁面說明此版本的新功能、變更和已知問題：
 

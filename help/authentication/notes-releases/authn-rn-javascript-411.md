@@ -2,18 +2,18 @@
 title: Adobe Pass Authentication JavaScript 4.1.1發行說明
 description: Adobe Pass Authentication JavaScript 4.1.1發行說明
 exl-id: 00d017b3-700d-48b6-a43f-c0d7b8b67c3d
-source-git-commit: 134a9a13373717ff7772a9d765bbd7b3b4943a85
+source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '110'
+source-wordcount: '106'
 ht-degree: 0%
 
 ---
 
 # Adobe Pass Authentication JavaScript 4.1.1發行說明 {#javascript-sdk-411-rn}
 
->[!NOTE]
+>[!IMPORTANT]
 >
->此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+> 請務必隨時瞭解彙總在[產品公告](/help/authentication/product-announcements.md)頁面中的最新Adobe Pass驗證產品公告和淘汰時間表。
 
 此頁面說明此版本的新功能、變更和已知問題：
 
