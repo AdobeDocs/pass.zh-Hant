@@ -2,9 +2,9 @@
 title: 建立驗證工作階段
 description: REST API V2 — 建立驗證工作階段
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '1000'
+source-wordcount: '1047'
 ht-degree: 1%
 
 ---
@@ -132,7 +132,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
       <td>
-        在<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Platform-Subject-Token</a>標標頭檔案中會說明Platform Identity方法單一登入裝載的產生Adobe。
+        有關Platform Identity方法單一登入裝載的產生，請參閱<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>標標頭檔案。
         <br/><br/>
         如需使用平台身分識別啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台身分識別流程單一登入</a>檔案。
       </td>
@@ -268,17 +268,15 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  用於說明「actionName」的原因型別。
+                  說明「actionName」的原因型別。
                   <br/><br/>
                   可能的值包括：
                   <ul>
-                    <li><b>無</b></li>
-                    <li><b>已驗證</b></li>
-                    <li><b>暫時</b></li>
-                    <li><b>已降級</b></li>
-                    <li><b>authenticatedSSO</b></li>
-                    <li><b>pfs_fallback</b></li>
-                    <li><b>configuration_fallback</b></li>
+                    <li><b>無</b><br/>使用者端應用程式必須繼續驗證。</li>
+                    <li><b>已驗證</b><br/>使用者端應用程式已透過基本存取流程驗證。</li>
+                    <li><b>暫時</b><br/>使用者端應用程式已透過暫存存取流程驗證。</li>
+                    <li><b>已降級</b><br/>使用者端應用程式已透過已降級的存取流程進行驗證。</li>
+                    <li><b>authenticatedSSO</b><br/>使用者端應用程式已透過單一登入存取流程驗證。</li>
                   </ul>
                <td><i>必填</i></td>
             </tr>
@@ -483,6 +481,8 @@ Content-Type: application/json;charset=UTF-8
     "serviceProvider": "REF30"
 }
 ```
+
+>[!ENDTABS]
 
 ### 4.使用基本或促銷暫時Pass建立驗證工作階段（不需要）
 

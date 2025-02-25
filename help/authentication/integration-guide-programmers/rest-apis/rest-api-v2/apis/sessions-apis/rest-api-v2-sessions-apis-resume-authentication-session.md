@@ -2,9 +2,9 @@
 title: 繼續驗證工作階段
 description: REST API V2 — 繼續驗證工作階段
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 5cb14959d6e9af91252316fbdd14ff33d813089b
+source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
 workflow-type: tm+mt
-source-wordcount: '841'
+source-wordcount: '876'
 ht-degree: 1%
 
 ---
@@ -233,17 +233,14 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  用於說明「actionName」的原因型別。
+                  說明「actionName」的原因型別。
                   <br/><br/>
                   可能的值包括：
                   <ul>
-                    <li><b>無</b></li>
-                    <li><b>已驗證</b></li>
-                    <li><b>暫時</b></li>
-                    <li><b>已降級</b></li>
-                    <li><b>authenticatedSSO</b></li>
-                    <li><b>pfs_fallback</b></li>
-                    <li><b>configuration_fallback</b></li>
+                    <li><b>無</b><br/>使用者端應用程式必須繼續驗證。</li>
+                    <li><b>已驗證</b><br/>使用者端應用程式已透過基本存取流程驗證。</li>
+                    <li><b>暫時</b><br/>使用者端應用程式已透過暫存存取流程驗證。</li>
+                    <li><b>已降級</b><br/>使用者端應用程式已透過已降級的存取流程進行驗證。</li>
                   </ul>
                <td><i>必填</i></td>
             </tr>
@@ -353,6 +350,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "authenticate",
     "actionType": "interactive",
+    "reasonType": "none",
     "url": "/api/v2/authenticate/REF30/8ER640M",
     "code": "8ER640M",
     "sessionId": "1b614390-6610-4d14-9421-6565f6e75958",
@@ -444,6 +442,8 @@ Content-Type: application/json;charset=UTF-8
     "serviceProvider": "REF30"
 }
 ```
+
+>[!ENDTABS]
 
 ### 4.使用基本或促銷的TempPass繼續驗證工作階段（不需要）
 
