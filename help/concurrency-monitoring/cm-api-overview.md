@@ -2,9 +2,9 @@
 title: API總覽
 description: 並行監視的API總覽
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: b30d9217e70f48bf8b8d8b5eaaa98fea257f3fc5
+source-git-commit: 0cabb090e3c0282f9bcd097719d52374f2d991dd
 workflow-type: tm+mt
-source-wordcount: '2102'
+source-wordcount: '2155'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 在開發過程中，Swagger公開檔案代表瞭解和測試API流程的參考指引。 這是一個絕佳的起點，以便擁有實作方法，並熟悉真實世界應用程式在不同使用者互動情境下的行為方式。
 
-在[Zendesk](mailto:tve-support@adobe.com)中提交票證，以便在並行監視中註冊您的公司和應用程式。 Adobe會將應用程式ID指派給每個實體。 在本指南中，我們將使用具有識別碼&#x200B;**demo-app**&#x200B;和&#x200B;**demo-app-2**&#x200B;的兩個參考應用程式，它們將在租使用者Adobe之下。
+在[Zendesk](mailto:tve-support@adobe.com)中提交票證，以便在並行監視中註冊您的公司和應用程式。 Adobe會將應用程式ID指派給每個實體。 在本指南中，我們將使用兩個ID為&#x200B;**demo-app**&#x200B;和&#x200B;**demo-app-2**&#x200B;的參考應用程式，它們將會在租使用者Adobe之下。
 
 
 ## 使用案例 {#api-use-case}
@@ -36,7 +36,7 @@ ht-degree: 0%
 
 ### 第一個應用程式 {#first-app-use-cases}
 
-ID為&#x200B;**demo-app**&#x200B;的應用程式已由Adobe團隊指派一項原則，其中一項規則將同時串流數量限製為3。 會根據在Zendesk中提交的請求，將原則指派給特定應用程式。
+Adobe團隊已指派識別碼為&#x200B;**demo-app**&#x200B;的應用程式一項原則，其中一項規則將同時串流數量限製為3。 會根據在Zendesk中提交的請求，將原則指派給特定應用程式。
 
 
 #### 正在擷取中繼資料 {#retrieve-metadata-use-case}
@@ -137,6 +137,10 @@ ID為&#x200B;**demo-app**&#x200B;的應用程式已由Adobe團隊指派一項原
 
 另請注意，在此情況下，**Expires**&#x200B;標頭不存在。
 
+如果建立的工作階段使用&#x200B;**X-Terminate**&#x200B;標頭殺死另一個工作階段，您會在中繼資料下找到&#x200B;**取代的欄位**。 其值是工作階段終止的指標，可為目前的工作階段騰出空間。
+
+![](assets/get-all-running-streams-superseded.png)
+
 #### 破壞原則 {#breaking-policy-app-first}
 
 
@@ -175,7 +179,7 @@ ID為&#x200B;**demo-app**&#x200B;的應用程式已由Adobe團隊指派一項原
 **建議**
 **EvaluationResult**&#x200B;將在&#x200B;**associatedAdvice**&#x200B;下包含一連串建議物件。 這些建議旨在讓應用程式為使用者顯示完整的錯誤訊息，並（可能）允許使用者採取行動。
 
-目前有兩種型別的建議（由其&#x200B;**type**&#x200B;屬性值指定）： **rule-violation**&#x200B;和&#x200B;**remote-termination**。 第一個提供了有關中斷的規則以及與目前規則衝突的工作階段的詳細資訊（包括可用於從遠端終止該工作階段的terminate屬性）。 第二個則只是說明目前的工作階段是由遠端工作階段蓄意終止，因此使用者會在達到限制時知道是誰將他們踢出。
+目前有兩種型別的建議（由其&#x200B;**type**&#x200B;屬性值指定）： **rule-violation**&#x200B;和&#x200B;**remote-termination**。 第一個提供了有關中斷的規則以及與目前規則衝突的工作階段的詳細資訊（包括可用於從遠端終止該工作階段的terminate屬性）。 第二個則只是說明目前的工作階段是由遠端工作階段蓄意終止，因此使用者會在達到限制時知道是誰將他們踢出。 如果&#x200B;**取代的**&#x200B;包含在中繼資料中，則相關工作階段是使用&#x200B;**X-Terminate**&#x200B;標頭建立的。
 
 ![](assets/advices.png)
 
