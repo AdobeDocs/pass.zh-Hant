@@ -2,9 +2,9 @@
 title: 擷取特定服務提供者的設定
 description: REST API V2 — 擷取特定服務提供者的設定
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 871afc4e7ec04d62590dd574bf4e28122afc01b6
 workflow-type: tm+mt
-source-wordcount: '515'
+source-wordcount: '725'
 ht-degree: 2%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 2%
 >[!IMPORTANT]
 >
 > REST API V2實作受到[節流機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)檔案的限制。
+
+>[!MORELIKETHIS]
+>
+> 請確定也造訪[REST API V2常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#configuration-phase-faqs-general)。
 
 ## 請求 {#request}
 
@@ -210,9 +214,9 @@ ht-degree: 2%
                 <td>
                     具有以下屬性的JSON物件：
                     <ul>
-                        <li><b>id</b></li>
-                        <li><b>名稱</b></li>
-                        <li><b>網域</b></li>
+                        <li><b>id</b><br/>上線程式期間與服務提供者相關聯的內部唯一識別碼。</li>
+                        <li><b>名稱</b><br/>上線程式期間與服務提供者相關聯的商業（品牌）名稱。</li>
+                        <li><b>網域</b><br/>列在Adobe Pass驗證中代表服務提供者的網域名稱清單。</li>
                     </ul>
                 </td>
                 <td><i>必填</i></td>
@@ -222,16 +226,16 @@ ht-degree: 2%
                 <td>
                     具有以下屬性的JSON物件：
                     <ul>
-                        <li><b>id</b></li>
-                        <li><b>顯示名稱</b></li>
-                        <li><b>logoUrl</b></li>
-                        <li><b>istemppass</b></li>
-                        <li><b>isProxy</b></li>
-                        <li><b>boardingStatus</b></li>
-                        <li><b>platformMappingId</b></li>
-                        <li><b>enablePlatformServices</b></li>
-                        <li><b>displayInPlatformPicker</b></li>
-                        <li><b>enforcePlatformPermissions</b></li>
+                        <li><b>id</b><br/>上線程式期間與身分提供者相關聯的內部唯一識別碼。</li>
+                        <li><b>displayName</b><br/>上線程式期間與身分提供者相關聯的商業（品牌）名稱。</li>
+                        <li><b>logoUrl</b><br>下載與身分提供者相關聯標誌的URL。</li>
+                        <li><b>isTempPass</b><br/>指定MVPD是否設計提供<a href="../../../../features-premium/temporary-access/temp-pass-feature.md">TempPass</a>功能功能的旗標。</li>
+                        <li><b>isProxy</b><br/>指定MVPD是否為代理的MVPD的旗標。</li>
+                        <li><b>boardingStatus</b><br/>指定識別提供者是否由串流裝置平台登入以進行單一登入流程的狀態。</li>
+                        <li><b>platformMappingId</b><br/>串流裝置平台與身分提供者相關聯的內部唯一識別碼，適用於單一登入流程。</li>
+                        <li><b>enablePlatformServices</b><br/>指定是否針對單一登入流程為串流裝置平台啟用識別提供者設定的旗標。</li>
+                        <li><b>displayInPlatformPicker</b><br/>指定是否可將身分提供者顯示在串流裝置平台選擇器中，以進行單一登入流程的旗標。</li>
+                        <li><b>enforcePlatformPermissions</b><br/>指定串流裝置是否必須強制平台所提供的使用者許可權以供單一登入流程使用的旗標。</li>
                     </ul>
                 </td>
                 <td><i>必填</i></td>

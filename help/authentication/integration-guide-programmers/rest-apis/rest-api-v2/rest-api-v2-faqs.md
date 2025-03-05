@@ -2,9 +2,9 @@
 title: REST API V2常見問題集
 description: REST API V2常見問題集
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 871afc4e7ec04d62590dd574bf4e28122afc01b6
 workflow-type: tm+mt
-source-wordcount: '6744'
+source-wordcount: '6963'
 ht-degree: 0%
 
 ---
@@ -39,57 +39,73 @@ ht-degree: 0%
 
 #### 1.組態階段的用途為何？ {#configuration-phase-faq1}
 
-「設定階段」的目的是提供使用者端應用程式主動整合的MVPD清單，以及Adobe Pass驗證針對每個MVPD儲存的設定詳細資訊。
+設定階段的用途是向使用者端應用程式提供與其主動整合的MVPD清單，以及由Adobe Pass驗證針對每個MVPD儲存的設定詳細資料（例如，`id`、`displayName`、`logoUrl`等）。
 
 當使用者端應用程式需要要求使用者選取他們的電視提供者時，「組態階段」會成為「驗證階段」的先決條件步驟。
 
 #### 2.設定階段是否為必要階段？ {#configuration-phase-faq2}
 
-「組態階段」不是強制性的，在下列情況下，使用者端應用程式可以略過此階段：
+設定階段並非強制性，使用者端應用程式必須在使用者需要選取其MVPD以進行驗證或重新驗證時，才可擷取設定。
+
+在下列情況下，使用者端應用程式可以略過此階段：
 
 * 使用者已經過驗證。
-* 透過基本或促銷的TempPass功能，提供使用者暫時存取許可權。
+* 透過基本或促銷[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能提供使用者暫時存取。
 * 使用者驗證已過期，但使用者端應用程式已快取先前選取的MVPD作為使用者體驗動機的選擇，而且只是提示使用者確認他們仍然是該MVPD的訂閱者。
 
 #### 3.什麼是設定？其有效期為多久？ {#configuration-phase-faq3}
 
 設定是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#configuration)檔案中定義的辭彙。
 
-組態包含可從組態端點擷取的MVPD清單。
+組態包含由下列屬性`id`、`displayName`、`logoUrl`等定義的MVPD清單，這些屬性可從[組態](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)端點擷取。
 
-當要求使用者選取其MVPD時，使用者端應用程式可使用設定，呈現稱為「選擇器」的UI元件。
+使用者端應用程式只有在使用者需要選取其MVPD以進行驗證或重新驗證時，才必須擷取設定。
 
-使用者端應用程式應在使用者完成驗證階段之前重新整理設定。
+當使用者需要選取電視提供者時，使用者端應用程式可使用設定回應，以呈現具有可用MVPD選項的UI選擇器。
+
+使用者端應用程式必須儲存使用者選取的MVPD識別碼(如MVPD的組態層級`id`屬性所指定)，才能繼續驗證、預先授權、授權或登出階段。
 
 如需詳細資訊，請參閱[擷取組態](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)檔案。
 
-#### 4.使用者端應用程式可以管理自己的MVPD清單嗎？ {#configuration-phase-faq4}
+#### 4.使用者端應用程式是否應該將組態回應資訊快取在永久儲存體中？ {#configuration-phase-faq4}
 
-使用者端應用程式可以管理自己的MVPD清單，但建議您使用Adobe Pass驗證提供的設定，以確保清單是最新且正確的。
+使用者端應用程式只有在使用者需要選取其MVPD以進行驗證或重新驗證時，才必須擷取設定。
 
-如果使用者選取的Adobe Pass沒有與指定的[服務提供者](rest-api-v2-glossary.md#service-provider)的有效整合，使用者端應用程式將會從MVPD Authentication REST API V2收到[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)。
+使用者端應用程式應將設定回應資訊快取到記憶體儲存體中，以避免不必要的請求並改善使用者體驗，當：
 
-#### 5.使用者端應用程式可以篩選MVPD清單嗎？ {#configuration-phase-faq5}
+* 使用者已經過驗證。
+* 透過基本或促銷[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能提供使用者暫時存取。
+* 使用者驗證已過期，但使用者端應用程式已快取先前選取的MVPD作為使用者體驗動機的選擇，而且只是提示使用者確認他們仍然是該MVPD的訂閱者。
+
+#### 5.使用者端應用程式可以管理自己的MVPD清單嗎？ {#configuration-phase-faq5}
+
+使用者端應用程式可以管理自己的MVPD清單，但必須使MVPD識別碼與Adobe Pass驗證保持同步。 因此，建議您使用Adobe Pass驗證提供的設定，以確保清單是最新且正確的。
+
+如果提供的Adobe Pass識別碼無效，或是使用者端應用程式未與指定的[服務提供者](rest-api-v2-glossary.md#service-provider)有效整合，使用者端應用程式將會從MVPD驗證REST API V2收到[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)。
+
+#### 6.使用者端應用程式可以篩選MVPD清單嗎？ {#configuration-phase-faq6}
 
 使用者端應用程式可以根據自己的商業邏輯和需求（例如使用者位置或先前選取的使用者歷史記錄），實作自訂機制，以篩選設定回應中提供的MVPD清單。
 
-#### 6.如果與MVPD的整合停用並標籤為非使用中，會發生什麼情況？ {#configuration-phase-faq6}
+使用者端應用程式可以篩選[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) MVPD的清單，或整合仍在開發或測試中的MVPD。
 
-當與MVPD的整合停用並標籤為非使用中時，MVPD會從進一步設定回應中提供的MVPD清單中移除，且有兩個重要的後果需要考慮：
+#### 7.如果與MVPD的整合停用並標籤為非使用中，會發生什麼情況？ {#configuration-phase-faq7}
+
+當與MVPD的整合停用並標籤為非使用中時，MVPD會從進一步設定回應中提供的MVPD清單中移除，您需考慮兩個重要後果：
 
 * 該MVPD未經驗證的使用者將無法再使用該MVPD完成驗證階段。
 * 該MVPD的已驗證使用者將無法再使用該MVPD完成預先授權、授權或登出階段。
 
-如果使用者選取的Adobe Pass不再與指定的[服務提供者](rest-api-v2-glossary.md#service-provider)有效整合，使用者端應用程式將會從MVPD Authentication REST API V2收到[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)。
+如果使用者選取的Adobe Pass不再與指定的[服務提供者](rest-api-v2-glossary.md#service-provider)有效整合，使用者端應用程式將會從MVPD Authentication REST API V2收到[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)。
 
-#### 7.如果已重新啟用與MVPD的整合，並標示為使用中，會發生什麼情況？ {#configuration-phase-faq7}
+#### 8.如果與MVPD的整合啟用回頭並標籤為使用中，會發生什麼情況？ {#configuration-phase-faq8}
 
 當與MVPD的整合重新啟用並標籤為作用中時，MVPD會重新納入進一步設定回應中提供的MVPD清單中，您需考慮兩個重要後果：
 
 * 該MVPD的未經驗證使用者將能夠再次使用該MVPD完成驗證階段。
 * 該MVPD的已驗證使用者將能夠使用該MVPD再次完成預先授權、授權或登出階段。
 
-#### 8.如何啟用或停用與MVPD的整合？ {#configuration-phase-faq8}
+#### 9.如何啟用或停用與MVPD的整合？ {#configuration-phase-faq9}
 
 您的組織管理員或代表您行事的Adobe Pass驗證代表可透過Adobe Pass [TVE控制面板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)完成此作業。
 
