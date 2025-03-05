@@ -2,9 +2,9 @@
 title: 單一登入 — 合作夥伴 — 流程
 description: REST API V2 — 單一登入 — 合作夥伴 — 流程
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '1454'
+source-wordcount: '1468'
 ht-degree: 0%
 
 ---
@@ -125,7 +125,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    如果Adobe Pass後端未識別有效的設定檔，且合作夥伴單一登入驗證通過時，串流應用程式會收到包含動作和資料的回應，並傳遞至合作夥伴架構，以啟動與MVPD的驗證流程。
 
-   如需有關使用合作夥伴驗證回應的設定檔擷取流程的詳細資訊，請參閱[使用合作夥伴驗證回應擷取設定檔](#retrieve-profile-using-partner-authentication-response)區段。
+   如需有關使用合作夥伴驗證回應的設定檔擷取流程的詳細資訊，請參閱[使用合作夥伴驗證回應建立及擷取設定檔](#create-and-retrieve-profile-using-partner-authentication-response)區段。
 
 1. **繼續基本驗證流程：**&#x200B;工作階段夥伴端點回應包含下列資料：
    * `actionName`屬性已設定為「驗證」或「繼續」。
@@ -152,9 +152,9 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    > 
    > 如需`AP-Partner-Framework-Status`標頭的詳細資訊，請參閱[AP-Partner-Framework-Status](../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)檔案。
 
-## 使用合作夥伴驗證回應擷取設定檔 {#retrieve-profile-using-partner-authentication-response}
+## 使用合作夥伴驗證回應建立和擷取設定檔 {#create-and-retrieve-profile-using-partner-authentication-response}
 
-### 先決條件 {#prerequisites-retrieve-profile-using-partner-authentication-response}
+### 先決條件 {#prerequisites-create-and-retrieve-profile-using-partner-authentication-response}
 
 使用合作夥伴驗證回應擷取設定檔之前，請確定符合下列先決條件：
 
@@ -169,13 +169,13 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 > * 合作夥伴架構支援使用者互動，以透過選取的MVPD進行驗證。
 > * 合作夥伴架構提供使用者許可權與提供者資訊。
 
-### 工作流程 {#workflow-retrieve-profile-using-partner-authentication-response}
+### 工作流程 {#workflow-create-and-retrieve-profile-using-partner-authentication-response}
 
 執行指定的步驟，使用合作夥伴驗證回應來實施設定檔擷取流程，如下圖所示。
 
-![使用合作夥伴驗證回應擷取設定檔](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
+![使用合作夥伴驗證回應來建立和擷取設定檔](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
 
-*使用合作夥伴驗證回應擷取已驗證的設定檔*
+*使用合作夥伴驗證回應來建立及擷取已驗證的設定檔*
 
 1. **使用合作夥伴架構完成MVPD驗證：**&#x200B;如果驗證流程成功，合作夥伴架構與MVPD的互動會產生合作夥伴驗證回應（SAML回應），此回應會連同合作夥伴架構狀態資訊一併傳回。
 
@@ -184,11 +184,11 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    * 使用者提供者對應識別碼存在且有效。
    * 使用者提供者設定檔的到期日（如果有的話）有效。
 
-1. **使用合作夥伴驗證回應擷取設定檔：**&#x200B;串流應用程式會收集所有必要的資料，藉由呼叫Profiles合作夥伴端點來建立和擷取設定檔。
+1. **使用合作夥伴驗證回應來建立及擷取設定檔：**&#x200B;串流應用程式會收集所有必要的資料，藉由呼叫「設定檔合作夥伴」端點來建立及擷取設定檔。
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱[使用合作夥伴驗證回應](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) API檔案：
+   > 如需下列詳細資訊，請參閱[使用合作夥伴驗證回應](../../apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) API檔案建立和擷取設定檔：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`、`partner`和`SAMLResponse`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`、`Content-Type`、`X-Device-Info`和`AP-Partner-Framework-Status`

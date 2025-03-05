@@ -1,15 +1,15 @@
 ---
-title: 使用合作夥伴驗證回應擷取設定檔
-description: REST API V2 — 使用合作夥伴驗證回應擷取設定檔
+title: 使用合作夥伴驗證回應建立和擷取設定檔
+description: REST API V2 — 使用合作夥伴驗證回應建立及擷取設定檔
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '724'
+source-wordcount: '734'
 ht-degree: 1%
 
 ---
 
-# 使用合作夥伴驗證回應擷取設定檔 {#retrieve-profile-using-partner-authentication-response}
+# 使用合作夥伴驗證回應建立和擷取設定檔 {#create-and-retrieve-profile-using-partner-authentication-response}
 
 >[!IMPORTANT]
 >
@@ -321,7 +321,7 @@ ht-degree: 1%
 
 ## 範例 {#samples}
 
-### 1.使用合作夥伴驗證回應擷取設定檔
+### 1.使用合作夥伴驗證回應來建立和擷取設定檔
 
 >[!BEGINTABS]
 
@@ -378,7 +378,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2.使用合作夥伴驗證回應擷取設定檔，但套用效能降低
+### 2.使用合作夥伴驗證回應來建立和擷取設定檔，但套用效能降低
 
 >[!BEGINTABS]
 

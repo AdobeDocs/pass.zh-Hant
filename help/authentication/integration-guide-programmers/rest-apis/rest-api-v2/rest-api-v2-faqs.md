@@ -2,9 +2,9 @@
 title: REST API V2常見問題集
 description: REST API V2常見問題集
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '8198'
+source-wordcount: '9072'
 ht-degree: 0%
 
 ---
@@ -224,7 +224,7 @@ ht-degree: 0%
 
 #### 9.每個可用設定檔端點的使用案例為何？ {#authentication-phase-faq9}
 
-「設定檔」端點的設計是要讓使用者端應用程式能夠知道使用者的驗證狀態、存取使用者中繼資料資訊、尋找用於驗證的方法或用於提供身分識別的實體。
+基本設定檔端點的設計是為了讓使用者端應用程式能夠知道使用者的驗證狀態、存取使用者中繼資料資訊、尋找用於驗證的方法或用於提供身分識別的實體。
 
 每個端點皆適合特定使用案例，如下所示：
 
@@ -233,6 +233,18 @@ ht-degree: 0%
 | [設定檔端點API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | 擷取所有使用者設定檔。 | **使用者第一次開啟使用者端應用程式**<br/><br/>&#x200B;在此案例中，使用者端應用程式不會將使用者選取的MVPD識別碼快取到永久儲存體中。<br/><br/>因此，它將傳送單一要求以擷取所有可用的使用者設定檔。 |
 | 特定MVPD API的[設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | 擷取與特定MVPD相關聯的使用者設定檔。 | **使用者在上次造訪中進行驗證後返回使用者端應用程式**<br/><br/>&#x200B;在此情況下，使用者端應用程式必須將使用者先前選取的MVPD識別碼快取到永久儲存區。<br/><br/>因此，它會傳送單一要求，以擷取該特定MVPD的使用者設定檔。 |
 | [特定（驗證）程式碼API的設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 擷取與特定驗證代碼相關聯的使用者設定檔。 | **使用者啟動驗證程式**<br/><br/>&#x200B;在此案例中，使用者端應用程式必須判斷使用者是否已順利完成驗證，並擷取其設定檔資訊。<br/><br/>因此，它會啟動輪詢機制，以擷取與驗證碼相關聯的使用者設定檔。 |
+
+如需詳細資訊，請參閱主要應用程式](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)內執行的[基本設定檔流程，以及次要應用程式](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)檔案內執行的[基本設定檔流程。
+
+設定檔SSO端點有不同的用途，它讓使用者端應用程式能夠使用合作夥伴驗證回應建立使用者設定檔，並在單次作業中擷取它。
+
+| API | 說明 | 使用案例 |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [設定檔SSO端點API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) | 使用合作夥伴驗證回應來建立和擷取使用者設定檔。 | **使用者允許應用程式使用合作夥伴單一登入來進行驗證**<br/><br/>&#x200B;在此案例中，使用者端應用程式必須在收到合作夥伴驗證回應之後建立使用者設定檔，並透過單次、一次性的作業擷取該設定檔。 |
+
+對於任何後續的查詢，必須使用基本設定檔端點來判斷使用者的驗證狀態、存取使用者中繼資料資訊、尋找用於驗證的方法或用於提供身分識別的實體。
+
+如需詳細資訊，請參閱[使用合作夥伴流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)的單一登入[Apple SSO逐步指南(REST API V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)檔案。
 
 #### 10.如果使用者有多個MVPD設定檔，使用者端應用程式該怎麼做？ {#authentication-phase-faq10}
 
@@ -351,11 +363,29 @@ ht-degree: 0%
 * [擷取預先授權決定API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
 * [主要應用程式內執行的基本預先授權流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
 
-#### 4.為何預先授權決定遺失媒體權杖？ {#preauthorization-phase-faq4}
+#### 4.使用者端應用程式是否應該將預先授權決定快取到永久儲存體中？ {#preauthorization-phase-faq4}
+
+使用者端應用程式不需要將預先授權決定儲存在永久儲存體中。 但是，建議將允許決策快取到記憶體中以改善使用者體驗。 這有助於避免對已預先授權的資源之決定預先授權端點進行不必要的呼叫，從而減少延遲並改善效能。
+
+#### 5.使用者端應用程式如何判斷預先授權決定被拒絕的原因？ {#preauthorization-phase-faq5}
+
+使用者端應用程式可檢查包含在決定預先授權端點回應中的[錯誤碼和訊息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，以判斷拒絕預先授權決定的原因。 這些詳細資料可讓您深入瞭解預先授權請求遭拒絕的特定原因，有助於告知使用者體驗或觸發應用程式中的任何必要處理。
+
+如果預先授權決定遭拒，請確定任何針對擷取預先授權決定所實作的重試機制，都不會導致無休止的回圈。
+
+請考慮將重試限制在合理數字，並透過向使用者呈現清楚的意見反應來適當地處理拒絕。
+
+#### 6.為何預先授權決定遺失媒體權杖？ {#preauthorization-phase-faq6}
 
 預先授權決定遺失媒體權杖，因為預先授權階段不能用於播放資源，因為這是授權階段的用途。
 
-#### 5.什麼是資源？支援哪些格式？ {#preauthorization-phase-faq5}
+#### 7.如果預先授權決定已經存在，可以略過「授權階段」嗎？ {#preauthorization-phase-faq7}
+
+不適用。
+
+即使預先授權決定可用，也無法跳過授權階段。 預先授權決定僅供參考，不會授予實際的播放許可權。 預先授權階段旨在提供早期指引，但在播放任何內容之前仍需要授權階段。
+
+#### 8.什麼是資源？支援哪些格式？ {#preauthorization-phase-faq8}
 
 資源是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#resource)檔案中定義的辭彙。
 
@@ -368,7 +398,7 @@ ht-degree: 0%
 
 如需詳細資訊，請參閱[受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources)檔案。
 
-#### 6.使用者端應用程式一次可取得多少資源預先授權決定？ {#preauthorization-phase-faq6}
+#### 9.使用者端應用程式一次可取得多少資源預先授權決定？ {#preauthorization-phase-faq9}
 
 由於MVPD施加的條件，使用者端應用程式可以在單一API要求中取得有限數量資源的預先授權決定，通常最多5個。
 
@@ -409,7 +439,19 @@ ht-degree: 0%
 
 如需詳細資訊，請參閱[TVE儀表板整合使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows)檔案。
 
-#### 4.什麼是媒體代號？其有效期為多久？ {#authorization-phase-faq4}
+#### 4.使用者端應用程式是否應將授權決定快取至永久儲存區？ {#authorization-phase-faq4}
+
+使用者端應用程式不需要將授權決定儲存在永久儲存體中。
+
+#### 5.使用者端應用程式如何判斷授權決定被拒絕的原因？ {#authorization-phase-faq5}
+
+使用者端應用程式可以檢查包含在來自Decisions Authorize端點的回應中的[錯誤碼和訊息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，以判斷拒絕授權決定的原因。 這些詳細資訊可讓您深入瞭解授權請求遭拒的特定原因，有助於告知使用者體驗或觸發應用程式中的任何必要處理。
+
+如果授權決定遭拒，請確定任何針對擷取授權決定所實作的重試機制都不會導致無限回圈。
+
+請考慮將重試限制在合理數字，並透過向使用者呈現清楚的意見反應來適當地處理拒絕。
+
+#### 6.什麼是媒體代號？其有效期為何？ {#authorization-phase-faq6}
 
 媒體權杖是[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#media-token)檔案中定義的辭彙。
 
@@ -417,7 +459,7 @@ ht-degree: 0%
 
 如需詳細資訊，請參閱[媒體權杖驗證器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)檔案。
 
-媒體權杖在問題時指定的有限和較短時間範圍內有效，這表示在需要再次查詢Decisions Authorize端點之前，使用者端應用程式必須使用此權杖的時間量。
+媒體權杖在問題時指定的有限和較短時間範圍內有效，這表示使用者端應用程式必須驗證和使用它之前的時間限制。
 
 使用者端應用程式可以使用媒體權杖來播放資源串流，以備電視提供者（權威）決定允許使用者存取它時使用。
 
@@ -426,7 +468,41 @@ ht-degree: 0%
 * [擷取授權決定API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
 * [主要應用程式內執行的基本授權流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
 
-#### 5.什麼是資源？支援哪些格式？ {#authorization-phase-faq5}
+#### 7.使用者端應用程式是否應在播放資源資料流之前驗證媒體權杖？ {#authorization-phase-faq7}
+
+是。
+
+使用者端應用程式必須先驗證媒體權杖，才能開始播放資源資料流。 應該使用[媒體權杖驗證器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)來執行此驗證。 透過驗證傳回`token`中的`serializedToken`，使用者端應用程式可協助防止未經授權的存取（例如串流擷取），並確保只有經過適當授權的使用者才能播放內容。
+
+#### 8.使用者端應用程式是否應在播放期間重新整理過期的媒體權杖？ {#authorization-phase-faq8}
+
+不適用。
+
+當串流正在播放時，使用者端應用程式不需要重新整理過期的媒體Token。 如果媒體權杖在播放期間到期，則應該允許資料流繼續而不中斷。 不過，使用者端在下次嘗試播放相同資源時，必須要求新的授權決定，並取得新的媒體代號。
+
+#### 9.授權決定中每個時間戳記屬性的用途為何？ {#authorization-phase-faq9}
+
+授權決定包括數個時間戳記屬性，這些屬性提供有關授權本身及關聯媒體權杖的有效期間的重要內容。 這些時間戳記根據與授權決定或媒體權杖相關，有不同的用途。
+
+**決定層級時間戳記**
+
+以下時間戳記說明整體授權決定的有效期間：
+
+| 屬性 | 說明 | 附註 |
+|-------------|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `notBefore` | 發出授權決定的時間。 | 這會標籤授權有效性視窗的開頭。 |
+| `notAfter` | 授權決定到期的時間。 | [授權存留時間(TTL)](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management)決定授權在需要重新授權之前維持有效時間。 此TTL會與MVPD代表商議。 |
+
+**權杖層級時間戳記**
+
+以下時間戳記說明與授權決定繫結的媒體權杖的有效期：
+
+| 屬性 | 說明 | 附註 |
+|-------------|-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `notBefore` | 發佈媒體權杖的時間。 | 這會標籤代號何時變成適用於播放的有效代號。 |
+| `notAfter` | 媒體Token到期的時間。 | 媒體權杖的生命週期故意縮短（通常為7分鐘），以將誤用風險降至最低，並解決權杖產生伺服器和權杖驗證伺服器之間的潛在時鐘差異。 |
+
+#### 10.什麼是資源？支援哪些格式？ {#authorization-phase-faq10}
 
 資源是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#resource)檔案中定義的辭彙。
 
@@ -439,7 +515,7 @@ ht-degree: 0%
 
 如需詳細資訊，請參閱[受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources)檔案。
 
-#### 6.使用者端應用程式一次可取得多少資源授權決定？ {#authorization-phase-faq6}
+#### 11.使用者端應用程式一次可取得多少資源授權決定？ {#authorization-phase-faq11}
 
 由於MVPD施加的條件，使用者端應用程式可以在單一API要求中取得有限資源數的授權決定，通常最多1個。
 
@@ -452,6 +528,10 @@ ht-degree: 0%
 #### 1.登出階段的用途為何？ {#logout-phase-faq1}
 
 登出階段的目的是讓使用者端應用程式能夠應使用者要求，在Adobe Pass驗證中終止使用者的已驗證設定檔。
+
+#### 2.登出階段是否為必要？ {#logout-phase-faq2}
+
+登出階段是強制性的，使用者端應用程式必須提供使用者登出的功能。
 
 +++
 

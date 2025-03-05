@@ -2,9 +2,9 @@
 title: REST API V2 API概述
 description: REST API V2 API概述
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: 9dcc649b4216cccc9be35cd6553308bfc345b5f4
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '149'
+source-wordcount: '151'
 ht-degree: 1%
 
 ---
@@ -30,7 +30,7 @@ ht-degree: 1%
 * [擷取驗證工作階段](sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)
 * [在使用者代理程式中執行驗證](sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)
 
-## 輪廓 {#rest-api-v2-apis-profiles}
+## 設定檔 {#rest-api-v2-apis-profiles}
 
 * [擷取設定檔](profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
 * [擷取特定mvpd的設定檔](profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
@@ -48,7 +48,7 @@ ht-degree: 1%
 ## 合作夥伴單一登入 {#rest-api-v2-apis-partner-single-sign-on}
 
 * [擷取合作夥伴驗證請求](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
-* [使用合作夥伴驗證回應擷取設定檔](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+* [使用合作夥伴驗證回應建立和擷取設定檔](partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
 
 ## 想要嘗試REST API V2嗎？
 

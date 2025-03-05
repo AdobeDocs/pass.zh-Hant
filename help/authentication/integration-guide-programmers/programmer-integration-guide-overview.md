@@ -2,9 +2,9 @@
 title: 程式設計師整合指南
 description: 程式設計師整合指南
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '2071'
+source-wordcount: '2073'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 > 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
-本整合指南適用於計畫與Adobe®通過驗證整合的內容提供者（程式設計人員）。
+本整合指南適用於計畫與Adobe® Pass驗證整合的內容提供者（程式設計人員）。
 
 在當今的數位環境中，檢視者可以隨時隨地存取網際網路，並要求存取您的受保護內容。 他們可能想要觀看單次事件，或想要取得您正在播放之整個電視影集的串流權利。
 
@@ -210,7 +210,7 @@ Adobe Pass Authentication作為Proxy，透過為雙方提供安全一致的介�
 **API**
 
 * [擷取合作夥伴驗證請求](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
-* [使用合作夥伴驗證回應擷取設定檔](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+* [使用合作夥伴驗證回應建立和擷取設定檔](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
 
 **流量**
 

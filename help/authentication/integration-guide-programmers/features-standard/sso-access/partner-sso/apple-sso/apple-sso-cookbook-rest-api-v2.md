@@ -2,9 +2,9 @@
 title: Apple SSO逐步指南(REST API V2)
 description: Apple SSO逐步指南(REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
 workflow-type: tm+mt
-source-wordcount: '3443'
+source-wordcount: '3615'
 ht-degree: 0%
 
 ---
@@ -284,7 +284,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    * [使用預先選取的mvpd在次要應用程式內執行驗證](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
    * [在次要應用程式內執行驗證，而不預先選取mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-1. **繼續使用合作夥伴驗證回應流程擷取設定檔：**&#x200B;工作階段合作夥伴端點回應包含下列資料：
+1. **繼續使用合作夥伴驗證回應流程建立及擷取設定檔：**&#x200B;工作階段合作夥伴端點回應包含下列資料：
    * `actionName`屬性設定為&quot;partner_profile&quot;。
    * `actionType`屬性設定為「直接」。
    * `authenticationRequest - type`屬性包含合作夥伴架構用於MVPD登入的安全性通訊協定（目前僅設定為SAML）。
@@ -316,11 +316,11 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    * 使用者提供者設定檔的到期日（如果有的話）有效。
    * 合作夥伴驗證回應（SAML回應）存在且有效。
 
-1. **使用合作夥伴驗證回應擷取設定檔：**&#x200B;串流應用程式會收集所有必要的資料，藉由呼叫Profiles合作夥伴端點來建立和擷取設定檔。
+1. **使用合作夥伴驗證回應來建立及擷取設定檔：**&#x200B;串流應用程式會收集所有必要的資料，藉由呼叫「設定檔合作夥伴」端點來建立及擷取設定檔。
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱[使用合作夥伴驗證回應](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) API檔案：
+   > 如需下列詳細資訊，請參閱[使用合作夥伴驗證回應](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) API檔案建立和擷取設定檔：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`、`partner`和`SAMLResponse`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`、`Content-Type`、`X-Device-Info`和`AP-Partner-Framework-Status`
@@ -371,6 +371,10 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 1. **擷取合作夥伴架構狀態：**&#x200B;串流應用程式會呼叫Apple開發的[視訊訂閱者帳戶架構](https://developer.apple.com/documentation/videosubscriberaccount)，以取得使用者許可權和提供者資訊。
 
    >[!IMPORTANT]
+   > 
+   > 如果選取的使用者設定檔型別不是「appleSSO」，串流應用程式可以略過此步驟。
+
+   >[!IMPORTANT]
    >
    > 請參閱[視訊訂閱者帳戶架構](https://developer.apple.com/documentation/videosubscriberaccount)檔案，以取得下列詳細資訊：
    >
@@ -386,13 +390,17 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    > 串流應用程式必須確定它為`VSAccountMetadataRequest`物件中的[`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed)屬性指定了等於`false`的Boolean值，以表示在此階段無法中斷使用者。
 
    >[!TIP]
-   > 
-   > 建議：串流應用程式可以使用快取值作為合作夥伴架構狀態資訊，建議在應用程式從背景轉換為前景狀態時重新整理。
+   >
+   > 建議：串流應用程式可改用快取值作為合作夥伴架構狀態資訊，建議在應用程式從背景轉換為前景狀態時重新整理。 在這種情況下，串流應用程式必須確保其快取並僅使用合作夥伴架構狀態的有效值，如「傳回合作夥伴架構狀態資訊」步驟所述。
 
 1. **傳回夥伴架構狀態資訊：**&#x200B;串流應用程式會驗證回應資料，以確保符合基本條件：
    * 已授予使用者許可權存取狀態。
    * 使用者提供者對應識別碼存在且有效。
-   * 使用者提供者設定檔的到期日（如果有的話）有效。
+   * 使用者提供者設定檔的到期日有效。
+
+   >[!IMPORTANT]
+   >
+   > 如果選取的使用者設定檔型別不是「appleSSO」，串流應用程式可以略過此步驟。
 
 1. **擷取預先授權決定：**&#x200B;串流應用程式會呼叫Decisions Preauthorize端點，收集所有必要的資料，以取得資源清單的預先授權決定。
 
@@ -406,7 +414,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    >
    > <br/>
    >
-   > 當選擇的設定檔是「appleSSO」型別設定檔時，串流應用程式在進一步提出請求之前，必須確定它包含合作夥伴框架狀態的有效值。
+   > 當選擇的設定檔是「appleSSO」型別設定檔時，串流應用程式在進一步提出請求之前，必須確定它包含合作夥伴框架狀態的有效值。 但是，如果所選的使用者設定檔型別不是「appleSSO」，則可以跳過此步驟。
    >
    > <br/>
    >
@@ -435,6 +443,10 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!IMPORTANT]
    >
+   > 如果選取的使用者設定檔型別不是「appleSSO」，串流應用程式可以略過此步驟。
+
+   >[!IMPORTANT]
+   >
    > 請參閱[視訊訂閱者帳戶架構](https://developer.apple.com/documentation/videosubscriberaccount)檔案，以取得下列詳細資訊：
    >
    > <br/>
@@ -450,12 +462,16 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!TIP]
    >
-   > 建議：串流應用程式可以使用快取值作為合作夥伴架構狀態資訊，建議在應用程式從背景轉換為前景狀態時重新整理。
+   > 建議：串流應用程式可改用快取值作為合作夥伴架構狀態資訊，建議在應用程式從背景轉換為前景狀態時重新整理。 在這種情況下，串流應用程式必須確保其快取並僅使用合作夥伴架構狀態的有效值，如「傳回合作夥伴架構狀態資訊」步驟所述。
 
 1. **傳回夥伴架構狀態資訊：**&#x200B;串流應用程式會驗證回應資料，以確保符合基本條件：
    * 已授予使用者許可權存取狀態。
    * 使用者提供者對應識別碼存在且有效。
-   * 使用者提供者設定檔的到期日（如果有的話）有效。
+   * 使用者提供者設定檔的到期日有效。
+
+   >[!IMPORTANT]
+   >
+   > 如果選取的使用者設定檔型別不是「appleSSO」，串流應用程式可以略過此步驟。
 
 1. **擷取授權決定：**&#x200B;串流應用程式會呼叫Decisions Authorized端點，收集所有必要資料以取得特定資源的授權決定。
 
@@ -469,7 +485,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    >
    > <br/>
    >
-   > 當選擇的設定檔是「appleSSO」型別設定檔時，串流應用程式在進一步提出請求之前，必須確定它包含合作夥伴框架狀態的有效值。
+   > 當選擇的設定檔是「appleSSO」型別設定檔時，串流應用程式在進一步提出請求之前，必須確定它包含合作夥伴框架狀態的有效值。 但是，如果所選的使用者設定檔型別不是「appleSSO」，則可以跳過此步驟。
    >
    > <br/>
    >
@@ -515,6 +531,10 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!IMPORTANT]
    >
+   > 當移除的使用者設定檔型別為「appleSSO」時，串流應用程式必須提示使用者完成由`actionName`和`actionType`屬性指定的合作夥伴層級的登出程式。
+
+   >[!IMPORTANT]
+   >
    > 如需登出回應中提供的詳細資訊，請參閱特定mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#response) API的[Initiate登出。
    >
    > <br/>
@@ -527,9 +547,5 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    > <br/>
    >
    > 如果驗證失敗，將會產生錯誤回應，提供可遵守[增強錯誤碼](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)檔案的額外資訊。
-
-   >[!IMPORTANT]
-   > 
-   > 串流應用程式必須確定它表示使用者可以繼續從合作夥伴層級登出。
 
 +++
