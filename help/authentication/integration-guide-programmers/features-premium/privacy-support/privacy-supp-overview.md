@@ -2,7 +2,7 @@
 title: 隱私權支援概述
 description: 隱私權支援概述
 exl-id: 9868a7e7-30f6-420e-a660-7d2f7870374d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 7e56c0a3651290376a72752638f463cf9415ec0e
 workflow-type: tm+mt
 source-wordcount: '217'
 ht-degree: 0%
@@ -21,12 +21,4 @@ ht-degree: 0%
 
 **CCPA** — 加州消費者隱私保護法(CCPA)是一項法律，為加州居民提供有關其個人資訊的新權利，並對在加州經營業務的特定實體施加資料保護責任。 CCPA確實會利用GDPR中已知的一些概念，例如存取和刪除個人資訊的權利。 不過，CCPA與GDPR還有其他不同之處。
 
-身為Adobe Pass驗證客戶，您可以透過[Privacy ServiceUI](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)或呼叫[Privacy ServiceAPI](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_api_tutorial.md)來提交個別GDPR或CCPA隱私權要求，以存取及刪除客戶資料。
-
-<!--
-
->[!MORELIKETHIS]
->
->* [Privacy Services Overview](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/technical_overview/privacy_service_overview/privacy_service_overview.md)
->* [Privacy Service API documentation](https://www.adobe.io/apis/experiencecloud/gdpr.html)
--->
+身為Adobe Pass驗證客戶，您可以透過[Privacy Service UI](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)或呼叫[Privacy Service API](https://www.adobe.io/apis/experiencecloud/gdpr/docs/alldocs.html#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_api_tutorial.md)來提交個別GDPR或CCPA隱私權要求，以存取及刪除客戶資料。
