@@ -2,9 +2,9 @@
 title: 擷取特定mvpd的設定檔
 description: REST API V2 — 擷取特定mvpd的設定檔
 exl-id: ed1abc33-c279-4465-b5a0-b4e5b892076e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1006'
+source-wordcount: '1016'
 ht-degree: 1%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 > REST API V2實作受到[節流機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)檔案的限制。
+
+>[!MORELIKETHIS]
+>
+> 請確定也造訪[REST API V2常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
 
 ## 請求 {#request}
 
@@ -94,7 +98,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
       <td>
-        在<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Platform-Subject-Token</a>標標頭檔案中會說明Platform Identity方法單一登入裝載的產生Adobe。
+        有關Platform Identity方法單一登入裝載的產生，請參閱<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>標標頭檔案。
         <br/><br/>
         如需使用平台身分識別啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台身分識別流程單一登入</a>檔案。
       </td>
@@ -171,7 +175,7 @@ ht-degree: 1%
       <td>403</td>
       <td>已禁止</td>
       <td>
-        暫時存取存留時間(TTL)已過期或超出資源的最大數目，使用者端需要指示使用者使用一般MVPD來啟動基本驗證流程。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
+        暫時存取存留時間(TTL)已過期或超出資源最大數量，使用者端需要指示使用者使用一般MVPD來啟動基本驗證流程。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
       </td>
    </tr>
    <tr>
@@ -256,7 +260,7 @@ ht-degree: 1%
                   可能的值包括：
                   <ul>
                     <li><b>mvpd （例如Spectrum、Cablevision等）</b><br/>建立設定檔的原因如下：基本驗證、使用平台身分識別進行單一登入，或使用服務權杖進行單一登入。</li>
-                    <li><b>Adobe</b><br/>建立設定檔的原因是：存取許可權降低、暫時存取。</li>
+                    <li><b>Adobe</b><br/>建立設定檔的原因為：存取許可權降低、暫時存取。</li>
                     <li><b>Apple</b><br/>建立設定檔的原因為：使用合作夥伴Apple的單一登入。</li>
                   </ul>
                <td><i>必填</i></td>

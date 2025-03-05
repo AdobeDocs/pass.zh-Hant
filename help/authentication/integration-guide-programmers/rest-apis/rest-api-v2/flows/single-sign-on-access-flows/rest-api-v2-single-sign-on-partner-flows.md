@@ -2,9 +2,9 @@
 title: 單一登入 — 合作夥伴 — 流程
 description: REST API V2 — 單一登入 — 合作夥伴 — 流程
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1444'
+source-wordcount: '1454'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > REST API V2實作受到[節流機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)檔案的限制。
+
+>[!MORELIKETHIS]
+>
+> 請確定也造訪[REST API V2常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
 
 Partner方法可讓多個應用程式使用合作夥伴架構狀態裝載，以便在使用Adobe Pass服務時在裝置層級實現單一登入(SSO)。
 
@@ -37,7 +41,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
 擷取合作夥伴驗證請求之前，請先確定符合下列先決條件：
 
-* 夥伴架構必須選取MVPD。
+* 合作夥伴架構必須選取MVPD。
 * 串流應用程式必須從合作夥伴架構取得合作夥伴架構狀態資訊，並將其傳遞至Adobe Pass伺服器。
 * 串流應用程式必須從Adobe Pass伺服器取得合作夥伴驗證請求，並將其傳遞至合作夥伴架構。
 
@@ -47,8 +51,8 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 > 
 > <br/>
 > 
-> * 夥伴架構支援使用者互動以選取MVPD。
-> * 夥伴架構支援使用者互動，以驗證選取的MVPD。
+> * 合作夥伴架構支援使用者互動以選取MVPD。
+> * 合作夥伴架構支援使用者互動，以透過選取的MVPD進行驗證。
 > * 合作夥伴架構提供使用者許可權與提供者資訊。
 
 ### 工作流程 {#workflow-retrieve-partner-authentication-request}
@@ -119,7 +123,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    * `authenticationRequest - request`屬性包含傳遞至合作夥伴架構的SAML要求。
    * `authenticationRequest - attributesNames`屬性包含傳遞至合作夥伴架構的SAML屬性。
 
-   如果Adobe Pass後端未識別有效的設定檔，且合作夥伴單一登入驗證通過時，串流應用程式會收到包含動作和資料的回應，並傳遞至合作夥伴架構，以使用MVPD啟動驗證流程。
+   如果Adobe Pass後端未識別有效的設定檔，且合作夥伴單一登入驗證通過時，串流應用程式會收到包含動作和資料的回應，並傳遞至合作夥伴架構，以啟動與MVPD的驗證流程。
 
    如需有關使用合作夥伴驗證回應的設定檔擷取流程的詳細資訊，請參閱[使用合作夥伴驗證回應擷取設定檔](#retrieve-profile-using-partner-authentication-response)區段。
 
@@ -154,15 +158,15 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
 使用合作夥伴驗證回應擷取設定檔之前，請確定符合下列先決條件：
 
-* 夥伴架構必須使用選取的MVPD執行驗證。
+* 合作夥伴架構必須使用選取的MVPD執行驗證。
 * 串流應用程式必須從合作夥伴架構取得合作夥伴驗證回應以及合作夥伴架構狀態資訊，並將其傳遞至Adobe Pass伺服器。
 
 >[!IMPORTANT]
 >
 > 假設
 >
-> * 夥伴架構支援使用者互動以選取MVPD。
-> * 夥伴架構支援使用者互動，以驗證選取的MVPD。
+> * 合作夥伴架構支援使用者互動以選取MVPD。
+> * 合作夥伴架構支援使用者互動，以透過選取的MVPD進行驗證。
 > * 合作夥伴架構提供使用者許可權與提供者資訊。
 
 ### 工作流程 {#workflow-retrieve-profile-using-partner-authentication-response}
@@ -173,7 +177,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
 *使用合作夥伴驗證回應擷取已驗證的設定檔*
 
-1. **合作夥伴架構完成MVPD驗證：**&#x200B;如果驗證流程成功，合作夥伴架構與MVPD的互動會產生合作夥伴驗證回應（SAML回應），此回應會連同合作夥伴架構狀態資訊一併傳回。
+1. **使用合作夥伴架構完成MVPD驗證：**&#x200B;如果驗證流程成功，合作夥伴架構與MVPD的互動會產生合作夥伴驗證回應（SAML回應），此回應會連同合作夥伴架構狀態資訊一併傳回。
 
 1. **傳回夥伴驗證回應：**&#x200B;串流應用程式會驗證回應資料，以確保符合基本條件：
    * 已授予使用者許可權存取狀態。

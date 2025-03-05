@@ -2,9 +2,9 @@
 title: REST API V2常見問題集
 description: REST API V2常見問題集
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 871afc4e7ec04d62590dd574bf4e28122afc01b6
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '6963'
+source-wordcount: '8198'
 ht-degree: 0%
 
 ---
@@ -123,7 +123,51 @@ ht-degree: 0%
 
 當使用者端應用程式需要播放內容時，「驗證階段」會成為「預先授權階段」或「授權階段」的先決條件步驟。
 
-#### 2.使用者端應用程式如何知道使用者是否已驗證？ {#authentication-phase-faq2}
+#### 2.什麼是驗證工作階段？其有效期為多久？ {#authentication-phase-faq2}
+
+驗證工作階段是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#session)檔案中定義的辭彙。
+
+驗證工作階段會儲存可從「工作階段」端點擷取的已起始驗證程式相關資訊。
+
+驗證工作階段的有效時間有限，且在由`notAfter`時間戳記所指定的問題發生時很短，這表示在需要重新啟動流程之前，使用者必須完成驗證程式的時間長度。
+
+使用者端應用程式可使用驗證工作階段回應，以瞭解如何進行驗證程式。 請注意，在某些情況下，使用者不需要驗證，例如提供暫時存取、存取效能降低，或使用者已經驗證。
+
+如需詳細資訊，請參閱下列檔案：
+
+* [建立驗證工作階段API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
+* [繼續驗證工作階段API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
+* [主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
+* [在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
+
+#### 3.什麼是驗證碼？其有效期為多久？ {#authentication-phase-faq3}
+
+驗證代碼是[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#code)檔案中定義的辭彙。
+
+驗證代碼會儲存使用者啟動驗證程式時產生的唯一值，並唯一識別使用者的驗證工作階段，直到程式完成或驗證工作階段過期為止。
+
+驗證程式碼的有效時間範圍僅限於起始驗證工作階段時指定的有限且較短的時間範圍（以`notAfter`時間戳記表示），這表示使用者在需要重新啟動流程之前必須完成驗證程式的時間量。
+
+使用者端應用程式可使用驗證碼來驗證使用者是否已成功完成驗證，並擷取使用者的設定檔資訊，通常透過輪詢機制。
+
+使用者端應用程式也可以使用驗證代碼，讓使用者在相同裝置或第二個（熒幕）裝置上完成或繼續驗證程式，因為驗證工作階段並未到期。
+
+如需詳細資訊，請參閱下列檔案：
+
+* [建立驗證工作階段API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
+* [繼續驗證工作階段API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
+* [主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
+* [在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
+
+#### 4.使用者端應用程式如何知道使用者是否輸入有效的驗證代碼，以及驗證工作階段是否尚未過期？ {#authentication-phase-faq4}
+
+使用者端應用程式可以傳送要求給負責繼續驗證工作階段或擷取與驗證代碼關聯的驗證工作階段資訊的其中一個「工作階段」端點，來驗證使用者在次要（熒幕）應用程式中輸入的驗證代碼。
+
+如果輸入的驗證碼錯誤或驗證工作階段過期，使用者端應用程式會收到[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)。
+
+如需詳細資訊，請參閱[繼續驗證工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)和[擷取驗證工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)檔案。
+
+#### 5.使用者端應用程式如何知道使用者是否已驗證？ {#authentication-phase-faq5}
 
 使用者端應用程式可以查詢下列其中一個端點，該端點能夠驗證使用者是否已通過驗證並傳回設定檔資訊：
 
@@ -136,7 +180,128 @@ ht-degree: 0%
 * [主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
 
-#### 3.使用者端應用程式如何取得使用者的中繼資料資訊？ {#authentication-phase-faq3}
+#### 6.設定檔是什麼及其有效期限？ {#authentication-phase-faq6}
+
+設定檔是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#profile)檔案中定義的辭彙。
+
+設定檔會儲存有關使用者驗證有效性的資訊、中繼資料資訊以及可從「設定檔」端點擷取的更多資訊。
+
+使用者端應用程式可使用設定檔來瞭解使用者的驗證狀態、存取使用者中繼資料資訊、尋找用於驗證的方法或用於提供身分識別的實體。
+
+如需詳細資訊，請參閱下列檔案：
+
+* [設定檔端點API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
+* [特定MVPD API的設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
+* [特定（驗證）程式碼API的設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
+* [主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
+* [在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+
+設定檔在被`notAfter`時間戳記查詢時指定的有限時間範圍內有效，這表示使用者在需要再次通過驗證階段之前具有有效驗證的時間量。
+
+這個有限的時間範圍稱為驗證(authN) [TTL](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#ttl)，可由您的組織管理員或代表您行事的Adobe Pass驗證代表透過Adobe Pass [TVE儀表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)檢視及變更。
+
+如需詳細資訊，請參閱[TVE儀表板整合使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows)檔案。
+
+#### 7.使用者端應用程式是否應該將使用者的設定檔資訊快取在永久儲存體中？ {#authentication-phase-faq7}
+
+使用者端應用程式應將使用者的設定檔資訊快取在持續性儲存體中，以避免不必要的請求並改善使用者體驗，同時考慮到以下方面：
+
+| 屬性 | 使用者體驗 |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `attributes` | 使用者端應用程式可使用此專案，根據不同的[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)金鑰（例如，`zip`、`maxRating`等）來個人化使用者體驗。 |
+| `mvpd` | 使用者端應用程式可以使用此項來追蹤使用者選取的電視提供者。<br/><br/>當目前的使用者設定檔過期時，使用者端應用程式可以使用記憶中的MVPD選項，並直接要求使用者確認。 |
+| `notAfter` | 使用者端應用程式可使用此項來追蹤使用者設定檔到期日，並在到期時觸發重新驗證程式，以避免在預先授權或授權階段期間發生錯誤。<br/><br/>使用者端應用程式錯誤處理必須能夠處理[authenticated_profile_expired](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)錯誤碼，這表示使用者端應用程式需要使用者重新驗證。 |
+
+#### 8.使用者端應用程式可以擴充使用者的設定檔而不需要重新驗證嗎？ {#authentication-phase-faq8}
+
+不適用。
+
+使用者設定檔的到期時間是由使用MVPD建立的驗證TTL所決定，因此若沒有使用者互動，則無法延伸至超過其有效期限。
+
+因此，使用者端應用程式必須提示使用者重新驗證，並與MVPD登入頁面互動，以重新整理我們在系統上的設定檔。
+
+不過，對於支援[家用驗證](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md) (HBA)的MVPD，使用者不需要輸入認證。
+
+#### 9.每個可用設定檔端點的使用案例為何？ {#authentication-phase-faq9}
+
+「設定檔」端點的設計是要讓使用者端應用程式能夠知道使用者的驗證狀態、存取使用者中繼資料資訊、尋找用於驗證的方法或用於提供身分識別的實體。
+
+每個端點皆適合特定使用案例，如下所示：
+
+| API | 說明 | 使用案例 |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [設定檔端點API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | 擷取所有使用者設定檔。 | **使用者第一次開啟使用者端應用程式**<br/><br/>&#x200B;在此案例中，使用者端應用程式不會將使用者選取的MVPD識別碼快取到永久儲存體中。<br/><br/>因此，它將傳送單一要求以擷取所有可用的使用者設定檔。 |
+| 特定MVPD API的[設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | 擷取與特定MVPD相關聯的使用者設定檔。 | **使用者在上次造訪中進行驗證後返回使用者端應用程式**<br/><br/>&#x200B;在此情況下，使用者端應用程式必須將使用者先前選取的MVPD識別碼快取到永久儲存區。<br/><br/>因此，它會傳送單一要求，以擷取該特定MVPD的使用者設定檔。 |
+| [特定（驗證）程式碼API的設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 擷取與特定驗證代碼相關聯的使用者設定檔。 | **使用者啟動驗證程式**<br/><br/>&#x200B;在此案例中，使用者端應用程式必須判斷使用者是否已順利完成驗證，並擷取其設定檔資訊。<br/><br/>因此，它會啟動輪詢機制，以擷取與驗證碼相關聯的使用者設定檔。 |
+
+#### 10.如果使用者有多個MVPD設定檔，使用者端應用程式該怎麼做？ {#authentication-phase-faq10}
+
+當使用者有多個MVPD設定檔時，使用者端應用程式會負責決定處理此案例的最佳方法。
+
+使用者端應用程式可選擇提示使用者選取所需的MVPD設定檔，或自動進行選取，例如從回應中選擇第一個使用者設定檔，或選擇有效期最長的使用者設定檔。
+
+#### 11.當使用者設定檔過期時，會發生什麼事？ {#authentication-phase-faq11}
+
+當使用者設定檔到期時，它們不再包含在來自設定檔端點的回應中。
+
+如果Profiles端點傳回空的設定檔對應回應，使用者端應用程式必須建立新的驗證工作階段，並提示使用者重新驗證。
+
+如需詳細資訊，請參閱[建立驗證工作階段API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)檔案。
+
+#### 12.使用者設定檔何時會失效？ {#authentication-phase-faq12}
+
+使用者設定檔在下列情況下會失效：
+
+* 驗證TTL過期時，如Profiles端點回應中的`notAfter`時間戳記所指示。
+* 使用者端應用程式變更[AP-Device-Identifier](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)標頭值時。
+* 當使用者端應用程式更新用於擷取[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)標頭值的使用者端認證時。
+* 當使用者端應用程式撤銷或更新用來取得使用者端認證的軟體陳述式時。
+
+#### 13.使用者端應用程式應何時啟動輪詢機制？ {#authentication-phase-faq13}
+
+為了確保效率並避免不必要的請求，使用者端應用程式必須在下列條件下啟動輪詢機制：
+
+**在主要（熒幕）應用程式內執行的驗證**
+
+主要（串流）應用程式應在瀏覽器元件載入[工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端點要求中`redirectUrl`引數指定的URL後，於使用者到達最終目的地頁面時開始輪詢。
+
+**在次要（熒幕）應用程式內執行的驗證**
+
+主要（串流）應用程式應在使用者起始驗證程式後立即開始輪詢 — 在收到[工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端點回應並向使用者顯示驗證代碼之後。
+
+#### 14.使用者端應用程式何時應停止輪詢機制？ {#authentication-phase-faq14}
+
+為了確保效率並避免不必要的請求，使用者端應用程式必須在下列條件下停止輪詢機制：
+
+**成功的驗證**
+
+已成功擷取使用者的設定檔資訊，確認其驗證狀態。 此時，不再需要輪詢。
+
+**驗證工作階段與程式碼到期**
+
+驗證工作階段和程式碼會過期，如[工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端點回應中的`notAfter`時間戳記所指示。 如果發生這種狀況，使用者必須重新啟動驗證程式，而且使用先前驗證代碼的輪詢應該立即停止。
+
+**已產生新的驗證碼**
+
+如果使用者在主要（熒幕）裝置上要求新的驗證碼，則現有工作階段不再有效，使用先前驗證碼的輪詢應立即停止。
+
+#### 15.使用者端應用程式應用於輪詢機制時，呼叫之間的間隔為何？ {#authentication-phase-faq15}
+
+為了確保效率並避免不必要的請求，使用者端應用程式必須在下列條件下設定輪詢機制頻率：
+
+| **在主要（熒幕）應用程式內執行的驗證** | **在次要（熒幕）應用程式內執行的驗證** |
+|----------------------------------------------------------------------|----------------------------------------------------------------------|
+| 主要（串流）應用程式應每1-5秒輪詢一次。 | 主要（串流）應用程式應每3-5秒輪詢一次。 |
+
+#### 16.使用者端應用程式可傳送的輪詢要求數目上限是多少？ {#authentication-phase-faq16}
+
+使用者端應用程式必須遵守Adobe Pass驗證[節流機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits)所定義的目前限制。
+
+使用者端應用程式錯誤處理必須能夠處理[429太多要求](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-response)錯誤碼，這表示使用者端應用程式已超過允許的要求數目上限。
+
+如需詳細資訊，請參閱[節流機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)檔案。
+
+#### 17.使用者端應用程式如何取得使用者的中繼資料資訊？ {#authentication-phase-faq17}
 
 使用者端應用程式可以查詢下列端點之一，這些端點能夠傳回[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)資訊作為設定檔資訊的一部分：
 
@@ -144,74 +309,18 @@ ht-degree: 0%
 * [特定MVPD API的設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
 * [特定（驗證）程式碼API的設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
 
+使用者端應用程式不需要查詢個別端點來擷取使用者的中繼資料資訊，因為驗證使用者是否已驗證時，取得的設定檔資訊中已包含該資訊。
+
 如需詳細資訊，請參閱下列檔案：
 
 * [主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
 
-#### 4.什麼是驗證工作階段？其有效期為多久？ {#authentication-phase-faq4}
+#### 18.使用者端應用程式應如何管理降級存取？ {#authentication-phase-faq18}
 
-驗證工作階段是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#session)檔案中定義的辭彙。
+鑑於您的組織打算使用[效能降低](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)功能，使用者端應用程式必須處理效能降低的存取流程，此流程概述了REST API v2端點在此類狀況下的行為。
 
-驗證工作階段會儲存可從「工作階段」端點擷取的已起始驗證程式相關資訊。
-
-驗證工作階段在問題時指定的有限和較短時間範圍內有效，這表示在要求重新啟動流程之前，使用者必須完成驗證流程的時間量。
-
-使用者端應用程式可使用驗證工作階段回應，以瞭解如何進行驗證程式。 請注意，在某些情況下，使用者不需要驗證，例如提供暫時存取、存取效能降低，或使用者已經驗證。
-
-如需詳細資訊，請參閱下列檔案：
-
-* [建立驗證工作階段API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
-* [繼續驗證工作階段API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
-* [主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
-* [在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
-
-#### 5.什麼是驗證碼？其有效期為多久？ {#authentication-phase-faq5}
-
-驗證代碼是[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#code)檔案中定義的辭彙。
-
-驗證代碼會儲存使用者啟動驗證程式時產生的唯一值，並唯一識別使用者的驗證工作階段，直到程式完成或驗證工作階段過期為止。
-
-驗證代碼在起始驗證工作階段時指定的有限和較短時間範圍內有效，這表示在要求重新啟動流程之前，使用者必須完成驗證流程的時間量。
-
-使用者端應用程式可使用驗證代碼，讓使用者在相同裝置或第二部裝置上完成或繼續驗證程式，因為驗證工作階段並未過期。
-
-如需詳細資訊，請參閱下列檔案：
-
-* [建立驗證工作階段API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
-* [繼續驗證工作階段API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
-* [主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
-* [在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
-
-#### 6.使用者端應用程式如何知道使用者是否輸入有效的驗證代碼，以及驗證工作階段是否尚未過期？ {#authentication-phase-faq6}
-
-使用者端應用程式可以傳送要求給負責擷取與驗證代碼關聯的驗證工作階段資訊的「工作階段」端點，來驗證使用者在次要（熒幕）應用程式中輸入的驗證代碼。
-
-如果提供的驗證碼輸入錯誤或驗證工作階段過期，使用者端應用程式會收到[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)。
-
-如需詳細資訊，請參閱[擷取驗證工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)檔案。
-
-#### 7.設定檔是什麼？其有效期為多久？ {#authentication-phase-faq7}
-
-設定檔是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#profile)檔案中定義的辭彙。
-
-設定檔會儲存有關使用者驗證有效性的資訊、中繼資料資訊以及可從「設定檔」端點擷取的更多資訊。
-
-使用者端應用程式可使用設定檔來瞭解使用者的驗證狀態、存取使用者中繼資料資訊或尋找用於驗證的方法。
-
-如需詳細資訊，請參閱下列檔案：
-
-* [設定檔端點API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
-* [特定MVPD API的設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
-* [特定（驗證）程式碼API的設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
-* [主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
-* [在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
-
-在查詢時指定的有限時間範圍內，設定檔有效，這表示在需要再次通過驗證階段之前，使用者已具有有效驗證的時間量。
-
-這個有限的時間範圍稱為驗證(authN) [TTL](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#ttl)，可由您的組織管理員或代表您行事的Adobe Pass驗證代表透過Adobe Pass [TVE儀表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)檢視及變更。
-
-如需詳細資訊，請參閱[TVE儀表板整合使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows)檔案。
+如需詳細資訊，請參閱[降級存取流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)檔案。
 
 +++
 
@@ -476,9 +585,17 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 是。
 
-整合REST API V2的使用者端應用程式受益於預設啟用的增強錯誤代碼功能。
+移轉至REST API V2的使用者端應用程式預設會自動受益於此功能，提供更詳細且精確的錯誤資訊。
 
 如需詳細資訊，請參閱[增強錯誤碼](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)檔案。
+
+#### 5.移轉至REST API V2時，現有的整合是否需要變更設定？ {#migration-faq5}
+
+不適用。
+
+移轉至REST API V2的使用者端應用程式不需要變更現有MVPD整合的設定。 此外，他們將繼續對現有[服務提供者](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#service-provider)和[MVPD](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#mvpd)使用相同的識別碼。
+
+此外，Adobe Pass驗證用來與MVPD端點通訊的通訊協定維持不變。
 
 +++
 

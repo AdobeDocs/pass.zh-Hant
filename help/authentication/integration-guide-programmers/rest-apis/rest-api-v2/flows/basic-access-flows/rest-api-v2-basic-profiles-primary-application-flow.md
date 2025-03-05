@@ -2,9 +2,9 @@
 title: 基本設定檔 — 主要應用程式 — 流量
 description: REST API V2 — 基本設定檔 — 主要應用程式 — 流量
 exl-id: 19ddf382-9a32-4b94-aa84-7611c0e1780e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '964'
+source-wordcount: '974'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 >[!IMPORTANT]
 >
 > REST API V2實作受到[節流機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)檔案的限制。
+
+>[!MORELIKETHIS]
+>
+> 請確定也造訪[REST API V2常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
 
 Adobe Pass驗證許可權內的&#x200B;**設定檔流程**&#x200B;可讓串流應用程式存取作用中使用者登入的相關資訊。
 
@@ -91,7 +95,7 @@ Adobe Pass驗證許可權內的&#x200B;**設定檔流程**&#x200B;可讓串流�
 
 *擷取特定mvpd的設定檔*
 
-1. **擷取特定mvpd的設定檔：**&#x200B;串流應用程式會傳送要求給設定檔端點，收集所有必要的資料，以擷取該特定MVPD的設定檔資訊。
+1. **擷取特定mvpd的設定檔：**&#x200B;串流應用程式會傳送要求至設定檔端點，以收集所有必要的資料，擷取該特定MVPD的設定檔資訊。
 
    >[!IMPORTANT]
    >
@@ -130,7 +134,7 @@ Adobe Pass驗證許可權內的&#x200B;**設定檔流程**&#x200B;可讓串流�
 
 在擷取特定驗證代碼的設定檔之前，請確定您符合下列必要條件：
 
-* 串流應用程式（具有用來與MVPD執行互動式驗證的`code`）想要擷取特定驗證程式碼的設定檔。
+* 串流應用程式有一個`code`用來與MVPD執行互動式驗證，它想要擷取特定驗證程式碼的設定檔。
 
 ### 工作流程 {#workflow-retrieve-profile-for-specific-code}
 

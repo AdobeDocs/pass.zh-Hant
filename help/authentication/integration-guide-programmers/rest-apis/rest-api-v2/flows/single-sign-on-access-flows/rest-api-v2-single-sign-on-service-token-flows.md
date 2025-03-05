@@ -2,9 +2,9 @@
 title: 單一登入 — 服務權杖 — 流程
 description: REST API V2 — 單一登入 — 服務權杖 — 流程
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '1848'
+source-wordcount: '1858'
 ht-degree: 0%
 
 ---
@@ -19,12 +19,16 @@ ht-degree: 0%
 >
 > REST API V2實作受到[節流機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)檔案的限制。
 
+>[!MORELIKETHIS]
+>
+> 請確定也造訪[REST API V2常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
+
 Service Token方法可讓多個應用程式使用唯一的使用者識別碼，在使用Adobe Pass服務時跨多個裝置和平台達成單一登入(SSO)。
 
 這些應用程式負責在Adobe Pass系統之外，使用外部身分服務來擷取唯一使用者識別碼裝載，例如：
 
 * 直接對消費者(DTC)服務，使用者使用相同的憑證登入每個裝置，並與相同的使用者ID或使用者帳戶名稱相關聯。
-* 第三方驗證服務，例如Google或Facebook，其使用者使用相同的憑證登入每個裝置，並與相同的電子郵件地址建立關聯。
+* 第三方驗證服務，例如Google或Facebook，使用者會使用相同的憑證登入每個裝置，並與相同的電子郵件地址建立關聯。
 
 應用程式負責將此不重複使用者識別碼裝載納入指定該裝載的所有要求的`AD-Service-Token`標題中。
 
@@ -106,7 +110,7 @@ Service Token方法可讓多個應用程式使用唯一的使用者識別碼，�
    * `actionName`屬性已設定為「驗證」。
    * `actionType`屬性設定為「互動式」。
 
-   如果Adobe Pass後端未識別有效的設定檔，第一個串流應用程式會開啟使用者代理程式，以載入提供的`url`，並向驗證端點提出要求。 此流程可能包含數個重新導向，最終將使用者帶往MVPD登入頁面並提供有效認證。
+   如果Adobe Pass後端未識別有效的設定檔，第一個串流應用程式會開啟使用者代理程式，以載入提供的`url`，並向驗證端點提出要求。 此流程可能包含數個重新導向，最終將使用者引導至MVPD登入頁面並提供有效認證。
 
 1. **完成MVPD驗證：**&#x200B;如果驗證流程成功，使用者代理程式互動會在Adobe Pass後端儲存一般設定檔，並到達提供的`redirectUrl`。
 

@@ -2,9 +2,9 @@
 title: 基本驗證 — 主要應用程式 — 流量
 description: REST API V2 — 基本驗證 — 主要應用程式 — 流量
 exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '894'
+source-wordcount: '904'
 ht-degree: 0%
 
 ---
@@ -19,20 +19,24 @@ ht-degree: 0%
 >
 > REST API V2實作受到[節流機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)檔案的限制。
 
-Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應用程式驗證使用者是否擁有有效的MVPD帳戶。 此程式要求使用者擁有作用中的MVPD帳戶，並在MVPD登入頁面上輸入有效的登入認證。
+>[!MORELIKETHIS]
+>
+> 請確定也造訪[REST API V2常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
+
+Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應用程式驗證使用者是否擁有有效的MVPD帳戶。 此程式會要求使用者擁有作用中的MVPD帳戶，並在MVPD登入頁面上輸入有效的登入認證。
 
 在下列情況下需要驗證流程：
 
 * 使用者首次開啟應用程式時。
 * 當使用者的先前驗證過期時。
 * 當使用者從MVPD帳戶登出時。
-* 當使用者想要使用不同的MVPD進行驗證時。
+* 當使用者想要使用其他MVPD進行驗證時。
 
 在所有這些情況下，呼叫任何設定檔端點的應用程式會收到空白回應或一或多個設定檔，但針對不同的MVPD。
 
-**驗證流程**&#x200B;需要使用者代理程式（瀏覽器）來完成從應用程式到Adobe Pass後端，然後到MVPD登入頁面，最後返回應用程式的一系列呼叫。 此流程可能包括數個重新導向至MVPD系統並管理針對每個網域儲存的Cookie或工作階段，若沒有使用者代理程式，這對於實現和安全都極具挑戰。
+**驗證流程**&#x200B;需要使用者代理程式（瀏覽器）來完成從應用程式到Adobe Pass後端，然後到MVPD登入頁面，最後返回應用程式的一系列呼叫。 此流程可能包括重新導向至MVPD系統的數個動作，以及管理針對每個網域儲存的Cookie或工作階段，若沒有使用者代理程式，這些動作很難達成且安全無虞。
 
-根據主要應用程式（串流應用程式）支援使用者互動以選取MVPD以及在使用者代理程式中使用選取的MVPD進行驗證的功能，驗證情況如下：
+根據主要應用程式（串流應用程式）功能，以支援使用者選擇MVPD的互動，以及在使用者代理程式中使用所選的MVPD進行驗證，驗證情況如下：
 
 * [在主要應用程式內執行驗證](./rest-api-v2-basic-authentication-primary-application-flow.md)
 * [使用預先選取的mvpd在次要應用程式內執行驗證](rest-api-v2-basic-authentication-secondary-application-flow.md)
@@ -107,7 +111,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
    * `actionName`屬性已設定為「驗證」。
    * `actionType`屬性設定為「互動式」。
 
-   如果Adobe Pass後端未識別有效的設定檔，串流應用程式會開啟使用者代理程式，以載入提供的`url`，並向驗證端點提出要求。 此流程可能包含數個重新導向，最終將使用者帶往MVPD登入頁面並提供有效認證。
+   如果Adobe Pass後端未識別有效的設定檔，串流應用程式會開啟使用者代理程式，以載入提供的`url`，並向驗證端點提出要求。 此流程可能包含數個重新導向，最終將使用者引導至MVPD登入頁面並提供有效認證。
 
 1. **完成MVPD驗證：**&#x200B;如果驗證流程成功，使用者代理程式互動會在Adobe Pass後端儲存一般設定檔，並到達提供的`redirectUrl`。
 

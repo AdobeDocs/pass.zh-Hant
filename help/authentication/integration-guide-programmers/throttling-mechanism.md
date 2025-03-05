@@ -2,7 +2,7 @@
 title: 節流機制
 description: 瞭解Adobe Pass驗證中使用的節流機制。 在此頁面中探索此機制的概觀。
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
 source-wordcount: '1141'
 ht-degree: 0%
@@ -42,7 +42,7 @@ Pass Authentication引進節流機制，以確保在客戶的使用者之間公�
 
 您可以在[這裡](legacy/rest-api-v1/cookbooks/rest-api-cookbook-servertoserver.md)找到更多有關如何傳遞X-Forwarded-For標頭的詳細資料。
 
-### 實際限制和端點
+### 實際限制和端點 {#throttling-mechanism-limits}
 
 目前，預設限制允許每秒最多1個請求，初始高載為10個請求（所識別使用者端第一次互動允許一次性使用，這應允許初始化成功完成）。 這應該不會影響我們所有客戶的任何一般業務案例。
 
@@ -85,11 +85,11 @@ Pass Authentication引進節流機制，以確保在客戶的使用者之間公�
 
 #### checkPreauthorizedResources
 
-從SDK使用`checkPreauthorizedResources`函式達到節流限制時，SDK會透過`errorHandler`回呼傳回P100錯誤代碼。
+使用SDK中的`checkPreauthorizedResources`函式達到節流限制時，SDK會透過`errorHandler`回呼傳回P100錯誤代碼。
 
 #### getMetadata
 
-當從SDK使用`getMetadata`函式達到節流限制時，SDK將透過`setMetadataStatus`回呼傳回空白回應。
+使用SDK中的`getMetadata`函式達到節流限制時，SDK會透過`setMetadataStatus`回呼傳回空白回應。
 
 如需各個特定實作的詳細資訊，請參閱特定的SDK檔案。
 
@@ -97,7 +97,7 @@ Pass Authentication引進節流機制，以確保在客戶的使用者之間公�
 - [Android SDK API參考](legacy/sdks/android-sdk/android-sdk-api-reference.md)
 - [iOS/tvOS API參考](legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
 
-### API回應變更和回應
+### API回應變更和回應 {#throttling-mechanism-response}
 
 當我們確定已違反限制時，我們會以特定回應狀態（HTTP 429太多請求）標示此請求，指示您已在時間間隔內使用指派給使用者裝置（IP位址）的所有Token。
 

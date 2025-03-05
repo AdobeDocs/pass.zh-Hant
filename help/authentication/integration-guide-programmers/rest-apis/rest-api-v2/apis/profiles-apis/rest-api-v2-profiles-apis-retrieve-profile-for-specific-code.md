@@ -2,9 +2,9 @@
 title: 擷取特定程式碼的設定檔
 description: REST API V2 — 擷取特定程式碼的設定檔
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '701'
+source-wordcount: '711'
 ht-degree: 1%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 > REST API V2實作受到[節流機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)檔案的限制。
+
+>[!MORELIKETHIS]
+>
+> 請確定也造訪[REST API V2常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
 
 ## 請求 {#request}
 
@@ -127,7 +131,7 @@ ht-degree: 1%
       <td>403</td>
       <td>已禁止</td>
       <td>
-        暫時存取存留時間(TTL)已過期或超出資源的最大數目，使用者端需要指示使用者使用一般MVPD來啟動基本驗證流程。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
+        暫時存取存留時間(TTL)已過期或超出資源最大數量，使用者端需要指示使用者使用一般MVPD來啟動基本驗證流程。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
       </td>
    </tr> 
    <tr>
@@ -212,7 +216,7 @@ ht-degree: 1%
                   可能的值包括：
                   <ul>
                     <li><b>mvpd （例如Spectrum、Cablevision等）</b><br/>建立設定檔的原因是：基本驗證。</li>
-                    <li><b>Adobe</b><br/>建立設定檔的原因是：存取許可權降低、暫時存取。</li>
+                    <li><b>Adobe</b><br/>建立設定檔的原因為：存取許可權降低、暫時存取。</li>
                   </ul>
                <td><i>必填</i></td>
             </tr>

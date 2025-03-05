@@ -2,9 +2,9 @@
 title: 單一登出 — 流量
 description: REST API V2 — 單一登出 — 流量
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
-source-wordcount: '577'
+source-wordcount: '587'
 ht-degree: 0%
 
 ---
@@ -19,13 +19,17 @@ ht-degree: 0%
 >
 > REST API V2實作受到[節流機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)檔案的限制。
 
+>[!MORELIKETHIS]
+>
+> 請確定也造訪[REST API V2常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
+
 ## 針對特定mvpd啟動單一登出 {#initiate-single-logout-for-specific-mvpd}
 
 ### 先決條件 {#prerequisites-initiate-single-logout-for-specific-mvpd}
 
 在起始特定MVPD的單一登出之前，請確定符合下列先決條件：
 
-* 第二個串流應用程式必須具有已使用其中一個單一登入驗證流程，成功建立MVPD的有效單一登入設定檔：
+* 第二個串流應用程式必須具備有效的單一登入設定檔，且已使用其中一個單一登入驗證流程成功為MVPD建立：
    * [使用平台身分識別透過單一登入執行驗證](rest-api-v2-single-sign-on-platform-identity-flows.md)
    * [使用服務權杖，透過單一登入執行驗證](rest-api-v2-single-sign-on-service-token-flows.md)
 * 第二個串流應用程式在需要登出MVPD時，必須起始單一登出流程。
@@ -40,7 +44,7 @@ ht-degree: 0%
 
 ### 工作流程 {#workflow-initiate-single-logout-for-specific-mvpd}
 
-執行以下指定步驟，為特定MVPD實作單一登出流程，如下圖所示。
+執行以下指定步驟，為特定MVPD實施單一登出流程，如下圖所示。
 
 ![啟動特定mvpd的單一登出](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-initiate-single-logout-for-specific-mvpd-flow.png)
 
@@ -91,7 +95,7 @@ ht-degree: 0%
 
 1. **表示登出完成：**&#x200B;如果MVPD不支援登出流程，串流應用程式會處理回應，並可以使用它選擇性地在使用者介面上顯示特定訊息。
 
-1. **啟動MVPD登出：**&#x200B;如果MVPD支援登出流程，串流應用程式會處理回應，並使用使用者代理程式來啟動與MVPD的登出流程。 此流程可能包括數個重新導向至MVPD系統。 不過，結果是MVPD會執行其內部清理，並將最終登出確認傳送回Adobe Pass後端。
+1. **啟動MVPD登出：**&#x200B;如果MVPD不支援登出流程，串流應用程式會處理回應，並使用使用者代理程式來啟動與MVPD的登出流程。 此流程可能包含數個重新導向至MVPD系統的動作。 然而，結果是MVPD會執行內部清理，並將最終登出確認傳送回Adobe Pass後端。
 
 1. **表示登出完成：**&#x200B;串流應用程式可以等待使用者代理程式到達提供的`redirectUrl`，並且可以使用它作為訊號，以選擇在使用者介面上顯示特定訊息。
 
