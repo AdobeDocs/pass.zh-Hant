@@ -2,9 +2,9 @@
 title: 單一登入 — 平台身分 — 流程
 description: REST API V2 — 單一登入 — 平台身分 — 流程
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
-source-wordcount: '1830'
+source-wordcount: '1836'
 ht-degree: 0%
 
 ---
@@ -27,6 +27,11 @@ ht-degree: 0%
 
 如需`Adobe-Subject-Token`標頭的詳細資訊，請參閱[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)檔案。
 
+>[!MORELIKETHIS]
+> 
+> * [Amazon SSO逐步指南](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+> * [Roku SSO逐步指南](/help/authentication/integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-overview.md)
+
 ## 使用平台身分識別透過單一登入執行驗證 {#perform-authentication-through-single-sign-on-using-platform-identity}
 
 ### 先決條件 {#prerequisites-perform-authentication-through-single-sign-on-using-platform-identity}
@@ -34,11 +39,11 @@ ht-degree: 0%
 在使用平台身分識別透過單一登入執行驗證流程之前，請確定符合以下先決條件：
 
 * 平台必須提供識別服務或資料庫，此服務或資料庫會傳回相同裝置或平台上所有應用程式上一致的`JWS`或`JWE`裝載資訊。
-* 第一個串流應用程式必須擷取唯一的平台識別碼，並針對所有指定該識別碼的要求，將`JWS`或`JWE`承載包含在[Adobe — 主體 — 權杖](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)標頭中。
+* 第一個串流應用程式必須擷取唯一的平台識別碼，並針對所有指定該識別碼的要求，將`JWS`或`JWE`裝載加入為[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)標頭的一部分。
 * 第一個串流應用程式必須選取MVPD。
 * 第一個串流應用程式必須起始驗證工作階段，才能使用選取的MVPD登入。
 * 第一個串流應用程式必須在使用者代理程式中使用選取的MVPD進行驗證。
-* 第二個串流應用程式必須擷取唯一的平台識別碼，並包含`JWS`或`JWE`裝載，做為所有指定該識別碼的要求之[Adobe — 主體 — 權杖](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)標頭的一部分。
+* 第二個串流應用程式必須擷取唯一的平台識別碼，並針對所有指定該識別碼的要求，將`JWS`或`JWE`承載包含在[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)標頭中。
 
 >[!IMPORTANT]
 >
@@ -103,7 +108,7 @@ ht-degree: 0%
    * `actionName`屬性已設定為「驗證」。
    * `actionType`屬性設定為「互動式」。
 
-   如果Adobe Pass後端未識別有效的設定檔，第一個串流應用程式會開啟使用者代理程式，以載入提供的`url`，並向驗證端點提出要求。 此流程可能包含數個重新導向，最終將使用者帶往MVPD登入頁面並提供有效認證。
+   如果Adobe Pass後端未識別有效的設定檔，第一個串流應用程式會開啟使用者代理程式，以載入提供的`url`，並向驗證端點提出要求。 此流程可能包含數個重新導向，最終將使用者引導至MVPD登入頁面並提供有效認證。
 
 1. **完成MVPD驗證：**&#x200B;如果驗證流程成功，使用者代理程式互動會在Adobe Pass後端儲存一般設定檔，並到達提供的`redirectUrl`。
 
@@ -208,7 +213,7 @@ ht-degree: 0%
 在使用平台身分識別透過單一登入執行授權流程之前，請確保符合以下先決條件：
 
 * 平台必須提供識別服務或資料庫，此服務或資料庫會傳回相同裝置或平台上所有應用程式上一致的`JWS`或`JWE`裝載資訊。
-* 第二個串流應用程式必須擷取唯一的平台識別碼，並包含`JWS`或`JWE`裝載，做為所有指定該識別碼的要求之[Adobe — 主體 — 權杖](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)標頭的一部分。
+* 第二個串流應用程式必須擷取唯一的平台識別碼，並針對所有指定該識別碼的要求，將`JWS`或`JWE`承載包含在[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)標頭中。
 * 第二個串流應用程式必須先擷取授權決定，才能播放使用者選取的資源。
 
 >[!IMPORTANT]
@@ -217,7 +222,7 @@ ht-degree: 0%
 > 
 > <br/>
 > 
-> * 第一個串流應用程式已執行驗證，並包含[Adobe — 主體 — 權杖](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)要求標頭的有效值。
+> * 第一個串流應用程式已執行驗證，並包含[Adobe-Subject-Token](../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md)要求標頭的有效值。
 
 ### 工作流程 {#workflow-scenario-performing-authorization-flow-using-platform-identity-single-sign-on-method}
 

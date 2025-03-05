@@ -2,9 +2,9 @@
 title: 頁首 — AP-Device-Identifier
 description: REST API V2 — 標題 — AP-Device-Identifier
 exl-id: 90a5882b-2e6d-4e67-994a-050465cac6c6
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
-source-wordcount: '413'
+source-wordcount: '485'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## 語法 {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>AP-Device-Identifier</b>： &lt;type&gt; &lt;identifier&gt;</td>
    </tr>
@@ -43,7 +43,7 @@ ht-degree: 0%
 
 只有一種支援的型別，如下所示。
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <th style="background-color: #EFF2F7; width: 15%;">型別</th>
       <th style="background-color: #EFF2F7;"></th>
@@ -51,9 +51,9 @@ ht-degree: 0%
    <tr>
       <td>指紋</td>
       <td>
-            裝置識別碼是由使用者端應用程式建立並管理的穩定且唯一的識別碼組成。
+            裝置識別碼是由使用者端應用程式針對每個裝置建立及管理的穩定且唯一識別碼。
             <br/>
-            使用者端應用程式必須防止使用者動作（例如解除安裝應用程式、重新安裝或升級）所導致的值變更。
+            使用者端應用程式應將裝置識別碼快取在永久儲存體中，因為遺失或變更它會使驗證失效。 使用者端應用程式應防止使用者動作（例如應用程式解除安裝、重新安裝或升級）所導致的值變更。
       </td>
    </tr>
 </table>
@@ -134,3 +134,9 @@ _(*)建議在作業系統提供的值上套用SHA-256雜湊函式。_
 * [GetChannelClientId](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string)的Roku開發人員檔案。
 
 _(*)建議在作業系統提供的值上套用SHA-256雜湊函式。_
+
+### 其他 {#others}
+
+若是檔案未涵蓋的裝置平台，裝置識別碼應連結至任何可用的硬體識別碼，通常在裝置的硬體手冊中指定。
+
+如果沒有可用的硬體識別碼，則應使用根據使用者端應用程式屬性的唯一產生識別碼，並在永久儲存空間中快取。

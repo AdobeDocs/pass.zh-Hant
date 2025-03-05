@@ -2,9 +2,9 @@
 title: 頁首 — X-Device-Info
 description: REST API V2 — 標題 — X-Device-Info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
-source-wordcount: '1085'
+source-wordcount: '1122'
 ht-degree: 2%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 2%
 
 ## 語法 {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
       <td style="background-color: #DEEBFF;" colspan="2"><b>X-Device-Info</b>： &lt;device_info&gt;</td>
    </tr>
@@ -41,7 +41,7 @@ ht-degree: 2%
 
 JSON元素的`Base64-encoded`值，至少包含下表標示的必要屬性。
 
-<table>
+<table style="table-layout:auto">
     <tr>
         <th style="background-color: #EFF2F7; width: 15%;">是否存在</th>
         <th style="background-color: #EFF2F7; width: 15%;">索引鍵</th>
@@ -721,3 +721,7 @@ private JSONObject computeClientInformation() {
 | 索引鍵 | Source | 值（範例） |
 |---------------|-----------|-----------------|
 | applicationId | 硬式編碼 | REF30 |
+
+### 其他 {#others}
+
+對於檔案中未涵蓋的裝置平台，使用者端資訊（裝置、連線和應用程式）應連結至任何可用的硬體和作業系統(OS)屬性，通常在裝置的硬體和作業系統手冊中指定。

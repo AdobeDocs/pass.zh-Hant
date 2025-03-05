@@ -2,7 +2,7 @@
 title: 標題 — Adobe-Subject-Token
 description: REST API V2 — 標題 — Adobe-Subject-Token
 exl-id: 906d88f4-3b8f-491a-ab58-8e63d3b958d8
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
 workflow-type: tm+mt
 source-wordcount: '166'
 ht-degree: 1%
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 ## 概觀 {#overview}
 
-<b>Adobe — 主體 — 權杖</b>要求標頭包含唯一的平台識別碼，即`JWS`或`JWE`，其取得來源為在Adobe Pass驗證系統外部執行的身分服務或程式庫。
+<b>Adobe-Subject-Token</b>要求標頭包含唯一的平台識別碼，即`JWS`或`JWE`，此識別碼是從Adobe Pass Authentication系統外部執行的身分服務或程式庫所取得。
 
 此標頭是專為運用平台身分識別方法的單一登入(SSO)啟用流程所設計。
 
@@ -25,9 +25,9 @@ ht-degree: 1%
 
 ## 語法 {#syntax}
 
-<table>
+<table style="table-layout:auto">
    <tr>
-      <td style="background-color: #DEEBFF;" colspan="2"><b>Adobe — 主體 — 權杖</b>： &lt;unique_platform_identifier&gt;</td>
+      <td style="background-color: #DEEBFF;" colspan="2"><b>Adobe-Subject-Token</b>： &lt;unique_platform_id&gt;</td>
    </tr>
    <tr>
       <td>頁首型別</td>
