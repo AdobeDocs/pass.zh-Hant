@@ -2,9 +2,9 @@
 title: 程式設計師整合指南
 description: 程式設計師整合指南
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '2073'
+source-wordcount: '2119'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,9 @@ Adobe Pass Authentication作為Proxy，透過為雙方提供安全一致的介�
 
 * Premium Adobe Pass驗證API：
    * [重設Temp Pass API](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
    * [降級API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [退化特徵](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
    * [權益服務監控API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 ### 使用案例 {#use-cases}
@@ -323,4 +325,6 @@ Adobe Pass驗證解決方案以建立許可權為中心，也就是在成功完�
 
 * **[媒體代號](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md)**
 
-  在成功授權後，Adobe Pass驗證會建立與成功播放請求相關聯的媒體代號（「短期」）。
+  在成功授權後，Adobe Pass驗證會建立與成功播放請求相關聯的媒體代號（「短期」），並支援減少詐騙（例如串流擷取）的業界最佳實務。
+
+設定檔和決策的存留時間(「TTL」)值是根據程式設計師與付費電視提供者之間的協定所設定，這些提供者就最適合所有相關人員的價值達成共識。

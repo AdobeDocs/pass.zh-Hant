@@ -2,9 +2,9 @@
 title: MVPD整合指南
 description: MVPD整合指南
 exl-id: b918550b-96a8-4e80-af28-0a2f63a02396
-source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
+source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '1265'
+source-wordcount: '1307'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ TV Everywhere (TVE)是付費電視產業中的革新性計畫，讓訂閱者能�
 
 在TVE生態系統中，**程式設計師**&#x200B;提供內容，而&#x200B;**MVPD** （多頻道視訊節目經銷商）管理驗證檢視者是否為合格訂閱者所需的客戶資料。 雖然使用單一程式設計人員協調驗證與授權可能易於管理，但若使用數十甚至數百個程式設計人員，則會帶來相當的複雜性。
 
-這是&#x200B;**Adobe®傳遞驗證**&#x200B;簡化程式的地方。 MVPD只需要實作單一、簡化的Adobe Pass整合，即可存取整個TVE生態系統。 提供的整合架構可加快上市時間、提供安全環境以減少詐騙，並透過跨多個平台提供更多電視內容來強化客戶體驗。
+這是&#x200B;**Adobe® Pass Authentication**&#x200B;簡化程式的地方。 MVPD只需要實作單一、簡化的Adobe Pass整合，即可存取整個TVE生態系統。 提供的整合架構可加快上市時間、提供安全環境以減少詐騙，並透過跨多個平台提供更多電視內容來強化客戶體驗。
 
 ## 適用於所有電視的Adobe Pass驗證 {#adobe-pass-authentication-for-tv-everywhere}
 
@@ -36,7 +36,7 @@ Adobe Pass Authentication與TV Everywhere (TVE)的新興標準和通訊協定完
 
 Adobe Pass驗證的架構可支援多種通訊協定（例如SAML、OAuth 2.0等），這種彈性可因應不斷變化的需求，支援未來擴充功能，包括自訂通訊協定。
 
-大部分的整合使用SAML （安全性宣告標籤語言）通訊協定，這是驗證的主要標準。 Adobe Pass驗證會成為SAML架構內的Proxy服務提供者，將SAML驗證回應當做安全權杖保留在Adobe通用網域中。
+大部分的整合使用SAML （安全性宣告標籤語言）通訊協定，這是驗證的主要標準。 Adobe Pass驗證會成為SAML架構內的Proxy服務提供者，將SAML驗證回應當做安全權杖儲存在Adobe公用網域中。
 
 基本上，Adobe Pass驗證不受通訊協定限制，其設計與OLCA標準高度一致。 這些標準為程式設計人員、MVPD和服務提供者建立了通用框架，確保以一致的方法實施TVE功能。
 
@@ -139,4 +139,6 @@ Adobe Pass驗證解決方案以建立許可權為中心，也就是在成功完�
 
 * **[媒體代號](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md)**
 
-  在成功授權後，Adobe Pass驗證會建立與成功播放請求相關聯的媒體代號（「短期」）。
+  在成功授權後，Adobe Pass驗證會建立與成功播放請求相關聯的媒體代號（「短期」），並支援減少詐騙（例如串流擷取）的業界最佳實務。
+
+設定檔和決策的存留時間(「TTL」)值是根據程式設計師與付費電視提供者之間的協定所設定，這些提供者就最適合所有相關人員的價值達成共識。
