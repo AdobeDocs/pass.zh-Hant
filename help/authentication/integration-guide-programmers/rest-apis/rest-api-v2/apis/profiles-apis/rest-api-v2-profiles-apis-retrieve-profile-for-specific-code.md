@@ -2,9 +2,9 @@
 title: 擷取特定程式碼的設定檔
 description: REST API V2 — 擷取特定程式碼的設定檔
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
-source-git-commit: 7fdfd28e2aba0d201f19dc25757bbe37cebd8ffe
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '711'
+source-wordcount: '752'
 ht-degree: 1%
 
 ---
@@ -236,9 +236,9 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">屬性</td>
                <td>
-                    使用者中繼資料屬性的清單。
+                    JSON包含索引鍵、值配對的對應。
                     <br/><br/>
-                    這些屬性可以是：
+                    關鍵元素由使用者中繼資料屬性定義，可以是：
                     <ul>
                         <li>強制性，例如「userID」</li>
                         <li>非強制性，例如「zip」、「householdID」、「maxRating」等。</li>
@@ -249,6 +249,7 @@ ht-degree: 1%
                         <li>清單</li>
                         <li>地圖</li>
                     </ul>
+                    驗證流程完成後，使用者中繼資料即可使用，但在授權流程期間，某些中繼資料屬性可能會更新，具體取決於MVPD和有問題的特定中繼資料屬性。
                </td>
                <td><i>必填</i></td>
             </tr>

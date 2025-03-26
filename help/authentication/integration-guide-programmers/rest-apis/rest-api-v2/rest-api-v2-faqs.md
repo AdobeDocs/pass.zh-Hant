@@ -2,9 +2,9 @@
 title: REST API V2常見問題集
 description: REST API V2常見問題集
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 1795b4aba2940879f2dcb575048d553db4f0bf35
+source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
 workflow-type: tm+mt
-source-wordcount: '9072'
+source-wordcount: '9113'
 ht-degree: 0%
 
 ---
@@ -321,12 +321,14 @@ ht-degree: 0%
 * [特定MVPD API的設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
 * [特定（驗證）程式碼API的設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)
 
-使用者端應用程式不需要查詢個別端點來擷取使用者的中繼資料資訊，因為驗證使用者是否已驗證時，取得的設定檔資訊中已包含該資訊。
+使用者中繼資料在驗證流程完成後即可使用，因此使用者端應用程式不需要查詢個別端點來擷取[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)資訊，因為它已包含在設定檔資訊中。
 
 如需詳細資訊，請參閱下列檔案：
 
 * [主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
+
+在授權流程期間，某些中繼資料屬性可能會根據MVPD和特定的中繼資料屬性而更新。 因此，使用者端應用程式可能需要再次查詢上述API，以擷取最新的使用者中繼資料。
 
 #### 18.使用者端應用程式應如何管理降級存取？ {#authentication-phase-faq18}
 
