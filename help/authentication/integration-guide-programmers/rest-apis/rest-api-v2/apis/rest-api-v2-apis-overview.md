@@ -2,9 +2,9 @@
 title: REST API V2 API概述
 description: REST API V2 API概述
 exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
-source-git-commit: d8097b8419aa36140e6ff550714730059555fd14
+source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
 workflow-type: tm+mt
-source-wordcount: '151'
+source-wordcount: '147'
 ht-degree: 1%
 
 ---
@@ -14,8 +14,6 @@ ht-degree: 1%
 >[!IMPORTANT]
 >
 > 請務必隨時瞭解彙總在[產品公告](/help/authentication/product-announcements.md)頁面中的最新Adobe Pass驗證產品公告和淘汰時間表。
-
-<a href="https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements">![直播網路研討會系列](/help/authentication/assets/rest-api-v2/live-webinar-series-banner.png)</a>
 
 若要開始使用，請瀏覽下列清單中您感興趣的API公開檔案。
 
