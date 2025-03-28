@@ -2,9 +2,9 @@
 title: 頁首 — X-Device-Info
 description: REST API V2 — 標題 — X-Device-Info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '1122'
+source-wordcount: '1133'
 ht-degree: 2%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 2%
 
 ## 概觀 {#overview}
 
-<b>X-Device-Info</b>要求標頭包含與實際串流裝置相關的使用者端資訊（裝置、連線和應用程式）。
+<b>X-Device-Info</b>要求標頭包含與實際串流裝置相關的使用者端資訊（裝置、連線和應用程式），用來決定MVPD可能強制執行的平台特定規則。
 
 ## 語法 {#syntax}
 

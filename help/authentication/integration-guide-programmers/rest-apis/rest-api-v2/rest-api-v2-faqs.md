@@ -2,9 +2,9 @@
 title: REST API V2常見問題集
 description: REST API V2常見問題集
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '9113'
+source-wordcount: '9537'
 ht-degree: 0%
 
 ---
@@ -248,9 +248,18 @@ ht-degree: 0%
 
 #### 10.如果使用者有多個MVPD設定檔，使用者端應用程式該怎麼做？ {#authentication-phase-faq10}
 
-當使用者有多個MVPD設定檔時，使用者端應用程式會負責決定處理此案例的最佳方法。
+支援多個設定檔的決策，取決於使用者端應用程式的業務需求。
+
+大部分的使用者將只有一個設定檔。 但是，如果存在多個設定檔（如下所述），使用者端應用程式負責決定設定檔選擇的最佳使用者體驗。
 
 使用者端應用程式可選擇提示使用者選取所需的MVPD設定檔，或自動進行選取，例如從回應中選擇第一個使用者設定檔，或選擇有效期最長的使用者設定檔。
+
+REST API v2支援多個設定檔以適應：
+
+* 使用者可能必須在一般MVPD設定檔與透過單一登入(SSO)取得的設定檔之間進行選擇。
+* 使用者無需從其一般MVPD登出，即可獲得暫時存取許可權。
+* 具有MVPD訂閱結合直接對消費者(DTC)服務的使用者。
+* 有多個MVPD訂閱的使用者。
 
 #### 11.當使用者設定檔過期時，會發生什麼事？ {#authentication-phase-faq11}
 
@@ -332,9 +341,35 @@ ht-degree: 0%
 
 #### 18.使用者端應用程式應如何管理降級存取？ {#authentication-phase-faq18}
 
-鑑於您的組織打算使用[效能降低](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)功能，使用者端應用程式必須處理效能降低的存取流程，此流程概述了REST API v2端點在此類狀況下的行為。
+[降級功能](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)可讓使用者端應用程式維持使用者的順暢串流體驗，即使使用者的MVPD驗證或授權服務發生問題亦然。
+
+作為摘要，這可確保MVPD臨時服務中斷的情況下對內容的存取不中斷。
+
+鑑於您的組織打算使用進階降級功能，使用者端應用程式必須處理降級存取流程，以概述REST API v2端點在此類情境下的行為。
 
 如需詳細資訊，請參閱[降級存取流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)檔案。
+
+#### 19.使用者端應用程式應如何管理暫時存取？ {#authentication-phase-faq19}
+
+[TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)可讓使用者端應用程式提供使用者暫時存取許可權。
+
+作為摘要，這可提供在指定時段內有限的內容存取權或預先定義數量的VOD標題，以吸引使用者。
+
+鑑於您的組織打算使用高級TempPass功能，使用者端應用程式必須處理暫時存取流程，概述了REST API v2端點在此類情況下的行為。
+
+在舊版API中，使用者端應用程式必須登出已透過一般MVPD驗證的使用者，才能提供暫時存取權。
+
+透過REST API v2，使用者端應用程式在授權資料流時，可以順暢地在一般MVPD和TempPass MVPD之間切換，而不需要使用者登出。
+
+如需詳細資訊，請參閱[暫時存取流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)檔案。
+
+#### 20.使用者端應用程式應如何管理跨裝置單一登入存取？ {#authentication-phase-faq20}
+
+如果使用者端應用程式提供跨裝置的一致唯一使用者識別碼，REST API v2可啟用跨裝置單一登入。
+
+此識別碼（稱為服務權杖）必須由使用者端應用程式透過實作或整合所選的外部Identity Service而產生。
+
+如需詳細資訊，請參閱[使用服務權杖流程的單一登入](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md)檔案。
 
 +++
 
@@ -574,9 +609,15 @@ ht-degree: 0%
 >
 > 萬一使用者端應用程式從REST API V1移轉至REST API V2，使用者端應用程式可繼續使用與先前相同的方法運算裝置資訊值。
 
-[X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)要求標頭包含與實際串流裝置相關的使用者端資訊（裝置、連線和應用程式）。
+[X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)要求標頭包含與實際串流裝置相關的使用者端資訊（裝置、連線和應用程式），用來決定MVPD可能強制執行的平台特定規則。
 
 [X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)標題檔案提供主要平台如何計算值的範例，但使用者端應用程式可以根據自己的商業邏輯和需求選擇使用不同的方法。
+
+如果[X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)標頭遺失或包含不正確的值，則請求可能會分類為來自`unknown`平台。
+
+這可能會導致請求被視為不安全，並受到更嚴格的規則約束，例如較短的驗證TTL。 此外，某些欄位（例如串流裝置`connectionIp`和`connectionPort`）是諸如Spectrum的[Home Base Authentication](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)之類功能的必要欄位。
+
+即使請求來自代表裝置的伺服器，[X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)標頭值也必須反映實際的串流裝置資訊。
 
 +++
 
