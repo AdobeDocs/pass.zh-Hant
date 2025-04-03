@@ -2,10 +2,10 @@
 title: 增強的錯誤碼
 description: 增強的錯誤碼
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: b0d6c94148b2f9cb8a139685420a970671fce1f5
+source-git-commit: 27aaa0d3351577e60970a4035b02d814f0a17e2f
 workflow-type: tm+mt
-source-wordcount: '2610'
-ht-degree: 2%
+source-wordcount: '2649'
+ht-degree: 3%
 
 ---
 
@@ -45,8 +45,8 @@ ht-degree: 2%
 
 | Adobe Pass驗證API | JSON | XML |
 |-------------------------------|---------|---------|
-| REST API v1 | &amp;amp；檢查； | &amp;amp；檢查； |
 | REST API v2 | &amp;amp；檢查； |         |
+| REST API v1 | &amp;amp；檢查； | &amp;amp；檢查； |
 | SDK預先授權API | &amp;amp；檢查； |         |
 
 >[!IMPORTANT]
@@ -62,9 +62,105 @@ ht-degree: 2%
 >
 > 請檢視每個整合式Adobe Pass驗證API的公開檔案，以決定增強型錯誤代碼表示細節。
 
-請參閱下列HTTP回應，其中包含以`JSON`或`XML`表示的增強型錯誤碼範例。
+**REST API v2**
+
+請參閱下列HTTP回應，其中包含適用於REST API v2且以`JSON`表示的增強型錯誤代碼範例。
 
 >[!BEGINTABS]
+
+>[!TAB REST API v2 — 專案層級錯誤資訊(JSON)]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "decisions": [
+    {
+      "resource": "REF30",
+      "serviceProvider": "REF30",
+      "mvpd": "Cablevision",
+      "source": "mvpd",
+      "authorized": true,
+      "token": {
+        "issuedAt": 1697094207324,
+        "notBefore": 1697094207324,
+        "notAfter": 1697094802367,
+        "serializedToken": "PHNpZ25hdHVyZUluZm8..."
+      }
+    },
+    {
+      "resource": "REF40",
+      "serviceProvider": "REF40",
+      "mvpd": "Cablevision",
+      "source": "mvpd",
+      "authorized": false,
+      "error" : {
+        "action": "none",
+        "status": 403,
+        "code": "authorization_denied_by_mvpd",
+        "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
+        "details": "Your subscription package does not include the \"Live\" channel",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+        "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
+      }
+    }
+  ]
+}
+```
+
+>[!TAB REST API v2 — 最上層錯誤資訊(JSON)]
+
+```JSON
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "action": "none",
+  "status": 400,
+  "code": "invalid_parameter_service_provider",
+  "message": "The service provider parameter value is missing or invalid.",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+  "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
+}
+```
+
+>[!ENDTABS]
+
+**REST API v1**
+
+請參閱下列HTTP回應，其中包含適用於REST API v1且以`JSON`或`XML`表示的增強型錯誤代碼範例。
+
+>[!BEGINTABS]
+
+>[!TAB REST API v1 — 專案層級錯誤資訊(JSON)]
+
+```JSON
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "resources": [
+    {
+      "id": "TestStream1",
+      "authorized": true
+    },
+    {
+      "id": "TestStream2",
+      "authorized": false,
+      "error": {
+        "action": "none",
+        "status": 403,
+        "code": "authorization_denied_by_mvpd",
+        "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
+        "details": "Your subscription package does not include the \"Live\" channel",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
+        "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
+      }
+    }
+  ]
+}
+```
 
 >[!TAB REST API v1 — 最上層錯誤資訊(JSON)]
 
@@ -98,102 +194,18 @@ Content-Type: application/xml
 </error>
 ```
 
->[!TAB REST API v1 — 專案層級錯誤資訊(JSON)]
-
-```JSON
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "resources": [
-    {
-      "id": "TestStream1",
-      "authorized": true
-    },
-    {
-      "id": "TestStream2",
-      "authorized": false,
-      "error": {
-        "action": "retry",
-        "status": 403,
-        "code": "network_connection_failure",
-        "message": "Unable to contact your TV provider services",
-        "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
-        "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
-      }
-    }
-  ]
-}
-```
-
->[!TAB REST API v2 — 最上層錯誤資訊(JSON)]
-
-```JSON
-HTTP/1.1 400 Bad Request
-Content-Type: application/json
-
-{
-  "action": "none",
-  "status": 400,
-  "code": "invalid_parameter_service_provider",
-  "message": "The service provider parameter value is missing or invalid.",
-  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
-  "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
-}
-```
-
->[!TAB REST API v2 — 專案層級錯誤資訊(JSON)]
-
-```JSON
-HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  "decisions": [
-    {
-      "resource": "REF30",
-      "serviceProvider": "REF30",
-      "mvpd": "Cablevision",
-      "source": "mvpd",
-      "authorized": true,
-      "token": {
-        "issuedAt": 1697094207324,
-        "notBefore": 1697094207324,
-        "notAfter": 1697094802367,
-        "serializedToken": "PHNpZ25hdHVyZUluZm8..."
-      }
-    },
-    {
-      "resource": "REF40",
-      "serviceProvider": "REF40",
-      "mvpd": "Cablevision",
-      "source": "mvpd",
-      "authorized": false,
-      "error" : {
-        "action": "retry",
-        "status": 403,
-        "code": "network_connection_failure",
-        "message": "Unable to contact your TV provider services",
-        "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
-        "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
-      }
-    }
-  ]
-}
-```
-
 >[!ENDTABS]
 
-增強型錯誤碼包含下列`JSON`欄位或`XML`屬性：
+### 結構 {#enhanced-error-codes-representation-structure}
+
+增強型錯誤碼包含下列`JSON`欄位或具有範例的`XML`屬性：
 
 | 名稱 | 型別 | 範例 | 受限制 | 說明 |
 |-----------|-----------|---------------------------------------------------------------------------------------------------------------------|:----------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| *動作* | *字串* | *重試* | &amp;amp；檢查； | Adobe Pass驗證建議可修正此檔案中定義的狀況的動作。 <br/><br/>如需詳細資訊，請參閱[動作](#enhanced-error-codes-action)區段。 |
+| *動作* | *字串* | *無* | &amp;amp；檢查； | Adobe Pass驗證建議可修正此檔案中定義的狀況的動作。 <br/><br/>如需詳細資訊，請參閱[動作](#enhanced-error-codes-action)區段。 |
 | *狀態* | *整數* | *403* | &amp;amp；檢查； | 在[RFC 7231](https://tools.ietf.org/html/rfc7231#section-6)檔案中定義的HTTP回應狀態碼。 <br/><br/>如需詳細資訊，請參閱[狀態](#enhanced-error-codes-status)區段。 |
-| *代碼* | *字串* | *network_connection_failure* | &amp;amp；檢查； | 與本檔案定義之錯誤相關聯的Adobe Pass驗證唯一識別碼代碼。 <br/><br/>如需詳細資訊，請參閱[代碼](#enhanced-error-codes-code)區段。 |
-| *訊息* | *字串* | *無法連絡您的電視提供者服務* |            | 在某些情況下可顯示給一般使用者的人類可讀訊息。 <br/><br/>如需詳細資訊，請參閱[回應處理](#enhanced-error-codes-response-handling)區段。 |
+| *代碼* | *字串* | *authorization_denied_by_mvpd* | &amp;amp；檢查； | 與本檔案定義之錯誤相關聯的Adobe Pass驗證唯一識別碼代碼。 <br/><br/>如需詳細資訊，請參閱[代碼](#enhanced-error-codes-code)區段。 |
+| *訊息* | *字串* | *請求指定資源的授權時，MVPD已傳回「拒絕」決定* |            | 在某些情況下可顯示給一般使用者的人類可讀訊息。 <br/><br/>如需詳細資訊，請參閱[回應處理](#enhanced-error-codes-response-handling)區段。 |
 | *詳細資料* | *字串* | *您的訂閱套件不包含「即時」頻道* |            | 服務合作夥伴在某些情況下可能提供的詳細訊息，<br/><br/>若服務合作夥伴未提供任何自訂訊息，此欄位可能不存在。 |
 | *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html* |            | Adobe Pass驗證公開檔案URL可連結至此錯誤發生原因及可能解決方案的相關資訊。 <br/><br/>此欄位包含絕對URL，不應從錯誤碼推斷，視錯誤內容而定，可以提供不同的URL。 |
 | *追蹤* | *字串* | *12f6fef9-d2e0-422b-a9d7-60d799abe353* |            | 回應的唯一識別碼，可在聯絡Adobe Pass驗證支援以疑難排解特定問題時使用。 |
