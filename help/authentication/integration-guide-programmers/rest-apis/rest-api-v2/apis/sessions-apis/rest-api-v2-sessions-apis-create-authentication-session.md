@@ -1,27 +1,27 @@
 ---
-title: 建立驗證工作階段
-description: REST API V2 — 建立驗證工作階段
+title: 建立身份驗證會話
+description: REST API V2 - 建立 驗證工作階段
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '1057'
+source-wordcount: '1060'
 ht-degree: 1%
 
 ---
 
-# 建立驗證工作階段 {#create-authentication-session}
+# 建立身份驗證會話 {#create-authentication-session}
 
 >[!IMPORTANT]
 >
-> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
+> 本頁面上的內容僅供參考。 使用此 API 需要 Adobe Systems 的最新許可證。 不允許未經授權的使用。
 
 >[!IMPORTANT]
 >
-> REST API V2實作受到[節流機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)檔案的限制。
+> REST API V2 實施 受 [限制機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md) 文檔的限制。
 
 >[!MORELIKETHIS]
 >
-> 請確定也造訪[REST API V2常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)。
+> 也請務必造訪 [REST API V2 常見問題](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md#authentication-phase-faqs-general)解答。
 
 ## 請求 {#request}
 
@@ -98,9 +98,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         所傳送資源的接受媒體型別。
-         <br/><br/>
-         它必須是application/x-www-form-urlencoded。
+         所傳送資源的接受媒體類型。         <br/><br/>必須使用 應用程式/x-www-form-urlencoded。
       </td>
       <td><i>必填</i></td>
    </tr>
@@ -125,18 +123,14 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         串流裝置的IP位址。
-         <br/><br/>
-         強烈建議一律將它用於伺服器對伺服器的實作，尤其是當呼叫是由程式設計人員服務（而非串流裝置）進行時。
-         <br/><br/>
-         對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。
+         串流裝置的 IP 地址。         <br/><br/>強烈建議始終將其用於伺服器到伺服器的實現，尤其是當調用由程式師服務而不是流式處理裝置進行時。         <br/><br/>對於用戶端到伺服器的實現，流式處理裝置的IP位址是隱式發送的。
       </td>
-      <td>可選</td>
+      <td>自選</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
+      <td style="background-color: #DEEBFF;">Adobe Systems-subject-token<br/>或<br/>x-roku-reserved-roku-connect-token</td>
       <td>
-        有關Platform Identity方法單一登入裝載的產生，請參閱<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>標標頭檔案。
+        有關Platform Identity方法單一登入裝載的產生，請參閱<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>標標頭檔案。
         <br/><br/>
         如需使用平台身分識別啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台身分識別流程單一登入</a>檔案。
       </td>
@@ -145,9 +139,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-        服務權杖方法的單一登入裝載產生過程在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>標標頭檔案中進行了說明。
-        <br/><br/>
-        如需使用服務權杖啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服務權杖流程進行單一登入</a>檔案。
+        AD 服務令牌</a>標頭文檔中介紹了<a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">服務令牌方法的 單一登入 有效負載的生成。<br/><br/>有關使用服務令牌啟用單一登入流的更多詳細資訊，請參閱 <a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服務令牌進行單點登錄流</a> 文檔。
       <td>可選</td>
    </tr>
    <tr>
@@ -161,8 +153,8 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">User-Agent</td>
-      <td>使用者端應用程式的使用者代理。</td>
-      <td>可選</td>
+      <td>用戶端應用程式的用戶代理程序。</td>
+      <td>自選</td>
    </tr>
 </table>
 
@@ -176,14 +168,14 @@ ht-degree: 1%
    </tr>
    <tr>
       <td>200</td>
-      <td>確定</td>
+      <td>還行</td>
       <td>
-        回應內文包含執行驗證所需後續動作的資訊。
+        回應正文包含有關執行身份驗證所需的後續作的資訊。
       </td>
    </tr>
    <tr>
       <td>400</td>
-      <td>錯誤請求</td>
+      <td>錯誤的要求</td>
       <td>
         請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
       </td>
@@ -247,12 +239,10 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
                <td>
-                  串流裝置完成驗證流程所需執行的動作。
-                  <br/><br/>
-                  可能的值包括：
+                  流式處理裝置需要執行以完成身份驗證流的作。                  <br/><br/>可能的值包括：
                   <ul>
-                    <li><b>驗證</b><br/>串流裝置或其他裝置需要在使用者代理程式中開啟提供的URL。</li>
-                    <li><b>繼續</b><br/>串流裝置或其他裝置需要提供遺漏的引數，並使用程式碼繼續驗證工作階段。</li>
+                    <li><b>身份驗證</b><br/>流式處理裝置或其他裝置需要在 用戶 代理中打開提供的URL。</li>
+                    <li><b>恢復</b><br/>流式處理裝置或其他裝置需要提供缺少的參數並使用代碼恢復身份驗證會話。</li>
                     <li><b>授權</b><br/>串流裝置可以直接進行決定流程。</li>
                   </ul>
                <td><i>必填</i></td>
@@ -280,7 +270,7 @@ ht-degree: 1%
                     <li><b>已驗證</b><br/>使用者端應用程式已透過基本存取流程驗證。</li>
                     <li><b>暫時</b><br/>使用者端應用程式已透過暫存存取流程驗證。</li>
                     <li><b>已降級</b><br/>使用者端應用程式已透過已降級的存取流程進行驗證。</li>
-                    <li><b>authenticatedSSO</b><br/>使用者端應用程式已透過單一登入存取流程驗證。</li>
+                    <li><b>經過身份驗證的 SSO</b><br/>用戶端應用程式已通過單一登入訪問流進行身份驗證。</li>
                   </ul>
                <td><i>必填</i></td>
             </tr>
@@ -295,23 +285,23 @@ ht-degree: 1%
                <td>可選</td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">程式碼</td>
-               <td>可用於次要應用程式的驗證代碼，以繼續驗證工作階段。</td>
+               <td style="background-color: #DEEBFF;">法典</td>
+               <td>可用於輔助應用程式以恢復身份驗證會話的身份驗證代碼。</td>
                <td><i>必填</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">sessionId</td>
-               <td>可用於追蹤使用者活動的不透明識別碼。</td>
+               <td>可用于追踪用戶活動的不透明標識符。</td>
                <td><i>必填</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">mvpd</td>
-               <td>上線流程中與身分提供者相關聯的內部唯一識別碼。</td>
-               <td>可選</td>
+               <td>在加入過程中與身份提供程式關聯的內部唯一標識碼。</td>
+               <td>自選</td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">服務提供者</td>
-               <td>在上線流程中與服務提供者相關聯的內部唯一識別碼。</td>
+               <td style="background-color: #DEEBFF;">serviceProvider</td>
+               <td>在加入過程中與服務提供者關聯的內部唯一標識符。</td>
                <td><i>必填</i></td>
             </tr>
             <tr>

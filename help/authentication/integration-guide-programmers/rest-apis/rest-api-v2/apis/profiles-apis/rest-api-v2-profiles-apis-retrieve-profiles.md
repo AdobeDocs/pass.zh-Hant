@@ -2,9 +2,9 @@
 title: 擷取設定檔
 description: REST API V2 — 擷取設定檔
 exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '865'
+source-wordcount: '868'
 ht-degree: 1%
 
 ---
@@ -38,17 +38,17 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">方法</td>
-      <td>GET</td>
+      <td>獲取</td>
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">路徑引數</th>
+      <th style="background-color: #EFF2F7;">路徑參數</th>
       <th style="background-color: #EFF2F7;"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">服務提供者</td>
-      <td>在上線流程中與服務提供者相關聯的內部唯一識別碼。</td>
+      <td style="background-color: #DEEBFF;">serviceProvider</td>
+      <td>在加入過程中與服務提供者關聯的內部唯一標識符。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -91,9 +91,9 @@ ht-degree: 1%
       <td>可選</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
+      <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>或<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        有關Platform Identity方法單一登入裝載的產生，請參閱<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>標標頭檔案。
+        有關Platform Identity方法單一登入裝載的產生，請參閱<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>標標頭檔案。
         <br/><br/>
         如需使用平台身分識別啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台身分識別流程單一登入</a>檔案。
       </td>
@@ -186,7 +186,7 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">狀態</td>
+      <td style="background-color: #DEEBFF;">地位</td>
       <td>200</td>
       <td><i>必填</i></td>
    </tr>
@@ -323,7 +323,7 @@ ht-degree: 1%
 
 >[!BEGINTABS]
 
->[!TAB 要求]
+>[!TAB 請求]
 
 ```HTTPS
 GET /api/v2/REF30/profiles HTTP/1.1
@@ -382,11 +382,11 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2.擷取透過基本驗證或使用服務權杖方法的單一登入取得的設定檔
+### 2. 使用服務令牌方法檢索通過基本身份驗證或單一登入獲取的配置文件
 
 >[!BEGINTABS]
 
->[!TAB 要求]
+>[!TAB 請求]
 
 ```HTTPS
 GET /api/v2/REF30/profiles HTTP/1.1

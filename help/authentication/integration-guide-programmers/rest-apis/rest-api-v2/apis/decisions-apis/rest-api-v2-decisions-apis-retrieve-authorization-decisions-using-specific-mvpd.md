@@ -2,9 +2,9 @@
 title: 使用特定mvpd擷取授權決策
 description: REST API V2 — 使用特定mvpd擷取授權決策
 exl-id: e8889395-4434-4bec-a212-a8341bb9c310
-source-git-commit: 27aaa0d3351577e60970a4035b02d814f0a17e2f
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '924'
+source-wordcount: '927'
 ht-degree: 1%
 
 ---
@@ -68,8 +68,8 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Authorization</td>
-      <td>在<a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">授權</a>標標頭檔案中說明了持有人權杖承載的產生。</td>
+      <td style="background-color: #DEEBFF;">授權</td>
+      <td>授權</a>標頭文檔中介紹了<a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">持有者令牌有效負載的生成。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -111,9 +111,9 @@ ht-degree: 1%
       <td>可選</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
+      <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>或<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        有關Platform Identity方法單一登入裝載的產生，請參閱<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a>標標頭檔案。
+        有關Platform Identity方法單一登入裝載的產生，請參閱<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>標標頭檔案。
         <br/><br/>
         如需使用平台身分識別啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台身分識別流程單一登入</a>檔案。
       </td>
@@ -139,7 +139,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">AP-TempPass-Identity</td>
       <td><a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md">AP-TempPass-Identity</a>標標頭檔案中說明了產生使用者唯一識別碼承載的流程。</td>
-      <td>可選</td>
+      <td>自選</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
@@ -211,7 +211,7 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">狀態</td>
+      <td style="background-color: #DEEBFF;">地位</td>
       <td>200</td>
       <td><i>必填</i></td>
    </tr>
@@ -241,13 +241,13 @@ ht-degree: 1%
                 <td><i>必填</i></td>
             </tr>
             <tr>
-                <td style="background-color: #DEEBFF;">服務提供者</td>
-                <td>在上線流程中與服務提供者相關聯的內部唯一識別碼。</td>
+                <td style="background-color: #DEEBFF;">serviceProvider</td>
+                <td>在加入過程中與服務提供者關聯的內部唯一標識符。</td>
                 <td><i>必填</i></td>
             </tr>
             <tr>
                 <td style="background-color: #DEEBFF;">mvpd</td>
-                <td>上線流程中與身分提供者相關聯的內部唯一識別碼。</td>
+                <td>在加入過程中與身份提供程式關聯的內部唯一標識碼。</td>
                 <td><i>必填</i></td>
             </tr>
             <tr>
@@ -270,7 +270,7 @@ ht-degree: 1%
                <td><i>必填</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">token</td>
+               <td style="background-color: #DEEBFF;">令牌</td>
                <td>
                   有關媒體權杖的資訊。
                   <br/><br/>
@@ -332,13 +332,13 @@ ht-degree: 1%
    </tr>
 </table>
 
-## 範例 {#samples}
+## 樣品 {#samples}
 
-### 1.當決定允許時，使用特定mvpd擷取授權決定
+### 1. 在允許決策時使用特定的 mvpd 檢索授權決策
 
 >[!BEGINTABS]
 
->[!TAB 要求]
+>[!TAB 請求]
 
 ```HTTPS
 POST /api/v2/REF30/decisions/authorize/Cablevision HTTP/1.1
@@ -386,11 +386,11 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2.在決定被拒絕時使用特定mvpd擷取授權決定
+### 2. 在決策被拒絕時使用特定 mvpd 檢索授權決策
 
 >[!BEGINTABS]
 
->[!TAB 要求]
+>[!TAB 請求]
 
 ```HTTPS
 POST /api/v2/REF30/decisions/authorize/Cablevision HTTP/1.1
@@ -696,7 +696,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!BEGINTABS]
 
->[!TAB 要求]
+>[!TAB 請求]
 
 ```HTTPS
 POST /api/v2/apasstest1/decisions/authorize/flexibleTempPass HTTP/1.1
@@ -716,7 +716,7 @@ Body:
 }
 ```
 
->[!TAB 回應 — 可用]
+>[!TAB 回應 - 可用]
 
 ```HTTPS
 HTTP/1.1 200 OK
@@ -743,7 +743,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
->[!TAB 回應 — 超過期間限制]
+>[!TAB 回應 - 已超過持續時間限制]
 
 ```HTTPS
 HTTP/1.1 200 OK
@@ -770,7 +770,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
->[!TAB 回應 — 超出資源限制]
+>[!TAB 回應 - 已超過資源上限]
 
 ```HTTPS
 HTTP/1.1 200 OK

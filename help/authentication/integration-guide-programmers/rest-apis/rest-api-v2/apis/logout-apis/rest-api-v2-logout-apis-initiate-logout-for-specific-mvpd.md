@@ -2,9 +2,9 @@
 title: 啟動特定mvpd的登出
 description: REST API V2 — 啟動特定mvpd的登出
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
 workflow-type: tm+mt
-source-wordcount: '1006'
+source-wordcount: '1009'
 ht-degree: 1%
 
 ---
@@ -60,7 +60,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        MVPD的登出流程完成時，使用者代理程式導覽的最終重新導向URL。
+        MVPD登出流程完成時，使用者代理程式導覽的最終重新導向URL。
         <br/><br/>
         值必須以URL編碼。
       </td>
@@ -106,9 +106,9 @@ ht-degree: 1%
       <td>可選</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">Adobe-Subject-Token</td>
+      <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>或<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        在<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Platform-Subject-Token</a>標標頭檔案中會說明Platform Identity方法單一登入裝載的產生Adobe。
+        有關Platform Identity方法單一登入裝載的產生，請參閱<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>標標頭檔案。
         <br/><br/>
         如需使用平台身分識別啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台身分識別流程單一登入</a>檔案。
       </td>
@@ -240,7 +240,7 @@ ht-degree: 1%
                   <ul>
                     <li><b>登出</b><br/>串流裝置需要在使用者代理程式中開啟提供的URL。<br/>此動作適用於下列情況：使用登出端點登出MVPD。</li>
                     <li><b>partner_logout</b><br/>串流裝置必須同時通知使用者從合作夥伴（系統）層級登出。<br/>此動作適用於下列情況：當設定檔型別為「appleSSO」時登出MVPD。</li>
-                    <li><b>完成</b><br/>串流裝置不需要執行任何後續動作。<br/>此動作適用於下列情況：在沒有登出端點（虛擬登出功能）的情況下登出MVPD、在存取降級期間登出、在暫時存取期間登出。</li>
+                    <li><b>完成</b><br/>串流裝置不需要執行任何後續動作。<br/>此動作適用於下列情況：在沒有登出端點（虛擬登出功能）的情況下登出MVPD、在存取效能降低期間登出、在暫時存取期間登出。</li>
                     <li><b>無效</b><br/>串流裝置不需要執行任何後續動作。<br/>此動作適用於下列情況：找不到有效的設定檔時登出MVPD。</li>
                   </ul>  
                <td><i>必填</i></td>
@@ -266,7 +266,7 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">url</td>
                <td>
-                  用來執行MVPD端點登出流程的URL。
+                  用來透過MVPD端點執行登出流程的URL。
                   <br/><br/>
                   'actionName'屬性的下列值沒有這個值：
                   <ul>
@@ -394,7 +394,7 @@ Content-Type: application/json;charset=UTF-8
 >
 > <br/>
 >
-> * MVPD具有登出端點。
+> * MVPD有登出端點。
 
 >[!BEGINTABS]
 
@@ -440,7 +440,7 @@ Content-Type: application/json;charset=UTF-8
 >
 > <br/>
 >
-> * MVPD具有登出端點。
+> * MVPD有登出端點。
 
 >[!BEGINTABS]
 
