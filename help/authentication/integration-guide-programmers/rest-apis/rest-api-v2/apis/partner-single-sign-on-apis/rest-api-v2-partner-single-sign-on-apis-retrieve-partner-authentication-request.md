@@ -2,9 +2,9 @@
 title: 擷取合作夥伴驗證請求
 description: REST API V2 — 擷取合作夥伴驗證請求
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 5e5bb6a52a4629056fd52c7e79a11dba2b9a45db
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '1230'
+source-wordcount: '1219'
 ht-degree: 1%
 
 ---
@@ -266,7 +266,6 @@ ht-degree: 1%
                   <ul>
                     <li><b>無</b><br/>使用者端應用程式必須繼續驗證。</li>
                     <li><b>已驗證</b><br/>使用者端應用程式已透過基本存取流程驗證。</li>
-                    <li><b>暫時</b><br/>使用者端應用程式已透過暫存存取流程驗證。</li>
                     <li><b>已降級</b><br/>使用者端應用程式已透過已降級的存取流程進行驗證。</li>
                     <li><b>authenticatedSSO</b><br/>使用者端應用程式已透過單一登入存取流程驗證。</li>
                     <li><b>pfs_fallback</b><br/>使用者端應用程式必須回復到基本驗證流程，因為<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>標頭值遺失或無效。</li>

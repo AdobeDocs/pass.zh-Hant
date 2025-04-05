@@ -2,9 +2,9 @@
 title: REST API V2常見問題集
 description: REST API V2常見問題集
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '9537'
+source-wordcount: '9697'
 ht-degree: 0%
 
 ---
@@ -79,9 +79,9 @@ ht-degree: 0%
 
 #### 5.使用者端應用程式可以管理自己的MVPD清單嗎？ {#configuration-phase-faq5}
 
-使用者端應用程式可以管理自己的MVPD清單，但必須使MVPD識別碼與Adobe Pass驗證保持同步。 因此，建議您使用Adobe Pass驗證提供的設定，以確保清單是最新且正確的。
+用戶端應用程式可以管理自己的 MVPD 清單，但需要將 MVPD 標識符與Adobe Pass Authentication保持同步。 因此，建議使用Adobe Pass Authentication提供的配置，以確保清單是最新的和準確的。
 
-如果提供的Adobe Pass識別碼無效，或是使用者端應用程式未與指定的[服務提供者](rest-api-v2-glossary.md#service-provider)有效整合，使用者端應用程式將會從MVPD驗證REST API V2收到[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)。
+如果提供的 MVPD 標識符無效或与指定服務提供者沒有活動集成，則用戶端應用程式將從[Adobe Pass Authentication REST API V2 收到錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)。](rest-api-v2-glossary.md#service-provider)[
 
 #### 6.使用者端應用程式可以篩選MVPD清單嗎？ {#configuration-phase-faq6}
 
@@ -109,21 +109,32 @@ ht-degree: 0%
 
 您的組織管理員或代表您行事的Adobe Pass驗證代表可透過Adobe Pass [TVE控制面板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)完成此作業。
 
-如需詳細資訊，請參閱[TVE儀表板整合使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#disable-integration)檔案。
+有關更多詳細信息，請參閱 [TVE 儀錶板集成使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#disable-integration) 文檔。
 
 +++
 
-### 驗證階段常見問題集 {#authentication-phase-faqs-general}
+### Authentication階段常見問題解答 {#authentication-phase-faqs-general}
 
-+++驗證階段常見問題集
++++Authentication 階段常見問題解答
 
-#### 1.驗證階段的用途為何？ {#authentication-phase-faq1}
+#### 1. Authentication階段的目的是什麼？ {#authentication-phase-faq1}
 
 「驗證階段」的目的是讓使用者端應用程式能夠驗證使用者的身分並取得使用者中繼資料資訊。
 
 當使用者端應用程式需要播放內容時，「驗證階段」會成為「預先授權階段」或「授權階段」的先決條件步驟。
 
-#### 2.什麼是驗證工作階段？其有效期為多久？ {#authentication-phase-faq2}
+#### 2. 「驗證階段」是否為必要？ {#authentication-phase-faq2}
+
+驗證階段是強制性的，當使用者在Adobe Pass驗證中沒有有效的設定檔時，使用者端應用程式必須驗證使用者。
+
+在下列情況下，使用者端應用程式可以略過此階段：
+
+* 用戶已經過身份驗證，設定檔仍然有效。
+* 該用戶通過基本或促銷 [的TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) 功能提供臨時訪問許可權。
+
+使用者端應用程式錯誤處理需要處理[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)代碼（例如，`authenticated_profile_missing`、`authenticated_profile_expired`、`authenticated_profile_invalidated`等），這表示使用者端應用程式需要使用者進行驗證。
+
+#### 3.什麼是驗證工作階段？其有效期限為多久？ {#authentication-phase-faq3}
 
 驗證工作階段是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#session)檔案中定義的辭彙。
 
@@ -131,16 +142,16 @@ ht-degree: 0%
 
 驗證工作階段的有效時間有限，且在由`notAfter`時間戳記所指定的問題發生時很短，這表示在需要重新啟動流程之前，使用者必須完成驗證程式的時間長度。
 
-使用者端應用程式可使用驗證工作階段回應，以瞭解如何進行驗證程式。 請注意，在某些情況下，使用者不需要驗證，例如提供暫時存取、存取效能降低，或使用者已經驗證。
+使用者端應用程式可使用驗證工作階段回應，以瞭解如何進行驗證程式。 請注意，在某些情況下，用戶不需要進行身份驗證，例如提供臨時訪問許可權、降級訪問許可權或用戶已通過身份驗證。
 
-如需詳細資訊，請參閱下列檔案：
+有關詳細資訊，請參閱以下檔：
 
 * [建立驗證工作階段API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)
 * [繼續驗證工作階段API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)
 * [主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
 * [在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-#### 3.什麼是驗證碼？其有效期為多久？ {#authentication-phase-faq3}
+#### 4.什麼是驗證碼？其有效期為多久？ {#authentication-phase-faq4}
 
 驗證代碼是[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#code)檔案中定義的辭彙。
 
@@ -159,7 +170,7 @@ ht-degree: 0%
 * [主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
 * [在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-#### 4.使用者端應用程式如何知道使用者是否輸入有效的驗證代碼，以及驗證工作階段是否尚未過期？ {#authentication-phase-faq4}
+#### 5.使用者端應用程式如何知道使用者是否輸入有效的驗證代碼，以及驗證工作階段是否尚未過期？ {#authentication-phase-faq5}
 
 使用者端應用程式可以傳送要求給負責繼續驗證工作階段或擷取與驗證代碼關聯的驗證工作階段資訊的其中一個「工作階段」端點，來驗證使用者在次要（熒幕）應用程式中輸入的驗證代碼。
 
@@ -167,7 +178,7 @@ ht-degree: 0%
 
 如需詳細資訊，請參閱[繼續驗證工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)和[擷取驗證工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)檔案。
 
-#### 5.使用者端應用程式如何知道使用者是否已驗證？ {#authentication-phase-faq5}
+#### 6.使用者端應用程式如何知道使用者是否已驗證？ {#authentication-phase-faq6}
 
 使用者端應用程式可以查詢下列其中一個端點，該端點能夠驗證使用者是否已通過驗證並傳回設定檔資訊：
 
@@ -180,7 +191,7 @@ ht-degree: 0%
 * [主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
 
-#### 6.設定檔是什麼及其有效期限？ {#authentication-phase-faq6}
+#### 7.設定檔是什麼？其有效期為多久？ {#authentication-phase-faq7}
 
 設定檔是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#profile)檔案中定義的辭彙。
 
@@ -202,17 +213,17 @@ ht-degree: 0%
 
 如需詳細資訊，請參閱[TVE儀表板整合使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows)檔案。
 
-#### 7.使用者端應用程式是否應該將使用者的設定檔資訊快取在永久儲存體中？ {#authentication-phase-faq7}
+#### 8.使用者端應用程式是否應該將使用者的設定檔資訊快取在永久儲存體中？ {#authentication-phase-faq8}
 
-使用者端應用程式應將使用者的設定檔資訊快取在持續性儲存體中，以避免不必要的請求並改善使用者體驗，同時考慮到以下方面：
+使用者端應用程式應將部分使用者設定檔資訊快取到永久性儲存體中，以避免不必要的請求，並改善使用者體驗，同時考慮到以下方面：
 
 | 屬性 | 使用者體驗 |
-|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `attributes` | 使用者端應用程式可使用此專案，根據不同的[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)金鑰（例如，`zip`、`maxRating`等）來個人化使用者體驗。 |
-| `mvpd` | 使用者端應用程式可以使用此項來追蹤使用者選取的電視提供者。<br/><br/>當目前的使用者設定檔過期時，使用者端應用程式可以使用記憶中的MVPD選項，並直接要求使用者確認。 |
-| `notAfter` | 使用者端應用程式可使用此項來追蹤使用者設定檔到期日，並在到期時觸發重新驗證程式，以避免在預先授權或授權階段期間發生錯誤。<br/><br/>使用者端應用程式錯誤處理必須能夠處理[authenticated_profile_expired](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)錯誤碼，這表示使用者端應用程式需要使用者重新驗證。 |
+|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `mvpd` | 使用者端應用程式可使用此項來追蹤使用者選取的電視提供者，並在預先授權或授權階段中繼續使用它。<br/><br/>當目前的使用者設定檔過期時，使用者端應用程式可以使用記憶中的MVPD選項，並直接要求使用者確認。 |
+| `attributes` | 使用者端應用程式可使用此專案，根據不同的[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)金鑰（例如，`zip`、`maxRating`等）來個人化使用者體驗。<br/><br/>使用者中繼資料在驗證流程完成後即可使用，因此使用者端應用程式不需要查詢個別端點來擷取[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)資訊，因為它已包含在設定檔資訊中。<br/><br/>在授權流程期間，可能會根據MVPD和特定的中繼資料屬性，更新某些中繼資料屬性。 因此，使用者端應用程式可能需要再次查詢設定檔API，以擷取最新的使用者中繼資料。 |
+| `notAfter` | 使用者端應用程式可使用此項來追蹤使用者設定檔到期日。<br/><br/>使用者端應用程式錯誤處理需要處理[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)代碼（例如，`authenticated_profile_missing`、`authenticated_profile_expired`、`authenticated_profile_invalidated`等），這表示使用者端應用程式需要使用者進行驗證。 |
 
-#### 8.使用者端應用程式可以擴充使用者的設定檔而不需要重新驗證嗎？ {#authentication-phase-faq8}
+#### 9.使用者端應用程式可以擴充使用者的設定檔而不需要重新驗證嗎？ {#authentication-phase-faq9}
 
 不適用。
 
@@ -222,7 +233,7 @@ ht-degree: 0%
 
 不過，對於支援[家用驗證](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md) (HBA)的MVPD，使用者不需要輸入認證。
 
-#### 9.每個可用設定檔端點的使用案例為何？ {#authentication-phase-faq9}
+#### 10.每個可用設定檔端點的使用案例為何？ {#authentication-phase-faq10}
 
 基本設定檔端點的設計是為了讓使用者端應用程式能夠知道使用者的驗證狀態、存取使用者中繼資料資訊、尋找用於驗證的方法或用於提供身分識別的實體。
 
@@ -230,15 +241,15 @@ ht-degree: 0%
 
 | API | 說明 | 使用案例 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [設定檔端點API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | 擷取所有使用者設定檔。 | **使用者第一次開啟使用者端應用程式**<br/><br/>&#x200B;在此案例中，使用者端應用程式不會將使用者選取的MVPD識別碼快取到永久儲存體中。<br/><br/>因此，它將傳送單一要求以擷取所有可用的使用者設定檔。 |
-| 特定MVPD API的[設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | 擷取與特定MVPD相關聯的使用者設定檔。 | **使用者在上次造訪中進行驗證後返回使用者端應用程式**<br/><br/>&#x200B;在此情況下，使用者端應用程式必須將使用者先前選取的MVPD識別碼快取到永久儲存區。<br/><br/>因此，它會傳送單一要求，以擷取該特定MVPD的使用者設定檔。 |
+| [設定檔端點API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | 擷取所有用戶配置文件。 | **使用者首次**<br/><br/>&#x200B;打開用戶端應用程式 在這種情況下，用戶端應用程式沒有在持久儲存中緩存用戶的選定 MVPD 標識符。<br/><br/>因此，它會傳送單一請求來擷取所有可用的用戶配置檔。 |
+| [特定 MVPD API 的設定檔終結點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | 檢索與特定 MVPD 關聯的用戶設定檔。 | **使用者在上次造訪中進行驗證後返回使用者端應用程式**<br/><br/>&#x200B;在此情況下，使用者端應用程式必須將使用者先前選取的MVPD識別碼快取到永久儲存區。<br/><br/>因此，它將發送單個請求來檢索該特定 MVPD 的用戶設定檔。 |
 | [特定（驗證）程式碼API的設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 擷取與特定驗證代碼相關聯的使用者設定檔。 | **使用者啟動驗證程式**<br/><br/>&#x200B;在此案例中，使用者端應用程式必須判斷使用者是否已順利完成驗證，並擷取其設定檔資訊。<br/><br/>因此，它會啟動輪詢機制，以擷取與驗證碼相關聯的使用者設定檔。 |
 
 如需詳細資訊，請參閱主要應用程式](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)內執行的[基本設定檔流程，以及次要應用程式](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)檔案內執行的[基本設定檔流程。
 
 設定檔SSO端點有不同的用途，它讓使用者端應用程式能夠使用合作夥伴驗證回應建立使用者設定檔，並在單次作業中擷取它。
 
-| API | 說明 | 使用案例 |
+| 應用程式介面 | 說明 | 使用案例 |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [設定檔SSO端點API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) | 使用合作夥伴驗證回應來建立和擷取使用者設定檔。 | **使用者允許應用程式使用合作夥伴單一登入來進行驗證**<br/><br/>&#x200B;在此案例中，使用者端應用程式必須在收到合作夥伴驗證回應之後建立使用者設定檔，並透過單次、一次性的作業擷取該設定檔。 |
 
@@ -246,7 +257,7 @@ ht-degree: 0%
 
 如需詳細資訊，請參閱[使用合作夥伴流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)的單一登入[Apple SSO逐步指南(REST API V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)檔案。
 
-#### 10.如果使用者有多個MVPD設定檔，使用者端應用程式該怎麼做？ {#authentication-phase-faq10}
+#### 11.如果使用者有多個MVPD設定檔，使用者端應用程式該怎麼做？ {#authentication-phase-faq11}
 
 支援多個設定檔的決策，取決於使用者端應用程式的業務需求。
 
@@ -256,12 +267,12 @@ ht-degree: 0%
 
 REST API v2支援多個設定檔以適應：
 
-* 使用者可能必須在一般MVPD設定檔與透過單一登入(SSO)取得的設定檔之間進行選擇。
-* 使用者無需從其一般MVPD登出，即可獲得暫時存取許可權。
+* 可能必須在常規 MVPD 設定檔和通過單一登入 （SSO） 獲取的使用者。
+* 為使用者提供臨時訪問許可權，而無需從其常規 MVPD 註銷。
 * 具有MVPD訂閱結合直接對消費者(DTC)服務的使用者。
 * 有多個MVPD訂閱的使用者。
 
-#### 11.當使用者設定檔過期時，會發生什麼事？ {#authentication-phase-faq11}
+#### 12.當使用者設定檔過期時，會發生什麼事？ {#authentication-phase-faq12}
 
 當使用者設定檔到期時，它們不再包含在來自設定檔端點的回應中。
 
@@ -269,7 +280,7 @@ REST API v2支援多個設定檔以適應：
 
 如需詳細資訊，請參閱[建立驗證工作階段API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)檔案。
 
-#### 12.使用者設定檔何時會失效？ {#authentication-phase-faq12}
+#### 13.使用者設定檔何時會失效？ {#authentication-phase-faq13}
 
 使用者設定檔在下列情況下會失效：
 
@@ -278,19 +289,19 @@ REST API v2支援多個設定檔以適應：
 * 當使用者端應用程式更新用於擷取[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)標頭值的使用者端認證時。
 * 當使用者端應用程式撤銷或更新用來取得使用者端認證的軟體陳述式時。
 
-#### 13.使用者端應用程式應何時啟動輪詢機制？ {#authentication-phase-faq13}
+#### 14.使用者端應用程式應何時啟動輪詢機制？ {#authentication-phase-faq14}
 
 為了確保效率並避免不必要的請求，使用者端應用程式必須在下列條件下啟動輪詢機制：
 
-**在主要（熒幕）應用程式內執行的驗證**
+**Authentication在主要（屏幕）應用程式內進行**
 
-主要（串流）應用程式應在瀏覽器元件載入[工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端點要求中`redirectUrl`引數指定的URL後，於使用者到達最終目的地頁面時開始輪詢。
+當用戶到達最終目標頁面時，主（流式處理）應用程式應在瀏覽器元件載入為會話](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)終結點請求中的[参數指定的`redirectUrl`URL后開始輪詢。
 
-**在次要（熒幕）應用程式內執行的驗證**
+**Authentication在輔助（螢幕）應用程式內執行**
 
-主要（串流）應用程式應在使用者起始驗證程式後立即開始輪詢 — 在收到[工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端點回應並向使用者顯示驗證代碼之後。
+主（流式處理）應用程式應在用戶啟動身份驗證過程後立即開始輪詢 - 在收到 [會話](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) 終結點回應並向用戶顯示身份驗證代碼后。
 
-#### 14.使用者端應用程式何時應停止輪詢機制？ {#authentication-phase-faq14}
+#### 15.使用者端應用程式何時應停止輪詢機制？ {#authentication-phase-faq15}
 
 為了確保效率並避免不必要的請求，使用者端應用程式必須在下列條件下停止輪詢機制：
 
@@ -306,7 +317,7 @@ REST API v2支援多個設定檔以適應：
 
 如果使用者在主要（熒幕）裝置上要求新的驗證碼，則現有工作階段不再有效，使用先前驗證碼的輪詢應立即停止。
 
-#### 15.使用者端應用程式應用於輪詢機制時，呼叫之間的間隔為何？ {#authentication-phase-faq15}
+#### 16.使用者端應用程式應用於輪詢機制的呼叫間隔為何？ {#authentication-phase-faq16}
 
 為了確保效率並避免不必要的請求，使用者端應用程式必須在下列條件下設定輪詢機制頻率：
 
@@ -314,7 +325,7 @@ REST API v2支援多個設定檔以適應：
 |----------------------------------------------------------------------|----------------------------------------------------------------------|
 | 主要（串流）應用程式應每3-5秒輪詢一次。 | 主要（串流）應用程式應每3-5秒輪詢一次。 |
 
-#### 16.使用者端應用程式可傳送的輪詢要求數目上限是多少？ {#authentication-phase-faq16}
+#### 17.使用者端應用程式可傳送的輪詢要求數目上限是多少？ {#authentication-phase-faq17}
 
 使用者端應用程式必須遵守Adobe Pass驗證[節流機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits)所定義的目前限制。
 
@@ -322,7 +333,7 @@ REST API v2支援多個設定檔以適應：
 
 如需詳細資訊，請參閱[節流機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)檔案。
 
-#### 17.使用者端應用程式如何取得使用者的中繼資料資訊？ {#authentication-phase-faq17}
+#### 18.使用者端應用程式如何取得使用者的中繼資料資訊？ {#authentication-phase-faq18}
 
 使用者端應用程式可以查詢下列端點之一，這些端點能夠傳回[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)資訊作為設定檔資訊的一部分：
 
@@ -339,7 +350,7 @@ REST API v2支援多個設定檔以適應：
 
 在授權流程期間，某些中繼資料屬性可能會根據MVPD和特定的中繼資料屬性而更新。 因此，使用者端應用程式可能需要再次查詢上述API，以擷取最新的使用者中繼資料。
 
-#### 18.使用者端應用程式應如何管理降級存取？ {#authentication-phase-faq18}
+#### 19.使用者端應用程式應如何管理降級存取？ {#authentication-phase-faq19}
 
 [降級功能](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)可讓使用者端應用程式維持使用者的順暢串流體驗，即使使用者的MVPD驗證或授權服務發生問題亦然。
 
@@ -349,7 +360,7 @@ REST API v2支援多個設定檔以適應：
 
 如需詳細資訊，請參閱[降級存取流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)檔案。
 
-#### 19.使用者端應用程式應如何管理暫時存取？ {#authentication-phase-faq19}
+#### 20.使用者端應用程式應如何管理暫時存取？ {#authentication-phase-faq20}
 
 [TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)可讓使用者端應用程式提供使用者暫時存取許可權。
 
@@ -363,7 +374,7 @@ REST API v2支援多個設定檔以適應：
 
 如需詳細資訊，請參閱[暫時存取流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)檔案。
 
-#### 20.使用者端應用程式應如何管理跨裝置單一登入存取？ {#authentication-phase-faq20}
+#### 21.使用者端應用程式應如何管理跨裝置單一登入存取？ {#authentication-phase-faq21}
 
 如果使用者端應用程式提供跨裝置的一致唯一使用者識別碼，REST API v2可啟用跨裝置單一登入。
 
@@ -408,13 +419,13 @@ REST API v2支援多個設定檔以適應：
 
 使用者端應用程式可檢查包含在決定預先授權端點回應中的[錯誤碼和訊息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，以判斷拒絕預先授權決定的原因。 這些詳細資料可讓您深入瞭解預先授權請求遭拒絕的特定原因，有助於告知使用者體驗或觸發應用程式中的任何必要處理。
 
-如果預先授權決定遭拒，請確定任何針對擷取預先授權決定所實作的重試機制，都不會導致無休止的回圈。
+確保為檢索預授權決策而實現的任何重試機制在預授權決策被拒絕時不會導致無限迴圈。
 
-請考慮將重試限制在合理數字，並透過向使用者呈現清楚的意見反應來適當地處理拒絕。
+考慮將重試限制在合理的數量，並通過向用戶顯示明確的反饋來優雅地處理拒絕。
 
-#### 6.為何預先授權決定遺失媒體權杖？ {#preauthorization-phase-faq6}
+#### 6. 為什麼預授權決定缺少媒體令牌？ {#preauthorization-phase-faq6}
 
-預先授權決定遺失媒體權杖，因為預先授權階段不能用於播放資源，因為這是授權階段的用途。
+預授權決策缺少媒體令牌，因為預授權階段不得用於播放資源，因為這是授權階段的目的。
 
 #### 7.如果預先授權決定已經存在，可以略過「授權階段」嗎？ {#preauthorization-phase-faq7}
 
@@ -428,16 +439,16 @@ REST API v2支援多個設定檔以適應：
 
 資源是與MVPD議定的唯一識別碼，並與使用者端應用程式可串流的內容相關聯。
 
-資源唯一識別碼可以有兩種格式：
+資源唯一識別元可以有兩種格式：
 
-* 簡單的字串格式，例如管道（品牌）的唯一識別碼。
-* 包含其他資訊的媒體RSS (MRSS)格式，例如標題、分級和家長監護中繼資料。
+* 一個簡單的字串格式例如通道的唯一標識碼 （品牌）。
+* 包含標題、評級和家長控制中繼資料等其他信息的媒體 RSS （MRSS） 格式。
 
-如需詳細資訊，請參閱[受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources)檔案。
+有關更多詳細資訊，請參閱 [受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources) 文檔。
 
-#### 9.使用者端應用程式一次可取得多少資源預先授權決定？ {#preauthorization-phase-faq9}
+#### 9. 用戶端一次應用程式多少資源獲取預授權決策？ {#preauthorization-phase-faq9}
 
-由於MVPD施加的條件，使用者端應用程式可以在單一API要求中取得有限數量資源的預先授權決定，通常最多5個。
+由於 MVPD 施加的條件，用戶端應用程式可以在單個 API 請求（通常最多 5 個）中獲取有限數量的資源的預授權決策。
 
 您的組織管理員或代表您行事的Adobe Pass驗證代表透過Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)同意MVPD後，可以檢視和變更此最大資源數量。
 
@@ -451,11 +462,11 @@ REST API v2支援多個設定檔以適應：
 
 #### 1.授權階段的用途為何？ {#authorization-phase-faq1}
 
-授權階段的用途是，在使用者端應用程式透過MVPD驗證其許可權後，提供播放使用者要求的資源的功能。
+授權階段的目的是為用戶端應用程式提供在向 MVPD 驗證其許可權後播放用戶請求的資源的功能。
 
-#### 2.授權階段是否為必要階段？ {#authorization-phase-faq2}
+#### 2. 授權階段是強制性的嗎？ {#authorization-phase-faq2}
 
-授權階段是強制性的，如果客戶端應用程式想要播放使用者請求的資源，則無法跳過此階段，因為它需要在釋放資料流之前向MVPD驗證使用者是否有權使用。
+授權階段是強制性的，如果用戶端應用程式想要播放用戶請求的資源，則不能跳過此階段，因為它需要在釋放流之前與 MVPD 驗證用戶是否有權。
 
 #### 3.什麼是授權決定？其有效期為多久？ {#authorization-phase-faq3}
 
@@ -478,9 +489,9 @@ REST API v2支援多個設定檔以適應：
 
 #### 4.使用者端應用程式是否應將授權決定快取至永久儲存區？ {#authorization-phase-faq4}
 
-使用者端應用程式不需要將授權決定儲存在永久儲存體中。
+用戶端應用程式不需要在持久儲存中商店授權決策。
 
-#### 5.使用者端應用程式如何判斷授權決定被拒絕的原因？ {#authorization-phase-faq5}
+#### 5. 客戶應用程式如何確定授權決定被拒絕的原因？ {#authorization-phase-faq5}
 
 使用者端應用程式可以檢查包含在來自Decisions Authorize端點的回應中的[錯誤碼和訊息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，以判斷拒絕授權決定的原因。 這些詳細資訊可讓您深入瞭解授權請求遭拒的特定原因，有助於告知使用者體驗或觸發應用程式中的任何必要處理。
 
@@ -582,7 +593,7 @@ REST API v2支援多個設定檔以適應：
 >
 > 如果使用者端應用程式從REST API V1移轉至REST API V2，使用者端應用程式可以繼續使用相同的方法取得`Bearer`存取權杖值，就像之前一樣。
 
-[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)請求標頭包含使用者端應用程式存取受Adobe Pass保護的API所需的`Bearer`存取權杖。
+[授權](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)請求標頭包含`Bearer`用戶端應用程式訪問受Adobe Pass保護的 API 所需的存取權杖。
 
 在註冊階段期間，必須從Adobe Pass驗證取得授權標頭值。
 
@@ -590,16 +601,16 @@ REST API v2支援多個設定檔以適應：
 
 * [Dynamic Client註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
 * [擷取使用者端認證API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
-* [擷取存取Token API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)
-* [動態使用者端註冊流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
+* [擷取存取權杖 API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+* [動態客戶端註冊流量](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
 
-#### 2.如何計算AP-Device-Identifier標頭的值？ {#headers-faq2}
+#### 2. 如何計算 AP 設備識別碼標頭的值？ {#headers-faq2}
 
 >[!IMPORTANT]
 >
-> 萬一使用者端應用程式從REST API V1移轉至REST API V2，使用者端應用程式可繼續使用與先前相同的方法運算裝置識別碼值。
+> 如果用戶端應用程式從 REST API V1 遷移到 REST API V2，用戶端應用程式可以繼續使用與以前相同的方法來計算 裝置 標識符值。
 
-[AP-Device-Identifier](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)要求標頭包含由使用者端應用程式建立的串流裝置識別碼。
+[AP 设备標識符](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)請求標頭包含流式處理裝置標識符，因為它是由用戶端應用程式創建的。
 
 [AP-Device-Identifier](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)標題檔案提供主要平台如何計算值的範例，但使用者端應用程式可以根據自己的商業邏輯和需求選擇使用不同的方法。
 
@@ -629,7 +640,7 @@ REST API v2支援多個設定檔以適應：
 
 是。
 
-您可以透過我們專屬的[Adobe Developer](https://developer.adobe.com/adobe-pass/)網站探索REST API V2。 Adobe Developer網站可讓您不受限制地存取：
+您可以透過我們專屬 [的 Adobe Systems 開發人員](https://developer.adobe.com/adobe-pass/) 網站探索 REST API V2。 Adobe Developer網站可讓您不受限制地存取：
 
 * [DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)
 * [REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)
@@ -649,13 +660,13 @@ REST API v2支援多個設定檔以適應：
 * [DCR API JSON](https://developer.adobe.com/adobe-pass/dcrApi.json)
 * [REST API V2 JSON](https://developer.adobe.com/adobe-pass/restApiV2.json)
 
-接著，您可以將這些檔案匯入您偏好的API開發工具，探索REST API V2請求和回應並測試API。
+然後，您可以將這些文件導入首選 API 開發工具，以流覽 REST API V2 請求和回應，並測試 API。
 
-#### 3.我仍可以使用託管於https://sp.auth-staging.adobe.com/apitest/api.html的現有API測試工具嗎？ {#misc-faq3}
+#### 3. 我還能使用 https://sp.auth-staging.adobe.com/apitest/api.html 託管的現有 API 測試工具嗎？ {#misc-faq3}
 
-不適用。
+不。
 
-移轉至REST API V2的使用者端應用程式應使用託管於https://developer.adobe.com/adobe-pass/的新測試工具。 Adobe Developer網站可讓您不受限制地存取：
+遷移到 REST API V2 的用戶端應用程式應使用託管在 https://developer.adobe.com/adobe-pass/ 的新測試工具。 Adobe Developer網站可讓您不受限制地存取：
 
 * [DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)
 * [REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)
@@ -772,10 +783,10 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 | 擷取註冊代碼（驗證代碼） | [張貼<br/> /reggie/v1/{serviceProvider}/regcode](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) | [張貼<br/> /api/v2/{serviceProvider}/sessions](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
 | 檢查註冊代碼（驗證代碼） | [GET <br/> /reggie/v1/{serviceProvider}/regcode/{code}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md) | [GET <br/> /api/v2/{serviceProvider}/sessions/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
 | 在第二個熒幕繼續(MVPD)驗證（應用程式） | [GET <br/> /api/v1/authenticate](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | [張貼<br/> /api/v2/{serviceProvider}/sessions/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md) <br/> [GET <br/> /api/v2/authenticate/{serviceProvider}/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
-| 啟動(MVPD)驗證 | [GET <br/> /api/v1/authenticate](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | [GET <br/> /api/v2/authenticate/{serviceProvider}/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
-| 檢查使用者驗證狀態 | [GET <br/> /api/v1/checkauthn （第一個畫面）](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md) <br/> [GET <br/> /api/v1/checkauthn （第二個畫面）](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
-| 擷取使用者驗證Token （設定檔） | [GET <br/> /api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
-| 擷取使用者中繼資料資訊 | [GET <br/> /api/v1/tokens/usermetadata](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
+| 啟動(MVPD)驗證 | [GET <br/> /api/v1/authenticate](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | [<br/> GET /api/v2/authenticate/{serviceProvider}/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) | 有關更多詳細資訊，請參閱以下檔： <br/> <ul><li>[主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
+| 檢查使用者驗證狀態 | [<br/> GET /api/v1/checkauthn （第一個畫面）](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md) <br/> [<br/> GET /api/v1/checkauthn （第二個畫面）](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md) | 使用下列其中一項： <br/><br/> [<br/> GET /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [<br/> GET /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
+| 擷取使用者驗證Token （設定檔） | [GET <br/> /api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 用戶端應用程式可以一次將這些 API 的響應用於多個目的： <br/> <ul><li>檢查用戶身份驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
+| 擷取使用者中繼資料資訊 | [<br/> GET /api/v1/tokens/usermetadata](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md) | 使用下列其中一項： <br/><br/> [<br/> GET /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
 
 +++
 
@@ -839,7 +850,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |--------------------------------------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 完成動態使用者端註冊(DCR) | 提供軟體陳述式給建構函式 | [張貼<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [GET <br/> /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[動態使用者端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[動態使用者端註冊流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
+| 完成動態使用者端註冊(DCR) | 提供軟體陳述式給建構函式 | [張貼<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [<br/> GET /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | 有關更多詳細資訊，請參閱以下檔： <br/> <ul><li>[動態使用者端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[動態使用者端註冊流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
 
 ###### AccessEnabler iOS/tvOS SDK
 
@@ -851,13 +862,13 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |--------------------------------------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 完成動態使用者端註冊(DCR) | 提供軟體陳述式給建構函式 | [張貼<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [GET <br/> /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[動態使用者端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[動態使用者端註冊流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
+| 完成動態使用者端註冊(DCR) | 提供軟體陳述式給建構函式 | [張貼<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [<br/> GET /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | 有關更多詳細資訊，請參閱以下檔： <br/> <ul><li>[動態客戶端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[動態使用者端註冊流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
 
 ###### AccessEnabler FireOS SDK
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |--------------------------------------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 完成動態使用者端註冊(DCR) | 提供軟體陳述式給建構函式 | [張貼<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [GET <br/> /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[動態使用者端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[動態使用者端註冊流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
+| 完整應用程式動態用戶端註冊 （DCR） | 向構造函數提供軟體語句 | [張貼<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [GET <br/> /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[動態使用者端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[動態使用者端註冊流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
 
 +++
 
@@ -908,16 +919,16 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 | 範圍 | SDK | REST API V2 | 觀察 |
 |------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 啟動(MVPD)驗證 | [AccessEnabler.getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#getAuthN) <br/> [AccessEnabler.setSelectedProvider](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#setSelProv) | [發佈<br/> /api/v2/{serviceProvider}/工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) <br/> [GET <br/> /api/v2/authenticate/{serviceProvider}/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
-| 檢查使用者驗證狀態 | [AccessEnabler.checkAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#checkAuthN) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
-| 擷取使用者中繼資料資訊 | [AccessEnabler.getMetadata](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#getMeta) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
+| 檢查使用者驗證狀態 | [AccessEnabler.checkAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#checkAuthN) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查用戶身份驗證狀態</li><li>擷取用戶設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
+| 檢索用戶中繼資料信息 | [AccessEnabler.getMetadata](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#getMeta) | 使用下列其中一項： <br/><br/> [<br/> GET /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
 
 ###### AccessEnabler iOS SDK
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 啟動(MVPD)驗證 | [AccessEnabler.getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN) <br/> [AccessEnabler.setSelectedProvider](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setSelProv) | [發佈<br/> /api/v2/{serviceProvider}/工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) <br/> [GET <br/> /api/v2/authenticate/{serviceProvider}/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
-| 檢查使用者驗證狀態 | [AccessEnabler.checkAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#checkAuthN) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
-| 擷取使用者中繼資料資訊 | [AccessEnabler.getMetadata](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getMeta) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
+| 檢查使用者驗證狀態 | [AccessEnabler.checkAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#checkAuthN) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [<br/> GET /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 用戶端應用程式可以一次將這些 API 的響應用於多個目的： <br/> <ul><li>檢查用戶身份驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
+| 檢索用戶中繼資料信息 | [AccessEnabler.getMetadata](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getMeta) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
 
 ###### AccessEnabler tvOS SDK
 
@@ -928,14 +939,14 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 | 在第二個熒幕繼續(MVPD)驗證（應用程式） | [GET <br/> /api/v1/authenticate](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | [張貼<br/> /api/v2/{serviceProvider}/sessions/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md) <br/> [GET <br/> /api/v2/authenticate/{serviceProvider}/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
 | 啟動(MVPD)驗證 | [AccessEnabler.getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN) <br/> [AccessEnabler.setSelectedProvider](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setSelProv) | [發佈<br/> /api/v2/{serviceProvider}/工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) <br/> [GET <br/> /api/v2/authenticate/{serviceProvider}/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
 | 檢查使用者驗證狀態 | [AccessEnabler.checkAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#checkAuthN) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
-| 擷取使用者中繼資料資訊 | [AccessEnabler.getMetadata](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getMeta) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
+| 擷取使用者中繼資料資訊 | [AccessEnabler.getMetadata](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getMeta) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [<br/> GET /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [<br/> GET /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 用戶端應用程式可以一次將這些 API 的響應用於多個目的： <br/> <ul><li>檢查用戶身份驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
 
 ###### AccessEnabler Android SDK
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 啟動(MVPD)驗證 | [AccessEnabler.getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#getAuthN) <br/> [AccessEnabler.setSelectedProvider](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setSelectedProvider) | [發佈<br/> /api/v2/{serviceProvider}/工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) <br/> [GET <br/> /api/v2/authenticate/{serviceProvider}/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
-| 檢查使用者驗證狀態 | [AccessEnabler.checkAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#checkAuthN) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
+| 啟動 （MVPD） 身份驗證 | [AccessEnabler.getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#getAuthN) <br/> [AccessEnabler.setSelectedProvider](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setSelectedProvider) | [發佈<br/> /api/v2/{serviceProvider}/工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) <br/> [GET <br/> /api/v2/authenticate/{serviceProvider}/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)</li><li>[在輔助應用程式中執行的基本身份驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
+| 檢查用戶身份驗證狀態 | [AccessEnabler.checkAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#checkAuthN) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
 | 擷取使用者中繼資料資訊 | [AccessEnabler.getMetadata](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#getMetadata) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
 
 ###### AccessEnabler FireOS SDK
@@ -947,17 +958,17 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 | 在第二個熒幕繼續(MVPD)驗證（應用程式） | [GET <br/> /api/v1/authenticate](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | [張貼<br/> /api/v2/{serviceProvider}/sessions/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md) <br/> [GET <br/> /api/v2/authenticate/{serviceProvider}/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
 | 啟動(MVPD)驗證 | [AccessEnabler.getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#getAuthN) <br/> [AccessEnabler.setSelectedProvider](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#setSelectedProvider) | [發佈<br/> /api/v2/{serviceProvider}/工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md) <br/> [GET <br/> /api/v2/authenticate/{serviceProvider}/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)</li></ul> |
 | 檢查使用者驗證狀態 | [AccessEnabler.checkAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#checkAuthN) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
-| 擷取使用者中繼資料資訊 | [AccessEnabler.getMetadata](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#getMetadata) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
+| 擷取使用者中繼資料資訊 | [AccessEnabler.getMetadata](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#getMetadata) | 使用下列其中一項： <br/><br/> [GET <br/> /api/v2/{serviceProvider}/profiles](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) <br/> [GET <br/> /api/v2/{serviceProvider}/profiles/code/{code}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 使用者端應用程式可一次將這些API的回應用於多個用途： <br/> <ul><li>檢查使用者驗證狀態</li><li>擷取使用者設定檔</li><li>擷取使用者中繼資料資訊</li></ul> <br/>如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)</li><li>[在輔助 應用程式 内執行的基本配置文件流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)</li></ul> |
 
 +++
 
-#### 預先授權階段常見問題集 {#preauthorization-phase-faqs-migration-sdk-to-rest-api-v2}
+#### 預授權階段常見問題解答 {#preauthorization-phase-faqs-migration-sdk-to-rest-api-v2}
 
-+++預先授權階段常見問題集
+++預授權階段常見問題解答
 
-##### 1.預先授權階段需要哪些高階API移轉？ {#preauthorization-phase-sdk-to-v2-faq1}
+##### 1. 預授權階段需要哪些高級 API 遷移？ {#preauthorization-phase-sdk-to-v2-faq1}
 
-從SDK移轉至REST API V2時，下表呈現需考量的高層級變更：
+在從 SDK 遷移到 REST API V2 的過程中，需要考慮一些高級別的更改，如下表所示：
 
 ###### AccessEnabler JavaScript SDK
 
@@ -975,7 +986,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |---------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 擷取預先授權的資源（預先授權決定） | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#checkPreauth) <br/> [AccessEnabler.preauthorize](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/preauthorize-api-android-sdk.md) | [張貼<br/> /api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本預先授權流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
+| 檢索預授權資源（預授權決策） | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#checkPreauth) <br/> [AccessEnabler.preauthorize](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/preauthorize-api-android-sdk.md) | [張貼<br/> /api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本預先授權流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |---------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1021,15 +1032,15 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 +++登出階段常見問題集
 
-##### 1.登出階段需要哪些高階API移轉？ {#logout-phase-sdk-to-v2-faq1}
+##### 1. 註銷階段需要哪些高級 API 遷移？ {#logout-phase-sdk-to-v2-faq1}
 
-從SDK移轉至REST API V2時，下表呈現需考量的高層級變更：
+在從 SDK 遷移到 REST API V2 的過程中，需要考慮一些高級別的更改，如下表所示：
 
 ###### AccessEnabler JavaScript SDK
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |-----------------|----------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 啟動登出 | [AccessEnabler.logout](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#logout) | [GET <br/> /api/v2/{serviceProvider}/logout](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本登出流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-logout-primary-application-flow.md)</li></ul> |
+| 啟動登出 | [AccessEnabler.logout](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#logout) | [<br/> GET /api/v2/{serviceProvider}/logout](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) | 有關更多詳細資訊，請參閱以下檔： <br/> <ul><li>[主要應用程式內執行的基本登出流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-logout-primary-application-flow.md)</li></ul> |
 
 ###### AccessEnabler iOS/tvOS SDK
 
@@ -1041,7 +1052,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |-----------------|----------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 啟動登出 | [AccessEnabler.logout](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#logout) | [GET <br/> /api/v2/{serviceProvider}/logout](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本登出流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-logout-primary-application-flow.md)</li></ul> |
+| 啟動註銷 | [AccessEnabler.logout](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#logout) | [GET <br/> /api/v2/{serviceProvider}/logout](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本登出流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-logout-primary-application-flow.md)</li></ul> |
 
 ###### AccessEnabler FireOS SDK
 

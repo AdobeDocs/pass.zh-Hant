@@ -2,9 +2,9 @@
 title: Amazon SSO逐步指南(REST API V2)
 description: Amazon SSO逐步指南(REST API V2)
 exl-id: 63e4fa63-8ca3-40eb-b49a-84dd75c2ca1d
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 640ba7073f7f4639f980f17f1a59c4468bfebcf4
 workflow-type: tm+mt
-source-wordcount: '542'
+source-wordcount: '567'
 ht-degree: 0%
 
 ---
@@ -21,17 +21,19 @@ Adobe Pass Authentication REST API V2支援在FireOS上執行之使用者端應�
 
 ## 使用平台身分流程的Amazon單一登入 {#cookbook}
 
+Adobe Pass驗證會與Amazon合作，為電視訂閱者改善登入使用者體驗，並促進跨所有電視應用程式的單一登入(SSO)。
+
 ### 先決條件 {#prerequisites}
 
 繼續使用平台身分識別流程進行Amazon單一登入之前，請確定符合下列先決條件。
 
 #### 整合Amazon SSO SDK {#integrate-amazon-sso-sdk}
 
-串流應用程式必須將單一登入(SSO)適用的[Amazon SSO SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar)程式庫整合至其組建。
+串流應用程式必須將單一登入(SSO)的[Amazon SSO SDK](https://tve.zendesk.com/hc/en-us/article_attachments/360064368131/ottSSOTokenLib_v1.jar)資料庫整合至其組建。
 
 * 將最新的Amazon SSO SDK程式庫下載並複製到與應用程式目錄平行的`/SSOEnabler`資料夾中。
 
-* 更新資訊清單和Gradle檔案，以使用Amazon SSO SDK程式庫。
+* 更新資訊清單和Gradle檔案，以使用Amazon SSO SDK資料庫。
 
   **資訊清單：**
 
