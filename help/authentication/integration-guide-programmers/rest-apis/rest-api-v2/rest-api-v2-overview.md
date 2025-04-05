@@ -2,9 +2,9 @@
 title: REST API V2概觀
 description: REST API V2概觀
 exl-id: a5595193-82c4-4033-bd98-596b4908b401
-source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
+source-git-commit: f0001d86f595040f4be74f357c95bd2919dadf15
 workflow-type: tm+mt
-source-wordcount: '492'
+source-wordcount: '493'
 ht-degree: 0%
 
 ---
@@ -73,6 +73,7 @@ REST API V2可讓驗證工作階段安全地在不同裝置之間傳遞。 只�
 
 若要開始使用，請瀏覽我們的公開檔案：
 
+- [檢查清單](rest-api-v2-checklist.md)
 - [字彙表](rest-api-v2-glossary.md)
 - [常見問答](rest-api-v2-faqs.md)
 - [API](apis/rest-api-v2-apis-overview.md)
