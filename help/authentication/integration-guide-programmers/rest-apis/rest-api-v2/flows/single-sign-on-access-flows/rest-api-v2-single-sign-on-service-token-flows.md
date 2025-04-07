@@ -2,9 +2,9 @@
 title: 單一登入 — 服務權杖 — 流程
 description: REST API V2 — 單一登入 — 服務權杖 — 流程
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '1858'
+source-wordcount: '1857'
 ht-degree: 0%
 
 ---
@@ -126,7 +126,7 @@ Service Token方法可讓多個應用程式使用唯一的使用者識別碼，�
 
    >[!TIP]
    >
-   > 建議：串流應用程式可以等待使用者代理程式到達提供的`redirectUrl`，以檢查一般設定檔是否已成功產生並儲存。
+   > 串流應用程式必須等候使用者代理程式到達提供的`redirectUrl`，以檢查一般設定檔是否已成功產生並儲存。
 
 1. **尋找一般設定檔：** Adobe Pass伺服器會根據收到的引數和標頭識別有效的設定檔。
 

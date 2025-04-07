@@ -2,9 +2,9 @@
 title: 動態使用者端註冊流程
 description: 動態使用者端註冊流程
 exl-id: d881cf0a-de09-4b1d-a094-d5490f944796
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '568'
+source-wordcount: '564'
 ht-degree: 0%
 
 ---
@@ -70,7 +70,7 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   > 建議：使用者端認證必須快取，並可無限期使用。
+   > 使用者端憑證必須快取且無限期使用。
 
 1. **擷取存取Token：**&#x200B;使用者端應用程式會呼叫使用者端權杖端點，收集擷取存取Token所需的所有資料。
 
@@ -100,7 +100,7 @@ ht-degree: 0%
 
    >[!TIP]
    >
-   > 建議：存取權杖只能在指定的期間內快取和使用（例如24小時存留時間）。 過期後，使用者端應用程式必須要求新的存取權杖。
+   > 必須僅在指定的期間（例如24小時的存留時間）內快取和使用存取權杖。 過期後，使用者端應用程式必須要求新的存取權杖。
 
 1. **繼續存取受保護的API：**&#x200B;使用者端應用程式使用存取權杖來存取其他Adobe Pass受保護的API。 使用者端應用程式必須在使用`Bearer`驗證配置（亦即`Authorization: Bearer <access_token>`）的`Authorization`要求標頭中包含存取權杖。
 

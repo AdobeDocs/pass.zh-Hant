@@ -2,9 +2,9 @@
 title: 基本驗證 — 主要應用程式 — 流量
 description: REST API V2 — 基本驗證 — 主要應用程式 — 流量
 exl-id: 8122108d-e9da-43c5-9abb-ab177cb21eb6
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '904'
+source-wordcount: '903'
 ht-degree: 0%
 
 ---
@@ -127,7 +127,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
 
    >[!TIP]
    >
-   > 建議：串流應用程式可以等待使用者代理程式到達提供的`redirectUrl`，以檢查一般設定檔是否已成功產生並儲存。
+   > 串流應用程式必須等候使用者代理程式到達提供的`redirectUrl`，以檢查一般設定檔是否已成功產生並儲存。
 
 1. **傳回關於一般設定檔的資訊：**&#x200B;設定檔端點回應包含關於與所接收引數和標題關聯的一般設定檔的資訊。
 

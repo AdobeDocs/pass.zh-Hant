@@ -1,9 +1,10 @@
 ---
 title: REST API V2檢查清單
 description: REST API V2檢查清單
-source-git-commit: f0001d86f595040f4be74f357c95bd2919dadf15
+exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
+source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
 workflow-type: tm+mt
-source-wordcount: '2535'
+source-wordcount: '2545'
 ht-degree: 0%
 
 ---
@@ -40,7 +41,7 @@ ht-degree: 0%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>存取權杖快取</i></td>
-      <td>將存取權杖儲存在永久儲存體中，並重複使用直到過期 — 不要為每個REST API v2呼叫請求新的權杖。</td>
+      <td>將存取權杖儲存在永久儲存體中，並重複使用直到過期為止。<br/><br/>請勿為每個REST API v2呼叫要求新的權杖，只有在存取權杖過期時才重新整理存取權杖。</td>
       <td>可能會造成系統資源超載、延遲增加，以及可能觸發HTTP 429「太多請求」錯誤回應。</td>
    </tr>
 </table>
@@ -85,7 +86,7 @@ ht-degree: 0%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>輪詢機制設定</i></td>
-      <td>在下列條件下設定輪詢機制頻率：<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md">在主要（熒幕）應用程式內執行的驗證</a></b><ul><li>主要（串流）應用程式應每3-5秒輪詢一次。</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md">在次要（熒幕）應用程式內執行的驗證</a></b><ul><li>主要（串流）應用程式應每3-5秒輪詢一次。</li></ul></td>
+      <td>在下列條件下設定輪詢機制頻率：<br/><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md">在主要（熒幕）應用程式內執行的驗證</a></b><ul><li>主要（串流）應用程式應每3-5秒或更長時間輪詢一次。</li></ul><br/><b><a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md">在次要（熒幕）應用程式內執行的驗證</a></b><ul><li>主要（串流）應用程式應每3-5秒輪詢一次。</li></ul></td>
       <td>可能會造成系統資源超載、延遲增加，以及可能觸發HTTP 429「太多請求」錯誤回應。</td>
    </tr>
    <tr>
@@ -237,7 +238,7 @@ ht-degree: 0%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>存取Token驗證</i></td>
-      <td>主動檢查存取權杖的有效性，並在過期時重新整理。<br/><br/>在重試原始請求之前，請確定用於處理HTTP 401「未獲授權」錯誤的任何重試機制都會先重新整理存取權杖。</td>
+      <td>主動檢查存取權杖是否有效，以在過期時重新整理。<br/><br/>在重試原始請求之前，請確定用於處理HTTP 401「未獲授權」錯誤的任何重試機制都會先重新整理存取權杖。</td>
       <td>觸發HTTP 401「未獲授權」錯誤回應、系統資源超載及延遲增加的風險。</td>
    </tr>
 </table>
