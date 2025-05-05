@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# （舊版） iOS SDK 3.2+ {#sfsafariviewcontroller-support-on-ios-sdk-3.2}上的SFSafariViewController支援
+# （舊版） iOS SDK 3.2+上的SFSafariViewController支援 {#sfsafariviewcontroller-support-on-ios-sdk-3.2}
 
 >[!NOTE]
 >

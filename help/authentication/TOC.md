@@ -129,7 +129,7 @@ ht-degree: 2%
          + [使用者中繼資料](integration-guide-programmers/features-standard/entitlements/user-metadata.md)
          + [決定](integration-guide-programmers/features-standard/entitlements/decisions.md)
          + [媒體權杖](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
-      + 報告{#error-reporting}時發生錯誤
+      + 報告時發生錯誤{#error-reporting}
          + [增強的錯誤碼](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
       + 單一登入存取{#sso-access}
          + 合作夥伴單一登入{#partner-sso}
@@ -262,7 +262,7 @@ ht-degree: 2%
             + [（舊版）使用Charles Proxy](integration-guide-programmers/legacy/notes-technical/using-charles-proxy.md)
             + [（舊版）監控Adobe Pass Adobe PayTV Pass](integration-guide-programmers/legacy/notes-technical/monitoring-adobe-pay-tv-pass.md)
             + [（舊版）如何使用Adobe API測試網站測試驗證和授權流程](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
-+ MVPD {#integration-guide-mvpds}的整合指南
++ MVPD的整合指南 {#integration-guide-mvpds}
    + [MVPD整合指南](integration-guide-mvpds/mvpd-integration-guide-overview.md)
    + [驗證](integration-guide-mvpds/authn-usecase.md)
    + [使用OAuth 2.0通訊協定進行驗證](integration-guide-mvpds/authn-oauth2-protocol.md)
@@ -275,7 +275,7 @@ ht-degree: 2%
    + [Proxy MVPD SAML整合](integration-guide-mvpds/proxy-mvpd-saml-int.md)
    + [服務提供者範圍](integration-guide-mvpds/serv-provider-scoping.md)
    + [MVPD允許IP位址](integration-guide-mvpds/mvpd-listing-ip-addres.md)
-+ TVE儀表板{#user-guide-tve-dashboard}的使用者指南
++ TVE儀表板的使用者指南{#user-guide-tve-dashboard}
    + [TVE儀表板概觀](/help/authentication/user-guide-tve-dashboard/tve-dashboard-overview.md)
    + [環境](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md)
    + [檢閱和推送變更](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)

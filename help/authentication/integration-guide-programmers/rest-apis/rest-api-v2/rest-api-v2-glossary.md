@@ -53,7 +53,7 @@ ht-degree: 0%
 
 此設定是Adobe Pass驗證概念，可儲存有關[程式設計員](#programmer)和[MVPD](#mvpd)整合設定的資訊，並可在[驗證](#authentication)程式期間，要求使用者從使用中整合清單中選取其[電視提供者](#tv-provider)時使用。
 
-### 第{#d}天
+### 第天{#d}
 
 #### 決定 {#decision}
 

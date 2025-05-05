@@ -23,7 +23,7 @@ ht-degree: 0%
 * 低(20%-40%)
 * 極低(0%-20%)
 
-紅線標示目前區段](#threshold-selector)面板中[帳戶超過臨界值選取的臨界值範圍，淺紅色區域包含超過該臨界值的所有帳戶總數。
+紅線標示目前區段[&#128279;](#threshold-selector)面板中帳戶超過臨界值選取的臨界值範圍，淺紅色區域包含超過該臨界值的所有帳戶總數。
 
 ![](assets/accounts-sharing-probability-pie.png)
 

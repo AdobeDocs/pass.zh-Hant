@@ -27,7 +27,7 @@ ht-degree: 0%
 >
 > * 由CTAM [即時存取(HBA)](http://www.ctamtve.com/instantaccess)
 > * [OATC的家用驗證使用案例與需求](https://tve.helpdocsonline.com/topic/awsfiles/download_files?ref=https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/Defining%20TVE%20Home-Based%20Authentication%20(HBA)%20%20Use%20Cases%20and%20Requirements%20Recommended%20Practice%20Version%201_0%20FINAL%20DRAFT%20FOR%20BOARD%20APPROVAL.pdf)
-> * 按Adobe](https://tve.helpdocsonline.com/topic/awsfiles/download_files?ref=https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf?dc=201604260953-2640)的[家用驗證資訊圖
+> * 按Adobe[&#128279;](https://tve.helpdocsonline.com/topic/awsfiles/download_files?ref=https://dzf8vqv24eqhg.cloudfront.net/userfiles/258/326/ckfinder/files/AdobeNewsletterHBA.pdf?dc=201604260953-2640)的家用驗證資訊圖
 > * [驗證已啟用OAuth2的MVPD](/help/authentication/integration-guide-mvpds/authn-oauth2-protocol.md)
 > * [啟用SAML的MVPD驗證](/help/authentication/integration-guide-mvpds/authn-usecase.md)
 > * [使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)

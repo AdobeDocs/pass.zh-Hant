@@ -380,7 +380,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 > **<u>專業秘訣：</u>**&#x200B;請依照下列步驟實作iOS/iPadOS。
 
 * 應用程式必須[取得註冊碼](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)，此註冊碼不應在第一部裝置（熒幕）上呈現給一般使用者。
-* 應用程式必須在第一個裝置（熒幕）上[使用登入碼和[WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)或[SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)元件，來啟動驗證](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md)。
+* 應用程式必須在第一個裝置（熒幕）上[&#128279;](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md)使用登入碼和[WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)或[SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)元件，來啟動驗證。
 * 在[WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)或[SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)元件關閉後，應用程式必須啟動[輪詢，才能知道第一個裝置（熒幕）上的驗證狀態](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)。
 * 產生驗證Token時，應用程式必須停止[輪詢第1部裝置（熒幕）上的](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)。
 
@@ -403,7 +403,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 > **<u>專業秘訣：</u>**&#x200B;請依照下列步驟進行tvOS實作。
 
 * 應用程式必須使用Adobe Pass Authentication Service的&quot;*tokenSource&quot;* [使用者中繼資料](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)，判斷是否因為透過合作夥伴SSO登入而發生驗證。
-* 若&#x200B;*「tokenSource」*&#x200B;值等於「*Apple」，應用程式必須指示/提示使用者僅在tvOS **上**從&#x200B;*`Settings -> Accounts -> TV Provider`*明確登出。*
+* 若&#x200B;*「tokenSource」*&#x200B;值等於「*Apple」，應用程式必須指示/提示使用者僅在tvOS **上**&#x200B;從&#x200B;*`Settings -> Accounts -> TV Provider`*明確登出。*
 * 應用程式必須使用直接HTTP呼叫，從Adobe Pass驗證服務[起始登出](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)。 這無助於在MVPD端清理工作階段。
 
 >[!TIP]

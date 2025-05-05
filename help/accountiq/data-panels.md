@@ -18,7 +18,7 @@ ht-degree: 0%
 | 資料面板 | D2C服務 | TVE程式設計師 | TVE MVPD |
 |---|---|---|---|
 | [目前區段彙總的平均共用分數](#aggregated-sharing) | 可用且一致 | 可用且一致 | 可用且一致 |
-| 區段](#video-categories-segment)中的[視訊類別 | 可微幅調整 | 可微幅調整 | 可微幅調整 |
+| 區段[&#128279;](#video-categories-segment)中的視訊類別 | 可微幅調整 | 可微幅調整 | 可微幅調整 |
 | [依據管道和MVPD的共用分數](#sharin-score-by-channels-and-mvpds) | 無法使用 | 可用 | 無法使用 |
 | [帳戶共用機率](#accounts-sharing-probability) | 可用且一致 | 可用且一致 | 可用且一致 |
 | [共用機率層級的帳戶數目和使用量](#number-of-accounts-usage-sharing-probability) | 可用且一致 | 可用且一致 | 可用且一致 |
@@ -92,7 +92,7 @@ ht-degree: 0%
 >
 > 上一張影像中顯示的[視訊類別](product-concepts.md#video-category-def) （例如區段中的&#x200B;**區域**）只是一個範例。 登入Account IQ時，此面板會顯示貴公司的特定影片類別。
 
-選取[匯出&#x200B;****]將資料下載為.csv檔。 瞭解[如何匯出資料面板報告](/help/accountiq/export-reports.md)。
+選取[匯出&#x200B;**&#x200B;**]將資料下載為.csv檔。 瞭解[如何匯出資料面板報告](/help/accountiq/export-reports.md)。
 
 +++
 
@@ -102,7 +102,7 @@ ht-degree: 0%
 
 ![](assets/sharing-scores-by-mvpds-in-segment.png)
 
-選取[匯出&#x200B;****]將資料下載為.csv檔。 瞭解[如何匯出資料面板報告](/help/accountiq/export-reports.md)。
+選取[匯出&#x200B;**&#x200B;**]將資料下載為.csv檔。 瞭解[如何匯出資料面板報告](/help/accountiq/export-reports.md)。
 
 +++
 
@@ -116,7 +116,7 @@ ht-degree: 0%
 
 *由程式設計師在區段*&#x200B;分享分數
 
-選取[匯出&#x200B;****]將資料下載為.csv檔。 瞭解[如何匯出資料面板報告](/help/accountiq/export-reports.md)。
+選取[匯出&#x200B;**&#x200B;**]將資料下載為.csv檔。 瞭解[如何匯出資料面板報告](/help/accountiq/export-reports.md)。
 
 +++
 
@@ -154,4 +154,4 @@ ht-degree: 0%
 
 *落入各種機率範圍的帳戶、趨勢和使用方式數目*
 
-選取[匯出&#x200B;****]將資料下載為.csv檔。 瞭解[如何匯出資料面板報告](/help/accountiq/export-reports.md)。
+選取[匯出&#x200B;**&#x200B;**]將資料下載為.csv檔。 瞭解[如何匯出資料面板報告](/help/accountiq/export-reports.md)。

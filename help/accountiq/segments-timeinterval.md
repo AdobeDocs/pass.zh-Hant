@@ -86,9 +86,9 @@ D2C服務的&#x200B;*區段摘要*
 
 **區段摘要**&#x200B;包含下列定義區段的條件：
 
-區段&#x200B;**中的**[&#x200B;地區和內容型別](product-concepts.md#video-category-def)參考與視訊串流關聯的中繼資料標籤，這些視訊串流由帳戶共用報表中表示的共用帳戶觀看。
+區段&#x200B;**中的**&#x200B;[&#x200B;地區和內容型別](product-concepts.md#video-category-def)參考與視訊串流關聯的中繼資料標籤，這些視訊串流由帳戶共用報表中表示的共用帳戶觀看。
 
-區段&#x200B;**中的**[&#x200B;量度](product-concepts.md#metric)參考訂閱者必須符合哪些屬性或條件才能在帳戶共用報表中識別。
+區段&#x200B;**中的**&#x200B;[&#x200B;量度](product-concepts.md#metric)參考訂閱者必須符合哪些屬性或條件才能在帳戶共用報表中識別。
 
 +++
 
@@ -100,12 +100,12 @@ D2C服務的&#x200B;*區段摘要*
 
 **區段摘要**&#x200B;包含下列定義區段的條件：
 
-區段&#x200B;**中的**[&#x200B;程式設計師](product-concepts.md#programmer-def)是指內容提供者，其視訊資料流由帳戶共用報表中呈現的共用帳戶觀看。
+區段&#x200B;**中的**&#x200B;[&#x200B;程式設計師](product-concepts.md#programmer-def)是指內容提供者，其視訊資料流由帳戶共用報表中呈現的共用帳戶觀看。
 
-區段&#x200B;**中的**[&#x200B;頻道](product-concepts.md#channel-def)是指其視訊資料流由帳戶共用報表中表示的共用帳戶所觀看的頻道。
+區段&#x200B;**中的**&#x200B;[&#x200B;頻道](product-concepts.md#channel-def)是指其視訊資料流由帳戶共用報表中表示的共用帳戶所觀看的頻道。
 
-區段&#x200B;**中的**[ MVPD](product-concepts.md#mvpd-def)是指與訂閱者相關聯的多視訊節目經銷商，以便在帳戶共用報表中識別。
+區段&#x200B;**中的**&#x200B;[ MVPD](product-concepts.md#mvpd-def)是指與訂閱者相關聯的多視訊節目經銷商，以便在帳戶共用報表中識別。
 
-區段&#x200B;**中的**[&#x200B;量度](product-concepts.md#metric)參考訂閱者必須符合哪些屬性或條件才能在帳戶共用報表中識別。
+區段&#x200B;**中的**&#x200B;[&#x200B;量度](product-concepts.md#metric)參考訂閱者必須符合哪些屬性或條件才能在帳戶共用報表中識別。
 
 +++

@@ -38,7 +38,7 @@ ht-degree: 0%
 
 自訂配置是參考[程式設計員](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#programmer)應用程式的唯一值，可從Adobe Pass [TVE儀表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)產生並下載，且可在iOS裝置上執行的應用程式中作為最終重新導向。
 
-### 第{#d}天
+### 第天{#d}
 
 #### DCR {#dcr}
 

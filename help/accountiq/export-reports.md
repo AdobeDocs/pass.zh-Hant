@@ -15,7 +15,7 @@ ht-degree: 0%
 
 您可以匯出下列資料面板報表：
 
-* 區段](data-panels.md#video-categories-segment)中的[視訊類別
+* 區段[&#128279;](data-panels.md#video-categories-segment)中的視訊類別
 * [透過共用機率層級的帳戶和使用數量](data-panels.md#number-of-accounts-usage-sharing-probability)
 
 請依照步驟匯出特定區段的資料面板報表。

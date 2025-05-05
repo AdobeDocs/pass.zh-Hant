@@ -53,7 +53,7 @@ ht-degree: 0%
 | 要求者 | 此作業有效的程式設計師要求者ID。 |
 | deviceId | 裝置識別碼位元組。 |
 | device_info/</br></br>X-Device-Info | 串流裝置資訊。</br></br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數可能的大小以及GETURL的長度限制，應該在http標頭中作為X-Device-Info傳遞。</br></br><!--See the full details in [Passing Device and Connection Information](/help/authentication/passing-client-information-device-connection-and-application.md)(/help/authentication/passing-client-information-device-connection-and-application.md)-->。 |
-| _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>若此引數設定正確，ESM提供的量度在使用Clienless時可依裝置型別](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)進行[劃分，因此可針對Roku、AppleTV、Xbox等執行不同型別的分析。</br></br>如需詳細資訊，請參閱[在Adobe Pass驗證度量中使用無使用者端deviceType引數的好處&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**注意**： device_info將取代此引數。 |
+| _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>若此引數設定正確，ESM提供的量度在使用Clienless時可依裝置型別[&#128279;](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)進行劃分，因此可針對Roku、AppleTV、Xbox等執行不同型別的分析。</br></br>如需詳細資訊，請參閱[在Adobe Pass驗證度量中使用無使用者端deviceType引數的好處&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**注意**： device_info將取代此引數。 |
 | _deviceUser_ | 裝置使用者識別碼。 |
 | _appId_ | 應用程式id/名稱。</br>**注意**： device_info會取代此引數。 |
 

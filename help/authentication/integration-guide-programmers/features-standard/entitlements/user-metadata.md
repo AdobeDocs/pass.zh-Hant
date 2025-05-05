@@ -80,7 +80,7 @@ Adobe Pass驗證可讓程式設計師檢閱可在其MVPD整合中使用的使用
 
 ## 使用者中繼資料加密 {#encryption}
 
-若要加密和解密使用者中繼資料屬性，程式設計師必須產生憑證（公開/私密金鑰組），並透過[Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication)自行設定](#management)憑證，或與Adobe Pass驗證代表共用公開金鑰。[
+若要加密和解密使用者中繼資料屬性，程式設計師必須產生憑證（公開/私密金鑰組），並透過[Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication)自行設定[&#128279;](#management)憑證，或與Adobe Pass驗證代表共用公開金鑰。
 
 請依照下列步驟操作，確認憑證已產生並正確設定：
 
@@ -142,7 +142,7 @@ Adobe Pass驗證可讓程式設計師檢閱可在其MVPD整合中使用的使用
      openssl x509 -in mycompany-license-temp.pem -inform PEM -out mycompany-license.pem -outform PEM
      ```
 
-1. 使用PEM檔案來[透過[Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication)設定](#management)憑證，或傳送PEM檔案給Adobe Pass驗證代表。
+1. 使用PEM檔案來[&#128279;](#management)透過[Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication)設定憑證，或傳送PEM檔案給Adobe Pass驗證代表。
 
    * 請參閱下一節以取得有關如何透過[Adobe Pass TVE控制面板](https://experience.adobe.com/#/pass/authentication)管理憑證的詳細資料。
 

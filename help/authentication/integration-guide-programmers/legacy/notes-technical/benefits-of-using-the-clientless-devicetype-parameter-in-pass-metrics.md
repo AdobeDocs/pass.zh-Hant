@@ -35,7 +35,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->如果引數`deviceType`設定正確，則在軟體權利檔案服務監視中會有下列&#x200B;**優點**：它提供使用無使用者端時，每個裝置型別](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)有[劃分的量度，因此可以針對Roku、AppleTV、Xbox等執行不同型別的分析。
+>如果引數`deviceType`設定正確，則在軟體權利檔案服務監視中會有下列&#x200B;**優點**：它提供使用無使用者端時，每個裝置型別[&#128279;](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)有劃分的量度，因此可以針對Roku、AppleTV、Xbox等執行不同型別的分析。
 
 
 如需軟體權利檔案服務監視API的詳細資訊，請參閱[向下鑽研樹狀結構](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md#drill-down_tree)，其中說明ESM 2.0中可用的[維度](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#esm_dimensions) （資源）。

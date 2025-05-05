@@ -34,6 +34,7 @@ ht-degree: 0%
    3. 移至&#x200B;*已註冊的應用程式*&#x200B;標籤
    4. 選取應用程式
    5. 在您要取得軟體陳述式的註冊應用程式列上按一下下載，然後將其儲存為本機電腦上的檔案
+
       <figure>
           <img src="assets/programmer-download-software-statement-button.png"
                alt="下載軟體宣告">
@@ -46,6 +47,7 @@ ht-degree: 0%
 
 3. 取得存取權杖
    1. 使用上述軟體陳述式並執行以下呼叫，取得使用者端憑證。 如此將可取得client_id - client_secret配對，藉以取得存取權杖。
+
       *不應每次都執行此步驟。 應該只在認證過期時再執行一次。*
       <figure>
           <img src="assets/dcr_request_1_get_client_credentials.png"
@@ -53,6 +55,7 @@ ht-degree: 0%
        </figure>
 
    2. 使用以下呼叫取得存取Token。 使用此存取Token來呼叫任何CMU API，直到Token過期。
+
       *只有在最後產生的Token過期時，才應執行此步驟。*
       <figure>
           <img src="assets/dcr_get_access_token_call.png"

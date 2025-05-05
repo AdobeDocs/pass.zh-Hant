@@ -73,7 +73,7 @@ X軸代表以目前間隔為基礎的時間，而Y軸代表該期間的基本訂
 
 * 郵遞區號數量臨界值
 
-當您根據選取的臨界值](#account-segments-basedon-segments)面板更新[帳戶區段中的臨界值時，您將在下列位置檢視效果：
+當您根據選取的臨界值[&#128279;](#account-segments-basedon-segments)面板更新帳戶區段中的臨界值時，您將在下列位置檢視效果：
 
 * [每個帳戶的每週（或每月）裝置](#devices-week-account)
 
@@ -121,7 +121,7 @@ X軸繪製帳戶數，Y軸繪製裝置數。 它會根據您為每個帳戶設�
 
 ## 每個帳戶的每週（或每月）位置 {#locations-week-account}
 
-類似於每個帳戶](#devices-week-account)每週（或每月） [個裝置的量度，每個帳戶的每週（或每月）位置量度可讓您從不同位置分析訂閱者帳戶的使用情況。 X軸繪製「帳戶數」，Y軸繪製「位置數」。
+類似於每個帳戶[&#128279;](#devices-week-account)每週（或每月） 個裝置的量度，每個帳戶的每週（或每月）位置量度可讓您從不同位置分析訂閱者帳戶的使用情況。 X軸繪製「帳戶數」，Y軸繪製「位置數」。
 
 ![](assets/graph-loc-week-acc.png)
 
@@ -151,13 +151,13 @@ x軸會繪製「帳戶數」，y軸會繪製「IP數」。
 
 ## 科目節段 — 歷史檢視表 {#account-segment-historical-view}
 
-「歷史檢視」長條圖可協助您比較不同時間間隔的使用狀況測量結果。 此外，它也會集體繪製各種使用量度，例如每個帳戶](#devices-week-account)每週（或每月）的[個裝置、每個帳戶](#locations-week-account)每週（或每月）的[個位置，以及每個帳戶](#ip-week-account)每週（或每月）的[個IP。
+「歷史檢視」長條圖可協助您比較不同時間間隔的使用狀況測量結果。 此外，它也會集體繪製各種使用量度，例如每個帳戶[&#128279;](#devices-week-account)每週（或每月）的[個裝置、每個帳戶](#locations-week-account)每週（或每月）的[個位置，以及每個帳戶](#ip-week-account)每週（或每月）的個IP。
 
 * x軸繪製時間間隔，y軸繪制訂戶帳戶、裝置、位置和IP的數目。
 
 * 橙色長條代表不同時間間隔中的區段。
 
-* 折線圖會根據臨界值，繪製時間間隔內每個帳戶](#devices-week-account)每週（或每月）的[裝置、每個帳戶](#locations-week-account)每週（或每月）的[位置，以及每個帳戶](#ip-week-account)每週（或每月）的[IP值的變更。
+* 折線圖會根據臨界值，繪製時間間隔內每個帳戶[&#128279;](#devices-week-account)每週（或每月）的[裝置、每個帳戶](#locations-week-account)每週（或每月）的[位置，以及每個帳戶](#ip-week-account)每週（或每月）的IP值的變更。
 
 ![](assets/historical-view.png)
 

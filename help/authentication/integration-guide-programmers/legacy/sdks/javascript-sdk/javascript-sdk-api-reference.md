@@ -178,7 +178,7 @@ ht-degree: 0%
 
 ## checkAuthorization(inResourceID) {#checkauthorization(inresourceid)}
 
-**描述：**&#x200B;應用程式使用此方法來檢查目前客戶和指定資源的授權狀態。 首先檢查驗證狀態。 如果未驗證，則會觸發tokenRequestFailed()回呼，而方法會結束。 如果使用者已通過驗證，它也會觸發授權流程。 檢視[getAuthorization()](#getAuthZ方法的詳細資料。
+**描述：**&#x200B;應用程式使用此方法來檢查目前客戶和指定資源的授權狀態。 首先檢查驗證狀態。 如果未驗證，則會觸發tokenRequestFailed()回呼，而方法會結束。 如果使用者已通過驗證，它也會觸發授權流程。 檢視[getAuthorization()] (#getAuthZ方法的詳細資料。
 
 >[!TIP]
 >
@@ -196,7 +196,7 @@ ht-degree: 0%
 
 ## checkPreauthorizedResources(resources) {#checkPreauthorizedResources(resources)}
 
-**描述：**要求清單的「預檢」授權狀態
+**描述：**&#x200B;要求清單的「預檢」授權狀態
 資源。
 
 **引數：**
@@ -365,7 +365,7 @@ ht-degree: 0%
 
 ## entitlementLoaded() {#entitlementLoaded}
 
-**描述：**當Access Enabler完成初始化並準備接收要求時觸發。 實作此回撥以瞭解何時可以使用Access Enabler API開始通訊。
+**描述：**&#x200B;當Access Enabler完成初始化並準備接收要求時觸發。 實作此回撥以瞭解何時可以使用Access Enabler API開始通訊。
 </br>
 
 [返回頂端](#top)
@@ -415,7 +415,7 @@ ht-degree: 0%
 
 **說明：**&#x200B;如果使用者選取的MVPD需要iFrame才能顯示其驗證登入頁面UI，請實作此回呼。
 
-**觸發者：**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**觸發者：**&#x200B;[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [返回頁首](#top)
 
