@@ -48,7 +48,7 @@ AccessEnabler的網路活動會在其自己的執行緒中進行，因此不會�
 
 ## 設定Experience CloudID服務（訪客ID） {#visitorIDSetup}
 
-從[!DNL Analytics]的觀點來看，設定[Experience Cloud識別碼](https://experienceleague.adobe.com/docs/id-service/using/home.html)值很重要。 設定`visitorID`值後，SDK會連同每個網路呼叫傳送此資訊，且[!DNL Adobe Pass]驗證伺服器會收集此資訊。 您可以將來自Adobe Pass Authentication Service的分析與其他應用程式或網站的任何其他分析報表建立關聯。 您可以在[這裡](#setOptions)找到如何設定visitorID的資訊。
+從[!DNL Analytics]的觀點來看，設定[Experience Cloud識別碼](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hant)值很重要。 設定`visitorID`值後，SDK會連同每個網路呼叫傳送此資訊，且[!DNL Adobe Pass]驗證伺服器會收集此資訊。 您可以將來自Adobe Pass Authentication Service的分析與其他應用程式或網站的任何其他分析報表建立關聯。 您可以在[這裡](#setOptions)找到如何設定visitorID的資訊。
 
 ## 權益流程 {#entitlement}
 

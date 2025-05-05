@@ -29,7 +29,7 @@ ht-degree: 0%
 1. 在「此內容是否有幫助？」中。 顯示在瀏覽器視窗底部的橫幅按一下 **詳細的意見回饋選項**.
 1. 按一下 **建議編輯** 並在GitHub UI中提交變更的提取請求(PR)。
 
-   檢視一般 [Adobe檔案投稿人指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) 以取得詳細資訊。
+   檢視一般 [Adobe檔案投稿人指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=zh-Hant) 以取得詳細資訊。
 
 Adobe使用條款涵蓋您在本存放庫為檔案和程式碼範例提交的小幅更正或釐清。
 
@@ -43,7 +43,7 @@ Adobe使用條款涵蓋您在本存放庫為檔案和程式碼範例提交的小
 
 社群投稿人可以使用GitHub UI進行基本編輯或建立存放庫復本，以做出重大貢獻。
 
-請參閱 [Adobe檔案投稿人指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) 以取得詳細資訊。
+請參閱 [Adobe檔案投稿人指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=zh-Hant) 以取得詳細資訊。
 
 ## 內部參與者
 

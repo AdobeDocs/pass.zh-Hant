@@ -186,7 +186,7 @@ AccessEnabler程式庫)
 
 ## 設定訪客ID {#visitorID}
 
-從分析觀點來看，設定[Experience CloudvisitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html)值非常重要。 設定EC visitorID值後，SDK會將此資訊與每個網路呼叫一併傳送，而Adobe Pass驗證服務將會收集此資訊。 如此一來，您就可以將Adobe Pass驗證服務的分析資料與其他應用程式或網站的任何其他分析報表建立關聯。 如需設定EC visitorID的相關資訊，請參閱[這裡](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en)。
+從分析觀點來看，設定[Experience CloudvisitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hant)值非常重要。 設定EC visitorID值後，SDK會將此資訊與每個網路呼叫一併傳送，而Adobe Pass驗證服務將會收集此資訊。 如此一來，您就可以將Adobe Pass驗證服務的分析資料與其他應用程式或網站的任何其他分析報表建立關聯。 如需設定EC visitorID的相關資訊，請參閱[這裡](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hant)。
 
 
 >[!NOTE]

@@ -75,7 +75,7 @@ Adobe Pass驗證團隊可協助您在整合過程中遇到任何問題或技術�
 
 ## 存取檔案 {#access-documentation}
 
-**Adobe將透過[Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home)提供**&#x200B;我們的公開檔案存取權。
+**Adobe將透過[Adobe Experience League](https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/home)提供**&#x200B;我們的公開檔案存取權。
 
 Adobe Pass驗證團隊針對[程式設計師整合指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)區段下的可用功能和API提供完整檔案。 請參考本節下的目錄，以取得每個主題的詳細資訊連結。
 
