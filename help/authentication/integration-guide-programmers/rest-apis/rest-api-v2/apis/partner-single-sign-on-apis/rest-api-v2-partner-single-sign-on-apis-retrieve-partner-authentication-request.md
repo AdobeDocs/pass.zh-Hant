@@ -2,9 +2,9 @@
 title: 擷取合作夥伴驗證請求
 description: REST API V2 — 擷取合作夥伴驗證請求
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: e8836c76aec10607717c0a67434b2ba5a78a8954
+source-git-commit: 9f872ad94e0aaa0546c8fcac9f88c50f47e10f6e
 workflow-type: tm+mt
-source-wordcount: '1219'
+source-wordcount: '1236'
 ht-degree: 1%
 
 ---
@@ -270,6 +270,7 @@ ht-degree: 1%
                     <li><b>authenticatedSSO</b><br/>使用者端應用程式已透過單一登入存取流程驗證。</li>
                     <li><b>pfs_fallback</b><br/>使用者端應用程式必須回復到基本驗證流程，因為<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>標頭值遺失或無效。</li>
                     <li><b>configuration_fallback</b><br/>由於Adobe Pass後端上的合作夥伴單一登入設定，使用者端應用程式必須回復到基本驗證流程。</li>
+                    <li><b>missing_parameters_fallback</b><br />使用者端應用程式必須還原為恢復流程，因為引數遺失或無效。</li>
                   </ul>
                <td><i>必填</i></td>
             </tr>
@@ -574,7 +575,7 @@ Content-Type: application/json;charset=UTF-8
 {
     "actionName": "resume",
     "actionType": "direct",
-    "reasonType": "none",
+    "reasonType": "missing_parameters_fallback",
     "missingParameters": [
           "redirectUrl"
     ],
