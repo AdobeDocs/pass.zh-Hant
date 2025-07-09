@@ -2,9 +2,9 @@
 title: 使用特定mvpd擷取授權決策
 description: REST API V2 — 使用特定mvpd擷取授權決策
 exl-id: e8889395-4434-4bec-a212-a8341bb9c310
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '927'
+source-wordcount: '935'
 ht-degree: 1%
 
 ---
@@ -68,8 +68,8 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">授權</td>
-      <td>授權</a>標頭文檔中介紹了<a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">持有者令牌有效負載的生成。</td>
+      <td style="background-color: #DEEBFF;">Authorization</td>
+      <td>在<a href="../../appendix/headers/rest-api-v2-appendix-headers-authorization.md">授權</a>標標頭檔案中說明了持有人權杖承載的產生。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -139,7 +139,7 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">AP-TempPass-Identity</td>
       <td><a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-temppass-identity.md">AP-TempPass-Identity</a>標標頭檔案中說明了產生使用者唯一識別碼承載的流程。</td>
-      <td>自選</td>
+      <td>可選</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
@@ -211,7 +211,7 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">地位</td>
+      <td style="background-color: #DEEBFF;">狀態</td>
       <td>200</td>
       <td><i>必填</i></td>
    </tr>
@@ -241,13 +241,13 @@ ht-degree: 1%
                 <td><i>必填</i></td>
             </tr>
             <tr>
-                <td style="background-color: #DEEBFF;">serviceProvider</td>
-                <td>在加入過程中與服務提供者關聯的內部唯一標識符。</td>
+                <td style="background-color: #DEEBFF;">服務提供者</td>
+                <td>在上線流程中與服務提供者相關聯的內部唯一識別碼。</td>
                 <td><i>必填</i></td>
             </tr>
             <tr>
                 <td style="background-color: #DEEBFF;">mvpd</td>
-                <td>在加入過程中與身份提供程式關聯的內部唯一標識碼。</td>
+                <td>上線流程中與身分提供者相關聯的內部唯一識別碼。</td>
                 <td><i>必填</i></td>
             </tr>
             <tr>
@@ -270,26 +270,26 @@ ht-degree: 1%
                <td><i>必填</i></td>
             </tr>
             <tr>
-               <td style="background-color: #DEEBFF;">令牌</td>
+               <td style="background-color: #DEEBFF;">token</td>
                <td>
                   有關媒體權杖的資訊。
                   <br/><br/>
                   具有以下屬性的JSON物件：
                   <ul>
-                    <li><b>notBefore</b><br/>媒體權杖無效之前的時間戳記。</li>
-                    <li><b>notAfter</b><br/>媒體權杖無效的時間戳記。</li>
+                    <li><b>notBefore</b><br/>媒體權杖無效之前的時間戳記（毫秒）。</li>
+                    <li><b>notAfter</b><br/>媒體權杖無效的時間戳記（毫秒）。</li>
                     <li><b>serializedToken</b><br/>Base64編碼的媒體權杖。</li>
                   </ul>
                <td>可選</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>決定無效之前的時間戳記。</td>
+               <td>決定無效之前的時間戳記（毫秒）。</td>
                <td>可選</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>超過該時間戳記的決定無效。</td>
+               <td>決定無效的時間戳記（以毫秒為單位）。</td>
                <td>可選</td>
             </tr>
             <tr>
@@ -332,13 +332,13 @@ ht-degree: 1%
    </tr>
 </table>
 
-## 樣品 {#samples}
+## 範例 {#samples}
 
-### 1. 在允許決策時使用特定的 mvpd 檢索授權決策
+### 1.當決定允許時，使用特定mvpd擷取授權決定
 
 >[!BEGINTABS]
 
->[!TAB 請求]
+>[!TAB 要求]
 
 ```HTTPS
 POST /api/v2/REF30/decisions/authorize/Cablevision HTTP/1.1
@@ -386,11 +386,11 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. 在決策被拒絕時使用特定 mvpd 檢索授權決策
+### 2.在決定被拒絕時使用特定mvpd擷取授權決定
 
 >[!BEGINTABS]
 
->[!TAB 請求]
+>[!TAB 要求]
 
 ```HTTPS
 POST /api/v2/REF30/decisions/authorize/Cablevision HTTP/1.1
@@ -430,7 +430,7 @@ Content-Type: application/json;charset=UTF-8
                 "code": "authorization_denied_by_mvpd",
                 "message": "The MVPD has returned a "Deny" decision when requesting authorization for the specified resource",
                 "details": "Your subscription package does not include the "Live" channel",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
             },
             "notBefore": 1697094207324,
@@ -562,7 +562,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }
@@ -576,7 +576,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }
@@ -655,7 +655,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "temporary_access_duration_limit_exceeded",
                 "message": "The temporary access duration limit has been exceeded.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "authentication"
             }
         }
@@ -682,7 +682,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 500,
                 "code": "invalid_configuration_temporary_access",
                 "message": "The temporary access configuration is invalid.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "configuration"
             }
         }
@@ -696,7 +696,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!BEGINTABS]
 
->[!TAB 請求]
+>[!TAB 要求]
 
 ```HTTPS
 POST /api/v2/apasstest1/decisions/authorize/flexibleTempPass HTTP/1.1
@@ -716,7 +716,7 @@ Body:
 }
 ```
 
->[!TAB 回應 - 可用]
+>[!TAB 回應 — 可用]
 
 ```HTTPS
 HTTP/1.1 200 OK
@@ -743,7 +743,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
->[!TAB 回應 - 已超過持續時間限制]
+>[!TAB 回應 — 超過期間限制]
 
 ```HTTPS
 HTTP/1.1 200 OK
@@ -762,7 +762,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "temporary_access_duration_limit_exceeded",
                 "message": "The temporary access duration limit has been exceeded.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "authentication"
             }
         }
@@ -770,7 +770,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
->[!TAB 回應 - 已超過資源上限]
+>[!TAB 回應 — 超出資源限制]
 
 ```HTTPS
 HTTP/1.1 200 OK
@@ -789,7 +789,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "temporary_access_resources_limit_exceeded",
                 "message": "The temporary access resources limit has been exceeded.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "authentication"
             }
         }
@@ -816,7 +816,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 500,
                 "code": "invalid_configuration_temporary_access",
                 "message": "The temporary access configuration is invalid.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "configuration"
             }
         }
@@ -843,7 +843,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 400,
                 "code": "invalid_header_identity_for_temporary_access",
                 "message": "The identity for temporary access header value is missing or invalid.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }

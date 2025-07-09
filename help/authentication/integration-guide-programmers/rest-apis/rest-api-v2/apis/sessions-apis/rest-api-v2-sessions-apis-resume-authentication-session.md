@@ -2,9 +2,9 @@
 title: 繼續驗證工作階段
 description: REST API V2 — 繼續驗證工作階段
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '890'
 ht-degree: 1%
 
 ---
@@ -280,12 +280,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>驗證程式碼無效之前的時間戳記。</td>
+               <td>驗證程式碼無效之前的時間戳記（以毫秒為單位）。</td>
                <td>可選</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>驗證程式碼無效的時間戳記。</td>
+               <td>驗證代碼無效的時間戳記（以毫秒為單位）。</td>
                <td>可選</td>
             </tr>
          </table>

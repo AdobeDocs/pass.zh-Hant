@@ -2,9 +2,9 @@
 title: 使用合作夥伴驗證回應建立和擷取設定檔
 description: REST API V2 — 使用合作夥伴驗證回應建立及擷取設定檔
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '775'
+source-wordcount: '779'
 ht-degree: 1%
 
 ---
@@ -233,12 +233,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>設定檔無效之前的時間戳記。</td>
+               <td>設定檔無效之前的時間戳記（以毫秒為單位）。</td>
                <td><i>必填</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>設定檔失效之前的時間戳記。</td>
+               <td>設定檔無效的時間戳記（以毫秒為單位）。</td>
                <td><i>必填</i></td>
             </tr>
             <tr>

@@ -2,9 +2,9 @@
 title: 擷取設定檔
 description: REST API V2 — 擷取設定檔
 exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '868'
+source-wordcount: '872'
 ht-degree: 1%
 
 ---
@@ -38,17 +38,17 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">方法</td>
-      <td>獲取</td>
+      <td>GET</td>
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">路徑參數</th>
+      <th style="background-color: #EFF2F7;">路徑引數</th>
       <th style="background-color: #EFF2F7;"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">serviceProvider</td>
-      <td>在加入過程中與服務提供者關聯的內部唯一標識符。</td>
+      <td style="background-color: #DEEBFF;">服務提供者</td>
+      <td>在上線流程中與服務提供者相關聯的內部唯一識別碼。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -186,7 +186,7 @@ ht-degree: 1%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">地位</td>
+      <td style="background-color: #DEEBFF;">狀態</td>
       <td>200</td>
       <td><i>必填</i></td>
    </tr>
@@ -227,12 +227,12 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>設定檔無效之前的時間戳記。</td>
+               <td>設定檔無效之前的時間戳記（以毫秒為單位）。</td>
                <td><i>必填</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>設定檔失效之前的時間戳記。</td>
+               <td>設定檔無效的時間戳記（以毫秒為單位）。</td>
                <td><i>必填</i></td>
             </tr>
             <tr>
@@ -323,7 +323,7 @@ ht-degree: 1%
 
 >[!BEGINTABS]
 
->[!TAB 請求]
+>[!TAB 要求]
 
 ```HTTPS
 GET /api/v2/REF30/profiles HTTP/1.1
@@ -382,11 +382,11 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2. 使用服務令牌方法檢索通過基本身份驗證或單一登入獲取的配置文件
+### 2.擷取透過基本驗證或使用服務權杖方法的單一登入取得的設定檔
 
 >[!BEGINTABS]
 
->[!TAB 請求]
+>[!TAB 要求]
 
 ```HTTPS
 GET /api/v2/REF30/profiles HTTP/1.1

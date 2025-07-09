@@ -2,9 +2,9 @@
 title: REST API V2常見問題集
 description: REST API V2常見問題集
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '9703'
+source-wordcount: '9566'
 ht-degree: 0%
 
 ---
@@ -81,7 +81,7 @@ ht-degree: 0%
 
 使用者端應用程式可以管理自己的MVPD清單，但必須使MVPD識別碼與Adobe Pass驗證保持同步。 因此，建議您使用Adobe Pass驗證提供的設定，以確保清單是最新且正確的。
 
-如果提供的Adobe Pass識別碼無效，或是使用者端應用程式未與指定的[服務提供者](rest-api-v2-glossary.md#service-provider)有效整合，使用者端應用程式將會從MVPD驗證REST API V2收到[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)。
+如果提供的Adobe Pass識別碼無效，或是使用者端應用程式未與指定的[服務提供者](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)有效整合，使用者端應用程式將會從MVPD驗證REST API V2收到[錯誤](rest-api-v2-glossary.md#service-provider)。
 
 #### 6.使用者端應用程式可以篩選MVPD清單嗎？ {#configuration-phase-faq6}
 
@@ -96,7 +96,7 @@ ht-degree: 0%
 * 該MVPD未經驗證的使用者將無法再使用該MVPD完成驗證階段。
 * 該MVPD的已驗證使用者將無法再使用該MVPD完成預先授權、授權或登出階段。
 
-如果使用者選取的Adobe Pass不再與指定的[服務提供者](rest-api-v2-glossary.md#service-provider)有效整合，使用者端應用程式將會從MVPD Authentication REST API V2收到[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)。
+如果使用者選取的Adobe Pass不再與指定的[服務提供者](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)有效整合，使用者端應用程式將會從MVPD Authentication REST API V2收到[錯誤](rest-api-v2-glossary.md#service-provider)。
 
 #### 8.如果與MVPD的整合啟用回頭並標籤為使用中，會發生什麼情況？ {#configuration-phase-faq8}
 
@@ -123,7 +123,7 @@ ht-degree: 0%
 
 當使用者端應用程式需要播放內容時，「驗證階段」會成為「預先授權階段」或「授權階段」的先決條件步驟。
 
-#### 2. 「驗證階段」是否為必要？ {#authentication-phase-faq2}
+#### &#x200B;2. 「驗證階段」是否為必要？ {#authentication-phase-faq2}
 
 驗證階段是強制性的，當使用者在Adobe Pass驗證中沒有有效的設定檔時，使用者端應用程式必須驗證使用者。
 
@@ -245,7 +245,7 @@ ht-degree: 0%
 | 特定MVPD API的[設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | 擷取與特定MVPD相關聯的使用者設定檔。 | **使用者在上次造訪中進行驗證後返回使用者端應用程式**<br/><br/>&#x200B;在此情況下，使用者端應用程式必須將使用者先前選取的MVPD識別碼快取到永久儲存區。<br/><br/>因此，它會傳送單一要求，以擷取該特定MVPD的使用者設定檔。 |
 | [特定（驗證）程式碼API的設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 擷取與特定驗證代碼相關聯的使用者設定檔。 | **使用者啟動驗證程式**<br/><br/>&#x200B;在此案例中，使用者端應用程式必須判斷使用者是否已順利完成驗證，並擷取其設定檔資訊。<br/><br/>因此，它會啟動輪詢機制，以擷取與驗證碼相關聯的使用者設定檔。 |
 
-如需詳細資訊，請參閱主要應用程式[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)內執行的[基本設定檔流程，以及次要應用程式](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)檔案內執行的基本設定檔流程。
+如需詳細資訊，請參閱主要應用程式[內執行的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)基本設定檔流程，以及次要應用程式[檔案內執行的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)基本設定檔流程。
 
 設定檔SSO端點有不同的用途，它讓使用者端應用程式能夠使用合作夥伴驗證回應建立使用者設定檔，並在單次作業中擷取它。
 
@@ -295,7 +295,7 @@ REST API v2支援多個設定檔以適應：
 
 **在主要（熒幕）應用程式內執行的驗證**
 
-主要（串流）應用程式應在瀏覽器元件載入[工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端點要求中`redirectUrl`引數指定的URL後，於使用者到達最終目的地頁面時開始輪詢。
+主要（串流）應用程式應在瀏覽器元件載入`redirectUrl`工作階段[端點要求中](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)引數指定的URL後，於使用者到達最終目的地頁面時開始輪詢。
 
 **在次要（熒幕）應用程式內執行的驗證**
 
@@ -311,7 +311,7 @@ REST API v2支援多個設定檔以適應：
 
 **驗證工作階段與程式碼到期**
 
-驗證工作階段和程式碼會過期，如[工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端點回應中的`notAfter`時間戳記（例如30分鐘）所指示。 如果發生這種狀況，使用者必須重新啟動驗證程式，而且使用先前驗證代碼的輪詢應該立即停止。
+驗證工作階段和程式碼會過期，如`notAfter`工作階段[端點回應中的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)時間戳記（例如30分鐘）所指示。 如果發生這種狀況，使用者必須重新啟動驗證程式，而且使用先前驗證代碼的輪詢應該立即停止。
 
 **已產生新的驗證碼**
 
@@ -417,7 +417,7 @@ REST API v2支援多個設定檔以適應：
 
 #### 5.使用者端應用程式如何判斷預先授權決定被拒絕的原因？ {#preauthorization-phase-faq5}
 
-使用者端應用程式可檢查包含在決定預先授權端點回應中的[錯誤碼和訊息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，以判斷拒絕預先授權決定的原因。 這些詳細資料可讓您深入瞭解預先授權請求遭拒絕的特定原因，有助於告知使用者體驗或觸發應用程式中的任何必要處理。
+使用者端應用程式可檢查包含在決定預先授權端點回應中的[錯誤碼和訊息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，以判斷拒絕預先授權決定的原因。 這些詳細資料可為insight提供預先授權請求被拒絕的特定原因，有助於告知使用者體驗或觸發應用程式中的任何必要處理。
 
 如果預先授權決定遭拒，請確定任何針對擷取預先授權決定所實作的重試機制，都不會導致無休止的回圈。
 
@@ -493,7 +493,7 @@ REST API v2支援多個設定檔以適應：
 
 #### 5.使用者端應用程式如何判斷授權決定被拒絕的原因？ {#authorization-phase-faq5}
 
-使用者端應用程式可以檢查包含在來自Decisions Authorize端點的回應中的[錯誤碼和訊息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，以判斷拒絕授權決定的原因。 這些詳細資訊可讓您深入瞭解授權請求遭拒的特定原因，有助於告知使用者體驗或觸發應用程式中的任何必要處理。
+使用者端應用程式可以檢查包含在來自Decisions Authorize端點的回應中的[錯誤碼和訊息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，以判斷拒絕授權決定的原因。 這些詳細資料可為insight提供授權請求遭拒絕的特定原因，有助於告知使用者體驗或觸發應用程式中的任何必要處理。
 
 如果授權決定遭拒，請確定任何針對擷取授權決定所實作的重試機制都不會導致無限回圈。
 
@@ -520,7 +520,7 @@ REST API v2支援多個設定檔以適應：
 
 是。
 
-使用者端應用程式必須先驗證媒體權杖，才能開始播放資源資料流。 應該使用[媒體權杖驗證器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)來執行此驗證。 透過驗證傳回`token`中的`serializedToken`，使用者端應用程式可協助防止未經授權的存取（例如串流擷取），並確保只有經過適當授權的使用者才能播放內容。
+使用者端應用程式必須先驗證媒體權杖，才能開始播放資源資料流。 應該使用[媒體權杖驗證器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)來執行此驗證。 透過驗證傳回`serializedToken`中的`token`，使用者端應用程式可協助防止未經授權的存取（例如串流擷取），並確保只有經過適當授權的使用者才能播放內容。
 
 #### 8.使用者端應用程式是否應在播放期間重新整理過期的媒體權杖？ {#authorization-phase-faq8}
 
@@ -537,18 +537,18 @@ REST API v2支援多個設定檔以適應：
 以下時間戳記說明整體授權決定的有效期間：
 
 | 屬性 | 說明 | 附註 |
-|-------------|------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `notBefore` | 發出授權決定的時間。 | 這會標籤授權有效性視窗的開頭。 |
-| `notAfter` | 授權決定到期的時間。 | [授權存留時間(TTL)](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management)決定授權在需要重新授權之前維持有效時間。 此TTL會與MVPD代表商議。 |
+|-------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `notBefore` | 發出授權決定的時間（毫秒）。 | 這會標籤授權有效性視窗的開頭。 |
+| `notAfter` | 授權決定到期的時間（毫秒）。 | [授權存留時間(TTL)](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management)決定授權在需要重新授權之前維持有效時間。 此TTL會與MVPD代表商議。 |
 
 **權杖層級時間戳記**
 
 以下時間戳記說明與授權決定繫結的媒體權杖的有效期：
 
 | 屬性 | 說明 | 附註 |
-|-------------|-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `notBefore` | 發佈媒體權杖的時間。 | 這會標籤代號何時變成適用於播放的有效代號。 |
-| `notAfter` | 媒體Token到期的時間。 | 媒體權杖的生命週期故意縮短（通常為7分鐘），以將誤用風險降至最低，並解決權杖產生伺服器和權杖驗證伺服器之間的潛在時鐘差異。 |
+|-------------|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `notBefore` | 發佈媒體權杖的時間（毫秒）。 | 這會標籤代號何時變成適用於播放的有效代號。 |
+| `notAfter` | 媒體權杖過期的時間（毫秒）。 | 媒體權杖的生命週期故意縮短（通常為7分鐘），以將誤用風險降至最低，並解決權杖產生伺服器和權杖驗證伺服器之間的潛在時鐘差異。 |
 
 #### 10.什麼是資源？支援哪些格式？ {#authorization-phase-faq10}
 
@@ -645,7 +645,7 @@ REST API v2支援多個設定檔以適應：
 * [DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)
 * [REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)
 
-若要與[REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)互動，您必須包含[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)標頭，以及透過[DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)取得的`Bearer`存取權杖。
+若要與[REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)互動，您必須包含[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)標頭，以及透過`Bearer`DCR API[取得的](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)存取權杖。
 
 若要使用[DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)，需要具有REST API V2範圍的軟體陳述式。 如需詳細資訊，請參閱[動態使用者端註冊(DCR)常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)檔案。
 
@@ -653,7 +653,7 @@ REST API v2支援多個設定檔以適應：
 
 是。
 
-您可以從[Adobe Developer](https://developer.adobe.com/adobe-pass/)網站下載[DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)和[REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)的OpenAPI規格檔案。
+您可以從[Adobe Developer](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)網站下載[DCR API](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)和[REST API V2](https://developer.adobe.com/adobe-pass/)的OpenAPI規格檔案。
 
 若要下載OpenAPI規格檔案，請按一下下載按鈕，將下列檔案儲存到本機電腦：
 
@@ -671,7 +671,7 @@ REST API v2支援多個設定檔以適應：
 * [DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)
 * [REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)
 
-若要與[REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)互動，您必須包含[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)標頭，以及透過[DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)取得的`Bearer`存取權杖。
+若要與[REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)互動，您必須包含[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)標頭，以及透過`Bearer`DCR API[取得的](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)存取權杖。
 
 若要使用[DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)，需要具有REST API V2範圍的軟體陳述式。 如需詳細資訊，請參閱[動態使用者端註冊(DCR)常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)檔案。
 
@@ -715,7 +715,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 因此，使用者必須在移轉至REST API V2的新使用者端應用程式中重新驗證。
 
-#### 4. REST API V2是否預設啟用增強式錯誤代碼？ {#migration-faq4}
+#### &#x200B;4. REST API V2是否預設啟用增強式錯誤代碼？ {#migration-faq4}
 
 是。
 
@@ -800,7 +800,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 | 範圍 | REST API V1 | REST API V2 | 觀察 |
 |---------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 擷取預先授權的資源（預先授權決定） | [GET <br/> /api/v1/preauthorize （第一個畫面）](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md) <br/> [GET <br/> /api/v1/preauthorize （第二個畫面）](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md) | [張貼<br/> /api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本預先授權流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
+| 擷取預先授權的資源（預先授權決定） | [GET <br/> /api/v1/preauthorize （第一個畫面）](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources.md) <br/> [GET <br/> /api/v1/preauthorize （第二個畫面）](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-list-of-preauthorized-resources-by-second-screen-web-app.md) | [發佈<br/> /api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本預先授權流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
 
 +++
 
@@ -974,23 +974,23 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |---------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 擷取預先授權的資源（預先授權決定） | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#checkPreauthRes) <br/> [AccessEnabler.preauthorize](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md) | [張貼<br/> /api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本預先授權流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
+| 擷取預先授權的資源（預先授權決定） | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#checkPreauthRes) <br/> [AccessEnabler.preauthorize](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md) | [發佈<br/> /api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本預先授權流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
 
 ###### AccessEnabler iOS/tvOS SDK
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |---------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 擷取預先授權的資源（預先授權決定） | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#checkPreauth) <br/> [AccessEnabler.preauthorize](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md) | [張貼<br/> /api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本預先授權流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
+| 擷取預先授權的資源（預先授權決定） | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#checkPreauth) <br/> [AccessEnabler.preauthorize](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md) | [發佈<br/> /api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本預先授權流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
 
 ###### AccessEnabler Android SDK
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |---------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 擷取預先授權的資源（預先授權決定） | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#checkPreauth) <br/> [AccessEnabler.preauthorize](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/preauthorize-api-android-sdk.md) | [張貼<br/> /api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本預先授權流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
+| 擷取預先授權的資源（預先授權決定） | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#checkPreauth) <br/> [AccessEnabler.preauthorize](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/preauthorize-api-android-sdk.md) | [發佈<br/> /api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本預先授權流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |---------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 擷取預先授權的資源（預先授權決定） | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#checkPreauth) | [張貼<br/> /api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本預先授權流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
+| 擷取預先授權的資源（預先授權決定） | [AccessEnabler.checkPreauthorizedResources](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#checkPreauth) | [發佈<br/> /api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[主要應用程式內執行的基本預先授權流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)</li></ul> |
 
 +++
 

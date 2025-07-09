@@ -2,7 +2,7 @@
 title: MVPD IP位址清單
 description: MVPD IP位址清單
 exl-id: be18084c-22f5-47b5-b088-d9032681113d
-source-git-commit: 0fd11dbcc9072fd14fb06e76f60c15d7729c3876
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
 source-wordcount: '139'
 ht-degree: 0%
@@ -12,10 +12,9 @@ ht-degree: 0%
 
 # MVPD IP位址清單
 
-&#x200B;> [!NOTE]
+>[!IMPORTANT]
 >
->此頁面上的內容僅供參考。 若要使用此API，必須具備來自的目前授權
->&#x200B;> Adobe。 不允許未經授權的使用。
+> 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
 MVPD / Adobe Pass驗證整合方面，MVPD防火牆必須允許特定IP。 這些是
 輸出IP：

@@ -2,9 +2,9 @@
 title: 擷取特定mvpd的設定檔
 description: REST API V2 — 擷取特定mvpd的設定檔
 exl-id: ed1abc33-c279-4465-b5a0-b4e5b892076e
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
 workflow-type: tm+mt
-source-wordcount: '1060'
+source-wordcount: '1064'
 ht-degree: 1%
 
 ---
@@ -74,7 +74,13 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         裝置信息有效負載的產生在 X-Device-Info</a> 標頭文檔中進行了描述<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">。<br/><br/>強烈建議在應用程式的裝置平台允許顯式提供有效值時始終使用它。         <br/><br/>提供時，Adobe Pass Authentication後端會將顯式設置的值與提取的值隱式合併（預設情況下）。         <br/><br/>如果未提供，Adobe Pass Authentication 後端將隱式使用提取的值（預設情況下）。
+         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>標題檔案中會說明裝置資訊承載的產生。
+         <br/><br/>
+         強烈建議您在應用程式的裝置平台允許明確提供有效值時，一律使用此值。
+         <br/><br/>
+         提供此屬性時，Adobe Pass驗證後端會以隱含方式將明確設定的值與擷取的值合併（預設為）。
+         <br/><br/>
+         若未提供，Adobe Pass驗證後端將會以隱含方式使用擷取的值（依預設）。
       </td>
       <td><i>必填</i></td>
    </tr>
@@ -207,17 +213,19 @@ ht-degree: 1%
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">身體</th>
+      <th style="background-color: #EFF2F7;">內文</th>
       <th style="background-color: #EFF2F7"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">配置 檔</td>
+      <td style="background-color: #DEEBFF;">設定檔</td>
       <td>
-        JSON 包含金鑰、值對的映像。        <br/><br/>索引鍵元素由以下值定義：
+        JSON包含索引鍵、值配對的對應。
+        <br/><br/>
+        索引鍵元素由下列值定義：
         <table style="table-layout:auto">
             <tr>
-               <th style="background-color: #EFF2F7;">價值</th>
+               <th style="background-color: #EFF2F7;">值</th>
                <th style="background-color: #EFF2F7"></th>
                <th style="background-color: #EFF2F7;"></th>
             </tr>
@@ -236,22 +244,24 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notBefore</td>
-               <td>設定檔無效之前的時間戳記。</td>
+               <td>設定檔無效之前的時間戳記（以毫秒為單位）。</td>
                <td><i>必填</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">notAfter</td>
-               <td>設定檔失效之前的時間戳記。</td>
+               <td>設定檔無效的時間戳記（以毫秒為單位）。</td>
                <td><i>必填</i></td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">簽發者</td>
                <td>
-                  擁有設定檔的實體。                  <br/><br/>可能的值包括：
+                  擁有設定檔的實體。
+                  <br/><br/>
+                  可能的值包括：
                   <ul>
-                    <li><b>mvpd （例如，Spectrum、Cablevision 等）</b><br/>設定檔是由於以下原因創建的：基本身份驗證、使用平台標識單一登入或使用服務令牌單一登入。</li>
-                    <li><b></b><br/>Adobe Systems 設定檔是由於以下原因創建的：訪問降級、臨時訪問。</li>
-                    <li><b>蘋果</b><br/>設定檔的創建是由於： 使用合作夥伴蘋果單一登入。</li>
+                    <li><b>mvpd （例如Spectrum、Cablevision等）</b><br/>建立設定檔的原因如下：基本驗證、使用平台身分識別進行單一登入，或使用服務權杖進行單一登入。</li>
+                    <li><b>Adobe</b><br/>建立設定檔的原因為：存取許可權降低、暫時存取。</li>
+                    <li><b>Apple</b><br/>建立設定檔的原因為：使用合作夥伴Apple的單一登入。</li>
                   </ul>
                <td><i>必填</i></td>
             </tr>
@@ -383,7 +393,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!BEGINTABS]
 
->[!TAB 請求]
+>[!TAB 要求]
 
 ```HTTPS
 GET /api/v2/REF30/profiles/AdobeShibboleth HTTP/1.1
@@ -539,7 +549,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 403,
     "code": "temporary_access_duration_limit_exceeded",
     "message": "The temporary access duration limit has been exceeded.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "authentication"
 }
 ```
@@ -555,7 +565,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 500,
     "code": "invalid_configuration_temporary_access",
     "message": "The temporary access configuration is invalid.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "configuration"
 }
 ```
@@ -632,7 +642,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 403,
     "code": "temporary_access_duration_limit_exceeded",
     "message": "The temporary access duration limit has been exceeded.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "none"
 }
 ```
@@ -648,7 +658,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 403,
     "code": "temporary_access_resources_limit_exceeded",
     "message": "The temporary access resources limit has been exceeded.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "authentication"
 }
 ```
@@ -664,7 +674,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 500,
     "code": "invalid_configuration_temporary_access",
     "message": "The temporary access configuration is invalid.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "none"
 }
 ```
@@ -680,18 +690,18 @@ Content-Type: application/json;charset=UTF-8
     "status": 400,
     "code": "invalid_header_identity_for_temporary_access",
     "message": "The identity for temporary access header value is missing or invalid.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "none"
 }
 ```
 
 >[!ENDTABS]
 
-### 6. 在應用降級時檢索特定 mvpd 的設定檔
+### 6.在套用降級時擷取特定mvpd的設定檔
 
 >[!BEGINTABS]
 
->[!TAB 請求]
+>[!TAB 要求]
 
 ```HTTPS
 GET /api/v2/REF30/profiles/${degradedMvpd} HTTP/1.1
@@ -703,7 +713,7 @@ GET /api/v2/REF30/profiles/${degradedMvpd} HTTP/1.1
     User-Agent: Mozilla/5.0 (Apple TV; U; CPU AppleTV5,3 OS 11.0 like Mac OS X; en_US)
 ```
 
->[!TAB 回應 - AuthNAll 降級]
+>[!TAB 回應 — AuthNAll降級]
 
 ```HTTPS
 HTTP/1.1 200 OK
@@ -730,6 +740,6 @@ Content-Type: application/json;charset=UTF-8
 
 >[!IMPORTANT]
 >
-> `95cf93bcd183214a` 是特定於降級的前綴。
+> `95cf93bcd183214a`是降級特定的首碼。
 
 >[!ENDTABS]
