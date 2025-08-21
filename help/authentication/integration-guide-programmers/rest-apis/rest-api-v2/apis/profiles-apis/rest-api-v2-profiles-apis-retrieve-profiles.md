@@ -2,9 +2,9 @@
 title: 擷取設定檔
 description: REST API V2 — 擷取設定檔
 exl-id: 72922aa8-95ca-48dc-8523-e335802fc366
-source-git-commit: be2b75d3dcde92c0b83700705892403291dcab2e
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '872'
+source-wordcount: '888'
 ht-degree: 1%
 
 ---
@@ -114,6 +114,12 @@ ht-degree: 1%
         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>標標頭檔案中會說明Partner方法單一登入裝載的產生方式。
         <br/><br/>
         如需有關使用合作夥伴啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">使用合作夥伴的單一登入流程</a>檔案。</td>
+      <td>可選</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>標標頭檔案中會說明產生訪客識別碼承載的流程。
       <td>可選</td>
    </tr>
    <tr>

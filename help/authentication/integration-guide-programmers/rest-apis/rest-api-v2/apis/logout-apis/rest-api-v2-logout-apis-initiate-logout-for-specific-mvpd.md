@@ -2,9 +2,9 @@
 title: 啟動特定mvpd的登出
 description: REST API V2 — 啟動特定mvpd的登出
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '1009'
+source-wordcount: '1025'
 ht-degree: 1%
 
 ---
@@ -121,6 +121,12 @@ ht-degree: 1%
         <br/><br/>
         如需使用服務權杖啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服務權杖流程進行單一登入</a>檔案。
       </td>
+      <td>可選</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>標標頭檔案中會說明產生訪客識別碼承載的流程。
       <td>可選</td>
    </tr>
    <tr>

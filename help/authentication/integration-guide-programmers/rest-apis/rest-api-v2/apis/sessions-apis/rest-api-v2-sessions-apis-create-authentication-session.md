@@ -2,9 +2,9 @@
 title: 建立驗證工作階段
 description: REST API V2 — 建立驗證工作階段
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '1064'
+source-wordcount: '1080'
 ht-degree: 1%
 
 ---
@@ -148,6 +148,12 @@ ht-degree: 1%
         服務權杖方法的單一登入裝載產生過程在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>標標頭檔案中進行了說明。
         <br/><br/>
         如需使用服務權杖啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服務權杖流程進行單一登入</a>檔案。
+      <td>可選</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>標標頭檔案中會說明產生訪客識別碼承載的流程。
       <td>可選</td>
    </tr>
    <tr>

@@ -2,10 +2,10 @@
 title: 使用程式碼擷取驗證工作階段
 description: REST API V2 — 使用程式碼擷取驗證工作階段
 exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '425'
-ht-degree: 3%
+source-wordcount: '441'
+ht-degree: 2%
 
 ---
 
@@ -75,6 +75,12 @@ ht-degree: 3%
          <br/><br/>
          對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。
       </td> 
+      <td>可選</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>標標頭檔案中會說明產生訪客識別碼承載的流程。
       <td>可選</td>
    </tr>
    <tr>

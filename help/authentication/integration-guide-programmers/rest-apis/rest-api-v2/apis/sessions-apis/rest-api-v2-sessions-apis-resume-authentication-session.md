@@ -2,9 +2,9 @@
 title: 繼續驗證工作階段
 description: REST API V2 — 繼續驗證工作階段
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '890'
+source-wordcount: '906'
 ht-degree: 1%
 
 ---
@@ -118,6 +118,12 @@ ht-degree: 1%
          <br/><br/>
          對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。
       </td>
+      <td>可選</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>標標頭檔案中會說明產生訪客識別碼承載的流程。
       <td>可選</td>
    </tr>
    <tr>

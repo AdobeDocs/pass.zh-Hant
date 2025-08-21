@@ -2,9 +2,9 @@
 title: 使用特定mvpd擷取預先授權決定
 description: REST API V2 — 使用特定mvpd擷取預先授權決策
 exl-id: 8647e4fb-00b6-45cd-b81b-d00618b2e08b
-source-git-commit: 32c3176fb4633acb60deb1db8fb5397bbf18e2d0
+source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
 workflow-type: tm+mt
-source-wordcount: '792'
+source-wordcount: '808'
 ht-degree: 1%
 
 ---
@@ -34,26 +34,26 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">方法</td>
-      <td>發佈</td>
+      <td>POST</td>
       <td></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">路徑參數</th>
+      <th style="background-color: #EFF2F7;">路徑引數</th>
       <th style="background-color: #EFF2F7;"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">serviceProvider</td>
+      <td style="background-color: #DEEBFF;">服務提供者</td>
       <td>在上線流程中與服務提供者相關聯的內部唯一識別碼。</td>
       <td><i>必填</i></td>
    </tr>
     <tr>
       <td style="background-color: #DEEBFF;">mvpd</td>
-      <td>在加入過程中與身份提供程式關聯的內部唯一標識碼。</td>
+      <td>上線流程中與身分提供者相關聯的內部唯一識別碼。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
-      <th style="background-color: #EFF2F7;">主體參數</th>
+      <th style="background-color: #EFF2F7;">主體引數</th>
       <th style="background-color: #EFF2F7;"></th>
       <th style="background-color: #EFF2F7;"></th>
    </tr>
@@ -122,10 +122,11 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-        AD 服務令牌</a>標頭文檔中介紹了<a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">服務令牌方法的 單一登入 有效負載的生成。<br/><br/>
+        服務權杖方法的單一登入裝載產生過程在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>標標頭檔案中進行了說明。
+        <br/><br/>
         如需使用服務權杖啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服務權杖流程進行單一登入</a>檔案。
       </td>
-      <td>自選</td>
+      <td>可選</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
@@ -133,6 +134,12 @@ ht-degree: 1%
         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>標標頭檔案中會說明Partner方法單一登入裝載的產生方式。
         <br/><br/>
         如需有關使用合作夥伴啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">使用合作夥伴的單一登入流程</a>檔案。</td>
+      <td>可選</td>
+   </tr>
+   <tr>
+      <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
+      <td>
+        <a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-visitor-identifier.md">AP-Visitor-Identifier</a>標標頭檔案中會說明產生訪客識別碼承載的流程。
       <td>可選</td>
    </tr>
    <tr>
@@ -161,7 +168,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td>200</td>
-      <td>還行</td>
+      <td>確定</td>
       <td>
         回應本文包含含有其他資訊的決定清單。
       </td>
@@ -175,9 +182,9 @@ ht-degree: 1%
    </tr>
    <tr>
       <td>401</td>
-      <td>未經授權</td>
+      <td>未獲授權</td>
       <td>
-        存取權杖已無效，用戶端需要獲取新存取權杖，然後再試一次。 有關更多詳細資訊， <a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">請參閱動態客戶端註冊概述</a> 文檔。
+        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。
       </td>
    </tr>
    <tr>
@@ -191,7 +198,7 @@ ht-degree: 1%
       <td>500</td>
       <td>內部伺服器錯誤</td>
       <td>
-        伺服器端遇到問題。 回應正文可能包含符合增強錯誤代碼</a>文檔的錯誤<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">資訊。
+        伺服器端發生問題。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
       </td>
    </tr>
 </table>
@@ -361,7 +368,7 @@ Content-Type: application/json;charset=UTF-8
             "status": 403,
             "code": "preauthorization_denied_by_mvpd",
             "message": "The MVPD has returned a \"Deny\" decision when requesting pre-authorization for the specified resource.",
-            "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+            "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
             "action": "none"
          }
       }
@@ -375,7 +382,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!BEGINTABS]
 
->[!TAB 請求]
+>[!TAB 要求]
 
 ```HTTPS
 POST /api/v2/REF30/decisions/preauthorize/${degradedMvpd} HTTP/1.1
@@ -394,7 +401,7 @@ Body:
 }
 ```
 
->[!TAB 回應 - AuthNAll 降級]
+>[!TAB 回應 — AuthNAll降級]
 
 ```HTTPS
 HTTP/1.1 200 OK
@@ -421,7 +428,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
->[!TAB 回應 - AuthZAll 退化]
+>[!TAB 回應 — AuthZAll降級]
 
 ```HTTPS
 HTTP/1.1 200 OK
@@ -448,7 +455,7 @@ Content-Type: application/json;charset=UTF-8
 }
 ```
 
->[!TAB 回應 - 身份驗證鋅酮降級]
+>[!TAB 回應 — AuthZNone效能降低]
 
 ```HTTPS
 HTTP/1.1 200 OK
@@ -467,7 +474,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }
@@ -481,7 +488,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }
