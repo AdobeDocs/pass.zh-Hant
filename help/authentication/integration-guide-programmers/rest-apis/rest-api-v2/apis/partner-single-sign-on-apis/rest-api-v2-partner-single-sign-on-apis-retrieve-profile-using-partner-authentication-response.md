@@ -2,9 +2,9 @@
 title: 使用合作夥伴驗證回應建立和擷取設定檔
 description: REST API V2 — 使用合作夥伴驗證回應建立及擷取設定檔
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
 workflow-type: tm+mt
-source-wordcount: '795'
+source-wordcount: '847'
 ht-degree: 1%
 
 ---
@@ -321,7 +321,22 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>回應內文可能會提供其他錯誤資訊，這些資訊會遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強型錯誤碼</a>檔案。</td>
+      <td>
+            回應內文可能會提供其他錯誤資訊，這些資訊會遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強型錯誤碼</a>檔案。
+            <br/><br/>
+            使用者端應用程式必須實作錯誤處理機制，以便能夠正確處理此API最常傳回的錯誤代碼：
+            <ul>
+                <li>invalid_header_pfs_permission_access_not_present</li>
+                <li>invalid_header_pfs_permission_access_not_determined</li>
+                <li>invalid_header_pfs_permission_access_not_granted</li>
+                <li>invalid_header_pfs_provider_id_not_determined</li>
+                <li>invalid_header_pfs_provider_id_mismatch</li>
+                <li>無效的_header_pfs_provider_info_expired</li>
+                <li>invalid_parameter_saml_response</li>
+                <li>等等。</li>
+            </ul>
+            以上清單並非詳盡無遺。 使用者端應用程式必須能夠處理<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">公開檔案</a>中定義的所有增強型錯誤碼。
+      </td>
       <td><i>必填</i></td>
    </tr>
 </table>

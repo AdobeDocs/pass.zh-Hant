@@ -2,9 +2,9 @@
 title: 繼續驗證工作階段
 description: REST API V2 — 繼續驗證工作階段
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
 workflow-type: tm+mt
-source-wordcount: '906'
+source-wordcount: '953'
 ht-degree: 1%
 
 ---
@@ -324,7 +324,17 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"></td>
-      <td>回應內文可能會提供其他錯誤資訊，這些資訊會遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強型錯誤碼</a>檔案。</td>
+      <td>
+            回應內文可能會提供其他錯誤資訊，這些資訊會遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強型錯誤碼</a>檔案。
+            <br/><br/>
+            使用者端應用程式必須實作錯誤處理機制，以便能夠正確處理此API最常傳回的錯誤代碼：
+            <ul>
+                <li>invalid_authentication_session</li>
+                <li>invalid_parameter_code</li>
+                <li>等等。</li>
+            </ul>
+            以上清單並非詳盡無遺。 使用者端應用程式必須能夠處理<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">公開檔案</a>中定義的所有增強型錯誤碼。
+      </td>
       <td><i>必填</i></td>
    </tr>
 </table>

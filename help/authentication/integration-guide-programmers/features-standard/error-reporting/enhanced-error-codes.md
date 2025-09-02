@@ -2,9 +2,9 @@
 title: 增強的錯誤碼
 description: 增強的錯誤碼
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: 27aaa0d3351577e60970a4035b02d814f0a17e2f
+source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
 workflow-type: tm+mt
-source-wordcount: '2649'
+source-wordcount: '2696'
 ht-degree: 3%
 
 ---
@@ -41,7 +41,7 @@ ht-degree: 3%
 
 ## 表示 {#enhanced-error-codes-representation}
 
-根據整合的Adobe Pass驗證API和使用的「接受」標頭值（亦即`application/json`或`application/xml`），增強型錯誤代碼可以以`JSON`或`XML`格式表示：
+根據整合的Adobe Pass驗證API和使用的「接受」標頭值（亦即`JSON`或`XML`），增強型錯誤代碼可以以`application/json`或`application/xml`格式表示：
 
 | Adobe Pass驗證API | JSON | XML |
 |-------------------------------|---------|---------|
@@ -101,7 +101,7 @@ Content-Type: application/json
         "code": "authorization_denied_by_mvpd",
         "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
         "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
         "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
       }
     }
@@ -120,7 +120,7 @@ Content-Type: application/json
   "status": 400,
   "code": "invalid_parameter_service_provider",
   "message": "The service provider parameter value is missing or invalid.",
-  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
   "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
 }
 ```
@@ -154,7 +154,7 @@ Content-Type: application/json
         "code": "authorization_denied_by_mvpd",
         "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
         "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
         "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
       }
     }
@@ -173,7 +173,7 @@ Content-Type: application/json
   "status": 400,
   "code": "invalid_requestor",
   "message": "The requestor parameter is missing or invalid.",
-  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
   "trace": "8bcb17f9-b172-47d2-86d9-3eb146eba85e"
 }
 ```
@@ -189,7 +189,7 @@ Content-Type: application/xml
   <status>400</status>
   <code>invalid_requestor</code>
   <message>The requestor parameter is missing or invalid.</message>
-  <helpUrl>https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant</helpUrl>
+  <helpUrl>https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html</helpUrl>
   <trace>8bcb17f9-b172-47d2-86d9-3eb146eba85e</trace>
 </error>
 ```
@@ -207,7 +207,7 @@ Content-Type: application/xml
 | *代碼* | *字串* | *authorization_denied_by_mvpd* | &amp;amp；檢查； | 與本檔案定義之錯誤相關聯的Adobe Pass驗證唯一識別碼代碼。 <br/><br/>如需詳細資訊，請參閱[代碼](#enhanced-error-codes-code)區段。 |
 | *訊息* | *字串* | *請求指定資源的授權時，MVPD已傳回「拒絕」決定* |            | 在某些情況下可顯示給一般使用者的人類可讀訊息。 <br/><br/>如需詳細資訊，請參閱[回應處理](#enhanced-error-codes-response-handling)區段。 |
 | *詳細資料* | *字串* | *您的訂閱套件不包含「即時」頻道* |            | 服務合作夥伴在某些情況下可能提供的詳細訊息，<br/><br/>若服務合作夥伴未提供任何自訂訊息，此欄位可能不存在。 |
-| *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant* |            | Adobe Pass驗證公開檔案URL可連結至此錯誤發生原因及可能解決方案的相關資訊。 <br/><br/>此欄位包含絕對URL，不應從錯誤碼推斷，視錯誤內容而定，可以提供不同的URL。 |
+| *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html* |            | Adobe Pass驗證公開檔案URL可連結至此錯誤發生原因及可能解決方案的相關資訊。 <br/><br/>此欄位包含絕對URL，不應從錯誤碼推斷，視錯誤內容而定，可以提供不同的URL。 |
 | *追蹤* | *字串* | *12f6fef9-d2e0-422b-a9d7-60d799abe353* |            | 回應的唯一識別碼，可在聯絡Adobe Pass驗證支援以疑難排解特定問題時使用。 |
 
 >[!IMPORTANT]
@@ -322,7 +322,7 @@ _(*)對於某些錯誤，多個動作可能是可能的解決方案，但「acti
 |                              | *network_connection_timeout* | 403 | 與關聯的合作夥伴服務發生連線逾時。 重試請求可能會解決問題。 |
 |                              | *excepted_execution_time_exceeded* | 403 | 請求未在允許的最長時間內完成。 重試請求可能會解決問題。 |
 
-### REST API v1 {#enhanced-error-codes-lists-rest-api-v1}
+### （舊版） REST API v1 {#enhanced-error-codes-lists-rest-api-v1}
 
 下表列出使用者端應用程式在與Adobe Pass驗證REST API v1整合時可能遇到的增強型錯誤代碼。
 
@@ -354,7 +354,7 @@ _(*)對於某些錯誤，多個動作可能是可能的解決方案，但「acti
 |                    | *network_connection_timeout* | 403 | 與關聯的合作夥伴服務發生連線逾時。 重試請求可能會解決問題。 |
 |                    | *excepted_execution_time_exceeded* | 403 | 請求未在允許的最長時間內完成。 重試請求可能會解決問題。 |
 
-### SDK預先授權API {#enhanced-error-codes-lists-sdks-preauthorize-api}
+### （舊版） SDK預先授權API {#enhanced-error-codes-lists-sdks-preauthorize-api}
 
 請參閱前[節](#enhanced-error-codes-list-rest-api-v1)，瞭解使用者端應用程式在與Adobe Pass Authentication SDK整合時，預先授權API可能會遇到的可能增強型錯誤碼。
 
@@ -370,11 +370,13 @@ _(*)對於某些錯誤，多個動作可能是可能的解決方案，但「acti
 
 簡而言之，處理包含增強型錯誤碼的回應時，您應考量下列事項：
 
-1. **檢查兩個狀態值**：一律檢查HTTP回應狀態碼和增強錯誤碼「狀態」欄位。 兩者可能有所不同，而且都提供有價值的資訊。
+1. **無法辨識傳回錯誤的API**：實作支援完整增強型錯誤碼目錄的集中式錯誤處理邏輯，無論哪個API產生增強型錯誤碼。 數個增強型錯誤碼會跨API共用，且必須一致地處理。
 
 1. **無法辨識最上層與專案層級的錯誤資訊**：處理最上層與專案層級的錯誤資訊，無法辨識其傳達方式，請確定您可以處理兩種傳輸增強型錯誤碼的形式。
 
-1. **重試邏輯**：對於需要重試的錯誤，請確定重試是以指數回溯完成，以避免讓伺服器不知所措。 此外，如果是Adobe Pass驗證API同時處理多個專案（例如，預先授權API），您應在重複請求中僅包含標籤為「重試」的專案，而非整個清單。
+1. **檢查兩個狀態值**：一律檢查HTTP回應狀態碼和增強錯誤碼「狀態」欄位。 兩者可能有所不同，而且都提供有價值的資訊。
+
+1. **重試邏輯**：對於需要重試的錯誤，請確定重試是有限制的（即2-3），或是以指數回溯完成，以避免讓伺服器不知所措。 此外，如果是Adobe Pass驗證API同時處理多個專案（例如，預先授權API），您應在重複請求中僅包含標籤為「重試」的專案，而非整個清單。
 
 1. **組態變更**：對於需要組態變更的錯誤，請確保在啟動新應用程式或新功能之前進行必要的變更。
 
