@@ -2,7 +2,7 @@
 title: 產品公告
 description: 產品公告
 exl-id: 3c9c66e1-d31d-4af3-8ab2-eb32492f42ca
-source-git-commit: 3a275f64f7f8cffa3bdc0d546c8e2db517840069
+source-git-commit: 58da8137988f0146716b56ac7a960c683b204d53
 workflow-type: tm+mt
 source-wordcount: '811'
 ht-degree: 1%
@@ -33,7 +33,7 @@ ht-degree: 1%
 
 | 發行說明 | 日期 |
 |-----------------------------------------------------------------------------------------------------------|-------------------------|
-| [Adobe Pass Authentication 3.4.0發行說明](notes-releases/auth-rn-340.md) | 09/09/2025 - 09/11/2025 |
+| [Adobe Pass Authentication 3.4.0發行說明](notes-releases/auth-rn-340.md) | 09/16/2025 - 09/18/2025 |
 | [Adobe Pass Authentication 3.3.0發行說明](notes-releases/auth-rn-330.md) | 07/22/2025 - 07/24/2025 |
 | [Adobe Pass Authentication 3.2.0發行說明](notes-releases/auth-rn-320.md) | 06/10/2025 - 06/12/2025 |
 | [Adobe Pass Authentication 3.1.0發行說明](notes-releases/auth-rn-310.md) | 02/25/2025 - 02/27/2025 |
