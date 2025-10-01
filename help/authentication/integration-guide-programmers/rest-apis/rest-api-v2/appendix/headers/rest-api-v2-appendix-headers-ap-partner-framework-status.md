@@ -2,9 +2,9 @@
 title: 頁首 — AP-Partner-Framework-Status
 description: REST API V2 — 標題 — AP-Partner-Framework-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+source-git-commit: 5c912bbbe97fff65d38dbade32cd4554ad8c2fac
 workflow-type: tm+mt
-source-wordcount: '388'
+source-wordcount: '404'
 ht-degree: 0%
 
 ---
@@ -131,6 +131,8 @@ ht-degree: 0%
                   這是必要屬性。
                   <br/><br/>
                   這是已驗證使用者設定檔的到期日，以防使用者已在合作夥伴框架層級使用支援的MVPD成功登入。
+                  <br/><br/>
+                  這必須是自Unix紀元以來以毫秒為單位的時間戳記(例如「1735689600000」)，以字串表示。
                </td>
             </tr>
             <tr>
