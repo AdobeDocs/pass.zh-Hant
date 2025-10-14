@@ -57,7 +57,7 @@ Adobe Pass驗證與Apple合作，為iPhone、iPad和Apple電視擁有者在電�
 
    * 舊版Adobe Pass Authentication AccessEnabler iOS/tvOS SDK支援合作夥伴單一登入(SSO)。
 
-     請參閱[ （舊版） Apple SSO逐步指南(iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)檔案。
+     請參閱[&#x200B; （舊版） Apple SSO逐步指南(iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)檔案。
 
 ### MVPD {#apple-sso-prerequisites-mvpd}
 

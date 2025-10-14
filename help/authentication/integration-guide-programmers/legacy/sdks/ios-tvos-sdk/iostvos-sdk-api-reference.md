@@ -744,7 +744,7 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 * *url：*&#x200B;指向MVPD登入頁面的URL
 * *useSVC：*&#x200B;是否應在SFSafariViewController中載入URL。
 
-**觸發者：**&#x200B;[ setOptions：](#setOptions)，在[setSelectedProvider：](#setSelProv)之前
+**觸發者：**&#x200B;[&#x200B; setOptions：](#setOptions)，在[setSelectedProvider：](#setSelProv)之前
 
 [回到頂端……](#apis)
 

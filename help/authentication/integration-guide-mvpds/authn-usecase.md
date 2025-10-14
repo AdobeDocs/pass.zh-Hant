@@ -29,7 +29,7 @@ ht-degree: 0%
 
 如上述步驟所示，在AuthN流程期間，MVPD必須同時接受以SAML為基礎的AuthN要求並傳送SAML AuthN回應。
 
-[線上內容存取(OLCA)驗證與授權介面規格](https://www.cablelabs.com/specifications/search?query=&amp;category=&amp;subcat=&amp;doctype=&amp;content=false&amp;archives=false){target=_blanck}提供標準的AuthN要求與回應。 雖然Adobe Pass驗證不要求MVPD將其權益訊息設定在此標準上，但檢視規格可以提供AuthN交易所需關鍵屬性的深入分析。
+[線上內容存取(OLCA)驗證與授權介面規格](https://www.cablelabs.com/specifications/search?query=&category=&subcat=&doctype=&content=false&archives=false){target=_blanck}提供標準的AuthN要求與回應。 雖然Adobe Pass驗證不要求MVPD將其權益訊息設定在此標準上，但檢視規格可以提供AuthN交易所需關鍵屬性的深入分析。
 
 >[!NOTE]
 >
