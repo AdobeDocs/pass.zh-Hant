@@ -2,9 +2,9 @@
 title: REST API V2檢查清單
 description: REST API V2檢查清單
 exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '2545'
+source-wordcount: '2563'
 ht-degree: 0%
 
 ---
@@ -18,6 +18,10 @@ ht-degree: 0%
 本檔案針對實作使用Adobe Pass驗證[REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)的使用者端應用程式的程式設計人員，彙總其強制需求與建議作法。
 
 在實作REST API V2時，遵循本檔案必須視為驗收標準的一部分，且必須用作檢查清單，以確保已採取所有必要步驟來取得成功的整合。
+
+>[!TIP]
+>
+> 若為AI輔助開發，請參閱我們的[AI規則](rest-api-v2-ai-rules.md)，此規則會將這些需求轉換為AI編碼助理的結構化規則。
 
 ## 強制需求 {#mandatory-requirements}
 
@@ -96,7 +100,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 4. （選擇性）預先授權階段 {#mandatory-requirements-preauthorization-phase}
+### &#x200B;4. （選擇性）預先授權階段 {#mandatory-requirements-preauthorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -283,7 +287,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 4. （選擇性）預先授權階段 {#recommended-practices-preauthorization-phase}
+### &#x200B;4. （選擇性）預先授權階段 {#recommended-practices-preauthorization-phase}
 
 <table style="table-layout:auto">
    <tr>
