@@ -2,9 +2,9 @@
 title: 擷取存取權杖
 description: 動態使用者端註冊API — 擷取存取Token
 exl-id: 23287acf-5d56-46f0-b65e-79bf7d667708
-source-git-commit: be2b75d3dcde92c0b83700705892403291dcab2e
+source-git-commit: f0969a692380af3d20df37c49c37f7d1e85c7cfd
 workflow-type: tm+mt
-source-wordcount: '456'
+source-wordcount: '474'
 ht-degree: 1%
 
 ---
@@ -230,7 +230,11 @@ ht-degree: 1%
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">unauthorized_client</td>
-               <td>使用的授權型別無效。</td>
+               <td>使用者端應用程式無權使用此授權授予型別。</td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">unsupported_grant_type</td>
+               <td>授權伺服器不支援授權授權型別。</td>
             </tr>
          </table>
       </td>
