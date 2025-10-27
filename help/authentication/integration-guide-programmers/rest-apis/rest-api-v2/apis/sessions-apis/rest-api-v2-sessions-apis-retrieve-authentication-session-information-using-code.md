@@ -2,9 +2,9 @@
 title: 使用程式碼擷取驗證工作階段
 description: REST API V2 — 使用程式碼擷取驗證工作階段
 exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
-source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
+source-git-commit: 92d2befd154b21abf743075c78ad617cff79b7e9
 workflow-type: tm+mt
-source-wordcount: '488'
+source-wordcount: '529'
 ht-degree: 2%
 
 ---
@@ -163,13 +163,41 @@ ht-degree: 2%
       <th style="background-color: #EFF2F7;"></th>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;">引數</td>
+      <td style="background-color: #DEEBFF;"></td>
       <td>
          具有以下屬性的JSON物件：
-         <ul>
-            <li><b>existing</b><br/>已經提供的現有引數。</li>
-            <li><b>遺失</b><br/>遺失完成驗證流程所需的引數。</li>
-         </ul>
+         <table style="table-layout:auto">
+            <tr>
+               <th style="background-color: #EFF2F7;">屬性</th>
+               <th style="background-color: #EFF2F7"></th>
+               <th style="background-color: #EFF2F7;"></th>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">existingparameters</td>
+               <td>已經提供的現有引數。</td>
+               <td><i>必填</i></td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">missingParameters</td>
+               <td>需要提供遺失的引數，才能完成驗證流程。</td>
+               <td>可選</td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">裝置</td>
+               <td>與實際串流裝置相關的裝置資訊。</td>
+               <td><i>必填</i></td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">notBefore</td>
+               <td>驗證程式碼無效之前的時間戳記（以毫秒為單位）。</td>
+               <td><i>必填</i></td>
+            </tr>
+            <tr>
+               <td style="background-color: #DEEBFF;">notAfter</td>
+               <td>驗證代碼無效的時間戳記（以毫秒為單位）。</td>
+               <td><i>必填</i></td>
+            </tr>
+         </table>
       </td>
       <td><i>必填</i></td>
 </table>
@@ -238,12 +266,74 @@ HTTP/1.1 200 OK
 Content-Type: application/json;charset=UTF-8
 
 {        
-    "parameters": {
-        "existing": {
-            "mvpd": "Cablevision",
-            "domain": "adobe.com"
-            "redirectUrl": "https://www.adobe.com"        
-        }
+    "existingParameters": {
+        "mvpd": "apassidp",
+        "domain": "adobe.com"
+        "redirectUrl": "https://www.adobe.com",
+        "serviceProvider": "REF30"        
+    },
+    "device": {
+        "type": "Desktop",
+        "model": null,
+        "version": {
+            "major": 0,
+            "minor": 0,
+            "patch": 0,
+            "profile": ""
+        },
+    "hardware": {
+      "name": null,
+      "vendor": "Apple",
+      "version": {
+        "major": 0,
+        "minor": 0,
+        "patch": 0,
+        "profile": ""
+      },
+      "manufacturer": "Apple"
+    },
+    "operatingSystem": {
+      "name": "macOS",
+      "family": "macOS",
+      "vendor": "Apple",
+      "version": {
+        "major": 10,
+        "minor": 15,
+        "patch": 7,
+        "profile": ""
+      }
+    },
+    "browser": {
+      "name": "Chrome",
+      "vendor": "Google",
+      "version": {
+        "major": 140,
+        "minor": 0,
+        "patch": 0,
+        "profile": ""
+      },
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "originalUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    },
+    "display": {
+      "width": 0,
+      "height": 0,
+      "ppi": 0,
+      "name": "DISPLAY",
+      "vendor": null,
+      "version": null,
+      "diagonalSize": null
+    },
+    "applicationId": null,
+    "connection": {
+      "ipAddress": "...",
+      "port": "55161",
+      "secure": false,
+      "type": null
+    }
+    }
+    "notBefore": "1733735289035",
+    "notAfter": "1733737089035"    
 }
 ```
 
@@ -270,13 +360,77 @@ HTTP/1.1 200 OK
 
 Content-Type: application/json;charset=UTF-8
 
-{        
-    "parameters": {
-        "existing": {
-            "mvpd": "Cablevision",
-            "domain": "adobe.com"
-        },
-        "missing": ["redirectUrl"]
+{
+  "missingParameters": [
+    "mvpd"
+  ],
+  "existingParameters": {
+    "redirectUrl": "https://adobe.com",
+    "domainName": "adobe.com",
+    "serviceProvider": "REF30"
+  },
+  "device": {
+    "type": "Desktop",
+    "model": null,
+    "version": {
+      "major": 0,
+      "minor": 0,
+      "patch": 0,
+      "profile": ""
+    },
+    "hardware": {
+      "name": null,
+      "vendor": "Apple",
+      "version": {
+        "major": 0,
+        "minor": 0,
+        "patch": 0,
+        "profile": ""
+      },
+      "manufacturer": "Apple"
+    },
+    "operatingSystem": {
+      "name": "macOS",
+      "family": "macOS",
+      "vendor": "Apple",
+      "version": {
+        "major": 10,
+        "minor": 15,
+        "patch": 7,
+        "profile": ""
+      }
+    },
+    "browser": {
+      "name": "Chrome",
+      "vendor": "Google",
+      "version": {
+        "major": 140,
+        "minor": 0,
+        "patch": 0,
+        "profile": ""
+      },
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "originalUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+    },
+    "display": {
+      "width": 0,
+      "height": 0,
+      "ppi": 0,
+      "name": "DISPLAY",
+      "vendor": null,
+      "version": null,
+      "diagonalSize": null
+    },
+    "applicationId": null,
+    "connection": {
+      "ipAddress": "...",
+      "port": "3061",
+      "secure": false,
+      "type": null
+    }
+  },
+  "notBefore": "1761299929958",
+  "notAfter": "1761301729958"
 }
 ```
 
