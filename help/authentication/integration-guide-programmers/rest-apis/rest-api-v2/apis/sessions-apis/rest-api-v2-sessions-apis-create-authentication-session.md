@@ -2,7 +2,7 @@
 title: 建立驗證工作階段
 description: REST API V2 — 建立驗證工作階段
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 3efe25ddde7dfd2562932f623a2c440d4a059672
 workflow-type: tm+mt
 source-wordcount: '1080'
 ht-degree: 1%
@@ -303,7 +303,7 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">程式碼</td>
                <td>可用於次要應用程式的驗證代碼，以繼續驗證工作階段。</td>
-               <td><i>必填</i></td>
+               <td>可選</td>
             </tr>
             <tr>
                <td style="background-color: #DEEBFF;">sessionId</td>
