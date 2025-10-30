@@ -2,9 +2,9 @@
 title: 使用程式碼擷取驗證工作階段
 description: REST API V2 — 使用程式碼擷取驗證工作階段
 exl-id: 5cc209eb-ee6b-4bb9-9c04-3444408844b7
-source-git-commit: 92d2befd154b21abf743075c78ad617cff79b7e9
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '529'
+source-wordcount: '532'
 ht-degree: 2%
 
 ---
@@ -88,7 +88,7 @@ ht-degree: 2%
       <td>
          使用者端應用程式接受的媒體型別。
          <br/><br/>
-         若指定，則必須是application/json。
+         若指定，則必須為application/json；charset=utf-8。
       </td>
       <td>可選</td>
    </tr>

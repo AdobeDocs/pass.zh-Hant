@@ -2,9 +2,9 @@
 title: 擷取使用者端認證
 description: Dynamic Client Registration API — 擷取使用者端認證
 exl-id: 0b39768b-25b8-47b9-8080-59c56fb829fb
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '431'
+source-wordcount: '437'
 ht-degree: 1%
 
 ---
@@ -66,7 +66,7 @@ ht-degree: 1%
       <td>
          所傳送資源的接受媒體型別。
          <br/><br/>
-         它必須是application/json。
+         它必須是application/json；charset=utf-8。
       </td>
       <td><i>必填</i></td>
    </tr>
@@ -88,7 +88,7 @@ ht-degree: 1%
       <td>
          使用者端應用程式接受的媒體型別。
          <br/><br/>
-         若指定，則必須是application/json。
+         若指定，則必須為application/json；charset=utf-8。
       </td>
       <td>可選</td>
    </tr>

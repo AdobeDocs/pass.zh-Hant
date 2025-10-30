@@ -2,9 +2,9 @@
 title: 建立驗證工作階段
 description: REST API V2 — 建立驗證工作階段
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
-source-git-commit: 3efe25ddde7dfd2562932f623a2c440d4a059672
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1080'
+source-wordcount: '1083'
 ht-degree: 1%
 
 ---
@@ -161,7 +161,7 @@ ht-degree: 1%
       <td>
          使用者端應用程式接受的媒體型別。
          <br/><br/>
-         若指定，則必須是application/json。
+         若指定，則必須為application/json；charset=utf-8。
       </td>
       <td>可選</td>
    </tr>

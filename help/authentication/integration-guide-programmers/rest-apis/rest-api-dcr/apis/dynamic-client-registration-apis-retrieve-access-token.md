@@ -2,9 +2,9 @@
 title: 擷取存取權杖
 description: 動態使用者端註冊API — 擷取存取Token
 exl-id: 23287acf-5d56-46f0-b65e-79bf7d667708
-source-git-commit: f0969a692380af3d20df37c49c37f7d1e85c7cfd
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '474'
+source-wordcount: '477'
 ht-degree: 1%
 
 ---
@@ -101,7 +101,7 @@ ht-degree: 1%
       <td>
          使用者端應用程式接受的媒體型別。
          <br/><br/>
-         若指定，則必須是application/json。
+         若指定，則必須為application/json；charset=utf-8。
       </td>
       <td>可選</td>
    </tr>

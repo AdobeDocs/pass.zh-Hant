@@ -2,9 +2,9 @@
 title: 擷取特定服務提供者的設定
 description: REST API V2 — 擷取特定服務提供者的設定
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: 8952283ccce38f70f4f504f07714c583fcb7e272
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '725'
+source-wordcount: '728'
 ht-degree: 2%
 
 ---
@@ -105,7 +105,7 @@ ht-degree: 2%
       <td>
          使用者端應用程式接受的媒體型別。
          <br/><br/>
-         若指定，則必須是application/json。
+         若指定，則必須為application/json；charset=utf-8。
       </td>
       <td>可選</td>
    </tr>

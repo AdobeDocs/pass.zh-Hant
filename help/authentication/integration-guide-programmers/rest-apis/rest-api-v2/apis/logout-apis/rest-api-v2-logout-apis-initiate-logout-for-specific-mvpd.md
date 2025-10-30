@@ -2,9 +2,9 @@
 title: 啟動特定mvpd的登出
 description: REST API V2 — 啟動特定mvpd的登出
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1025'
+source-wordcount: '1028'
 ht-degree: 1%
 
 ---
@@ -134,7 +134,7 @@ ht-degree: 1%
       <td>
          使用者端應用程式接受的媒體型別。
          <br/><br/>
-         若指定，則必須是application/json。
+         若指定，則必須為application/json；charset=utf-8。
       </td>
       <td>可選</td>
    </tr>

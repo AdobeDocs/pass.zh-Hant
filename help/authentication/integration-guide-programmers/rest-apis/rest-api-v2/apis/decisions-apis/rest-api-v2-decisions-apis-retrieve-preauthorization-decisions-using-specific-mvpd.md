@@ -2,9 +2,9 @@
 title: 使用特定mvpd擷取預先授權決定
 description: REST API V2 — 使用特定mvpd擷取預先授權決策
 exl-id: 8647e4fb-00b6-45cd-b81b-d00618b2e08b
-source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '858'
+source-wordcount: '864'
 ht-degree: 1%
 
 ---
@@ -77,7 +77,7 @@ ht-degree: 1%
       <td>
          所傳送資源的接受媒體型別。
          <br/><br/>
-         它必須是application/json。
+         它必須是application/json；charset=utf-8。
       </td>
       <td><i>必填</i></td>
    </tr>
@@ -147,7 +147,7 @@ ht-degree: 1%
       <td>
          使用者端應用程式接受的媒體型別。
          <br/><br/>
-         若指定，則必須是application/json。
+         若指定，則必須為application/json；charset=utf-8。
       </td>
       <td>可選</td>
    </tr>
@@ -381,7 +381,7 @@ Content-Type: application/json;charset=UTF-8
             "status": 403,
             "code": "preauthorization_denied_by_mvpd",
             "message": "The MVPD has returned a \"Deny\" decision when requesting pre-authorization for the specified resource.",
-            "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+            "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
             "action": "none"
          }
       }
@@ -487,7 +487,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }
@@ -501,7 +501,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }

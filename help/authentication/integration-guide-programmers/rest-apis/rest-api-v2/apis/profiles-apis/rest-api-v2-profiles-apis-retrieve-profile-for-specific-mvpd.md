@@ -2,9 +2,9 @@
 title: 擷取特定mvpd的設定檔
 description: REST API V2 — 擷取特定mvpd的設定檔
 exl-id: ed1abc33-c279-4465-b5a0-b4e5b892076e
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1080'
+source-wordcount: '1083'
 ht-degree: 1%
 
 ---
@@ -137,7 +137,7 @@ ht-degree: 1%
       <td>
          使用者端應用程式接受的媒體型別。
          <br/><br/>
-         若指定，則必須是application/json。
+         若指定，則必須為application/json；charset=utf-8。
       </td>
       <td>可選</td>
    </tr>
@@ -555,7 +555,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 403,
     "code": "temporary_access_duration_limit_exceeded",
     "message": "The temporary access duration limit has been exceeded.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "authentication"
 }
 ```
@@ -571,7 +571,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 500,
     "code": "invalid_configuration_temporary_access",
     "message": "The temporary access configuration is invalid.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "configuration"
 }
 ```
@@ -648,7 +648,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 403,
     "code": "temporary_access_duration_limit_exceeded",
     "message": "The temporary access duration limit has been exceeded.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "none"
 }
 ```
@@ -664,7 +664,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 403,
     "code": "temporary_access_resources_limit_exceeded",
     "message": "The temporary access resources limit has been exceeded.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "authentication"
 }
 ```
@@ -680,7 +680,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 500,
     "code": "invalid_configuration_temporary_access",
     "message": "The temporary access configuration is invalid.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "none"
 }
 ```
@@ -696,7 +696,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 400,
     "code": "invalid_header_identity_for_temporary_access",
     "message": "The identity for temporary access header value is missing or invalid.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "none"
 }
 ```

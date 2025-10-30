@@ -2,9 +2,9 @@
 title: 繼續驗證工作階段
 description: REST API V2 — 繼續驗證工作階段
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '953'
+source-wordcount: '956'
 ht-degree: 1%
 
 ---
@@ -131,7 +131,7 @@ ht-degree: 1%
       <td>
          使用者端應用程式接受的媒體型別。
          <br/><br/>
-         若指定，則必須是application/json。
+         若指定，則必須為application/json；charset=utf-8。
       </td>
       <td>可選</td>
    </tr>

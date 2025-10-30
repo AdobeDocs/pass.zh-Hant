@@ -2,9 +2,9 @@
 title: 擷取合作夥伴驗證請求
 description: REST API V2 — 擷取合作夥伴驗證請求
 exl-id: 52d8a8e9-c176-410f-92bc-e83449278943
-source-git-commit: 3efe25ddde7dfd2562932f623a2c440d4a059672
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1280'
+source-wordcount: '1283'
 ht-degree: 1%
 
 ---
@@ -148,7 +148,7 @@ ht-degree: 1%
       <td>
          使用者端應用程式接受的媒體型別。
          <br/><br/>
-         若指定，則必須是application/json。
+         若指定，則必須為application/json；charset=utf-8。
       </td>
       <td>可選</td>
    </tr>

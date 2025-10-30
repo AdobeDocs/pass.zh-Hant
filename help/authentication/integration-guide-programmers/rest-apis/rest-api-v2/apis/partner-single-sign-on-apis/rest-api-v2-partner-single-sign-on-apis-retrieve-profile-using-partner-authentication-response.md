@@ -2,9 +2,9 @@
 title: 使用合作夥伴驗證回應建立和擷取設定檔
 description: REST API V2 — 使用合作夥伴驗證回應建立及擷取設定檔
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
-source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '847'
+source-wordcount: '850'
 ht-degree: 1%
 
 ---
@@ -133,7 +133,7 @@ ht-degree: 1%
       <td>
          使用者端應用程式接受的媒體型別。
          <br/><br/>
-         若指定，則必須是application/json。
+         若指定，則必須為application/json；charset=utf-8。
       </td>
       <td>可選</td>
    </tr>

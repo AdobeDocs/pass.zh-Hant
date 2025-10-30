@@ -2,9 +2,9 @@
 title: 使用特定mvpd擷取授權決策
 description: REST API V2 — 使用特定mvpd擷取授權決策
 exl-id: e8889395-4434-4bec-a212-a8341bb9c310
-source-git-commit: 7ac04991289c95ebb803d1fd804e9b497f821cda
+source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1000'
+source-wordcount: '1006'
 ht-degree: 1%
 
 ---
@@ -77,7 +77,7 @@ ht-degree: 1%
       <td>
          所傳送資源的接受媒體型別。
          <br/><br/>
-         它必須是application/json。
+         它必須是application/json；charset=utf-8。
       </td>
       <td><i>必填</i></td>
    </tr>
@@ -152,7 +152,7 @@ ht-degree: 1%
       <td>
          使用者端應用程式接受的媒體型別。
          <br/><br/>
-         若指定，則必須是application/json。
+         若指定，則必須為application/json；charset=utf-8。
       </td>
       <td>可選</td>
    </tr>
@@ -448,7 +448,7 @@ Content-Type: application/json;charset=UTF-8
                 "code": "authorization_denied_by_mvpd",
                 "message": "The MVPD has returned a "Deny" decision when requesting authorization for the specified resource",
                 "details": "Your subscription package does not include the "Live" channel",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
             },
             "notBefore": 1697094207324,
@@ -580,7 +580,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }
@@ -594,7 +594,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "authorization_denied_by_degradation_rule",
                 "message": "The integration has an AuthZNone rule applied for the requested resources",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }
@@ -673,7 +673,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "temporary_access_duration_limit_exceeded",
                 "message": "The temporary access duration limit has been exceeded.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "authentication"
             }
         }
@@ -700,7 +700,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 500,
                 "code": "invalid_configuration_temporary_access",
                 "message": "The temporary access configuration is invalid.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "configuration"
             }
         }
@@ -780,7 +780,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "temporary_access_duration_limit_exceeded",
                 "message": "The temporary access duration limit has been exceeded.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "authentication"
             }
         }
@@ -807,7 +807,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 403,
                 "code": "temporary_access_resources_limit_exceeded",
                 "message": "The temporary access resources limit has been exceeded.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "authentication"
             }
         }
@@ -834,7 +834,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 500,
                 "code": "invalid_configuration_temporary_access",
                 "message": "The temporary access configuration is invalid.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "configuration"
             }
         }
@@ -861,7 +861,7 @@ Content-Type: application/json;charset=UTF-8
                 "status": 400,
                 "code": "invalid_header_identity_for_temporary_access",
                 "message": "The identity for temporary access header value is missing or invalid.",
-                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+                "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
                 "action": "none"
             }
         }
