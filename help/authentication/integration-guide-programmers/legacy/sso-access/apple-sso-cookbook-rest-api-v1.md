@@ -265,7 +265,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>專業秘訣：</u>**&#x200B;請注意，從視訊訂閱者帳戶架構取得的提供者識別碼，在Adobe Pass驗證組態方面代表&#x200B;*`platformMappingId`*。 因此，應用程式必須透過MVPD驗證&#x200B;*`platformMappingId`*&#x200B;提供Adobe Pass清單[ API服務，使用](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)值來判斷MVPD ID屬性值。
+> **<u>專業秘訣：</u>**&#x200B;請注意，從視訊訂閱者帳戶架構取得的提供者識別碼，在Adobe Pass驗證組態方面代表&#x200B;*`platformMappingId`*。 因此，應用程式必須透過MVPD驗證&#x200B;*`platformMappingId`*&#x200B;提供Adobe Pass清單[&#x200B; API服務，使用](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)值來判斷MVPD ID屬性值。
 
 #### 步驟：「將Adobe要求轉寄給合作夥伴SSO以取得設定檔」 {#step7}
 

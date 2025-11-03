@@ -19,7 +19,7 @@ ht-degree: 2%
 
 <b>AP-Visitor-Identifier</b>要求標頭包含使用者端應用程式在所有Adobe Experience Cloud解決方案中唯一識別訪客所需的`ECID`。
 
-如需Adobe Pass驗證中ECID使用方式的詳細資訊，請參閱[在Adobe Pass驗證中使用Experience Cloud ID ](/help/authentication/integration-guide-programmers/features-standard/analytics/exp-cloud-id-authn.md)檔案。
+如需Adobe Pass驗證中ECID使用方式的詳細資訊，請參閱[在Adobe Pass驗證中使用Experience Cloud ID &#x200B;](/help/authentication/integration-guide-programmers/features-standard/analytics/exp-cloud-id-authn.md)檔案。
 
 ## 語法 {#syntax}
 
