@@ -2,7 +2,7 @@
 title: 變更記錄
 description: 瞭解管理員如何監視TVE儀表板中的設定變更。
 exl-id: 9b53a61b-679f-491e-90f3-5d827e21b32c
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '270'
 ht-degree: 0%
@@ -30,7 +30,7 @@ TVE儀表板的&#x200B;**變更記錄**&#x200B;區段可讓您檢視透過TVE儀
 
 1. 從清單中選取兩個要比較的組態變更。
 
-   ![比較組態變更](../assets/tve-dashboard/new-tve-dashboard/review/review-changes-compare-button.png)
+   ![比較組態變更](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-changes-compare-button.png)
 
    *比較組態變更*
 
@@ -42,12 +42,12 @@ TVE儀表板的&#x200B;**變更記錄**&#x200B;區段可讓您檢視透過TVE儀
 
 1. 選取&#x200B;**檢視**&#x200B;以存取變更的值。
 
-   ![檢視組態變更](../assets/tve-dashboard/new-tve-dashboard/review/review-changes-view-button.png)
+   ![檢視組態變更](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-changes-view-button.png)
 
    *檢視組態變更*
 
 以下是在所選組態中所做變更的範例。 您可以在變更中檢視新舊值之間的差異。
 
-![新舊值](../assets/tve-dashboard/new-tve-dashboard/review/review-change-modal-view.png)
+![新舊值](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-change-modal-view.png)
 
 *新舊值*

@@ -2,7 +2,7 @@
 title: 程式設計師快速入門手冊
 description: 程式設計師快速入門手冊
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: 37858fa83aecbdf443a4a6058c78e4f9246eee42
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '758'
 ht-degree: 0%
@@ -19,13 +19,13 @@ ht-degree: 0%
 
 本檔案概述確保順利且有效率地開始整合程式的重要初始步驟。 此課程旨在釐清客戶的期望，並指引我們與合作夥伴協力達成成功整合。
 
-Adobe提供一系列資源，協助您將Adobe Pass驗證整合至您的網站或應用程式。 請參考&#x200B;**「您將提供」**&#x200B;及&#x200B;**「Adobe將會提供」**&#x200B;提及以下各節。
+Adobe提供一系列資源，協助您將Adobe Pass驗證整合至您的網站或應用程式。 請參考&#x200B;**「您將提供」**&#x200B;及&#x200B;**「Adobe將會提供」**&#x200B;以下各節的提及內容。
 
 ## 設定程式 {#setup-process}
 
 設定程式包括下列步驟：
 
-![Adobe®通過驗證整合程式](../assets/progr-flow-int-lifecycle.png)
+![Adobe®通過驗證整合程式](/help/authentication/assets/progr-flow-int-lifecycle.png)
 
 *Adobe®通過驗證整合程式*
 
@@ -33,7 +33,7 @@ Adobe提供一系列資源，協助您將Adobe Pass驗證整合至您的網站�
 
 * **服務提供者（要求者識別碼）**
 
-  這是字串，可唯一識別向Adobe Pass驗證提出要求的網站或應用程式的品牌。 字串本身是任意的，但需要在Adobe和程式設計師之間商定
+  這是字串，可唯一識別向Adobe Pass驗證提出要求的網站或應用程式的品牌。 字串本身為任意字串，但需在Adobe與程式設計師之間商定
 
 * **頻道資訊**
 
@@ -41,7 +41,7 @@ Adobe提供一系列資源，協助您將Adobe Pass驗證整合至您的網站�
 
 * **網域名稱**
 
-  此清單將包含列出的實際網域名稱，以Adobe表示服務提供者。 這樣可確保只有您授權的網域才能使用您的中繼資料存取Adobe Pass驗證。 請務必提供並清楚識別生產和中繼（測試）環境的網域名稱，因為這些名稱可能不同。
+  此清單將包含實際列在Adobe中的網域名稱，以代表服務提供者。 這樣可確保只有您授權的網域才能使用您的中繼資料存取Adobe Pass驗證。 請務必提供並清楚識別生產和中繼（測試）環境的網域名稱，因為這些名稱可能不同。
 
 **您將透過MVPD提供**：
 
@@ -69,19 +69,19 @@ Adobe提供一系列資源，協助您將Adobe Pass驗證整合至您的網站�
 
 ## 存取客戶支援 {#access-customer-support}
 
-**Adobe將透過[Zendesk](https://tve.zendesk.com/home)提供**&#x200B;我們的客戶支援系統存取權。 若要存取Zendesk，您必須在https://tve.zendesk.com/home註冊並建立帳戶。 您可以註冊的使用者數目沒有限制。 註冊後，您可以在任何提交的票證上檢視和分享註解。
+**Adobe將透過** Zendesk[提供](https://tve.zendesk.com/home)我們的客戶支援系統存取權。 若要存取Zendesk，您必須在https://tve.zendesk.com/home註冊並建立帳戶。 您可以註冊的使用者數目沒有限制。 註冊後，您可以在任何提交的票證上檢視和分享註解。
 
 Adobe Pass驗證團隊可協助您在整合過程中遇到任何問題或技術問題。 請透過[tve-support@adobe.com](mailto:tve-support@adobe.com)聯絡我們。
 
 ## 存取檔案 {#access-documentation}
 
-**Adobe將透過[Adobe Experience League](https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/home)提供**&#x200B;我們的公開檔案存取權。
+**Adobe將透過** Adobe Experience League[提供](https://experienceleague.adobe.com/en/docs/pass/authentication/home)對公開檔案的存取權。
 
 Adobe Pass驗證團隊針對[程式設計師整合指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)區段下的可用功能和API提供完整檔案。 請參考本節下的目錄，以取得每個主題的詳細資訊連結。
 
 ## 存取測試工具 {#access-testing-tool}
 
-**Adobe將透過[Adobe Developer](https://developer.adobe.com/adobe-pass/)網站提供**&#x200B;我們API探索工具的存取權。
+**Adobe將透過** Adobe Developer[網站提供](https://developer.adobe.com/adobe-pass/)我們的API探索工具存取權。
 
 ## 存取設定管理工具 {#access-configuration-management-tool}
 

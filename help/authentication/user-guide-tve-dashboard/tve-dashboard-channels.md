@@ -2,7 +2,7 @@
 title: 頻道
 description: 瞭解TVE Dashboard中的管道及其各種設定。
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1556'
 ht-degree: 0%
@@ -23,7 +23,7 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 * **管道識別碼**：唯一識別碼，也稱為要求者識別碼。
 * **整合**：與[MVPD](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#mvpd)建立的連線數目。
 
-![現有管道的清單](../assets/tve-dashboard/new-tve-dashboard/channels/channels-list-view.png)
+![現有管道的清單](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channels-list-view.png)
 
 *現有管道的清單*
 
@@ -46,7 +46,7 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
    * [註冊的應用程式](#registered-applications)
    * [自訂配置](#custom-schemes)
 
-   ![頻道設定](../assets/tve-dashboard/new-tve-dashboard/channels/channel-tabs-view.png)
+   ![頻道設定](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-tabs-view.png)
 
    *頻道設定*
 
@@ -68,7 +68,7 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 * **錯誤報告**：選取&#x200B;**是**&#x200B;時，Adobe Pass SDK會將錯誤報告傳送至Adobe Pass後端以進行分析。
 
-![編輯頻道資訊](../assets/tve-dashboard/new-tve-dashboard/channels/channel-general-settings-tab-view.png)
+![編輯頻道資訊](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-general-settings-tab-view.png)
 
 *編輯頻道資訊*
 
@@ -78,7 +78,7 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 若要啟用&#x200B;**Analytics設定**，請連絡您的技術帳戶管理員(TAM)，以取得設定報表套裝ID (RSID)的詳細資訊。
 
-![啟用Analytics設定](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-analytics-configuration-button.png)
+![啟用Analytics設定](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-analytics-configuration-button.png)
 
 *啟用Analytics設定*
 
@@ -90,7 +90,7 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 此標籤會顯示目前所選管道與MVPD之間的可用整合清單。 清單會顯示每項整合及其狀態，指出其是否已啟用。 從此清單中選取特定整合，以存取[整合](tve-dashboard-integrations.md)區段中的詳細資訊。
 
-![可用整合的清單](../assets/tve-dashboard/new-tve-dashboard/channels/channel-integrations-tab-view.png)
+![可用整合的清單](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-integrations-tab-view.png)
 
 *可用整合的清單*
 
@@ -120,7 +120,7 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 1. 在&#x200B;**可用的憑證**&#x200B;區段頂端選取&#x200B;**新增憑證**。
 
-   ![新增憑證](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-certificate-button.png)
+   ![新增憑證](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-certificate-button.png)
 
    *新增憑證*
 
@@ -146,19 +146,19 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 1. 選取&#x200B;**移除**。
 
-   ![移除選取的憑證](../assets/tve-dashboard/new-tve-dashboard/channels/channel-delete-certificate-button.png)
+   ![移除選取的憑證](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-delete-certificate-button.png)
 
    *移除選取的憑證*
 
 1. 從&#x200B;**刪除使用中憑證**&#x200B;對話方塊中選取&#x200B;**刪除**。
 
-已建立新的組態變更，且已準備好進行伺服器更新。 只有在[檢閱並推播變更](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之後，憑證才會從&#x200B;**可用的憑證**&#x200B;區段中刪除。
+已建立新的組態變更，且已準備好進行伺服器更新。 只有在&#x200B;**檢閱並推播變更**&#x200B;之後，憑證才會從[可用的憑證](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)區段中刪除。
 
 #### 繼承的可用憑證 {#inherited-avail-certificates}
 
 媒體公司會在其自己的層級定義這些憑證。 所有與相同媒體公司相關的管道都可以使用這些憑證。
 
-![繼承可用的憑證](../assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-available-certificates-panel-view.png)
+![繼承可用的憑證](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-available-certificates-panel-view.png)
 
 *繼承可用的憑證*
 
@@ -181,7 +181,7 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 1. 選取&#x200B;**可用網域**&#x200B;區段右上角的&#x200B;**新增網域**。
 
-   ![新增網域](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-domain-button.png)
+   ![新增網域](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-domain-button.png)
 
    *新增網域*
 
@@ -199,19 +199,19 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 1. 選取&#x200B;**移除**。
 
-   ![移除選取的網域](../assets/tve-dashboard/new-tve-dashboard/channels/channel-remove-domain-button.png)
+   ![移除選取的網域](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-remove-domain-button.png)
 
    *移除選取的網域*
 
 1. 在&#x200B;**刪除網域**&#x200B;對話方塊上選取&#x200B;**刪除**。
 
-已建立新的組態變更，且已準備好進行伺服器更新。 只有在[檢閱並推播變更](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之後，才會從&#x200B;**可用的網域**&#x200B;區段中刪除網域。
+已建立新的組態變更，且已準備好進行伺服器更新。 只有在&#x200B;**檢閱並推播變更**&#x200B;之後，才會從[可用的網域](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)區段中刪除網域。
 
 選取的網域已無法使用。 因此，與此網域相關聯的應用程式會失去對Adobe Pass驗證服務的存取權。
 
 ### 註冊的應用程式 {#registered-applications}
 
-此標籤會顯示已註冊的應用程式清單。 如需有關註冊應用程式使用方式的詳細資訊，請參閱[動態使用者端註冊概觀](../integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)檔案。
+此標籤會顯示已註冊的應用程式清單。 如需有關註冊應用程式使用方式的詳細資訊，請參閱[動態使用者端註冊概觀](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)檔案。
 
 您可以對已註冊的應用程式執行下列動作：
 
@@ -224,7 +224,7 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 1. 選取&#x200B;**已註冊的應用程式**&#x200B;區段右上角的&#x200B;**新增應用程式**。
 
-   ![新增應用程式](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-application-button.png)
+   ![新增應用程式](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-application-button.png)
 
    *新增應用程式*
 
@@ -262,7 +262,7 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 1. 選取&#x200B;**下載**。
 
-   ![下載軟體陳述式](../assets/tve-dashboard/new-tve-dashboard/channels/channel-download-software-statement-button.png)
+   ![下載軟體陳述式](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-download-software-statement-button.png)
 
    *下載軟體陳述式*
 
@@ -280,7 +280,7 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 1. 選取&#x200B;**產生新的自訂配置**。
 
-   ![產生新的自訂配置](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-custom-scheme-button.png)
+   ![產生新的自訂配置](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-custom-scheme-button.png)
 
    *產生新的自訂配置*
 
@@ -290,7 +290,7 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 媒體公司會根據自己的層級定義這些自訂配置。 所有與相同媒體公司相關的管道都可以使用這些自訂配置。
 
-![繼承的自訂配置](../assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-custom-schemes-panel-view.png)
+![繼承的自訂配置](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-inherited-custom-schemes-panel-view.png)
 
 *繼承的自訂配置*
 
@@ -302,7 +302,7 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 1. 選取&#x200B;**管道**&#x200B;區段右上角的&#x200B;**新增管道**。
 
-   ![新增頻道](../assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-channel-button.png)
+   ![新增頻道](/help/authentication/assets/tve-dashboard/new-tve-dashboard/channels/channel-add-new-channel-button.png)
 
    *新增頻道*
 

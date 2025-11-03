@@ -1,14 +1,13 @@
 ---
 title: 頁首 — AP-Visitor-Identifier
 description: REST API V2 — 標題 — AP-Visitor-Identifier
-exl-id: b4f8e2a1-9c7d-4e3a-8f5b-2d1c6e9a4b7f
-source-git-commit: 26245e019afac2c0844ed64b222208cc821f9c6c
+exl-id: 216f398b-1cfa-4453-a81d-963675b33ec2
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '91'
 ht-degree: 2%
 
 ---
-
 
 # 頁首 — AP-Visitor-Identifier {#header-ap-visitor-identifier}
 
@@ -20,7 +19,7 @@ ht-degree: 2%
 
 <b>AP-Visitor-Identifier</b>要求標頭包含使用者端應用程式在所有Adobe Experience Cloud解決方案中唯一識別訪客所需的`ECID`。
 
-如需Adobe Pass驗證中ECID使用方式的詳細資訊，請參閱[在Adobe Pass驗證中使用Experience Cloud ID &#x200B;](../../../../features-premium/analytics/exp-cloud-id-authn.md)檔案。
+如需Adobe Pass驗證中ECID使用方式的詳細資訊，請參閱[在Adobe Pass驗證中使用Experience Cloud ID ](/help/authentication/integration-guide-programmers/features-standard/analytics/exp-cloud-id-authn.md)檔案。
 
 ## 語法 {#syntax}
 

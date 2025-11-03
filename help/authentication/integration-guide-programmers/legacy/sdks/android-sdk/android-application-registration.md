@@ -2,7 +2,7 @@
 title: Android應用程式註冊
 description: Android應用程式註冊
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 0%
@@ -21,15 +21,15 @@ ht-degree: 0%
 
 ## 簡介 {#intro}
 
-從3.0版的Android AccessEnabler SDK開始，我們正在變更Adobe伺服器的驗證機制。 我們不使用公開金鑰和秘密系統來簽署requestorID，而是引入軟體陳述式字串的概念，可用來取得存取權杖，稍後再用於SDK對伺服器進行的所有呼叫。 除了軟體宣告之外，您還需要為應用程式建立深層連結。
+從3.0版的Android AccessEnabler SDK開始，我們將透過Adobe伺服器變更驗證機制。 我們不使用公開金鑰和秘密系統來簽署requestorID，而是引入軟體陳述式字串的概念，可用來取得存取權杖，稍後再用於SDK對伺服器進行的所有呼叫。 除了軟體宣告之外，您還需要為應用程式建立深層連結。
 
-如需詳細資訊，請參閱[動態使用者端註冊概述](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)。
+如需詳細資訊，請參閱[動態使用者端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)。
 
 ## 什麼是軟體宣告？ {#what}
 
 軟體陳述式是包含應用程式相關資訊的JWT權杖。 每個應用程式都應該有專屬的軟體宣告，供我們的伺服器用來識別Adobe系統中的應用程式。
 
-初始化`AccessEnabler` SDK時，需要傳遞軟體陳述式。 它可用來註冊具有Adobe的應用程式。 註冊後，SDK會接收使用者端ID和使用者端密碼，用於取得存取權杖。 SDK對Adobe伺服器發出的任何呼叫都需要有效的存取權杖。 SDK負責註冊應用程式、取得和重新整理存取權杖。
+初始化`AccessEnabler` SDK時，需要傳遞軟體陳述式。 它可用來向Adobe註冊應用程式。 註冊後，SDK會接收使用者端ID和使用者端密碼，用於取得存取權杖。 SDK對Adobe伺服器的任何呼叫都需要有效的存取Token。 SDK負責註冊應用程式、取得和重新整理存取權杖。
 
 >[!NOTE]
 >
@@ -61,9 +61,9 @@ ht-degree: 0%
 
    下載文字檔。 將其內容當做您的軟體宣告使用。
 
-如需詳細資訊，請參閱[動態使用者端註冊管理](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management)。
+如需詳細資訊，請參閱[動態使用者端註冊管理](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management)。
 
-### 如果您沒有AdobeTVE儀表板的存取權
+### 如果您沒有Adobe TVE儀表板的存取權
 
 將票證提交至`tve-support@adobe.com`。 包括必要的資訊，例如頻道、應用程式名稱、版本和平台。 我們的支援團隊會有人為您建立軟體宣告。
 

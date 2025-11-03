@@ -2,7 +2,7 @@
 title: Amazon FireOS SDK搭配Dynamic Client註冊
 description: Amazon FireOS SDK搭配Dynamic Client註冊
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1169'
 ht-degree: 0%
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 已修改適用於FireTV的FireOS AccessEnabler SDK ，以啟用驗證而不使用工作階段Cookie。 由於越來越多的瀏覽器限制對Cookie的存取，因此需要另一種方法來允許驗證。
 
-**FireOS SDK 3.0.4**&#x200B;以[動態使用者端註冊概述](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)取代目前以已簽署的請求者ID和工作階段Cookie驗證為基礎的應用程式註冊機制。
+**FireOS SDK 3.0.4**&#x200B;以[動態使用者端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)取代目前以已簽署的請求者ID和工作階段Cookie驗證為基礎的應用程式註冊機制。
 
 
 ## API變更 {#API}
@@ -54,11 +54,11 @@ ht-degree: 0%
 
 ### setRequestor
 
-**描述：**&#x200B;已建立通道的識別。 每個管道在為Adobe Pass驗證系統註冊Adobe時會獲得一個唯一的ID。 處理SSO和遠端權杖時，驗證狀態會在應用程式於背景時變更，當應用程式進入前景時，可再次呼叫setRequestor以便與系統狀態同步（如果SSO已啟用，會擷取遠端權杖，如果同時發生登出，則會刪除本機權杖）。
+**描述：**&#x200B;已建立通道的識別。 每個管道在為Adobe Pass驗證系統註冊Adobe時都會獲得一個唯一的ID。 處理SSO和遠端權杖時，驗證狀態會在應用程式於背景時變更，當應用程式進入前景時，可再次呼叫setRequestor以便與系統狀態同步（如果SSO已啟用，會擷取遠端權杖，如果同時發生登出，則會刪除本機權杖）。
 
 伺服器回應包含MVPD清單，以及附加至通道識別的一些設定資訊。 伺服器回應由Access Enabler程式碼內部使用。 只有作業的狀態（即SUCCESS/FAIL）會透過setRequestorComplete()回呼顯示給應用程式。
 
-如果未使用&#x200B;*url*&#x200B;引數，則產生的網路呼叫會鎖定預設服務提供者URL：Adobe發行生產環境。
+如果未使用&#x200B;*url*&#x200B;引數，則產生的網路呼叫會鎖定預設服務提供者URL： Adobe Release Production環境。
 
 如果提供&#x200B;*url*&#x200B;引數的值，則產生的網路呼叫會鎖定&#x200B;*url*&#x200B;引數中提供的所有URL。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD，「存取啟用程式」會記住關聯服務提供者的URL。 所有後續的軟體權利檔案請求都會導向在設定階段與目標MVPD配對之服務提供者相關聯的URL。
 
@@ -77,7 +77,7 @@ ht-degree: 0%
 **引數：**
 
 - *requestorID*：與頻道關聯的唯一識別碼。 首次向Adobe Pass驗證服務註冊時，請將Adobe指派的唯一ID傳遞至您的網站。
-- *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 若這麼做，MVPD清單將由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是說，第一個回應並支援該MVPD的提供者。
+- *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的例項可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 若這麼做，MVPD清單將由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是說，第一個回應並支援該MVPD的提供者。
 
 已棄用：
 
@@ -152,7 +152,7 @@ ht-degree: 0%
    - 登入已取消：重設MVPD選擇
    - URL配置會建立為「adobepass://android.app」，以便在驗證完成時擷取
 
-- e. get/checkAuthorization ： SDK將在標頭中包含&#x200B;**access\_token &#x200B;** 作為授權：持有人&#x200B;**access\_token**
+- e. get/checkAuthorization ： SDK將在標頭中包含**access\_token **作為授權：持有人&#x200B;**access\_token**
 
 - 如果授權成功，將會呼叫以取得媒體權杖
 

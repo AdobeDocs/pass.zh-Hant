@@ -2,7 +2,7 @@
 title: 使用OAuth 2.0通訊協定進行驗證
 description: 使用OAuth 2.0通訊協定進行驗證
 exl-id: 0c1f04fe-51dc-4b4d-88e7-66e8f4609e02
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '1088'
 ht-degree: 0%
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 ## 概觀 {#overview}
 
-雖然SAML仍然是美國MVPD和一般企業用於驗證的主要通訊協定，但改用OAuth 2.0作為主要驗證通訊協定的趨勢已很明顯。 OAuth 2.0通訊協定(https://tools.ietf.org/html/rfc6749)主要是為消費者網站開發，並很快被Facebook、Google和Twitter等網際網路巨頭採用。
+雖然SAML仍然是美國MVPD和一般企業用於驗證的主要通訊協定，但改用OAuth 2.0作為主要驗證通訊協定的趨勢已很明顯。 OAuth 2.0通訊協定(https://tools.ietf.org/html/rfc6749)主要針對消費者網站開發，並很快被Facebook、Google和Twitter等網際網路巨頭採納。
 
 OAuth 2.0非常成功，這促使企業慢慢升級其基礎架構以支援。
 
@@ -37,11 +37,11 @@ OAuth 2.0非常成功，這促使企業慢慢升級其基礎架構以支援。
 
 ## 切換至OAuth 2.0的需求 {#oauth-req}
 
-若要支援使用OAuth 2.0的驗證，MVPD必須符合下列先決條件：
+若要支援使用OAuth 2.0進行驗證，MVPD必須符合下列必要條件：
 
 首先，MVPD必須確定它支援[授權代碼授予](https://oauthlib.readthedocs.io/en/latest/oauth2/grants/authcode.html)流程。
 
-確認支援流程後，MVPD必須提供我們下列資訊：
+在確認可支援流量後，MVPD必須提供我們下列資訊：
 
 * 驗證端點
    * 端點將提供授權代碼，稍後將用來交換重新整理和存取Token
@@ -53,12 +53,12 @@ OAuth 2.0非常成功，這促使企業慢慢升級其基礎架構以支援。
 * 我們需要使用者設定檔&#x200B;**的**&#x200B;端點
    * 此端點會提供使用者ID，此ID必須對帳戶唯一，且不得包含任何個人識別資訊
 * **/登出**&#x200B;端點（選擇性）
-   * Adobe Pass驗證將重新導向至此端點，並向MVPD提供重新導向後端URI；在此端點上，MVPD可以清除使用者端電腦上的Cookie，或套用任何想要的邏輯以進行登出
+   * Adobe Pass驗證將重新導向到此端點，為MVPD提供重新導向後端URI；在此端點上，MVPD可以清除使用者端電腦上的Cookie或套用任何需要的登出邏輯
 * 強烈建議支援獲授權的使用者端（不會觸發使用者授權頁面的使用者端應用程式）
 * 我們也需要：
    * 整合設定的&#x200B;**clientID**&#x200B;和&#x200B;**使用者端密碼**
    * 重新整理權杖和存取權杖的&#x200B;**存留時間** (TTL)值
-   * 我們可以為MVPD提供授權回呼和登出回呼URI。 此外，如有需要，我們可為MVPD提供要列入防火牆設定中白名單的IP清單。
+   * 我們可以向MVPD提供授權回呼和登出回呼URI。 此外，如有需要，我們可為MVPD提供要列入防火牆設定中白名單的IP清單。
 
 
 ## 驗證流程 {#authn-flow}
@@ -67,7 +67,7 @@ OAuth 2.0非常成功，這促使企業慢慢升級其基礎架構以支援。
 
 
 
-![在組態中選取的通訊協定上與MVPD通訊的Adobe驗證中顯示驗證流程的圖表。](../assets/authn-flow.png)
+![在設定中所選通訊協定上與MVPD通訊的Adobe驗證中顯示驗證流程的圖表。](/help/authentication/assets/authn-flow.png)
 
 **圖1： OAuth 2.0驗證流程**
 
@@ -77,10 +77,10 @@ OAuth 2.0非常成功，這促使企業慢慢升級其基礎架構以支援。
 
 簡而言之，支援OAuth 2.0通訊協定的MVPD的驗證流程遵循下列步驟：
 
-1. 一般使用者會導覽至程式設計師的網站，並選取使用其MVPD憑證登入
-1. 安裝在程式設計師端的AccessEnabler，會以HTTP要求的形式將驗證要求傳送至Adobe Pass驗證端點，而Adobe Pass驗證端點會重新導向至MVPD授權端點。
-1. MVPD授權端點傳送授權代碼到Adobe Pass驗證端點
-1. Adobe Pass驗證會使用收到的授權代碼，從MVPD的權杖端點要求重新整理權杖和存取權杖
+1. 一般使用者會導覽至程式設計師網站，並選取使用其MVPD憑證登入
+1. 安裝在程式設計師端的AccessEnabler，會以HTTP要求的形式傳送驗證要求給Adobe Pass驗證端點，而Adobe Pass驗證端點會重新導向至MVPD授權端點。
+1. MVPD授權端點傳送授權代碼至Adobe Pass驗證端點
+1. Adobe Pass驗證會使用收到的授權代碼，從MVPD的權杖端點請求重新整理權杖和存取權杖
 1. 擷取使用者資訊和中繼資料的呼叫可傳送到使用者設定檔端點，以防使用者資訊未包含在權杖中
 1. 驗證權杖會傳遞給一般使用者，他們現在可以成功瀏覽程式設計師網站
 
@@ -100,14 +100,14 @@ OAuth 2.0非常成功，這促使企業慢慢升級其基礎架構以支援。
 
 ## 從SAML移轉至OAuth 2.0 {#saml-auth2-migr}
 
-從SAML移轉至OAuth 2.0的整合作業將由Adobe和MVPD執行。 程式設計人員不需要進行任何技術變更，但程式設計人員可能會想要在MVPD登入頁面上檢查/測試品牌結合。 從MVPD的觀點來看，需要Oauth 2.0需求中要求的端點和其他資訊。
+從SAML移轉至OAuth 2.0的整合作業將由Adobe和MVPD執行。 程式設計師不需要進行任何技術變更，但程式設計師可能會想要在MVPD登入頁面上檢查/測試品牌結合。 從MVPD的觀點來看，需要Oauth 2.0需求中要求的端點和其他資訊。
 
 為了&#x200B;**保留SSO**，已擁有透過SAML取得的驗證權杖的使用者仍會被視為已驗證，其要求會透過舊的SAML整合進行路由。
 
 從技術角度來看：
 
-1. Adobe將會啟用程式設計師與MVPD之間的OAuth 2.0整合，而不會刪除SAML整合。
+1. Adobe將啟用程式設計師與MVPD之間的OAuth 2.0整合，而不刪除SAML整合。
 1. 啟用後，所有新使用者都將使用OAuth 2.0流程。
 1. 已驗證的使用者，若已擁有包含SAML主體ID的本機AuthN權杖，將會由Adobe透過SAML整合自動路由。
-1. 對於步驟編號3的使用者，一旦其SAML產生的AuthN權杖到期後，Adobe會將他們視為新使用者，其行為與步驟編號2的使用者類似。
+1. 對於步驟編號3的使用者，一旦其SAML產生的AuthN權杖到期後，Adobe會將他們視為新使用者，其行為與步驟編號2的使用者相同。
 1. Adobe將檢閱使用模式，以判斷可以安全停用SAML整合的時機。

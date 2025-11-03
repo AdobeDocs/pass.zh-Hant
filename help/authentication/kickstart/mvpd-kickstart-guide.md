@@ -2,7 +2,7 @@
 title: MVPD快速入門手冊
 description: MVPD快速入門手冊
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: 2b9a8ce374f7a73cd815e9735d672e5c9ba285cc
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '934'
 ht-degree: 0%
@@ -19,7 +19,7 @@ ht-degree: 0%
 
 本檔案概述確保順利且有效率地開始整合程式的重要初始步驟。 此課程旨在釐清客戶的期望，並指引我們與合作夥伴協力達成成功整合。
 
-Adobe提供一系列資源，協助您整合Adobe Pass驗證。 請參考&#x200B;**「您將提供」**&#x200B;及&#x200B;**「Adobe將會提供」**&#x200B;提及以下各節。
+Adobe提供一系列資源，協助您整合Adobe Pass驗證。 請參考&#x200B;**「您將提供」**&#x200B;及&#x200B;**「Adobe將會提供」**&#x200B;以下各節的提及內容。
 
 >[!CAUTION]
 >
@@ -33,7 +33,7 @@ Adobe提供一系列資源，協助您整合Adobe Pass驗證。 請參考&#x200B
 
 設定程式包括下列步驟：
 
-![Adobe®通過驗證整合程式](../assets/mvpd-int-lifecycle.png)
+![Adobe®通過驗證整合程式](/help/authentication/assets/mvpd-int-lifecycle.png)
 
 *Adobe®通過驗證整合程式*
 
@@ -63,11 +63,11 @@ Adobe提供一系列資源，協助您整合Adobe Pass驗證。 請參考&#x200B
 
 * **中繼環境中繼資料**
 
-  可從https://sp.auth-staging.adobe.com/sp/metadata擷取Adobe的SP中繼資料。
+  Adobe的SP中繼資料可從https://sp.auth-staging.adobe.com/sp/metadata擷取。
 
 * **生產環境中繼資料**
 
-  可從https://sp.auth.adobe.com/sp/metadata擷取Adobe的SP中繼資料。
+  Adobe的SP中繼資料可從https://sp.auth.adobe.com/sp/metadata擷取。
 
 **您將在中繼資料交換階段提供**：
 
@@ -81,13 +81,13 @@ Adobe提供一系列資源，協助您整合Adobe Pass驗證。 請參考&#x200B
 
 ### 連線能力 {#connectivity}
 
-**您將提供**&#x200B;允許列出AdobeIP的方式，因為Adobe Pass驗證需要防火牆允許流量通過連線埠80和443，以便在驗證和授權程式期間啟用對受限制資源的存取。
+**您將提供**&#x200B;從Adobe允許清單IP的方式，因為Adobe Pass驗證需要防火牆允許流量通過連線埠80和443，以便在驗證和授權程式期間允許存取受限制的資源。
 
 **您將在中繼設定檔中提供**&#x200B;部署，以測試連線。
 
 ### 開發 {#development}
 
-**Adobe將提供**&#x200B;個工程時間，以便與MVPD密切合作，確保技術整合已正確建立。 此程式牽涉到根據MVPD的特定需求量身打造自訂程式碼。
+**Adobe將提供**&#x200B;個工程時間，以便與MVPD密切合作，確保技術整合可正確建立。 此程式牽涉到根據MVPD的特定需求量身打造自訂程式碼。
 
 ### 在中繼環境中部署 {#deployment-staging}
 
@@ -99,13 +99,13 @@ Adobe提供一系列資源，協助您整合Adobe Pass驗證。 請參考&#x200B
 
 **您將在生產設定檔中提供**&#x200B;部署，以測試連線。
 
-**Adobe將提供**&#x200B;建置，其中包含部署在PRE-QUAL生產環境中的必要程式碼更新。
+**Adobe將為**&#x200B;組建提供所需的程式碼更新，這些更新將部署在PRE-QUAL生產環境中。
 
-**您和Adobe將提供**&#x200B;品質保證(QA)時間，以確保使用生產設定檔成功測試整合。 如果此時一切正常，Adobe可以將整合移至RELEASE生產環境（「即時」），所有使用者都可使用。
+**您和Adobe將提供**&#x200B;品質保證(QA)時間，以確保使用生產設定檔成功測試整合。 如果現在一切正常，Adobe可以將整合移至RELEASE生產環境（「即時」），供所有使用者使用。
 
 >[!IMPORTANT]
 >
-> 一旦整合在RELEASE生產環境中上線，維持最佳客戶體驗便極為重要。 為了有效解決伺服器故障的情況，MVPD必須提供詳細的向上呈報程式檔案，以Adobe管理此類問題。
+> 一旦整合在RELEASE生產環境中上線，維持最佳客戶體驗便極為重要。 為了有效解決伺服器故障的情況，MVPD必須向Adobe提供詳細的向上呈報程式檔案，以便管理此類問題。
 >
 > 作為回報，Adobe會確保MVPD接收最新版本的Adobe Pass驗證升級程式，以簡化問題解決方案。
 
@@ -129,16 +129,16 @@ Adobe提供一系列資源，協助您整合Adobe Pass驗證。 請參考&#x200B
 
 ## 存取客戶支援 {#access-customer-support}
 
-**Adobe將透過[Zendesk](https://tve.zendesk.com/home)提供**&#x200B;我們的客戶支援系統存取權。 若要存取Zendesk，您必須在https://tve.zendesk.com/home註冊並建立帳戶。
+**Adobe將透過** Zendesk[提供](https://tve.zendesk.com/home)我們的客戶支援系統存取權。 若要存取Zendesk，您必須在https://tve.zendesk.com/home註冊並建立帳戶。
 
 Adobe Pass驗證團隊可涵蓋我們在整合過程中可能遇到的任何問題或技術問題。 請透過[tve-support@adobe.com](mailto:tve-support@adobe.com)聯絡我們。
 
 ## 存取檔案 {#access-documentation}
 
-**Adobe將透過[Adobe Experience League](https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/home)提供**&#x200B;我們的公開檔案存取權。
+**Adobe將透過** Adobe Experience League[提供](https://experienceleague.adobe.com/en/docs/pass/authentication/home)對公開檔案的存取權。
 
 Adobe Pass驗證團隊針對[MVPD整合指南](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md)區段下的可用功能和工作流程提供完整檔案。 請參考本節下的目錄，以取得每個主題的詳細資訊連結。
 
 ## 存取測試工具 {#access-testing-tool}
 
-**Adobe將透過[Adobe Developer](https://developer.adobe.com/adobe-pass/)網站提供**&#x200B;我們API探索工具的存取權。
+**Adobe將透過** Adobe Developer[網站提供](https://developer.adobe.com/adobe-pass/)我們的API探索工具存取權。

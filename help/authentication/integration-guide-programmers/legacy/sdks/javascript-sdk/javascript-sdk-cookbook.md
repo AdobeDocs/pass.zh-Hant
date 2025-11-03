@@ -2,7 +2,7 @@
 title: JavaScript SDK逐步指南
 description: JavaScript SDK逐步指南
 exl-id: d57f7a4a-ac77-4f3c-8008-0cccf8839f7c
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '957'
 ht-degree: 0%
@@ -36,7 +36,7 @@ ht-degree: 0%
 
 </br>
 
-![](../../../../assets/javascript-flows.png)
+![](/help//authentication/assets/javascript-flows.png)
 
 
 ## 先決條件 {#prereq}
@@ -86,7 +86,7 @@ mvpds引數是使用者可用的提供者陣列。
 
 - `selectedProvider(mvpd)`
 
-  **觸發程式：** [`getSelectedProvider()`] (#$getSelProv `mvpd`引數提供所選取之提供者的相關資訊
+  **觸發程式：** [`getSelectedProvider()`]&#x200B;(#$getSelProv `mvpd`引數提供所選取之提供者的相關資訊
 使用者。
 
 - `setMetadataStatus(metadata, key, arguments)`
@@ -99,7 +99,7 @@ mvpds引數是使用者可用的提供者陣列。
 
 **I.載入AccessEnabler JavaScript：**
 
-暫存設定檔的&#x200B;**&#x200B;**
+暫存設定檔的&#x200B;****
 
 ```JSON
 <script type="text/javascript"         
@@ -117,7 +117,7 @@ src="https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js">
 </script>"
 ```
 
-**觸發器：**&#x200B;初始化完成後，Adobe Pass
+**觸發器：**初始化完成後，Adobe Pass
 驗證會呼叫您的`entitlementLoaded()`回呼函式。 這是您應用程式與AccessEnabler通訊的進入點。
 
 
@@ -149,7 +149,7 @@ src="https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js">
 - `displayProviderDialog()`如果使用者尚未通過驗證
 - `setAuthenticationStatus()` （如果已進行驗證）
 
-當AccessEnabler使用`isAuthenticated == 1`呼叫`setAuthenticationStatus()`時，已到達驗證流程的完成狀態。
+當AccessEnabler使用`setAuthenticationStatus()`呼叫`isAuthenticated == 1`時，已到達驗證流程的完成狀態。
 
 ## 4.授權流程 {#authz}
 
@@ -169,7 +169,7 @@ src="https://entitlement.auth.adobe.com/entitlement/v4/AccessEnabler.js">
 使用媒體權杖驗證器，驗證從成功的`getAuthorization()`呼叫傳回的shortMediaToken。
 
 
-**相依性：**&#x200B;短媒體權杖驗證器(包含在
+**相依性：**短媒體權杖驗證器(包含在
 AccessEnabler程式庫)
 
 - 如果驗證通過：為使用者顯示/播放請求的媒體。
@@ -186,7 +186,7 @@ AccessEnabler程式庫)
 
 ## 設定訪客ID {#visitorID}
 
-從分析觀點來看，設定[Experience CloudvisitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hant)值非常重要。 設定EC visitorID值後，SDK會將此資訊與每個網路呼叫一併傳送，而Adobe Pass驗證服務將會收集此資訊。 如此一來，您就可以將Adobe Pass驗證服務的分析資料與其他應用程式或網站的任何其他分析報表建立關聯。 如需設定EC visitorID的相關資訊，請參閱[這裡](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hant)。
+從分析觀點來看，設定[Experience Cloud visitorID](https://experienceleague.adobe.com/docs/id-service/using/home.html)值非常重要。 設定EC visitorID值後，SDK會將此資訊與每個網路呼叫一併傳送，而Adobe Pass驗證服務將會收集此資訊。 如此一來，您就可以將Adobe Pass驗證服務的分析資料與其他應用程式或網站的任何其他分析報表建立關聯。 如需設定EC visitorID的相關資訊，請參閱[這裡](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=en)。
 
 
 >[!NOTE]

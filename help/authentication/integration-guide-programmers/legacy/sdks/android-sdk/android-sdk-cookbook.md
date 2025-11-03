@@ -2,7 +2,7 @@
 title: Android SDK逐步指南
 description: Android SDK逐步指南
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: 79b3856e3ab2755cc95c3fcd34121171912a5273
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '1703'
 ht-degree: 0%
@@ -113,7 +113,7 @@ AccessEnabler的網路活動會發生在不同的執行緒中，因此不會封�
      `authorizedResources`引數會顯示使用者有權檢視的資源。
 
 
-![](../../../../assets/android-entitlement-flows.png)
+![](/help//authentication/assets/android-entitlement-flows.png)
 
 
 ### B.啟動流程 {#startup_flow}

@@ -2,9 +2,9 @@
 title: REST API參考
 description: Rest api參考
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
-source-wordcount: '669'
+source-wordcount: '661'
 ht-degree: 2%
 
 ---
@@ -58,14 +58,14 @@ Adobe Pass驗證REST API受[節流機制](/help/authentication/integration-guide
 
 | Sr | Web服務端點 | 說明 | <!--[Diag.  </br>Ref](http://tve.helpdocsonline.com/api-reference-v2-test#illustration)-->。 | 託管位置 | 呼叫者 |
 |-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------|
-| 1. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) | 傳回隨機產生的註冊代碼和登入頁面URI | 2 | Adobe</br>登入代碼服務 | 智慧型裝置 |
-| 2. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode/ </br> {registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md) | 傳回包含註冊代碼UUID、註冊代碼和雜湊裝置ID的註冊代碼記錄 | 8 | Adobe</br>登入代碼服務 | Adobe Pass 驗證 |
-| 3. | [&lt;SP_FQDN>/api/v1/config/ </br> {requestorId}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md) | 傳回要求者的已設定MVPD清單 | 5 | Adobe</br>Adobe Pass </br>驗證</br>服務 | 登入</br>網頁</br>應用程式 |
-| 4. | [&lt;SP_FQDN>/api/v1/authenticate](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | 透過通知MVPD選取事件來起始AuthN程式。 在驗證資料庫上建立記錄，在從MVPD收到成功回應時進行調節（步驟13） | 7 | Adobe</br>Adobe Pass </br>驗證</br>服務 | 登入</br>網頁</br>應用程式 |
+| 1. | [&lt;REGGIE_FQDN>/reggie/v1/ </br>  {requestorId}/regcode](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md) | 傳回隨機產生的註冊代碼和登入頁面URI | 2 | Adobe </br>登入代碼服務 | 智慧型裝置 |
+| 2. | [&lt;REGGIE_FQDN>/reggie/v1/ </br>  {requestorId}/regcode/ </br>{registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/return-registration-record.md) | 傳回包含註冊代碼UUID、註冊代碼和雜湊裝置ID的註冊代碼記錄 | 8 | Adobe </br>登入代碼服務 | Adobe Pass 驗證 |
+| 3. | [&lt;SP_FQDN>/api/v1/config/ </br>{requestorId}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md) | 傳回要求者的已設定MVPD清單 | 5 | Adobe </br>Adobe Pass </br>驗證</br>服務 | 登入</br>網頁</br>應用程式 |
+| 4. | [&lt;SP_FQDN>/api/v1/authenticate](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md) | 透過通知MVPD選取事件來起始AuthN程式。 在驗證資料庫上建立記錄，在從MVPD收到成功回應時進行調節（步驟13） | 7 | Adobe </br>Adobe Pass </br>驗證</br>服務 | 登入</br>網頁</br>應用程式 |
 | 5. | SAML判斷提示取用者 | Adobe Pass驗證和MVPD之間的現有SAML工作流程 | 13 | Adobe Pass </br>驗證</br>服務 | Adobe Pass 驗證 |
-| 6. | [&lt;SP_FQDN>/api/v1/checkauthn/ </br> {registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md) | 登入網頁應用程式可檢查嘗試的登入流程是否成功 |                                                                                             | Adobe Pass </br>驗證   </br>服務 | 登入   </br>網頁   </br>應用程式 |
+| 6. | [&lt;SP_FQDN>/api/v1/checkauthn/ </br>{registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-flow-by-second-screen-web-app.md) | 登入網頁應用程式可檢查嘗試的登入流程是否成功 |                                                                                             | Adobe Pass </br>驗證   </br>服務 | 登入   </br>網頁   </br>應用程式 |
 | 7. | [&lt;SP_FQDN>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) | 取得AuthN權杖相關的中繼資料 | 15 | Adobe Pass </br>驗證</br>服務 | 智慧型裝置 |
-| 8. | [&lt;REGGIE_FQDN>/reggie/v1/ </br> {requestorId}/regcode/ </br> {registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/delete-registration-record.md) | 刪除登入程式碼記錄並釋出登入程式碼以供重複使用 | 16 | Adobe</br>登入代碼服務 | Adobe Pass 驗證 |
+| 8. | [&lt;REGGIE_FQDN>/reggie/v1/ </br>  {requestorId}/regcode/ </br>{registrationCode}](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/delete-registration-record.md) | 刪除登入程式碼記錄並釋出登入程式碼以供重複使用 | 16 | Adobe </br>登入代碼服務 | Adobe Pass 驗證 |
 | 9. | [&lt;SP_FQDN>/api/v1/authorize](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authorization.md) | 取得授權回應。 | 17 | Adobe Pass </br>驗證</br>服務 | 智慧型裝置 |
 | 10. | [&lt;SP_FQDN>/api/v1/checkauthn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/check-authentication-token.md) | 指出裝置是否具有未過期的AuthN權杖。 |                                                                                             | Adobe Pass </br>驗證</br>服務 | 智慧型裝置 |
 | 11. | [&lt;SP_FQDN>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md) | 如果找到，則傳回AuthN權杖。 |                                                                                             | Adobe Pass </br>驗證</br>服務 | 智慧型裝置 |
@@ -81,4 +81,4 @@ Adobe Pass驗證REST API受[節流機制](/help/authentication/integration-guide
 
 ## REST API安全性 {#security}
 
-必須使用HTTPS通訊協定呼叫所有Adobe Pass驗證REST API，以進行安全通訊。 此外，呼叫的大多數API應該包含已取得的存取權杖，如[擷取存取權杖](../../rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) API檔案中所述。
+必須使用HTTPS通訊協定呼叫所有Adobe Pass驗證REST API，以進行安全通訊。 此外，呼叫的大多數API應該包含已取得的存取權杖，如[擷取存取權杖](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) API檔案中所述。

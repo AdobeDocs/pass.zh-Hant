@@ -2,7 +2,7 @@
 title: Adobe Pass驗證和Android 6 「Marshmallow」新許可權模型
 description: Adobe Pass驗證和Android 6 「Marshmallow」新許可權模型
 exl-id: 3c96769e-b25b-48ab-bb74-40f13d4e5a84
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '503'
 ht-degree: 0%
@@ -77,10 +77,10 @@ if (ContextCompat.checkSelfPermission(thisActivity,
 >Adobe Pass Authentication SDK 1.9正在開發引入儲存彈性的功能。新的SDK預計於10月&#x200B;**日的最後一週發行**。 當無法使用一般儲存體時，應用程式將會回復到在應用程式的沙箱儲存體中寫入。 針對在API層級23中開發的應用程式，此規範涵蓋使用者不接受全域儲存中的讀取/寫入許可權的情況。 代號會依應用程式個別儲存，這表示使用Adobe Pass驗證的應用程式之間的單一登入功能將會停用。
 
 
-![](../../../assets/android-permissions-request.png)
+![](/help/authentication/assets/android-permissions-request.png)
 
 *圖：針對目標API層級23*&#x200B;所編寫的應用程式，其許可權要求對話方塊
 
 >[!IMPORTANT]
 >
-> Adobe建議&#x200B;**其合作夥伴使用API Level 22 (targetSdkVersion=22)或更舊版本開發應用程式，以確保驗證程式**&#x200B;中最佳的使用者體驗。
+> Adobe建議&#x200B;**其合作夥伴使用API Level 22 (targetSdkVersion=22)或更舊版本開發應用程式，以確保在驗證程式**&#x200B;中擁有最佳的使用者體驗。

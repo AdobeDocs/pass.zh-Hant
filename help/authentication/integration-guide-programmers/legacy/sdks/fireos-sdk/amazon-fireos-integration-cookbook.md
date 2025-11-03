@@ -2,7 +2,7 @@
 title: Amazon FireOS整合逐步指南
 description: Amazon FireOS整合逐步指南
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
 workflow-type: tm+mt
 source-wordcount: '1447'
 ht-degree: 0%
@@ -107,7 +107,7 @@ Amazon FireOS的Adobe Pass驗證權益解決方案最終將分為兩個網域：
       - `authorizedResources`引數會顯示使用者有權檢視的資源。
 
 
-![](../../../../assets/android-entitlement-flows.png)
+![](/help//authentication/assets/android-entitlement-flows.png)
 
 
 ### B.啟動流程 {#startup_flow}

@@ -2,7 +2,7 @@
 title: JavaScript SDK API參考
 description: JavaScript SDK API參考
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '2883'
 ht-degree: 0%
@@ -34,13 +34,13 @@ ht-degree: 0%
 - [logout()](#logout)
 
 
-## setRequestor (inRequestorID， endpoints， options){#setrequestor(inRequestorID,endpoints,options)}
+## setRequestor （inRequestorID、端點、選項）{#setrequestor(inRequestorID,endpoints,options)}
 
 **描述：**&#x200B;識別要求來源網站。  您必須在通訊工作階段中的任何其他API呼叫之前進行此呼叫。
 
 **引數：**
 
-- *inRequestorID* — 註冊期間Adobe指派給原始網站的唯一識別碼。
+- *inRequestorID* - Adobe在註冊期間指派給原始網站的唯一識別碼。
 
 - *端點* — 此引數是選用的。 可以是下列其中一個值：
 
@@ -50,8 +50,8 @@ ht-degree: 0%
    - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
 
 - *選項* — 包含應用程式ID值、訪客ID值重新整理較少設定（背景登出登出）和MVPD設定(iFrame)的JSON物件。 所有值均為選用。
-   1. 若指定，系統會在資料庫執行的所有網路呼叫上報告Experience CloudvisitorID。 此值稍後可用於進階分析報表。
-   2. 如果指定應用程式的唯一識別碼 — `applicationId` — 則會將該值新增至應用程式進行的所有後續呼叫，作為X-Device-Info HTTP標頭的一部分。 稍後可以使用適當的查詢從[ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)報表擷取此值。
+   1. 若指定，系統會在資料庫執行的所有網路呼叫上報告Experience Cloud visitorID。 此值稍後可用於進階分析報表。
+   2. 如果指定應用程式的唯一識別碼 — `applicationId` — 則會將該值新增至應用程式進行的所有後續呼叫，作為X-Device-Info HTTP標頭的一部分。 稍後可以使用適當的查詢從[ESM](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md)報表擷取此值。
 
   **注意：**&#x200B;所有JSON金鑰都區分大小寫。
 
@@ -178,7 +178,7 @@ ht-degree: 0%
 
 ## checkAuthorization(inResourceID) {#checkauthorization(inresourceid)}
 
-**描述：**&#x200B;應用程式使用此方法來檢查目前客戶和指定資源的授權狀態。 首先檢查驗證狀態。 如果未驗證，則會觸發tokenRequestFailed()回呼，而方法會結束。 如果使用者已通過驗證，它也會觸發授權流程。 檢視[getAuthorization()] (#getAuthZ方法的詳細資料。
+**描述：**&#x200B;應用程式使用此方法來檢查目前客戶和指定資源的授權狀態。 首先檢查驗證狀態。 如果未驗證，則會觸發tokenRequestFailed()回呼，而方法會結束。 如果使用者已通過驗證，它也會觸發授權流程。 檢視[getAuthorization()]&#x200B;(#getAuthZ方法的詳細資料。
 
 >[!TIP]
 >
@@ -196,7 +196,7 @@ ht-degree: 0%
 
 ## checkPreauthorizedResources(resources) {#checkPreauthorizedResources(resources)}
 
-**描述：**&#x200B;要求清單的「預檢」授權狀態
+**描述：**要求清單的「預檢」授權狀態
 資源。
 
 **引數：**
@@ -241,7 +241,7 @@ ht-degree: 0%
 
    - 如果索引鍵是`"TTL_AUTHZ"`，而params是包含資源ID的陣列做為字串，則會進行查詢以取得與指定資源關聯的授權權杖的到期時間。
 
-   - 如果索引鍵是`"DEVICEID"`，則會進行查詢以取得目前的裝置識別碼。 請注意，此功能預設為停用，程式設計師應聯絡Adobe以取得有關啟用和費用的資訊。
+   - 如果索引鍵是`"DEVICEID"`，則會進行查詢以取得目前的裝置識別碼。 請注意，此功能預設為停用，程式設計師應聯絡Adobe瞭解啟用和費用相關資訊。
 
    - 如果索引鍵來自以下使用者中繼資料型別清單，則會將包含對應使用者中繼資料的JSON物件傳送至[`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata)回呼函式：
 
@@ -309,7 +309,7 @@ ht-degree: 0%
 **說明：**&#x200B;當使用者從您的提供者選擇UI選取MVPD時，呼叫此函式，以將提供者選擇傳送至Access Enabler，或使用null引數呼叫此函式，以防使用者未選取提供者而解除您的提供者選擇UI。
 
 **個回呼
-已觸發：**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+已觸發：**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -365,7 +365,7 @@ ht-degree: 0%
 
 ## entitlementLoaded() {#entitlementLoaded}
 
-**描述：**&#x200B;當Access Enabler完成初始化並準備接收要求時觸發。 實作此回撥以瞭解何時可以使用Access Enabler API開始通訊。
+**描述：**當Access Enabler完成初始化並準備接收要求時觸發。 實作此回撥以瞭解何時可以使用Access Enabler API開始通訊。
 </br>
 
 [返回頂端](#top)
@@ -415,7 +415,7 @@ ht-degree: 0%
 
 **說明：**&#x200B;如果使用者選取的MVPD需要iFrame才能顯示其驗證登入頁面UI，請實作此回呼。
 
-**觸發者：**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**觸發者：**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [返回頁首](#top)
 
@@ -448,7 +448,7 @@ ht-degree: 0%
 
 >[!CAUTION]
 >
->裝置型別和作業系統衍生自使用公用Java程式庫(<http://java.net/projects/user-agent-utils>)和使用者代理程式字串。 請注意，此資訊僅以粗略的方式提供，以將運作量度劃分為裝置類別，但該Adobe對於錯誤結果概不負責。 請據以使用新功能。
+>裝置型別和作業系統衍生自使用公用Java程式庫(<http://java.net/projects/user-agent-utils>)和使用者代理程式字串。 請注意，此資訊僅以粗略的方式提供，以將營運量度劃分為裝置類別，但Adobe對於錯誤結果概不負責。 請據以使用新功能。
 
 **描述：**&#x200B;實作此回撥以在特定事件發生時接收追蹤資料。 例如，您可以使用它來追蹤有多少使用者以相同認證登入。 目前無法設定追蹤。 使用Adobe Pass Authentication 1.6時，`sendTrackingData()`也會報告有關裝置、Access Enabler使用者端和作業系統型別的資訊。 `sendTrackingData()`回呼保持回溯相容。
 

@@ -2,7 +2,7 @@
 title: rest API V2字彙表
 description: rest API V2字彙表
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: e448427ae4a36c4c6cb9f9c1cb4d0cc5c6d564ed
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '1742'
 ht-degree: 0%
@@ -27,7 +27,7 @@ ht-degree: 0%
 
 #### 驗證 {#authentication}
 
-驗證是允許使用者在[MVPD](#mvpd)驗證使用者訂閱後，向[程式設計人員](#programmer)證明其身分的程式，以取得受保護內容（[資源](#resource)）的存取權。
+驗證是允許使用者在[MVPD](#programmer)驗證使用者訂閱後，向[程式設計人員](#resource)證明其身分的程式，以取得受保護內容（[資源](#mvpd)）的存取權。
 
 #### 驗證代碼 {#code}
 
@@ -45,7 +45,7 @@ ht-degree: 0%
 
 #### Authorization {#authorization}
 
-授權是允許使用者在使用[MVPD](#mvpd)驗證使用者許可權後，根據擁有的[MVPD](#mvpd)訂閱，從[程式設計師](#programmer)目錄存取受保護內容（[資源](#resource)）的程式。
+授權是允許使用者在使用[MVPD](#resource)驗證使用者許可權後，根據擁有的[MVPD](#programmer)訂閱，從[程式設計師](#mvpd)目錄存取受保護內容（[資源](#mvpd)）的程式。
 
 ### C {#c}
 
@@ -53,7 +53,7 @@ ht-degree: 0%
 
 此設定是Adobe Pass驗證概念，可儲存有關[程式設計員](#programmer)和[MVPD](#mvpd)整合設定的資訊，並可在[驗證](#authentication)程式期間，要求使用者從使用中整合清單中選取其[電視提供者](#tv-provider)時使用。
 
-### 第天{#d}
+### D {#d}
 
 #### 決定 {#decision}
 
@@ -63,7 +63,7 @@ ht-degree: 0%
 
 降級是Adobe Pass驗證功能，可讓使用者存取受保護的內容，即使其[MVPD](#mvpd)發生服務中斷亦然。
 
-如需詳細資訊，請參閱[降級功能](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)檔案。
+如需詳細資訊，請參閱[降級功能](/help/premium-workflow/degraded-access/degradation-feature.md)檔案。
 
 #### 裝置ID {#device-id}
 
@@ -87,7 +87,7 @@ ht-degree: 0%
 
 家用驗證(HBA)是讓消費者在連線至其家用網路（屬於訂閱合約內的位置）的選取裝置上，自動被授與存取[TV Everywhere (TVE)](#tve)內容的許可權。
 
-### 我{#i}
+### I {#i}
 
 #### 身分提供者 {#identity-provider}
 
@@ -135,19 +135,19 @@ MVPD由MVPD和Adobe之間上線流程期間定義的唯一值識別。
 
 #### 預先授權 {#preauthorization}
 
-預先授權是允許使用者從[程式設計師](#programmer)目錄預覽他們有權存取的[資源](#resource)子集的程式(使用[MVPD](#mvpd)驗證使用者許可權之後)。
+預先授權是允許使用者從[程式設計師](#resource)目錄預覽他們有權存取的[資源](#programmer)子集的程式(使用[MVPD](#mvpd)驗證使用者許可權之後)。
 
 與[預檢](#preflight)同義字。
 
 #### 預檢 {#preflight}
 
-預檢是允許使用者從[程式設計人員](#programmer)目錄預覽他們有權存取的[資源](#resource)子集的程式(使用[MVPD](#mvpd)驗證使用者許可權後)。
+預檢是允許使用者從[程式設計人員](#resource)目錄預覽他們有權存取的[資源](#programmer)子集的程式(使用[MVPD](#mvpd)驗證使用者許可權後)。
 
 與[預先授權](#preauthorization)同義字。
 
 #### 主要（程式設計師）應用程式 {#primary-application}
 
-主要應用程式參考起始[驗證](#authentication)的[程式設計師](#programmer)應用程式，但可能無法使用[使用者代理程式](#user-agent)完成程式，以瀏覽至[MVPD](#mvpd)登入頁面。
+主要應用程式參考起始[驗證](#programmer)的[程式設計師](#authentication)應用程式，但可能無法使用[使用者代理程式](#user-agent)完成程式，以瀏覽至[MVPD](#mvpd)登入頁面。
 
 #### 個人資料 {#profile}
 
@@ -193,7 +193,7 @@ Proxy MVPD是一間為其他MVPD提供身分服務的公司，並直接與Adobe 
 
 #### 次要（程式設計師）應用程式 {#secondary-application}
 
-次要應用程式參考到能夠使用[使用者代理程式](#user-agent)來瀏覽至[MVPD](#mvpd)登入頁面，以完成[驗證](#authentication)程式的[程式設計師](#programmer)應用程式。
+次要應用程式參考到能夠使用[使用者代理程式](#programmer)來瀏覽至[MVPD](#authentication)登入頁面，以完成[驗證](#user-agent)程式的[程式設計師](#mvpd)應用程式。
 
 次要應用程式可在與主要應用程式相同的裝置上執行，或在不同的（次要）裝置上執行，在此情況下，登入體驗稱為「第二個熒幕驗證」使用者體驗。
 
@@ -207,7 +207,7 @@ Proxy MVPD是一間為其他MVPD提供身分服務的公司，並直接與Adobe 
 
 服務提供者是[程式設計師](#programmer)所擁有的管道（品牌）。
 
-透過程式設計師和Adobe之間的上線流程中定義的唯一值來識別服務提供者。
+透過程式設計師和Adobe之間的上線流程中定義的唯一值，來識別服務提供者。
 
 與先前使用的要求者ID同義。
 
@@ -217,7 +217,7 @@ Proxy MVPD是一間為其他MVPD提供身分服務的公司，並直接與Adobe 
 
 #### SP {#sp}
 
-服務提供者(SP)在與[MVPD](#mvpd)的整合中，參考Adobe Pass驗證代表[程式設計師](#programmer)所扮演的角色。
+服務提供者(SP)在與[MVPD](#programmer)的整合中，參考Adobe Pass驗證代表[程式設計師](#mvpd)所扮演的角色。
 
 #### SSO {#sso}
 
@@ -229,13 +229,13 @@ Proxy MVPD是一間為其他MVPD提供身分服務的公司，並直接與Adobe 
 
 基本的TempPass是Adobe Pass驗證功能，可讓使用者在有限的時間記憶體取受保護的內容，而不需要使用[MVPD](#mvpd)進行驗證。
 
-如需詳細資訊，請參閱[Basic TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#basic-temp-pass)檔案。
+如需詳細資訊，請參閱[Basic TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md#basic-temp-pass)檔案。
 
 #### TempPass促銷 {#temp-pass-promotional}
 
 提升TempPass是Adobe Pass驗證功能，可讓使用者以最大資源數量及有限的時間存取受保護內容，而不需要透過[MVPD](#mvpd)驗證。
 
-如需詳細資訊，請參閱[促銷暫時Pass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)檔案。
+如需詳細資訊，請參閱[促銷暫時Pass](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)檔案。
 
 #### TTL {#ttl}
 
@@ -257,7 +257,7 @@ TV Everywhere (TVE) Dashboard是提供給[程式設計師](#programmer)的Adobe 
 
 電視提供者是一家公司，透過有線電視、衛星電視或網際網路服務，為消費者提供電視服務。
 
-透過在電視提供者和Adobe之間的上線過程中定義的唯一值，來識別電視提供者。
+電視提供者是由電視提供者和Adobe之間上線流程中定義的唯一值來識別。
 
 與[MVPD](#mvpd)和[身分提供者](#identity-provider)同義。
 
@@ -277,7 +277,7 @@ TV Everywhere (TVE) Dashboard是提供給[程式設計師](#programmer)的Adobe 
 
 如需詳細資訊，請參閱[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)檔案。
 
-### 版本{#v}
+### V {#v}
 
 #### VSA {#vsa}
 

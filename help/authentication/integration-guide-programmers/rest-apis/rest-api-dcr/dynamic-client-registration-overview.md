@@ -2,7 +2,7 @@
 title: Dynamic Client註冊概述
 description: Dynamic Client註冊概述
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
+source-git-commit: 7ca9d8996756086a6b963c0b6d5b0bb64608ecbc
 workflow-type: tm+mt
 source-wordcount: '809'
 ht-degree: 0%
@@ -20,10 +20,10 @@ ht-degree: 0%
 Adobe Pass提供動態使用者端註冊服務，可讓您存取以下受保護的API：
 
 * Adobe Pass驗證管理API：
-   * [重設Temp Pass API](../../features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-   * [降級API](../../features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+   * [重設Temp Pass API](/help/premium-workflow/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+   * [降級API](/help/premium-workflow/degraded-access/degradation-feature.md#degradation-api-access)
    * [Proxy MVPD API](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
-   * [權益服務監控API](../../features-premium/esm/entitlement-service-monitoring-api.md)
+   * [權益服務監控API](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
 * Adobe Pass驗證REST API：
    * [REST API V2](../rest-api-v2/apis/rest-api-v2-apis-overview.md)
    * [（舊版） REST API V1](../../legacy/rest-api-v1/rest-api-reference.md)
@@ -114,6 +114,6 @@ Adobe Pass TVE Dashboard是供Adobe Pass驗證客戶（程式設計師）管理�
 **流量**
 
 * 使用者端應用程式必須依照[擷取使用者端認證](apis/dynamic-client-registration-apis-retrieve-client-credentials.md) API檔案中的說明取得使用者端認證。
-* 使用者端應用程式必須依照[擷取存取權杖](apis/dynamic-client-registration-apis-retrieve-access-token.md) API檔案中的說明取得存取權杖。
+* 使用者端應用程式必須依照[擷取存取權杖](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) API檔案中的說明取得存取權杖。
 
 請參閱[動態使用者端註冊流程](flows/dynamic-client-registration-flow.md)檔案，深入瞭解如何存取Adobe Pass保護的API。 此外，您也可以觀看此[網路研討會](https://my.adobeconnect.com/pzkp8ujrigg1/)影片，其中提供更多內容並包含示範。

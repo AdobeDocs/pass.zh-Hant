@@ -2,7 +2,7 @@
 title: 啟動驗證
 description: 啟動驗證
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '306'
 ht-degree: 0%
@@ -46,7 +46,7 @@ ht-degree: 0%
 
 | 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/驗證 | 驗證模組 | 1. requestor_id （必要）</br>2。  mso_id （必要）</br>3。  reg_code （必要）</br>4。  domain_name （必要）</br>5。  noflash=true - </br>    （必要，剩餘引數）</br>6。  no_iframe=true （必要，剩餘引數）</br>7。  額外的引數（選擇性）</br>8。  redirect_url （必要） | GET | 系統會將登入網頁應用程式重新導向至MVPD登入頁面。 | 302 （完整重新導向實作） |
+| &lt;SP_FQDN>/api/v1/驗證 | 驗證模組 | &#x200B;1. requestor_id （必要）</br>2。  mso_id （必要）</br>3。  reg_code （必要）</br>4。  domain_name （必要）</br>5。  noflash=true - </br>    （必要，剩餘引數）</br>6。  no_iframe=true （必要，剩餘引數）</br>7。  額外的引數（選擇性）</br>8。  redirect_url （必要） | GET | 系統會將登入網頁應用程式重新導向至MVPD登入頁面。 | 302 （完整重新導向實作） |
 
 {style="table-layout:auto"}
 
@@ -85,7 +85,7 @@ ht-degree: 0%
 >
 >呼叫也可能包含可啟用其他功能的選用引數，例如：
 >
-> * generic\_data — 允許使用[促銷臨時傳遞](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)
+> * generic\_data — 允許使用[促銷臨時傳遞](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)
 >
 >```JSON
 >Example:

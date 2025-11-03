@@ -2,7 +2,7 @@
 title: 暫時存取流程
 description: REST API V2 — 暫時存取流程
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '3223'
 ht-degree: 0%
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要求使用者使用有效的MVPD帳戶進行驗證。
 
-如需TempPass功能的詳細資訊，請參閱[TempPass](../../../../features-premium/temporary-access/temp-pass-feature.md)檔案。
+如需TempPass功能的詳細資訊，請參閱[TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)檔案。
 
 臨時存取流程可讓您查詢下列案例：
 
@@ -58,7 +58,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
 請依照指定的步驟，使用基本的TempPass實作授權流程，如下圖所示。
 
-![使用基本TempPass擷取授權決定](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-using-basic-temppass-flow.png)
+![使用基本TempPass擷取授權決定](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-using-basic-temppass-flow.png)
 
 *使用基本TempPass擷取授權決定*
 
@@ -78,7 +78,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[ API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)擷取授權決定，以取得決定回應中提供的詳細資訊。
    >
    > <br/>
    > 
@@ -119,7 +119,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 >
 > <br/>
 > 
-> * 提供的與`mvpd`之間的整合，必須套用促銷暫時Pass的有效組態設定。`serviceProvider`
+> * 提供的與`serviceProvider`之間的整合，必須套用促銷暫時Pass的有效組態設定。`mvpd`
 > * 為促銷TempPass設定的存留時間(TTL)尚未過期。
 > * 尚未使用針對促銷TempPass設定的最大資源數量。
 
@@ -127,7 +127,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
 請依照指定的步驟，使用提升TempPass來實作授權流程，如下圖所示。
 
-![使用促銷臨時傳遞擷取授權決定](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-using-promotional-temppass-flow.png)
+![使用促銷臨時傳遞擷取授權決定](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-using-promotional-temppass-flow.png)
 
 *使用促銷臨時傳遞擷取授權決定*
 
@@ -155,7 +155,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[ API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)擷取授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -197,7 +197,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 >
 > <br/>
 > 
-> * 提供的與`mvpd`之間的整合，必須套用促銷暫時Pass的有效組態設定。`serviceProvider`
+> * 提供的與`serviceProvider`之間的整合，必須套用促銷暫時Pass的有效組態設定。`mvpd`
 > * 為促銷TempPass設定的存留時間(TTL)尚未過期。
 > * 為促銷臨時傳遞設定的資源數上限為1。
 
@@ -205,7 +205,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
 使用促銷暫時傳遞時，請遵循指定的步驟，以實施授權流程，如下圖所示。
 
-![使用促銷暫存密碼消耗資源的最大數量](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-consume-maximum-number-of-resources-using-promotional-temppass-flow.png)
+![使用促銷暫存密碼消耗資源的最大數量](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-consume-maximum-number-of-resources-using-promotional-temppass-flow.png)
 
 *使用促銷暫存密碼消耗資源的最大數量*
 
@@ -213,7 +213,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定mvpd[&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的擷取設定檔：
+   > 如需下列詳細資訊，請參閱特定mvpd[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)擷取設定檔：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，如`serviceProvider`和`mvpd`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`和`AP-Device-Identifier`
@@ -229,7 +229,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 請參閱特定mvpd[&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的擷取設定檔，以取得設定檔回應中提供的詳細資訊。
+   > 請參閱特定mvpd[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)擷取設定檔，以取得設定檔回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -279,7 +279,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[ API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)擷取授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -327,7 +327,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[ API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)擷取授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -363,8 +363,8 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
 在擷取基本或促銷TempPass過期時的授權決定之前，請確定符合下列先決條件：
 
-* 使用基本TempPass[&#128279;](#prerequisites-retrieve-authorization-decisions-using-basic-temppass)擷取授權決定之前的先決條件。
-* 使用提升TempPass[&#128279;](#prerequisites-retrieve-authorization-decisions-using-promotional-temppass)擷取授權決定之前的先決條件。
+* 使用基本TempPass[擷取授權決定之前的先決條件](#prerequisites-retrieve-authorization-decisions-using-basic-temppass)。
+* 使用提升TempPass[擷取授權決定之前的先決條件](#prerequisites-retrieve-authorization-decisions-using-promotional-temppass)。
 
 >[!IMPORTANT]
 >
@@ -379,7 +379,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
 當基本或促銷的TempPass過期時，請依照指定的步驟來實作授權流程，如下圖所示。
 
-![當基本或促銷的TempPass過期時，擷取授權決定](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires-flow.png)
+![當基本或促銷的TempPass過期時，擷取授權決定](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-authorization-decisions-when-basic-or-promotional-temppass-expires-flow.png)
 
 *當基本或促銷的TempPass過期時，擷取授權決定*
 
@@ -407,7 +407,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[ API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)擷取授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -462,7 +462,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
 請依照指定的步驟，實作基本TempPass的設定檔擷取流程，如下圖所示。
 
-![擷取基本TempPass](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-profile-for-basic-temppass-flow.png)的設定檔
+![擷取基本TempPass](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-profile-for-basic-temppass-flow.png)的設定檔
 
 *擷取基本TempPass*&#x200B;的設定檔
 
@@ -470,7 +470,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定mvpd[&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的擷取設定檔：
+   > 如需下列詳細資訊，請參閱特定mvpd[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)擷取設定檔：
    > 
    > * 所有&#x200B;_必要的_&#x200B;引數，如`serviceProvider`和`mvpd`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`和`AP-Device-Identifier`
@@ -482,7 +482,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 請參閱特定mvpd[&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的擷取設定檔，以取得設定檔回應中提供的詳細資訊。
+   > 請參閱特定mvpd[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)擷取設定檔，以取得設定檔回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -525,7 +525,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 >
 > <br/>
 > 
-> * 提供的與`mvpd`之間的整合，必須套用促銷暫時Pass的有效組態設定。`serviceProvider`
+> * 提供的與`serviceProvider`之間的整合，必須套用促銷暫時Pass的有效組態設定。`mvpd`
 > * 為促銷TempPass設定的存留時間(TTL)尚未過期。
 > * 尚未使用針對促銷TempPass設定的最大資源數量。
 
@@ -533,7 +533,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
 請依照指定的步驟，針對促銷TempPass實作設定檔擷取流程，如下圖所示。
 
-![擷取促銷臨時傳遞的設定檔](../../../../../assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-profile-for-promotional-temppass-flow.png)
+![擷取促銷臨時傳遞的設定檔](/help/authentication/assets/rest-api-v2/flows/temporary-access-flows/rest-api-v2-retrieve-profile-for-promotional-temppass-flow.png)
 
 *擷取促銷臨時傳遞的設定檔*
 
@@ -541,7 +541,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定mvpd[&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的擷取設定檔：
+   > 如需下列詳細資訊，請參閱特定mvpd[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)擷取設定檔：
    > 
    > * 所有&#x200B;_必要的_&#x200B;引數，如`serviceProvider`和`mvpd`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`和`AP-Device-Identifier`
@@ -553,7 +553,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 請參閱特定mvpd[&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的擷取設定檔，以取得設定檔回應中提供的詳細資訊。
+   > 請參閱特定mvpd[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)擷取設定檔，以取得設定檔回應中提供的詳細資訊。
    > 
    > <br/>
    > 

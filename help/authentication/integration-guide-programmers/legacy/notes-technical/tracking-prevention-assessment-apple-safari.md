@@ -2,7 +2,7 @@
 title: 追蹤預防評估Apple Safari
 description: 追蹤預防評估Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: c1f891fabd47954dc6cf76a575c3376ed0f5cd3d
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
@@ -33,7 +33,7 @@ ht-degree: 0%
 
 為了減輕這些限制，您可以指示使用者變更Safari 10瀏覽器隱私設定，並在「偏好設定」的瀏覽器「隱私權」標籤中，針對「**Cookie和網站資料**」專案使用「**一律允許**」選項，如下圖所示。
 
-![](../../../assets/always-allow-safari10.png)
+![](/help/authentication/assets/always-allow-safari10.png)
 
 
 ## Safari 11 {#safari11}
@@ -46,7 +46,7 @@ ht-degree: 0%
 
 從Safari 11開始，瀏覽器推出了[智慧型追蹤預防](https://webkit.org/blog/7675/intelligent-tracking-prevention/) (ITP)機制，這是一種使用啟發式的技術，以防止跨網站追蹤。 這些啟發法會影響第三方Cookie在網路呼叫上儲存和重播的方式，這表示根據ITP機制啟用，Safari瀏覽器會在使用者端 — 伺服器模式通訊中封鎖第三方Cookie。
 
-Adobe Pass Authentication Service使用並依賴Cookie做為驗證程式&#x200B;**的一部分，以便運作**。 在驗證程式自動發生（例如Temp Pass）或使用iFrame或「無重新整理」功能的實施中，Adobe的Cookie會被視為第三方Cookie且預設為封鎖。 對於任何其他情況，Safari都會使用機器學習演演算法，可能會將所有Adobe的Pass Authentication服務Cookie標幟為追蹤Cookie，因此會受到ITP的封鎖。
+Adobe Pass Authentication Service使用並依賴Cookie做為驗證程式&#x200B;**的一部分，以便運作**。 在驗證程式自動發生（例如Temp Pass）或使用iFrame或「無重新整理」功能的實施中，Adobe的Cookie會被視為第三方Cookie且預設為封鎖。 對於任何其他情況，Safari會使用機器學習演演算法，可能會將所有Adobe的Pass Authentication服務Cookie標幟為追蹤Cookie，因此會受到ITP的封鎖。
 
 總而言之，Safari 11瀏覽器的使用者在智慧型追蹤預防(ITP)機制啟動後，可能無法驗證已啟用Adobe Pass驗證的網站上的身分，尤其是當使用者使用多個已啟用Adobe Pass驗證的網站時。 因此，使用者的驗證體驗可能是未預期且未定義的，從無法登入到比預期更短的驗證期間，不一而足。
 
@@ -64,12 +64,12 @@ Adobe Pass Authentication Service使用並依賴Cookie做為驗證程式&#x200B;
 
 * 在Mac OS X High Sierra和更新版本中：從「偏好設定」的瀏覽器「隱私權」標籤中，取消勾選「**網站追蹤**」專案的「**防止跨網站追蹤**」選項，如下圖所示。
 
-  ![](../../../assets/uncheck-prvnt-cr-st-tr-safari11.png)
+  ![](/help/authentication/assets/uncheck-prvnt-cr-st-tr-safari11.png)
 
 
 * 在Mac OS X Sierra和舊版：從偏好設定的瀏覽器「隱私權」索引標籤中檢查「**Cookie和網站資料**」專案的「**一律允許**」選項，如下圖所示。
 
-  ![](../../../assets/always-allow-safari11.png)
+  ![](/help/authentication/assets/always-allow-safari11.png)
 
 ## Safari 12 {#safari12}
 
@@ -126,14 +126,14 @@ Adobe Pass Authentication Service使用並依賴Cookie做為驗證程式&#x200B;
 
 目前沒有已知的緩解方法可供使用，或可能無法在撰寫本文時使用。 Apple確實在Safari 12 (`https://webkit.org/blog/8124/introducing-storage-access-api`)中引入「Storage Access API」，但目前的實作不適用於localStorage，而僅適用於Cookie。 此外，API需要使用者互動才能使用，一旦您使用，系統也會透過與以下內容類似的許可權對話方塊提示使用者。
 
-![](../../../assets/permission-dialog-apple.png)
+![](/help/authentication/assets/permission-dialog-apple.png)
 
 
 此時，這些Safari需求/提示與UX需求不符，而且我們的行為與其他瀏覽器不一致；在前述其他瀏覽器中，我們將Token儲存在通用網域localStorage中後，SSO「就是管用」。
 
 **臨時傳遞**
 
-為了緩解個人化問題並讓使用者互動，我們建議您以互動方式使用&#x200B;**[促銷臨時傳遞](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)**，並提供至少一項有關使用者的額外資訊（例如電子郵件地址）。
+為了緩解個人化問題並讓使用者互動，我們建議您以互動方式使用&#x200B;**[促銷臨時傳遞](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)**，並提供至少一項有關使用者的額外資訊（例如電子郵件地址）。
 
 ## Safari 13 {#safari13}
 
@@ -146,9 +146,9 @@ Adobe Pass Authentication Service使用並依賴Cookie做為驗證程式&#x200B;
 
 從Safari 13開始，瀏覽器推出對[智慧型追蹤預防](https://webkit.org/blog/7675/intelligent-tracking-prevention/) (ITP)的新變更，使得機制背後的啟發法在將第三方Cookie標幟為追蹤Cookie的程式中更嚴格，以防止跨網站追蹤。
 
-如先前各節所述，當實作人員使用AccessEnabler JavaScript SDK v2 （版本2.x）和AccessEnabler JavaScript SDK v3 （版本3.x）時，Adobe Pass驗證服務使用並依賴第三方Cookie做為驗證流程的一部分。 相較於舊版Safari瀏覽器，在ITP花了一段時間才開始「瞭解」使用者與相關各方的互動(程式設計人員的網站和Adobe)時，Safari 13瀏覽器會封鎖被視為追蹤使用者端 — 伺服器模型通訊中之Cookie的第三方Cookie。
+如先前各節所述，當實作人員使用AccessEnabler JavaScript SDK v2 （版本2.x）和AccessEnabler JavaScript SDK v3 （版本3.x）時，Adobe Pass驗證服務使用並依賴第三方Cookie做為驗證流程的一部分。 相較於舊版Safari瀏覽器，在ITP花了一段時間才開始「瞭解」使用者與相關各方(程式設計人員的網站和Adobe)之間的互動時，Safari 13瀏覽器會從一開始封鎖第三方Cookie，而這些Cookie被視為追蹤使用者端 — 伺服器模型通訊中的Cookie。
 
-總而言之，Safari 13瀏覽器的使用者極有可能無法在已啟用Adobe Pass驗證(使用舊版AccessEnabler JavaScript SDK v2 （版本2.x）或v3 （版本3.x）)的網站上起始新的驗證。 這是因為ITP已封鎖所有必要Adobe的Primetime驗證服務Cookie，因此導致服務無法履行驗證要求。
+總而言之，Safari 13瀏覽器的使用者極有可能無法在已啟用Adobe Pass驗證(使用舊版AccessEnabler JavaScript SDK v2 （版本2.x）或v3 （版本3.x）)的網站上起始新的驗證。 發生此狀況的原因是，ITP已封鎖所有必要的Adobe Primetime驗證服務Cookie，因此導致服務無法履行驗證請求。
 
 AccessEnabler JavaScript SDK v4 （4.x版）程式庫不使用第三方Cookie進行驗證程式，因此其作業絕不會受到Safari 13變更的影響。
 
@@ -164,8 +164,8 @@ AccessEnabler JavaScript SDK v4 （4.x版）程式庫不使用第三方Cookie進
 
 * 在Mac OS X High Sierra和更新版本中：從「偏好設定」的瀏覽器「隱私權」標籤中，取消勾選「**網站追蹤**」專案的「**防止跨網站追蹤**」選項，如下圖所示。
 
-  ![](../../../assets/prvnt-cross-site-tr-safari13.png)
+  ![](/help/authentication/assets/prvnt-cross-site-tr-safari13.png)
 
-* 若是Mac OS X Sierra和舊版：檢查「偏好設定」瀏覽器的「隱私權」標籤中「**Cookie和網站資料**」專案的「**一律允許**」選項，如下圖所示。</span>
+* 若是Mac OS X Sierra和舊版：檢查「偏好設定」瀏覽器的「隱私權」標籤中「</span>Cookie和網站資料&#x200B;**」專案的「**&#x200B;一律允許&#x200B;**」選項，如下圖所示。**
 
-  ![](../../../assets/always-allow-safari13.png)
+  ![](/help/authentication/assets/always-allow-safari13.png)

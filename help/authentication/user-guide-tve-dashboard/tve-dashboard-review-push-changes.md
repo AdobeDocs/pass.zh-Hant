@@ -2,7 +2,7 @@
 title: 檢閱和推送變更
 description: 瞭解如何在TVE儀表板中檢閱和推送變更。
 exl-id: 2f29712e-7b3f-472a-a36f-32780bec1508
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
 workflow-type: tm+mt
 source-wordcount: '250'
 ht-degree: 0%
@@ -21,7 +21,7 @@ TVE儀表板可讓您檢閱目前組態的變更，然後將它們部署至伺�
 
 1. 在畫面底部找到檢閱和推播變更通知。
 
-   ![檢閱及推播變更通知](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-banner-view.png)
+   ![檢閱及推播變更通知](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-banner-view.png)
 
    *檢閱和推播變更通知方塊*
 
@@ -29,7 +29,7 @@ TVE儀表板可讓您檢閱目前組態的變更，然後將它們部署至伺�
 
 1. 在&#x200B;**組態描述**&#x200B;中輸入變更的簡短描述，以便有效地追蹤並瞭解每個變更的用途。
 
-   ![新增組態描述](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-configuration-details-panel-view.png)
+   ![新增組態描述](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-configuration-details-panel-view.png)
 
    *新增組態描述*
 
@@ -39,7 +39,7 @@ TVE儀表板可讓您檢閱目前組態的變更，然後將它們部署至伺�
 
 1. 選取&#x200B;**檢視**&#x200B;以檢閱與組態變更相關的舊值與新值。
 
-   ![檢視組態變更](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-view-button.png)
+   ![檢視組態變更](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-changes-view-button.png)
 
    *檢視組態變更*
 
@@ -49,7 +49,7 @@ TVE儀表板可讓您檢閱目前組態的變更，然後將它們部署至伺�
    >
    >新增&#x200B;**組態描述**&#x200B;後，**推播變更**&#x200B;按鈕才會變成使用中。
 
-   ![推送變更](../assets/tve-dashboard/new-tve-dashboard/review/review-and-push-push-changes-button.png)
+   ![推送變更](/help/authentication/assets/tve-dashboard/new-tve-dashboard/review/review-and-push-push-changes-button.png)
 
    *推送變更*
 

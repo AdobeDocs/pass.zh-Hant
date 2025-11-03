@@ -2,7 +2,7 @@
 title: Adobe Pass Authentication 2.70發行說明
 description: Adobe Pass Authentication 2.70發行說明
 exl-id: 81713f8e-bc51-4057-9b00-6a2d6c83cd02
-source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
 source-wordcount: '136'
 ht-degree: 0%
@@ -35,7 +35,7 @@ Adobe Pass驗證： adobe-pass-**2.70**
 * 已修補安全性漏洞。
 * 降級API服務的增強功能。
    * 使用DCR作為Degradation API的安全性機制。
-   * 您可以在這裡找到更多詳細資料： [降級功能](../integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+   * 您可以在這裡找到更多詳細資料： [降級功能](/help/premium-workflow/degraded-access/degradation-feature.md)
 
 #### REST API
 

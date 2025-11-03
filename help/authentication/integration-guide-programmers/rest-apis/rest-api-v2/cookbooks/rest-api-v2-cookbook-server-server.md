@@ -2,9 +2,9 @@
 title: REST API V2逐步指南（伺服器對伺服器）
 description: REST API V2逐步指南（伺服器對伺服器）
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
-source-git-commit: b753c6a6bdfd8767e86cbe27327752620158cdbb
+source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
 workflow-type: tm+mt
-source-wordcount: '2510'
+source-wordcount: '2497'
 ht-degree: 0%
 
 ---
@@ -183,7 +183,7 @@ API
 * **案例2：**&#x200B;沒有現有的設定檔，程式設計師服務可能會繼續執行下一個步驟，以[驗證使用者](#step-3-authenticate-the-user)。
 
 
-* **案例3：**&#x200B;沒有現有的設定檔，程式設計師服務可能會繼續透過[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能為使用者提供暫存存取權。
+* **案例3：**&#x200B;沒有現有的設定檔，程式設計師服務可能會繼續透過[TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)功能為使用者提供暫存存取權。
 
    * 此情境超出本檔案的範圍，如需詳細資訊，請參閱[暫時存取流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)檔案。
 
@@ -210,11 +210,11 @@ API
 
 ### 步驟4：檢查已驗證的設定檔 {#step-4-check-for-authenticated-profiles}
 
-* **擷取特定程式碼的設定檔：**&#x200B;程式設計師服務必須使用`code`實作輪詢機制，以透過呼叫&#x200B;[**/api/v2/{serviceProvider}/profiles/code/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)&#x200B;端點來檢查設定檔是否成功產生及儲存。
+* **擷取特定程式碼的設定檔：**&#x200B;程式設計師服務必須使用`code`實作輪詢機制，以透過呼叫&#x200B;[**/api/v2/{serviceProvider}/profiles/code/{code}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)端點來檢查設定檔是否成功產生及儲存。
 
    * 程式設計師服務必須在下列條件下&#x200B;**啟動輪詢**&#x200B;機制：
 
-      * **在主要（熒幕）應用程式內執行的驗證：**&#x200B;當瀏覽器元件載入[工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端點要求中為`redirectUrl`引數指定的URL後，程式設計師服務應在使用者到達最終目的地頁面時開始輪詢。
+      * **在主要（熒幕）應用程式內執行的驗證：**&#x200B;當瀏覽器元件載入`redirectUrl`工作階段[端點要求中為](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)引數指定的URL後，程式設計師服務應在使用者到達最終目的地頁面時開始輪詢。
 
       * **在次要（熒幕）應用程式內執行的驗證：**&#x200B;程式設計師服務應用程式應在使用者起始驗證程式後立即開始輪詢 — 在收到[工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端點回應並向使用者顯示驗證代碼之後。
 
@@ -222,7 +222,7 @@ API
 
       * **成功驗證：**&#x200B;已成功擷取使用者的設定檔資訊，確認其驗證狀態。 此時，不再需要輪詢。
 
-      * **驗證工作階段和程式碼到期日：**&#x200B;驗證工作階段和程式碼會到期，如[工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端點回應中的`notAfter`時間戳記（例如30分鐘）所指示。 如果發生這種狀況，使用者必須重新啟動驗證程式，而且使用先前驗證代碼的輪詢應該立即停止。
+      * **驗證工作階段和程式碼到期日：**&#x200B;驗證工作階段和程式碼會到期，如`notAfter`工作階段[端點回應中的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)時間戳記（例如30分鐘）所指示。 如果發生這種狀況，使用者必須重新啟動驗證程式，而且使用先前驗證代碼的輪詢應該立即停止。
 
       * **產生的新驗證碼：**&#x200B;如果使用者要求主要（熒幕）裝置上的新驗證碼，則現有工作階段不再有效，使用先前驗證碼的輪詢應立即停止。
 
@@ -260,13 +260,13 @@ API
 
 ### 步驟5：檢查預先授權的資源 {#step-5-check-for-preauthorized-resources}
 
-* **擷取預先授權決定：**&#x200B;程式設計師服務會呼叫&#x200B;[**/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)&#x200B;端點，以擷取資源清單的預先授權決定。
+* **擷取預先授權決定：**&#x200B;程式設計師服務會呼叫&#x200B;[**/api/v2/{serviceProvider}/decisions/preauthorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)端點，以擷取資源清單的預先授權決定。
 
    * 程式設計人員服務必須將允許清單和拒絕預先授權決定傳遞給串流應用程式。
 
    * 將預先授權決定儲存在永久儲存體時，不需要Programmer Service。 但是，建議將允許決策快取到記憶體中以改善使用者體驗。 這有助於避免對已預先授權的資源發出不必要的呼叫，減少延遲並改善效能。
 
-   * 程式設計師服務可透過檢查Decisions Preauthorize端點的回應中包含的[錯誤碼和訊息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，來判斷拒絕預先授權決定的原因。 這些詳細資料可讓您深入瞭解預先授權請求遭拒絕的特定原因，有助於告知使用者體驗或觸發應用程式中的任何必要處理。 如果預先授權決定遭拒，請確定任何針對擷取預先授權決定所實作的重試機制，都不會導致無休止的回圈。 請考慮將重試限制在合理數字，並透過向使用者呈現清楚的意見反應來適當地處理拒絕。
+   * 程式設計師服務可透過檢查Decisions Preauthorize端點的回應中包含的[錯誤碼和訊息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，來判斷拒絕預先授權決定的原因。 這些詳細資料可為insight提供預先授權請求被拒絕的特定原因，有助於告知使用者體驗或觸發應用程式中的任何必要處理。 如果預先授權決定遭拒，請確定任何針對擷取預先授權決定所實作的重試機制，都不會導致無休止的回圈。 請考慮將重試限制在合理數字，並透過向使用者呈現清楚的意見反應來適當地處理拒絕。
 
    * 由於MVPD所強加的條件，程式設計師服務可以在單一API要求中，針對有限數量的資源取得預先授權決定，通常最多5個。 您的組織管理員或代表您行事的Adobe Pass驗證代表透過Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)同意MVPD後，可以檢視和變更此最大資源數量。
 
@@ -294,7 +294,7 @@ API
 
 ### 步驟6：檢查授權的資源 {#step-6-check-for-authorized-resources}
 
-* **擷取授權決定：**&#x200B;程式設計師服務會呼叫&#x200B;[**/api/v2/{serviceProvider}/decision/authorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)&#x200B;端點，擷取串流應用程式所傳遞之特定資源的授權決定。
+* **擷取授權決定：**&#x200B;程式設計師服務會呼叫&#x200B;[**/api/v2/{serviceProvider}/decision/authorize/{mvpd}**](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)端點，擷取串流應用程式所傳遞之特定資源的授權決定。
 
    * 將授權決定儲存在永久儲存體時，不需要Programmer Service。
 
@@ -330,7 +330,7 @@ API
 
 ### 步驟7：登出 {#step-7-logout}
 
-* 起始Adobe Pass登出：程式設計師服務會呼叫[/api/v2/{serviceProvider}/logout/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)端點，依串流應用程式要求來起始登出流程。
+* 起始Adobe Pass登出：程式設計人員服務會呼叫[/api/v2/{serviceProvider}/logout/{mvpd}](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)端點，依串流應用程式要求啟動登出流程。
 
    * 程式設計師服務可能會清除其儲存的關於已驗證使用者的任何資訊。
 

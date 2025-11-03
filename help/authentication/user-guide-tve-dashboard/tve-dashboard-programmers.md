@@ -2,7 +2,7 @@
 title: 程式設計師
 description: 瞭解TVE儀表板中的程式設計師及其設定。
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
 workflow-type: tm+mt
 source-wordcount: '1139'
 ht-degree: 0%
@@ -22,7 +22,7 @@ TVE儀表板的&#x200B;**程式設計人員**&#x200B;區段可讓您檢視和管
 * **程式設計師識別碼**：系統內的媒體公司識別碼。
 * **管道**：連結至程式設計師的相關管道數。
 
-![現有程式設計師清單](../assets/tve-dashboard/new-tve-dashboard/programmers/programmers-list-view.png)
+![現有程式設計師清單](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmers-list-view.png)
 
 *現有程式設計師清單*
 
@@ -41,7 +41,7 @@ TVE儀表板的&#x200B;**程式設計人員**&#x200B;區段可讓您檢視和管
    * [註冊的應用程式](#registered-applications)
    * [自訂配置](#custom-schemes)
 
-   ![程式設計師設定](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-tabs-view.png)
+   ![程式設計師設定](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-tabs-view.png)
 
    *程式設計師設定*
 
@@ -55,7 +55,7 @@ TVE儀表板的&#x200B;**程式設計人員**&#x200B;區段可讓您檢視和管
 
 若要為選取的程式設計師新增頻道，請從&#x200B;**可用的頻道**&#x200B;區段的右上角選取&#x200B;**新增頻道**。 瞭解[如何新增頻道](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#add-new-channel)。
 
-![新增頻道](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-channel-button.png)
+![新增頻道](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-channel-button.png)
 
 *新增頻道*
 
@@ -86,7 +86,7 @@ TVE儀表板的&#x200B;**程式設計人員**&#x200B;區段可讓您檢視和管
 
 1. 在&#x200B;**可用的憑證**&#x200B;區段的右上角選取&#x200B;**新增憑證**。
 
-   ![新增憑證](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-certificate-button.png)
+   ![新增憑證](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-certificate-button.png)
 
    *新增憑證*
 
@@ -112,17 +112,17 @@ TVE儀表板的&#x200B;**程式設計人員**&#x200B;區段可讓您檢視和管
 
 1. 選取&#x200B;**移除**。
 
-   ![移除選取的憑證](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-remove-certificate-button.png)
+   ![移除選取的憑證](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-remove-certificate-button.png)
 
    *移除選取的憑證*
 
 1. 在&#x200B;**刪除憑證**&#x200B;對話方塊上選取&#x200B;**刪除**。
 
-已建立新的組態變更，且已準備好進行伺服器更新。 只有在[檢閱並推播變更](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之後，憑證才會從&#x200B;**可用的憑證**&#x200B;區段中刪除。
+已建立新的組態變更，且已準備好進行伺服器更新。 只有在&#x200B;**檢閱並推播變更**&#x200B;之後，憑證才會從[可用的憑證](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)區段中刪除。
 
 ### 註冊的應用程式 {#registered-applications}
 
-此標籤會顯示已註冊的應用程式清單。 如需有關註冊應用程式使用方式的詳細資訊，請參閱[動態使用者端註冊概觀](../integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)檔案。
+此標籤會顯示已註冊的應用程式清單。 如需有關註冊應用程式使用方式的詳細資訊，請參閱[動態使用者端註冊概觀](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)檔案。
 
 您可以對已註冊的應用程式執行下列動作：
 
@@ -135,7 +135,7 @@ TVE儀表板的&#x200B;**程式設計人員**&#x200B;區段可讓您檢視和管
 
 1. 選取&#x200B;**已註冊的應用程式**&#x200B;區段右上角的&#x200B;**新增應用程式**。
 
-   ![新增應用程式](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-application-button.png)
+   ![新增應用程式](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-application-button.png)
 
    *新增應用程式*
 
@@ -179,7 +179,7 @@ TVE儀表板的&#x200B;**程式設計人員**&#x200B;區段可讓您檢視和管
 
 1. 選取&#x200B;**下載**。
 
-   ![下載軟體陳述式](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-download-software-statement-button.png)
+   ![下載軟體陳述式](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-download-software-statement-button.png)
 
    *下載軟體陳述式*
 
@@ -198,7 +198,7 @@ TVE儀表板的&#x200B;**程式設計人員**&#x200B;區段可讓您檢視和管
 
 1. 選取&#x200B;**產生新的自訂配置**。
 
-   ![產生新的自訂配置](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-custom-scheme-button.png)
+   ![產生新的自訂配置](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-custom-scheme-button.png)
 
    *產生新的自訂配置*
 
@@ -212,7 +212,7 @@ TVE儀表板的&#x200B;**程式設計人員**&#x200B;區段可讓您檢視和管
 
 1. 選取&#x200B;**程式設計員**&#x200B;區段右上角的&#x200B;**新增程式設計員**。
 
-   ![新增程式設計師](../assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-programmer-button.png)
+   ![新增程式設計師](/help/authentication/assets/tve-dashboard/new-tve-dashboard/programmers/programmer-add-new-programmer-button.png)
 
    *新增程式設計師*
 
