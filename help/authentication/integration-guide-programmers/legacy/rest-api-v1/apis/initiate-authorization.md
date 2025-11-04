@@ -89,7 +89,7 @@ ht-degree: 0%
   * **XML：**
   </br>
 
-    ``XML
+    &grave;&grave;XML
     &lt;？xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;？>
     &lt;authorization>
     &lt;expires>1348148289000&lt;/expires>
@@ -97,7 +97,7 @@ ht-degree: 0%
     &lt;requestor>sampleRequestorId&lt;/requestor>
     &lt;resource>sampleResourceId&lt;/resource>
     &lt;/authorization>
-    `&#39;
+    &grave;&#39;
 
 
 

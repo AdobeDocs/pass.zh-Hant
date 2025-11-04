@@ -132,7 +132,7 @@ I. [使用Apple SSO的登出流程](#logout_flow_with_AppleSSO) </br>
 
    b.呼叫`setRequestor()`以建立程式設計師的身分；傳入程式設計師的`requestorID`以及（選擇性）Adobe Pass驗證端點的陣列。 若是tvOS，您還需要提供公開金鑰和密碼。 如需詳細資訊，請參閱[無使用者端檔案](#create_dev)。
 
-   * **相依性：**有效的Adobe Pass驗證請求者ID (使用您的Adobe Pass驗證帳戶)
+   * **相依性：**&#x200B;有效的Adobe Pass驗證請求者ID (使用您的Adobe Pass驗證帳戶)
 管理員來安排此工作)。
 
    * **觸發器：**
