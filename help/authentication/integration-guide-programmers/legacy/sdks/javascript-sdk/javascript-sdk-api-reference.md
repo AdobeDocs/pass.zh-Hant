@@ -196,7 +196,7 @@ ht-degree: 0%
 
 ## checkPreauthorizedResources(resources) {#checkPreauthorizedResources(resources)}
 
-**描述：**&#x200B;要求清單的「預檢」授權狀態
+**描述：**要求清單的「預檢」授權狀態
 資源。
 
 **引數：**
@@ -309,7 +309,7 @@ ht-degree: 0%
 **說明：**&#x200B;當使用者從您的提供者選擇UI選取MVPD時，呼叫此函式，以將提供者選擇傳送至Access Enabler，或使用null引數呼叫此函式，以防使用者未選取提供者而解除您的提供者選擇UI。
 
 **個回呼
-已觸發：**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+已觸發：**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -365,7 +365,7 @@ ht-degree: 0%
 
 ## entitlementLoaded() {#entitlementLoaded}
 
-**描述：**&#x200B;當Access Enabler完成初始化並準備接收要求時觸發。 實作此回撥以瞭解何時可以使用Access Enabler API開始通訊。
+**描述：**當Access Enabler完成初始化並準備接收要求時觸發。 實作此回撥以瞭解何時可以使用Access Enabler API開始通訊。
 </br>
 
 [返回頂端](#top)
@@ -415,7 +415,7 @@ ht-degree: 0%
 
 **說明：**&#x200B;如果使用者選取的MVPD需要iFrame才能顯示其驗證登入頁面UI，請實作此回呼。
 
-**觸發者：**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**觸發者：**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [返回頁首](#top)
 

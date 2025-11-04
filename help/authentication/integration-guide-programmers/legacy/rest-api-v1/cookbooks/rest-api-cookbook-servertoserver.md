@@ -171,7 +171,7 @@ Adobe Pass服務可在分散於美國各地的多個資料中心執行。  為�
     
     
     
-    必須在&#x200B;**regcode**&#x200B;和**authorize**&#x200B;呼叫
+    必須在**regcode**和**authorize**呼叫
     
     範例中： 
     
