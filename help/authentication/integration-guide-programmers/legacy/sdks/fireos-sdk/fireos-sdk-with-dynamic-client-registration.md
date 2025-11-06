@@ -152,7 +152,7 @@ ht-degree: 0%
    - 登入已取消：重設MVPD選擇
    - URL配置會建立為「adobepass://android.app」，以便在驗證完成時擷取
 
-- e. get/checkAuthorization ： SDK將在標頭中包含**access\_token **作為授權：持有人&#x200B;**access\_token**
+- e. get/checkAuthorization ： SDK將在標頭中包含&#x200B;**access\_token &#x200B;** 作為授權：持有人&#x200B;**access\_token**
 
 - 如果授權成功，將會呼叫以取得媒體權杖
 

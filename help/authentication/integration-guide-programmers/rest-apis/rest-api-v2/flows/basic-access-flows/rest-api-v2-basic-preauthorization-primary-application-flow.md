@@ -45,7 +45,7 @@ Adobe Pass驗證許可權內的&#x200B;**預先授權流程**&#x200B;可讓串�
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱使用特定mvpd[ API檔案擷取預先授權決定：](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
+   > 如需下列詳細資訊，請參閱使用特定mvpd[&#x200B; API檔案擷取預先授權決定：](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`和`AP-Device-Identifier`
@@ -61,7 +61,7 @@ Adobe Pass驗證許可權內的&#x200B;**預先授權流程**&#x200B;可讓串�
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[ API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)擷取預先授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[&#x200B; API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)擷取預先授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 

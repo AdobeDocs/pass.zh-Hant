@@ -54,7 +54,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定mvpd[ API的](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)起始登出：
+   > 如需下列詳細資訊，請參閱特定mvpd[&#x200B; API的](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)起始登出：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`、`mvpd`和`redirectUrl`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
@@ -80,7 +80,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 如需登出回應中提供的詳細資訊，請參閱特定mvpd[ API的](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Initiate登出。
+   > 如需登出回應中提供的詳細資訊，請參閱特定mvpd[&#x200B; API的](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Initiate登出。
    > 
    > <br/>
    > 

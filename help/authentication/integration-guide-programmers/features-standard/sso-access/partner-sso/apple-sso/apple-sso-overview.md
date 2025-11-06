@@ -23,8 +23,8 @@ Adobe Pass驗證與Apple合作，為iPhone、iPad和Apple電視擁有者在電�
 
 最終結果應會建立符合下列使用者流程的體驗，建議您先諮詢後再開始開發應用程式：
 
-* iPhone和iPad[裝置的單一登入(SSO) ](https://tve.zendesk.com/hc/article_attachments/205624966/User_flows_AppleSSO_iOS_v2.pdf)使用者流程。
-* Apple TV[裝置的單一登入(SSO) ](https://tve.zendesk.com/hc/article_attachments/206669126/User_flows_tvOS.pdf)使用者流程。
+* iPhone和iPad[裝置的單一登入(SSO) &#x200B;](https://tve.zendesk.com/hc/article_attachments/205624966/User_flows_AppleSSO_iOS_v2.pdf)使用者流程。
+* Apple TV[裝置的單一登入(SSO) &#x200B;](https://tve.zendesk.com/hc/article_attachments/206669126/User_flows_tvOS.pdf)使用者流程。
 
 ## 先決條件 {#apple-sso-prerequisites}
 
@@ -57,7 +57,7 @@ Adobe Pass驗證與Apple合作，為iPhone、iPad和Apple電視擁有者在電�
 
    * 舊版Adobe Pass Authentication AccessEnabler iOS/tvOS SDK支援合作夥伴單一登入(SSO)。
 
-     請參閱[ （舊版） Apple SSO逐步指南(iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)檔案。
+     請參閱[&#x200B; （舊版） Apple SSO逐步指南(iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)檔案。
 
 ### MVPD {#apple-sso-prerequisites-mvpd}
 

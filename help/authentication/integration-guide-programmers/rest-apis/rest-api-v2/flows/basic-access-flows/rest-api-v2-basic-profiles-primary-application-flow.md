@@ -99,7 +99,7 @@ Adobe Pass驗證許可權內的&#x200B;**設定檔流程**&#x200B;可讓串流�
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定mvpd[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)擷取設定檔：
+   > 如需下列詳細資訊，請參閱特定mvpd[&#x200B; API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)擷取設定檔：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`和`mvpd`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
@@ -111,7 +111,7 @@ Adobe Pass驗證許可權內的&#x200B;**設定檔流程**&#x200B;可讓串流�
 
    >[!IMPORTANT]
    >
-   > 請參閱特定mvpd[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)擷取設定檔，以取得設定檔回應中提供的詳細資訊。
+   > 請參閱特定mvpd[&#x200B; API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)擷取設定檔，以取得設定檔回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -148,7 +148,7 @@ Adobe Pass驗證許可權內的&#x200B;**設定檔流程**&#x200B;可讓串流�
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定程式碼[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔：
+   > 如需下列詳細資訊，請參閱特定程式碼[&#x200B; API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，如`serviceProvider`和`code`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`
@@ -160,7 +160,7 @@ Adobe Pass驗證許可權內的&#x200B;**設定檔流程**&#x200B;可讓串流�
 
    >[!IMPORTANT]
    >
-   > 請參閱特定程式碼[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔，以取得設定檔回應中提供的詳細資訊。
+   > 請參閱特定程式碼[&#x200B; API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔，以取得設定檔回應中提供的詳細資訊。
    > 
    > <br/>
    > 
