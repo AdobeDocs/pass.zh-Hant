@@ -55,7 +55,7 @@ Adobe Pass Authentication JavaScript整合在熟悉的JS Web應用程式開發�
     </head>
     <body>
         <div id="alternative">
-        <a href="http://www.adobe.com/go/getflashplayer"> 
+        <a href="http://www.adobe.com/go/getflashplayer_tw"> 
             <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
                  alt="Get Adobe Flash player"/> </a>
         </div> 

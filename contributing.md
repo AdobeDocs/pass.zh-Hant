@@ -19,7 +19,7 @@ ht-degree: 3%
 
 ## 貢獻者指南檔案
 
-請參閱[貢獻者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html)。
+請參閱[貢獻者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=zh-Hant)。
 
 ## 有疑問嗎？
 
@@ -57,4 +57,4 @@ submitting a pull request!
 
 ## 安全性問題
 
-不應在此問題追蹤器上回報安全性問題。 請改為[向我們的安全性專家提出問題](https://helpx.adobe.com/security/alertus.html)
+不應在此問題追蹤器上回報安全性問題。 請改為[向我們的安全性專家提出問題](https://helpx.adobe.com/tw/security/alertus.html)
