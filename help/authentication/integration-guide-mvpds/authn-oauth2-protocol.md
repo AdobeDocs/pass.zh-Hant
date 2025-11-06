@@ -2,7 +2,7 @@
 title: 使用OAuth 2.0通訊協定進行驗證
 description: 使用OAuth 2.0通訊協定進行驗證
 exl-id: 0c1f04fe-51dc-4b4d-88e7-66e8f4609e02
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1088'
 ht-degree: 0%
@@ -67,7 +67,7 @@ OAuth 2.0非常成功，這促使企業慢慢升級其基礎架構以支援。
 
 
 
-![在設定中所選通訊協定上與MVPD通訊的Adobe驗證中顯示驗證流程的圖表。](/help/authentication/assets/authn-flow.png)
+![在設定中所選通訊協定上與MVPD通訊的Adobe驗證中顯示驗證流程的圖表。](../assets/authn-flow.png)
 
 **圖1： OAuth 2.0驗證流程**
 

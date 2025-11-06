@@ -2,7 +2,7 @@
 title: 擷取特定服務提供者的設定
 description: REST API V2 — 擷取特定服務提供者的設定
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
-source-git-commit: 1c96904f67507ad127c29628963d74a9fb010e99
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '728'
 ht-degree: 2%
@@ -229,7 +229,7 @@ ht-degree: 2%
                         <li><b>id</b><br/>上線程式期間與身分提供者相關聯的內部唯一識別碼。</li>
                         <li><b>displayName</b><br/>上線程式期間與身分提供者相關聯的商業（品牌）名稱。</li>
                         <li><b>logoUrl</b><br>下載與身分提供者相關聯標誌的URL。</li>
-                        <li><b>isTempPass</b><br/>指定MVPD是否設計提供<a href="/help/premium-workflow/temporary-access/temp-pass-feature.md">TempPass</a>功能功能的旗標。</li>
+                        <li><b>isTempPass</b><br/>指定MVPD是否設計提供<a href="../../../../features-premium/temporary-access/temp-pass-feature.md">TempPass</a>功能功能的旗標。</li>
                         <li><b>isProxy</b><br/>指定MVPD是否為代理的MVPD的旗標。</li>
                         <li><b>boardingStatus</b><br/>指定識別提供者是否由串流裝置平台登入以進行單一登入流程的狀態。</li>
                         <li><b>platformMappingId</b><br/>串流裝置平台與身分提供者相關聯的內部唯一識別碼，適用於單一登入流程。</li>

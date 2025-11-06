@@ -2,7 +2,7 @@
 title: 單一登入 — 服務權杖 — 流程
 description: REST API V2 — 單一登入 — 服務權杖 — 流程
 exl-id: b0082d2a-e491-4cb5-bb40-35ba10db6b1a
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1857'
 ht-degree: 0%
@@ -60,7 +60,7 @@ Service Token方法可讓多個應用程式使用唯一的使用者識別碼，�
 
 執行指定的步驟，使用服務權杖透過單一登入實作驗證流程，如下圖所示。
 
-![使用服務權杖透過單一登入執行驗證](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-service-token-flow.png)
+![使用服務權杖透過單一登入執行驗證](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-perform-authentication-through-single-sign-on-using-service-token-flow.png)
 
 *使用服務權杖透過單一登入執行驗證*
 
@@ -118,7 +118,7 @@ Service Token方法可讓多個應用程式使用唯一的使用者識別碼，�
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定程式碼[&#x200B; API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔：
+   > 如需下列詳細資訊，請參閱特定程式碼[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔：
    > 
    > * 所有&#x200B;_必要的_&#x200B;引數，如`serviceProvider`、`code`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
@@ -134,7 +134,7 @@ Service Token方法可讓多個應用程式使用唯一的使用者識別碼，�
 
    >[!IMPORTANT]
    >
-   > 請參閱特定程式碼[&#x200B; API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔，以取得設定檔回應中提供的詳細資訊。
+   > 請參閱特定程式碼[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔，以取得設定檔回應中提供的詳細資訊。
    >
    > <br/>
    > 
@@ -230,7 +230,7 @@ Service Token方法可讓多個應用程式使用唯一的使用者識別碼，�
 
 執行指定的步驟，使用服務權杖透過單一登入實作授權流程，如下圖所示。
 
-![使用服務權杖透過單一登入擷取授權決定](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-service-token-flow.png)
+![使用服務權杖透過單一登入擷取授權決定](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-authorization-decisions-through-single-sign-on-using-service-token-flow.png)
 
 *使用服務權杖透過單一登入擷取授權決定*
 
@@ -266,7 +266,7 @@ Service Token方法可讓多個應用程式使用唯一的使用者識別碼，�
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#x200B; API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[ API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)擷取授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -285,7 +285,7 @@ Service Token方法可讓多個應用程式使用唯一的使用者識別碼，�
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#x200B; API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[ API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)擷取授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 

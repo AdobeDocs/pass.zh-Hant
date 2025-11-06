@@ -2,7 +2,7 @@
 title: TVE儀表板整合
 description: 瞭解您的管道和MVPD之間的整合，以及如何管理整合。
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '2093'
 ht-degree: 0%
@@ -24,7 +24,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 * 具有管道ID的管道名稱
 * MVPD顯示名稱和MVPD ID
 
-![現有整合的清單](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integrations-list.png)
+![現有整合的清單](../assets/tve-dashboard/new-tve-dashboard/integrations/integrations-list.png)
 
 *現有整合的清單*
 
@@ -49,7 +49,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 
 此區段可讓您從各自的下拉式功能表中選擇用於驗證、授權和登出流程的MVPD端點。
 
-![驗證、授權和登出流程的端點](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-endpoint-selection-panel-view.png)
+![驗證、授權和登出流程的端點](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-endpoint-selection-panel-view.png)
 
 *驗證、授權和登出流程的端點*
 
@@ -87,11 +87,11 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 
 * **無法識別的裝置**：設定適用於目前機制無法正確識別平台的所有裝置的屬性值。 在這種情況下，請套用MVPD定義的最嚴格規則。
 
-  ![平台及其裝置的類別](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-menu.png)
+  ![平台及其裝置的類別](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-menu.png)
 
   *平台及其裝置的類別*
 
-選取 位於每個屬性右側的<img alt= "繼承鏈圖示" src="/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-inheritance-chain-icon.svg" width="25">圖示可探索用於上述每個繼承層級的屬性。
+選取 位於每個屬性右側的<img alt= "繼承鏈圖示" src="../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-inheritance-chain-icon.svg" width="25">圖示可探索用於上述每個繼承層級的屬性。
 
 #### 最常使用的業務流程 {#most-used-flows}
 
@@ -117,7 +117,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
    >
    >如果您想要變更平台類別或特定平台的&#x200B;**AuthN TTL**&#x200B;和&#x200B;**AuthZ TTL**&#x200B;持續時間，請選取適當的平台。
 
-   ![變更所有平台的AuthN TTL AuthZ TTL期間](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-authn-ttl-authz-ttl-properties.png)
+   ![變更所有平台的AuthN TTL AuthZ TTL期間](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-authn-ttl-authz-ttl-properties.png)
 
    *變更所有平台的AuthN TTL AuthZ TTL期間*
 
@@ -143,7 +143,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 
 1. 選取您要在&#x200B;**平台設定**&#x200B;下啟用單一登入的特定平台或平台類別。
 
-   ![啟用特定平台的單一登入](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-single-sign-on-properties.png)
+   ![啟用特定平台的單一登入](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-single-sign-on-properties.png)
 
    *啟用特定平台的單一登入*
 
@@ -171,7 +171,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 
 1. 選取您要在&#x200B;**平台設定**&#x200B;下啟用家用驗證的特定平台或平台類別。
 
-   ![啟用特定平台的家用驗證](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-attempt-hba-properties.png)
+   ![啟用特定平台的家用驗證](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-attempt-hba-properties.png)
 
    *啟用特定平台的家用驗證*
 
@@ -200,11 +200,11 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 **變更預先授權資源的數量**
 
 根據預設，大部分的MVPD支援最多使用5個資源ID的預檢authZ呼叫。
-不過，如果MVPD同意提高此限制，您可以瀏覽至&#x200B;**新增更多屬性**，並從選項功能表中選取&#x200B;**預檢最大資源**。
+不過，如果MVPD同意提高此限制，您可以瀏覽至**新增更多屬性**，並從選項功能表中選取&#x200B;**預檢最大資源**。
 
 **預檢資源上限**&#x200B;將新增一個屬性，以便指定與MVPD的議定限制。
 
-![新增預檢最大資源屬性](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-preflight-max-resources-properties.png)
+![新增預檢最大資源屬性](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-preflight-max-resources-properties.png)
 
 *新增預檢最大資源屬性*
 
@@ -216,7 +216,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 
 這些屬性的不同值可用於相同的MVPD，端視裝置平台和所需的使用者體驗而定。
 
-![新增顯示名稱或標誌URL屬性](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-display-name-logo-url-properties.png)
+![新增顯示名稱或標誌URL屬性](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-display-name-logo-url-properties.png)
 
 *新增顯示名稱或標誌URL屬性*
 
@@ -228,7 +228,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 
 為每個彙總器&#x200B;**新增**&#x200B;驗證，有效地中斷個別頻道的單一登入。
 
-![為每個彙總屬性新增驗證](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-auth-per-aggregator-properties.png)
+![為每個彙總屬性新增驗證](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-auth-per-aggregator-properties.png)
 
 *為每個彙總屬性新增驗證*
 
@@ -238,7 +238,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 
 #### 刪除屬性 {#delete-properties}
 
-選取 位於每個屬性右側的<img alt= "刪除屬性按鈕" src="/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-delete-property-icon.svg" width="25">圖示可刪除不再需要的屬性。
+選取 位於每個屬性右側的<img alt= "刪除屬性按鈕" src="../assets/tve-dashboard/new-tve-dashboard/integrations/integration-platform-settings-delete-property-icon.svg" width="25">圖示可刪除不再需要的屬性。
 
 >[!NOTE]
 >
@@ -271,7 +271,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 
 **已啟用**：此資料行可讓您從下拉式功能表中分別選取&#x200B;**是**&#x200B;或&#x200B;**否**，來啟用或停用API中的引數。
 
-![可用於使用者中繼資料的引數](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-user-metadata-panel-view.png)
+![可用於使用者中繼資料的引數](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-user-metadata-panel-view.png)
 
 *可用於使用者中繼資料的引數*
 
@@ -283,7 +283,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 
 1. 選取&#x200B;**整合**&#x200B;區段右上角的&#x200B;**建立新整合**。
 
-   ![建立新的整合](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-create-new-integration-button.png)
+   ![建立新的整合](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-create-new-integration-button.png)
 
    *建立新的整合*
 
@@ -293,7 +293,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 
    從&#x200B;**選取頻道**&#x200B;下拉式選單中選取&#x200B;**頻道**&#x200B;以新增整合。 選取頻道後，從&#x200B;**選取MVPD**&#x200B;下拉式選單中選取所需的&#x200B;**MVPD**，以便與選取的頻道整合。
 
-   ![選取頻道和MVPD](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-channel-and-mvpd-panel-view.png)
+   ![選取頻道和MVPD](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-channel-and-mvpd-panel-view.png)
 
    *選取頻道和MVPD*
 
@@ -305,7 +305,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
    >
    >除非MVPD特別說明，否則請勿變更任何流量中的預設端點。
 
-   ![選取端點](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
+   ![選取端點](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-select-endpoints-panel-view.png)
 
    *選取端點*
 
@@ -319,7 +319,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 
    例如，您可以在下列影像的MVPD登入頁面上編輯&#x200B;**AuthN TTL**&#x200B;或&#x200B;**合作夥伴ID** （管道ID），以用於品牌結合用途。
 
-   ![編輯其他資訊](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-additional-information-panel-view.png)
+   ![編輯其他資訊](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-new-integration-additional-information-panel-view.png)
 
    *編輯其他資訊*
 
@@ -338,7 +338,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 
 1. 停用所選整合右上角的切換。
 
-   ![停用整合](/help/authentication/assets/tve-dashboard/new-tve-dashboard/integrations/integration-enabled-disabled-button.png)
+   ![停用整合](../assets/tve-dashboard/new-tve-dashboard/integrations/integration-enabled-disabled-button.png)
 
    *停用整合*
 

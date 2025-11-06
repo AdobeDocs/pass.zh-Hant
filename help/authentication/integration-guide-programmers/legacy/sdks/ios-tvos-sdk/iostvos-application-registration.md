@@ -2,7 +2,7 @@
 title: iOS/tvOS應用程式註冊
 description: iOS/tvOS應用程式註冊
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '632'
 ht-degree: 0%
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 從3.0版的iOS/tvOS AccessEnabler SDK開始，我們正在透過Adobe伺服器變更驗證機制。 我們不使用公開金鑰和秘密系統來簽署requestorID，而是引入軟體陳述式字串概念，可用來取得存取權杖，稍後再用於SDK對伺服器進行的所有呼叫。 除了軟體宣告之外，您還需要應用程式的自訂URL配置。
 
-如需詳細資訊，請參閱[動態使用者端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)。
+如需詳細資訊，請參閱[動態使用者端註冊概述](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)。
 
 ## 什麼是軟體宣告？ {#Soft_state}
 
@@ -45,7 +45,7 @@ ht-degree: 0%
 - 您應該會看到包含所有已註冊應用程式的清單。 按一下   您剛建立的應用程式上的`Download`按鈕。 您可能需要等待幾分鐘，軟體宣告才可供下載。
 - 將會下載文字檔。 將其內容當做您的軟體宣告使用。
 
-如需詳細資訊，請參閱[動態使用者端註冊管理](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management)。
+如需詳細資訊，請參閱[動態使用者端註冊管理](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management)。
 
 ### 如果您沒有Adobe TVE儀表板的存取權：
 

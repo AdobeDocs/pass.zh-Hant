@@ -2,7 +2,7 @@
 title: REST API逐步指南（使用者端對伺服器）
 description: Rest API逐步指南使用者端至伺服器。
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '886'
 ht-degree: 0%
@@ -49,12 +49,12 @@ Adobe Pass驗證REST API受[節流機制](/help/authentication/integration-guide
 
 ### 動態使用者端註冊(DCR)
 
-Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe Pass服務之間的使用者端通訊。 DCR流程是獨立的，在[動態使用者端註冊概觀](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)檔案中有所說明。
+Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe Pass服務之間的使用者端通訊。 DCR流程是獨立的，在[動態使用者端註冊概觀](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)檔案中有所說明。
 
 
 ### 串流（智慧型裝置）應用程式流程
 
-![](/help//authentication/assets/smart-device-app-flow.png)
+![](../../../../assets/smart-device-app-flow.png)
 
 #### 啟動流程
 
@@ -119,7 +119,7 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
 ### AuthN （第2個畫面）應用程式流程
 
-![](/help//authentication/assets/secnd-screen-authn-flow.png)
+![](../../../../assets/secnd-screen-authn-flow.png)
 
 1. 取得此使用者的MVPD清單。 例如： [`<SP_FQDN>/api/v1/config/[requestorID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)
 
@@ -148,4 +148,4 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 **為了使用此API，串流應用程式需要確定裝置ID的唯一性，因為這是用來識別權杖以及選用的額外資料。**
 
 
-![](/help//authentication/assets/temp-pass-promo-temppass.png)
+![](../../../../assets/temp-pass-promo-temppass.png)

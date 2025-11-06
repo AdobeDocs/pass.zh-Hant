@@ -2,7 +2,7 @@
 title: JavaScript SDK API參考
 description: JavaScript SDK API參考
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '2883'
 ht-degree: 0%
@@ -51,7 +51,7 @@ ht-degree: 0%
 
 - *選項* — 包含應用程式ID值、訪客ID值重新整理較少設定（背景登出登出）和MVPD設定(iFrame)的JSON物件。 所有值均為選用。
    1. 若指定，系統會在資料庫執行的所有網路呼叫上報告Experience Cloud visitorID。 此值稍後可用於進階分析報表。
-   2. 如果指定應用程式的唯一識別碼 — `applicationId` — 則會將該值新增至應用程式進行的所有後續呼叫，作為X-Device-Info HTTP標頭的一部分。 稍後可以使用適當的查詢從[ESM](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md)報表擷取此值。
+   2. 如果指定應用程式的唯一識別碼 — `applicationId` — 則會將該值新增至應用程式進行的所有後續呼叫，作為X-Device-Info HTTP標頭的一部分。 稍後可以使用適當的查詢從[ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)報表擷取此值。
 
   **注意：**&#x200B;所有JSON金鑰都區分大小寫。
 
@@ -196,7 +196,7 @@ ht-degree: 0%
 
 ## checkPreauthorizedResources(resources) {#checkPreauthorizedResources(resources)}
 
-**描述：**&#x200B;要求清單的「預檢」授權狀態
+**描述：**要求清單的「預檢」授權狀態
 資源。
 
 **引數：**
@@ -309,7 +309,7 @@ ht-degree: 0%
 **說明：**&#x200B;當使用者從您的提供者選擇UI選取MVPD時，呼叫此函式，以將提供者選擇傳送至Access Enabler，或使用null引數呼叫此函式，以防使用者未選取提供者而解除您的提供者選擇UI。
 
 **個回呼
-已觸發：**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+已觸發：**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -365,7 +365,7 @@ ht-degree: 0%
 
 ## entitlementLoaded() {#entitlementLoaded}
 
-**描述：**&#x200B;當Access Enabler完成初始化並準備接收要求時觸發。 實作此回撥以瞭解何時可以使用Access Enabler API開始通訊。
+**描述：**當Access Enabler完成初始化並準備接收要求時觸發。 實作此回撥以瞭解何時可以使用Access Enabler API開始通訊。
 </br>
 
 [返回頂端](#top)
@@ -415,7 +415,7 @@ ht-degree: 0%
 
 **說明：**&#x200B;如果使用者選取的MVPD需要iFrame才能顯示其驗證登入頁面UI，請實作此回呼。
 
-**觸發者：**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**觸發者：**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [返回頁首](#top)
 

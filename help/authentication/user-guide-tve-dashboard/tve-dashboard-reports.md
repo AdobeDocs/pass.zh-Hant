@@ -2,7 +2,7 @@
 title: 報表
 description: 瞭解資料如何在TVE儀表板報表中彙總。
 exl-id: d8ba48de-d743-4dc2-866c-7d6e3ff94773
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '976'
 ht-degree: 0%
@@ -29,7 +29,7 @@ TVE儀表板的&#x200B;**報表**&#x200B;區段可讓您存取AuthN TTL、AuthZ 
    * [AuthZ TTL報表](#authz-ttl-reports)
    * [SSO報告](#sso-reports)
 
-   ![報告型別](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-tabs-view.png)
+   ![報告型別](../assets/tve-dashboard/new-tve-dashboard/reports/reports-tabs-view.png)
 
    *報告型別*
 
@@ -39,7 +39,7 @@ AuthN TTL報告(也稱為驗證存留時間(TTL))會顯示您的管道與所有[
 
 您也可以檢視及下載[特定頻道或MVPD](#selecting-specific-channels-mvpds)的資料。
 
-![匯出AuthN TTL報告](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-authn-ttl-export-button.png)
+![匯出AuthN TTL報告](../assets/tve-dashboard/new-tve-dashboard/reports/reports-authn-ttl-export-button.png)
 
 *匯出AuthN TTL報告*
 
@@ -55,7 +55,7 @@ AuthZ TTL報告(也稱為「授權存留時間(TTL)」)會顯示針對所有[平
 
 您也可以檢視及下載[特定頻道或MVPD](#selecting-specific-channels-mvpds)的資料。
 
-![匯出AuthZ TTL報告](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-authz-ttl-export-button.png)
+![匯出AuthZ TTL報告](../assets/tve-dashboard/new-tve-dashboard/reports/reports-authz-ttl-export-button.png)
 
 *匯出AuthZ TTL報告*
 
@@ -71,7 +71,7 @@ SSO報表（也稱為單一登入）會顯示針對所有[平台](#platforms)上
 
 您也可以檢視及下載[特定頻道或MVPD](#selecting-specific-channels-mvpds)的資料。
 
-![匯出SSO報告](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-sso-export-button.png)
+![匯出SSO報告](../assets/tve-dashboard/new-tve-dashboard/reports/reports-sso-export-button.png)
 
 *匯出SSO報告*
 
@@ -129,7 +129,7 @@ SSO報表（也稱為單一登入）會顯示針對所有[平台](#platforms)上
 
 1. 選取所選報告頂端的&#x200B;**包含的管道**&#x200B;下拉式功能表。
 
-   ![包含管道下拉式功能表](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-included-channels-menu.png)
+   ![包含管道下拉式功能表](../assets/tve-dashboard/new-tve-dashboard/reports/reports-included-channels-menu.png)
 
    *包含管道下拉式功能表*
 
@@ -145,7 +145,7 @@ SSO報表（也稱為單一登入）會顯示針對所有[平台](#platforms)上
 
 1. 選取所選報告頂端的&#x200B;**包含的MVPD**&#x200B;下拉式功能表。
 
-   ![包含的MVPD下拉式功能表](/help/authentication/assets/tve-dashboard/new-tve-dashboard/reports/reports-included-mvpds-menu.png)
+   ![包含的MVPD下拉式功能表](../assets/tve-dashboard/new-tve-dashboard/reports/reports-included-mvpds-menu.png)
 
    *包含的MVPD下拉式功能表*
 

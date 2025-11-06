@@ -2,7 +2,7 @@
 title: Android SDK與動態使用者端註冊
 description: Android SDK與動態使用者端註冊
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1301'
 ht-degree: 0%
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 ## 動態使用者端註冊 {#DCR}
 
-Android SDK v3.0+將使用[動態使用者端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)中定義的動態使用者端註冊程式。
+Android SDK v3.0+將使用[動態使用者端註冊概述](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)中定義的動態使用者端註冊程式。
 
 
 ## 功能示範 {#Demo}

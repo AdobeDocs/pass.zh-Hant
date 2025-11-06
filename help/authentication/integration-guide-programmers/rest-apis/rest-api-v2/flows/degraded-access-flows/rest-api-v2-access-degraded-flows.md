@@ -2,7 +2,7 @@
 title: 存取流程降級
 description: REST API V2 — 降級存取流程
 exl-id: 9276f5d9-8b1a-4282-8458-0c1e1e06bcf5
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1615'
 ht-degree: 0%
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 降級提供暫時略過特定MVPD驗證和授權端點。 通常，程式設計師會起始此動作，但無論誰觸發降級事件，此動作取決於與受影響MVPD預先作出的安排。
 
-如需有關降級功能的詳細資訊，請參閱[降級](/help/premium-workflow/degraded-access/degradation-feature.md)檔案。
+如需有關降級功能的詳細資訊，請參閱[降級](../../../../features-premium/degraded-access/degradation-feature.md)檔案。
 
 降級存取流程可讓您查詢下列情況：
 
@@ -55,7 +55,7 @@ ht-degree: 0%
 
 遵循指定步驟在套用降級時實施驗證流程，如下圖所示。
 
-![套用降級時執行驗證](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-perform-authentication-while-degradation-is-applied-flow.png)
+![套用降級時執行驗證](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-perform-authentication-while-degradation-is-applied-flow.png)
 
 *套用降級時執行驗證*
 
@@ -123,7 +123,7 @@ ht-degree: 0%
 
 遵循指定步驟以在套用降級時實施授權流程，如下圖所示。
 
-![套用降級時擷取授權決定](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-authorization-decisions-while-degradation-is-applied-flow.png)
+![套用降級時擷取授權決定](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-authorization-decisions-while-degradation-is-applied-flow.png)
 
 *套用降級時擷取授權決定*
 
@@ -143,7 +143,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#x200B; API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[ API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)擷取授權決定，以取得決定回應中提供的詳細資訊。
    >
    > <br/>
    > 
@@ -189,7 +189,7 @@ ht-degree: 0%
 
 遵循指定步驟以在套用降級時實作預先授權流程，如下圖所示。
 
-![套用降級時擷取預先授權決定](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-preauthorization-decisions-while-degradation-is-applied-flow.png)
+![套用降級時擷取預先授權決定](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-preauthorization-decisions-while-degradation-is-applied-flow.png)
 
 *套用降級時擷取預先授權決定*
 
@@ -197,7 +197,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱使用特定mvpd[&#x200B; API檔案擷取預先授權決定：](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
+   > 如需下列詳細資訊，請參閱使用特定mvpd[ API檔案擷取預先授權決定：](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`和`AP-Device-Identifier`
@@ -209,7 +209,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#x200B; API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)擷取預先授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[ API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)擷取預先授權決定，以取得決定回應中提供的詳細資訊。
    >
    > <br/>
    >
@@ -263,7 +263,7 @@ ht-degree: 0%
 
 遵循指定步驟，在套用降級時為特定MVPD實施設定檔擷取流程，如下圖所示。
 
-![套用降級時擷取設定檔](/help/authentication/assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-profile-while-degradation-is-applied-flow.png)
+![套用降級時擷取設定檔](../../../../../assets/rest-api-v2/flows/degraded-access-flows/rest-api-v2-retrieve-profile-while-degradation-is-applied-flow.png)
 
 *套用降級時擷取設定檔*
 
@@ -271,7 +271,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定mvpd[&#x200B; API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)擷取設定檔：
+   > 如需下列詳細資訊，請參閱特定mvpd[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)擷取設定檔：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，如`serviceProvider`和`mvpd`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`和`AP-Device-Identifier`
@@ -283,7 +283,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 請參閱特定mvpd[&#x200B; API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)擷取設定檔，以取得設定檔回應中提供的詳細資訊。
+   > 請參閱特定mvpd[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)擷取設定檔，以取得設定檔回應中提供的詳細資訊。
    >
    > <br/>
    >

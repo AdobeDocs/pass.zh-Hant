@@ -2,7 +2,7 @@
 title: 使用主控台應用程式記錄檔對AccessEnabler iOS/tvOS SDK進行除錯
 description: 使用主控台應用程式記錄檔對AccessEnabler iOS/tvOS SDK進行除錯
 exl-id: 0dad325e-db15-4ea0-a87a-75409eaf8d46
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '576'
 ht-degree: 0%
@@ -50,19 +50,19 @@ AccessEnabler iOS/tvOS記錄機制的用途是發出有用的訊息，用於疑�
 
 首先，為了能夠檢視AccessEnabler架構所發出的任何記錄訊息，您&#x200B;**必須**&#x200B;在主控台應用程式的「動作」區段中選取「包含資訊訊息」和「包含偵錯訊息」，如下圖所示。
 
-![](/help/authentication/assets/include-info-debug-msg.png)
+![](../../../assets/include-info-debug-msg.png)
 
 
 為了能夠偵錯AccessEnabler iOS/tvOS SDK的功能和&#x200B;**檢視** AccessEnabler架構記錄，您可以：
 
 * 使用等於com.adobe.pass.AccessEnabler值的&#x200B;**Subsystem**&#x200B;選項在主控台應用程式中搜尋，如下圖所示。
 
-![](/help/authentication/assets/subsys-console-app.png)
+![](../../../assets/subsys-console-app.png)
 
-* 使用&#x200B;**任何**&#x200B;選項(包含
+* 使用&#x200B;**任何**選項(包含
   [AccessEnabler]值，如下圖所示。
 
-![](/help/authentication/assets/any-optn-console-app.png)
+![](../../../assets/any-optn-console-app.png)
 
 除了上述兩個條件以外，您也可以搭配&#x200B;**子系統**&#x200B;或&#x200B;**任何（前置詞）**&#x200B;使用&#x200B;**類別**&#x200B;選項，明確搜尋AccessEnabler iOS/tvOS SDK發出的&#x200B;**偵錯**&#x200B;或&#x200B;**錯誤**&#x200B;層級訊息。
 

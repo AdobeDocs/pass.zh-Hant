@@ -2,9 +2,9 @@
 title: 關於Adobe Pass驗證
 description: 關於Adobe Pass驗證
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: 7ca9d8996756086a6b963c0b6d5b0bb64608ecbc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1828'
+source-wordcount: '1832'
 ht-degree: 0%
 
 ---
@@ -72,7 +72,7 @@ TV Everywhere是一項產業計畫，可確保付費電視訂閱者能夠透過�
 
 Adobe Pass驗證安全地協調程式設計師和付費電視提供者之間的權益交易，確保適當的客戶可以輕鬆存取適當的內容。
 
-![](/help/authentication/assets/programmers-connect-authn.png)
+![](../assets/programmers-connect-authn.png)
 
 *透過Adobe Pass驗證連線的部分程式設計師和付費電視提供者*
 
@@ -132,7 +132,7 @@ Adobe Pass驗證安全地協調程式設計師和付費電視提供者之間的�
 * 整合Adobe Pass驗證[媒體權杖驗證器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)。
 * 開發用於驗證、授權和登出工作流程的使用者介面。
 
-如需程式設計師整合程式的詳細資訊，請參閱[程式設計師快速入門手冊](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)檔案。
+如需程式設計師整合程式的詳細資訊，請參閱[程式設計師快速入門手冊](/help/authentication/kickstart/programmer-kickstart-guide.md)和[程式設計師整合指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)檔案。
 
 #### 付費電視提供者整合程式 {#pay-tv-provider-integration-process}
 
@@ -169,11 +169,11 @@ Adobe Pass Authentication作為Proxy，透過為雙方提供安全一致的介�
    * [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * Premium Adobe Pass驗證API：
-   * [重設Temp Pass API](/help/premium-workflow/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [TempPass功能](/help/premium-workflow/temporary-access/temp-pass-feature.md)
-   * [降級API](/help/premium-workflow/degraded-access/degradation-feature.md#degradation-api-access)
-      * [退化特徵](/help/premium-workflow/degraded-access/degradation-feature.md)
-   * [權益服務監控API](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
+   * [重設Temp Pass API](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+   * [降級API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [退化特徵](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+   * [權益服務監控API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 如需軟體權利檔案流程的詳細資訊，請參閱[程式設計師整合指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow)檔案。
 

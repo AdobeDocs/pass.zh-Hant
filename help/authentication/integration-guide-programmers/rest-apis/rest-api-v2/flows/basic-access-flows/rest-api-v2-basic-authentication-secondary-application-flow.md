@@ -2,7 +2,7 @@
 title: 基本驗證 — 次要應用程式 — 流量
 description: REST API V2 — 基本驗證 — 次要應用程式 — 流量
 exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '2006'
 ht-degree: 0%
@@ -65,7 +65,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
 
 請依照指定的步驟，使用預先選取的MVPD，實施在次要應用程式中執行的基本驗證流程，如下圖所示。
 
-![使用預先選取的mvpd在次要應用程式內執行驗證](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-with-preselected-mvpd.png)
+![使用預先選取的mvpd在次要應用程式內執行驗證](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-with-preselected-mvpd.png)
 
 *使用預先選取的mvpd在次要應用程式內執行驗證*
 
@@ -149,7 +149,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱使用者代理程式[&#x200B; API檔案中的](../../apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)執行驗證：
+   > 如需下列詳細資訊，請參閱使用者代理程式[ API檔案中的](../../apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)執行驗證：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`和`code`
    > * 所有&#x200B;_選用的_&#x200B;引數和標頭
@@ -160,7 +160,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定程式碼[&#x200B; API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔：
+   > 如需下列詳細資訊，請參閱特定程式碼[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔：
    > 
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`和`code`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
@@ -174,7 +174,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 請參閱特定程式碼[&#x200B; API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔，以取得設定檔回應中提供的詳細資訊。
+   > 請參閱特定程式碼[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔，以取得設定檔回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -209,7 +209,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
 
 請依照指定的步驟實作在次要應用程式中執行的基本驗證流程，而不使用預先選取的MVPD，如下圖所示。
 
-![在次要應用程式內執行驗證，而不預先選取mvpd](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-without-preselected-mvpd.png)
+![在次要應用程式內執行驗證，而不預先選取mvpd](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-perform-authentication-within-secondary-application-without-preselected-mvpd.png)
 
 *在次要應用程式內執行驗證，而不預先選取mvpd*
 
@@ -298,7 +298,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定程式碼[&#x200B; API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔：
+   > 如需下列詳細資訊，請參閱特定程式碼[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`和`code`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
@@ -312,7 +312,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 請參閱特定程式碼[&#x200B; API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔，以取得設定檔回應中提供的詳細資訊。
+   > 請參閱特定程式碼[ API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔，以取得設定檔回應中提供的詳細資訊。
    > 
    > <br/>
    > 

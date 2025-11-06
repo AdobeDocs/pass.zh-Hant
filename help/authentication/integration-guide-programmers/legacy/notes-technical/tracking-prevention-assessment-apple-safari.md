@@ -2,7 +2,7 @@
 title: 追蹤預防評估Apple Safari
 description: 追蹤預防評估Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1849'
 ht-degree: 0%
@@ -33,7 +33,7 @@ ht-degree: 0%
 
 為了減輕這些限制，您可以指示使用者變更Safari 10瀏覽器隱私設定，並在「偏好設定」的瀏覽器「隱私權」標籤中，針對「**Cookie和網站資料**」專案使用「**一律允許**」選項，如下圖所示。
 
-![](/help/authentication/assets/always-allow-safari10.png)
+![](../../../assets/always-allow-safari10.png)
 
 
 ## Safari 11 {#safari11}
@@ -64,12 +64,12 @@ Adobe Pass Authentication Service使用並依賴Cookie做為驗證程式&#x200B;
 
 * 在Mac OS X High Sierra和更新版本中：從「偏好設定」的瀏覽器「隱私權」標籤中，取消勾選「**網站追蹤**」專案的「**防止跨網站追蹤**」選項，如下圖所示。
 
-  ![](/help/authentication/assets/uncheck-prvnt-cr-st-tr-safari11.png)
+  ![](../../../assets/uncheck-prvnt-cr-st-tr-safari11.png)
 
 
 * 在Mac OS X Sierra和舊版：從偏好設定的瀏覽器「隱私權」索引標籤中檢查「**Cookie和網站資料**」專案的「**一律允許**」選項，如下圖所示。
 
-  ![](/help/authentication/assets/always-allow-safari11.png)
+  ![](../../../assets/always-allow-safari11.png)
 
 ## Safari 12 {#safari12}
 
@@ -126,14 +126,14 @@ Adobe Pass Authentication Service使用並依賴Cookie做為驗證程式&#x200B;
 
 目前沒有已知的緩解方法可供使用，或可能無法在撰寫本文時使用。 Apple確實在Safari 12 (`https://webkit.org/blog/8124/introducing-storage-access-api`)中引入「Storage Access API」，但目前的實作不適用於localStorage，而僅適用於Cookie。 此外，API需要使用者互動才能使用，一旦您使用，系統也會透過與以下內容類似的許可權對話方塊提示使用者。
 
-![](/help/authentication/assets/permission-dialog-apple.png)
+![](../../../assets/permission-dialog-apple.png)
 
 
 此時，這些Safari需求/提示與UX需求不符，而且我們的行為與其他瀏覽器不一致；在前述其他瀏覽器中，我們將Token儲存在通用網域localStorage中後，SSO「就是管用」。
 
 **臨時傳遞**
 
-為了緩解個人化問題並讓使用者互動，我們建議您以互動方式使用&#x200B;**[促銷臨時傳遞](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)**，並提供至少一項有關使用者的額外資訊（例如電子郵件地址）。
+為了緩解個人化問題並讓使用者互動，我們建議您以互動方式使用&#x200B;**[促銷臨時傳遞](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)**，並提供至少一項有關使用者的額外資訊（例如電子郵件地址）。
 
 ## Safari 13 {#safari13}
 
@@ -164,8 +164,8 @@ AccessEnabler JavaScript SDK v4 （4.x版）程式庫不使用第三方Cookie進
 
 * 在Mac OS X High Sierra和更新版本中：從「偏好設定」的瀏覽器「隱私權」標籤中，取消勾選「**網站追蹤**」專案的「**防止跨網站追蹤**」選項，如下圖所示。
 
-  ![](/help/authentication/assets/prvnt-cross-site-tr-safari13.png)
+  ![](../../../assets/prvnt-cross-site-tr-safari13.png)
 
 * 若是Mac OS X Sierra和舊版：檢查「偏好設定」瀏覽器的「隱私權」標籤中「</span>Cookie和網站資料&#x200B;**」專案的「**&#x200B;一律允許&#x200B;**」選項，如下圖所示。**
 
-  ![](/help/authentication/assets/always-allow-safari13.png)
+  ![](../../../assets/always-allow-safari13.png)

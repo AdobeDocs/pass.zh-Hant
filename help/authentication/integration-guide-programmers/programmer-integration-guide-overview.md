@@ -2,7 +2,7 @@
 title: 程式設計師整合指南
 description: 程式設計師整合指南
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: 7ca9d8996756086a6b963c0b6d5b0bb64608ecbc
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '2119'
 ht-degree: 0%
@@ -28,13 +28,13 @@ ht-degree: 0%
 
 對於程式設計師而言，決定權益並不總是簡單明瞭。 MVPDs是客戶識別資料和存取許可權的託管者。 讓事情進一步複雜化的是，程式設計師的檢視者可能會訂閱各種MVPD，每種都有獨特的作業系統。 這些複雜因素使得驗證權益在技術上既困難又耗用大量資源。
 
-![由程式設計師直接決定的使用者軟體權利檔案](/help/authentication/assets/user-ent-by-progr.png){align="center"}
+![由程式設計師直接決定的使用者軟體權利檔案](../assets/user-ent-by-progr.png){align="center"}
 
 *由程式設計師直接決定的使用者軟體權利檔案*
 
 Adobe Pass驗證可安全促進程式設計師與MVPD之間的權益交易，讓您快速、輕鬆且安全地向符合資格的檢視者提供受保護的內容。
 
-![Adobe Pass驗證所中介的使用者軟體權利檔案](/help/authentication/assets/user-ent-mediatedby-authn.png){align="center"}
+![Adobe Pass驗證所中介的使用者軟體權利檔案](../assets/user-ent-mediatedby-authn.png){align="center"}
 
 *Adobe Pass驗證所中介的使用者軟體權利檔案*
 
@@ -47,11 +47,11 @@ Adobe Pass Authentication作為Proxy，透過為雙方提供安全一致的介�
    * [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * Premium Adobe Pass驗證API：
-   * [重設Temp Pass API](/help/premium-workflow/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [TempPass功能](/help/premium-workflow/temporary-access/temp-pass-feature.md)
-   * [降級API](/help/premium-workflow/degraded-access/degradation-feature.md#degradation-api-access)
-      * [退化特徵](/help/premium-workflow/degraded-access/degradation-feature.md)
-   * [權益服務監控API](/help/premium-workflow/esm/entitlement-service-monitoring-api.md)
+   * [重設Temp Pass API](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+      * [TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+   * [降級API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+      * [退化特徵](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+   * [權益服務監控API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 ### 使用案例 {#use-cases}
 
@@ -72,7 +72,7 @@ Adobe Pass Authentication作為Proxy，透過為雙方提供安全一致的介�
 | **階段** | **優先順序** | **使用案例** | **檔案** |
 |----------------------|--------------|-------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **驗證** | **高** | 驗證 | 如需詳細資訊，請參閱[驗證階段](#authentication-phase)區段下彙總的檔案。 |
-|                      | **高** | 家庭式驗證(HBA) | 如需詳細資訊，請參閱[以住家為基礎的驗證](/help/premium-workflow/hba-access/home-based-authentication.md)。 |
+|                      | **高** | 家庭式驗證(HBA) | 如需詳細資訊，請參閱[以住家為基礎的驗證](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)。 |
 |                      | **高** | 單一登入(SSO) | 如需詳細資訊，請參閱[單一登入(SSO)](#sso)區段下彙總的檔案。 |
 |                      | **高** | 選取MVPD | 如需詳細資訊，請參閱[組態階段](#configuration-phase)區段下彙總的檔案。 |
 |                      | **Medium** | 品牌化MVPD登入頁面 | 可讓MVPD為登入頁面提供程式設計師或服務提供者專屬的品牌，包括支援預設語言偏好設定。 |

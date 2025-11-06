@@ -2,7 +2,7 @@
 title: 動態使用者端註冊流程
 description: 動態使用者端註冊流程
 exl-id: d881cf0a-de09-4b1d-a094-d5490f944796
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '564'
 ht-degree: 0%
@@ -25,8 +25,8 @@ ht-degree: 0%
 
 在存取Adobe Pass保護的API之前，請確定符合下列必要條件：
 
-* 使用者端代表必須建立已註冊的應用程式，如[管理已註冊的應用程式](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#manage-registered-applications)區段中所述。
-* 使用者端代表必須下載並內嵌軟體陳述式，如[管理軟體陳述式](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#manage-software-statements)區段中所述。
+* 使用者端代表必須建立已註冊的應用程式，如[管理已註冊的應用程式](../dynamic-client-registration-overview.md#manage-registered-applications)區段中所述。
+* 使用者端代表必須下載並內嵌軟體陳述式，如[管理軟體陳述式](../dynamic-client-registration-overview.md#manage-software-statements)區段中所述。
 
 >[!IMPORTANT]
 >
@@ -38,7 +38,7 @@ ht-degree: 0%
 
 請依照指定的步驟來存取受Adobe Pass保護的API，如下圖所示。
 
-![存取Adobe Pass保護的API](/help//authentication/assets/dcr-api/dcr-api-access-adobe-pass-protected-apis.png)
+![存取Adobe Pass保護的API](../../../../assets/dcr-api/dcr-api-access-adobe-pass-protected-apis.png)
 
 *存取Adobe Pass保護的API*
 
@@ -76,7 +76,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 請參閱[擷取存取Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#request) API檔案，以取得下列詳細資訊：
+   > 請參閱[擷取存取Token](../apis/dynamic-client-registration-apis-retrieve-access-token.md#request) API檔案，以取得下列詳細資訊：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`client_id`、`client_secret`和`grant_type`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Content-Type`、`X-Device-Info`
@@ -86,7 +86,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 請參閱[擷取存取Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#success) API檔案，以取得存取Token回應中提供的詳細資訊。
+   > 請參閱[擷取存取Token](../apis/dynamic-client-registration-apis-retrieve-access-token.md#success) API檔案，以取得存取Token回應中提供的詳細資訊。
    >
    > <br/>
    >
@@ -96,7 +96,7 @@ ht-degree: 0%
    >
    > <br/>
    >
-   > 如果驗證失敗，將會產生錯誤回應，提供遵守[擷取存取Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md#error) API檔案的額外資訊。
+   > 如果驗證失敗，將會產生錯誤回應，提供遵守[擷取存取Token](../apis/dynamic-client-registration-apis-retrieve-access-token.md#error) API檔案的額外資訊。
 
    >[!TIP]
    >

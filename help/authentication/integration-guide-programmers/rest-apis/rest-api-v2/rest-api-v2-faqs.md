@@ -2,9 +2,9 @@
 title: REST API V2常見問題集
 description: REST API V2常見問題集
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '9611'
+source-wordcount: '9682'
 ht-degree: 0%
 
 ---
@@ -50,7 +50,7 @@ ht-degree: 0%
 在下列情況下，使用者端應用程式可以略過此階段：
 
 * 使用者已經過驗證。
-* 透過基本或促銷[TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)功能提供使用者暫時存取。
+* 透過基本或促銷[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能提供使用者暫時存取。
 * 使用者驗證已過期，但使用者端應用程式已快取先前選取的MVPD作為使用者體驗動機的選擇，而且只是提示使用者確認他們仍然是該MVPD的訂閱者。
 
 #### 3.什麼是設定？其有效期為多久？ {#configuration-phase-faq3}
@@ -88,7 +88,7 @@ ht-degree: 0%
 使用者端應用程式應將設定回應資訊快取到記憶體儲存體中，以避免不必要的請求並改善使用者體驗，當：
 
 * 使用者已經過驗證。
-* 透過基本或促銷[TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)功能提供使用者暫時存取。
+* 透過基本或促銷[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能提供使用者暫時存取。
 * 使用者驗證已過期，但使用者端應用程式已快取先前選取的MVPD作為使用者體驗動機的選擇，而且只是提示使用者確認他們仍然是該MVPD的訂閱者。
 
 #### 6.使用者端應用程式可以管理自己的MVPD清單嗎？ {#configuration-phase-faq6}
@@ -101,7 +101,7 @@ ht-degree: 0%
 
 使用者端應用程式可以根據自己的商業邏輯和需求（例如使用者位置或先前選取的使用者歷史記錄），實作自訂機制，以篩選設定回應中提供的MVPD清單。
 
-使用者端應用程式可以篩選[TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md) MVPD的清單，或整合仍在開發或測試中的MVPD。
+使用者端應用程式可以篩選[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) MVPD的清單，或整合仍在開發或測試中的MVPD。
 
 #### 8.如果與MVPD的整合停用並標籤為非使用中，會發生什麼情況？ {#configuration-phase-faq8}
 
@@ -144,7 +144,7 @@ ht-degree: 0%
 在下列情況下，使用者端應用程式可以略過此階段：
 
 * 使用者已經過驗證，設定檔仍然有效。
-* 透過基本或促銷[TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)功能提供使用者暫時存取。
+* 透過基本或促銷[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能提供使用者暫時存取。
 
 使用者端應用程式錯誤處理需要處理[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)代碼（例如，`authenticated_profile_missing`、`authenticated_profile_expired`、`authenticated_profile_invalidated`等），這表示使用者端應用程式需要使用者進行驗證。
 
@@ -245,7 +245,7 @@ ht-degree: 0%
 
 因此，使用者端應用程式必須提示使用者重新驗證，並與MVPD登入頁面互動，以重新整理我們在系統上的設定檔。
 
-不過，對於支援[家用驗證](/help/premium-workflow/hba-access/home-based-authentication.md) (HBA)的MVPD，使用者不需要輸入認證。
+不過，對於支援[家用驗證](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md) (HBA)的MVPD，使用者不需要輸入認證。
 
 #### 10.每個可用設定檔端點的使用案例為何？ {#authentication-phase-faq10}
 
@@ -269,7 +269,7 @@ ht-degree: 0%
 
 對於任何後續的查詢，必須使用基本設定檔端點來判斷使用者的驗證狀態、存取使用者中繼資料資訊、尋找用於驗證的方法或用於提供身分識別的實體。
 
-如需詳細資訊，請參閱[使用合作夥伴流程](/help/premium-workflow/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)的單一登入。
+如需詳細資訊，請參閱[使用合作夥伴流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)的單一登入[Apple SSO逐步指南(REST API V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)檔案。
 
 #### 11.如果使用者有多個MVPD設定檔，使用者端應用程式該怎麼做？ {#authentication-phase-faq11}
 
@@ -366,7 +366,7 @@ REST API v2支援多個設定檔以適應：
 
 #### 19.使用者端應用程式應如何管理降級存取？ {#authentication-phase-faq19}
 
-[降級功能](/help/premium-workflow/degraded-access/degradation-feature.md)可讓使用者端應用程式維持使用者的順暢串流體驗，即使使用者的MVPD驗證或授權服務發生問題亦然。
+[降級功能](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)可讓使用者端應用程式維持使用者的順暢串流體驗，即使使用者的MVPD驗證或授權服務發生問題亦然。
 
 作為摘要，這可確保MVPD臨時服務中斷的情況下對內容的存取不中斷。
 
@@ -376,7 +376,7 @@ REST API v2支援多個設定檔以適應：
 
 #### 20.使用者端應用程式應如何管理暫時存取？ {#authentication-phase-faq20}
 
-[TempPass功能](/help/premium-workflow/temporary-access/temp-pass-feature.md)可讓使用者端應用程式提供使用者暫時存取許可權。
+[TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)可讓使用者端應用程式提供使用者暫時存取許可權。
 
 作為摘要，這可提供在指定時段內有限的內容存取權或預先定義數量的VOD標題，以吸引使用者。
 
@@ -640,7 +640,7 @@ REST API v2支援多個設定檔以適應：
 
 如果[X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)標頭遺失或包含不正確的值，則請求可能會分類為來自`unknown`平台。
 
-這可能會導致請求被視為不安全，並受到更嚴格的規則約束，例如較短的驗證TTL。 此外，某些欄位（例如串流裝置`connectionIp`和`connectionPort`）是諸如Spectrum的[Home Base Authentication](/help/premium-workflow/hba-access/home-based-authentication.md)之類功能的必要欄位。
+這可能會導致請求被視為不安全，並受到更嚴格的規則約束，例如較短的驗證TTL。 此外，某些欄位（例如串流裝置`connectionIp`和`connectionPort`）是諸如Spectrum的[Home Base Authentication](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)之類功能的必要欄位。
 
 即使請求來自代表裝置的伺服器，[X-Device-Info](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md)標頭值也必須反映實際的串流裝置資訊。
 
@@ -864,25 +864,25 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |--------------------------------------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 完成動態使用者端註冊(DCR) | 提供軟體陳述式給建構函式 | [張貼<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[動態使用者端註冊流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
+| 完成動態使用者端註冊(DCR) | 提供軟體陳述式給建構函式 | [張貼<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [GET <br/> /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[動態使用者端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[動態使用者端註冊流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
 
 ###### AccessEnabler iOS/tvOS SDK
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |--------------------------------------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 完成動態使用者端註冊(DCR) | 提供軟體陳述式給建構函式 | [張貼<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[動態使用者端註冊流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
+| 完成動態使用者端註冊(DCR) | 提供軟體陳述式給建構函式 | [張貼<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [GET <br/> /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[動態使用者端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[動態使用者端註冊流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
 
 ###### AccessEnabler Android SDK
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |--------------------------------------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 完成動態使用者端註冊(DCR) | 提供軟體陳述式給建構函式 | [張貼<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[動態使用者端註冊流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
+| 完成動態使用者端註冊(DCR) | 提供軟體陳述式給建構函式 | [張貼<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [GET <br/> /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[動態使用者端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[動態使用者端註冊流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
 
 ###### AccessEnabler FireOS SDK
 
 | 範圍 | SDK | REST API V2 | 觀察 |
 |--------------------------------------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 完成動態使用者端註冊(DCR) | 提供軟體陳述式給建構函式 | [張貼<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[動態使用者端註冊流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
+| 完成動態使用者端註冊(DCR) | 提供軟體陳述式給建構函式 | [張貼<br/> /o/client/register](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md) <br/> [GET <br/> /o/client/token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) | 如需詳細資訊，請參閱下列檔案： <br/> <ul><li>[動態使用者端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)</li><li>[動態使用者端註冊流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)</li></ul> |
 
 +++
 

@@ -2,7 +2,7 @@
 title: 基本預先授權 — 主要應用程式 — 流程
 description: REST API V2 — 基本預先授權 — 主要應用程式 — 流程
 exl-id: f557f6c3-d5b2-4ec8-be51-91a90fbd31c0
-source-git-commit: 92417dd4161be8ba97535404e262fd26d67383e4
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '496'
 ht-degree: 0%
@@ -37,7 +37,7 @@ Adobe Pass驗證許可權內的&#x200B;**預先授權流程**&#x200B;可讓串�
 
 請依照指定的步驟，使用在主要應用程式中執行的特定MVPD來實作基本預先授權流程，如下圖所示。
 
-![使用特定mvpd擷取預先授權決定](/help/authentication/assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-preauthorization-decisions-within-primary-application-using-specific-mvpd.png)
+![使用特定mvpd擷取預先授權決定](../../../../../assets/rest-api-v2/flows/basic-access-flows/rest-api-v2-retrieve-preauthorization-decisions-within-primary-application-using-specific-mvpd.png)
 
 *使用特定mvpd擷取預先授權決定*
 
@@ -45,7 +45,7 @@ Adobe Pass驗證許可權內的&#x200B;**預先授權流程**&#x200B;可讓串�
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱使用特定mvpd[&#x200B; API檔案擷取預先授權決定：](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
+   > 如需下列詳細資訊，請參閱使用特定mvpd[ API檔案擷取預先授權決定：](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`和`AP-Device-Identifier`
@@ -61,7 +61,7 @@ Adobe Pass驗證許可權內的&#x200B;**預先授權流程**&#x200B;可讓串�
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#x200B; API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)擷取預先授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[ API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)擷取預先授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 

@@ -2,7 +2,7 @@
 title: 單一登入 — 合作夥伴 — 流程
 description: REST API V2 — 單一登入 — 合作夥伴 — 流程
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1468'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Partner方法可讓多個應用程式使用合作夥伴架構狀態裝載，以�
 
 Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使用者端應用程式的一般使用者進行合作夥伴單一登入(SSO)。
 
-如需Apple平台單一登入(SSO)的詳細資訊，請參閱[Apple SSO逐步指南(REST API V2)](/help/premium-workflow/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)檔案。
+如需Apple平台單一登入(SSO)的詳細資訊，請參閱[Apple SSO逐步指南(REST API V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)檔案。
 
 ## 擷取合作夥伴驗證請求 {#retrieve-partner-authentication-request}
 
@@ -59,7 +59,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
 執行指定的步驟來擷取合作夥伴驗證請求，如下圖所示。
 
-![擷取夥伴驗證要求](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-partner-authentication-request-flow.png)
+![擷取夥伴驗證要求](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-partner-authentication-request-flow.png)
 
 *擷取夥伴驗證要求*
 
@@ -173,7 +173,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
 執行指定的步驟，使用合作夥伴驗證回應來實施設定檔擷取流程，如下圖所示。
 
-![使用合作夥伴驗證回應來建立和擷取設定檔](/help/authentication/assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
+![使用合作夥伴驗證回應來建立和擷取設定檔](../../../../../assets/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-retrieve-profile-using-partner-authentication-response-flow.png)
 
 *使用合作夥伴驗證回應來建立及擷取已驗證的設定檔*
 

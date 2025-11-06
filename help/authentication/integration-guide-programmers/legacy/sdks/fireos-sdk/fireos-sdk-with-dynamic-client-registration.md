@@ -2,7 +2,7 @@
 title: Amazon FireOS SDK搭配Dynamic Client註冊
 description: Amazon FireOS SDK搭配Dynamic Client註冊
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1169'
 ht-degree: 0%
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 已修改適用於FireTV的FireOS AccessEnabler SDK ，以啟用驗證而不使用工作階段Cookie。 由於越來越多的瀏覽器限制對Cookie的存取，因此需要另一種方法來允許驗證。
 
-**FireOS SDK 3.0.4**&#x200B;以[動態使用者端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)取代目前以已簽署的請求者ID和工作階段Cookie驗證為基礎的應用程式註冊機制。
+**FireOS SDK 3.0.4**&#x200B;以[動態使用者端註冊概述](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)取代目前以已簽署的請求者ID和工作階段Cookie驗證為基礎的應用程式註冊機制。
 
 
 ## API變更 {#API}
@@ -152,7 +152,7 @@ ht-degree: 0%
    - 登入已取消：重設MVPD選擇
    - URL配置會建立為「adobepass://android.app」，以便在驗證完成時擷取
 
-- e. get/checkAuthorization ： SDK將在標頭中包含&#x200B;**access\_token &#x200B;** 作為授權：持有人&#x200B;**access\_token**
+- e. get/checkAuthorization ： SDK將在標頭中包含**access\_token **作為授權：持有人&#x200B;**access\_token**
 
 - 如果授權成功，將會呼叫以取得媒體權杖
 

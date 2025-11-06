@@ -2,7 +2,7 @@
 title: REST API參考
 description: Rest api參考
 exl-id: 67e4639e-db0b-4400-bb81-e214263e8395
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '661'
 ht-degree: 2%
@@ -81,4 +81,4 @@ Adobe Pass驗證REST API受[節流機制](/help/authentication/integration-guide
 
 ## REST API安全性 {#security}
 
-必須使用HTTPS通訊協定呼叫所有Adobe Pass驗證REST API，以進行安全通訊。 此外，呼叫的大多數API應該包含已取得的存取權杖，如[擷取存取權杖](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) API檔案中所述。
+必須使用HTTPS通訊協定呼叫所有Adobe Pass驗證REST API，以進行安全通訊。 此外，呼叫的大多數API應該包含已取得的存取權杖，如[擷取存取權杖](../../rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) API檔案中所述。

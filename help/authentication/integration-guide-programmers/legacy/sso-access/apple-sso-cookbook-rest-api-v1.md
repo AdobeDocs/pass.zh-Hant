@@ -2,7 +2,7 @@
 title: Apple SSO逐步指南(REST API V1)
 description: Apple SSO逐步指南(REST API V1)
 exl-id: 072a011f-e1bb-4d3e-bcb5-697f2d1739cc
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1496'
 ht-degree: 0%
@@ -55,7 +55,7 @@ Adobe Pass Authentication REST API V1支援在iOS、iPadOS或tvOS上執行之使
 * [啟動一般驗證工作流程](#step10)
 * [繼續授權流程](#step11)
 
-![](/help/authentication/assets/rest-api-v1/apple-sso-cookbook-rest-api-v1.png)
+![](../../../assets/rest-api-v1/apple-sso-cookbook-rest-api-v1.png)
 
 #### 步驟：「是否有有效的Adobe驗證Token？」 {#step1}
 
@@ -265,7 +265,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>專業秘訣：</u>**&#x200B;請注意，從視訊訂閱者帳戶架構取得的提供者識別碼，在Adobe Pass驗證組態方面代表&#x200B;*`platformMappingId`*。 因此，應用程式必須透過MVPD驗證&#x200B;*`platformMappingId`*&#x200B;提供Adobe Pass清單[&#x200B; API服務，使用](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)值來判斷MVPD ID屬性值。
+> **<u>專業秘訣：</u>**&#x200B;請注意，從視訊訂閱者帳戶架構取得的提供者識別碼，在Adobe Pass驗證組態方面代表&#x200B;*`platformMappingId`*。 因此，應用程式必須透過MVPD驗證&#x200B;*`platformMappingId`*&#x200B;提供Adobe Pass清單[ API服務，使用](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)值來判斷MVPD ID屬性值。
 
 #### 步驟：「將Adobe要求轉寄給合作夥伴SSO以取得設定檔」 {#step7}
 

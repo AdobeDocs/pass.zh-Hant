@@ -2,7 +2,7 @@
 title: 標題 — Adobe-Subject-Token
 description: REST API V2 — 標題 — Adobe-Subject-Token
 exl-id: 906d88f4-3b8f-491a-ab58-8e63d3b958d8
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '166'
 ht-degree: 1%
@@ -47,10 +47,10 @@ JSON Web簽章(`JWS`)或JSON Web加密(`JWE`)是包含唯一平台識別碼資�
 
 這適用於下列平台：
 
-* [Amazon SSO逐步指南(REST API V2)](/help/premium-workflow/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+* [Amazon SSO逐步指南(REST API V2)](../../../../features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
 
 ## 範例 {#examples}
 
 請參閱下列平台中所述的範例：
 
-* [Amazon SSO逐步指南(REST API V2)](/help/premium-workflow/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+* [Amazon SSO逐步指南(REST API V2)](../../../../features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)

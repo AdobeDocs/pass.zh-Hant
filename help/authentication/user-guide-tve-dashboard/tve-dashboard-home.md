@@ -2,7 +2,7 @@
 title: 儀表板
 description: 瞭解TVE Dashboard的首頁。
 exl-id: 3073cd86-89f8-4c65-996b-24edda24f25b
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '276'
 ht-degree: 0%
@@ -31,7 +31,7 @@ ht-degree: 0%
 * **資料庫更新**：對目前環境進行的組態變更數目。 選取「變更記錄檔」區段&#x200B;**中的**&#x200B;檢視更多資訊，以存取[變更記錄檔](tve-dashboard-changes-log.md)區段中的詳細資訊。
 * **ESM儀表板**：留意即將推出的ESM儀表板，提供目前環境中屬性使用情況的深入量度。 未來的更新將可存取此功能。
 
-![歡迎畫面](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-welcome-panel-view.png)
+![歡迎畫面](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-welcome-panel-view.png)
 
 *歡迎畫面*
 
@@ -43,7 +43,7 @@ ht-degree: 0%
 * **由**&#x200B;推送：負責變更的帳戶。
 * **推播日期**：進行變更的日期。
 
-![變更記錄的組態狀態](/help/authentication/assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-configuration-status-panel-view.png)
+![變更記錄的組態狀態](../assets/tve-dashboard/new-tve-dashboard/dashboard/dashboard-configuration-status-panel-view.png)
 
 *變更記錄的組態狀態*
 

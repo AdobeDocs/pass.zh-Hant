@@ -2,7 +2,7 @@
 title: 啟動驗證
 description: 啟動驗證
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '306'
 ht-degree: 0%
@@ -85,7 +85,7 @@ ht-degree: 0%
 >
 >呼叫也可能包含可啟用其他功能的選用引數，例如：
 >
-> * generic\_data — 允許使用[促銷臨時傳遞](/help/premium-workflow/temporary-access/temp-pass-feature.md#promotional-temp-pass)
+> * generic\_data — 允許使用[促銷臨時傳遞](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#promotional-temp-pass)
 >
 >```JSON
 >Example:

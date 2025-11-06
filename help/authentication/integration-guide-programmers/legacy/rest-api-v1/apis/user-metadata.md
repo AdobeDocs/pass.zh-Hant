@@ -2,7 +2,7 @@
 title: 使用者中繼資料
 description: 使用者中繼資料
 exl-id: 3d7b6429-972f-4ccb-80fd-a99870a02f65
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '518'
 ht-degree: 0%
@@ -52,7 +52,7 @@ ht-degree: 0%
 | 要求者 | 此作業有效的程式設計師要求者ID。 |
 | deviceId | 裝置識別碼位元組。 |
 | device_info/<p>X-Device-Info | 串流裝置資訊。</br></br> **注意：**&#x200B;這可以作為URL引數傳遞device_info，但由於此引數的潛在大小以及GET URL長度的限制，應該在http標頭中作為X-Device-Info傳遞。 </br></br>檢視[傳遞裝置和連線資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
-| _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>若此引數設定正確，ESM提供的量度在使用Clienless時可依每個裝置型別[進行](/help/premium-workflow/esm/entitlement-service-monitoring-overview.md#progr-filter-metrics)劃分，因此可針對Roku、AppleTV、Xbox等執行不同型別的分析。</br></br>檢視[在Pass量度中使用無使用者端裝置型別引數的好處](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md) </br></br> **注意：** `device_info`會取代此引數。 |
+| _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>若此引數設定正確，ESM提供的量度在使用Clienless時可依每個裝置型別[進行](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#progr-filter-metrics)劃分，因此可針對Roku、AppleTV、Xbox等執行不同型別的分析。</br></br>檢視[在Pass量度中使用無使用者端裝置型別引數的好處](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md) </br></br> **注意：** `device_info`會取代此引數。 |
 | _deviceUser_ | 裝置使用者識別碼。</br></br> **注意：**&#x200B;若使用，`deviceUser`應該與[建立註冊代碼](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)要求中的值相同。 |
 | _appId_ | 應用程式id/名稱。</br></br> **注意：** `device_info`會取代此引數。 若已使用，`appId`應具有與[建立註冊代碼](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)要求中相同的值。 |
 

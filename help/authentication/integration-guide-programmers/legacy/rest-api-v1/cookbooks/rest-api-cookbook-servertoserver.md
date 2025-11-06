@@ -2,7 +2,7 @@
 title: REST API逐步指南（伺服器對伺服器）
 description: Rest API逐步指南伺服器到伺服器。
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1856'
 ht-degree: 0%
@@ -48,7 +48,7 @@ Adobe Pass驗證REST API受[節流機制](/help/authentication/integration-guide
 ### 動態使用者端註冊(DCR)
 
 
-Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe Pass服務之間的使用者端通訊。 DCR流程是獨立的，並在[Dynamic Client Registration Overview](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)檔案中說明。
+Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe Pass服務之間的使用者端通訊。 DCR流程是獨立的，並在[Dynamic Client Registration Overview](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)檔案中說明。
 
 
 ### 驗證(authN)
@@ -73,7 +73,7 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
 下圖說明了驗證流程：
 
-![](/help//authentication/assets/authn-flow.png)
+![](../../../../assets/authn-flow.png)
 
 ### 授權(authZ)
 
@@ -86,7 +86,7 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
 下圖說明授權流程：
 
-![](/help//authentication/assets/authz-flow.png)
+![](../../../../assets/authz-flow.png)
 
 ### 登出
 
@@ -98,7 +98,7 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
 下圖說明登出流程：
 
-![](/help//authentication/assets/logout-flow.png)
+![](../../../../assets/logout-flow.png)
 
 ### \[Optional\]預先授權（又稱為預檢）
 
@@ -114,7 +114,7 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
 下圖說明預先授權流程：
 
-![](/help//authentication/assets/preauthz-flow.png)
+![](../../../../assets/preauthz-flow.png)
 
 
 ### \[Optional\]中繼資料
@@ -130,7 +130,7 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
 
 
-![](/help//authentication/assets/user-metadata-api-preauthz.png)
+![](../../../../assets/user-metadata-api-preauthz.png)
 
 
 
@@ -171,7 +171,7 @@ Adobe Pass服務可在分散於美國各地的多個資料中心執行。  為�
     
     
     
-    必須在&#x200B;**regcode**&#x200B;和**authorize**&#x200B;呼叫
+    必須在**regcode**和**authorize**呼叫
     
     範例中： 
     

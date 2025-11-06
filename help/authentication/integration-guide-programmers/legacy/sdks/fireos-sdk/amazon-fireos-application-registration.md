@@ -2,7 +2,7 @@
 title: Amazon FireOS應用程式註冊
 description: Amazon FireOS應用程式註冊
 exl-id: 650fd4a2-dfc3-4c74-9b5b-6bea832a28ca
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '538'
 ht-degree: 0%
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 從FireOS AccessEnabler SDK 3.0版開始，我們將透過Adobe伺服器變更驗證機制。 我們不使用公開金鑰和秘密系統來簽署requestorID，而是引入軟體陳述式字串的概念，可用來取得存取權杖，稍後再用於SDK對伺服器進行的所有呼叫。 除了軟體宣告之外，您還需要為應用程式建立深層連結。
 
-如需詳細資訊，請參閱[動態使用者端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)。
+如需詳細資訊，請參閱[動態使用者端註冊概述](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)。
 
 ## 什麼是軟體宣告？ {#what}
 
@@ -59,7 +59,7 @@ ht-degree: 0%
 
    下載文字檔。 將其內容當做您的軟體宣告使用。
 
-如需詳細資訊，請參閱[動態使用者端註冊管理](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management)。
+如需詳細資訊，請參閱[動態使用者端註冊管理](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management)。
 
 ### 如果您沒有Adobe TVE儀表板的存取權：
 

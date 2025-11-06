@@ -2,7 +2,7 @@
 title: MVPD快速入門手冊
 description: MVPD快速入門手冊
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: d0f08314d7033aae93e4a0d9bc94af8773c5ba13
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '934'
 ht-degree: 0%
@@ -33,7 +33,7 @@ Adobe提供一系列資源，協助您整合Adobe Pass驗證。 請參考&#x200B
 
 設定程式包括下列步驟：
 
-![Adobe®通過驗證整合程式](/help/authentication/assets/mvpd-int-lifecycle.png)
+![Adobe®通過驗證整合程式](../assets/mvpd-int-lifecycle.png)
 
 *Adobe®通過驗證整合程式*
 
@@ -135,7 +135,7 @@ Adobe Pass驗證團隊可涵蓋我們在整合過程中可能遇到的任何問�
 
 ## 存取檔案 {#access-documentation}
 
-**Adobe將透過** Adobe Experience League[提供](https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/home)對公開檔案的存取權。
+**Adobe將透過** Adobe Experience League[提供](https://experienceleague.adobe.com/en/docs/pass/authentication/home)對公開檔案的存取權。
 
 Adobe Pass驗證團隊針對[MVPD整合指南](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md)區段下的可用功能和工作流程提供完整檔案。 請參考本節下的目錄，以取得每個主題的詳細資訊連結。
 

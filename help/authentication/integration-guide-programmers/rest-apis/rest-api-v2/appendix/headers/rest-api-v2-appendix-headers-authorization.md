@@ -2,7 +2,7 @@
 title: 頁首 — 授權
 description: REST API V2 — 標題 — 授權
 exl-id: 86917d7e-ffd9-4d34-8f9c-5a50083f85e6
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '118'
 ht-degree: 1%
@@ -20,7 +20,7 @@ ht-degree: 1%
 
 <b>Authorization</b>請求標頭包含使用者端應用程式存取受Adobe Pass保護的API所需的`Bearer`存取權杖。
 
-如需存取Adobe Pass保護API之機制的詳細資訊，請參閱[動態使用者端註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)檔案。
+如需存取Adobe Pass保護API之機制的詳細資訊，請參閱[動態使用者端註冊概述](../../../rest-api-dcr/dynamic-client-registration-overview.md)檔案。
 
 ## 語法 {#syntax}
 
@@ -42,7 +42,7 @@ ht-degree: 1%
 
 <b>&lt;access_token></b>
 
-存取權杖值是不透明的值，具有有限的存留時間（例如24小時），必須從Adobe Pass取得，如[擷取存取權杖](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) API檔案中所述。
+存取權杖值是不透明的值，具有有限的存留時間（例如24小時），必須從Adobe Pass取得，如[擷取存取權杖](../../../rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md) API檔案中所述。
 
 ## 範例 {#examples}
 

@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: 913b2127d2189bec1a7e6e197944f1512b764893
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1212'
+source-wordcount: '1279'
 ht-degree: 3%
 
 ---
@@ -57,17 +57,17 @@ ht-degree: 3%
    - [MVPD快速入門手冊](kickstart/mvpd-kickstart-guide.md)
    - [支援程式常見問題集](kickstart/support-procedures-faqs.md)
 - 程式設計師的整合指南 {#integration-guide-programmers}
-   - [程式設計師整合指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)
+   - [程式設計師整合指南](integration-guide-programmers/programmer-integration-guide-overview.md)
    - [最低系統需求](integration-guide-programmers/minimum-system-requirements.md)
    - [節流機制](integration-guide-programmers/throttling-mechanism.md)
    - REST API {#rest-apis}
       - REST API DCR {#rest-api-dcr}
-         - [Dynamic Client註冊概述](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+         - [Dynamic Client註冊概述](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
          - [動態使用者端註冊字彙表](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-glossary.md)
          - [Dynamic Client註冊常見問題集](integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)
          - API {#rest-api-dcr-apis}
             - [擷取使用者端認證](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)
-            - [擷取存取權杖](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)
+            - [擷取存取權杖](integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)
          - 流程 {#rest-api-dcr-flows}
             - [動態使用者端註冊流程](integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
       - REST API V2 {#rest-api-v2}
@@ -137,12 +137,33 @@ ht-degree: 3%
          - [媒體權杖](integration-guide-programmers/features-standard/entitlements/media-tokens.md)
       - 錯誤報告 {#error-reporting}
          - [增強的錯誤碼](integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)
+      - 單一登入存取 {#sso-access}
+         - 合作夥伴單一登入 {#partner-sso}
+            - Apple單一登入 {#apple-sso}
+               - [Apple SSO概觀](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)
+               - [Apple SSO逐步指南(REST API V2)](integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)
+         - 平台單一登入 {#platform-sso}
+            - Amazon單一登入 {#amazon-sso}
+               - [Amazon SSO逐步指南(REST API V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/amazon-single-sign-on/amazon-sso-cookbook-rest-api-v2.md)
+            - Roku單一登入 {#roku-sso}
+               - [Roku SSO逐步指南(REST API V2)](integration-guide-programmers/features-standard/sso-access/platform-sso/roku-single-sign-on/roku-sso-cookbook-rest-api-v2.md)
+      - 以住家為基礎的驗證存取 {#hba-access}
+         - [家用驗證(HBA)](integration-guide-programmers/features-standard/hba-access/home-based-authentication.md)
       - 隱私權支援 {#privacy-support}
-         - [隱私權支援概述](integration-guide-programmers/features-standard/privacy-support/privacy-supp-overview.md)
-         - [如何提出隱私權請求](integration-guide-programmers/features-standard/privacy-support/make-privacy-req.md)
+         - [隱私權支援概述](integration-guide-programmers/features-premium/privacy-support/privacy-supp-overview.md)
+         - [如何提出隱私權請求](integration-guide-programmers/features-premium/privacy-support/make-privacy-req.md)
+   - 進階功能 {#features-premium}
+      - 暫時存取 {#temporary-access}
+         - [TempPass功能](integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+      - 存取許可權降低 {#degraded-access}
+         - [退化特徵](integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+      - ESM {#esm}
+         - [軟體權利檔案服務監視概觀](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)
+         - [權益服務監視API](integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
+         - [伺服器端量度](integration-guide-programmers/features-premium/esm/understanding-serverside-metrics.md)
       - Analytics {#analytics}
-         - [將Adobe Pass驗證伺服器端資料整合至Adobe Analytics](integration-guide-programmers/features-standard/analytics/integrate-authn-servr-data-analytics.md)
-         - [在Adobe Pass驗證中使用Experience Cloud ID](/help/authentication/integration-guide-programmers/features-standard/analytics/exp-cloud-id-authn.md)
+         - [將Adobe Pass驗證伺服器端資料整合至Adobe Analytics](integration-guide-programmers/features-premium/analytics/integrate-authn-servr-data-analytics.md)
+         - [在Adobe Pass驗證中使用Experience Cloud ID](integration-guide-programmers/features-premium/analytics/exp-cloud-id-authn.md)
    - 舊版 {#legacy}
       - （舊版） REST API V1 {#rest-api-v1}
          - [（舊版） REST API V1概覽](integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)

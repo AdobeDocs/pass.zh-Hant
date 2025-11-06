@@ -2,7 +2,7 @@
 title: REST API V2逐步指南（使用者端對伺服器）
 description: REST API V2逐步指南（使用者端對伺服器）
 exl-id: 6a5a89d2-ea54-4f9c-9505-e575ced4301c
-source-git-commit: af867cb5e41843ffa297a31c2185d6e4b4ad1914
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1833'
 ht-degree: 0%
@@ -107,7 +107,7 @@ ht-degree: 0%
 * **案例2：**&#x200B;沒有現有的設定檔，串流應用程式可能會繼續執行下一個步驟，以[驗證使用者](#step-3-authenticate-the-user)。
 
 
-* **案例3：**&#x200B;沒有現有的設定檔，串流應用程式可能會繼續透過[TempPass](/help/premium-workflow/temporary-access/temp-pass-feature.md)功能為使用者提供暫存存取權。
+* **案例3：**&#x200B;沒有現有的設定檔，串流應用程式可能會繼續透過[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能為使用者提供暫存存取權。
 
    * 此情境超出本檔案的範圍，如需詳細資訊，請參閱[暫時存取流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)檔案。
 
