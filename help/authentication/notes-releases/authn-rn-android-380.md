@@ -1,7 +1,8 @@
 ---
 title: Adobe Pass Authentication Android 3.8.0發行說明
 description: Adobe Pass Authentication Android 3.8.0發行說明
-source-git-commit: f7db5b71723c02b2924e73105769ab5b22e05bca
+exl-id: ad020b9a-61ad-492f-9522-d0e7a668196a
+source-git-commit: c9958a17ad9dfb518bab1d24087c85fdcb6fd057
 workflow-type: tm+mt
 source-wordcount: '140'
 ht-degree: 0%

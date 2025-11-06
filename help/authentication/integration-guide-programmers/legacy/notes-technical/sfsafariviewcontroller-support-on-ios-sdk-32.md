@@ -4,7 +4,7 @@ description: iOS SDK 3.2+上的SFSafariViewController支援
 exl-id: 6691550f-c36f-4fae-aa77-082ca7d8a60a
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '436'
+source-wordcount: '432'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ SDK 3.1版會自動從應用程式的根檢視控制器顯示SFSafariViewControl
 若要手動管理SVC，實作人員必須執行下列步驟：
 
 
-1. 在AccessEnabler初始化之後呼叫&#x200B;**setOptions([&quot;handleSVC&quot;：true])** （請確定在驗證開始之前執行此呼叫）。 這會啟用「手動」SVC管理，SDK不會自動呈現SVC，而是在需要時呈現     呼叫&#x200B;**導覽(toUrl：*{url}* useSVC：true)**。
+1. 在AccessEnabler初始化之後呼叫&#x200B;**setOptions([&quot;handleSVC&quot;:true])** （請確定在驗證開始之前執行此呼叫）。 這會啟用「手動」SVC管理，SDK不會自動呈現SVC，而是在需要時呈現     呼叫&#x200B;**導覽(toUrl：*{url}* useSVC:true)**。
 
 1. 在實作中實作選擇性回呼&#x200B;**`navigateToUrl:useSVC:`**，您必須使用提供的URL使用SFSafariViewController執行個體建立svc執行個體，並在熒幕上顯示：
 
@@ -54,7 +54,7 @@ SDK 3.1版會自動從應用程式的根檢視控制器顯示SFSafariViewControl
    ***附註：***
 
    - *您可以用任何想要的方式自訂SFSafariViewController。 例如，在iOS 11+上，您可以將「完成」標籤變更為「取消」。*
-   - *為了能夠關閉svc，您需要它的參考，請勿在&#x200B;**navigateToUrl：useSVC***的範圍中建立它
+   - *為了能夠解除svc，您需要它的參考，請勿在&#x200B;**navigateToUrl:useSVC***的範圍中建立它
    - *對「myController」使用您自己的檢視控制器*
 
 

@@ -60,7 +60,7 @@ Adobe團隊已指派識別碼為&#x200B;**demo-app**&#x200B;的應用程式一�
 
 第一次呼叫時不需要提供任何終止程式碼，因為我們沒有任何其他作用中的資料流。 而且沒有中繼資料屬性，因為擷取中繼資料呼叫未傳回任何屬性。
 
-**subject**&#x200B;和&#x200B;**idp**&#x200B;引數是必要引數，它們將被指定為URI路徑變數。 您可以從Adobe Pass驗證呼叫&#x200B;**mvpd**&#x200B;和&#x200B;**upstreamUserID**&#x200B;中繼資料欄位，以取得&#x200B;**主旨**&#x200B;和&#x200B;**idp**&#x200B;引數。 另請參閱中繼資料API的[總覽](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=zh-Hant#)。 在此範例中，我們會提供「12345」值作為主旨，以及「adobe」值作為idp。
+**subject**&#x200B;和&#x200B;**idp**&#x200B;引數是必要引數，它們將被指定為URI路徑變數。 您可以從Adobe Pass驗證呼叫&#x200B;**mvpd**&#x200B;和&#x200B;**upstreamUserID**&#x200B;中繼資料欄位，以取得&#x200B;**主旨**&#x200B;和&#x200B;**idp**&#x200B;引數。 另請參閱中繼資料API的[總覽](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=en#)。 在此範例中，我們會提供「12345」值作為主旨，以及「adobe」值作為idp。
 
 
 ![](assets/session-init-params-frstapp.png)
@@ -128,7 +128,7 @@ Adobe團隊已指派識別碼為&#x200B;**demo-app**&#x200B;的應用程式一�
 
 對於每個工作階段，您將取得&#x200B;**terminationCode**&#x200B;並完成中繼資料。
 
-請注意&#x200B;**Expires**&#x200B;標頭。 這是第一個工作階段到期的時間，除非傳送心率。
+請注意&#x200B;**Expires**標頭。 這是第一個工作階段到期的時間，除非傳送心率。
 中繼資料欄位將會填入工作階段開始時所傳送的所有中繼資料。 我們不篩選它，您會收到您傳送的所有內容。
 只要其他租使用者的應用程式共用相同原則，回應就會包含這些應用程式上執行的所有串流。
 如果您進行呼叫時沒有特定使用者的執行中工作階段，您將會收到此回應：

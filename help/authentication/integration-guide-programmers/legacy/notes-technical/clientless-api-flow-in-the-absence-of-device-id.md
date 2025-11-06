@@ -43,7 +43,7 @@ ht-degree: 0%
 
 ## 永久解決方案
 
-在未來版本中，Adobe會變更此專案，方法是在建立登入程式碼時，將`deviceId`設為選用裝載，並在`deviceId`不存在時，使用UUID做為權杖金鑰而非`deviceId`。
+在未來版本中，Adobe會變更，方法是在建立登入程式碼時，將`deviceId`設為選用裝載，並在`deviceId`不存在時，使用UUID做為權杖金鑰而非`deviceId`。
 
 <!--
 ## Related Information

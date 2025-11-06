@@ -76,7 +76,7 @@ Google發佈了一份檔案，彙總其建議的行動手冊，為第三方Cooki
 
 ### 測試中斷
 
-若要測試中斷，請使用`--test-third-party-cookie-phaseout`命令列旗標或從Chrome 118啟動Chrome，在`chrome://flags/`中啟用`#test-third-party-cookie-phaseout`。
+若要測試中斷，請使用`--test-third-party-cookie-phaseout`命令列旗標或從Chrome 118啟動Chrome，在`#test-third-party-cookie-phaseout`中啟用`chrome://flags/`。
 
 這將設定Google Chrome以封鎖第三方Cookie並確保未來功能作用中，以便在逐步淘汰後以最佳方式模擬狀態。
 

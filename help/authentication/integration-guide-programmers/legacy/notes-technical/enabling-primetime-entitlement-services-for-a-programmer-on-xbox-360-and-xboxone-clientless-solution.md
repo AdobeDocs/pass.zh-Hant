@@ -26,7 +26,7 @@ ht-degree: 0%
 
    1. 請求者ID：例如netgeo、CNN等。
 
-1. Adobe將會建立X509憑證，並在其結尾設定私密金鑰和密碼。
+1. Adobe將建立X509憑證，並在其結尾設定私密金鑰和密碼。
 
 1. Adobe會在票證中或透過電子郵件向程式設計師提供公開憑證（X509憑證）。
 
@@ -49,4 +49,4 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->由於XSTS權杖的長度很大，因此XBox主控台具有技術限制：它無法將權杖作為HTTPGET引數傳送到Adobe Pass付費電視驗證API。 為了處理這個問題，Adobe Pass付費電視驗證允許在呼叫API時傳送XSTS權杖作為HTTP標頭「Authorization」的一部分。 XSTS權杖必須使用從Adobe Pass付費電視驗證核發給程式設計師的X.509憑證中的公開金鑰加密。 Adobe Pass付費電視驗證會儲存關聯的私密金鑰，並使用它來解密XSTS權杖並從中擷取deviceId。
+>由於XSTS權杖的長度很大，因此XBox主控台具有技術限制：它無法將權杖作為HTTP GET引數傳送到Adobe Pass付費電視驗證API。 為了處理這個問題，Adobe Pass付費電視驗證允許在呼叫API時傳送XSTS權杖作為HTTP標頭「Authorization」的一部分。 XSTS權杖必須使用從Adobe Pass付費電視驗證核發給程式設計師的X.509憑證中的公開金鑰加密。 Adobe Pass付費電視驗證會儲存關聯的私密金鑰，並使用它來解密XSTS權杖並從中擷取deviceId。

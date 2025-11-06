@@ -30,15 +30,15 @@ ht-degree: 0%
 實作人員可能會遇到如下所述的一些限制。
 
 
-1. 一般(Adobe) SSO在使用AccessEnabler 3.7.0版的應用程式與使用AccessEnabler 3.7.0以下版本的應用程式之間無法運作，即使對於同一廠商所開發的應用程式亦然。
+1. 一般(Adobe) SSO無法在使用AccessEnabler 3.7.0版的應用程式與使用3.7.0以下的AccessEnabler版本的應用程式之間運作，即使同一廠商所開發的應用程式亦然。
 
    >[!IMPORTANT]
    >
    >* 系統層級(Apple) SSO不受影響！
    >
-   >* 如果兩個應用程式都是由同一家廠商開發，且使用3.7.0以下的AccessEnabler版本，一般(Adobe)SSO將繼續運作！
+   >* 如果兩個應用程式是由同一家廠商開發，且使用3.7.0以下的AccessEnabler版本，一般(Adobe) SSO仍會繼續運作！
    >
-   >* 如果兩個應用程式都是由同一家廠商開發，並且使用AccessEnabler 3.7.0版，一般(Adobe)SSO將可正常運作！
+   >* 如果兩個應用程式是由同一家廠商開發，並使用AccessEnabler 3.7.0版，一般(Adobe) SSO將可正常運作！
 
 
 1. 如果使用AccessEnabler 3.7.0版將某個應用程式降級為較低版本的AccessEnabler，則不會移轉新產生的權杖。 因此，一般使用者可能會遇到驗證/授權工作階段遺失的情況，而未預期會遺失。

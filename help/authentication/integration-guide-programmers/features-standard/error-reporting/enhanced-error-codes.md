@@ -101,7 +101,7 @@ Content-Type: application/json
         "code": "authorization_denied_by_mvpd",
         "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
         "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
         "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
       }
     }
@@ -120,7 +120,7 @@ Content-Type: application/json
   "status": 400,
   "code": "invalid_parameter_service_provider",
   "message": "The service provider parameter value is missing or invalid.",
-  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
   "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
 }
 ```
@@ -154,7 +154,7 @@ Content-Type: application/json
         "code": "authorization_denied_by_mvpd",
         "message": "The MVPD has returned a \"Deny\" decision when requesting authorization for the specified resource",
         "details": "Your subscription package does not include the \"Live\" channel",
-        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+        "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
         "trace": "12f6fef9-d2e0-422b-a9d7-60d799abe353"
       }
     }
@@ -173,7 +173,7 @@ Content-Type: application/json
   "status": 400,
   "code": "invalid_requestor",
   "message": "The requestor parameter is missing or invalid.",
-  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+  "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
   "trace": "8bcb17f9-b172-47d2-86d9-3eb146eba85e"
 }
 ```
@@ -189,7 +189,7 @@ Content-Type: application/xml
   <status>400</status>
   <code>invalid_requestor</code>
   <message>The requestor parameter is missing or invalid.</message>
-  <helpUrl>https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant</helpUrl>
+  <helpUrl>https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html</helpUrl>
   <trace>8bcb17f9-b172-47d2-86d9-3eb146eba85e</trace>
 </error>
 ```
@@ -207,7 +207,7 @@ Content-Type: application/xml
 | *代碼* | *字串* | *authorization_denied_by_mvpd* | &amp;amp；檢查； | 與本檔案定義之錯誤相關聯的Adobe Pass驗證唯一識別碼代碼。 <br/><br/>如需詳細資訊，請參閱[代碼](#enhanced-error-codes-code)區段。 |
 | *訊息* | *字串* | *請求指定資源的授權時，MVPD已傳回「拒絕」決定* |            | 在某些情況下可顯示給一般使用者的人類可讀訊息。 <br/><br/>如需詳細資訊，請參閱[回應處理](#enhanced-error-codes-response-handling)區段。 |
 | *詳細資料* | *字串* | *您的訂閱套件不包含「即時」頻道* |            | 服務合作夥伴在某些情況下可能提供的詳細訊息，<br/><br/>若服務合作夥伴未提供任何自訂訊息，此欄位可能不存在。 |
-| *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant* |            | Adobe Pass驗證公開檔案URL可連結至此錯誤發生原因及可能解決方案的相關資訊。 <br/><br/>此欄位包含絕對URL，不應從錯誤碼推斷，視錯誤內容而定，可以提供不同的URL。 |
+| *helpUrl* | *url* | *https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html* |            | Adobe Pass驗證公開檔案URL可連結至此錯誤發生原因及可能解決方案的相關資訊。 <br/><br/>此欄位包含絕對URL，不應從錯誤碼推斷，視錯誤內容而定，可以提供不同的URL。 |
 | *追蹤* | *字串* | *12f6fef9-d2e0-422b-a9d7-60d799abe353* |            | 回應的唯一識別碼，可在聯絡Adobe Pass驗證支援以疑難排解特定問題時使用。 |
 
 >[!IMPORTANT]

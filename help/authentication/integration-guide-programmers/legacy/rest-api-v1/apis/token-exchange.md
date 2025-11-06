@@ -1,6 +1,6 @@
 ---
-title: 交換Platform SSO權杖以取得Adobe權杖
-description: 交換Platform SSO權杖以取得Adobe權杖
+title: 將Platform SSO權杖交換為Adobe權杖
+description: 將Platform SSO權杖交換為Adobe權杖
 exl-id: 5ab60268-8f97-4755-8281-be45e812ed7f
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
@@ -39,7 +39,7 @@ ht-degree: 0%
 
 ## 說明 {#description}
 
-允許將平台SSO設定檔「交換」為Adobe權杖。
+允許將Platform SSO設定檔「交換」為Adobe權杖。
 
 | 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
 | --- | --- | --- | --- | --- | --- |

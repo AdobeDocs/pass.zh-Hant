@@ -4,7 +4,7 @@ description: 如何將MVPD登入頁面從iFrame移轉至快顯視窗
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '709'
+source-wordcount: '708'
 ht-degree: 0%
 
 ---
@@ -183,7 +183,7 @@ function displayProviderDialog(providers) {
 }
 ```
 
-使用者從選擇器選取MVPD後，需要建立快顯視窗。 如果使用about：blank或其他網域上的頁面建立快顯視窗，有些瀏覽器可能會封鎖快顯視窗，因此建議使用載入AccessEnabler的主機名稱來開啟快顯視窗。
+使用者從選擇器選取MVPD後，需要建立快顯視窗。 如果快顯視窗是以約:blank或另一個網域上的頁面建立，有些瀏覽器可能會封鎖快顯視窗，因此建議以載入AccessEnabler的主機名稱開啟快顯視窗。
 
 在iFrame實作中，重設驗證流程是由btnCloseIframe按鈕和JavaScript函式closeIframeAction()所完成，但現在已無法再裝飾iFrame。 因此，觀看快顯視窗關閉的時間（由使用者或完成驗證流程）也會獲得相同的行為。 已新增程式碼片段，萬一使用者失去快顯視窗的焦點時也有幫助：
 

@@ -4,7 +4,7 @@ description: iOS/tvOS v3.x移轉指南
 exl-id: 4c43013c-40af-48b7-af26-0bd7f8df2bdb
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '582'
+source-wordcount: '581'
 ht-degree: 0%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 0%
 > **附註：**
 >
 > - 從iOS sdk 3.1版開始，實作者現在可以交換使用WKWebView或UIWebView。 由於UIWebView已過時，應用程式應移轉至WKWebView，以避免未來iOS版本發生問題。
-> - 請注意，移轉僅表示使用WKWebView切換UIWebView類別，沒有針對Adobe的AccessEnabler需完成的特定工作。
+> - 請注意，移轉僅表示使用WKWebView來切換UIWebView類別，因此無需針對Adobe的AccessEnabler執行任何特定工作。
 
 </br>
 
@@ -72,7 +72,7 @@ ht-degree: 0%
 
 ## 攔截自訂URL配置上的呼叫 {#intercept}
 
-這僅適用於應用程式先前透過[setOptions(\[&quot;handleSVC&quot;：true&quot;\])](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)呼叫啟用手動Safari檢視控制器(SVC)處理的情況，以及需要Safari檢視控制器(SVC)的特定MVPD，因此需要由SFSafariViewController而非UIWebView/WKWebView控制器載入驗證和登出端點的URL。
+這僅適用於您的應用程式先前透過[setOptions(\[&quot;handleSVC&quot;:true&quot;\])](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)呼叫啟用手動Safari檢視控制器(SVC)處理，以及需要Safari檢視控制器(SVC)的特定MVPD，因此需要由SFSafariViewController而非UIWebView/WKWebView控制器載入驗證和登出端點的URL。
 
 在驗證和登出流程期間，您的應用程式必須監控`SFSafariViewController `控制器在經過數個重新導向時的活動。 您的應用程式必須偵測載入您`application's custom URL scheme`所定義的特定自訂URL的時刻（例如`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com)`）。 當控制器載入這個特定自訂URL時，您的應用程式必須關閉`SFSafariViewController`並呼叫AccessEnabler的`handleExternalURL:url `API方法。
 

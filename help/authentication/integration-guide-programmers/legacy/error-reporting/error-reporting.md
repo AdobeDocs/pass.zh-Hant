@@ -4,7 +4,7 @@ description: 錯誤報告
 exl-id: a52bd2cf-c712-40a2-a25e-7d9560b46ba6
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '3012'
+source-wordcount: '3011'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 Adobe Pass驗證中的錯誤報告目前以兩種不同的方式實施：
 
-* **進階錯誤報告**&#x200B;在[AccessEnabler JavaScript SDK](#accessenabler-javascript-sdk)的情況下，實作者會登入錯誤回呼，或在[AccessEnabler iOS/tvOS SDK](#accessenabler-ios-tvos-sdk)和[AccessEnabler Android SDK](#accessenabler-android-sdk)的情況下，實作名稱為&#39;&#39;`status`&#39;&#39;的介面方法，以接收進階錯誤報告。 錯誤分為&#x200B;**資訊**、**警告**&#x200B;和&#x200B;**錯誤**&#x200B;型別。 此報告系統是&#x200B;**非同步**，因為&#x200B;**無法保證觸發多個錯誤的順序**。  如需進階錯誤報告系統的詳細資訊，請參閱[進階錯誤報告](#advanced-error-reporting)區段。
+* **進階錯誤報告**&#x200B;在[AccessEnabler JavaScript SDK](#accessenabler-javascript-sdk)的情況下，實作者會登入錯誤回呼，或在`status`AccessEnabler iOS/tvOS SDK[和](#accessenabler-ios-tvos-sdk)AccessEnabler Android SDK[的情況下，實作名稱為&#39;&#39;](#accessenabler-android-sdk)&#39;&#39;的介面方法，以接收進階錯誤報告。 錯誤分為&#x200B;**資訊**、**警告**&#x200B;和&#x200B;**錯誤**&#x200B;型別。 此報告系統是&#x200B;**非同步**，因為&#x200B;**無法保證觸發多個錯誤的順序**。  如需進階錯誤報告系統的詳細資訊，請參閱[進階錯誤報告](#advanced-error-reporting)區段。
 
 * **原始錯誤報告 —**&#x200B;靜態報告系統，當特定要求失敗時，會將錯誤訊息傳遞給特定回呼函式。 錯誤會分組為通用、驗證和授權型別。 如需在原始系統中報告的錯誤清單，請參閱[原始錯誤報告](#original-error-reporting)區段。
 
@@ -46,7 +46,7 @@ Adobe Pass驗證中的錯誤報告目前以兩種不同的方式實施：
 
 #### 實施 {#access-enab-js-imp}
 
-yourErrorHandler(errorData：Object)
+yourErrorHandler(errorData:Object)
 
 
 您的錯誤處理常式回呼函式將接收具有以下結構的單一物件（對應）：
@@ -160,7 +160,7 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 
 #### 實施 {#access-enablr-androidsdk-imp}
 
-實作程式需要處理介面`IAccessEnablerDelegate`的新`status`方法。 **`status`**&#x200B;函式將接收具有下列模型的單一&#x200B;**`AdvancedStatus`**&#x200B;物件：
+實作程式需要處理介面`status`的新`IAccessEnablerDelegate`方法。 **`status`**&#x200B;函式將接收具有下列模型的單一&#x200B;**`AdvancedStatus`**&#x200B;物件：
 
 ```C++
     class AdvancedStatus {
@@ -199,7 +199,7 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 
 #### 實施 {#access-enab-fireos-sdk-}
 
-實作程式需要處理介面`IAccessEnablerDelegate`的新`status`方法。 **`status`**&#x200B;函式將接收具有下列模型的單一&#x200B;**`AdvancedStatus`**&#x200B;物件：
+實作程式需要處理介面`status`的新`IAccessEnablerDelegate`方法。 **`status`**&#x200B;函式將接收具有下列模型的單一&#x200B;**`AdvancedStatus`**&#x200B;物件：
 
 ```C++
     class AdvancedStatus {
@@ -242,8 +242,8 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 | VSA404 | 資訊 | 應用程式視訊訂閱者帳戶許可權未確定。 | 說明單一登入(SSO)使用者體驗的優點，以鼓勵拒絕授予許可權存取訂閱資訊的使用者。 | 使用者可以變更其決定，方法是前往應用程式設定（電視提供者存取），或前往iOS/iPadOS上的「設定 — >電視提供者」或tvOS上的「設定 — >帳戶 — >電視提供者」區段。 | 不適用 | 是 | 不適用 |
 | VSA503 | 資訊 | 應用程式視訊訂閱者帳戶中繼資料要求失敗。 | MVPD端點沒有回應。 應用程式可能會回覆為一般驗證流程。 | 不適用 | 不適用 | 是 | 不適用 |
 | 500 | 錯誤 | 內部錯誤 | 使用AccessEnablerDebug並檢查偵錯記錄（console.log輸出）以判斷哪裡出問題。 | 不適用 | 是 | 是 | 不適用 |
-| SEC403 | 錯誤 | 網域安全性錯誤。 要求者使用無效的網域。 特定請求者ID使用的所有網域都必須依Adobe列入白名單。 |  — 僅從允許的網域清單<br>載入AccessEnabler <br> — 連絡Adobe，以便管理所使用Requestor ID <br>的網域白名單 <br> - iOS：確認您使用正確的憑證，且簽章已正確建立 | 不適用 | 不適用 | 是 | 不適用 |
-| SEC412 | 警告 | 發行版本2.5&rbrack;中可用的&lbrack;裝置識別碼不相符。 每當基礎平台變更其裝置ID時，就可能發生這種情況。 在此情況下，將會清除現有的Token，且使用者將不再獲得驗證。 請注意，當使用者使用JS SDK且漫遊（在JS上，使用者端IP是裝置ID的一部分）時，就會合法地發生這種情況。 否則，這可能表示有人企圖詐騙，即企圖從其他裝置複製代號。 |  — 監視警告數目。 如果它們沒有明顯的原因（沒有最近的瀏覽器更新；新的作業系統）而尖峰，這可能表示有欺詐企圖。 <br> <br> — 選擇性地通知使用者他需要重新登入。 | 再次登入。 | 是 | 是 | 是（從3.2） |
+| SEC403 | 錯誤 | 網域安全性錯誤。 要求者使用無效的網域。 特定請求者ID使用的所有網域都必須由Adobe列入白名單。 |  — 僅從允許的網域清單<br>載入AccessEnabler <br> — 聯絡Adobe以管理所使用<br>的請求者ID的網域白名單 <br> - iOS：確認您使用正確的憑證，且簽章已正確建立 | 不適用 | 不適用 | 是 | 不適用 |
+| SEC412 | 警告 | 發行版本2.5[中可用的]裝置識別碼不相符。 每當基礎平台變更其裝置ID時，就可能發生這種情況。 在此情況下，將會清除現有的Token，且使用者將不再獲得驗證。 請注意，當使用者使用JS SDK且漫遊（在JS上，使用者端IP是裝置ID的一部分）時，就會合法地發生這種情況。 否則，這可能表示有人企圖詐騙，即企圖從其他裝置複製代號。 |  — 監視警告數目。 如果它們沒有明顯的原因（沒有最近的瀏覽器更新；新的作業系統）而尖峰，這可能表示有欺詐企圖。 <br> <br> — 選擇性地通知使用者他需要重新登入。 | 再次登入。 | 是 | 是 | 是（從3.2） |
 | SEC420 | 錯誤 | 與Adobe Pass驗證伺服器通訊時出現HTTP安全性錯誤。 此錯誤通常發生於詐騙/代理的位置。 |  — 在瀏覽器中載入`[https://]{SP_FQDN\}`並手動接受SSL憑證，例如，**https://api.auth.adobe.com**&#x200B;或&#x200B;**https://api.auth-staging.adobe.com** <br> <br> — 將Proxy憑證標籤為受信任 | 如果這發生在一般使用者身上，則表示可能是中間人攻擊！ | 是 | 是 | 是（從3.2） |
 | CFG100 | 警告 | 使用者端電腦日期/時間/時區設定不正確。 這可能會導致驗證/授權錯誤。 |  — 通知使用者設定正確的時間。<br> <br>採取動作以防止權益流程，因為這些流程可能會失敗。 | 設定正確的日期/時間。 | 是 | 是 | 是（從3.2） |
 | CFG400 | 錯誤 | 提供的要求者識別碼無效。 | 開發人員必須指定有效的要求者ID。 | 不適用 | 是 | 是 | 是（從3.2） |

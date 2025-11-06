@@ -23,7 +23,7 @@ ht-degree: 0%
 
 Adobe強烈建議您移轉至AccessEnabler程式庫的最新JS v4.x。
 
-Adobe Pass Authentication JavaScript整合在熟悉的JS Web應用程式開發環境中，為程式設計師提供無所不在的TV解決方案。 整合的主要元件是您的「高階」應用程式（使用者互動、視訊簡報），以及Adobe提供的「低階」 AccessEnabler資料庫，此資料庫提供您進入權益流程的入口，並處理與Adobe Pass驗證伺服器的通訊。
+Adobe Pass Authentication JavaScript整合在熟悉的JS Web應用程式開發環境中，為程式設計師提供無所不在的TV解決方案。 整合的主要元件是您的「高階」應用程式（使用者互動、視訊簡報），以及Adobe提供的「低階」 AccessEnabler資料庫，此資料庫提供您許可權流程的入口，並處理與Adobe Pass驗證伺服器的通訊。
 
 以下小節提供JavaScript AccessEnabler整合的專屬說明和範例。
 
@@ -55,7 +55,7 @@ Adobe Pass Authentication JavaScript整合在熟悉的JS Web應用程式開發�
     </head>
     <body>
         <div id="alternative">
-        <a href="http://www.adobe.com/go/getflashplayer_tw"> 
+        <a href="http://www.adobe.com/go/getflashplayer"> 
             <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" 
                  alt="Get Adobe Flash player"/> </a>
         </div> 

@@ -1,7 +1,8 @@
 ---
 title: Adobe Pass Authentication JavaScript 4.7.1發行說明
 description: Adobe Pass Authentication JavaScript 4.7.1發行說明
-source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
+exl-id: 3db96d64-536e-4ce9-86ff-096e7a9c68be
+source-git-commit: 0c6aec04ae9df410228730b5bce6ced1aeecd312
 workflow-type: tm+mt
 source-wordcount: '109'
 ht-degree: 0%

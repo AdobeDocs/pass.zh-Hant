@@ -4,7 +4,7 @@ description: 依第二熒幕Web應用程式擷取預先授權資源清單
 exl-id: 78eeaf24-4cc1-4523-8298-999c9effdb7a
 source-git-commit: 1c357b918fa4f6d4b92a9055de018c55ee5861e0
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '273'
 ht-degree: 0%
 
 ---
@@ -46,7 +46,7 @@ ht-degree: 0%
 
 | 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/preauthorize/{註冊代碼} | 驗證模組 | 1.註冊代碼</br>    （路徑元件）</br>2。  要求者（必要）</br>3。  resource （必要） | GET | 包含個別預先授權決定或錯誤詳細資料的XML或JSON。 請參閱下列範例。 | 200 — 成功</br></br>400 — 錯誤的請求</br></br>401 — 未獲授權</br></br>405 — 不允許的方法</br></br>412 — 先決條件失敗</br></br>500 — 內部伺服器錯誤 |
+| &lt;SP_FQDN>/api/v1/preauthorize/{registration code} | 驗證模組 | 1.註冊代碼</br>    （路徑元件）</br>2。  要求者（必要）</br>3。  resource （必要） | GET | 包含個別預先授權決定或錯誤詳細資料的XML或JSON。 請參閱下列範例。 | 200 — 成功</br></br>400 — 錯誤的請求</br></br>401 — 未獲授權</br></br>405 — 不允許的方法</br></br>412 — 先決條件失敗</br></br>500 — 內部伺服器錯誤 |
 
 
 

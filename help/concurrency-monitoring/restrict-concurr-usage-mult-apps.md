@@ -14,7 +14,7 @@ ht-degree: 1%
 
 ## 使用案例說明
 
-MVPD M有iPhone應用程式、iPad應用程式和網站。 它需要應程式設計師的要求，與Adobe並行監控(CM)整合。程式設計師P已在CM中定義一組原則，其規則將限制同時使用。 CM會根據定義的原則和規則，決定允許播放哪些串流。 這表示即使允許串流開始和播放，在播放期間，CM可以決定停止它。
+MVPD M有iPhone應用程式、iPad應用程式和網站。 需要應程式設計師的要求，與Adobe並行監控(CM)整合。程式設計師P已在CM中定義一組原則，其規則將限制同時使用。 CM會根據定義的原則和規則，決定允許播放哪些串流。 這表示即使允許串流開始和播放，在播放期間，CM可以決定停止它。
 
 
 
@@ -23,7 +23,7 @@ MVPD M有iPhone應用程式、iPad應用程式和網站。 它需要應程式設
 
 
 
-## 必要條件
+## 先決條件
 
 若要與CM整合，必須建立Zendesk票證(https://adobeprimetime.zendesk.com)並指定下列資訊：
 
@@ -38,7 +38,7 @@ MVPD M有iPhone應用程式、iPad應用程式和網站。 它需要應程式設
 
 | type | 說明 | 範例值 | 預設值 |
 | --- | --- | --- | --- |
-| 端點 | Adobe並行監視的端點 | http://streams.adobeprimetime.com/v1/ | http://streams.adobeprimetime.com/v1/ |
+| 端點 | Adobe並行監視端點 | http://streams.adobeprimetime.com/v1/ | http://streams.adobeprimetime.com/v1/ |
 | applicationId | iPhone應用程式ID | iphone54-75b4-431b-adb2-eb6b9e546013 | - |
 | applicationId | iPad應用程式ID | ipad5d54-75b4-431b-adb2-eb6b9e546013 | - |
 | applicationId | 網站應用程式ID | website4-75b4-431b-adb2-eb6b9e546013 | - |

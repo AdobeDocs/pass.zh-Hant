@@ -4,7 +4,7 @@ description: 歡迎使用Adobe&amp；reg；通過驗證
 exl-id: a8b01469-3d5f-4a44-9ae8-06a68c29d56d
 source-git-commit: fab5964aeb832d419702b41a6d3bc5676cb3354f
 workflow-type: tm+mt
-source-wordcount: '419'
+source-wordcount: '414'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Adobe Pass Authentication是適用於TV Everywhere (TVE)的強大權益解決方
 
 Adobe Pass驗證身為SaaS （軟體即服務）解決方案，可加快上市時間、減少詐騙風險，並啟用順暢的跨平台內容存取，確保適當的檢視者能夠輕鬆接收適當的內容。
 
-## ??社群與更新
+## 📢社群與更新
 
 * [產品公告](/help/authentication/product-announcements.md)\
   瞭解最新的Adobe Pass驗證產品公告和淘汰時間表。
@@ -42,7 +42,7 @@ Adobe Pass驗證身為SaaS （軟體即服務）解決方案，可加快上市�
 * [REST API V2常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-faqs.md)\
   關於Adobe Pass驗證REST API V2的常見問題。
 
-## ??檔案
+## 📄檔案
 
 程式設計師的&#x200B;**：**
 
@@ -62,7 +62,7 @@ MVPD的&#x200B;**：**
 
 *使用頁面頂端的搜尋列來搜尋特定主題，或是透過左側功能表來瀏覽。*
 
-## ??️工具與程式庫
+## 🛠️工具和程式庫
 
 * [Adobe Developer網站](https://developer.adobe.com/adobe-pass/)\
   存取Adobe Developer網站以試用Adobe Pass驗證REST API。
@@ -70,7 +70,7 @@ MVPD的&#x200B;**：**
 * [媒體權杖驗證器](https://tve.zendesk.com/hc/en-us/articles/204963159-Media-Token-Verifier-library)\
   整合程式庫，以驗證Adobe Pass驗證產生的媒體權杖。
 
-## ??連絡人
+## 📧連絡人
 
 * [連絡Adobe支援](mailto:tve-support@adobe.com)\
   如需其他說明或業務諮詢，請傳送電子郵件給Adobe支援團隊。

@@ -48,7 +48,7 @@ AccessEnabler支援的所有權益工作流程都假設您先前已呼叫[`setRe
 
 - 您可以立即開始發出權益呼叫，並視需要允許以靜默方式將其排入佇列。
 
-- 您可以實作[`setRequestorComplete()`](#setReqComplete)回呼，以接收[`setRequestor()`](#setReq)成功/失敗的確認。
+- 您可以實作[`setRequestor()`](#setReq)回呼，以接收[`setRequestorComplete()`](#setReqComplete)成功/失敗的確認。
 
 - 您可以同時執行上述兩項操作。
 
@@ -67,7 +67,7 @@ AccessEnabler支援的所有權益工作流程都假設您先前已呼叫[`setRe
 1. 如果使用者目前未驗證，AccessEnabler會判斷使用者的上次驗證嘗試在指定的MVPD中是否成功，以繼續驗證流程。 如果已快取MVPD ID且`canAuthenticate`旗標為true或使用[`setSelectedProvider()`](#setSelProv)選取了MVPD，則不會使用MVPD選取對話方塊提示使用者。 驗證流程會繼續使用MVPD的快取值(即上次成功驗證期間使用的MVPD)。 系統會呼叫後端伺服器的網路，並將使用者重新導向至MVPD登入頁面（下方的步驟6）。
 1. 如果未快取任何MVPD ID，而且未使用[`setSelectedProvider()`](#setSelProv)選取任何MVPD，或`canAuthenticate`標幟設定為false，則會呼叫[`displayProviderDialog()`](#dispProvDialog)回呼。 此回呼會指示您的應用程式建立UI，向使用者顯示可供選擇的MVPD清單。 提供了一系列MVPD物件，其中包含您建置MVPD選擇器所需的資訊。 每個MVPD物件都說明了一個MVPD實體，並包含MVPD的ID （例如XFINITY、AT\&amp;T等）和可以找到MVPD標誌的URL等資訊。
 1. 選取特定MVPD後，您的應用程式必須通知AccessEnabler使用者所做的選擇。 一旦使用者選取想要的MVPD，您就會透過呼叫[`setSelectedProvider()`](#setSelProv)方法通知AccessEnabler使用者選取範圍。
-1. iOS AccessEnabler會呼叫您的`navigateToUrl:`回呼或`navigateToUrl:useSVC:`回呼，以將使用者重新導向至MVPD登入頁面。 透過觸發其中一個，AccessEnabler會向您的應用程式發出要求，要求建立`UIWebView/WKWebView or SFSafariViewController`控制器並載入回呼`url`引數中提供的URL。 這是後端伺服器上驗證端點的URL。 對於tvOS AccessEnabler，會使用`statusDictionary`引數呼叫[status()](#status_callback_implementation)回呼，並立即開始輪詢第二個熒幕驗證。 `statusDictionary`包含需要用於第二個熒幕驗證的`registration code`。
+1. iOS AccessEnabler會呼叫您的`navigateToUrl:`回呼或`navigateToUrl:useSVC:`回呼，以將使用者重新導向至MVPD登入頁面。 透過觸發其中一個，AccessEnabler會向您的應用程式發出要求，要求建立`UIWebView/WKWebView or SFSafariViewController`控制器並載入回呼`url`引數中提供的URL。 這是後端伺服器上驗證端點的URL。 對於tvOS AccessEnabler，會使用[引數呼叫](#status_callback_implementation)status()`statusDictionary`回呼，並立即開始輪詢第二個熒幕驗證。 `statusDictionary`包含需要用於第二個熒幕驗證的`registration code`。
 1. 若是iOS AccessEnabler，使用者會登陸MVPD的登入頁面，透過應用程式`UIWebView/WKWebView or SFSafariViewController `控制器的媒體輸入其認證。 請注意，在此傳輸期間會發生數個重新導向作業，且您的應用程式必須監視控制器在多重重新導向作業期間載入的URL。
 1. 若是iOS AccessEnabler，當`UIWebView/WKWebView or SFSafariViewController`控制器載入特定自訂URL時，您的應用程式必須關閉控制器並呼叫AccessEnabler的`handleExternalURL:url `API方法。 請注意，這個特定自訂URL實際上無效，控制器並非打算實際載入此URL。 應用程式必須將其解譯為驗證流程已完成，且關閉`UIWebView/WKWebView or SFSafariViewController`控制器是安全的訊號。 如果您的應用程式需要使用`SFSafariViewController `控制器，則特定自訂URL是由`application's custom scheme`所定義（例如： `adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`），否則此特定自訂URL是由`ADOBEPASS_REDIRECT_URL`常數（即`adobepass://ios.app`）所定義。
 1. 在您的應用程式關閉`UIWebView/WKWebView or SFSafariViewController`控制器並呼叫AccessEnabler的`handleExternalURL:url `API方法後，AccessEnabler就會從後端伺服器擷取驗證權杖，並通知您的應用程式驗證流程已完成。 AccessEnabler以狀態碼1呼叫[`setAuthenticationStatus()`](#setAuthNStatus)回呼，表示成功。 如果在執行這些步驟期間發生錯誤，[`setAuthenticationStatus()`](#setAuthNStatus)回呼會以狀態碼0觸發，表示驗證失敗以及對應的錯誤碼。

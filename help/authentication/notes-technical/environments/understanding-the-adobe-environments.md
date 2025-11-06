@@ -15,9 +15,9 @@ ht-degree: 0%
 >
 >此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
-提供描述Adobe環境的官方檔案[在預備中設定您的環境並進行測試](/help/authentication/notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md)：
+有描述Adobe環境的官方檔案可用[在預備中設定您的環境和測試](/help/authentication/notes-technical/environments/setting-up-your-environment-and-testing-in-prequal.md)：
 
-Adobe環境，用幾個詞概括：
+Adobe環境，用幾個字概括：
 
 Adobe有兩個環境： **資格預審**&#x200B;和&#x200B;**版本**。
 

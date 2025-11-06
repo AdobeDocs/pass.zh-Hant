@@ -33,12 +33,12 @@ ht-degree: 0%
 
 | 平台/裝置 | SSO支援 | SSO型別 | MVPD涵蓋範圍 | 附註 |
 |:-------------------:|:-----------:|:---------------------------------------:|-----------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| 網頁(JavaScript) | 是 | 共用驗證Token (AdobeSSO) | 全部 | 無跨瀏覽器SSO請依照JavaScript程式設計師整合指南中的指示操作。 依照指示，SSO預設為啟用。  為每個要求者啟用驗證會中斷SSO |
-| iOS | 是 | 平台SSO — 權杖交換 | 根據Apple支援 — 清單列於此處 | 從iOS 10開始，Apple和Adobe為參與的程式設計人員和MVPD推出了SSO功能。 使用最新AdobeiOS SDK或使用Adobe的無使用者端REST API並實作Apple SSO功能，即可從iOS裝置上的SSO獲益。 此處提供SDK實作的詳細資訊，而此處提供無使用者端實作的詳細資訊。 額外附註： — 如果您不想要使用Apple SSO，那麼在可共用儲存空間和ID (IDFV)的相同廠商的應用程式（相同的套件ID）之間，您仍然可以有有限的SSO，因此SSO僅限於相同廠商的應用程式。 |
-| Android | 是 | 共用驗證Token (AdobeSSO) | 全部 | 如果使用者不接受WRITE_EXTERNAL_STORAGE許可權要求，程式庫將會使用本機沙箱儲存空間。 此案例的含意是，使用本機儲存裝置時，不同應用程式之間不會有SSO。 |
-| tvOS — 全新Apple TV | 是 | 平台SSO — 權杖交換 | 根據Apple支援 — 清單列於此處 | Apple和Adobe自tvOS 10開始匯入SSO功能，供參與程式設計師和MVPD使用。 使用最新AdobetvOS SDK或使用Adobe的無使用者端REST API並實作Apple SSO功能，您就能在tvOS裝置上從SSO獲益。 有關tvOS SDK的更多詳細資料：此處和此處，以及有關無使用者端實作的更多詳細資料。 |
-| Roku | 是 | 共用驗證Token (AdobeSSO) | 即將提供重要涵蓋範圍完整清單。 | Roku SSO可立即與無使用者端API搭配使用，適合所有遵守Roku指引的客戶，無需特殊實施。 SSO是以Roku安全傳送給Adobe的裝置識別資訊為基礎。 |
-| Amazon FireTV | 是 | 共用驗證Token (AdobeSSO) | 即將提供重要涵蓋範圍完整清單。 | FireTV SDK支援以Android功能為基礎的單一登入。 目前僅可在使用AdobeFireTV SDK的應用程式之間，使用此平台上的SSO。 如需有關全新FireTV SDK的詳細資訊，請參閱此處。 在Clienless API上實作的FireTV應用程式，將可於EOY 2018受益於SSO。 |
+| 網頁(JavaScript) | 是 | 共用驗證Token (Adobe SSO) | 全部 | 無跨瀏覽器SSO請依照JavaScript程式設計師整合指南中的指示操作。 依照指示，SSO預設為啟用。  為每個要求者啟用驗證會中斷SSO |
+| iOS | 是 | 平台SSO — 權杖交換 | 根據Apple支援 — 清單列於此處 | 從iOS 10開始，Apple和Adobe為參與的程式設計人員和MVPD推出了SSO功能。 使用最新Adobe iOS SDK或使用Adobe的無使用者端REST API並實作Apple SSO功能，即可從iOS裝置上的SSO獲益。 此處提供SDK實作的詳細資訊，而此處提供無使用者端實作的詳細資訊。 額外附註： — 如果您不想要使用Apple SSO，那麼在可共用儲存空間和ID (IDFV)的相同廠商的應用程式（相同的套件ID）之間，您仍然可以有有限的SSO，因此SSO僅限於相同廠商的應用程式。 |
+| Android | 是 | 共用驗證Token (Adobe SSO) | 全部 | 如果使用者不接受WRITE_EXTERNAL_STORAGE許可權要求，程式庫將會使用本機沙箱儲存空間。 此案例的含意是，使用本機儲存裝置時，不同應用程式之間不會有SSO。 |
+| tvOS — 全新Apple TV | 是 | 平台SSO — 權杖交換 | 根據Apple支援 — 清單列於此處 | Apple和Adobe自tvOS 10開始匯入SSO功能，供參與程式設計師和MVPD使用。 使用最新Adobe tvOS SDK或使用Adobe的無使用者端REST API並實作Apple SSO功能，您就能在tvOS裝置上從SSO獲益。 有關tvOS SDK的更多詳細資料：此處和此處，以及有關無使用者端實作的更多詳細資料。 |
+| Roku | 是 | 共用驗證Token (Adobe SSO) | 即將提供重要涵蓋範圍完整清單。 | Roku SSO可立即與無使用者端API搭配使用，適合所有遵守Roku指引的客戶，無需特殊實施。 SSO是根據Roku安全傳送至Adobe的裝置識別資訊。 |
+| Amazon FireTV | 是 | 共用驗證Token (Adobe SSO) | 即將提供重要涵蓋範圍完整清單。 | FireTV SDK支援以Android功能為基礎的單一登入。 目前僅可在使用Adobe FireTV SDK的應用程式之間，使用此平台上的SSO。 如需有關全新FireTV SDK的詳細資訊，請參閱此處。 在Clienless API上實作的FireTV應用程式，將可於EOY 2018受益於SSO。 |
 | Xbox 360 | 否 |                                         |                                                     | 沒有可用的裝置ID。 應用程式ID已存在，因此使用者不必每次都驗證。 |
 | Xbox One | 否 |                                         |                                                     | 沒有可用的裝置ID。 應用程式ID已存在，因此使用者不必每次都驗證。 |
 | Windows 8/10 | 否 |                                         |                                                     | 沒有可用的裝置ID。 應用程式ID已存在，因此使用者不必每次都驗證。 |
@@ -46,7 +46,7 @@ ht-degree: 0%
 
 ### Xbox 360和Xbox One的注意事項 {#notes-xbox-360}
 
-* **Xbox 360**- Xbox 360仰賴Live Service提供內嵌deviceID的權杖。 Live Service會圖層顯示於deviceID的appID值中，使其範圍僅限定在應用程式中。 對於Xbox 360，Microsoft提供了Adobe Java程式庫來協助剖析權杖。
+* **Xbox 360**- Xbox 360仰賴Live Service提供內嵌deviceID的權杖。 Live Service會圖層顯示於deviceID的appID值中，使其範圍僅限定在應用程式中。 對於Xbox 360，Microsoft已提供Adobe一個Java程式庫來協助剖析權杖。
 
 * **Xbox One** — 將發行JSON Web權杖，以發行者的憑證/金鑰加密，並由Microsoft簽署。 Adobe會從名為DPI （裝置配對ID）的引數擷取deviceID，此引數與Xbox 360引數PDID （合作夥伴裝置ID）不同。 PDID也存在於Xbox One中，但此新引數「Device Pairwise ID」(DPI)將取代。
 
@@ -60,7 +60,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->無使用者端API SSO的重要注意事項：有些MVPD會要求每個網路（要求者ID）執行自己的驗證流程。 對於以SDK為基礎的流程(iOS等)，這會由SDK自動處理。 不過，針對無使用者端API，這必須由程式設計師處理。 我們強烈建議程式設計師此時不要為無使用者端API啟用SSO流程，而是將裝置ID +應用程式ID組合用於裝置ID。 Adobe也將致力於改善無使用者端API流程，以便建立適當的SSO。
+>無使用者端API SSO的重要注意事項：有些MVPD會要求每個網路（要求者ID）執行自己的驗證流程。 對於以SDK為基礎的流程(iOS等)，這會由SDK自動處理。 不過，針對無使用者端API，這必須由程式設計師處理。 我們強烈建議程式設計師此時不要為無使用者端API啟用SSO流程，而是將裝置ID +應用程式ID組合用於裝置ID。 Adobe也將改善無使用者端API流程，以便建立正確的SSO。
 
 ### 登出 {#logout-sso-support}
 

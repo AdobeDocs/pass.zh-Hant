@@ -4,7 +4,7 @@ description: 註冊頁面
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '516'
+source-wordcount: '509'
 ht-degree: 0%
 
 ---
@@ -53,7 +53,7 @@ ht-degree: 0%
 | Accept | 標頭<br>值： application/json | 指出使用者端應該能夠瞭解的內容型別 |
 | 要求者 | 查詢引數 | 此作業有效的程式設計師要求者ID。 |
 | deviceId | 查詢引數 | 裝置識別碼位元組。 |
-| device_info/<br>X-Device-Info | device_info：內文<br> X-Device-Info：標頭 | 串流裝置資訊。<br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數的潛在大小以及GETURL長度的限制，它應該作為X-Device-Info傳遞到http標頭。 <br>檢視[傳遞裝置和連線資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
+| device_info/<br>X-Device-Info | device_info：內文<br> X-Device-Info：標頭 | 串流裝置資訊。<br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數的潛在大小以及GET URL長度的限制，它應該作為X-Device-Info傳遞到http標頭。 <br>檢視[傳遞裝置和連線資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
 | mvpd | 查詢引數 | 此操作有效的MVPD ID。 |
 | ttl | 查詢引數 | 此regcode應在秒記憶體留多久。<br>**注意**： ttl允許的最大值為36000秒（10小時）。 較高的值會導致400 HTTP回應（錯誤請求）。 如果`ttl`留空，Adobe Pass驗證會設定30分鐘的預設值。 |
 | _deviceType_ | 查詢引數 | 已棄用，不應使用。 |
@@ -81,7 +81,7 @@ ht-degree: 0%
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20
 >```
 >
-><br>
+<br>
 
 ### 回應JSON
 
@@ -122,12 +122,12 @@ ht-degree: 0%
 | 已產生 | 註冊代碼建立時間戳記（自1970年1月1日GMT起以毫秒為單位） |
 | 過期 | 註冊代碼過期的時間戳記（自1970年1月1日以來以毫秒為單位GMT） |
 | deviceId | Base64唯一裝置識別碼 |
-| info：deviceId | Base64裝置型別 |
-| info：deviceInfo | Base64標準化裝置資訊建置在從使用者代理程式、X-Device-Info或device_info收到的資訊上 |
-| info：userAgent | 應用程式傳送的使用者代理 |
-| info：originalUserAgent | 應用程式傳送的使用者代理 |
-| info：authorizationType | 使用DCR的呼叫的OAUTH2 |
-| info：sourceApplicationInformation | DCR中設定的應用程式資訊 |
+| 資訊:deviceId | Base64裝置型別 |
+| 資訊:deviceInfo | Base64標準化裝置資訊建置在從使用者代理程式、X-Device-Info或device_info收到的資訊上 |
+| 資訊:userAgent | 應用程式傳送的使用者代理 |
+| 資訊:originalUserAgent | 應用程式傳送的使用者代理 |
+| 資訊:authorizationType | 使用DCR的呼叫的OAUTH2 |
+| 資訊:sourceApplicationInformation | DCR中設定的應用程式資訊 |
 
 {style="table-layout:auto"}
 

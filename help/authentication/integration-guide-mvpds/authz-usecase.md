@@ -1,6 +1,6 @@
 ---
-title: MVPD授權
-description: MVPD授權
+title: MVPD Authorization
+description: MVPD Authorization
 exl-id: 215780e4-12b6-4ba6-8377-4d21b63b6975
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# MVPD授權
+# MVPD Authorization
 
 >[!NOTE]
 >
@@ -23,9 +23,9 @@ ht-degree: 0%
 
 * **Uid**。 從驗證步驟收到的使用者ID。
 
-* **資源識別碼**。 識別指定內容資源的字串。 這個資源ID是由程式設計師指定的，且MVPD必須增強這些資源的商業規則（例如，透過檢查使用者是否已訂閱特定通道）。
+* **資源識別碼**。 識別指定內容資源的字串。 此資源ID由程式設計師指定，MVPD必須增強這些資源的商業規則（例如，透過檢查使用者是否已訂閱特定頻道）。
 
-除了判斷使用者是否獲得授權外，回應必須包括此授權的存留時間(TTL)，即授權到期時。 如果未設定TTL，AuthZ要求將會失敗。  因此，**TTL是Adobe Pass驗證端**&#x200B;的必要組態設定，以涵蓋MVPD在其要求中未包含TTL的情況。
+除了判斷使用者是否獲得授權外，回應必須包括此授權的存留時間(TTL)，即授權到期時。 如果未設定TTL，AuthZ要求將會失敗。  因此，**TTL是Adobe Pass Authentication端**&#x200B;的必要組態設定，以涵蓋MVPD在其要求中未包含TTL的情況。
 
 ## 授權要求 {#authz-req}
 
@@ -40,7 +40,7 @@ AuthZ要求必須包含代表其提出要求的主體、主體嘗試存取的資
 
 
 
-此時SP必須準備XACML Authorization DecisionQuery並(透過HTTPPOST)將其傳送到（先前同意的）原則決定點(PDP)以進行IdP。 以下是簡單XACML請求的範例（請參閱XACML核心規格）：
+此時SP必須準備XACML Authorization DecisionQuery並（透過HTTP POST）將其傳送到（先前同意的）原則決定點(PDP)以進行IdP。 以下是簡單XACML請求的範例（請參閱XACML核心規格）：
 
 ```XML
 POST https://authz.site.com/XACML_endpoint
@@ -80,11 +80,11 @@ http://docs.oasis-open.org/xacml/access_control-xacml-2.0-context-schema-os.xsd"
 ```
 
 
-在收到AuthZ要求之後，MVPD的PDP會評估要求並決定是否應允許主體在資源上執行要求的動作。 然後MVPD會傳回包含決定、狀態代碼和訊息的回應，如下面的授權回應所述。
+收到AuthZ請求後，MVPD的PDP會評估請求，並決定是否應允許主體對資源執行請求的動作。 MVPD接著會傳回包含決定、狀態代碼和訊息的回應，如下面的授權回應所述。
 
 ## 授權回應 {#authz-response}
 
-對AuthZ要求的回應是在MVPD評估要求並套用要求的商業規則以判斷是否允許主體在資源上執行要求的動作之後作出。 針對Adobe Pass驗證傳回的回應會再次以XACML核心規格表示，並附上SP作為原則執行點(PEP)的決定、狀態代碼、訊息和義務。 以下是範例回應：
+對AuthZ要求的回應會在MVPD評估要求並套用要求的商業規則以判斷是否允許主體在資源上執行要求的動作之後作出。 針對Adobe Pass驗證傳回的回應會再次以XACML核心規格表示，並附上SP作為原則執行點(PEP)的決定、狀態代碼、訊息和義務。 以下是範例回應：
 
 ```XML
 <Response xmlns="urn:oasis:names:tc:xacml:2.0:context:schema:os">

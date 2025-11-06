@@ -27,14 +27,14 @@ ht-degree: 0%
    * 專案標題
    * 資源識別碼
    * 評等值和型別
-1. 從MRSS擷取的值會用於建立傳遞給MVPD的授權要求。
+1. 從MRSS擷取的值用於建立傳遞給MVPD的授權請求。
 
 Adobe Pass驗證支援兩種將MRSS轉譯為MVPD所支援格式的方法：
 
 * **XACML**。  第一種方式符合OLCA標準。  它使用XACML，其中會擷取MRSS值，以建置具有對應至MRSS元素的屬性的XACMLResource。  然後傳遞至MVPD。
 * **重設**。  第二種方法是以REST為基礎。  MRSS會進行base64編碼，並作為REST呼叫上的URL引數傳遞。
 
-在這兩種方法中，MVPD都透過將擷取的值包含在其自己的邏輯流程中並傳回授權回應來處理授權請求。
+在這兩種方法中，MVPD都會將擷取的值納入自身的邏輯流程中，並傳回授權回應，以處理授權請求。
 
 ## 整合詳細資訊 {#integration-details}
 

@@ -39,7 +39,7 @@ ht-degree: 0%
 
 如需詳細資訊，請參閱[動態使用者端註冊概觀](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)檔案。
 
-#### 2. 「註冊階段」是否為必要？ {#rest-api-v2-access-faq2}
+#### &#x200B;2. 「註冊階段」是否為必要？ {#rest-api-v2-access-faq2}
 
 註冊階段是強制性的，但如果使用者端應用程式具有快取的使用者端憑證對和仍然有效的存取權杖，則可以跳過此階段。
 

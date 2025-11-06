@@ -95,7 +95,7 @@ _(*)建議整合提供瀏覽器或裝置指紋識別機制的程式庫或服務�
 
 #### iOS和iPadOS {#ios-ipados}
 
-若要為執行[iOS或iPadOS](https://developer.apple.com/documentation/ios-ipados-release-notes)的裝置建置`AP-Device-Identifier`標題，您可以參考下列檔案：
+若要為執行`AP-Device-Identifier`iOS或iPadOS[的裝置建置](https://developer.apple.com/documentation/ios-ipados-release-notes)標題，您可以參考下列檔案：
 
 * [identifierForVendor](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor)的Apple開發人員檔案。
 
@@ -103,7 +103,7 @@ _(*)建議在作業系統提供的值上套用SHA-256雜湊函式。_
 
 #### Android {#android}
 
-若要為執行[Android](https://developer.android.com/about/versions)的裝置建置`AP-Device-Identifier`標頭，您可以參考下列檔案：
+若要為執行`AP-Device-Identifier`Android[的裝置建置](https://developer.android.com/about/versions)標頭，您可以參考下列檔案：
 
 * [ANDROID_ID](https://developer.android.com/reference/android/provider/Settings.Secure#ANDROID_ID)的Android開發人員檔案。
 
@@ -113,7 +113,7 @@ _(*)建議在作業系統提供的值上套用SHA-256雜湊函式。_
 
 #### tvOS {#tvos}
 
-若要為執行[tvOS](https://developer.apple.com/documentation/tvos-release-notes)的裝置建置`AP-Device-Identifier`標題，您可以參考下列檔案：
+若要為執行`AP-Device-Identifier`tvOS[的裝置建置](https://developer.apple.com/documentation/tvos-release-notes)標題，您可以參考下列檔案：
 
 * [identifierForVendor](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor)的Apple開發人員檔案。
 
@@ -121,7 +121,7 @@ _(*)建議在作業系統提供的值上套用SHA-256雜湊函式。_
 
 #### Fire OS {#fireos}
 
-若要為執行[Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html)的裝置建置`AP-Device-Identifier`標頭，您可以參考下列檔案：
+若要為執行`AP-Device-Identifier`Fire OS[的裝置建置](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html)標頭，您可以參考下列檔案：
 
 * [ANDROID_ID](https://developer.android.com/reference/android/provider/Settings.Secure#ANDROID_ID)的Android開發人員檔案。
 
@@ -129,7 +129,7 @@ _(*)建議在作業系統提供的值上套用SHA-256雜湊函式。_
 
 #### Roku OS {#rokuos}
 
-若要為執行[Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md)的裝置建置`AP-Device-Identifier`標題，您可以參考下列檔案：
+若要為執行`AP-Device-Identifier`Roku OS[的裝置建置](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md)標題，您可以參考下列檔案：
 
 * [GetChannelClientId](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md#getchannelclientid-as-string)的Roku開發人員檔案。
 

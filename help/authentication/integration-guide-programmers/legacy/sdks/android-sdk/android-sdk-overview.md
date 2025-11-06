@@ -60,7 +60,7 @@ AccessEnabler支援的所有權益工作流程都假設您先前已呼叫[`setRe
 1. AccessEnabler決定目前的驗證狀態。 如果使用者目前已經驗證，AccessEnabler會呼叫您的`setAuthenticationStatus()`回呼函式，傳遞表示成功的驗證狀態（下方的步驟7）。
 1. 如果使用者未驗證，AccessEnabler會判斷使用者的上次驗證嘗試在指定的MVPD中是否成功，以繼續驗證流程。 如果已快取MVPD ID且`canAuthenticate`旗標為true或使用[`setSelectedProvider()`](#setSelectedProvider)選取了MVPD，則不會使用MVPD選取對話方塊提示使用者。 驗證流程會繼續使用MVPD的快取值(即上次成功驗證期間使用的MVPD)。 系統會呼叫後端伺服器的網路，並將使用者重新導向至MVPD登入頁面（下方的步驟6）。
 1. 如果未快取任何MVPD ID，而且未使用[`setSelectedProvider()`](#setSelectedProvider)選取任何MVPD，或`canAuthenticate`標幟設定為false，則會呼叫[`displayProviderDialog()`](#displayProviderDialog)回呼。 此回呼會引導您的頁面或播放器建立UI，向使用者顯示可從中進行選擇的MVPD清單。 提供了一系列MVPD物件，其中包含您建置MVPD選擇器所需的資訊。 每個MVPD物件都說明MVPD實體，並包含MVPD的ID （例如XFINITY、AT\&amp;T等）和可以找到MVPD標誌的URL等資訊。
-1. 選取特定MVPD後，您的頁面或播放器必須通知AccessEnabler使用者的選擇。 對於非Flash使用者端，一旦使用者選取想要的MVPD，您就會透過呼叫[`setSelectedProvider()`](#setSelectedProvider)方法通知AccessEnabler使用者選取範圍。 Flash使用者端改為分派型別&quot;`mvpdSelection`&quot;的共用`MVPDEvent`，傳遞選取的提供者。
+1. 選取特定MVPD後，您的頁面或播放器必須通知AccessEnabler使用者的選擇。 對於非Flash使用者端，一旦使用者選取想要的MVPD，您就會透過呼叫[`setSelectedProvider()`](#setSelectedProvider)方法通知AccessEnabler使用者選取範圍。 Flash使用者端改為分派型別&#39;&#39;`MVPDEvent`&#39;&#39;的共用`mvpdSelection`，傳遞選取的提供者。
 1. 針對Android應用程式，如果com.android.chrome可供使用，則驗證URL將會載入Chrome自訂標籤中。
 1. 透過Chrome自訂標籤，使用者到達MVPD的登入頁面並輸入其認證。 請注意，在此傳輸期間會發生數個重新導向作業。
 1. 當Chrome自訂標籤偵測到URL符合結構(adobepass://)和資源「redirect\_uri」(亦即adobepass://com.adobepass )的深層連結時，AccessEnabler會從後端伺服器擷取實際的驗證Token。 請注意，最終重新導向URL實際上無效，且不可供Chrome自訂標籤實際載入。 它們只能由SDK解譯為驗證流程已完成的訊號。
@@ -72,7 +72,7 @@ AccessEnabler支援的所有權益工作流程都假設您先前已呼叫[`setRe
 
 
 
-**注意：**&#x200B;從一名程式設計師/MVPD工作階段登出將會清除
+**注意：**從一名程式設計師/MVPD工作階段登出將會清除
 該特定MVPD的基礎儲存空間，包括所有
 透過SSO取得的其他程式設計師驗證權杖
 該裝置。 為其他MVPD取得或未透過SSO取得的權杖不會

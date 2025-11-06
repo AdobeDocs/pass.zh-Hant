@@ -4,7 +4,7 @@ description: 依第二熒幕Web應用程式檢查驗證流程
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '234'
+source-wordcount: '232'
 ht-degree: 0%
 
 ---
@@ -44,7 +44,7 @@ ht-degree: 0%
 
 | 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| SP_FQDN/api/v1/checkauthn/{註冊代碼} | 登入網頁應用程式 | 1.註冊代碼</br>    （路徑元件）</br>2。  要求者</br>    （必要） | GET | XML或JSON包含失敗時的錯誤詳細資料。 | 200 — 成功   </br>403 — 禁止 |
+| SP_FQDN/api/v1/checkauthn/{registration code} | 登入網頁應用程式 | 1.註冊代碼</br>    （路徑元件）</br>2。  要求者</br>    （必要） | GET | XML或JSON包含失敗時的錯誤詳細資料。 | 200 — 成功   </br>403 — 禁止 |
 
 </br>
 

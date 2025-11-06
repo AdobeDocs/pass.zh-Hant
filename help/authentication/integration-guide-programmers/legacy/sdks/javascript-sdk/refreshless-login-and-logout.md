@@ -77,9 +77,9 @@ AccessEnabler的登出API會清除程式庫的本機狀態，並在目前索引�
 
 >[!NOTE]
 >
->改良的無重新整理登入和登出流程需要瀏覽器支援現代化的HTML5技術，包括網頁傳訊。
+>改良的免重新整理登入和登出流程需要瀏覽器支援現代化的HTML5技術，包括網頁傳訊。
 
-上述的驗證（登入）和登出流程都可在每個流程完成後重新載入首頁面，以提供類似的使用者體驗。  目前的功能旨在透過提供不需重新整理（背景）的登入和登出來改善使用者體驗。 程式設計師可以透過將兩個布林值旗標（`backgroundLogin`和`backgroundLogout`）傳遞給`setRequestor` API的`configInfo`引數來啟用/停用背景登入和登出。 預設會停用背景登入/登出（提供與先前實作的相容性）。
+上述的驗證（登入）和登出流程都可在每個流程完成後重新載入首頁面，以提供類似的使用者體驗。  目前的功能旨在透過提供不需重新整理（背景）的登入和登出來改善使用者體驗。 程式設計師可以透過將兩個布林值旗標（`backgroundLogin`和`backgroundLogout`）傳遞給`configInfo` API的`setRequestor`引數來啟用/停用背景登入和登出。 預設會停用背景登入/登出（提供與先前實作的相容性）。
 
 **範例：**
 
@@ -96,7 +96,7 @@ AccessEnabler的登出API會清除程式庫的本機狀態，並在目前索引�
 
 以下幾點說明原始驗證流程和改進流程之間的轉換：
 
-1. 全頁重新導向功能將由執行MVPD登入的全新瀏覽器標籤取代。 當使用者選取MVPD （具有`iFrameRequired = false`）時，程式設計師必須建立名為`mvpdwindow`的新索引標籤（透過`window.open`）。 程式設計師接著執行`setSelectedProvider(<mvpd>)`，允許AccessEnabler在新標籤中載入MVPD登入URL。 使用者提供有效認證後，Adobe Pass驗證將關閉索引標籤，並將window.postMessage傳送至程式設計師的網站，以通知AccessEnabler驗證流程已完成。 系統會觸發下列回呼：
+1. 全頁重新導向功能將由執行MVPD登入的全新瀏覽器標籤取代。 當使用者選取MVPD （具有`window.open`）時，程式設計師必須建立名為`mvpdwindow`的新索引標籤（透過`iFrameRequired = false`）。 程式設計師接著執行`setSelectedProvider(<mvpd>)`，允許AccessEnabler在新標籤中載入MVPD登入URL。 使用者提供有效認證後，Adobe Pass驗證將關閉索引標籤，並將window.postMessage傳送至程式設計師的網站，以通知AccessEnabler驗證流程已完成。 系統會觸發下列回呼：
 
    - 如果流程是由`getAuthentication`起始： `setAuthenticationStatus`且會觸發`sendTrackingData(AUTHENTICATION_DETECTION...)`以表示驗證成功/失敗。
 

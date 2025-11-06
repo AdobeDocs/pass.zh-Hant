@@ -1,7 +1,8 @@
 ---
 title: 動態使用者端註冊(DCR)字彙表
 description: 動態使用者端註冊(DCR)字彙表
-source-git-commit: 5622cad15383560e19e8111f12a1460e9b118efe
+exl-id: 4ce67fa5-b0e5-4967-b83d-c682426d9329
+source-git-commit: ae02f53afc58b7d31f57bcc1e4dd1328f12abc3e
 workflow-type: tm+mt
 source-wordcount: '299'
 ht-degree: 0%
@@ -38,7 +39,7 @@ ht-degree: 0%
 
 自訂配置是參考[程式設計員](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#programmer)應用程式的唯一值，可從Adobe Pass [TVE儀表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)產生並下載，且可在iOS裝置上執行的應用程式中作為最終重新導向。
 
-### 第天{#d}
+### D {#d}
 
 #### DCR {#dcr}
 

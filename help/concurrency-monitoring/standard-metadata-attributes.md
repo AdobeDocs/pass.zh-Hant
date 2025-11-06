@@ -79,7 +79,7 @@ Concurrency Monitoring API強制使用者端傳送下列值做為任何有效初
    * 單一裝置型別不超過X個使用中串流： `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
    * 即時內容資料流的有效資料流不超過X個： `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
 
-請在Zendesk[&#128279;](mailto:tve-support@adobe.com)中建立票證，連絡並行監視小組，並指示您要實作哪些原則。
+請在Zendesk[中建立票證](mailto:tve-support@adobe.com)，連絡並行監視小組，並指示您要實作哪些原則。
 
 您可在下列中找到更多原則和整合Cookbook範例：
 

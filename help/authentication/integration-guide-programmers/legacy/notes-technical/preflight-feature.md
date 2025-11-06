@@ -25,12 +25,12 @@ PreAuthorization API的外部介面未變更，程式設計師的應用程式中
 預檢資源的計算方式有三種：
 
 * **將方法分叉並加入MVPD**：這涉及Adobe對MVPD進行多次授權呼叫（使用者端仍須進行一個預檢呼叫）。
-* **頻道組合**： MVPD會在SAML驗證回應中公開登入使用者的頻道組合，且Adobe會據此傳回授權資源。 SAML追蹤器中的SAML authN回應應該會公開該清單。
-* **多管道授權**：使用者端和Adobe授權兩者都會針對一組資源對MVPD發出單一呼叫。
+* **頻道組合**： MVPD會在SAML驗證回應中公開登入使用者的頻道組合，Adobe會據此傳回授權資源。 SAML追蹤器中的SAML authN回應應該會公開該清單。
+* **多管道授權**：使用者端和Adobe驗證都會針對一組資源對MVPD發出單一呼叫。
 
 不論MVPD為何，使用者端應用程式都會對預檢端點(checkPreauthorizedResources API)進行單一呼叫，並傳遞一組資源ID。 根據MVPD支援的上述方法之一，Adobe將傳回預先授權的resourceID。
 
-如果Preflight是以fork &amp; join方法為基礎，則Adobe Pass驗證後端會檢查其設定中「最大預先授權呼叫」的值集。 這是由Adobe設定。
+如果Preflight是以fork &amp; join方法為基礎，則Adobe Pass驗證後端會檢查其設定中「最大預先授權呼叫」的值集。 這項設定是由Adobe所設定。
 
 「最大預先授權呼叫」設定的預設值為「5」，這表示在分叉及加入MVPD的Preflight中最多只能傳送5個資源。 傳遞超過5個資源會產生例外狀況，並會傳回null清單。 這是預期行為。 如果MVPD不支援管道排列或多管道授權，我們可以將此設定為任何值，但必須諮詢他們是否為多個分支和加入授權呼叫會增加其載入時間。
 

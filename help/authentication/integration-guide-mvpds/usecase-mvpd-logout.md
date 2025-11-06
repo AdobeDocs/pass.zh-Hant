@@ -1,6 +1,6 @@
 ---
-title: mvpd登出
-description: mvpd登出
+title: MVPD登出
+description: MVPD登出
 exl-id: a2b57d02-9688-48e3-beff-1012cd361d0c
 source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
@@ -9,7 +9,7 @@ ht-degree: 0%
 
 ---
 
-# mvpd登出
+# MVPD登出
 
 >[!NOTE]
 >

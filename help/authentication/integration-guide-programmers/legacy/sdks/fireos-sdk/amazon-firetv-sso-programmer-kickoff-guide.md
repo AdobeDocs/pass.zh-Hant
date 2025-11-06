@@ -27,7 +27,7 @@ ht-degree: 0%
 
 ## 高階架構與作業系統層級的整合 {#high}
 
-為了在Amazon fireTV平台上的TV Everywhere應用程式之間達成單一登入，並改善此平台的整體體驗，我們決定在fireTV OS層級整合我們的核心SDK。 程式設計師必須針對Adobe提供的Stub程式庫進行編譯。 Amazon的fireTV OS中的Adobe程式庫將提供實際功能。
+為了在Amazon fireTV平台上的TV Everywhere應用程式之間達成單一登入，並改善此平台的整體體驗，我們決定在fireTV OS層級整合我們的核心SDK。 程式設計師必須根據Adobe提供的Stub程式庫進行編譯。 實際功能將由Adobe在Amazon fireTV OS中的程式庫提供。
 
 在Amazon提供fireTV模擬器來整合我們的作業系統層級程式庫之前，您只能使用真正的fireTV裝置進行開發。
 

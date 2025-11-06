@@ -136,7 +136,7 @@ Amazon SSO SDK提供同步和非同步API來取得SSO權杖（平台身分）裝
 確認串流應用程式正在處理：
 
 * 缺少應在Amazon裝置上執行的Amazon隨附應用程式。
-   * 串流應用程式在執行階段可能遇到下列類別`com.amazon.ottssotokenlib.SSOEnabler`的`ClassNotFoundException`。
+   * 串流應用程式在執行階段可能遇到下列類別`ClassNotFoundException`的`com.amazon.ottssotokenlib.SSOEnabler`。
 
 * 缺少上述API應傳回的SSO權杖（平台身分）裝載。
    * 串流應用程式可能會聯絡Amazon和Adobe代表進行調查。

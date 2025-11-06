@@ -95,7 +95,7 @@ ht-degree: 0%
 
 伺服器回應包含MVPD清單，以及附加至程式設計師身分的一些設定資訊。 伺服器回應由Access Enabler程式碼內部使用。 只有作業的狀態（即SUCCESS/FAIL）會透過setRequestorComplete()回呼顯示給應用程式。
 
-如果未使用&#x200B;*url*&#x200B;引數，則產生的網路呼叫會鎖定預設服務提供者URL：Adobe發行/生產環境。
+如果未使用&#x200B;*url*&#x200B;引數，則產生的網路呼叫會鎖定預設服務提供者URL： Adobe Release/Production環境。
 
 如果提供&#x200B;*url*&#x200B;引數的值，則產生的網路呼叫會鎖定&#x200B;*url*&#x200B;引數中提供的所有URL。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD，「存取啟用程式」會記住關聯服務提供者的URL。 所有後續的軟體權利檔案請求都會導向在設定階段與目標MVPD配對之服務提供者相關聯的URL。
 
@@ -117,7 +117,7 @@ ht-degree: 0%
 **引數：**
 
 - *requestorID*：與程式設計師相關聯的唯一識別碼。 首次向Adobe Pass驗證服務註冊時，請將Adobe指派的唯一ID傳遞至您的網站。
-- *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 若這麼做，MVPD清單將由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是說，第一個回應並支援該MVPD的提供者。
+- *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的例項可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 若這麼做，MVPD清單將由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是說，第一個回應並支援該MVPD的提供者。
 
 已觸發&#x200B;**回呼：** `setRequestorComplete()`
 
@@ -175,7 +175,7 @@ ht-degree: 0%
 
 - *選項*：包含全域SDK選項的對應\&lt;字串，字串\>。 目前提供下列選項：
    - **applicationProfile** — 它可用來根據這個值設定伺服器組態。
-   - **ap\_vi** -Experience Cloud識別碼服務。 此值稍後可用於進階分析報表。
+   - **ap\_vi** - Experience Cloud ID服務。 此值稍後可用於進階分析報表。
    - **device\_info** — 裝置資訊，如&#x200B;**傳遞裝置資訊逐步指南**&#x200B;中所述
 
 </br>
@@ -260,7 +260,7 @@ ht-degree: 0%
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **引數：**&#x200B;無
 
@@ -355,7 +355,7 @@ ht-degree: 0%
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **引數：** `resources`引數是使用者已被授權檢視的資源陣列。
 
@@ -427,7 +427,7 @@ ht-degree: 0%
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **引數：**
 
@@ -529,7 +529,7 @@ ht-degree: 0%
 - *metadataKey*：封裝索引鍵和args變數的資料結構，其含義如下：
    - 如果金鑰為`METADATA_KEY_TTL_AUTHN`，則會進行查詢以取得驗證權杖到期時間。
    - 如果索引鍵是`METADATA_KEY_TTL_AUTHZ`，而且引數包含名稱= `METADATA_ARG_RESOURCE_ID`且值= `[resource_id]`的SerializableNameValuePair物件，則會進行查詢以取得與指定資源關聯的授權權杖的到期時間。
-   - 如果索引鍵是`METADATA_KEY_DEVICE_ID`，則會進行查詢以取得目前的裝置識別碼。 請注意，此功能預設為停用，程式設計師應聯絡Adobe以取得有關啟用和費用的資訊。
+   - 如果索引鍵是`METADATA_KEY_DEVICE_ID`，則會進行查詢以取得目前的裝置識別碼。 請注意，此功能預設為停用，程式設計師應聯絡Adobe瞭解啟用和費用相關資訊。
    - 如果索引鍵是`METADATA_KEY_USER_META`，而且引數包含名稱= `METADATA_KEY_USER_META`且值= `[metadata_name]`的SerializableNameValuePair物件，則會針對使用者中繼資料進行查詢。 目前可用的使用者中繼資料型別清單：
       - `zip` — 郵遞區號
       - `householdID` — 家庭識別碼。 如果MVPD不支援附屬帳戶，這與`userID`相同。
@@ -625,7 +625,7 @@ Access Enabler會觸發其他回呼，而此回呼不一定與權益流程相關
 
 >[!WARNING]
 >
-> 裝置型別和作業系統衍生自使用公用Java程式庫(http://java.net/projects/user-agent-utils)和使用者代理字串。 請注意，此資訊僅以粗略的方式提供，以將運作量度劃分為裝置類別，但該Adobe對於錯誤結果概不負責。 請據以使用新功能。
+> 裝置型別和作業系統衍生自使用公用Java程式庫(http://java.net/projects/user-agent-utils)和使用者代理字串。 請注意，此資訊僅以粗略的方式提供，以將營運量度劃分為裝置類別，但Adobe對於錯誤結果概不負責。 請據以使用新功能。
 
 - 裝置型別的可能值：
    - `computer`

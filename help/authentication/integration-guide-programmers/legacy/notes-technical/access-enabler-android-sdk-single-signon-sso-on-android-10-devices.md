@@ -4,7 +4,7 @@ description: Android 10應用程式上的Access Enabler Android SDK單一登入(
 exl-id: dedade15-c451-4757-b684-d3728e11dd87
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '401'
 ht-degree: 0%
 
 ---
@@ -29,11 +29,11 @@ ht-degree: 0%
 
 ## 行為
 
-根據您應用程式的&#x200B;**[!UICONTROL target SDK level]**&#x200B;或&#x200B;**android：requestLegacyExternalStorage**&#x200B;資訊清單屬性的使用情況，Access Enabler Android 3.2.1版SDK （最新）和舊版所提供的單一登入(SSO)目前會依下列方式執行：
+根據您應用程式的&#x200B;**[!UICONTROL target SDK level]**&#x200B;或&#x200B;**android:requestLegacyExternalStorage**&#x200B;資訊清單屬性的使用情況，Access Enabler Android 3.2.1版SDK （最新）和舊版所提供的單一登入(SSO)目前會遵循以下行為：
 
 - 您的應用程式目標為&#x200B;**Android 9 （API層級28）**&#x200B;或更低的&#x200B;**-\>**&#x200B;單一登入(SSO) **將可運作**
 - 您的應用程式以&#x200B;**Android 10** **（API層級29）**&#x200B;為目標，並將&#x200B;**將**&#x200B;應用程式資訊清單檔案&#x200B;**-\>**&#x200B;單一登入(SSO) **中的** requestLegacyExternalStorage值設定為true **將可運作**
-- 您的應用程式以&#x200B;**Android 10** **（API層級29）**&#x200B;為目標，且&#x200B;**未將**&#x200B;應用程式資訊清單檔案&#x200B;**-\>**&#x200B;單一登入(SSO) **中的** requestLegacyExternalStorage值設定為true **&#x200B;**&#x200B;將無法運作
+- 您的應用程式以&#x200B;**Android 10** **（API層級29）**&#x200B;為目標，且&#x200B;**未將**&#x200B;應用程式資訊清單檔案&#x200B;**-\>**&#x200B;單一登入(SSO) **中的** requestLegacyExternalStorage值設定為true ****&#x200B;將無法運作
 
 >[!TIP]
 >

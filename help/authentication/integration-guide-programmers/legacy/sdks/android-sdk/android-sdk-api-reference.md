@@ -86,7 +86,7 @@ ht-degree: 0%
 
 伺服器回應包含MVPD清單，以及附加至程式設計師身分的一些設定資訊。 伺服器回應由Access Enabler程式碼內部使用。 只有作業的狀態（即SUCCESS/FAIL）會透過setRequestorComplete()回呼顯示給應用程式。
 
-如果未使用&#x200B;*url*&#x200B;引數，則產生的網路呼叫會鎖定預設服務提供者URL：Adobe發行/生產環境。
+如果未使用&#x200B;*url*&#x200B;引數，則產生的網路呼叫會鎖定預設服務提供者URL： Adobe Release/Production環境。
 
 如果提供&#x200B;*url*&#x200B;引數的值，則產生的網路呼叫會鎖定&#x200B;*url*&#x200B;引數中提供的所有URL。 所有設定請求都在不同的執行緒中同時觸發。 第一個回應者在編譯MVPD清單時優先。 對於清單中的每個MVPD，「存取啟用程式」會記住關聯服務提供者的URL。 所有後續的軟體權利檔案請求都會導向在設定階段與目標MVPD配對之服務提供者相關聯的URL。
 
@@ -109,7 +109,7 @@ ht-degree: 0%
 
 - *signedRequestorID*：以您的私密金鑰數位簽署的請求者ID復本。<!--For more details. see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->。
 
-- *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的執行個體可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 若這麼做，MVPD清單將由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是說，第一個回應並支援該MVPD的提供者。
+- *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的例項可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 若這麼做，MVPD清單將由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是說，第一個回應並支援該MVPD的提供者。
 
 已觸發&#x200B;**回呼：** `setRequestorComplete()`
 
@@ -161,7 +161,7 @@ ht-degree: 0%
 
 - *選項*：包含全域SDK選項的對應&lt;字串，字串>。 目前提供下列選項：
    - **applicationProfile** — 它可用來根據這個值設定伺服器組態。
-   - **ap_vi** -Experience Cloud識別碼(visitorID)。 此值稍後可用於進階分析報表。
+   - **ap_vi** - Experience Cloud ID (visitorID)。 此值稍後可用於進階分析報表。
    - **ap_ai** - Advertising ID
    - **device_info** — 使用者端資訊，如下所述： [傳遞使用者端資訊裝置連線與應用程式](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)。
 
@@ -259,7 +259,7 @@ ht-degree: 0%
 
 請注意，這不適用於促銷暫時傳遞，因為getAuthentication()方法有額外的引數。
 
-將&#x200B;*null*&#x200B;作為引數傳遞時，Access Enabler會假設使用者已取消驗證流程（亦即按下[上一步]按鈕），並藉由重設驗證狀態機器以及呼叫帶有`AccessEnablerConstants.PROVIDER_NOT_SELECTED_ERROR`錯誤碼的&#x200B;*setAuthenticationStatus()*&#x200B;回呼來回應。
+將&#x200B;*null*&#x200B;作為引數傳遞時，Access Enabler會假設使用者已取消驗證流程（亦即按下[上一步]按鈕），並藉由重設驗證狀態機器以及呼叫帶有&#x200B;*錯誤碼的* setAuthenticationStatus()`AccessEnablerConstants.PROVIDER_NOT_SELECTED_ERROR`回呼來回應。
 
 | API呼叫：設定目前選取的提供者 |
 | --- |
@@ -322,7 +322,7 @@ ht-degree: 0%
 
 ### setAuthenticationStatus {#setAuthNStatus}
 
-**描述：**&#x200B;通知存取啟用程式所觸發的回呼
+**描述：**通知存取啟用程式所觸發的回呼
 驗證流程狀態的應用。 有許多
 此流程可能因為使用者的
 互動或因其他無法預見的情況(例如網路
@@ -596,7 +596,7 @@ ht-degree: 0%
       - `userID` — 使用者識別碼。 如果MVPD支援附屬帳戶，且使用者不是主要帳戶，則`userID`將與`householdID`不同。
 
       - `channelID` — 使用者有權檢視的管道清單
-   - 如果索引鍵是`METADATA_KEY_DEVICE_ID`，則會進行查詢以取得目前的裝置識別碼。 請注意，此功能預設為停用，程式設計師應聯絡Adobe以取得有關啟用和費用的資訊。
+   - 如果索引鍵是`METADATA_KEY_DEVICE_ID`，則會進行查詢以取得目前的裝置識別碼。 請注意，此功能預設為停用，程式設計師應聯絡Adobe瞭解啟用和費用相關資訊。
    - 如果索引鍵是`METADATA_KEY_TTL_AUTHZ`，而且引數包含名稱= `METADATA_ARG_RESOURCE_ID`且值= `[resource_id]`的SerializableNameValuePair物件，則會進行查詢以取得與指定資源關聯的授權權杖的到期時間。
    - 如果金鑰為`METADATA_KEY_TTL_AUTHN`，則會進行查詢以取得驗證權杖到期時間。
 
@@ -706,7 +706,7 @@ Access Enabler會觸發其他回呼，而此回呼不一定與權益流程相關
 
 >[!WARNING]
 >
-> 裝置型別和作業系統衍生自使用公用Java程式庫([http://java.net/projects/user-agent-utils](http://java.net/projects/user-agent-utils))和使用者代理程式字串。 請注意，此資訊僅以粗略的方式提供，以將運作量度劃分為裝置類別，但該Adobe對於錯誤結果概不負責。 請據以使用新功能。
+> 裝置型別和作業系統衍生自使用公用Java程式庫([http://java.net/projects/user-agent-utils](http://java.net/projects/user-agent-utils))和使用者代理程式字串。 請注意，此資訊僅以粗略的方式提供，以將營運量度劃分為裝置類別，但Adobe對於錯誤結果概不負責。 請據以使用新功能。
 
 
 - 裝置型別的可能值：

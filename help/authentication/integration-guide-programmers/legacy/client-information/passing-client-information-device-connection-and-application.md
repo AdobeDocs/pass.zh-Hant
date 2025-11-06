@@ -4,7 +4,7 @@ description: 傳遞使用者端資訊（裝置、連線和應用程式）
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '1666'
+source-wordcount: '1665'
 ht-degree: 1%
 
 ---
@@ -93,7 +93,7 @@ Adobe Pass驗證服務支援以下列方式接收使用者端資訊：
 
 AccessEnabler JavaScript SDK預設會建置使用者端資訊JSON物件，除非已覆寫，否則會傳遞至Adobe Pass驗證服務。
 
-AccessEnabler JavaScript SDK僅支援&#x200B;**透過[setRequestor](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options))的&#x200B;*applicationId*選項引數，覆寫使用者端資訊JSON物件中的「applicationId」金鑰**。
+AccessEnabler JavaScript SDK僅支援&#x200B;**透過** setRequestor[的](/help/authentication/integration-guide-programmers/legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md#setrequestor(inRequestorID,endpoints,options))applicationId *選項引數，覆寫使用者端資訊JSON物件中的「applicationId」金鑰*。
 
 >[!CAUTION]
 >
@@ -104,7 +104,7 @@ AccessEnabler JavaScript SDK僅支援&#x200B;**透過[setRequestor](/help/authen
 
 AccessEnabler iOS/tvOS SDK預設會建置使用者端資訊JSON物件，除非覆寫，否則會傳遞至Adobe Pass驗證服務。
 
-AccessEnabler iOS/tvOS SDK支援&#x200B;**透過[setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setoptions)的device_info引數覆寫整個**&#x200B;使用者端資訊JSON物件。
+AccessEnabler iOS/tvOS SDK支援&#x200B;**透過** setOptions[的device_info引數覆寫整個](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setoptions)使用者端資訊JSON物件。
 
 >[!CAUTION]
 >
@@ -116,7 +116,7 @@ AccessEnabler iOS/tvOS SDK支援&#x200B;**透過[setOptions](/help/authenticatio
 
 `AccessEnabler` Android/FireOS SDK預設會建置使用者端資訊JSON物件，除非覆寫，否則會傳遞至Adobe Pass驗證服務。
 
-`AccessEnabler` Android/FireOS SDK支援&#x200B;**透過[setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)的/[setOptions](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)的`device_info`引數覆寫整個**&#x200B;使用者端資訊JSON物件。
+`AccessEnabler` Android/FireOS SDK支援&#x200B;**透過** setOptions[的/](/help/authentication/integration-guide-programmers/legacy/sdks/android-sdk/android-sdk-api-reference.md#setOptions)setOptions[的](/help/authentication/integration-guide-programmers/legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md#fire_setOption)引數覆寫整個`device_info`使用者端資訊JSON物件。
 
 >[!NOTE]
 >
@@ -244,7 +244,7 @@ private JSONObject computeClientInformation() {
 >[!NOTE]
 >
 >**資源：**
->* Java開發人員檔案中的公用類別[建置](https://developer.android.com/reference/android/os/Build.html){target=_blank}。
+>* Java開發人員檔案中的公用類別[組建](https://developer.android.com/reference/android/os/Build.html){target=_blank}。
 
 ### FireTV {#fire-tv}
 
