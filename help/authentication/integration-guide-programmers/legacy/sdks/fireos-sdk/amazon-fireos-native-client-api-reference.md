@@ -260,7 +260,7 @@ ht-degree: 0%
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**可用性：**v 1.0+
+**可用性：**&#x200B;v 1.0+
 
 **引數：**&#x200B;無
 
@@ -355,7 +355,7 @@ ht-degree: 0%
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**可用性：**v 1.0+
+**可用性：**&#x200B;v 1.0+
 
 **引數：** `resources`引數是使用者已被授權檢視的資源陣列。
 
@@ -427,7 +427,7 @@ ht-degree: 0%
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**可用性：**v 1.0+
+**可用性：**&#x200B;v 1.0+
 
 **引數：**
 

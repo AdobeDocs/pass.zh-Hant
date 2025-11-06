@@ -47,7 +47,7 @@ ht-degree: 0%
 
 * [`setOptions:options:`](#setOptions) — 設定全域SDK選項，例如設定檔或訪客ID。
 
-* [`setRequestor:`](#setReqV3)[`requestorID`](#setReqV3)，[`setRequestor:requestorID:serviceProviders:`](#setReqV3) — 建立程式設計師的身分。
+* [`setRequestor:`](#setReqV3) [`requestorID`](#setReqV3)，[`setRequestor:requestorID:serviceProviders:`](#setReqV3) — 建立程式設計師的身分。
 
 * **[已棄用]** [`setRequestor:signedRequestorId:`](#setReq)，[`setRequestor:signedRequestorId:serviceProviders:`](#setReq) — 建立程式設計師的身分。
 
@@ -59,7 +59,7 @@ ht-degree: 0%
 
 * [`getAuthentication`](#getAuthN)， [`getAuthentication:withData:`](#getAuthN) — 啟動完整驗證工作流程。
 
-* [`getAuthentication:filter`](#getAuthN_filter)，[`getAuthentication:withData:`](#getAuthN)[andFilter](#getAuthN_filter) — 啟動完整驗證工作流程。
+* [`getAuthentication:filter`](#getAuthN_filter)，[`getAuthentication:withData:`](#getAuthN) [andFilter](#getAuthN_filter) — 啟動完整驗證工作流程。
 
 * [`displayProviderDialog:`](#dispProvDialog) — 通知您的應用程式具現化適當的UI元素，讓使用者選取MVPD。
 
@@ -369,7 +369,7 @@ ht-degree: 0%
 
 **檔案：** AccessEnabler/headers/AccessEnabler.h
 
-**描述：**檢查目前使用者的驗證狀態。
+**描述：**&#x200B;檢查目前使用者的驗證狀態。
 其做法是在本機中搜尋有效的驗證Token
 Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您在主要執行緒上呼叫它。
 應用程式會用它來查詢使用者的驗證狀態，並且
@@ -716,7 +716,7 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 與`navigateToUrl:`回呼類似，`navigateToUrl:useSVC:`由AccessEnabler觸發，要求您的應用程式將`SFSafariViewController`控制器具現化，並載入回呼的&#x200B;**`url`**&#x200B;引數中提供的URL。 回呼會傳遞代表驗證端點的URL或登出端點的URL的&#x200B;**`url`**&#x200B;引數，以及指定應用程式必須使用&#x200B;**`useSVC`**&#x200B;的`SFSafariViewController`引數。
 
-當`SFSafariViewController`控制器執行數次重新導向時，您的應用程式必須監視控制器的活動，並偵測其載入您`application's custom scheme`所定義的特定自訂URL的時間(例****`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`)。 請注意，這個特定自訂URL實際上無效，控制器並非打算實際載入此URL。 應用程式必須將其解譯為驗證或登出流程已完成，且關閉控制器是安全的訊號。 當控制器載入這個特定自訂URL時，您的應用程式必須關閉`SFSafariViewController`並呼叫AccessEnabler的`handleExternalURL:url `API方法。
+當`SFSafariViewController`控制器執行數次重新導向時，您的應用程式必須監視控制器的活動，並偵測其載入您`application's custom scheme`所定義的特定自訂URL的時間(例&#x200B;**&#x200B;**`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`)。 請注意，這個特定自訂URL實際上無效，控制器並非打算實際載入此URL。 應用程式必須將其解譯為驗證或登出流程已完成，且關閉控制器是安全的訊號。 當控制器載入這個特定自訂URL時，您的應用程式必須關閉`SFSafariViewController`並呼叫AccessEnabler的`handleExternalURL:url `API方法。
 
 **注意：**&#x200B;請注意，若是驗證流程，這是使用者能夠按下[上一步]按鈕的點，這相當於中止驗證流程。 在這種情況下，您的應用程式必須呼叫[setSelectedProvider：](#setSelProv)方法，傳遞&#x200B;**`nil`**&#x200B;做為引數，並讓AccessEnabler有機會重設其驗證狀態機器。
 
@@ -732,19 +732,19 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 <tbody>
 <tr class="odd">
 <td><pre><code>@optional
-- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
+&#x200B;- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
 </tr>
 </tbody>
 </table>
 
-**可用性：**v 3.2+
+**可用性：**&#x200B;v 3.2+
 
 **引數**：
 
 * *url：*&#x200B;指向MVPD登入頁面的URL
 * *useSVC：*&#x200B;是否應在SFSafariViewController中載入URL。
 
-**觸發者：**[ setOptions：](#setOptions)，在[setSelectedProvider：](#setSelProv)之前
+**觸發者：**&#x200B;[&#x200B; setOptions：](#setOptions)，在[setSelectedProvider：](#setSelProv)之前
 
 [回到頂端……](#apis)
 
