@@ -253,26 +253,26 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已停用</td>
     <td>
 
-    &grave;&grave;JavaScript
+    ``JavaScript
     
-    &lbrace;
-    `decisions`： &lbrack;
-    &lbrace;
+    {
+    `decisions`： [
+    {
     `id`： &quot;RES01&quot;，
-    &grave;authorized&quot;： true
-    &rbrace;，
-    &lbrace;
+    `authorized&quot;： true
+    }，
+    {
     `id`： &quot;RES02&quot;，
-    &grave;authorized&quot;： false
-    &rbrace;，
-    &lbrace;
+    `authorized&quot;： false
+    }，
+    {
     `id`： &quot;RES03&quot;，
-    &grave;authorized&quot;： true
-    &rbrace;
-    &rbrack;
-    &rbrace;
+    `authorized&quot;： true
+    }
+    ]
+    }
     
-    &grave;
+    `
 
 </td>
   </tr>
@@ -356,45 +356,44 @@ accessEnablerApi.preauthorize(request, callback);
     <td>
 
     ```JavaScript
-
     
-    &lbrace;
-    `decisions`： &lbrack;
-    &lbrace;
+    {
+    `decisions`： [
+    {
     `id`： &quot;RES01&quot;，
-    &grave;authorized&quot;： false，
-    &grave;error&quot;： &lbrace;
-    &grave;status&quot;： 403，
-    &grave;code&quot;： &quot;preauthorization_denied_by_mvpd&quot;，
-    &grave;message&quot;： &quot;MVPD在請求指定資源的預先授權時傳回\&quot;Deny\&quot;決定。&quot;，
+    `authorized&quot;： false，
+    `error&quot;： {
+    `status&quot;： 403，
+    `code&quot;： &quot;preauthorization_denied_by_mvpd&quot;，
+    `message&quot;： &quot;MVPD在請求指定資源的預先授權時傳回\&quot;Deny\&quot;決定。&quot;，
     `helpUrl`： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
-    &grave;action&quot;： &quot;none&quot;
-    &rbrace;
-    &rbrace;，
-    &lbrace;
+    `action&quot;： &quot;none&quot;
+    }
+    }，
+    {
     &quot;id&quot;： &quot;RES02&quot;，
     &quot;authorized&quot;： false，
-    &quot;error&quot;： &lbrace;
+    &quot;error&quot;： {
     &quot;status&quot;： 403，
     &quot;code&quot;： &quot;preauthorization_denied_by_mvpd&quot;，
     &quot;message&quot;： &quot;MVPD在請求指定資源的預授權時返回了\&quot;Deny\&quot;決定。&quot;，
     &quot;helpUrl&quot;： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
     &quot;action&quot;： &quot;none&quot;
-    &rbrace;
-    &rbrace;，
-    &lbrace;
+    }
+    }，
+    {
     &quot;id&quot;： &quot;RES03&quot;，
     &quot;authorized&quot;： false，
-    &quot;error&quot;： &lbrace;
+    &quot;error&quot;： {
     &quot;status&quot;： 403，
     &quot;code&quot;： &quot;maximum_execution_time_exceeded&quot;，
     &quot;message&quot;： &quot;請求未在允許的最長時間內完成。 重試請求可能會解決此問題。」，
     「helpUrl」： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
     &quot;action&quot;： &quot;retry&quot;
-    &rbrace;
-    &rbrace;
-    &rbrack;
-    &rbrace;
+    }
+    }
+    ]
+    }
     
     &quot;&#39;
 
@@ -417,19 +416,19 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已停用/已啟用</td>
     <td>
 
-    &grave;&grave;JavaScript
-    &lbrace;
-    &grave;狀態&quot;： &lbrace;
-    &grave;狀態&quot;： 400，
-    &grave;代碼&quot;： &quot;internal_error&quot;，
-    &grave;message&quot;： &quot;要求由於內部錯誤而失敗。&quot;，
-    `details&quot;： &quot;Required String[]引數`resource&grave;不存在&quot;，
-    &grave;helpUrl&quot;： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
-    &grave;action&quot;： &quot;none&quot;
-    &rbrace;，
-    &grave;decisions&quot;： []
-    &rbrace;
-    &grave;&grave;
+    ``JavaScript
+    {
+    `狀態&quot;： {
+    `狀態&quot;： 400，
+    `代碼&quot;： &quot;internal_error&quot;，
+    `message&quot;： &quot;要求由於內部錯誤而失敗。&quot;，
+    `details&quot;： &quot;Required String[]引數`resource`不存在&quot;，
+    `helpUrl&quot;： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
+    `action&quot;： &quot;none&quot;
+    }，
+    `decisions&quot;： []
+    }
+    ``
 
 </td>
   </tr>
@@ -450,18 +449,18 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已停用/已啟用</td>
     <td>
 
-    &grave;&grave;JavaScript
-    &lbrace;
-    `status`： &lbrace;
+    ``JavaScript
+    {
+    `status`： {
     `status`： 412，
     `code`： &quot;missing_resource&quot;，
     `message`： &quot;resource引數遺失&quot;，
     `helpUrl`： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
     `action`： &quot;none&quot;
-    &rbrace;，
+    }，
     `decisions`： []
-    &rbrace;
-    &grave;&grave;
+    }
+    ``
 
 </td>
   </tr>
