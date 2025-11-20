@@ -2,7 +2,7 @@
 title: 字彙表
 description: 並行監視的術語表
 exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
-source-git-commit: f30b6814b8a77424c13337d44d7b247105e0bfe2
+source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
 source-wordcount: '762'
 ht-degree: 0%
@@ -28,7 +28,7 @@ ht-degree: 0%
 ## 應用 {#application-defn}
 
 * 租使用者為視訊內容存取而開發
-* 根據Concurrency Monitoring Service提供的資訊來決定及執行內容存取決策（這在[原則資訊點](/help/concurrency-monitoring/policy-info-pt-versionone.md)案例中有效）
+* 根據Concurrency Monitoring Service提供的資訊來決定及執行內容存取決策（這在[原則資訊點](/help/concurrency-monitoring/technical/policy-info-pt-versionone.md)案例中有效）
 * 將具有Adobe提供的唯一&#x200B;**應用程式識別碼**。
 
 ## 並行監視服務 {#cm-service-defn}
@@ -94,7 +94,7 @@ ht-degree: 0%
 
 ## 主旨 {#subj-defn}
 
-* 網際網路上（視訊）內容的消費者。 我們刻意避免使用術語&#x200B;_&#x200B;**user**&#x200B;_，因為並行監視通常會處理MVPD帳戶ID （這涉及多名實際使用者共用相同的合約，例如一位家人的家庭成員）。
+* 網際網路上（視訊）內容的消費者。 我們刻意避免使用術語&#x200B;_**user**_，因為並行監視通常會處理MVPD帳戶ID （這涉及多名實際使用者共用相同的合約，例如一位家人的家庭成員）。
 
 * 對於每個資料流，可透過與使用服務的實際人員、其網路連線裝置等相關的屬性來增強主題。
 
