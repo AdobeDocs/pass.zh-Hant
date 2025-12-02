@@ -18,7 +18,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
-> 請務必隨時瞭解彙總在[產品公告](https://experienceleague.adobe.com/en/docs/pass/authentication/product-announcements)頁面中的最新Adobe Pass驗證產品公告和淘汰時間表。
+> 請務必隨時瞭解彙總在[產品公告](https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/product-announcements)頁面中的最新Adobe Pass驗證產品公告和淘汰時間表。
 
 此頁面說明此版本的新功能、變更和已知問題：
 
