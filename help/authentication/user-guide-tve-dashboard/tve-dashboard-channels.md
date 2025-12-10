@@ -2,9 +2,9 @@
 title: 頻道
 description: 瞭解TVE Dashboard中的管道及其各種設定。
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b4276ee12d57bc061d26afc0a192b799fe1681ae
 workflow-type: tm+mt
-source-wordcount: '1556'
+source-wordcount: '1637'
 ht-degree: 0%
 
 ---
@@ -268,7 +268,8 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 ### 自訂配置 {#custom-schemes}
 
-此索引標籤會顯示自訂配置清單。 如需自訂配置使用方式的詳細資訊，請參閱[iOS/tvOS應用程式註冊](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-application-registration.md)。
+此索引標籤會顯示自訂配置清單。
+自訂配置可用於Android和iOS裝置。
 
 您可以對自訂配置進行下列變更：
 
@@ -286,7 +287,38 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 已建立新的組態變更，且已準備好進行伺服器更新。 若要使用&#x200B;**自訂配置**&#x200B;區段中列出的新自訂配置，請繼續進行[檢閱並推播變更](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)流程。
 
-#### 繼承的自訂配置 {#inherited-custom-schemes}
+#### 如果您沒有Adobe TVE儀表板的存取權：
+
+將票證提交至<tve-support@adobe.com>。 請包含管道ID，我們的支援團隊會有人為您建立自訂配置。
+
+#### Android {#Android}
+
+1. 自訂配置 — 在TVE儀表板中建立的自訂配置可用於Android裝置應用程式。
+
+1. 在應用程式的資源檔`strings.xml`中新增下列程式碼：
+
+```XML
+       <string name="software_statement">softwarestatement value</string>
+       <string name="redirect_uri">adbe.TTIFAaWuR-CmxXv1Di8PlQ://</string>
+```
+
+#### iOS {#iOS}
+
+自訂配置可以在應用程式的`info.plist`檔案中使用。 請尋找以下範例，您需要在其中新增在TVE儀表板中產生的URL：
+
+```plist
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>adbe.u-XFXJeTSDuJiIQs0HVRAg</string> // replace this with your custom scheme
+            </array>
+        </dict>
+    </array>
+```
+
+### 繼承的自訂配置 {#inherited-custom-schemes}
 
 媒體公司會根據自己的層級定義這些自訂配置。 所有與相同媒體公司相關的管道都可以使用這些自訂配置。
 
