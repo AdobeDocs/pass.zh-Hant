@@ -2,9 +2,9 @@
 title: 頁首 — AP-Partner-Framework-Status
 description: REST API V2 — 標題 — AP-Partner-Framework-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: 5c912bbbe97fff65d38dbade32cd4554ad8c2fac
+source-git-commit: 22529618db679f7dbfb493906e1aeb4a0443a40c
 workflow-type: tm+mt
-source-wordcount: '404'
+source-wordcount: '415'
 ht-degree: 0%
 
 ---
@@ -70,8 +70,8 @@ ht-degree: 0%
                   <ul>
                      <li><b>已授予</b><br/>使用者已允許應用程式存取訂閱資訊。</li>
                      <li><b>已拒絕</b><br/>使用者已拒絕應用程式存取訂閱資訊。</li>
-                     <li><b>擱置中</b><br/>使用者尚未選擇允許應用程式存取訂閱資訊。</li>
-                     <li><b>notDetermined</b><br/>不允許應用程式存取訂閱資訊。</li>
+                     <li><b>已限制</b><br/>不允許應用程式存取訂閱資訊。</li>
+                     <li><b>notDetermined</b><br/>使用者尚未選擇是否允許應用程式存取訂閱資訊。</li>
                   </ul>
                </td>
             </tr>
