@@ -2,9 +2,9 @@
 title: Apple SSO逐步指南(REST API V2)
 description: Apple SSO逐步指南(REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: 63ffde4a32f003d7232d2c79ed6878ca59748f74
 workflow-type: tm+mt
-source-wordcount: '3609'
+source-wordcount: '3857'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使用者端應用程式的一般使用者進行合作夥伴單一登入(SSO)。
 
-此檔案可作為現有[REST API V2總覽](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)的延伸，提供高階檢視和說明如何使用合作夥伴流程[實作](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)單一登入的檔案。
+此檔案可作為現有[REST API V2總覽](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)的延伸，提供高階檢視和說明如何使用合作夥伴流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)實作[單一登入的檔案。
 
 ## 使用合作夥伴流程的Apple單一登入 {#cookbook}
 
@@ -124,13 +124,69 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    > <br/>
    >
    > * 串流應用程式必須檢查是否有[許可權可存取](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus)使用者的訂閱資訊，並僅在使用者允許的情況下才繼續。
-   > * 串流應用程式必須為[提供](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate)代理人`VSAccountManager`。
+   > * 串流應用程式必須為`VSAccountManager`提供[代理人](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate)。
    > * 串流應用程式必須提交[要求](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest)以取得訂閱者帳戶資訊。
    > * 串流應用程式必須等候並處理[中繼資料](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata)資訊。
    >
    > <br/>
    >
-   > 串流應用程式必須確定它為`false`物件中的[`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed)屬性指定了等於`VSAccountMetadataRequest`的Boolean值，以表示在此階段無法中斷使用者。
+   > 串流應用程式必須確定它為`VSAccountMetadataRequest`物件中的[`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed)屬性指定了等於`false`的Boolean值，以表示在此階段無法中斷使用者。
+
+   >[!TIP]
+   >
+   > **<u>Pro提示：</u>**&#x200B;請遵循程式碼片段，並特別留意註解。
+
+   ```swift
+   ...
+   let videoSubscriberAccountManager: VSAccountManager = VSAccountManager();
+   
+   videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.prompt: true]) { (accessStatus, error) -> Void in
+            switch (accessStatus) {
+            // The user allows the application to access subscription information.
+            case VSAccountAccessStatus.granted:
+                    // Construct the request for subscriber account information.
+                    let vsaMetadataRequest: VSAccountMetadataRequest = VSAccountMetadataRequest();
+   
+                    // This is actually the SAML Issuer not the channel ID.
+                    vsaMetadataRequest.channelIdentifier = "https://saml.sp.auth.adobe.com";
+   
+                    // This is the subscription account information needed at this step.
+                    vsaMetadataRequest.includeAccountProviderIdentifier = true;
+   
+                    // This is the subscription account information needed at this step.
+                    vsaMetadataRequest.includeAuthenticationExpirationDate = true;
+   
+                    // This is going to make the Video Subscriber Account Framework to refrain from prompting the user with the providers picker at this step. 
+                    vsaMetadataRequest.isInterruptionAllowed = false;
+   
+                    // Submit the request for subscriber account information - accountProviderIdentifier.
+                    videoSubscriberAccountManager.enqueue(vsaMetadataRequest) { vsaMetadata, vsaError in        
+                        if (vsaMetadata != nil && vsaMetadata!.accountProviderIdentifier != nil) {
+                            // The vsaMetadata!.authenticationExpirationDate will contain the expiration date for current authentication session.
+                            // The vsaMetadata!.authenticationExpirationDate should be compared against current date.
+                            ...
+                            // The vsaMetadata!.accountProviderIdentifier will contain the provider identifier as it is known for the platform configuration.
+                            // The vsaMetadata!.accountProviderIdentifier represents the platformMappingId in terms of Adobe Pass Authentication configuration.
+                            ...
+                            // The application must determine the MVPD id property value based on the platformMappingId property value obtained above.
+                            // The application must use the MVPD id further in its communication with Adobe Pass Authentication services.
+                            ...
+                            // Continue with the "Retrieve profiles" step.
+                            ...
+                        } else {
+                            // The user is not authenticated at platform level, continue with the "Retrieve profiles" step.
+                            ...
+                        }
+                    }
+   
+            // The user has not yet made a choice or does not allow the application to access subscription information.
+            default:
+                // Continue with the "Retrieve profiles" step.
+                ...
+            }
+   }
+   ...
+   ```
 
 1. **傳回夥伴架構狀態資訊：**&#x200B;串流應用程式會驗證回應資料，以確保符合基本條件：
    * 已授予使用者許可權存取狀態。
@@ -169,7 +225,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定服務提供者[&#x200B; API的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md#Request)擷取組態：
+   > 如需下列詳細資訊，請參閱特定服務提供者](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md#Request) API的[擷取組態：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`和`X-Device-Info`
@@ -179,7 +235,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!IMPORTANT]
    >
-   > 請參閱特定服務提供者[&#x200B; API檔案的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md#Response)擷取組態，以取得組態回應中提供的詳細資訊。
+   > 請參閱特定服務提供者](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md#Response) API檔案的[擷取組態，以取得組態回應中提供的詳細資訊。
    >
    > <br/>
    >
@@ -208,13 +264,109 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    > <br/>
    >
    > * 串流應用程式必須檢查是否有[許可權可存取](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus)使用者的訂閱資訊，並僅在使用者允許的情況下才繼續。
-   > * 串流應用程式必須為[提供](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate)代理人`VSAccountManager`。
+   > * 串流應用程式必須為`VSAccountManager`提供[代理人](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate)。
    > * 串流應用程式必須提交[要求](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest)以取得訂閱者帳戶資訊。
    > * 串流應用程式必須等候並處理[中繼資料](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata)資訊。
    >
    > <br/>
    >
-   > 串流應用程式必須確定它為`true`物件中的[`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed)屬性指定了等於`VSAccountMetadataRequest`的Boolean值，以表示在此階段可以中斷使用者選取電視提供者。
+   > 串流應用程式必須確定它為`VSAccountMetadataRequest`物件中的[`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed)屬性指定了等於`true`的Boolean值，以表示在此階段可以中斷使用者選取電視提供者。
+
+   >[!TIP]
+   >
+   > **<u>Pro提示：</u>**&#x200B;請遵循程式碼片段，並特別留意註解。
+
+   ```swift
+    ...
+    let videoSubscriberAccountManager: VSAccountManager = VSAccountManager();
+   
+    // This must be a class implementing the VSAccountManagerDelegate protocol.
+    let videoSubscriberAccountManagerDelegate: VideoSubscriberAccountManagerDelegate = VideoSubscriberAccountManagerDelegate();
+   
+    videoSubscriberAccountManager.delegate = videoSubscriberAccountManagerDelegate;
+   
+    videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.prompt: true]) { (accessStatus, error) -> Void in
+                switch (accessStatus) {
+                // The user allows the application to access subscription information.
+                case VSAccountAccessStatus.granted:
+                        // Construct the request for subscriber account information.
+                        let vsaMetadataRequest: VSAccountMetadataRequest = VSAccountMetadataRequest();
+   
+                        // This is actually the SAML Issuer not the channel ID.
+                        vsaMetadataRequest.channelIdentifier = "https://saml.sp.auth.adobe.com";
+   
+                        // This is the subscription account information needed at this step.
+                        vsaMetadataRequest.includeAccountProviderIdentifier = true;
+   
+                        // This is the subscription account information needed at this step.
+                        vsaMetadataRequest.includeAuthenticationExpirationDate = true;
+   
+                        // This is going to make the Video Subscriber Account Framework to prompt the user with the providers picker at this step. 
+                        vsaMetadataRequest.isInterruptionAllowed = true;
+   
+                        // This can be computed from the Configuration service response in order to filter the TV providers from the Apple picker.
+                        vsaMetadataRequest.supportedAccountProviderIdentifiers = supportedAccountProviderIdentifiers;
+   
+                        // This can be computed from the Configuration service response in order to sort the TV providers from the Apple picker.
+                        if #available(iOS 11.0, tvOS 11, *) {
+                            vsaMetadataRequest.featuredAccountProviderIdentifiers = featuredAccountProviderIdentifiers;
+                        }
+   
+                        // Submit the request for subscriber account information - accountProviderIdentifier.
+                        videoSubscriberAccountManager.enqueue(vsaMetadataRequest) { vsaMetadata, vsaError in                        
+                            if (vsaMetadata != nil && vsaMetadata!.accountProviderIdentifier != nil) {
+                                // The vsaMetadata!.authenticationExpirationDate will contain the expiration date for current authentication session.
+                                // The vsaMetadata!.authenticationExpirationDate should be compared against current date.
+                                ...
+                                // The vsaMetadata!.accountProviderIdentifier will contain the provider identifier as it is known for the platform configuration.
+                                // The vsaMetadata!.accountProviderIdentifier represents the platformMappingId in terms of Adobe Pass Authentication configuration.
+                                ...
+                                // The application must determine the MVPD id property value based on the platformMappingId property value obtained above.
+                                // The application must use the MVPD id further in its communication with Adobe Pass Authentication services.
+                                ...
+                                // Continue with the "Retrieve partner authentication request" step.
+                                ...
+                            } else {
+                                // The user is not authenticated at platform level.
+                                if (vsaError != nil) {
+                                    // The application can check to see if the user selected a provider which is present in Apple picker, but the provider is not onboarded in platform SSO.
+                                    if let error: NSError = (vsaError! as NSError), error.code == 1, let appleMsoId = error.userInfo["VSErrorInfoKeyUnsupportedProviderIdentifier"] as! String? {
+                                        var mvpd: Mvpd? = nil;
+   
+                                        // The requestor.mvpds must be computed during the "Return configuration" step. 
+                                        for provider in requestor.mvpds {
+                                            if provider.platformMappingId == appleMsoId {
+                                                mvpd = provider;
+                                                break;
+                                            }
+                                        }
+   
+                                        if mvpd != nil {
+                                            // Continue with the "Proceed with basic authentication flow" step, but you can skip prompting the user with your MVPD picker and use the mvpd selection, therefore creating a better UX.
+                                            ...
+                                        } else {
+                                            // Continue with the "Proceed with basic authentication flow" step.
+                                            ...
+                                        }
+                                    } else {
+                                        // Continue with the "Proceed with basic authentication flow" step.
+                                        ...
+                                    }
+                                } else {
+                                    // Continue with the "Proceed with basic authentication flow" step.
+                                    ...
+                                }
+                            }
+                        }
+   
+                // The user has not yet made a choice or does not allow the application to access subscription information.
+                default:
+                    // Continue with the "Proceed with basic authentication flow" step.
+                    ...
+                }
+    }
+    ...
+   ```
 
 1. **傳回夥伴架構狀態資訊：**&#x200B;串流應用程式會驗證回應資料，以確保符合基本條件：
    * 已授予使用者許可權存取狀態。
@@ -302,13 +454,79 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    > <br/>
    >
    > * 串流應用程式必須檢查是否有[許可權可存取](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus)使用者的訂閱資訊，並僅在使用者允許的情況下才繼續。
-   > * 串流應用程式必須為[提供](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate)代理人`VSAccountManager`。
+   > * 串流應用程式必須為`VSAccountManager`提供[代理人](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate)。
    > * 串流應用程式必須提交訂閱者帳戶資訊的[要求](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest)，而且必須包含先前步驟中取得的合作夥伴驗證要求（SAML要求）。
    > * 串流應用程式必須等候並處理[中繼資料](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata)資訊。
    >
    > <br/>
    >
-   > 串流應用程式必須確定它為`true`物件中的[`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed)屬性指定了等於`VSAccountMetadataRequest`的Boolean值，以表示在此階段可以中斷使用者，以向選取的電視提供者進行驗證。
+   > 串流應用程式必須確定它為`VSAccountMetadataRequest`物件中的[`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed)屬性指定了等於`true`的Boolean值，以表示在此階段可以中斷使用者，以向選取的電視提供者進行驗證。
+
+   >[!TIP]
+   >
+   > **<u>Pro提示：</u>**&#x200B;請遵循程式碼片段，並特別留意註解。
+
+   ```swift
+    ...
+    let videoSubscriberAccountManager: VSAccountManager = VSAccountManager();
+   
+    videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.prompt: true]) { (accessStatus, error) -> Void in
+                switch (accessStatus) {
+                // The user allows the application to access subscription information.
+                case VSAccountAccessStatus.granted:
+                        // Construct the request for subscriber account information.
+                        let vsaMetadataRequest: VSAccountMetadataRequest = VSAccountMetadataRequest();
+   
+                        // This is actually the SAML Issuer not the channel ID.
+                        vsaMetadataRequest.channelIdentifier = "https://saml.sp.auth.adobe.com";
+   
+                        // This is going to include subscription account information which should match the provider determined in a previous step.
+                        vsaMetadataRequest.includeAccountProviderIdentifier = true;
+   
+                        // This is going to include subscription account information which should match the provider determined in a previous step.
+                        vsaMetadataRequest.includeAuthenticationExpirationDate = true;
+   
+                        // This is going to make the Video Subscriber Account Framework to refrain from prompting the user with the providers picker at this step. 
+                        vsaMetadataRequest.isInterruptionAllowed = false;
+   
+                        // This are the user metadata fields expected to be available on a successful login and are determined from the Sessions SSO service. Look for the authenticationRequest > attributesNames associated with the provider determined in a previous step.
+                        vsaMetadataRequest.attributeNames = attributesNames;
+   
+                        // This is the authenticationRequest > request field from Sessions SSO service.
+                        vsaMetadataRequest.verificationToken = authenticationRequestPayload;
+   
+                        // Submit the request for subscriber account information.
+                        videoSubscriberAccountManager.enqueue(vsaMetadataRequest) { vsaMetadata, vsaError in
+                            if (vsaMetadata != nil && vsaMetadata!.samlAttributeQueryResponse != nil) {
+                                var samlResponse: String? = vsaMetadata!.samlAttributeQueryResponse!;
+   
+                                // Remove new lines, new tabs and spaces.
+                                samlResponse = samlResponse?.replacingOccurrences(of: "[ \\t]+", with: " ", options: String.CompareOptions.regularExpression);
+                                samlResponse = samlResponse?.components(separatedBy: CharacterSet.newlines).joined(separator: "");
+                                samlResponse = samlResponse?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines);
+   
+                                // Base64 encode.
+                                samlResponse = samlResponse?.data(using: .utf8)?.base64EncodedString(options: []);
+   
+                                // URL encode. Please be aware not to double URL encode it further.
+                                samlResponse = samlResponse?.addingPercentEncoding(withAllowedCharacters: CharacterSet.init(charactersIn: "!*'();:@&=+$,/?%#[]").inverted);
+   
+                                // Continue with the "Create and retrieve profile using partner authentication response" step.
+                                ...
+                            } else {
+                                // Continue with the "Proceed with basic authentication flow" step.
+                                ...
+                            }
+                        }
+   
+                // The user has not yet made a choice or does not allow the application to access subscription information.
+                default:
+                    // Continue with the "Proceed with basic authentication flow" step.
+                    ...
+                }
+    }
+    ...
+   ```
 
 1. **傳回夥伴驗證回應：**&#x200B;串流應用程式會驗證回應資料，以確保符合基本條件：
    * 已授予使用者許可權存取狀態。
@@ -381,13 +599,13 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    > <br/>
    >
    > * 串流應用程式必須檢查是否有[許可權可存取](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus)使用者的訂閱資訊，並僅在使用者允許的情況下才繼續。
-   > * 串流應用程式必須為[提供](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate)代理人`VSAccountManager`。
+   > * 串流應用程式必須為`VSAccountManager`提供[代理人](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate)。
    > * 串流應用程式必須提交[要求](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest)以取得訂閱者帳戶資訊。
    > * 串流應用程式必須等候並處理[中繼資料](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata)資訊。
    >
    > <br/>
    >
-   > 串流應用程式必須確定它為`false`物件中的[`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed)屬性指定了等於`VSAccountMetadataRequest`的Boolean值，以表示在此階段無法中斷使用者。
+   > 串流應用程式必須確定它為`VSAccountMetadataRequest`物件中的[`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed)屬性指定了等於`false`的Boolean值，以表示在此階段無法中斷使用者。
 
    >[!TIP]
    >
@@ -406,7 +624,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱使用特定mvpd[&#x200B; API檔案擷取預先授權決定：](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md#request)
+   > 如需下列詳細資訊，請參閱使用特定mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md#request) API檔案擷取預先授權決定：[
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`和`AP-Device-Identifier`
@@ -426,7 +644,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#x200B; API檔案的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md#response)擷取預先授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md#response) API檔案的[擷取預先授權決定，以取得決定回應中提供的詳細資訊。
    >
    > <br/>
    >
@@ -452,13 +670,13 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
    > <br/>
    >
    > * 串流應用程式必須檢查是否有[許可權可存取](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus)使用者的訂閱資訊，並僅在使用者允許的情況下才繼續。
-   > * 串流應用程式必須為[提供](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate)代理人`VSAccountManager`。
+   > * 串流應用程式必須為`VSAccountManager`提供[代理人](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate)。
    > * 串流應用程式必須提交[要求](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest)以取得訂閱者帳戶資訊。
    > * 串流應用程式必須等候並處理[中繼資料](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata)資訊。
    >
    > <br/>
    >
-   > 串流應用程式必須確定它為`false`物件中的[`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed)屬性指定了等於`VSAccountMetadataRequest`的Boolean值，以表示在此階段無法中斷使用者。
+   > 串流應用程式必須確定它為`VSAccountMetadataRequest`物件中的[`isInterruptionAllowed`](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest/1771708-isinterruptionallowed)屬性指定了等於`false`的Boolean值，以表示在此階段無法中斷使用者。
 
    >[!TIP]
    >
@@ -497,7 +715,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#x200B; API檔案的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md#response)擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md#response) API檔案的[擷取授權決定，以取得決定回應中提供的詳細資訊。
    >
    > <br/>
    >
@@ -518,7 +736,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定mvpd[&#x200B; API的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#request)起始登出：
+   > 如需下列詳細資訊，請參閱特定mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#request) API的[起始登出：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`、`mvpd`和`redirectUrl`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
@@ -535,7 +753,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!IMPORTANT]
    >
-   > 如需登出回應中提供的詳細資訊，請參閱特定mvpd[&#x200B; API的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#response)Initiate登出。
+   > 如需登出回應中提供的詳細資訊，請參閱特定mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#response) API的[Initiate登出。
    >
    > <br/>
    >
