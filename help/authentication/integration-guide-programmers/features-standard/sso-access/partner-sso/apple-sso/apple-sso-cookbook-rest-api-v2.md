@@ -2,9 +2,9 @@
 title: Apple SSO逐步指南(REST API V2)
 description: Apple SSO逐步指南(REST API V2)
 exl-id: 81476312-9ba4-47a0-a4f7-9a557608cfd6
-source-git-commit: 63ffde4a32f003d7232d2c79ed6878ca59748f74
+source-git-commit: 0be4216ba816ddace095e557f9f61a8a42e1a1ff
 workflow-type: tm+mt
-source-wordcount: '3857'
+source-wordcount: '3908'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 
 Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使用者端應用程式的一般使用者進行合作夥伴單一登入(SSO)。
 
-此檔案可作為現有[REST API V2總覽](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)的延伸，提供高階檢視和說明如何使用合作夥伴流程[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)實作單一登入的檔案。
+此檔案可作為現有[REST API V2總覽](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-overview.md)的延伸，提供高階檢視和說明如何使用合作夥伴流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)實作[單一登入的檔案。
 
 ## 使用合作夥伴流程的Apple單一登入 {#cookbook}
 
@@ -196,10 +196,22 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 1. **擷取設定檔：**&#x200B;串流應用程式會收集所有必要資料，藉由傳送要求給設定檔端點來擷取所有設定檔資訊。
 
    >[!IMPORTANT]
+   > 
+   > 您&#x200B;**必須**&#x200B;在此步驟使用的REST API v2端點是：
    >
-   > 如需下列詳細資訊，請參閱[擷取設定檔](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md#Request) API檔案：
+   > * [擷取設定檔](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md#Request) API
+   > 
+   > 或
+   > 
+   > * [擷取特定mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md#Request) API的設定檔
    >
-   > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`
+   > 請確定您&#x200B;**不**&#x200B;在此步驟使用[使用合作夥伴驗證回應](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md#Request) API建立及擷取設定檔。
+
+   >[!IMPORTANT]
+   >
+   > 如需下列詳細資訊，請參閱[擷取設定檔](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md#Request) API或[擷取特定mvpd的設定檔](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md#Request) API檔案：
+   >
+   > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider` （或`mvpd`）
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`和`AP-Partner-Framework-Status`
    > * 所有&#x200B;_選用的_&#x200B;引數和標頭
    >
@@ -225,7 +237,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定服務提供者[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md#Request) API的擷取組態：
+   > 如需下列詳細資訊，請參閱特定服務提供者](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md#Request) API的[擷取組態：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`和`X-Device-Info`
@@ -235,7 +247,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!IMPORTANT]
    >
-   > 請參閱特定服務提供者[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md#Response) API檔案的擷取組態，以取得組態回應中提供的詳細資訊。
+   > 請參閱特定服務提供者](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md#Response) API檔案的[擷取組態，以取得組態回應中提供的詳細資訊。
    >
    > <br/>
    >
@@ -624,7 +636,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱使用特定mvpd[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md#request) API檔案擷取預先授權決定：
+   > 如需下列詳細資訊，請參閱使用特定mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md#request) API檔案擷取預先授權決定：[
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`、`mvpd`和`resources`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`和`AP-Device-Identifier`
@@ -644,7 +656,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md#response) API檔案的擷取預先授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md#response) API檔案的[擷取預先授權決定，以取得決定回應中提供的詳細資訊。
    >
    > <br/>
    >
@@ -715,7 +727,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md#response) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md#response) API檔案的[擷取授權決定，以取得決定回應中提供的詳細資訊。
    >
    > <br/>
    >
@@ -736,7 +748,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定mvpd[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#request) API的起始登出：
+   > 如需下列詳細資訊，請參閱特定mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#request) API的[起始登出：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`、`mvpd`和`redirectUrl`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
@@ -753,7 +765,7 @@ Adobe Pass Authentication REST API V2支援在iOS、iPadOS或tvOS上執行之使
 
    >[!IMPORTANT]
    >
-   > 如需登出回應中提供的詳細資訊，請參閱特定mvpd[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#response) API的Initiate登出。
+   > 如需登出回應中提供的詳細資訊，請參閱特定mvpd](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md#response) API的[Initiate登出。
    >
    > <br/>
    >
