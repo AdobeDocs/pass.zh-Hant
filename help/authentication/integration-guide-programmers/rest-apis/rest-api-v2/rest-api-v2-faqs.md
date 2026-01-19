@@ -2,10 +2,10 @@
 title: REST API V2常見問題集
 description: REST API V2常見問題集
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: 44fa75eb7b19ff44a41809d44c171baff6853b52
 workflow-type: tm+mt
-source-wordcount: '9682'
-ht-degree: 0%
+source-wordcount: '11089'
+ht-degree: 1%
 
 ---
 
@@ -37,13 +37,13 @@ ht-degree: 0%
 
 +++設定階段常見問題集
 
-#### 1.組態階段的用途為何？ {#configuration-phase-faq1}
+#### &#x200B;1. 設定階段的用途為何？ {#configuration-phase-faq1}
 
-設定階段的用途是向使用者端應用程式提供與其主動整合的MVPD清單，以及由Adobe Pass驗證針對每個MVPD儲存的設定詳細資料（例如，`id`、`displayName`、`logoUrl`等）。
+設定階段的目的是提供使用者端應用程式主動整合的MVPD清單，以及設定詳細資料（例如，`id`、`displayName`、`logoUrl`等） 由Adobe Pass驗證為每個MVPD儲存。
 
 當使用者端應用程式需要要求使用者選取他們的電視提供者時，「組態階段」會成為「驗證階段」的先決條件步驟。
 
-#### 2.設定階段是否為必要階段？ {#configuration-phase-faq2}
+#### &#x200B;2. 設定階段是否為必要？ {#configuration-phase-faq2}
 
 設定階段並非強制性，使用者端應用程式必須在使用者需要選取其MVPD以進行驗證或重新驗證時，才可擷取設定。
 
@@ -53,7 +53,7 @@ ht-degree: 0%
 * 透過基本或促銷[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能提供使用者暫時存取。
 * 使用者驗證已過期，但使用者端應用程式已快取先前選取的MVPD作為使用者體驗動機的選擇，而且只是提示使用者確認他們仍然是該MVPD的訂閱者。
 
-#### 3.什麼是設定？其有效期為多久？ {#configuration-phase-faq3}
+#### &#x200B;3. 什麼是設定？其有效期為多久？ {#configuration-phase-faq3}
 
 設定是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#configuration)檔案中定義的辭彙。
 
@@ -67,7 +67,7 @@ ht-degree: 0%
 
 如需詳細資訊，請參閱[擷取組態](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/configuration-apis/rest-api-v2-configuration-apis-retrieve-configuration-for-specific-service-provider.md)檔案。
 
-#### 4.此設定是否特定於服務提供者、平台或使用者？ {#configuration-phase-faq4}
+#### &#x200B;4. 此設定是否特定於服務提供者、平台或使用者？ {#configuration-phase-faq4}
 
 此設定是特定於[服務提供者](rest-api-v2-glossary.md#service-provider)的。
 
@@ -77,7 +77,7 @@ ht-degree: 0%
 
 對於使用伺服器對伺服器架構的使用者端應用程式，建議針對伺服器端記憶體儲存體中的每種平台型別，快取設定回應（例如，以2分鐘的TTL）。 這可減少每位使用者不必要的請求，並改善整體使用者體驗。
 
-#### 5.使用者端應用程式是否應該將組態回應資訊快取在永久儲存體中？ {#configuration-phase-faq5}
+#### &#x200B;5. 使用者端應用程式是否應該將設定回應資訊快取在永久儲存體中？ {#configuration-phase-faq5}
 
 >[!IMPORTANT]
 > 
@@ -91,35 +91,35 @@ ht-degree: 0%
 * 透過基本或促銷[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)功能提供使用者暫時存取。
 * 使用者驗證已過期，但使用者端應用程式已快取先前選取的MVPD作為使用者體驗動機的選擇，而且只是提示使用者確認他們仍然是該MVPD的訂閱者。
 
-#### 6.使用者端應用程式可以管理自己的MVPD清單嗎？ {#configuration-phase-faq6}
+#### &#x200B;6. 使用者端應用程式可以管理自己的MVPD清單嗎？ {#configuration-phase-faq6}
 
 使用者端應用程式可以管理自己的MVPD清單，但必須使MVPD識別碼與Adobe Pass驗證保持同步。 因此，建議您使用Adobe Pass驗證提供的設定，以確保清單是最新且正確的。
 
-如果提供的Adobe Pass識別碼無效，或是使用者端應用程式未與指定的[服務提供者](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)有效整合，使用者端應用程式將會從MVPD驗證REST API V2收到[錯誤](rest-api-v2-glossary.md#service-provider)。
+如果提供的Adobe Pass識別碼無效，或是使用者端應用程式未與指定的[服務提供者](rest-api-v2-glossary.md#service-provider)有效整合，使用者端應用程式將會從MVPD驗證REST API V2收到[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)。
 
-#### 7.使用者端應用程式可以篩選MVPD清單嗎？ {#configuration-phase-faq7}
+#### &#x200B;7. 使用者端應用程式可以篩選MVPD清單嗎？ {#configuration-phase-faq7}
 
 使用者端應用程式可以根據自己的商業邏輯和需求（例如使用者位置或先前選取的使用者歷史記錄），實作自訂機制，以篩選設定回應中提供的MVPD清單。
 
 使用者端應用程式可以篩選[TempPass](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md) MVPD的清單，或整合仍在開發或測試中的MVPD。
 
-#### 8.如果與MVPD的整合停用並標籤為非使用中，會發生什麼情況？ {#configuration-phase-faq8}
+#### &#x200B;8. 如果與MVPD的整合停用並標籤為非使用中，會發生什麼情況？ {#configuration-phase-faq8}
 
 當與MVPD的整合停用並標籤為非使用中時，MVPD會從進一步設定回應中提供的MVPD清單中移除，您需考慮兩個重要後果：
 
 * 該MVPD未經驗證的使用者將無法再使用該MVPD完成驗證階段。
 * 該MVPD的已驗證使用者將無法再使用該MVPD完成預先授權、授權或登出階段。
 
-如果使用者選取的Adobe Pass不再與指定的[服務提供者](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)有效整合，使用者端應用程式將會從MVPD Authentication REST API V2收到[錯誤](rest-api-v2-glossary.md#service-provider)。
+如果使用者選取的Adobe Pass不再與指定的[服務提供者](rest-api-v2-glossary.md#service-provider)有效整合，使用者端應用程式將會從MVPD Authentication REST API V2收到[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)。
 
-#### 9.如果已重新啟用與MVPD的整合，並標示為使用中，會發生什麼情況？ {#configuration-phase-faq9}
+#### &#x200B;9. 如果已重新啟用與MVPD的整合併標示為使用中，會發生什麼情況？ {#configuration-phase-faq9}
 
 當與MVPD的整合重新啟用並標籤為作用中時，MVPD會重新納入進一步設定回應中提供的MVPD清單中，您需考慮兩個重要後果：
 
 * 該MVPD的未經驗證使用者將能夠再次使用該MVPD完成驗證階段。
 * 該MVPD的已驗證使用者將能夠使用該MVPD再次完成預先授權、授權或登出階段。
 
-#### 10.如何啟用或停用與MVPD的整合？ {#configuration-phase-faq10}
+#### &#x200B;10. 如何啟用或停用與MVPD的整合？ {#configuration-phase-faq10}
 
 您的組織管理員或代表您行事的Adobe Pass驗證代表可透過Adobe Pass [TVE控制面板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)完成此作業。
 
@@ -131,13 +131,13 @@ ht-degree: 0%
 
 +++驗證階段常見問題集
 
-#### 1.驗證階段的用途為何？ {#authentication-phase-faq1}
+#### &#x200B;1. 驗證階段的用途為何？ {#authentication-phase-faq1}
 
 「驗證階段」的目的是讓使用者端應用程式能夠驗證使用者的身分並取得使用者中繼資料資訊。
 
 當使用者端應用程式需要播放內容時，「驗證階段」會成為「預先授權階段」或「授權階段」的先決條件步驟。
 
-#### &#x200B;2. 「驗證階段」是否為必要？ {#authentication-phase-faq2}
+#### &#x200B;2. 驗證階段是否為必要？ {#authentication-phase-faq2}
 
 驗證階段是強制性的，當使用者在Adobe Pass驗證中沒有有效的設定檔時，使用者端應用程式必須驗證使用者。
 
@@ -148,7 +148,7 @@ ht-degree: 0%
 
 使用者端應用程式錯誤處理需要處理[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)代碼（例如，`authenticated_profile_missing`、`authenticated_profile_expired`、`authenticated_profile_invalidated`等），這表示使用者端應用程式需要使用者進行驗證。
 
-#### 3.什麼是驗證工作階段？其有效期限為多久？ {#authentication-phase-faq3}
+#### &#x200B;3. 什麼是驗證工作階段以及它的有效時間？ {#authentication-phase-faq3}
 
 驗證工作階段是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#session)檔案中定義的辭彙。
 
@@ -165,7 +165,7 @@ ht-degree: 0%
 * [主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
 * [在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-#### 4.什麼是驗證碼？其有效期為多久？ {#authentication-phase-faq4}
+#### &#x200B;4. 什麼是驗證代碼？其有效期為多久？ {#authentication-phase-faq4}
 
 驗證代碼是[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#code)檔案中定義的辭彙。
 
@@ -184,7 +184,7 @@ ht-degree: 0%
 * [主要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-primary-application-flow.md)
 * [在次要應用程式內執行的基本驗證流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authentication-secondary-application-flow.md)
 
-#### 5.使用者端應用程式如何知道使用者是否輸入有效的驗證代碼，以及驗證工作階段是否尚未過期？ {#authentication-phase-faq5}
+#### &#x200B;5. 使用者端應用程式如何知道使用者是否輸入有效的驗證代碼，以及驗證工作階段是否尚未過期？ {#authentication-phase-faq5}
 
 使用者端應用程式可以傳送要求給負責繼續驗證工作階段或擷取與驗證代碼關聯的驗證工作階段資訊的其中一個「工作階段」端點，來驗證使用者在次要（熒幕）應用程式中輸入的驗證代碼。
 
@@ -192,7 +192,7 @@ ht-degree: 0%
 
 如需詳細資訊，請參閱[繼續驗證工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-resume-authentication-session.md)和[擷取驗證工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)檔案。
 
-#### 6.使用者端應用程式如何知道使用者是否已驗證？ {#authentication-phase-faq6}
+#### &#x200B;6. 使用者端應用程式如何知道使用者是否已驗證？ {#authentication-phase-faq6}
 
 使用者端應用程式可以查詢下列其中一個端點，該端點能夠驗證使用者是否已通過驗證並傳回設定檔資訊：
 
@@ -205,7 +205,7 @@ ht-degree: 0%
 * [主要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)
 * [在次要應用程式內執行的基本設定檔流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)
 
-#### 7.設定檔是什麼？其有效期為多久？ {#authentication-phase-faq7}
+#### &#x200B;7. 什麼是設定檔？其有效期為多久？ {#authentication-phase-faq7}
 
 設定檔是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#profile)檔案中定義的辭彙。
 
@@ -227,17 +227,17 @@ ht-degree: 0%
 
 如需詳細資訊，請參閱[TVE儀表板整合使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows)檔案。
 
-#### 8.使用者端應用程式是否應該將使用者的設定檔資訊快取在永久儲存體中？ {#authentication-phase-faq8}
+#### &#x200B;8. 使用者端應用程式是否應該將使用者的設定檔資訊快取在永久儲存體中？ {#authentication-phase-faq8}
 
 使用者端應用程式應將部分使用者設定檔資訊快取到永久性儲存體中，以避免不必要的請求，並改善使用者體驗，同時考慮到以下方面：
 
 | 屬性 | 使用者體驗 |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `mvpd` | 使用者端應用程式可使用此項來追蹤使用者選取的電視提供者，並在預先授權或授權階段中繼續使用它。<br/><br/>當目前的使用者設定檔過期時，使用者端應用程式可以使用記憶中的MVPD選項，並直接要求使用者確認。 |
-| `attributes` | 使用者端應用程式可使用此專案，根據不同的[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)金鑰（例如，`zip`、`maxRating`等）來個人化使用者體驗。<br/><br/>使用者中繼資料在驗證流程完成後即可使用，因此使用者端應用程式不需要查詢個別端點來擷取[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)資訊，因為它已包含在設定檔資訊中。<br/><br/>在授權流程期間，可能會根據MVPD和特定的中繼資料屬性，更新某些中繼資料屬性。 因此，使用者端應用程式可能需要再次查詢設定檔API，以擷取最新的使用者中繼資料。 |
-| `notAfter` | 使用者端應用程式可使用此項來追蹤使用者設定檔到期日。<br/><br/>使用者端應用程式錯誤處理需要處理[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)代碼（例如，`authenticated_profile_missing`、`authenticated_profile_expired`、`authenticated_profile_invalidated`等），這表示使用者端應用程式需要使用者進行驗證。 |
+| `mvpd` | 使用者端應用程式可以使用此項來追蹤使用者選取的電視提供者，並在預先授權或授權階段中繼續使用它。<br/><br/>當目前的使用者設定檔過期時，使用者端應用程式可以使用記憶中的MVPD選項，然後要求使用者確認。 |
+| `attributes` | 使用者端應用程式可使用此功能，根據不同的[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)金鑰（例如，`zip`、`maxRating`等）來個人化使用者體驗。<br/><br/>驗證流程完成後，使用者中繼資料即可使用，因此使用者端應用程式不需要查詢個別的端點來擷取[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)資訊，因為它已包含在設定檔資訊中。<br/><br/>在授權流程期間，某些中繼資料屬性可能會更新，視MVPD和特定的中繼資料屬性而定。 因此，使用者端應用程式可能需要再次查詢設定檔API，以擷取最新的使用者中繼資料。 |
+| `notAfter` | 使用者端應用程式可以使用此項來追蹤使用者設定檔到期日。<br/><br/>使用者端應用程式錯誤處理需要處理[錯誤](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)代碼（例如，`authenticated_profile_missing`、`authenticated_profile_expired`、`authenticated_profile_invalidated`等），這表示使用者端應用程式需要使用者驗證。 |
 
-#### 9.使用者端應用程式可以擴充使用者的設定檔而不需要重新驗證嗎？ {#authentication-phase-faq9}
+#### &#x200B;9. 使用者端應用程式可以擴充使用者的設定檔而不需要重新驗證嗎？ {#authentication-phase-faq9}
 
 不適用。
 
@@ -247,7 +247,7 @@ ht-degree: 0%
 
 不過，對於支援[家用驗證](/help/authentication/integration-guide-programmers/features-standard/hba-access/home-based-authentication.md) (HBA)的MVPD，使用者不需要輸入認證。
 
-#### 10.每個可用設定檔端點的使用案例為何？ {#authentication-phase-faq10}
+#### &#x200B;10. 每個可用設定檔端點有哪些使用案例？ {#authentication-phase-faq10}
 
 基本設定檔端點的設計是為了讓使用者端應用程式能夠知道使用者的驗證狀態、存取使用者中繼資料資訊、尋找用於驗證的方法或用於提供身分識別的實體。
 
@@ -255,11 +255,11 @@ ht-degree: 0%
 
 | API | 說明 | 使用案例 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [設定檔端點API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | 擷取所有使用者設定檔。 | **使用者第一次開啟使用者端應用程式**<br/><br/>&#x200B;在此案例中，使用者端應用程式不會將使用者選取的MVPD識別碼快取到永久儲存體中。<br/><br/>因此，它將傳送單一要求以擷取所有可用的使用者設定檔。 |
-| 特定MVPD API的[設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | 擷取與特定MVPD相關聯的使用者設定檔。 | **使用者在上次造訪中進行驗證後返回使用者端應用程式**<br/><br/>&#x200B;在此情況下，使用者端應用程式必須將使用者先前選取的MVPD識別碼快取到永久儲存區。<br/><br/>因此，它會傳送單一要求，以擷取該特定MVPD的使用者設定檔。 |
+| [設定檔端點API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | 擷取所有使用者設定檔。 | **使用者第一次開啟使用者端應用程式**<br/><br/>&#x200B;在此案例中，使用者端應用程式不會將使用者選取的MVPD識別碼快取到永久儲存體中。<br/><br/>因此，它將傳送單一要求來擷取所有可用的使用者設定檔。 |
+| 特定MVPD API的[設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | 擷取與特定MVPD相關聯的使用者設定檔。 | **使用者在上次造訪中進行驗證後，會返回使用者端應用程式**<br/><br/>&#x200B;在此情況下，使用者端應用程式必須將使用者先前選取的MVPD識別碼快取到永久儲存體中。<br/><br/>因此，它會傳送單一要求來擷取該特定MVPD的使用者設定檔。 |
 | [特定（驗證）程式碼API的設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 擷取與特定驗證代碼相關聯的使用者設定檔。 | **使用者啟動驗證程式**<br/><br/>&#x200B;在此案例中，使用者端應用程式必須判斷使用者是否已順利完成驗證，並擷取其設定檔資訊。<br/><br/>因此，它會啟動輪詢機制，以擷取與驗證碼相關聯的使用者設定檔。 |
 
-如需詳細資訊，請參閱主要應用程式[內執行的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)基本設定檔流程，以及次要應用程式[檔案內執行的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)基本設定檔流程。
+如需詳細資訊，請參閱主要應用程式](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)內執行的[基本設定檔流程，以及次要應用程式](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)檔案內執行的[基本設定檔流程。
 
 設定檔SSO端點有不同的用途，它讓使用者端應用程式能夠使用合作夥伴驗證回應建立使用者設定檔，並在單次作業中擷取它。
 
@@ -271,7 +271,7 @@ ht-degree: 0%
 
 如需詳細資訊，請參閱[使用合作夥伴流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)的單一登入[Apple SSO逐步指南(REST API V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)檔案。
 
-#### 11.如果使用者有多個MVPD設定檔，使用者端應用程式該怎麼做？ {#authentication-phase-faq11}
+#### &#x200B;11. 如果使用者有多個MVPD設定檔，使用者端應用程式該怎麼做？ {#authentication-phase-faq11}
 
 支援多個設定檔的決策，取決於使用者端應用程式的業務需求。
 
@@ -286,7 +286,7 @@ REST API v2支援多個設定檔以適應：
 * 具有MVPD訂閱結合直接對消費者(DTC)服務的使用者。
 * 有多個MVPD訂閱的使用者。
 
-#### 12.當使用者設定檔過期時，會發生什麼事？ {#authentication-phase-faq12}
+#### &#x200B;12. 使用者設定檔過期後會發生什麼事？ {#authentication-phase-faq12}
 
 當使用者設定檔到期時，它們不再包含在來自設定檔端點的回應中。
 
@@ -294,7 +294,7 @@ REST API v2支援多個設定檔以適應：
 
 如需詳細資訊，請參閱[建立驗證工作階段API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)檔案。
 
-#### 13.使用者設定檔何時會失效？ {#authentication-phase-faq13}
+#### &#x200B;13. 使用者設定檔何時會無效？ {#authentication-phase-faq13}
 
 使用者設定檔在下列情況下會失效：
 
@@ -303,19 +303,19 @@ REST API v2支援多個設定檔以適應：
 * 當使用者端應用程式更新用於擷取[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)標頭值的使用者端認證時。
 * 當使用者端應用程式撤銷或更新用來取得使用者端認證的軟體陳述式時。
 
-#### 14.使用者端應用程式應何時啟動輪詢機制？ {#authentication-phase-faq14}
+#### &#x200B;14. 使用者端應用程式應該何時啟動輪詢機制？ {#authentication-phase-faq14}
 
 為了確保效率並避免不必要的請求，使用者端應用程式必須在下列條件下啟動輪詢機制：
 
 **在主要（熒幕）應用程式內執行的驗證**
 
-主要（串流）應用程式應在瀏覽器元件載入`redirectUrl`工作階段[端點要求中](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)引數指定的URL後，於使用者到達最終目的地頁面時開始輪詢。
+主要（串流）應用程式應在瀏覽器元件載入[工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端點要求中`redirectUrl`引數指定的URL後，於使用者到達最終目的地頁面時開始輪詢。
 
 **在次要（熒幕）應用程式內執行的驗證**
 
 主要（串流）應用程式應在使用者起始驗證程式後立即開始輪詢 — 在收到[工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端點回應並向使用者顯示驗證代碼之後。
 
-#### 15.使用者端應用程式何時應停止輪詢機制？ {#authentication-phase-faq15}
+#### &#x200B;15. 使用者端應用程式何時應該停止輪詢機制？ {#authentication-phase-faq15}
 
 為了確保效率並避免不必要的請求，使用者端應用程式必須在下列條件下停止輪詢機制：
 
@@ -325,13 +325,13 @@ REST API v2支援多個設定檔以適應：
 
 **驗證工作階段與程式碼到期**
 
-驗證工作階段和程式碼會過期，如`notAfter`工作階段[端點回應中的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)時間戳記（例如30分鐘）所指示。 如果發生這種狀況，使用者必須重新啟動驗證程式，而且使用先前驗證代碼的輪詢應該立即停止。
+驗證工作階段和程式碼會過期，如[工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端點回應中的`notAfter`時間戳記（例如30分鐘）所指示。 如果發生這種狀況，使用者必須重新啟動驗證程式，而且使用先前驗證代碼的輪詢應該立即停止。
 
 **已產生新的驗證碼**
 
 如果使用者在主要（熒幕）裝置上要求新的驗證碼，則現有工作階段不再有效，使用先前驗證碼的輪詢應立即停止。
 
-#### 16.使用者端應用程式應用於輪詢機制的呼叫間隔為何？ {#authentication-phase-faq16}
+#### &#x200B;16. 使用者端應用程式應用於輪詢機制的呼叫之間應該間隔多久？ {#authentication-phase-faq16}
 
 為了確保效率並避免不必要的請求，使用者端應用程式必須在下列條件下設定輪詢機制頻率：
 
@@ -339,7 +339,7 @@ REST API v2支援多個設定檔以適應：
 |----------------------------------------------------------------------------|----------------------------------------------------------------------------|
 | 主要（串流）應用程式應每3-5秒或更長時間輪詢一次。 | 主要（串流）應用程式應每3-5秒或更長時間輪詢一次。 |
 
-#### 17.使用者端應用程式可傳送的輪詢要求數目上限是多少？ {#authentication-phase-faq17}
+#### &#x200B;17. 使用者端應用程式可傳送的輪詢要求數目上限是多少？ {#authentication-phase-faq17}
 
 使用者端應用程式必須遵守Adobe Pass驗證[節流機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md#throttling-mechanism-limits)所定義的目前限制。
 
@@ -347,7 +347,7 @@ REST API v2支援多個設定檔以適應：
 
 如需詳細資訊，請參閱[節流機制](/help/authentication/integration-guide-programmers/throttling-mechanism.md)檔案。
 
-#### 18.使用者端應用程式如何取得使用者的中繼資料資訊？ {#authentication-phase-faq18}
+#### &#x200B;18. 使用者端應用程式如何取得使用者的中繼資料資訊？ {#authentication-phase-faq18}
 
 使用者端應用程式可以查詢下列端點之一，這些端點能夠傳回[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)資訊作為設定檔資訊的一部分：
 
@@ -364,7 +364,7 @@ REST API v2支援多個設定檔以適應：
 
 在授權流程期間，某些中繼資料屬性可能會根據MVPD和特定的中繼資料屬性而更新。 因此，使用者端應用程式可能需要再次查詢上述API，以擷取最新的使用者中繼資料。
 
-#### 19.使用者端應用程式應如何管理降級存取？ {#authentication-phase-faq19}
+#### &#x200B;19. 使用者端應用程式應該如何管理降級存取？ {#authentication-phase-faq19}
 
 [降級功能](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)可讓使用者端應用程式維持使用者的順暢串流體驗，即使使用者的MVPD驗證或授權服務發生問題亦然。
 
@@ -374,7 +374,7 @@ REST API v2支援多個設定檔以適應：
 
 如需詳細資訊，請參閱[降級存取流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/degraded-access-flows/rest-api-v2-access-degraded-flows.md)檔案。
 
-#### 20.使用者端應用程式應如何管理暫時存取？ {#authentication-phase-faq20}
+#### &#x200B;20. 使用者端應用程式應該如何管理暫時存取？ {#authentication-phase-faq20}
 
 [TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)可讓使用者端應用程式提供使用者暫時存取許可權。
 
@@ -388,7 +388,7 @@ REST API v2支援多個設定檔以適應：
 
 如需詳細資訊，請參閱[暫時存取流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/temporary-access-flows/rest-api-v2-access-temporary-flows.md)檔案。
 
-#### 21.使用者端應用程式應如何管理跨裝置單一登入存取？ {#authentication-phase-faq21}
+#### &#x200B;21. 使用者端應用程式應如何管理跨裝置單一登入存取？ {#authentication-phase-faq21}
 
 如果使用者端應用程式提供跨裝置的一致唯一使用者識別碼，REST API v2可啟用跨裝置單一登入。
 
@@ -402,17 +402,17 @@ REST API v2支援多個設定檔以適應：
 
 +++預先授權階段常見問題集
 
-#### 1.預先授權階段的用途為何？ {#preauthorization-phase-faq1}
+#### &#x200B;1. 預先授權階段的用途為何？ {#preauthorization-phase-faq1}
 
 預先授權階段的目的是讓使用者端應用程式能夠在其目錄中呈現使用者有權存取的資源子集。
 
 當使用者第一次開啟使用者端應用程式或導覽至新區段時，「預先授權階段」可以增強使用者體驗。
 
-#### 2.預先授權階段是否為必要階段？ {#preauthorization-phase-faq2}
+#### &#x200B;2. 預先授權階段是否為必要？ {#preauthorization-phase-faq2}
 
 預先授權階段並非強制性，如果使用者端應用程式想要呈現資源目錄而不先根據使用者的許可權進行篩選，則可跳過此階段。
 
-#### 3.什麼是預先授權決定？ {#preauthorization-phase-faq3}
+#### &#x200B;3. 什麼是預先授權決定？ {#preauthorization-phase-faq3}
 
 預先授權是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#preauthorization)檔案中定義的字詞，而決定字詞也可在[字彙表](rest-api-v2-glossary.md#decision)中找到。
 
@@ -425,11 +425,11 @@ REST API v2支援多個設定檔以適應：
 * [擷取預先授權決定API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
 * [主要應用程式內執行的基本預先授權流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-preauthorization-primary-application-flow.md)
 
-#### 4.使用者端應用程式是否應該將預先授權決定快取到永久儲存體中？ {#preauthorization-phase-faq4}
+#### &#x200B;4. 使用者端應用程式是否應該將預先授權決策快取在永久儲存體中？ {#preauthorization-phase-faq4}
 
 使用者端應用程式不需要將預先授權決定儲存在永久儲存體中。 但是，建議將允許決策快取到記憶體中以改善使用者體驗。 這有助於避免對已預先授權的資源之決定預先授權端點進行不必要的呼叫，從而減少延遲並改善效能。
 
-#### 5.使用者端應用程式如何判斷預先授權決定被拒絕的原因？ {#preauthorization-phase-faq5}
+#### &#x200B;5. 使用者端應用程式如何判斷預先授權決定被拒絕的原因？ {#preauthorization-phase-faq5}
 
 使用者端應用程式可檢查包含在決定預先授權端點回應中的[錯誤碼和訊息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，以判斷拒絕預先授權決定的原因。 這些詳細資料可為insight提供預先授權請求被拒絕的特定原因，有助於告知使用者體驗或觸發應用程式中的任何必要處理。
 
@@ -437,17 +437,17 @@ REST API v2支援多個設定檔以適應：
 
 請考慮將重試限制在合理數字，並透過向使用者呈現清楚的意見反應來適當地處理拒絕。
 
-#### 6.為何預先授權決定遺失媒體權杖？ {#preauthorization-phase-faq6}
+#### &#x200B;6. 為何預先授權決定遺失媒體權杖？ {#preauthorization-phase-faq6}
 
 預先授權決定遺失媒體權杖，因為預先授權階段不能用於播放資源，因為這是授權階段的用途。
 
-#### 7.如果預先授權決定已經存在，可以略過「授權階段」嗎？ {#preauthorization-phase-faq7}
+#### &#x200B;7. 如果預先授權決定已經存在，可以跳過授權階段嗎？ {#preauthorization-phase-faq7}
 
 不適用。
 
 即使預先授權決定可用，也無法跳過授權階段。 預先授權決定僅供參考，不會授予實際的播放許可權。 預先授權階段旨在提供早期指引，但在播放任何內容之前仍需要授權階段。
 
-#### 8.什麼是資源？支援哪些格式？ {#preauthorization-phase-faq8}
+#### &#x200B;8. 什麼是資源？支援哪些格式？ {#preauthorization-phase-faq8}
 
 資源是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#resource)檔案中定義的辭彙。
 
@@ -460,7 +460,7 @@ REST API v2支援多個設定檔以適應：
 
 如需詳細資訊，請參閱[受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources)檔案。
 
-#### 9.使用者端應用程式一次可取得多少資源預先授權決定？ {#preauthorization-phase-faq9}
+#### &#x200B;9. 使用者端應用程式一次可取得多少資源預先授權決定？ {#preauthorization-phase-faq9}
 
 由於MVPD施加的條件，使用者端應用程式可以在單一API要求中取得有限數量資源的預先授權決定，通常最多5個。
 
@@ -474,15 +474,15 @@ REST API v2支援多個設定檔以適應：
 
 +++授權階段常見問題集
 
-#### 1.授權階段的用途為何？ {#authorization-phase-faq1}
+#### &#x200B;1. 授權階段的用途為何？ {#authorization-phase-faq1}
 
 授權階段的用途是，在使用者端應用程式透過MVPD驗證其許可權後，提供播放使用者要求的資源的功能。
 
-#### 2.授權階段是否為必要階段？ {#authorization-phase-faq2}
+#### &#x200B;2. 授權階段是否為必要？ {#authorization-phase-faq2}
 
 授權階段是強制性的，如果客戶端應用程式想要播放使用者請求的資源，則無法跳過此階段，因為它需要在釋放資料流之前向MVPD驗證使用者是否有權使用。
 
-#### 3.什麼是授權決定？其有效期為多久？ {#authorization-phase-faq3}
+#### &#x200B;3. 什麼是授權決定？其有效期為多久？ {#authorization-phase-faq3}
 
 授權是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#authorization)檔案中定義的字詞，而決定字詞也可在[字彙表](rest-api-v2-glossary.md#decision)中找到。
 
@@ -501,11 +501,11 @@ REST API v2支援多個設定檔以適應：
 
 如需詳細資訊，請參閱[TVE儀表板整合使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md#most-used-flows)檔案。
 
-#### 4.使用者端應用程式是否應將授權決定快取至永久儲存區？ {#authorization-phase-faq4}
+#### &#x200B;4. 使用者端應用程式是否應該將授權決定快取在永久儲存體中？ {#authorization-phase-faq4}
 
 使用者端應用程式不需要將授權決定儲存在永久儲存體中。
 
-#### 5.使用者端應用程式如何判斷授權決定被拒絕的原因？ {#authorization-phase-faq5}
+#### &#x200B;5. 使用者端應用程式如何判斷授權決定遭到拒絕的原因？ {#authorization-phase-faq5}
 
 使用者端應用程式可以檢查包含在來自Decisions Authorize端點的回應中的[錯誤碼和訊息](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md)，以判斷拒絕授權決定的原因。 這些詳細資料可為insight提供授權請求遭拒絕的特定原因，有助於告知使用者體驗或觸發應用程式中的任何必要處理。
 
@@ -513,7 +513,7 @@ REST API v2支援多個設定檔以適應：
 
 請考慮將重試限制在合理數字，並透過向使用者呈現清楚的意見反應來適當地處理拒絕。
 
-#### 6.什麼是媒體代號？其有效期為何？ {#authorization-phase-faq6}
+#### &#x200B;6. 什麼是媒體代號？其有效期為多久？ {#authorization-phase-faq6}
 
 媒體權杖是[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#media-token)檔案中定義的辭彙。
 
@@ -530,19 +530,19 @@ REST API v2支援多個設定檔以適應：
 * [擷取授權決定API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
 * [主要應用程式內執行的基本授權流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-authorization-primary-application-flow.md)
 
-#### 7.使用者端應用程式是否應在播放資源資料流之前驗證媒體權杖？ {#authorization-phase-faq7}
+#### &#x200B;7. 使用者端應用程式是否應在播放資源資料流之前驗證媒體權杖？ {#authorization-phase-faq7}
 
 是。
 
-使用者端應用程式必須先驗證媒體權杖，才能開始播放資源資料流。 應該使用[媒體權杖驗證器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)來執行此驗證。 透過驗證傳回`serializedToken`中的`token`，使用者端應用程式可協助防止未經授權的存取（例如串流擷取），並確保只有經過適當授權的使用者才能播放內容。
+使用者端應用程式必須先驗證媒體權杖，才能開始播放資源資料流。 應該使用[媒體權杖驗證器](/help/authentication/integration-guide-programmers/features-standard/entitlements/media-tokens.md#media-token-verifier)來執行此驗證。 透過驗證傳回`token`中的`serializedToken`，使用者端應用程式可協助防止未經授權的存取（例如串流擷取），並確保只有經過適當授權的使用者才能播放內容。
 
-#### 8.使用者端應用程式是否應在播放期間重新整理過期的媒體權杖？ {#authorization-phase-faq8}
+#### &#x200B;8. 使用者端應用程式是否應在播放期間重新整理過期的媒體權杖？ {#authorization-phase-faq8}
 
 不適用。
 
 當串流正在播放時，使用者端應用程式不需要重新整理過期的媒體Token。 如果媒體權杖在播放期間到期，則應該允許資料流繼續而不中斷。 不過，使用者端在下次嘗試播放資源時，必須要求新的授權決定，並取得新的媒體代號。
 
-#### 9.授權決定中每個時間戳記屬性的用途為何？ {#authorization-phase-faq9}
+#### &#x200B;9. 授權決定中每個時間戳記屬性的用途為何？ {#authorization-phase-faq9}
 
 授權決定包括數個時間戳記屬性，這些屬性提供有關授權本身及關聯媒體權杖的有效期間的重要內容。 這些時間戳記根據與授權決定或媒體權杖相關，有不同的用途。
 
@@ -564,7 +564,7 @@ REST API v2支援多個設定檔以適應：
 | `notBefore` | 發佈媒體權杖的時間（毫秒）。 | 這會標籤代號何時變成適用於播放的有效代號。 |
 | `notAfter` | 媒體權杖過期的時間（毫秒）。 | 媒體權杖的生命週期故意縮短（通常為7分鐘），以將誤用風險降至最低，並解決權杖產生伺服器和權杖驗證伺服器之間的潛在時鐘差異。 |
 
-#### 10.什麼是資源？支援哪些格式？ {#authorization-phase-faq10}
+#### &#x200B;10. 什麼是資源？支援哪些格式？ {#authorization-phase-faq10}
 
 資源是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#resource)檔案中定義的辭彙。
 
@@ -577,7 +577,7 @@ REST API v2支援多個設定檔以適應：
 
 如需詳細資訊，請參閱[受保護的資源](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#protected-resources)檔案。
 
-#### 11.使用者端應用程式一次可取得多少資源授權決定？ {#authorization-phase-faq11}
+#### &#x200B;11. 使用者端應用程式一次可取得多少資源授權決定？ {#authorization-phase-faq11}
 
 由於MVPD施加的條件，使用者端應用程式可以在單一API要求中取得有限資源數的授權決定，通常最多1個。
 
@@ -587,11 +587,11 @@ REST API v2支援多個設定檔以適應：
 
 +++登出階段常見問題集
 
-#### 1.登出階段的用途為何？ {#logout-phase-faq1}
+#### &#x200B;1. 登出階段的用途為何？ {#logout-phase-faq1}
 
 登出階段的目的是讓使用者端應用程式能夠應使用者要求，在Adobe Pass驗證中終止使用者的已驗證設定檔。
 
-#### 2.登出階段是否為必要？ {#logout-phase-faq2}
+#### &#x200B;2. 登出階段是否為必要？ {#logout-phase-faq2}
 
 登出階段是強制性的，使用者端應用程式必須提供使用者登出的功能。
 
@@ -601,7 +601,7 @@ REST API v2支援多個設定檔以適應：
 
 +++標題常見問答
 
-#### 1.如何計算Authorization標頭的值？ {#headers-faq1}
+#### &#x200B;1. 如何計算Authorization標題的值？ {#headers-faq1}
 
 >[!IMPORTANT]
 >
@@ -618,7 +618,7 @@ REST API v2支援多個設定檔以適應：
 * [擷取存取Token API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)
 * [動態使用者端註冊流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/flows/dynamic-client-registration-flow.md)
 
-#### 2.如何計算AP-Device-Identifier標頭的值？ {#headers-faq2}
+#### &#x200B;2. 如何計算AP-Device-Identifier標題的值？ {#headers-faq2}
 
 >[!IMPORTANT]
 >
@@ -628,7 +628,7 @@ REST API v2支援多個設定檔以適應：
 
 [AP-Device-Identifier](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-device-identifier.md)標題檔案提供主要平台如何計算值的範例，但使用者端應用程式可以根據自己的商業邏輯和需求選擇使用不同的方法。
 
-#### 3.如何計算X-Device-Info標頭的值？ {#headers-faq3}
+#### &#x200B;3. 如何計算X-Device-Info標頭的值？ {#headers-faq3}
 
 >[!IMPORTANT]
 >
@@ -650,7 +650,7 @@ REST API v2支援多個設定檔以適應：
 
 +++其他常見問答
 
-#### 1.我可以探索REST API V2請求和回應並測試API嗎？ {#misc-faq1}
+#### &#x200B;1. 我可以探索REST API V2請求和回應並測試API嗎？ {#misc-faq1}
 
 是。
 
@@ -659,15 +659,15 @@ REST API v2支援多個設定檔以適應：
 * [DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)
 * [REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)
 
-若要與[REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)互動，您必須包含[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)標頭，以及透過`Bearer`DCR API[取得的](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)存取權杖。
+若要與[REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)互動，您必須包含[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)標頭，以及透過[DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)取得的`Bearer`存取權杖。
 
 若要使用[DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)，需要具有REST API V2範圍的軟體陳述式。 如需詳細資訊，請參閱[動態使用者端註冊(DCR)常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)檔案。
 
-#### 2.我可以使用具備OpenAPI支援的API開發工具來探索REST API V2請求和回應嗎？ {#misc-faq2}
+#### &#x200B;2. 我可以使用具備OpenAPI支援的API開發工具來探索REST API V2請求和回應嗎？ {#misc-faq2}
 
 是。
 
-您可以從[Adobe Developer](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)網站下載[DCR API](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)和[REST API V2](https://developer.adobe.com/adobe-pass/)的OpenAPI規格檔案。
+您可以從[Adobe Developer](https://developer.adobe.com/adobe-pass/)網站下載[DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)和[REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)的OpenAPI規格檔案。
 
 若要下載OpenAPI規格檔案，請按一下下載按鈕，將下列檔案儲存到本機電腦：
 
@@ -676,7 +676,7 @@ REST API v2支援多個設定檔以適應：
 
 接著，您可以將這些檔案匯入您偏好的API開發工具，探索REST API V2請求和回應並測試API。
 
-#### 3.我仍可以使用託管於https://sp.auth-staging.adobe.com/apitest/api.html的現有API測試工具嗎？ {#misc-faq3}
+#### &#x200B;3. 我仍可以使用託管在https://sp.auth-staging.adobe.com/apitest/api.html的現有API測試工具嗎？ {#misc-faq3}
 
 不適用。
 
@@ -685,9 +685,204 @@ REST API v2支援多個設定檔以適應：
 * [DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)
 * [REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)
 
-若要與[REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)互動，您必須包含[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)標頭，以及透過`Bearer`DCR API[取得的](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)存取權杖。
+若要與[REST API V2](https://developer.adobe.com/adobe-pass/api/rest_api_v2/interactive/)互動，您必須包含[Authorization](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-authorization.md)標頭，以及透過[DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)取得的`Bearer`存取權杖。
 
 若要使用[DCR API](https://developer.adobe.com/adobe-pass/api/dcr_api/interactive/)，需要具有REST API V2範圍的軟體陳述式。 如需詳細資訊，請參閱[動態使用者端註冊(DCR)常見問題集](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-faqs.md)檔案。
+
++++
+
+### Apple SSO常見問題集 {#apple-sso-general}
+
++++Apple SSO常見問題集
+
+#### &#x200B;1. 什麼是Apple SSO，它如何搭配REST API V2運作？ {#apple-sso-faq1}
+
+Apple SSO （單一登入）可讓使用者使用Apple的[視訊訂閱者帳戶架構](https://developer.apple.com/documentation/videosubscriberaccount)，在裝置系統層級登入其電視提供者帳戶，而不需依個別應用程式進行驗證。
+
+REST API V2可透過合作夥伴流程，為在iOS、iPadOS或tvOS上執行的使用者端應用程式一般使用者支援合作夥伴單一登入(SSO)。
+
+如需詳細資訊，請參閱下列檔案：
+
+* [Apple SSO概觀](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md)
+* [Apple SSO逐步指南(REST API V2)](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md)
+* [使用合作夥伴流程的單一登入](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)
+
+#### &#x200B;2. 實作Apple SSO的先決條件為何？ {#apple-sso-faq2}
+
+在實作Apple SSO之前，請確定符合下列必要條件：
+
+**串流應用程式需求：**
+
+* 請連絡Apple以啟用[視訊訂閱者帳戶架構](https://developer.apple.com/documentation/videosubscriberaccount)，作為Apple團隊ID的一部分。
+* 將視訊訂閱者的單一登入權益設定為Apple開發人員帳戶的一部分。
+* 使用Xcode 8版或更新版本，以及iOS/tvOS 10版或更新版本。
+* 要求使用者許可權以存取裝置層級的訂閱資訊。
+* 包含`X-Device-Info`和/或`User-Agent`標頭，讓Adobe Pass驗證後端可以識別裝置平台。
+* 在所有相關API請求中包含具有有效合作夥伴架構狀態的`AP-Partner-Framework-Status`標頭。
+
+**Adobe Pass設定：**
+
+* 透過Adobe Pass TVE Dashboard為每個需要的整合和平台(iOS/tvOS)啟用單一登入(SSO)，方法是將`Enable Single Sign On`屬性設定為`Yes`。
+
+**MVPD需求：**
+
+* MVPD必須與Apple一起上線，才能支援Apple SSO。
+* 針對合作夥伴SSO設定，MVPD必須上架使用Adobe Pass驗證。
+
+如需詳細資訊，請參閱[Apple SSO總覽 — 必要條件](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-overview.md#apple-sso-prerequisites)檔案。
+
+#### &#x200B;3. 什麼是AP-Partner-Framework-Status標頭？為何需要它？ {#apple-sso-faq3}
+
+`AP-Partner-Framework-Status`標頭包含從Apple的視訊訂閱者帳戶架構擷取的合作夥伴架構狀態資訊。
+
+**永遠必要：**
+
+* [擷取合作夥伴驗證請求](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)
+* [使用合作夥伴驗證回應建立和擷取設定檔](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md)
+
+**有條件必要：**
+
+* [擷取設定檔](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)
+* [擷取特定mvpd的設定檔](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md)
+* [使用特定mvpd擷取授權決策](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)
+* [使用特定mvpd擷取預先授權決定](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)
+
+串流應用程式必須呼叫視訊訂閱者帳戶架構以擷取此資訊，並將其當作base64編碼的JSON裝載包含在標題中。
+
+**最佳實務：**
+
+* 當應用程式進入前景狀態時，串流應用程式應該擷取合作夥伴框架狀態。
+* 快取夥伴架構狀態資訊，並在應用程式從背景切換至前景時重新整理。
+* 請確認合作夥伴架構狀態包含有效值（已授與使用者許可權、有效的提供者識別碼、有效的到期日）。
+
+如需詳細資訊，請參閱[AP-Partner-Framework-Status](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md)檔案。
+
+#### &#x200B;4. 如何疑難排解Apple SSO問題？ {#apple-sso-faq4}
+
+針對Apple SSO問題進行疑難排解時，請遵循此一般方法：
+
+**步驟1：驗證SAML要求產生**
+
+* 檢查[Retrieve夥伴驗證請求](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)端點是否傳回有效的夥伴驗證請求（SAML請求）。
+* 確認`authenticationRequest - request`屬性在base64解碼後包含正確格式化的SAML要求。
+* 請確定`AP-Partner-Framework-Status`標頭包含有效的合作夥伴架構狀態資訊。
+
+**步驟2：識別VSA錯誤**
+
+* 檢閱來自視訊訂閱者帳戶架構的錯誤回應。
+* 請參閱[視訊訂閱者帳戶架構](https://developer.apple.com/documentation/videosubscriberaccount/vserror#Error-codes)檔案，瞭解錯誤碼和說明。
+* 請注意，VSA錯誤檔案相當一般，可能不會提供詳細的根本原因資訊。
+
+**步驟3：檢查常見問題**
+
+* 必須授與使用者許可權存取狀態（檢查`VSAccountAccessStatus.granted`）。
+* 使用者提供者對應識別項必須存在且有效(`accountProviderIdentifier`)。
+* 使用者提供者設定檔的到期日必須是有效的(`authenticationExpirationDate`)。
+* MVPD必須與Apple一起上線（請檢視設定端點回應中的`boardingStatus`）。
+* MVPD整合必須在TVE儀表板中啟用Apple SSO。
+
+**步驟4：涉及MVPD進行調查**
+
+* 如果視訊訂閱者帳戶架構收到有效的SAML請求，但在MVPD互動後未傳回SAML回應，請涉及啟用Apple SSO的MVPD以進行疑難排解。
+* 此問題也可能與MVPD的特定設定或Apple端的實作有關。
+
+#### &#x200B;5. 什麼是VSA常見錯誤？應如何處理？ {#apple-sso-faq5}
+
+常見案例及其處理：
+
+**使用者拒絕許可權：**
+
+* `VSAccountAccessStatus`將不會是`.granted`。
+* 回覆至基本驗證流程，並顯示應用程式自己的MVPD選擇器。
+
+**MVPD未上線至Apple （錯誤碼1）：**
+
+* VSA Framework傳回`error.code == 1`錯誤。
+* `error.userInfo["VSErrorInfoKeyUnsupportedProviderIdentifier"]`包含Apple MSO ID。
+* 回覆為基本驗證流程，但如果您可將MVPD MSO ID對應至設定中的MVPD，則可以略過使用Apple選擇器提示使用者。
+
+**未傳回任何中繼資料：**
+
+* `vsaMetadata`為`nil`或缺少必要欄位。
+* 回覆為基本驗證流程。
+
+未傳回&#x200B;**SAML回應：**
+
+* 在MVPD驗證之後，`samlAttributeQueryResponse`為`nil`。
+* 這可能表示MVPD的Apple SSO實作有問題。
+* 請考慮聯絡Adobe、MVPD和Apple進行調查。
+
+如需詳細的錯誤資訊，請參閱[視訊訂閱者帳戶架構](https://developer.apple.com/documentation/videosubscriberaccount)檔案。
+
+#### &#x200B;6. 設定檔型別「appleSSO」代表什麼？ {#apple-sso-faq6}
+
+`type`設為「appleSSO」的設定檔表示使用者已透過使用視訊訂閱者帳戶架構的Apple合作夥伴單一登入流程進行驗證。
+
+此設定檔型別有特定需求：
+
+* 使用「appleSSO」設定檔進行決策（預先授權/授權）請求時，串流應用程式應包含具有目前合作夥伴架構狀態的有效`AP-Partner-Framework-Status`標頭。
+* 登出期間，回應將包含設為「partner_logout」的`actionName`以及設為「partner_interactive」的`actionType`，表示使用者必須在合作夥伴（系統）層級完成登出。
+
+一般設定檔(非Apple SSO)沒有這些要求，且遵循基本驗證流程。
+
+#### &#x200B;7. 如何處理Apple SSO設定檔的登出？ {#apple-sso-faq7}
+
+為具有「appleSSO」型別設定檔的使用者起始登出時：
+
+* Adobe Pass登出端點回應將包含：
+   * `actionName`已設定為「partner_logout」
+   * `actionType`已設為&quot;partner_interactive&quot;
+   * `url`屬性將會遺失
+
+* 串流應用程式必須前往下列位置，提示使用者在合作夥伴（系統）層級完成登出程式：
+   * iOS/iPadOS上的`Settings -> TV Provider`
+   * tvOS上的`Settings -> Accounts -> TV Provider`
+
+* 使用者必須從系統層級的電視提供者手動登出，才能完成登出程式。
+
+如需詳細資訊，請參閱[Apple SSO逐步指南(REST API V2) — 登出階段](/help/authentication/integration-guide-programmers/features-standard/sso-access/partner-sso/apple-sso/apple-sso-cookbook-rest-api-v2.md#cookbook)檔案。
+
+#### &#x200B;8. 如果Apple SSO失敗，我可以回覆為基本驗證嗎？ {#apple-sso-faq8}
+
+是，在下列情況下，Adobe Pass Authentication REST API V2會自動回覆為基本驗證流程：
+
+**自動遞補：**
+
+* 合作夥伴單一登入驗證在Adobe Pass後端失敗
+* 使用者拒絕存取訂閱資訊
+* MVPD未加入Apple
+* VSA Framework未傳回有效的中繼資料
+
+**回應指示：**
+
+當回復到基本驗證時，[擷取夥伴驗證要求](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-partner-authentication-request.md)端點回應將包含：
+
+* `actionName`已設定為「驗證」或「繼續」
+* `actionType`設為「互動式」或「直接」
+
+串流應用程式應該透過起始基本驗證流程來處理這些回應。
+
+**手動遞補：**
+
+若要針對特定整合停用Apple SSO並一律使用基本驗證：
+
+* 針對所需的整合和平台(iOS/tvOS)，在Adobe Pass TVE控制面板中將`Enable Single Sign On`屬性設定為`No`。
+
+如需詳細資訊，請參閱[使用合作夥伴流程](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md)的單一登入檔案。
+
+#### &#x200B;9. 哪裡可以找到視訊訂閱者帳戶架構的詳細資訊？ {#apple-sso-faq9}
+
+如需Apple視訊訂閱者帳戶架構的詳細資訊，包括API參考、錯誤代碼和整合指南，請參閱Apple官方檔案：
+
+* [視訊訂閱者帳戶架構檔案](https://developer.apple.com/documentation/videosubscriberaccount)
+
+要檢閱的金鑰類別和通訊協定：
+
+* [VSAccountManager](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager) — 訂閱者帳戶作業的主要管理員
+* [VSAccountMetadataRequest](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadatarequest) — 要求訂閱者帳戶資訊
+* [VSAccountMetadata](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmetadata) — 包含訂閱者帳戶資訊的回應
+* [VSAccountManagerDelegate](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanagerdelegate) — 帳戶管理員事件的委派通訊協定
+* [VSAccountAccessStatus](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountaccessstatus) — 使用者許可權狀態列舉
 
 +++
 
@@ -703,7 +898,7 @@ REST API v2支援多個設定檔以適應：
 
 +++一般移轉常見問題集
 
-#### 1.需要我一次向所有使用者推出移轉至REST API V2的新使用者端應用程式嗎？ {#migration-faq1}
+#### &#x200B;1. 我是否需要一次向所有使用者推出移轉至REST API V2的新使用者端應用程式？ {#migration-faq1}
 
 不適用。
 
@@ -711,7 +906,7 @@ REST API v2支援多個設定檔以適應：
 
 到2025年底，Adobe Pass驗證將繼續支援整合REST API V1或SDK的舊版使用者端應用程式。
 
-#### 2.需要我一次在所有API和流程中推出移轉至REST API V2的新使用者端應用程式嗎？ {#migration-faq2}
+#### &#x200B;2. 我是否需要一次在所有API和流程中推出移轉至REST API V2的新使用者端應用程式？ {#migration-faq2}
 
 是。
 
@@ -721,7 +916,7 @@ REST API v2支援多個設定檔以適應：
 
 Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1/SDK的「混合」實作。
 
-#### 3.更新至移轉至REST API V2的新使用者端應用程式時，是否會保留使用者驗證？ {#migration-faq3}
+#### &#x200B;3. 更新至移轉至REST API V2的新使用者端應用程式時，是否會保留使用者驗證？ {#migration-faq3}
 
 不適用。
 
@@ -729,7 +924,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 因此，使用者必須在移轉至REST API V2的新使用者端應用程式中重新驗證。
 
-#### &#x200B;4. REST API V2是否預設啟用增強式錯誤代碼？ {#migration-faq4}
+#### &#x200B;4. REST API V2是否預設啟用增強型錯誤代碼？ {#migration-faq4}
 
 是。
 
@@ -737,7 +932,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 如需詳細資訊，請參閱[增強錯誤碼](/help/authentication/integration-guide-programmers/features-standard/error-reporting/enhanced-error-codes.md#enhanced-error-codes-lists-rest-api-v2)檔案。
 
-#### 5.移轉至REST API V2時，現有的整合是否需要變更設定？ {#migration-faq5}
+#### &#x200B;5. 移轉至REST API V2時，現有的整合是否需要變更設定？ {#migration-faq5}
 
 不適用。
 
@@ -755,7 +950,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 +++註冊階段常見問題集
 
-##### 1.註冊階段需要哪些高階API移轉？ {#registration-phase-v1-to-v2-faq1}
+##### &#x200B;1. 註冊階段需要哪些高階API移轉？ {#registration-phase-v1-to-v2-faq1}
 
 從REST API V1移轉至REST API V2時，註冊階段沒有高層級變更。
 
@@ -774,7 +969,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 +++設定階段常見問題集
 
-##### 1.設定階段需要哪些高階API移轉？ {#configuration-phase-v1-to-v2-faq1}
+##### &#x200B;1. 組態階段需要哪些高階API移轉？ {#configuration-phase-v1-to-v2-faq1}
 
 從REST API V1移轉至REST API V2時，下表呈現需考量的高層級變更：
 
@@ -788,7 +983,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 +++驗證階段常見問題集
 
-##### 1.驗證階段需要哪些高階API移轉？ {#authentication-phase-v1-to-v2-faq1}
+##### &#x200B;1. 驗證階段需要哪些高階API移轉？ {#authentication-phase-v1-to-v2-faq1}
 
 從REST API V1移轉至REST API V2時，下表呈現需考量的高層級變更：
 
@@ -808,7 +1003,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 +++預先授權階段常見問題集
 
-##### 1.預先授權階段需要哪些高階API移轉？ {#preauthorization-phase-v1-to-v2-faq1}
+##### &#x200B;1. 預先授權階段需要哪些高階API移轉？ {#preauthorization-phase-v1-to-v2-faq1}
 
 從REST API V1移轉至REST API V2時，下表呈現需考量的高層級變更：
 
@@ -822,7 +1017,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 +++授權階段常見問題集
 
-##### 1.授權階段需要哪些高階API移轉？ {#authorization-phase-v1-to-v2-faq1}
+##### &#x200B;1. 授權階段需要哪些高階API移轉？ {#authorization-phase-v1-to-v2-faq1}
 
 從REST API V1移轉至REST API V2時，下表呈現需考量的高層級變更：
 
@@ -838,7 +1033,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 +++登出階段常見問題集
 
-##### 1.登出階段需要哪些高階API移轉？ {#logout-phase-v1-to-v2-faq1}
+##### &#x200B;1. 登出階段需要哪些高階API移轉？ {#logout-phase-v1-to-v2-faq1}
 
 從REST API V1移轉至REST API V2時，下表呈現需考量的高層級變更：
 
@@ -856,7 +1051,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 +++註冊階段常見問題集
 
-##### 1.註冊階段需要哪些高階API移轉？ {#registration-phase-sdk-to-v2-faq1}
+##### &#x200B;1. 註冊階段需要哪些高階API移轉？ {#registration-phase-sdk-to-v2-faq1}
 
 從SDK移轉至REST API V2時，下表呈現需考量的高層級變更：
 
@@ -890,7 +1085,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 +++設定階段常見問題集
 
-##### 1.設定階段需要哪些高階API移轉？ {#configuration-phase-sdk-to-v2-faq1}
+##### &#x200B;1. 組態階段需要哪些高階API移轉？ {#configuration-phase-sdk-to-v2-faq1}
 
 從SDK移轉至REST API V2時，下表呈現需考量的高層級變更：
 
@@ -924,7 +1119,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 +++驗證階段常見問題集
 
-##### 1.驗證階段需要哪些高階API移轉？ {#authentication-phase-sdk-to-v2-faq1}
+##### &#x200B;1. 驗證階段需要哪些高階API移轉？ {#authentication-phase-sdk-to-v2-faq1}
 
 從SDK移轉至REST API V2時，下表呈現需考量的高層級變更：
 
@@ -980,7 +1175,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 +++預先授權階段常見問題集
 
-##### 1.預先授權階段需要哪些高階API移轉？ {#preauthorization-phase-sdk-to-v2-faq1}
+##### &#x200B;1. 預先授權階段需要哪些高階API移轉？ {#preauthorization-phase-sdk-to-v2-faq1}
 
 從SDK移轉至REST API V2時，下表呈現需考量的高層級變更：
 
@@ -1012,7 +1207,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 +++授權階段常見問題集
 
-##### 1.授權階段需要哪些高階API移轉？ {#authorization-phase-sdk-to-v2-faq1}
+##### &#x200B;1. 授權階段需要哪些高階API移轉？ {#authorization-phase-sdk-to-v2-faq1}
 
 從SDK移轉至REST API V2時，下表呈現需考量的高層級變更：
 
@@ -1046,7 +1241,7 @@ Adobe Pass驗證將不支援在API和流程之間整合REST API V2和REST API V1
 
 +++登出階段常見問題集
 
-##### 1.登出階段需要哪些高階API移轉？ {#logout-phase-sdk-to-v2-faq1}
+##### &#x200B;1. 登出階段需要哪些高階API移轉？ {#logout-phase-sdk-to-v2-faq1}
 
 從SDK移轉至REST API V2時，下表呈現需考量的高層級變更：
 
