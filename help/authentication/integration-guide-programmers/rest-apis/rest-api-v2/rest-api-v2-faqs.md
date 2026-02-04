@@ -2,7 +2,7 @@
 title: REST API V2常見問題集
 description: REST API V2常見問題集
 exl-id: 2dd74b47-126e-487b-b467-c16fa8cc14c1
-source-git-commit: 44fa75eb7b19ff44a41809d44c171baff6853b52
+source-git-commit: eaadf0aa7ddc58250e23715b7068d3497a30d258
 workflow-type: tm+mt
 source-wordcount: '11089'
 ht-degree: 1%
@@ -254,17 +254,17 @@ ht-degree: 1%
 每個端點皆適合特定使用案例，如下所示：
 
 | API | 說明 | 使用案例 |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|--- |--- |--- |
 | [設定檔端點API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md) | 擷取所有使用者設定檔。 | **使用者第一次開啟使用者端應用程式**<br/><br/>&#x200B;在此案例中，使用者端應用程式不會將使用者選取的MVPD識別碼快取到永久儲存體中。<br/><br/>因此，它將傳送單一要求來擷取所有可用的使用者設定檔。 |
 | 特定MVPD API的[設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | 擷取與特定MVPD相關聯的使用者設定檔。 | **使用者在上次造訪中進行驗證後，會返回使用者端應用程式**<br/><br/>&#x200B;在此情況下，使用者端應用程式必須將使用者先前選取的MVPD識別碼快取到永久儲存體中。<br/><br/>因此，它會傳送單一要求來擷取該特定MVPD的使用者設定檔。 |
 | [特定（驗證）程式碼API的設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 擷取與特定驗證代碼相關聯的使用者設定檔。 | **使用者啟動驗證程式**<br/><br/>&#x200B;在此案例中，使用者端應用程式必須判斷使用者是否已順利完成驗證，並擷取其設定檔資訊。<br/><br/>因此，它會啟動輪詢機制，以擷取與驗證碼相關聯的使用者設定檔。 |
 
-如需詳細資訊，請參閱主要應用程式[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)內執行的[基本設定檔流程，以及次要應用程式](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)檔案內執行的基本設定檔流程。
+如需詳細資訊，請參閱主要應用程式](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)內執行的[基本設定檔流程，以及次要應用程式](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)檔案內執行的[基本設定檔流程。
 
 設定檔SSO端點有不同的用途，它讓使用者端應用程式能夠使用合作夥伴驗證回應建立使用者設定檔，並在單次作業中擷取它。
 
 | API | 說明 | 使用案例 |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --- | --- | --- |
 | [設定檔SSO端點API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/partner-single-sign-on-apis/rest-api-v2-partner-single-sign-on-apis-retrieve-profile-using-partner-authentication-response.md) | 使用合作夥伴驗證回應來建立和擷取使用者設定檔。 | **使用者允許應用程式使用合作夥伴單一登入來進行驗證**<br/><br/>&#x200B;在此案例中，使用者端應用程式必須在收到合作夥伴驗證回應之後建立使用者設定檔，並透過單次、一次性的作業擷取該設定檔。 |
 
 對於任何後續的查詢，必須使用基本設定檔端點來判斷使用者的驗證狀態、存取使用者中繼資料資訊、尋找用於驗證的方法或用於提供身分識別的實體。
@@ -551,7 +551,7 @@ REST API v2支援多個設定檔以適應：
 以下時間戳記說明整體授權決定的有效期間：
 
 | 屬性 | 說明 | 附註 |
-|-------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-------------|-------------|---------|
 | `notBefore` | 發出授權決定的時間（毫秒）。 | 這會標籤授權有效性視窗的開頭。 |
 | `notAfter` | 授權決定到期的時間（毫秒）。 | [授權存留時間(TTL)](/help/authentication/integration-guide-programmers/features-standard/entitlements/decisions.md#authorization-ttl-management)決定授權在需要重新授權之前維持有效時間。 此TTL會與MVPD代表商議。 |
 
