@@ -259,7 +259,7 @@ ht-degree: 1%
 | 特定MVPD API的[設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) | 擷取與特定MVPD相關聯的使用者設定檔。 | **使用者在上次造訪中進行驗證後，會返回使用者端應用程式**<br/><br/>&#x200B;在此情況下，使用者端應用程式必須將使用者先前選取的MVPD識別碼快取到永久儲存體中。<br/><br/>因此，它會傳送單一要求來擷取該特定MVPD的使用者設定檔。 |
 | [特定（驗證）程式碼API的設定檔端點](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) | 擷取與特定驗證代碼相關聯的使用者設定檔。 | **使用者啟動驗證程式**<br/><br/>&#x200B;在此案例中，使用者端應用程式必須判斷使用者是否已順利完成驗證，並擷取其設定檔資訊。<br/><br/>因此，它會啟動輪詢機制，以擷取與驗證碼相關聯的使用者設定檔。 |
 
-如需詳細資訊，請參閱主要應用程式](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)內執行的[基本設定檔流程，以及次要應用程式](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)檔案內執行的[基本設定檔流程。
+如需詳細資訊，請參閱主要應用程式[&#128279;](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-primary-application-flow.md)內執行的[基本設定檔流程，以及次要應用程式](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/flows/basic-access-flows/rest-api-v2-basic-profiles-secondary-application-flow.md)檔案內執行的基本設定檔流程。
 
 設定檔SSO端點有不同的用途，它讓使用者端應用程式能夠使用合作夥伴驗證回應建立使用者設定檔，並在單次作業中擷取它。
 
