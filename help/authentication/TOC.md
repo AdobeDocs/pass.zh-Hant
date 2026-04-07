@@ -4,9 +4,9 @@ audience: end-user
 feature: Authentication
 user-guide-title: Adobe Pass 驗證
 user-guide-description: Adobe Pass 驗證是 TV Everywhere 的權益解決方案，它提供模組化架構用來確定要求存取資源的人是否有權限存取該資源。
-source-git-commit: 6ff46a124f5f3c78173028ae3efed68d71ee6e41
+source-git-commit: a406afacfe95321f46a740ab9c84fdaf576c971a
 workflow-type: tm+mt
-source-wordcount: '1294'
+source-wordcount: '1330'
 ht-degree: 3%
 
 ---
@@ -17,6 +17,8 @@ ht-degree: 3%
 - [Adobe Pass 驗證](home.md)
 - [產品公告](product-announcements.md)
 - 產品發行 {#product-releases}
+   - 2026 {#2026}
+      - [Adobe Pass Authentication 3.6.0發行說明](notes-releases/auth-rn-360.md)
    - 2025 {#2025}
       - [Adobe Pass Authentication Android 3.8.0發行說明](notes-releases/authn-rn-android-380.md)
       - [Adobe Pass Authentication 3.5.0發行說明](notes-releases/auth-rn-350.md)
@@ -271,7 +273,7 @@ ht-degree: 3%
             - [（舊版）如何使用Adobe API測試網站測試驗證和授權流程](integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)
 - MVPD的整合指南 {#integration-guide-mvpds}
    - [MVPD整合指南](integration-guide-mvpds/mvpd-integration-guide-overview.md)
-   - [驗證](integration-guide-mvpds/authn-usecase.md)
+   - [Authentication](integration-guide-mvpds/authn-usecase.md)
    - [使用OAuth 2.0通訊協定進行驗證](integration-guide-mvpds/authn-oauth2-protocol.md)
    - [Authorization](integration-guide-mvpds/authz-usecase.md)
    - [預檢授權](integration-guide-mvpds/mvpd-preflight-authz.md)
@@ -287,7 +289,7 @@ ht-degree: 3%
    - [環境](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md)
    - [檢閱和推送變更](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)
    - [儀表板](/help/authentication/user-guide-tve-dashboard/tve-dashboard-home.md)
-   - [頻道](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md)
+   - [管道](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md)
    - [程式設計師](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md)
    - [MVPDs](/help/authentication/user-guide-tve-dashboard/tve-dashboard-mvpds.md)
    - [整合](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md)
