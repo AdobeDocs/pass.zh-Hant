@@ -2,10 +2,10 @@
 title: 錯誤報告
 description: 錯誤報告
 exl-id: a52bd2cf-c712-40a2-a25e-7d9560b46ba6
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '3011'
-ht-degree: 0%
+source-wordcount: '3034'
+ht-degree: 1%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 Adobe Pass驗證中的錯誤報告目前以兩種不同的方式實施：
 
-* **進階錯誤報告**&#x200B;在[AccessEnabler JavaScript SDK](#accessenabler-javascript-sdk)的情況下，實作者會登入錯誤回呼，或在`status`AccessEnabler iOS/tvOS SDK[和](#accessenabler-ios-tvos-sdk)AccessEnabler Android SDK[的情況下，實作名稱為&#39;&#39;](#accessenabler-android-sdk)&#39;&#39;的介面方法，以接收進階錯誤報告。 錯誤分為&#x200B;**資訊**、**警告**&#x200B;和&#x200B;**錯誤**&#x200B;型別。 此報告系統是&#x200B;**非同步**，因為&#x200B;**無法保證觸發多個錯誤的順序**。  如需進階錯誤報告系統的詳細資訊，請參閱[進階錯誤報告](#advanced-error-reporting)區段。
+* **進階錯誤報告**&#x200B;在[AccessEnabler JavaScript SDK](#accessenabler-javascript-sdk)的情況下，實作者會登入錯誤回呼，或在[AccessEnabler iOS/tvOS SDK](#accessenabler-ios-tvos-sdk)和[AccessEnabler Android SDK](#accessenabler-android-sdk)的情況下，實作名稱為&#39;&#39;`status`&#39;&#39;的介面方法，以接收進階錯誤報告。 錯誤分為&#x200B;**資訊**、**警告**&#x200B;和&#x200B;**錯誤**&#x200B;型別。 此報告系統是&#x200B;**非同步**，因為&#x200B;**無法保證觸發多個錯誤的順序**。  如需進階錯誤報告系統的詳細資訊，請參閱[進階錯誤報告](#advanced-error-reporting)區段。
 
 * **原始錯誤報告 —**&#x200B;靜態報告系統，當特定要求失敗時，會將錯誤訊息傳遞給特定回呼函式。 錯誤會分組為通用、驗證和授權型別。 如需在原始系統中報告的錯誤清單，請參閱[原始錯誤報告](#original-error-reporting)區段。
 
@@ -62,7 +62,7 @@ yourErrorHandler(errorData:Object)
     }
 ```
 
-### 1.繫結 {#bind}
+### &#x200B;1. 繫結 {#bind}
 
 **`.bind(eventType:String, handlerName:String):void`**
 
@@ -85,7 +85,7 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 由於技術限制，您無法繫結關閉或匿名函式。 您必須在第二個引數中指定方法的名稱。
 
 
-### 2.解除繫結 {#unbind}
+### &#x200B;2. 解除繫結 {#unbind}
 
 **`.unbind(eventType:String, handlerName:String=null):void`**
 
@@ -143,7 +143,7 @@ accessEnabler.bind('errorEvent', 'errorLogger');
     @interface MyEntitlementStatusDelegate : NSObject <EntitlementStatus>
 ```
 
-**2。 實作**
+**2. 實作**
 
 ```OBJ-C
     @implementation DemoAppAppDelegate     
@@ -160,7 +160,7 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 
 #### 實施 {#access-enablr-androidsdk-imp}
 
-實作程式需要處理介面`status`的新`IAccessEnablerDelegate`方法。 **`status`**&#x200B;函式將接收具有下列模型的單一&#x200B;**`AdvancedStatus`**&#x200B;物件：
+實作程式需要處理介面`IAccessEnablerDelegate`的新`status`方法。 **`status`**&#x200B;函式將接收具有下列模型的單一&#x200B;**`AdvancedStatus`**&#x200B;物件：
 
 ```C++
     class AdvancedStatus {
@@ -199,7 +199,7 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 
 #### 實施 {#access-enab-fireos-sdk-}
 
-實作程式需要處理介面`status`的新`IAccessEnablerDelegate`方法。 **`status`**&#x200B;函式將接收具有下列模型的單一&#x200B;**`AdvancedStatus`**&#x200B;物件：
+實作程式需要處理介面`IAccessEnablerDelegate`的新`status`方法。 **`status`**&#x200B;函式將接收具有下列模型的單一&#x200B;**`AdvancedStatus`**&#x200B;物件：
 
 ```C++
     class AdvancedStatus {
@@ -238,18 +238,18 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 | ID | 平準 | 說明 | 開發人員動作 | 使用者動作 | JavaScript | iOS/tvOS | Android |
 |---|-------------|------------|----------------|---|---|---|---|
 | AAPL和AAPL_ERROR | 錯誤 | 一般Apple SSO錯誤 | 錯誤包含具有原始VSA錯誤的詳細資料欄位。 | 不適用 | 不適用 | 是 | 不適用 |
-| VSA203 | 資訊 | 在驗證由於透過平台SSO登入而發生時，使用者決定登出應用程式。 | 指示/提示使用者明確登出tvOS上的[設定] -> [帳戶] -> [電視提供者]。 <br><br>指示/提示使用者明確登出iOS/iPadOS上的[設定 — >電視提供者]。 | 明確登出tvOS上的[設定] -> [帳戶] -> [電視提供者]。<br> <br>明確登出iOS/iPadOS上的[設定 — >電視提供者] | 不適用 | 是 | 不適用 |
+| VSA203 | 資訊 | 在驗證由於透過平台SSO登入而發生時，使用者決定登出應用程式。 | 指示/提示使用者明確登出tvOS上的[設定] -> [帳戶] -> [電視提供者]。<br><br> 指示/提示使用者明確登出iOS/iPadOS上的「設定 — >電視提供者」。 | 明確登出tvOS上的[設定] -> [帳戶] -> [電視提供者]。<br> <br>明確登出iOS/iPadOS上的[設定 — >電視提供者] | 不適用 | 是 | 不適用 |
 | VSA404 | 資訊 | 應用程式視訊訂閱者帳戶許可權未確定。 | 說明單一登入(SSO)使用者體驗的優點，以鼓勵拒絕授予許可權存取訂閱資訊的使用者。 | 使用者可以變更其決定，方法是前往應用程式設定（電視提供者存取），或前往iOS/iPadOS上的「設定 — >電視提供者」或tvOS上的「設定 — >帳戶 — >電視提供者」區段。 | 不適用 | 是 | 不適用 |
 | VSA503 | 資訊 | 應用程式視訊訂閱者帳戶中繼資料要求失敗。 | MVPD端點沒有回應。 應用程式可能會回覆為一般驗證流程。 | 不適用 | 不適用 | 是 | 不適用 |
 | 500 | 錯誤 | 內部錯誤 | 使用AccessEnablerDebug並檢查偵錯記錄（console.log輸出）以判斷哪裡出問題。 | 不適用 | 是 | 是 | 不適用 |
 | SEC403 | 錯誤 | 網域安全性錯誤。 要求者使用無效的網域。 特定請求者ID使用的所有網域都必須由Adobe列入白名單。 |  — 僅從允許的網域清單<br>載入AccessEnabler <br> — 聯絡Adobe以管理所使用<br>的請求者ID的網域白名單 <br> - iOS：確認您使用正確的憑證，且簽章已正確建立 | 不適用 | 不適用 | 是 | 不適用 |
-| SEC412 | 警告 | 發行版本2.5[中可用的]裝置識別碼不相符。 每當基礎平台變更其裝置ID時，就可能發生這種情況。 在此情況下，將會清除現有的Token，且使用者將不再獲得驗證。 請注意，當使用者使用JS SDK且漫遊（在JS上，使用者端IP是裝置ID的一部分）時，就會合法地發生這種情況。 否則，這可能表示有人企圖詐騙，即企圖從其他裝置複製代號。 |  — 監視警告數目。 如果它們沒有明顯的原因（沒有最近的瀏覽器更新；新的作業系統）而尖峰，這可能表示有欺詐企圖。 <br> <br> — 選擇性地通知使用者他需要重新登入。 | 再次登入。 | 是 | 是 | 是（從3.2） |
+| SEC412 | 警告 | 發行版本2.5]中可用的[裝置識別碼不相符。 每當基礎平台變更其裝置ID時，就可能發生這種情況。 在此情況下，將會清除現有的Token，且使用者將不再獲得驗證。 請注意，當使用者使用JS SDK且漫遊（在JS上，使用者端IP是裝置ID的一部分）時，就會合法地發生這種情況。 否則，這可能表示有人企圖詐騙，即企圖從其他裝置複製代號。 |  — 監視警告數目。 如果它們沒有明顯的原因（沒有最近的瀏覽器更新；新的作業系統）而尖峰，這可能表示有欺詐企圖。 <br> <br> — 選擇性地通知使用者他需要重新登入。 | 再次登入。 | 是 | 是 | 是（從3.2） |
 | SEC420 | 錯誤 | 與Adobe Pass驗證伺服器通訊時出現HTTP安全性錯誤。 此錯誤通常發生於詐騙/代理的位置。 |  — 在瀏覽器中載入`[https://]{SP_FQDN\}`並手動接受SSL憑證，例如，**https://api.auth.adobe.com**&#x200B;或&#x200B;**https://api.auth-staging.adobe.com** <br> <br> — 將Proxy憑證標籤為受信任 | 如果這發生在一般使用者身上，則表示可能是中間人攻擊！ | 是 | 是 | 是（從3.2） |
 | CFG100 | 警告 | 使用者端電腦日期/時間/時區設定不正確。 這可能會導致驗證/授權錯誤。 |  — 通知使用者設定正確的時間。<br> <br>採取動作以防止權益流程，因為這些流程可能會失敗。 | 設定正確的日期/時間。 | 是 | 是 | 是（從3.2） |
 | CFG400 | 錯誤 | 提供的要求者識別碼無效。 | 開發人員必須指定有效的要求者ID。 | 不適用 | 是 | 是 | 是（從3.2） |
-| CFG404 | 錯誤 | 找不到Adobe Pass驗證伺服器。 這可能發生在3個執行個體中： <br><br> — 開發人員已設定無效的偽造。 <br><br> — 使用者發生網路問題，無法連線Adobe Pass驗證網域。 <br><br> -Adobe Pass驗證伺服器設定錯誤。<br><br>  **注意：**&#x200B;在Firefox上，將會顯示CFG400而非CFG404 （瀏覽器限制） |  — 檢查詐騙。 <br><br> — 檢查網路/DNS設定。 <br><br> — 通知Adobe。 | 檢查網路/DNS設定。 | 是 | 是 | 是（從3.2） |
+| CFG404 | 錯誤 | 找不到Adobe Pass驗證伺服器。 這可能發生在3個執行個體中： <br><br> — 開發人員已設定無效的偽造。<br><br> — 使用者發生網路問題，無法連線Adobe Pass驗證網域。<br><br> -Adobe Pass驗證伺服器設定錯誤。<br><br>  **注意：**&#x200B;在Firefox上，將會顯示CFG400而非CFG404 （瀏覽器限制） |  — 檢查詐騙。<br><br> — 檢查網路/DNS設定。<br><br> — 通知Adobe。 | 檢查網路/DNS設定。 | 是 | 是 | 是（從3.2） |
 | CFG410 | 錯誤 | AccessEnabler太舊。 | 通知使用者清除快取。 | 清除瀏覽器快取。 | 是 | 不適用 | 是（從3.2） |
-| cfg5xx | 錯誤 | Adobe Pass驗證伺服器發生內部錯誤。 xx可以是任何數字。 |  — 通知使用者Adobe Pass驗證無法使用。 <br><br> — 略過Adobe Pass驗證。<br> <br> — 通知Adobe。 | 請稍後再試。 | 是 | 是 | 是（從3.2） |
+| cfg5xx | 錯誤 | Adobe Pass驗證伺服器發生內部錯誤。 xx可以是任何數字。 |  — 通知使用者Adobe Pass驗證無法使用。<br><br> — 略過Adobe Pass驗證。<br> <br> — 通知Adobe。 | 請稍後再試。 | 是 | 是 | 是（從3.2） |
 | N000 | 資訊 | 使用者未驗證。 | 不適用 | 登入。 | 是 | 是 | 是（從3.2） |
 | N001 | 資訊 | 已在背景啟動被動驗證嘗試。 設定為「每個要求者的驗證」的MVPD會發生這種情況。 雖然希望會自動驗證使用者，但這會對初始化造成效能損失。 | 選擇性地通知使用者或顯示UI提醒使用者「工作正在進行中」。 | 等一下。 | 是 | 是 | 是（從3.2） |
 | N003 | 資訊 | 使用者可透過Apple MVPD選擇器選取「其他電視提供者」選項。 | 將會呼叫&#x200B;*displayProviderDialog*&#x200B;回呼，而且應用程式可以回覆成一般驗證流程。 | 選取一般MVPD並繼續登入畫面。 | 不適用 | 是 | 不適用 |
@@ -258,7 +258,7 @@ accessEnabler.bind('errorEvent', 'errorLogger');
 | N010 | 警告 | 在為選定的MVPD制定全部驗證降級規則時，使用者已通過驗證。 | 選擇性地通知使用者，由於MVPD發生問題，他得到了「免費」的免費存取權。 | 不適用 | 是 | 是 | 是（從3.2） |
 | N011 | 資訊 | 已使用TempPass驗證使用者。 |  — 通知使用者。<br> <br> — 可選擇提供一般MVPD的清單。 | 您可以選擇使用一般MVPD登入。 | 是 | 是 | 是（從3.2） |
 | N111 | 警告 | 過期的TempPass |  — 通知使用者。<br> <br> — 提供一般MVPD的清單。<br> <br> — 隱藏TempPass選項 | 使用您的一般MVPD登入。 | 是 | 是 | 是（從3.2） |
-| N130 | 錯誤 | **在工作階段中找不到驗證權杖。**&#x200B;這可能是因為下列其中一個原因： <br> <br> 1. 瀏覽器已停用（第三方） Cookie (不適用於AccessEnabler JavaScript SDK 4.x版) <br> <br> 2. 瀏覽器已啟用「防止跨網站追蹤」 (Safari 11+) <br> <br> 3. 工作階段已過期<br> <br> 4. 程式設計師以不正確的順序呼叫驗證API <br> <br>注意：此錯誤碼不適用於整頁重新導向驗證流程。 | 1.提示使用者啟用（第三方） Cookie <br> <br> 2. 提示使用者停用跨網站追蹤<br> <br> 3. 提示使用者重新驗證<br> <br> 4. 以正確順序呼叫API | 1.啟用（第三方） Cookie <br> <br> 2. 停用跨網站追蹤<br> <br> 3. 重新驗證<br> <br> 4. 不適用 | 是 | 是 | 是（從3.2） |
+| N130 | 錯誤 | **在工作階段中找不到驗證Token。**  這可能是由於下列其中一個原因所造成： <br> <br> 1. 瀏覽器已停用（第三方） Cookie （不適用於AccessEnabler JavaScript SDK 4.x版） <br> <br> 2. 瀏覽器已啟用「防止跨網站追蹤」 (Safari 11+) <br> <br> 3. 工作階段已過期<br> <br> 4. 程式設計師以不正確的順序呼叫驗證API <br> <br>注意：此錯誤碼不適用於整頁重新導向驗證流程。 | &#x200B;1. 提示使用者啟用（第三方） Cookie <br> <br> 2. 提示使用者停用跨網站追蹤<br> <br> 3. 提示使用者重新驗證<br> <br> 4. 以正確順序呼叫API | &#x200B;1. 啟用（第三方） Cookie <br> <br> 2. 停用跨網站追蹤<br> <br> 3. 重新驗證<br> <br> 4. 不適用 | 是 | 是 | 是（從3.2） |
 | N500 | 錯誤 | 內部錯誤。<br> <br>注意：這是原始錯誤系統的「一般驗證錯誤」和「內部驗證錯誤」。 此錯誤最終將被淘汰。 | 使用AccessEnablerDebug並檢查偵錯記錄（console.log輸出）以判斷哪裡出問題。 | 不適用 | 是 | 是 | 不適用 |
 | R401 | 錯誤 | 嘗試取得存取權杖時發生錯誤。<br> <br>注意：這是無法復原的錯誤。 通知使用者應用程式無法使用。 | - iOS：檢查應用程式中的軟體說明和自訂配置。<br> <br> - JavaScript：檢查網站應用程式中的軟體陳述式。<br> <br>使用Zendesk開啟票證，並通知使用者系統暫時無法使用 | 不適用 | 是（從v4.0） | 是（從v3.0） | 是（從3.2） |
 | R400 | 錯誤 | 應用程式未註冊。 軟體陳述式無效或已撤銷。<br> <br>注意：這是無法復原的錯誤。 通知使用者應用程式無法使用。 | - iOS：檢查應用程式中的軟體說明和自訂配置。<br> <br> - JavaScript：檢查網站應用程式中的軟體陳述式。<br> <br>使用Zendesk開啟票證，並通知使用者系統暫時無法使用 | 不適用 | 是（從v4.0） | 是（從v3.0） | 是（從3.2） |

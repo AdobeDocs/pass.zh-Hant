@@ -2,9 +2,9 @@
 title: REST API逐步指南（使用者端對伺服器）
 description: Rest API逐步指南使用者端至伺服器。
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '886'
+source-wordcount: '906'
 ht-degree: 0%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 0%
 
 ## 概觀 {#overview}
 
-本檔案逐步說明程式設計師的工程團隊，如何使用REST API服務整合「智慧型裝置」（遊戲主機、智慧型電視應用程式、機上盒等）與Adobe Pass驗證。 這種使用者端對伺服器方法使用REST API，而不是使用者端SDK，可讓不同平台有更廣泛的支援，針對這些平台，開發大量不重複SDK將不可行。 如需無使用者端解決方案運作方式的廣泛技術概覽，請參閱[無使用者端技術概覽](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)。
+本檔案逐步說明程式設計師的工程團隊如何整合「智慧型裝置」（遊戲機、智慧型電視應用程式、機上盒等） 使用REST API服務進行Adobe Pass驗證。 這種使用者端對伺服器方法使用REST API，而不是使用者端SDK，可讓不同平台有更廣泛的支援，針對這些平台，開發大量不重複SDK將不可行。 如需無使用者端解決方案運作方式的廣泛技術概覽，請參閱[無使用者端技術概覽](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)。
 
 
 此方法需要兩個元件（串流應用程式和AuthN應用程式）才能完成所需的流程：串流應用程式中的啟動、註冊、授權和檢視媒體流程，以及AuthN應用程式中的驗證流程。
@@ -72,17 +72,17 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
 1. 取得註冊碼和URL，讓您的使用者使用來存取您的第二熒幕登入應用程式，並將這些呈現給使用者：
 
-   a.傳送POST要求至Adobe註冊代碼服務，傳遞雜湊裝置ID和「註冊URL」。  例如： [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
+   答：  傳送POST要求至Adobe註冊代碼服務，傳遞雜湊裝置ID和「註冊URL」。  例如： [`<REGGIE_FQDN>/reggie/v1/[requestorId]/regcode [device ID]`](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)
 
-   b.向使用者呈現傳回的註冊代碼和URL。
+   b.  向使用者呈現傳回的註冊代碼和URL。
 
-   c.指示使用者切換到可支援網頁的裝置，導覽至URL，然後輸入註冊代碼。
+   c.  指示使用者切換到可支援網頁的裝置，導覽至URL，然後輸入註冊代碼。
 
 
 
 #### 授權流程
 
-1. 使用者從第二熒幕應用程式返回，並按裝置上的「繼續」按鈕。 或者，您可以實作輪詢機制來檢查驗證狀態，但Adobe Pass驗證建議使用繼續按鈕方法來取代輪詢。 <!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)-->例如： [\&lt;SP\_FQDN\>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
+1. 使用者從第二熒幕應用程式返回，並按裝置上的「繼續」按鈕。 或者，您可以實作輪詢機制來檢查驗證狀態，但Adobe Pass驗證建議使用繼續按鈕方法來取代輪詢。<!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> 例如： [\&lt;SP\_FQDN\>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
 
 2. 傳送GET請求至Adobe Pass Authentication Authorization Service以啟動授權。 例如： `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
 
@@ -96,7 +96,7 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
    * 如果這是AuthZ錯誤，則使用者無權觀看請求的媒體，並且應向使用者顯示某種錯誤訊息。
 
-   * 如果發生其他錯誤（連線錯誤、網路錯誤等），則向使用者顯示適當的錯誤訊息。
+   * 如果發生其他錯誤（連線錯誤、網路錯誤等）， 然後向使用者顯示適當的錯誤訊息。
 
 
 
@@ -106,12 +106,12 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
 2. 媒體是否受到保護？
 
-   a.您的應用程式會檢查媒體是否受到保護。
+   答：  您的應用程式會檢查媒體是否受到保護。
 
-   b.如果媒體受到保護，您的應用程式會啟動授權
+   b.  如果媒體受到保護，您的應用程式會啟動授權
 (AuthZ)流量高於。
 
-   c.如果媒體未受保護，則播放的媒體
+   c.  如果媒體未受保護，則播放媒體的
 使用者。
 
 3. 播放媒體。

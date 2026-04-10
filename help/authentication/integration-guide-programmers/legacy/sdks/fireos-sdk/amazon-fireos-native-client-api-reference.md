@@ -2,9 +2,9 @@
 title: Amazon FireOS Native Client API參考
 description: Amazon FireOS Native Client API參考
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '3451'
+source-wordcount: '3498'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 ## 簡介 {#intro}
 
-本檔案詳細說明適用於Adobe Pass驗證的Amazon FireOS SDK (支援Adobe Pass驗證)所公開的方法和回呼。 這裡說明的方法和回呼函式在AccessEnabler.h和EntitlementDelegate.h標頭檔案中定義。
+本檔案詳細說明適用於Adobe Pass驗證的Amazon FireOS SDK （支援Adobe Pass驗證）所公開的方法和回呼。 這裡說明的方法和回呼函式在AccessEnabler.h和EntitlementDelegate.h標頭檔案中定義。
 
 請參閱<https://tve.zendesk.com/hc/en-us/articles/115005561623-fire-TV-Native-AccessEnabler-Library>以取得最新的Amazon FireOS AccessEnabler SDK。
 
@@ -68,8 +68,7 @@ ht-degree: 0%
 
 | API呼叫：建構函式 |
 | --- |
-| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br> |
-| ```public static AccessEnabler getInstance(Context appContext, String env_url, String softwareStatement, String redirectUrl) throws AccessEnablerException``` |
+| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br>  <code>公用靜態AccessEnabler getInstance(Context appContext， String env_url， String softwareStatement， String redirectUrl)擲回AccessEnablerException </code> |
 
 **可用性：** v3.0+
 
@@ -232,7 +231,7 @@ ht-degree: 0%
 
 ### displayProviderDialog {#displayProviderDialog}
 
-**說明**&#x200B;由Access Enabler觸發的回呼，通知應用程式必須具現化適當的UI元素，才能讓使用者選取想要的MVPD。 回呼會提供MVPD物件清單，內含其他資訊，有助於正確建立選取專案UI面板(例如指向MVPD標誌的URL、好記的顯示名稱等)
+**說明**&#x200B;由Access Enabler觸發的回呼，通知應用程式必須具現化適當的UI元素，才能讓使用者選取想要的MVPD。 回呼會提供MVPD物件清單，內含其他資訊，有助於正確建立選取專案UI面板（例如指向MVPD標誌的URL、好記的顯示名稱等）
 
 使用者選取想要的MVPD後，需要上層應用程式來繼續驗證流程，方法是呼叫&#x200B;*setSelectedProvider()*&#x200B;並傳遞與使用者選取專案相對應的MVPD識別碼。
 
@@ -260,7 +259,7 @@ ht-degree: 0%
 | ```public void setSelectedProvider(String mvpdId)``` |
 
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **引數：**&#x200B;無
 
@@ -297,7 +296,7 @@ ht-degree: 0%
 
 **引數：**
 
-- *Cookie*：在目標網域上設定的Cookie (如需參考實作，請參閱SDK中的示範應用程式)。
+- *Cookie*：在目標網域上設定的Cookie （如需參考實作，請參閱SDK中的示範應用程式）。
 
 已觸發&#x200B;**回呼：** `setAuthenticationStatus(), sendTrackingData()`
 
@@ -355,7 +354,7 @@ ht-degree: 0%
 | --- |
 | ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **引數：** `resources`引數是使用者已被授權檢視的資源陣列。
 
@@ -427,7 +426,7 @@ ht-degree: 0%
 | --- |
 | ```public void setToken(String token, String resourceId)``` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **引數：**
 
@@ -522,7 +521,7 @@ ht-degree: 0%
 程式設計師可以使用兩種中繼資料型別：
 
 - 靜態中繼資料（驗證權杖TTL、授權權杖TTL和裝置ID）
-- 使用者中繼資料(使用者特定資訊，例如使用者ID和郵遞區號；在驗證和/或授權流程中從MVPD傳遞至使用者的裝置)
+- 使用者中繼資料（使用者特定資訊，例如使用者ID和郵遞區號；在驗證和/或授權流程中從MVPD傳遞至使用者的裝置）
 
 **引數：**
 

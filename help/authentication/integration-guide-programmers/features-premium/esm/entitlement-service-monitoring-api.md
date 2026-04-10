@@ -2,9 +2,9 @@
 title: 權益服務監控API
 description: 權益服務監控API
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '2027'
+source-wordcount: '2098'
 ht-degree: 0%
 
 ---
@@ -94,9 +94,9 @@ REST API會根據維度路徑、提供的篩選器和選取的量度，在請求
 
 * 透過使用不同的值多次新增相同的維度名稱引數，可以指定&#x200B;**IN**&#x200B;篩選器： dimension=value1\&amp;dimension=value2
 
-* **不等於**&#x200B;篩選器必須使用&#39;\！&#39; 維度名稱后的符號，會產生「\！」=&#39; &quot;operator&quot;： dimension\！=value
+* **不等於**&#x200B;篩選器必須在維度名稱后面使用「\！」符號，這會產生「\!=」運運算元： dimension\!=value
 
-* **NOT IN**&#x200B;篩選器需要&#39;\！=&#39;運運算元使用多次，每個集值使用一次： dimension\！=value1\&amp;dimension！=value2&amp;...
+* **NOT IN**&#x200B;篩選器需要多次使用&#39;\!=&#39;運運算元，一次用於集合中的每個值： dimension\!=value1\&amp;dimension\!=value2&amp;...
 
 查詢字串中的維度名稱也有特殊用法：如果維度名稱用作無值的查詢字串引數，這會指示API傳回報表中包含該維度的投影。
 
@@ -106,8 +106,8 @@ REST API會根據維度路徑、提供的篩選器和選取的量度，在請求
 |---|---|
 | /dimension1/dimension2/dimension3？dimension1=value1 | 從投影選取*，其中dimension1 = &#39;value1&#39; </br> GROUP BY dimension1， dimension2， dimension3 |
 | /dimension1/dimension2/dimension3？dimension1=value1&amp;dimension1=value2 | 從投影中選取*，其中dimension1位於(&#39;value1&#39;， &#39;value2&#39;) </br> GROUP BY dimension1， dimension2， dimension3 |
-| /dimension1/dimension2/dimension3？dimension1！=value1 | 從投影中選取*，其中dimension1 &lt;> &#39;value1&#39; | </br>依維度1、維度2、維度3分組 |
-| /dimension1/dimension2/dimension3？dimension1！=value1&amp;dimension2！=value2 | 從投影中選取*，其中維度1不在(&#39;value1&#39;， &#39;value2&#39;) | </br>依維度1、維度2、維度3分組 |
+| /dimension1/dimension2/dimension3？dimension1!=value1 | 從投影中選取*，其中dimension1 &lt;> &#39;value1&#39; \| </br>群組依據dimension1、dimension2、dimension3 |
+| /dimension1/dimension2/dimension3？dimension1!=value1&amp;dimension2!=value2 | 從投影中選取*，其中維度1不在(&#39;value1&#39;， &#39;value2&#39;) \| </br>群組依據dimension1， dimension2， dimension3 |
 | 假設沒有直接路徑： /dimension1/dimension3 </br>，但有路徑： /dimension1/dimension2/dimension3 </br> </br> /dimension1？dimension3 | 從投影群組BY dimension1， dimension3選取* |
 
 >[!NOTE]

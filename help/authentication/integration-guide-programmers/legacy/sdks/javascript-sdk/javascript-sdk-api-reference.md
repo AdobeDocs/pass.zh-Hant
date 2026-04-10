@@ -2,9 +2,9 @@
 title: JavaScript SDK API參考
 description: JavaScript SDK API參考
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '2883'
+source-wordcount: '2902'
 ht-degree: 0%
 
 ---
@@ -88,7 +88,7 @@ ht-degree: 0%
 ```
 
 
-上述範本中的所有最上層金鑰都是選用的，且具有預設值(*backgroundLogin*、*backgroundLogut*&#x200B;預設為false，而mvpdConfig為null — 表示不會覆寫任何MVPD設定)。
+上述範本中的所有最上層金鑰都是選用的，且具有預設值（*backgroundLogin*、*backgroundLogut*&#x200B;預設為false，而mvpdConfig為null — 表示不會覆寫任何MVPD設定）。
 
 
 - **注意**：為上述引數指定無效的值/型別將導致未定義的行為。
@@ -189,14 +189,14 @@ ht-degree: 0%
 - `inResourceID` — 使用者要求授權的資源識別碼。
 
 
-已觸發&#x200B;**回呼：**
+已觸發&#x200B;**個回呼：**
 [setToken()](#settokeninrequestedresourceid-intoken-settokeninrequestedresourceidintoken)，[tokenRequestFailed()](#tokenrequestfailedinrequestedresourceid-inrequesterrorcode-inrequestdetailederrormessage-tokenrequestfailedinrequestedresourceidinrequesterrorcodeinrequestdetailederrormessage)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)，[setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)
 
 </br>
 
 ## checkPreauthorizedResources(resources) {#checkPreauthorizedResources(resources)}
 
-**描述：**&#x200B;要求清單的「預檢」授權狀態
+**描述：**要求清單的「預檢」授權狀態
 資源。
 
 **引數：**
@@ -230,7 +230,7 @@ ht-degree: 0%
 中繼資料有兩種型別：
 
 - **靜態** （驗證權杖TTL、授權權杖TTL和裝置ID）
-- **使用者中繼資料** (這包含在驗證和/或授權流程期間，從MVPD傳遞至使用者裝置的使用者特定資訊)
+- **使用者中繼資料** （這包含在驗證和/或授權流程期間，從MVPD傳遞至使用者裝置的使用者特定資訊）
 
 **更多資訊：** [使用者中繼資料](#UserMetadata)
 
@@ -309,7 +309,7 @@ ht-degree: 0%
 **說明：**&#x200B;當使用者從您的提供者選擇UI選取MVPD時，呼叫此函式，以將提供者選擇傳送至Access Enabler，或使用null引數呼叫此函式，以防使用者未選取提供者而解除您的提供者選擇UI。
 
 **個回呼
-已觸發：**[&#x200B; setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
+已觸發：**[ setAuthenticationStatus()](#setauthenticationstatusisauthenticated-errorcode)，[sendTrackingData()](#sendtrackingdatatrackingeventtype-trackingdata-sendtrackingdatatrackingeventtypetrackingdata)
 
 </br>
 
@@ -365,7 +365,7 @@ ht-degree: 0%
 
 ## entitlementLoaded() {#entitlementLoaded}
 
-**描述：**&#x200B;當Access Enabler完成初始化並準備接收要求時觸發。 實作此回撥以瞭解何時可以使用Access Enabler API開始通訊。
+**描述：**當Access Enabler完成初始化並準備接收要求時觸發。 實作此回撥以瞭解何時可以使用Access Enabler API開始通訊。
 </br>
 
 [返回頂端](#top)
@@ -378,7 +378,7 @@ ht-degree: 0%
 
 **引數：**
 
-- *configXML*：儲存目前REQUESTOR (包括MVPD清單)之組態的xml物件。
+- *configXML*：儲存目前REQUESTOR （包括MVPD清單）之組態的xml物件。
 
 
 **觸發者：** [setRequestor()](#setrequestor-inrequestorid-endpoints-optionssetreq)
@@ -415,7 +415,7 @@ ht-degree: 0%
 
 **說明：**&#x200B;如果使用者選取的MVPD需要iFrame才能顯示其驗證登入頁面UI，請實作此回呼。
 
-**觸發者：**&#x200B;[&#x200B; setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
+**觸發者：**[ setSelectedProvider()](#setselectedproviderproviderid-setselectedprovider)
 
 </br> [返回頁首](#top)
 
@@ -531,7 +531,7 @@ ht-degree: 0%
 
 - *inRequestedResourceID* — 提供授權請求所使用的資源識別碼的字串。
 - *inRequestErrorCode* — 顯示Adobe Pass驗證錯誤碼的字串，指出失敗的原因；可能的值是「使用者未驗證錯誤」和「使用者未授權錯誤」；如需詳細資訊，請參閱下方的「回呼錯誤碼」。
-- *inRequestDetailedErrorMessage* — 適用於顯示的額外描述性字串。 如果此描述性字串因任何原因而無法使用，Adobe Pass驗證會傳送空白字串&#x200B;**(&quot;)**。  MVPD可使用此功能傳遞自訂錯誤訊息或銷售相關訊息。 例如，如果訂閱者被拒絕授權資源，MVPD可能會以`*inRequestDetailedErrorMessage*`回覆，例如： **&quot;您目前無法存取封裝中的這個管道。 如果您想要升級套件，請按一下\*這裡\*。」**&#x200B;訊息由Adobe Pass驗證透過此回呼傳遞至程式設計師的網站。 然後程式設計師可以選擇顯示或忽略它。 Adobe Pass驗證也可以使用`*inRequestDetailedErrorMessage*`來通知程式設計師可能導致錯誤的情況。 例如，**「與提供者的授權服務通訊時發生網路錯誤」。**
+- *inRequestDetailedErrorMessage* — 適用於顯示的額外描述性字串。 如果此描述性字串因任何原因而無法使用，Adobe Pass驗證會傳送空白字串&#x200B;**(&quot;)**。  MVPD可使用此功能傳遞自訂錯誤訊息或銷售相關訊息。 例如，如果訂閱者被拒絕授權資源，MVPD可能會以`*inRequestDetailedErrorMessage*`回覆，例如： **&quot;您目前無法存取封裝中的這個管道。 若要升級您的封裝，請按一下\*這裡\*。&quot;** 此訊息會由Adobe Pass驗證透過此回呼傳遞至程式設計師的網站。 然後程式設計師可以選擇顯示或忽略它。 Adobe Pass驗證也可以使用`*inRequestDetailedErrorMessage*`來通知程式設計師可能導致錯誤的情況。 例如，**「與提供者的授權服務通訊時發生網路錯誤」。**
 
 
 
@@ -627,20 +627,20 @@ ht-degree: 0%
 ### 回呼錯誤代碼 {#callback-error-codes}
 
 | 一般錯誤 | |
-|:--- | :--- | 
+|:--- | :--- |
 | 內部錯誤 | 嘗試處理要求時發生系統錯誤。 |
 | 未選取提供者錯誤 | 當客戶在提供者選擇對話方塊中取消時發生 |
 | 無法使用提供者錯誤 | 當沒有提供者可用時發生。 |
 
 | 驗證錯誤 | |
-|:--- | :--- | 
+|:--- | :--- |
 | 一般驗證錯誤 | 原因不明或無法發佈時傳回。 |
 | 內部驗證錯誤 | 嘗試驗證時發生錯誤。 |
 | 使用者未驗證錯誤 | 使用者未驗證。 |
 | 多個驗證請求錯誤 | 第一個驗證請求完成之前接收到其他驗證請求。 |
 
 | 授權錯誤 | |
-|:--- | :--- | 
+|:--- | :--- |
 | 一般授權錯誤 | 原因不明或無法發佈時傳回。 |
 | 內部授權錯誤 | 嘗試授權時發生系統錯誤。 |
 | 使用者未授權錯誤 | 客戶無權檢視要求的內容。 |

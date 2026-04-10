@@ -4,17 +4,17 @@ feature: Concurrency Monitoring
 audience: end-user
 user-guide-title: Adobe Pass 並行監視
 user-guide-description: 瞭解如何定義多個應用程式並行使用的限制並強制執行。
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '276'
-ht-degree: 5%
+source-wordcount: '252'
+ht-degree: 6%
 
 ---
 
 
 # Adobe Pass並行監視說明 {#cm}
 
-- [CM簡介](cm-home.md) {#cm-intro}
+- [CM簡介](cm-home.md)
 - 快速入門 {#getting-started}
    - [開始使用並行監視](getting-started/getting-started-overview.md)
    - [重要概念](getting-started/key-concepts.md)
@@ -34,7 +34,7 @@ ht-degree: 5%
    - [實作模型](technical/implementation-models.md)
    - [單一租使用者原則多個應用程式](technical/single-tenant-policy-mult-app.md)
    - [限制多個應用程式同時使用](technical/restrict-concurr-usage-mult-apps.md)
-- [CM使用報告](reports/cm-usage-reports.md) {#cm-usage-reports}
+- [CM使用報表](reports/cm-usage-reports.md)
 - 技術備忘稿 {#tech-notes}
    - [標準中繼資料屬性](technical/standard-metadata-attributes.md)
    - [自訂中繼資料](technical/custom-metadata.md)
@@ -72,4 +72,4 @@ ht-degree: 5%
    - [並行監控 — 2.5.0發行說明](releases/rn-cm-250.md)
    - [並行監控 — 2.3.2發行說明](releases/rn-cm-232.md)
    - [並行監控 — 2.2.2發行說明](releases/rn-cm-222.md)
-- [支援程式](support/cm-escalation-procedures.md) {#support-procedures}
+- [支援程式](support/cm-escalation-procedures.md)

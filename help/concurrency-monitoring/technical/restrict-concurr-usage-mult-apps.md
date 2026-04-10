@@ -2,9 +2,9 @@
 title: 限制屬於不同擁有者的多重應用程式的並行使用
 description: 限制屬於不同擁有者的多個應用程式同時使用
 exl-id: c358befc-36d6-4f55-92cc-4d02064c65fb
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '286'
 ht-degree: 1%
 
 ---
@@ -55,7 +55,7 @@ MVPD M有iPhone應用程式、iPad應用程式和網站。 需要應程式設計
 1. 心率間隔
 1. 檢查相容性的間隔
 
-<!---
+<!--
 ## Workflows
  
 
@@ -427,4 +427,4 @@ Related Information
 Introduction - Adobe Concurrency Monitoring
 API Console - Adobe Concurrency Monitoring
 User Metadata - Adobe Pass Authentication
---->
+-->

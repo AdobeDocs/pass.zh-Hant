@@ -2,9 +2,9 @@
 title: 註冊頁面
 description: 註冊頁面
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '509'
+source-wordcount: '528'
 ht-degree: 0%
 
 ---
@@ -43,7 +43,7 @@ ht-degree: 0%
 
 | 端點 | 呼叫<br>者 | 輸入   <br>引數 | HTTP <br>方法 | 回應 | HTTP <br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>例如：<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | 串流應用程式<br>或<br>程式設計師服務 | 1.要求者<br>    （路徑元件）<br>2。  deviceId （雜湊）   <br>    （必要）<br>3。  device_info/X-Device-Info （必要）<br>4。  mvpd （選用）<br>5。  ttl （選擇性）<br> | POST | 包含註冊代碼的XML或JSON，以及失敗時的資訊或錯誤詳細資料。 請參閱下列範例。 | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>例如：<br>REGGIE_FQDN/regggie/v1/sampleRequestorId/regcode | 串流應用程式<br>或<br>程式設計師服務 | &#x200B;1.  要求者<br>    （路徑元件）<br>2。  deviceId （雜湊）   <br>    （必要）<br>3。  device_info/X-Device-Info （必要）<br>4。  mvpd （選用）<br>5。  ttl （選擇性）<br> | POST | 包含註冊代碼的XML或JSON，以及失敗時的資訊或錯誤詳細資料。 請參閱下列範例。 | 201 |
 
 {style="table-layout:auto"}
 
@@ -53,9 +53,9 @@ ht-degree: 0%
 | Accept | 標頭<br>值： application/json | 指出使用者端應該能夠瞭解的內容型別 |
 | 要求者 | 查詢引數 | 此作業有效的程式設計師要求者ID。 |
 | deviceId | 查詢引數 | 裝置識別碼位元組。 |
-| device_info/<br>X-Device-Info | device_info：內文<br> X-Device-Info：標頭 | 串流裝置資訊。<br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數的潛在大小以及GET URL長度的限制，它應該作為X-Device-Info傳遞到http標頭。 <br>檢視[傳遞裝置和連線資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
+| device_info/<br>X-Device-Info | device_info：內文<br> X-Device-Info：標頭 | 串流裝置資訊。<br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數的潛在大小以及GET URL的長度限制，應該在http標頭中作為X-Device-Info傳遞。 <br>檢視[傳遞裝置和連線資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
 | mvpd | 查詢引數 | 此操作有效的MVPD ID。 |
-| ttl | 查詢引數 | 此regcode應在秒記憶體留多久。<br>**注意**： ttl允許的最大值為36000秒（10小時）。 較高的值會導致400 HTTP回應（錯誤請求）。 如果`ttl`留空，Adobe Pass驗證會設定30分鐘的預設值。 |
+| ttl | 查詢引數 | 這個regcode應該以秒為單位存留多久。<br>**注意**：允許的ttl值上限為36000秒（10小時）。 較高的值會導致400 HTTP回應（錯誤請求）。 如果`ttl`留空，Adobe Pass驗證會設定30分鐘的預設值。 |
 | _deviceType_ | 查詢引數 | 已棄用，不應使用。 |
 | _deviceUser_ | 查詢引數 | 已棄用，不應使用。 |
 | _appId_ | 查詢引數 | 已棄用，不應使用。 |
@@ -65,8 +65,7 @@ ht-degree: 0%
 >[!CAUTION]
 >
 >**串流裝置IP位址**
-><br>
->對於使用者端對伺服器實作，串流裝置IP位址會與此呼叫一併隱含傳送。  對於伺服器對伺服器實作，其中發出&#x200B;**regcode**&#x200B;呼叫是程式設計人員服務，而不是串流裝置，以下標頭是傳遞串流裝置IP位址的必要專案：
+><br>>對於使用者端對伺服器實作，串流裝置IP位址會與此呼叫一併隱含傳送。  對於伺服器對伺服器實作，其中發出&#x200B;**regcode**&#x200B;呼叫是程式設計人員服務，而不是串流裝置，以下標頭是傳遞串流裝置IP位址的必要專案：
 >
 >
 >```
@@ -74,14 +73,13 @@ ht-degree: 0%
 >```
 >
 >其中`<streaming\_device\_ip>`是串流裝置的公用IP位址。
-><br><br>
->範例：<br>
+><br><br>>範例：<br>
 >
 >```
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20
 >```
 >
-><br>
+<br>
 
 ### 回應JSON
 

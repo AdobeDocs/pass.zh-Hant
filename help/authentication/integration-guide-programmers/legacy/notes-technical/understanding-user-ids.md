@@ -2,9 +2,9 @@
 title: 瞭解使用者ID
 description: 瞭解使用者ID
 exl-id: 813a8501-db72-4850-a387-c8db6120db80
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '625'
+source-wordcount: '627'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 0%
 | --- | --- | --- | --- | --- |
 | sendTrackingData() GUID屬性 | 追蹤/分析 | 是 | 否 | - MVPD使用者ID，由Adobe進行雜湊處理。 使用者識別碼無法回溯至MVPD的來源。</br> </br> — 此形式的ID未經過數位簽署，因此防欺詐並不安全。 不過，這非常適合用於分析。 </br> </br> — 此形式的使用者ID是在Adobe Pass驗證在AuthN/AuthZ流程中產生的所有事件上從使用者端提供。 |
 | 短媒體權杖的sessionGUID屬性 | 追蹤同時使用的詐騙專案 | 是 | 是 |  — 這和透過sendTrackingData()的使用者ID相同，不過這個ID經過數位簽章以保護其完整性，而且足以用於詐騙追蹤。</br> </br> — 此視訊會在使用我們的驗證程式庫後，在伺服器端處理，而且可以在發佈視訊資料流給使用者端之前，分析是否有詐騙模式。  這些工作的執行由程式設計師決定。 |
-| getMetadata() userID屬性 | 帳戶連結、與MVPD的詐騙調查 | 否 | 否 |  — 此屬性可讓Adobe將實際來源MVPD使用者ID公開給程式設計師。</br> </br> — 在Adobe的設定中，它可設為已加密或不加密(取決於MVPD偏好設定)。 如果已加密，則會使用提供給Adobe之程式設計師憑證的公開金鑰加以加密，因此使用者端不會清楚看到該金鑰。</br> </br> — 這可讓程式設計師取得來自MVPD的實際使用者ID，因此可直接用來與MVPD連結帳戶或進行詐騙調查。 |
+| getMetadata() userID屬性 | 帳戶連結、與MVPD的詐騙調查 | 否 | 否 |  — 此屬性可讓Adobe將實際來源MVPD使用者ID公開給程式設計師。</br> </br> — 在Adobe的設定中，它可設為已加密或不加密（取決於MVPD偏好設定）。 如果已加密，則會使用提供給Adobe之程式設計師憑證的公開金鑰加以加密，因此使用者端不會清楚看到該金鑰。</br> </br> — 這可讓程式設計師取得來自MVPD的實際使用者ID，因此可直接用來與MVPD連結帳戶或進行詐騙調查。 |
 
 
 **結論**

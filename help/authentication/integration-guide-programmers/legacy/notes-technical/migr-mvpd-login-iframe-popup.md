@@ -2,9 +2,9 @@
 title: 如何將MVPD登入頁面從iFrame移轉至快顯視窗
 description: 如何將MVPD登入頁面從iFrame移轉至快顯視窗
 exl-id: 389ea0ea-4e18-4c2e-a527-c84bffd808b4
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
 workflow-type: tm+mt
-source-wordcount: '708'
+source-wordcount: '712'
 ht-degree: 0%
 
 ---
@@ -22,10 +22,12 @@ ht-degree: 0%
 ## 快顯視窗與iFrame {#popup-vs-iframe}
 
 有些使用者在MVPD登入頁面的iFrame實作中遇到第三方Cookie問題。
-<!--These issues are described in the tech notes linked below:
+<!--
+These issues are described in the tech notes linked below:
 
 * [Adobe Pass Authentication and Safari login issues](https://tve.helpdocsonline.com/adobe-pass)
-* [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)-->
+* [MVPD iFrame login and 3rd party cookies](https://tve.helpdocsonline.com/mvpd)
+-->
 
 Adobe Pass驗證團隊&#x200B;**建議在Firefox和Safari上實作快顯視窗/新視窗登入頁面**，而非iFrame版本。  不過，如果您要實作Internet Explorer的登入頁面，您可能會遇到快顯視窗實作的問題。 IE問題是因為使用者在快顯視窗中使用其MVPD進行驗證後，Adobe Pass驗證會強制上層頁面重新導向，而這會被Internet Explorer視為快顯封鎖程式。 Adobe Pass驗證團隊&#x200B;**建議為Internet Explorer**&#x200B;實作iFrame登入。
 
