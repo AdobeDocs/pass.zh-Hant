@@ -2,13 +2,13 @@
 cloud: Experience Cloud
 type: Documentation
 product: adobe primetime
-solution: Pass
+solution: Adobe Pass
 feature-set: Pass
 landing-page-name: pass
 landing-page-breadcrumb-title: Pass
-git-repo: https://github.com/AdobeDocs/pass.zh-Hant
+git-repo: https://github.com/AdobeDocs/pass.en
 index: true
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+source-git-commit: 3cc0eefddc434bec1292e4f5ca1a2b6e0a3cb138
 workflow-type: tm+mt
 source-wordcount: '68'
 ht-degree: 0%
