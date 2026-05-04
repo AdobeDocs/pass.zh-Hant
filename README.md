@@ -1,5 +1,5 @@
 ---
-source-git-commit: e1fcfc03f1084e9159a73ad4e18b864d796bff3c
+source-git-commit: 8d0633f64edecfacc3569d91931a204fac2d5e44
 workflow-type: tm+mt
 source-wordcount: '521'
 ht-degree: 0%
@@ -8,6 +8,7 @@ ht-degree: 0%
 # Contribute文章
 
 我們歡迎社群以及檔案團隊外部的Adobe員工出力貢獻。
+
 
 ## Adobe Open Source行為準則
 
@@ -29,7 +30,7 @@ ht-degree: 0%
 1. 在「此內容是否有幫助？」中。 瀏覽器視窗底部出現的橫幅按一下&#x200B;**詳細的意見選項**。
 1. 在GitHub UI中，按一下&#x200B;**建議編輯**&#x200B;並提交包含變更的提取請求(PR)。
 
-   如需詳細資訊，請參閱一般[Adobe檔案投稿人指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=zh-Hant)。
+   如需詳細資訊，請參閱一般[Adobe檔案投稿人指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html)。
 
 您在本存放庫為檔案和程式碼範例提交的小幅更正或釐清均包含在Adobe使用條款中。
 
@@ -43,7 +44,7 @@ ht-degree: 0%
 
 社群投稿人可以使用GitHub UI進行基本編輯或建立存放庫復本，以做出重大貢獻。
 
-如需詳細資訊，請參閱[Adobe檔案貢獻者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=zh-Hant)。
+如需詳細資訊，請參閱[Adobe檔案貢獻者指南](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html)。
 
 ## 內部參與者
 
