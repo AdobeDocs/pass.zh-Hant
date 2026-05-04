@@ -4,7 +4,8 @@ type: Documentation
 product: adobe primetime
 solution: Pass
 feature-set: Pass
-product_v2: id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
 landing-page-name: pass
 landing-page-breadcrumb-title: Pass
 git-repo: https://github.com/AdobeDocs/pass.en
