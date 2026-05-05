@@ -4,13 +4,12 @@ type: Documentation
 product: adobe primetime
 solution: Pass
 feature-set: Pass
-product_v2:
-  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+product_v2: id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
 landing-page-name: pass
-landing-page-breadcrumb-title: Pass
-git-repo: https://github.com/AdobeDocs/pass.zh-Hant
+landing-page-breadcrumb-title: Adobe Pass
+git-repo: https://github.com/AdobeDocs/pass.en
 index: true
-source-git-commit: 8d0633f64edecfacc3569d91931a204fac2d5e44
+source-git-commit: 12819720769af1ec76a2e7995a13db63289c16ff
 workflow-type: tm+mt
 source-wordcount: 68
 ht-degree: 0%
