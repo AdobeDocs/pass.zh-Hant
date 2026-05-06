@@ -5,9 +5,9 @@ audience: end-user
 user-guide-title: Adobe Pass 並行監視
 user-guide-description: 瞭解如何定義多個應用程式並行使用的限制並強制執行。
 nudge: true
-source-git-commit: e02007a3ec5bd581f84c887ac50249009a2121fd
+source-git-commit: 80ffef1e8e0cfb3752c01e155854f7d87dfa134c
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '257'
 ht-degree: 6%
 
 ---
@@ -45,6 +45,7 @@ ht-degree: 6%
    - [做法：在並行監視中區分VOD和Live內容](technical/vod-live-dist.md)
    - [資料保留原則](technical/data-retention-policy.md)
 - 發行版本 {#cm-release-notes}
+   - [並行監視 — 4.0.1發行說明](releases/rn-cm-services-401.md)
    - [並行監控 — 3.6.2發行說明](releases/rn-cm-services-362.md)
    - [並行監控 — 3.6.1發行說明](releases/rn-cm-services-361.md)
    - [並行監控 — 3.6.0發行說明](releases/rn-cm-services-360.md)
