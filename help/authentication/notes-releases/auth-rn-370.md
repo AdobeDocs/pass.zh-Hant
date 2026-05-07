@@ -1,10 +1,9 @@
 ---
 title: Adobe Pass Authentication 3.7.0發行說明
 description: Adobe Pass Authentication 3.7.0發行說明
-hold: true
-source-git-commit: 170d49b06e4ac8b31a840ee1bc5fac114bb3aa0b
+source-git-commit: 89b5fbd8e8510cbf84ce7908e8cf86551e7a0cb9
 workflow-type: tm+mt
-source-wordcount: '142'
+source-wordcount: '141'
 ht-degree: 0%
 
 ---
@@ -33,7 +32,7 @@ Adobe Pass驗證： adobe-pass-**3.7.0.2**\
 
 #### MVPD整合
 
-* 新增對使用OAuth2搭配PKCE的貝爾MVPD的支援。
+* 新增PKCE對OAuth2型MVPD驗證的支援。
 
 #### 增強功能
 
