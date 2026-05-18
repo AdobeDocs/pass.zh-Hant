@@ -4,7 +4,7 @@ description: 並行監視使用報告
 exl-id: 20220436-e748-4b22-8e7c-e074e0bfe242
 source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
-source-wordcount: '799'
+source-wordcount: '812'
 ht-degree: 0%
 
 ---
