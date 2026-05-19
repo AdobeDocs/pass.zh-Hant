@@ -1,13 +1,13 @@
 ---
 title: 重要概念
 description: 瞭解並行監視的基本概念，包括工作階段、原則、中繼資料等
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 9721055a-70e6-4ba1-a1e0-04406eec25e6
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '697'
+source-wordcount: '702'
 ht-degree: 0%
 
 ---
-
 
 # 重要概念 {#key-concepts}
 
@@ -76,11 +76,11 @@ ht-degree: 0%
 
 | 類別 | 範例 | 用途 |
 |-----------------|------------------------------------------|---------------------------------|
-| **裝置** | `deviceId`，`deviceType`，`osName` | 識別並分類裝置 |
-| **內容** | `channel`，`contentType`，`assetId` | 描述正在觀看的內容 |
-| **使用者** | `subject`，`subscriptionTier` | 使用者特定資訊 |
-| **應用程式** | `applicationName`，`applicationPlatform` | 應用程式專屬詳細資訊 |
-| **位置** | `country`，`hba` | 地理和網路資訊 |
+| **裝置** | `deviceId`, `deviceType`, `osName` | 識別並分類裝置 |
+| **內容** | `channel`, `contentType`, `assetId` | 描述正在觀看的內容 |
+| **使用者** | `subject`, `subscriptionTier` | 使用者特定資訊 |
+| **應用程式** | `applicationName`, `applicationPlatform` | 應用程式專屬詳細資訊 |
+| **位置** | `country`, `hba` | 地理和網路資訊 |
 
 #### 必要與選擇性中繼資料
 
@@ -269,4 +269,3 @@ Tenant: "Streaming Company"
 | **FIFO** | 先入先出衝突解決 |
 | **租使用者** | 擁有應用程式的組織 |
 | **應用程式** | 使用CM的軟體程式 |
-
