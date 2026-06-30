@@ -2,10 +2,10 @@
 title: Amazon FireOS SDK搭配Dynamic Client註冊
 description: Amazon FireOS SDK搭配Dynamic Client註冊
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '1169'
-ht-degree: 0%
+source-wordcount: '1185'
+ht-degree: 1%
 
 ---
 
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 | API呼叫：建構函式 |
 | --- |
-| 公用靜態AccessEnabler getInstance(Context appContext， String softwareStatement， String redirectUrl)<br>        擲回AccessEnablerException |
+| 公用靜態AccessEnabler getInstance(Context appContext， String softwareStatement， String redirectUrl)<br>擲回AccessEnablerException |
 
 **可用性：** v3.0+
 
@@ -70,7 +70,7 @@ ht-degree: 0%
 
 | API呼叫：要求者設定 |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **可用性：** v3.0+
 
@@ -81,7 +81,7 @@ ht-degree: 0%
 
 已棄用：
 
-- *signedRequestorID*：以您的私密金鑰數位簽署的請求者ID復本。<!--For more details, see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->。
+- *signedRequestorID*：以您的私密金鑰數位簽署的請求者ID復本。 <!--For more details, see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
 
 已觸發&#x200B;**回呼：** `setRequestorComplete()`
 
@@ -117,9 +117,9 @@ ht-degree: 0%
 
 
 
-### **2。 設定應用程式**
+### **2. 設定應用程式**
 
-- a. setRequestor(requestor\_id)
+- 答：  setRequestor(requestor\_id)
 
   SDK將執行下列操作：
 
@@ -134,7 +134,7 @@ ht-degree: 0%
 
 - 如果MVPD需要被動驗證，WebView將會開啟以使用該MVPD被動執行，並在完成後關閉
 
-- b. checkAuthorization()
+- b. checkAuthentication()
 
    - *true* ：移至[授權]
    - *false* ：前往選取MVPD
@@ -145,18 +145,18 @@ ht-degree: 0%
    - 未選取mvpd ： displayProviderDialog
    - 已選取mvpd ：前往setSelectedProvider(mvpd\_id)
 
-- d. setSelectedprovider
+- d. setselectedprovider
 
    - mvpd\_id驗證URL已載入ChromeCustomTabs中
    - 登入成功： delegate.setAuthenticationStatus ( SUCCESS )
    - 登入已取消：重設MVPD選擇
    - URL配置會建立為「adobepass://android.app」，以便在驗證完成時擷取
 
-- e. get/checkAuthorization ： SDK將在標頭中包含&#x200B;**access\_token &#x200B;** 作為授權：持有人&#x200B;**access\_token**
+- e. get/checkAuthorization ： SDK將在標頭中包含&#x200B;**access\_token**&#x200B;作為授權：持有人&#x200B;**access\_token**
 
 - 如果授權成功，將會呼叫以取得媒體權杖
 
-- f.登出：
+- f. 登出：
 
    - SDK將刪除目前請求者的有效Token （由其他應用程式取得而非透過SSO取得的驗證仍有效）
    - SDK將開啟Chrome自訂標籤以存取mvpd\_id登出端點。 完成後，Chrome自訂標籤將關閉

@@ -2,9 +2,9 @@
 title: Android SDK API參考
 description: Android SDK API參考
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: ae2e61152695b738b0bb08d1dcd81417f3bbdfb5
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '4560'
+source-wordcount: '4628'
 ht-degree: 0%
 
 ---
@@ -92,13 +92,13 @@ ht-degree: 0%
 
 | API呼叫：要求者設定 |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 **可用性：** v3.0+
 
 | API呼叫：要求者設定 |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **可用性：** v3.0+
 
@@ -107,7 +107,7 @@ ht-degree: 0%
 
 - *requestorID*：與程式設計師相關聯的唯一識別碼。 首次向Adobe Pass驗證服務註冊時，請將Adobe指派的唯一ID傳遞至您的網站。
 
-- *signedRequestorID*：以您的私密金鑰數位簽署的請求者ID復本。<!--For more details. see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->。
+- *signedRequestorID*：以您的私密金鑰數位簽署的請求者ID復本。 <!--For more details. see [Registering Native Clients](http://tve.helpdocsonline.com/registering-native-clients)-->.
 
 - *url*：選用引數；預設會使用Adobe服務提供者(http://sp.auth.adobe.com/)。 此陣列可讓您為Adobe提供的驗證和授權服務指定端點（不同的例項可能會用於偵錯）。 您可以使用此專案來指定多個Adobe Pass驗證服務提供者執行個體。 若這麼做，MVPD清單將由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是說，第一個回應並支援該MVPD的提供者。
 
@@ -226,15 +226,13 @@ ht-degree: 0%
 
 ### displayProviderDialog {#displayProviderDialog}
 
-**說明**&#x200B;由Access Enabler觸發的回呼，通知應用程式必須具現化適當的UI元素，才能讓使用者選取想要的MVPD。 回呼會提供MVPD物件清單，內含其他資訊，有助於正確建立選取專案UI面板(例如指向MVPD標誌的URL、好記的顯示名稱等)
+**說明**&#x200B;由Access Enabler觸發的回呼，通知應用程式必須具現化適當的UI元素，才能讓使用者選取想要的MVPD。 回呼會提供MVPD物件清單，內含其他資訊，有助於正確建立選取專案UI面板（例如指向MVPD標誌的URL、好記的顯示名稱等）
 
 使用者選取想要的MVPD後，需要上層應用程式來繼續驗證流程，方法是呼叫&#x200B;*setSelectedProvider()*&#x200B;並傳遞與使用者選取專案相對應的MVPD識別碼。
 
 >[!NOTE]
 >
-> 中止驗證流程
-> </br></br>
-> 請注意，這是使用者能夠按下「上一步」按鈕的階段，這等同於中止驗證流程。 在這種情況下，您的應用程式必須呼叫`setSelectedProvider()`方法，傳遞&#x200B;*null*&#x200B;做為引數，讓Access Enabler有機會重設其驗證狀態機器。
+> 中止驗證流程請注意，這是使用者能夠按下「上一步」按鈕的階段，這等同於中止驗證流程。 在這種情況下，您的應用程式必須呼叫`setSelectedProvider()`方法，傳遞&#x200B;*null*&#x200B;做為引數，讓Access Enabler有機會重設其驗證狀態機器。
 
 | 回呼：顯示MVPD選取專案UI |
 | --- |
@@ -259,7 +257,7 @@ ht-degree: 0%
 
 請注意，這不適用於促銷暫時傳遞，因為getAuthentication()方法有額外的引數。
 
-將&#x200B;*null*&#x200B;作為引數傳遞時，Access Enabler會假設使用者已取消驗證流程（亦即按下[上一步]按鈕），並藉由重設驗證狀態機器以及呼叫帶有&#x200B;*錯誤碼的* setAuthenticationStatus()`AccessEnablerConstants.PROVIDER_NOT_SELECTED_ERROR`回呼來回應。
+將&#x200B;*null*&#x200B;作為引數傳遞時，Access Enabler會假設使用者已取消驗證流程（亦即按下[上一步]按鈕），並藉由重設驗證狀態機器以及呼叫帶有`AccessEnablerConstants.PROVIDER_NOT_SELECTED_ERROR`錯誤碼的&#x200B;*setAuthenticationStatus()*&#x200B;回呼來回應。
 
 | API呼叫：設定目前選取的提供者 |
 | --- |
@@ -313,7 +311,7 @@ ht-degree: 0%
 
 **引數：**
 
-- *Cookie*：在目標網域上設定的Cookie (如需參考實作，請參閱SDK中的示範應用程式)。
+- *Cookie*：在目標網域上設定的Cookie （如需參考實作，請參閱SDK中的示範應用程式）。
 
 已觸發&#x200B;**回呼：** `setAuthenticationStatus()`，`sendTrackingData()`
 
@@ -493,7 +491,7 @@ ht-degree: 0%
 
 | 回呼：授權流程失敗 |
 | --- |
-| 公開void tokenRequestFailed(String resourceId， <br>        字串errorCode， String errorDescription) |
+| 公開void tokenRequestFailed(String resourceId， <br> String errorCode， String errorDescription) |
 
 **可用性：** v1.0+
 
@@ -581,7 +579,7 @@ ht-degree: 0%
 程式設計師可以使用兩種中繼資料型別：
 
 - 靜態中繼資料（驗證權杖TTL、授權權杖TTL和裝置ID）
-- 使用者中繼資料(使用者特定資訊，例如使用者ID和郵遞區號；在驗證和/或授權流程中從MVPD傳遞至使用者的裝置)
+- 使用者中繼資料（使用者特定資訊，例如使用者ID和郵遞區號；在驗證和/或授權流程中從MVPD傳遞至使用者的裝置）
 
 **引數：**
 
@@ -624,7 +622,7 @@ ht-degree: 0%
 
 | 回撥：中繼資料擷取請求的結果 |
 | --- |
-| ```public void setMetadataStatus(MetadataKey key, MetadataStatus result)``` |
+| `public void setMetadataStatus(MetadataKey key, MetadataStatus result)` |
 
 **可用性：** v1.0+
 
@@ -688,7 +686,7 @@ ht-degree: 0%
 
 | API呼叫：取得AccessEnabler版本 |
 | --- |
-| ```public static String getVersion()``` |
+| `public static String getVersion()` |
 
 
 [返回Android API...](#api)
@@ -727,7 +725,7 @@ Access Enabler會觸發其他回呼，而此回呼不一定與權益流程相關
 
 | 回呼：追蹤事件 |
 | --- |
-| ```public void sendTrackingData(Event event, ArrayList<String> data)``` |
+| `public void sendTrackingData(Event event, ArrayList<String> data)` |
 
 **可用性：** v1.0+
 
@@ -739,7 +737,7 @@ Access Enabler會觸發其他回呼，而此回呼不一定與權益流程相關
    - **mvpdSelection：**&#x200B;當使用者在MVPD選擇表單中選取MVPD （事件型別為`EVENT_MVPD_SELECTION`）時
 - *資料*：與報告事件相關的其他資料。 此資料會以值清單的形式呈現。
 
-下列是解譯&#x200B;*資料*中值的指示
+下列是解譯&#x200B;*資料中值的指示*
 陣列：
 
 - 事件型別&#x200B;*`EVENT_AUTHN_DETECTION`：*
