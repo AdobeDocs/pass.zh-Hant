@@ -2,9 +2,9 @@
 title: Amazon FireOS Native Client API參考
 description: Amazon FireOS Native Client API參考
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '3498'
+source-wordcount: '3519'
 ht-degree: 0%
 
 ---
@@ -68,7 +68,7 @@ ht-degree: 0%
 
 | API呼叫：建構函式 |
 | --- |
-| ```public static AccessEnabler getInstance(Context appContext, String softwareStatement, String redirectUrl)<br>        throws AccessEnablerException```<br><br>  <code>公用靜態AccessEnabler getInstance(Context appContext， String env_url， String softwareStatement， String redirectUrl)擲回AccessEnablerException </code> |
+| <code>公用靜態AccessEnabler getInstance(Context appContext， String softwareStatement， String redirectUrl)<br>擲回AccessEnablerException<br><br>公用靜態AccessEnabler getInstance(Context appContext， String env_url， String softwareStatement， String redirectUrl)擲回AccessEnablerException </code> |
 
 **可用性：** v3.0+
 
@@ -100,7 +100,7 @@ ht-degree: 0%
 
 | API呼叫：要求者設定 |
 | --- |
-| ```public void setRequestor(String requestorId)``` |
+| `public void setRequestor(String requestorId)` |
 
 
 **可用性：** v3.0+
@@ -108,7 +108,7 @@ ht-degree: 0%
 
 | API呼叫：要求者設定 |
 | --- |
-| ```public void setRequestor(String requestorId, ArrayList<String> urls)``` |
+| `public void setRequestor(String requestorId, ArrayList<String> urls)` |
 
 **可用性：** v3.0+
 
@@ -139,7 +139,7 @@ ht-degree: 0%
 
 | 回呼：要求者設定完成 |
 | --- |
-| ```public void setRequestorComplete(int status)``` |
+| `public void setRequestorComplete(int status)` |
 
 **可用性：** v1.0+
 
@@ -166,7 +166,7 @@ ht-degree: 0%
 
 | API呼叫： setOptions |
 | --- |
-| ```public void setOptions(HashMap<String,String> options)``` |
+| `public void setOptions(HashMap<String,String> options)` |
 
 **可用性：** v3.0+
 
@@ -187,7 +187,7 @@ ht-degree: 0%
 
 | API呼叫：檢查驗證狀態 |
 | --- |
-| ```public void checkAuthentication()``` |
+| `public void checkAuthentication()` |
 
 **可用性：** v1.0+
 
@@ -210,13 +210,13 @@ ht-degree: 0%
 
 | API呼叫：起始驗證流程 |
 | --- |
-| ```public void getAuthentication()``` |
+| `public void getAuthentication()` |
 
 **可用性：** v1.0+
 
 | API呼叫：起始驗證流程 |
 | --- |
-| ```public void getAuthentication(boolean forceAuthN, Map<String, Object> genericData)``` |
+| `public void getAuthentication(boolean forceAuthN, Map<String, Object> genericData)` |
 
 **可用性：** v1.0+
 
@@ -238,7 +238,7 @@ ht-degree: 0%
 
 | **回呼：顯示MVPD選取專案UI** |
 | --- |
-| ```public void displayProviderDialog(ArrayList<Mvpd> mvpds)``` |
+| `public void displayProviderDialog(ArrayList<Mvpd> mvpds)` |
 
 **可用性：** v1.0+
 
@@ -256,15 +256,15 @@ ht-degree: 0%
 
 | **API呼叫：設定目前選取的提供者** |
 | --- |
-| ```public void setSelectedProvider(String mvpdId)``` |
+| `public void setSelectedProvider(String mvpdId)` |
 
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **引數：**&#x200B;無
 
-已觸發&#x200B;**回呼：** `setAuthenticationStatus(), sendTrackingData()`
-</br>
+已觸發&#x200B;**回呼：** 
+
 
 ### navigateToUrl {#navigagteToUrl}
 
@@ -272,7 +272,7 @@ ht-degree: 0%
 
 | **回呼：顯示MVPD登入頁面** |
 | --- |
-| ```public void navigateToUrl(String url)``` |
+| `public void navigateToUrl(String url)` |
 
 **可用性：** v1.0+
 
@@ -290,7 +290,7 @@ ht-degree: 0%
 
 | **API呼叫：擷取驗證Token** |
 | --- |
-| ```public void getAuthenticationToken(String cookies)``` |
+| `public void getAuthenticationToken(String cookies)` |
 
 **可用性：** v1.0+
 
@@ -310,7 +310,7 @@ ht-degree: 0%
 
 | **回撥：報告驗證流程的狀態** |
 | --- |
-| ```public void setAuthenticationStatus(int status, String errorCode)``` |
+| `public void setAuthenticationStatus(int status, String errorCode)` |
 
 **可用性：** v1.0+
 
@@ -336,7 +336,7 @@ ht-degree: 0%
 
 | **API呼叫：設定目前選取的提供者** |
 | --- |
-| ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
+| `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
 **可用性：** v1.0+
 
@@ -352,9 +352,9 @@ ht-degree: 0%
 
 | **API呼叫：設定目前選取的提供者** |
 | --- |
-| ```public void checkPreauthorizedResources(ArrayList<String> resources)``` |
+| `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **引數：** `resources`引數是使用者已被授權檢視的資源陣列。
 
@@ -368,13 +368,13 @@ ht-degree: 0%
 
 | **API呼叫：檢查授權狀態** |
 | --- |
-| ```public void checkAuthorization(String resourceId)``` |
+| `public void checkAuthorization(String resourceId)` |
 
 **可用性：** v1.0+
 
 | **API呼叫：檢查授權狀態** |
 | --- |
-| ```public void checkAuthorization(String resourceId, Map<String, Object> genericData)``` |
+| `public void checkAuthorization(String resourceId, Map<String, Object> genericData)` |
 
 **可用性：** v1.0+
 
@@ -393,13 +393,13 @@ ht-degree: 0%
 
 | **API呼叫：起始授權流程** |
 | --- |
-| ```public void getAuthorization(String resourceId)``` |
+| `public void getAuthorization(String resourceId)` |
 
 **可用性：** v1.0+
 
 | **API呼叫：起始授權流程** |
 | --- |
-| ```public void getAuthorization(String resourceId, Map<String, Object> genericData)``` |
+| `public void getAuthorization(String resourceId, Map<String, Object> genericData)` |
 
 **可用性：** v1.0+
 
@@ -424,9 +424,9 @@ ht-degree: 0%
 
 | **回呼：授權流程已成功完成** |
 | --- |
-| ```public void setToken(String token, String resourceId)``` |
+| `public void setToken(String token, String resourceId)` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **引數：**
 
@@ -443,7 +443,7 @@ ht-degree: 0%
 
 | **回撥：授權流程失敗** |
 | --- |
-| ```public void tokenRequestFailed(String resourceId, <br>        String errorCode, String errorDescription)``` |
+| <code>public void tokenRequestFailed(String resourceId， <br> String errorCode， String errorDescription)</code> |
 
 **可用性：** v1.0+
 
@@ -464,7 +464,7 @@ ht-degree: 0%
 
 | **API呼叫：起始登出流程** |
 | --- |
-| ```public void logout()``` |
+| `public void logout()` |
 
 **可用性：** v1.0+
 
@@ -480,7 +480,7 @@ ht-degree: 0%
 
 | **API呼叫：決定目前選取的MVPD** |
 | --- |
-| ```public void getSelectedProvider()``` |
+| `public void getSelectedProvider()` |
 
 **可用性：** v1.0+
 
@@ -496,7 +496,7 @@ ht-degree: 0%
 
 | **回撥：目前所選MVPD的相關資訊** |
 | --- |
-| ```public void selectedProvider(Mvpd mvpd)``` |
+| `public void selectedProvider(Mvpd mvpd)` |
 
 **可用性：** v1.0+
 
@@ -514,7 +514,7 @@ ht-degree: 0%
 
 | **API呼叫：查詢AccessEnabler的中繼資料** |
 | --- |
-| ```public void getMetadata(MetadataKey metadataKey)``` |
+| `public void getMetadata(MetadataKey metadataKey)` |
 
 **可用性：** v1.0+
 
@@ -550,7 +550,7 @@ ht-degree: 0%
 
 | **回撥：中繼資料擷取要求的結果** |
 | --- |
-| ```public void setMetadataStatus(MetadataKey key, MetadataStatus result)``` |
+| `public void setMetadataStatus(MetadataKey key, MetadataStatus result)` |
 
 **可用性：** v1.0+
 
@@ -612,7 +612,7 @@ ht-degree: 0%
 
 | **API呼叫：取得AccessEnabler版本** |
 | --- |
-| ```public static String getVersion()``` |
+| `public static String getVersion()` |
 
 ## 追蹤事件 {#tracking}
 
@@ -643,7 +643,7 @@ Access Enabler會觸發其他回呼，而此回呼不一定與權益流程相關
 
 | 回呼：追蹤事件 |
 | --- |
-| ```public void sendTrackingData(Event event, ArrayList<String> data)``` |
+| `public void sendTrackingData(Event event, ArrayList<String> data)` |
 
 **可用性：** v1.0+
 

@@ -2,9 +2,9 @@
 title: 在預備中設定您的環境及測試
 description: 在預備中設定您的環境及測試
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: ca95bc45027410becf8987154c7c9f8bb8c2d5f8
+source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
 workflow-type: tm+mt
-source-wordcount: '476'
+source-wordcount: '492'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ ht-degree: 0%
               54.184.208.150
   ```
 
-```Choose any IP from **addresses** section (e.g. `52.13.71.11)```
+``Choose any IP from **addresses** section (e.g. `52.13.71.11)``
 
 ```cmd
 C:\>nslookup entitlement-prequal.auth.adobe.com 
@@ -48,10 +48,10 @@ Addresses:  52.26.79.43
             54.190.212.171
 ```
 
-```Choose any IP from **addresses** section (e.g. `54.190.212.171)```
+``Choose any IP from **addresses** section (e.g. `54.190.212.171)``
 
 
-* 在Linux/Mac上&#x200B;**&#x200B;**
+* 在Linux/Mac上&#x200B;****
 
 ```sh
     $ dig sp-prequal.auth.adobe.com
@@ -62,7 +62,7 @@ Addresses:  52.26.79.43
     ............ 60 IN A      54.184.208.150
 ```
 
-```Choose any IP from **A records (**e.g `52.13.71.11)```
+``Choose any IP from **A records (**e.g `52.13.71.11)``
 
 ```sh
     $ dig entitlement-prequal.auth.adobe.com
@@ -73,7 +73,7 @@ Addresses:  52.26.79.43
     ............ 60 IN A      54.190.212.171
 ```
 
-```Choose any IP from **A records (**e.g `54.190.212.171)```
+``Choose any IP from **A records (**e.g `54.190.212.171)``
 
 >[!NOTE]
 >
@@ -86,7 +86,7 @@ Addresses:  52.26.79.43
 
 ## 步驟2.  將資格預審環境假造為生產 {#spoofing-the-prequalification-environment}
 
-* 編輯&#x200B;*c：\\windows\\System32\\drivers\\etc\\hosts*&#x200B;檔案（在Windows中）或&#x200B;*/etc/hosts*&#x200B;檔案(在Macintosh/Linux/Android上)並新增下列專案：
+* 編輯&#x200B;*c：\\windows\\System32\\drivers\\etc\\hosts*&#x200B;檔案（在Windows中）或&#x200B;*/etc/hosts*&#x200B;檔案（在Macintosh/Linux/Android上）並新增下列專案：
 
 * 偽造生產設定檔
    * 52.13.71.11 sp.auth.adobe.com api.auth.adobe.com
@@ -94,7 +94,7 @@ Addresses:  52.26.79.43
 
 **在Android上詐騙：**&#x200B;若要在Android上詐騙，您必須使用Android模擬器。
 
-* 一旦設定好詐騙，您就可以將一般URL用於生產和測試設定檔： （即`http://sp.auth-staging.adobe.com`和`http://entitlement.auth-staging.adobe.com`），而且您實際上將會點選*新組建的&#x200B;*預先資格環境/生產*。
+* 一旦設定好詐騙，您就可以將一般URL用於生產和測試設定檔： （即`http://sp.auth-staging.adobe.com`和`http://entitlement.auth-staging.adobe.com`），而且您實際上將會點選&#x200B;*新組建的*&#x200B;預先資格環境/生產*。
 
 
 ## 步驟3.  確認您指向正確的環境 {#Verify-you-are-pointing-to-the-right-environment}
