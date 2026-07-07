@@ -4,7 +4,7 @@ description: 在Adobe Pass驗證中使用Experience Cloud ID
 exl-id: 03354c01-5aad-4d81-beee-1c3834599134
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '426'
+source-wordcount: '428'
 ht-degree: 0%
 
 ---
@@ -17,11 +17,11 @@ ht-degree: 0%
 
 ## 什麼是Experience Cloud ID以及如何取得該ID？ {#what-exp-cloud-id-obtain}
 
-Experience Cloud ID （簡稱ECID）是Adobe Experience Cloud為您的應用程式/網站中的每個使用者產生的唯一ID。 ECID在多個Experience Cloud報表中大量使用，這些報表用來連結關於多個應用程式/網站中特定使用者的資訊。
+Experience Cloud ID （簡稱ECID）是Adobe Experience Cloud為您應用程式/網站中的每個使用者產生的唯一ID。 所有Experience Cloud報表大量使用ECID，將多個應用程式/網站中特定使用者的相關資訊連結在一起。
 
 如果您已有提供訪客ID的系統，您應針對此檔案的範圍使用相同ID。
 
-取得ECID的一種方式是使用Experience Cloud ID服務。 您可以根據TDM、JS程式庫、伺服器端、直接整合或行動平台的原生程式庫，使用您偏好的實作型別。 如需可用服務、程式庫、SDK及實作指南的完整檢視，請參閱： <https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html?lang=zh-Hant>
+取得ECID的一種方式是使用Experience Cloud ID服務。 您可以根據TDM、JS程式庫、伺服器端、直接整合或行動平台的原生程式庫，使用您偏好的實作型別。 如需可用服務、程式庫、SDK及實作指南的完整檢視，請參閱： <https://experienceleague.adobe.com/docs/id-service/using/implementation/implementation-guides.html>
 
 ## 在Adobe Pass驗證中使用Experience Cloud ID有何優點？ {#benefit-ex-cloud-id}
 

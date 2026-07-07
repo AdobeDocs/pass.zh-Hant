@@ -4,7 +4,7 @@ description: rest API V2字彙表
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1742'
+source-wordcount: '1762'
 ht-degree: 0%
 
 ---
@@ -25,9 +25,9 @@ ht-degree: 0%
 
 ### A {#a}
 
-#### 驗證 {#authentication}
+#### Authentication {#authentication}
 
-驗證是允許使用者在[MVPD](#programmer)驗證使用者訂閱後，向[程式設計人員](#resource)證明其身分的程式，以取得受保護內容（[資源](#mvpd)）的存取權。
+驗證是允許使用者在[MVPD](#mvpd)驗證使用者訂閱後，向[程式設計人員](#programmer)證明其身分的程式，以取得受保護內容（[資源](#resource)）的存取權。
 
 #### 驗證代碼 {#code}
 
@@ -45,7 +45,7 @@ ht-degree: 0%
 
 #### Authorization {#authorization}
 
-授權是允許使用者在使用[MVPD](#resource)驗證使用者許可權後，根據擁有的[MVPD](#programmer)訂閱，從[程式設計師](#mvpd)目錄存取受保護內容（[資源](#mvpd)）的程式。
+授權是允許使用者在使用[MVPD](#mvpd)驗證使用者許可權後，根據擁有的[MVPD](#mvpd)訂閱，從[程式設計師](#programmer)目錄存取受保護內容（[資源](#resource)）的程式。
 
 ### C {#c}
 
@@ -135,19 +135,19 @@ MVPD由MVPD和Adobe之間上線流程期間定義的唯一值識別。
 
 #### 預先授權 {#preauthorization}
 
-預先授權是允許使用者從[程式設計師](#resource)目錄預覽他們有權存取的[資源](#programmer)子集的程式(使用[MVPD](#mvpd)驗證使用者許可權之後)。
+預先授權是允許使用者從[程式設計師](#programmer)目錄預覽他們有權存取的[資源](#resource)子集的程式（使用[MVPD](#mvpd)驗證使用者許可權之後）。
 
 與[預檢](#preflight)同義字。
 
 #### 預檢 {#preflight}
 
-預檢是允許使用者從[程式設計人員](#resource)目錄預覽他們有權存取的[資源](#programmer)子集的程式(使用[MVPD](#mvpd)驗證使用者許可權後)。
+預檢是允許使用者從[程式設計人員](#programmer)目錄預覽他們有權存取的[資源](#resource)子集的程式（使用[MVPD](#mvpd)驗證使用者許可權後）。
 
 與[預先授權](#preauthorization)同義字。
 
 #### 主要（程式設計師）應用程式 {#primary-application}
 
-主要應用程式參考起始[驗證](#programmer)的[程式設計師](#authentication)應用程式，但可能無法使用[使用者代理程式](#user-agent)完成程式，以瀏覽至[MVPD](#mvpd)登入頁面。
+主要應用程式參考起始[驗證](#authentication)的[程式設計師](#programmer)應用程式，但可能無法使用[使用者代理程式](#user-agent)完成程式，以瀏覽至[MVPD](#mvpd)登入頁面。
 
 #### 個人資料 {#profile}
 
@@ -193,7 +193,7 @@ Proxy MVPD是一間為其他MVPD提供身分服務的公司，並直接與Adobe 
 
 #### 次要（程式設計師）應用程式 {#secondary-application}
 
-次要應用程式參考到能夠使用[使用者代理程式](#programmer)來瀏覽至[MVPD](#authentication)登入頁面，以完成[驗證](#user-agent)程式的[程式設計師](#mvpd)應用程式。
+次要應用程式參考到能夠使用[使用者代理程式](#user-agent)來瀏覽至[MVPD](#mvpd)登入頁面，以完成[驗證](#authentication)程式的[程式設計師](#programmer)應用程式。
 
 次要應用程式可在與主要應用程式相同的裝置上執行，或在不同的（次要）裝置上執行，在此情況下，登入體驗稱為「第二個熒幕驗證」使用者體驗。
 
@@ -217,7 +217,7 @@ Proxy MVPD是一間為其他MVPD提供身分服務的公司，並直接與Adobe 
 
 #### SP {#sp}
 
-服務提供者(SP)在與[MVPD](#programmer)的整合中，參考Adobe Pass驗證代表[程式設計師](#mvpd)所扮演的角色。
+服務提供者(SP)在與[MVPD](#mvpd)的整合中，參考Adobe Pass驗證代表[程式設計師](#programmer)所扮演的角色。
 
 #### SSO {#sso}
 
@@ -273,7 +273,7 @@ TV Everywhere (TVE) Dashboard是提供給[程式設計師](#programmer)的Adobe 
 
 #### 使用者中繼資料 {#user-metadata}
 
-使用者中繼資料是指由[MVPD](#mvpd)維護且由Adobe Pass驗證提供作為[設定檔](#profile)一部分的使用者特定屬性（例如郵遞區號、家長分級、使用者ID等）。
+使用者中繼資料是指使用者特有的屬性（例如郵遞區號、家長分級、使用者ID等） 由[MVPD](#mvpd)維護，並由Adobe Pass驗證提供作為[設定檔](#profile)之一部份的專案。
 
 如需詳細資訊，請參閱[使用者中繼資料](/help/authentication/integration-guide-programmers/features-standard/entitlements/user-metadata.md)檔案。
 

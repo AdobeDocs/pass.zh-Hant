@@ -4,8 +4,8 @@ description: REST API V2 — 擷取特定mvpd的設定檔
 exl-id: ed1abc33-c279-4465-b5a0-b4e5b892076e
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1083'
-ht-degree: 1%
+source-wordcount: '1221'
+ht-degree: 2%
 
 ---
 
@@ -74,50 +74,38 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>標題檔案中會說明裝置資訊承載的產生。
-         <br/><br/>
-         強烈建議您在應用程式的裝置平台允許明確提供有效值時，一律使用此值。
-         <br/><br/>
-         提供此屬性時，Adobe Pass驗證後端會以隱含方式將明確設定的值與擷取的值合併（預設為）。
-         <br/><br/>
-         若未提供，Adobe Pass驗證後端將會以隱含方式使用擷取的值（依預設）。
-      </td>
+         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>標題檔案中會說明裝置資訊承載的產生。<br/><br/>
+         強烈建議您在應用程式的裝置平台允許明確提供有效值時，一律使用此值。<br/><br/>
+         提供此屬性時，Adobe Pass驗證後端會以隱含方式將明確設定的值與擷取的值合併（預設為）。<br/><br/>
+         若未提供，Adobe Pass驗證後端將會以隱含方式使用擷取的值（依預設）。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         串流裝置的IP位址。
-         <br/><br/>
-         強烈建議一律將它用於伺服器對伺服器的實作，尤其是當呼叫是由程式設計人員服務（而非串流裝置）進行時。
-         <br/><br/>
-         對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。
-      </td>
+         串流裝置的IP位址。<br/><br/>
+         強烈建議一律將它用於伺服器對伺服器的實作，尤其是當呼叫是由程式設計人員服務（而非串流裝置）進行時。<br/><br/>
+         對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。</td>
       <td>可選</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>或<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        有關Platform Identity方法單一登入裝載的產生，請參閱<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>標標頭檔案。
-        <br/><br/>
-        如需使用平台身分識別啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台身分識別流程單一登入</a>檔案。
-      </td>
+        有關Platform Identity方法單一登入裝載的產生，請參閱<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>標標頭檔案。<br/><br/>
+        如需使用平台身分識別啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台身分識別流程單一登入</a>檔案。</td>
       <td>可選</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-        服務權杖方法的單一登入裝載產生過程在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>標標頭檔案中進行了說明。
-        <br/><br/>
-        如需使用服務權杖啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服務權杖流程進行單一登入</a>檔案。
-      </td>
+        服務權杖方法的單一登入裝載產生過程在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>標標頭檔案中進行了說明。<br/><br/>
+        如需使用服務權杖啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服務權杖流程進行單一登入</a>檔案。</td>
       <td>可選</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
       <td>
-        在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>標標頭檔案中會說明Partner方法單一登入裝載的產生方式。
-        <br/><br/>
+        在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>標標頭檔案中會說明Partner方法單一登入裝載的產生方式。<br/><br/>
         如需有關使用合作夥伴啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">使用合作夥伴的單一登入流程</a>檔案。</td>
       <td>可選</td>
     </tr>
@@ -135,10 +123,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         使用者端應用程式接受的媒體型別。
-         <br/><br/>
-         若指定，則必須為application/json；charset=utf-8。
-      </td>
+         使用者端應用程式接受的媒體型別。<br/><br/>
+         若指定，則必須為application/json；charset=utf-8。</td>
       <td>可選</td>
    </tr>
    <tr>
@@ -167,36 +153,31 @@ ht-degree: 1%
       <td>400</td>
       <td>錯誤請求</td>
       <td>
-        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
-      </td>
+        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。</td>
    </tr>
    <tr>
       <td>401</td>
       <td>未獲授權</td>
       <td>
-        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。
-      </td>
+        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。</td>
    </tr>
    <tr>
       <td>403</td>
       <td>已禁止</td>
       <td>
-        暫時存取存留時間(TTL)已過期或超出資源最大數量，使用者端需要指示使用者使用一般MVPD來啟動基本驗證流程。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
-      </td>
+        暫時存取存留時間(TTL)已過期或超出資源最大數量，使用者端需要指示使用者使用一般MVPD來啟動基本驗證流程。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。</td>
    </tr>
    <tr>
       <td>405</td>
       <td>不允許的方法</td>
       <td>
-        HTTP方法無效，使用者端需要使用請求資源所允許的HTTP方法，然後再試一次。 如需詳細資訊，請參閱<a href="#request">要求</a>區段。
-      </td>
+        HTTP方法無效，使用者端需要使用請求資源所允許的HTTP方法，然後再試一次。 如需詳細資訊，請參閱<a href="#request">要求</a>區段。</td>
    </tr>
    <tr>
       <td>500</td>
       <td>內部伺服器錯誤</td>
       <td>
-        伺服器端發生問題。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
-      </td>
+        伺服器端發生問題。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。</td>
    </tr>
 </table>
 
@@ -226,10 +207,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">設定檔</td>
       <td>
-        JSON包含索引鍵、值配對的對應。
-        <br/><br/>
-        索引鍵元素由下列值定義：
-        <table style="table-layout:auto">
+        JSON包含索引鍵、值配對的對應。<br/><br/>
+        索引鍵元素由下列值定義：<table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">值</th>
                <th style="background-color: #EFF2F7"></th>
@@ -261,11 +240,9 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">簽發者</td>
                <td>
-                  擁有設定檔的實體。
-                  <br/><br/>
-                  可能的值包括：
-                  <ul>
-                    <li><b>mvpd （例如Spectrum、Cablevision等）</b><br/>建立設定檔的原因如下：基本驗證、使用平台身分識別進行單一登入，或使用服務權杖進行單一登入。</li>
+                  擁有設定檔的實體。<br/><br/>
+                  可能的值包括：<ul>
+                    <li><b>mvpd （例如Spectrum、Cablevision等）</b><br/>建立設定檔的原因為：基本驗證、使用平台身分的單一登入，或使用服務權杖的單一登入。</li>
                     <li><b>Adobe</b><br/>建立設定檔的原因為：存取許可權降低、暫時存取。</li>
                     <li><b>Apple</b><br/>建立設定檔的原因為：使用合作夥伴Apple的單一登入。</li>
                   </ul>
@@ -274,10 +251,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">type</td>
                <td>
-                  設定檔的型別。
-                  <br/><br/>
-                  可能的值包括：
-                  <ul>
+                  設定檔的型別。<br/><br/>
+                  可能的值包括：<ul>
                     <li><b>一般</b><br/>設定檔的建立是因為：基本驗證。</li>
                     <li><b>已降級</b><br/>設定檔是因為：存取已降級。</li>
                     <li><b>暫時</b><br/>建立設定檔的原因是：暫時存取。</li>
@@ -290,10 +265,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">屬性</td>
                <td>
-                    JSON包含索引鍵、值配對的對應。
-                    <br/><br/>
-                    關鍵元素由使用者中繼資料屬性定義，可以是：
-                    <ul>
+                    JSON包含索引鍵、值配對的對應。<br/><br/>
+                    關鍵元素由使用者中繼資料屬性定義，可以是：<ul>
                         <li>強制性，例如「userID」</li>
                         <li>非強制性，例如「zip」、「householdID」、「maxRating」等。</li>
                     </ul>
@@ -322,7 +295,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">狀態</td>
-      <td>400， 401， 403， 405， 500</td>
+      <td>400, 401, 403, 405, 500</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -344,7 +317,7 @@ ht-degree: 1%
 
 ## 範例 {#samples}
 
-### 1.擷取透過基本驗證取得的特定mvpd的設定檔
+### &#x200B;1. 擷取透過基本驗證取得的特定mvpd的設定檔
 
 >[!BEGINTABS]
 
@@ -395,7 +368,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2.擷取透過基本驗證或使用服務權杖方法的單一登入所取得之特定mvpd的設定檔
+### &#x200B;2. 擷取透過基本驗證或使用服務權杖方法的單一登入取得的特定mvpd的設定檔
 
 >[!BEGINTABS]
 
@@ -447,7 +420,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3.擷取透過基本驗證或使用Platform Identity方法的單一登入所取得之特定mvpd的設定檔
+### &#x200B;3. 擷取透過基本驗證或使用Platform Identity方法的單一登入取得的特定mvpd的設定檔
 
 >[!BEGINTABS]
 
@@ -499,7 +472,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4.擷取基本TempPass設定檔
+### &#x200B;4. 擷取基本TempPass設定檔
 
 >[!BEGINTABS]
 
@@ -555,7 +528,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 403,
     "code": "temporary_access_duration_limit_exceeded",
     "message": "The temporary access duration limit has been exceeded.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "authentication"
 }
 ```
@@ -571,14 +544,14 @@ Content-Type: application/json;charset=UTF-8
     "status": 500,
     "code": "invalid_configuration_temporary_access",
     "message": "The temporary access configuration is invalid.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "configuration"
 }
 ```
 
 >[!ENDTABS]
 
-### 5.擷取促銷臨時傳遞的設定檔
+### &#x200B;5. 擷取促銷臨時傳遞的設定檔
 
 >[!BEGINTABS]
 
@@ -648,7 +621,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 403,
     "code": "temporary_access_duration_limit_exceeded",
     "message": "The temporary access duration limit has been exceeded.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "none"
 }
 ```
@@ -664,7 +637,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 403,
     "code": "temporary_access_resources_limit_exceeded",
     "message": "The temporary access resources limit has been exceeded.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "authentication"
 }
 ```
@@ -680,7 +653,7 @@ Content-Type: application/json;charset=UTF-8
     "status": 500,
     "code": "invalid_configuration_temporary_access",
     "message": "The temporary access configuration is invalid.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "none"
 }
 ```
@@ -696,14 +669,14 @@ Content-Type: application/json;charset=UTF-8
     "status": 400,
     "code": "invalid_header_identity_for_temporary_access",
     "message": "The identity for temporary access header value is missing or invalid.",
-    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html?lang=zh-Hant",
+    "helpUrl": "https://experienceleague.adobe.com/docs/pass/authentication/auth-features/error-reportn/enhanced-error-codes.html",
     "action": "none"
 }
 ```
 
 >[!ENDTABS]
 
-### 6.在套用降級時擷取特定mvpd的設定檔
+### &#x200B;6. 套用降級時擷取特定mvpd的設定檔
 
 >[!BEGINTABS]
 

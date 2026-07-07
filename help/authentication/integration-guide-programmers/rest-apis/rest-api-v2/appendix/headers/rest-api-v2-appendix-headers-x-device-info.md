@@ -4,8 +4,8 @@ description: REST API V2 — 標題 — X-Device-Info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
 source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
 workflow-type: tm+mt
-source-wordcount: '1133'
-ht-degree: 2%
+source-wordcount: '1234'
+ht-degree: 3%
 
 ---
 
@@ -53,7 +53,7 @@ JSON元素的`Base64-encoded`值，至少包含下表標示的必要屬性。
         <td></td>
         <td>primaryHardwaretype</td>
         <td>裝置的主要硬體型別。</td>
-        <td>&amp;amp；檢查；</td>
+        <td>檢查(&amp;C)；</td>
         <td>
             值受到限制：
             <ul>
@@ -110,7 +110,7 @@ JSON元素的`Base64-encoded`值，至少包含下表標示的必要屬性。
         <td><i>必填</i></td>
         <td>osName</td>
         <td>裝置的作業系統(OS)名稱。</td>
-        <td>&amp;amp；檢查；</td>
+        <td>檢查(&amp;C)；</td>
         <td>
             值受到限制：
             <ul>
@@ -132,7 +132,7 @@ JSON元素的`Base64-encoded`值，至少包含下表標示的必要屬性。
         <td></td>
         <td>osFamily</td>
         <td>裝置的作業系統(OS)群組名稱。</td>
-        <td>&amp;amp；檢查；</td>
+        <td>檢查(&amp;C)；</td>
         <td>
             值受到限制：
             <ul>
@@ -155,7 +155,7 @@ JSON元素的`Base64-encoded`值，至少包含下表標示的必要屬性。
         <td></td>
         <td>osVendor</td>
         <td>裝置的作業系統(OS)供應商。</td>
-        <td>&amp;amp；檢查；</td>
+        <td>檢查(&amp;C)；</td>
         <td>
             值受到限制：
             <ul>
@@ -185,7 +185,7 @@ JSON元素的`Base64-encoded`值，至少包含下表標示的必要屬性。
         <td></td>
         <td>browserName</td>
         <td>瀏覽器的名稱。</td>
-        <td>&amp;amp；檢查；</td>
+        <td>檢查(&amp;C)；</td>
         <td>
             值受到限制：
             <ul>
@@ -205,7 +205,7 @@ JSON元素的`Base64-encoded`值，至少包含下表標示的必要屬性。
         <td></td>
         <td>browserVendor</td>
         <td>瀏覽器的建置公司/組織。</td>
-        <td>&amp;amp；檢查；</td>
+        <td>檢查(&amp;C)；</td>
         <td>
             值受到限制：
             <ul>
@@ -228,7 +228,7 @@ JSON元素的`Base64-encoded`值，至少包含下表標示的必要屬性。
         <td>browserVersion</td>
         <td>裝置的瀏覽器版本。</td>
         <td></td>
-        <td>例如60.0.3112</td>
+        <td>e.g. 60.0.3112</td>
     </tr>
     <tr>
         <td></td>
@@ -256,28 +256,28 @@ JSON元素的`Base64-encoded`值，至少包含下表標示的必要屬性。
         <td>displayPpi</td>
         <td>裝置的實體熒幕畫素密度。</td>
         <td></td>
-        <td>例如294</td>
+        <td>e.g. 294</td>
     </tr>
     <tr>
         <td></td>
         <td>diagonalScreenSize</td>
         <td>裝置的實體熒幕對角線尺寸（英吋）。</td>
         <td></td>
-        <td>例如5.5、10.1</td>
+        <td>e.g. 5.5, 10.1</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionIp</td>
         <td>用於傳送HTTP要求的裝置IP。</td>
         <td></td>
-        <td>例如8.8.4.4</td>
+        <td>e.g. 8.8.4.4</td>
     </tr>
     <tr>
         <td></td>
         <td>connectionPort</td>
         <td>用於傳送HTTP要求的裝置連線埠。</td>
         <td></td>
-        <td>例如53124</td>
+        <td>e.g. 53124</td>
     </tr>
     <tr>
         <td><i>必填</i></td>
@@ -290,7 +290,7 @@ JSON元素的`Base64-encoded`值，至少包含下表標示的必要屬性。
         <td></td>
         <td>connectionSecure</td>
         <td>網路連線安全性狀態。</td>
-        <td>&amp;amp；檢查；</td>
+        <td>檢查(&amp;C)；</td>
         <td>
             值受到限制：
             <ul>
@@ -351,7 +351,7 @@ X-Device-Info: ewogICJwcmltYXJ5SGFyZHdhcmVUeXBlIiA6ICJNb2JpbGVQaG9uZSIsCiAgIm1vZ
 
 #### iOS和iPadOS {#ios-ipados}
 
-若要為執行`X-Device-Info`iOS或iPadOS[的裝置建置](https://developer.apple.com/documentation/ios-ipados-release-notes)標題，您可以參考下列檔案及下列程式碼片段：
+若要為執行[iOS或iPadOS](https://developer.apple.com/documentation/ios-ipados-release-notes)的裝置建置`X-Device-Info`標題，您可以參考下列檔案及下列程式碼片段：
 
 * [UIDevice](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice)的Apple開發人員檔案。
 * [可存取性](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html)的Apple開發人員檔案。
@@ -452,7 +452,7 @@ X-Device-Info: ewogICJwcmltYXJ5SGFyZHdhcmVUeXBlIiA6ICJNb2JpbGVQaG9uZSIsCiAgIm1vZ
 
 #### Android {#android}
 
-若要為執行`X-Device-Info`Android[的裝置建置](https://developer.android.com/about/versions)標題，您可以參考下列檔案及下列程式碼片段：
+若要為執行[Android](https://developer.android.com/about/versions)的裝置建置`X-Device-Info`標題，您可以參考下列檔案及下列程式碼片段：
 
 * [Build](https://developer.android.com/reference/android/os/Build.html)類別的Android開發人員檔案。
 
@@ -559,7 +559,7 @@ private JSONObject computeClientInformation() {
 
 #### tvOS {#tvos}
 
-若要為執行`X-Device-Info`tvOS[的裝置建置](https://developer.apple.com/documentation/tvos-release-notes)標題，您可以參考下列檔案及下列程式碼片段：
+若要為執行[tvOS](https://developer.apple.com/documentation/tvos-release-notes)的裝置建置`X-Device-Info`標題，您可以參考下列檔案及下列程式碼片段：
 
 * [UIDevice](https://developer.apple.com/documentation/uikit/uidevice#//apple_ref/occ/cl/UIDevice)的Apple開發人員檔案。
 * [可存取性](https://developer.apple.com/library/archive/samplecode/Reachability/Introduction/Intro.html)的Apple開發人員檔案。
@@ -659,7 +659,7 @@ private JSONObject computeClientInformation() {
 
 #### Fire OS {#fireos}
 
-若要為執行`X-Device-Info`Fire OS[的裝置建置](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html)標頭，您可以參考下列檔案：
+若要為執行[Fire OS](https://developer.amazon.com/docs/fire-tv/fire-os-overview.html)的裝置建置`X-Device-Info`標頭，您可以參考下列檔案：
 
 * [Build](https://developer.android.com/reference/android/os/Build.html)類別的Android開發人員檔案。
 * [識別Fire TV裝置](https://developer.amazon.com/docs/fire-tv/identify-amazon-fire-tv-devices.html)的Amazon開發人員檔案。
@@ -692,7 +692,7 @@ private JSONObject computeClientInformation() {
 
 #### Roku OS {#rokuos}
 
-若要為執行`X-Device-Info`Roku OS[的裝置建置](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md)標題，您可以參考下列檔案：
+若要為執行[Roku OS](https://developer.roku.com/docs/developer-program/release-notes/roku-os-release-notes.md)的裝置建置`X-Device-Info`標題，您可以參考下列檔案：
 
 * [ifDeviceInfo](https://developer.roku.com/docs/references/brightscript/interfaces/ifdeviceinfo.md)的Roku開發人員檔案。
 
@@ -701,11 +701,11 @@ private JSONObject computeClientInformation() {
 | 索引鍵 | Source | 值（範例） |
 |---------------|--------------------------------------------|-----------------|
 | 模型 | 硬式編碼 | &quot;Roku&quot; |
-| 廠商 | ifDeviceInfo.GetModelDetails().VendorName | &quot;Sharp&quot;、&quot;Roku&quot; |
-| 製造商 | ifDeviceInfo.GetModelDetails().VendorName | &quot;Sharp&quot;、&quot;Roku&quot; |
-| 版本 | ifDeviceInfo.GetModelDetails().ModelNumber | 「5303X」 |
-| displaywidth | ifDeviceInfo.GetDisplaySize().w | 1920 |
-| displayheight | ifDeviceInfo.GetDisplaySize().h | 1080 |
+| 廠商 | ifDeviceInfo.GetModelDetails()。VendorName | &quot;Sharp&quot;、&quot;Roku&quot; |
+| 製造商 | ifDeviceInfo.GetModelDetails()。VendorName | &quot;Sharp&quot;、&quot;Roku&quot; |
+| 版本 | ifDeviceInfo.GetModelDetails()。ModelNumber | 「5303X」 |
+| displaywidth | ifDeviceInfo.GetDisplaySize()。w | 1920 |
+| displayheight | ifDeviceInfo.GetDisplaySize()。h | 1080 |
 | osName | 硬式編碼 | &quot;Roku&quot; |
 | osVersion | ifDeviceInfo.getVersion() |                 |
 

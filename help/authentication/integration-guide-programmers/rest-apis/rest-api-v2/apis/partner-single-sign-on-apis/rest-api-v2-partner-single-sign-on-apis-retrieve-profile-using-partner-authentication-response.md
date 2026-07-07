@@ -4,8 +4,8 @@ description: REST API V2 — 使用合作夥伴驗證回應建立及擷取設定
 exl-id: cae260ff-a229-4df7-bbf9-4cdf300c0f9a
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '850'
-ht-degree: 1%
+source-wordcount: '934'
+ht-degree: 2%
 
 ---
 
@@ -49,7 +49,7 @@ ht-degree: 1%
    </tr>
     <tr>
       <td style="background-color: #DEEBFF;">合作夥伴</td>
-      <td>提供與Adobe Pass驗證流程整合的單一登入架構的合作夥伴名稱(例如Apple)。</td>
+      <td>提供與Adobe Pass驗證流程整合的單一登入架構的合作夥伴名稱（例如Apple）。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -60,10 +60,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">SAMLResponse</td>
       <td>
-        合作夥伴驗證回應，包含建立和儲存合作夥伴設定檔所需的使用者中繼資料。
-        <br/><br/>
-        值必須是Base64編碼和之後的URL編碼。
-      </td>
+        合作夥伴驗證回應，包含建立和儲存合作夥伴設定檔所需的使用者中繼資料。<br/><br/>
+        值必須是Base64編碼和之後的URL編碼。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -79,10 +77,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         所傳送資源的接受媒體型別。
-         <br/><br/>
-         它必須是application/x-www-form-urlencoded。
-      </td>
+         所傳送資源的接受媒體型別。<br/><br/>
+         它必須是application/x-www-form-urlencoded。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -93,33 +89,25 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>標題檔案中會說明裝置資訊承載的產生。
-         <br/><br/>
-         強烈建議您在應用程式的裝置平台允許明確提供有效值時，一律使用此值。
-         <br/><br/>
-         提供此屬性時，Adobe Pass驗證後端會以隱含方式將明確設定的值與擷取的值合併（預設為）。
-         <br/><br/>
-         若未提供，Adobe Pass驗證後端將會以隱含方式使用擷取的值（依預設）。
-      </td>
+         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>標題檔案中會說明裝置資訊承載的產生。<br/><br/>
+         強烈建議您在應用程式的裝置平台允許明確提供有效值時，一律使用此值。<br/><br/>
+         提供此屬性時，Adobe Pass驗證後端會以隱含方式將明確設定的值與擷取的值合併（預設為）。<br/><br/>
+         若未提供，Adobe Pass驗證後端將會以隱含方式使用擷取的值（依預設）。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Partner-Framework-Status</td>
       <td>
-        在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>標標頭檔案中會說明Partner方法單一登入裝載的產生方式。
-        <br/><br/>
+        在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ap-partner-framework-status.md">AP-Partner-Framework-Status</a>標標頭檔案中會說明Partner方法單一登入裝載的產生方式。<br/><br/>
         如需有關使用合作夥伴啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-partner-flows.md">使用合作夥伴的單一登入流程</a>檔案。</td>
       <td>可選</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         串流裝置的IP位址。
-         <br/><br/>
-         強烈建議一律將它用於伺服器對伺服器的實作，尤其是當呼叫是由程式設計人員服務（而非串流裝置）進行時。
-         <br/><br/>
-         對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。
-      </td>
+         串流裝置的IP位址。<br/><br/>
+         強烈建議一律將它用於伺服器對伺服器的實作，尤其是當呼叫是由程式設計人員服務（而非串流裝置）進行時。<br/><br/>
+         對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。</td>
       <td>可選</td>
    </tr>
    <tr>
@@ -131,10 +119,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         使用者端應用程式接受的媒體型別。
-         <br/><br/>
-         若指定，則必須為application/json；charset=utf-8。
-      </td>
+         使用者端應用程式接受的媒體型別。<br/><br/>
+         若指定，則必須為application/json；charset=utf-8。</td>
       <td>可選</td>
    </tr>
    <tr>
@@ -163,29 +149,25 @@ ht-degree: 1%
       <td>400</td>
       <td>錯誤請求</td>
       <td>
-        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
-      </td>
+        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。</td>
    </tr>
    <tr>
       <td>401</td>
       <td>未獲授權</td>
       <td>
-        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。
-      </td>
+        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。</td>
    </tr>
    <tr>
       <td>405</td>
       <td>不允許的方法</td>
       <td>
-        HTTP方法無效，使用者端需要使用請求資源所允許的HTTP方法，然後再試一次。 如需詳細資訊，請參閱<a href="#request">要求</a>區段。
-      </td>
+        HTTP方法無效，使用者端需要使用請求資源所允許的HTTP方法，然後再試一次。 如需詳細資訊，請參閱<a href="#request">要求</a>區段。</td>
    </tr>
    <tr>
       <td>500</td>
       <td>內部伺服器錯誤</td>
       <td>
-        伺服器端發生問題。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
-      </td>
+        伺服器端發生問題。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。</td>
    </tr>
 </table>
 
@@ -215,10 +197,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">設定檔</td>
       <td>
-         JSON包含索引鍵、值配對的對應。
-         <br/><br/>
-         索引鍵元素由下列值定義：
-         <table style="table-layout:auto">
+         JSON包含索引鍵、值配對的對應。<br/><br/>
+         索引鍵元素由下列值定義：<table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">值</th>
                <th style="background-color: #EFF2F7"></th>
@@ -250,10 +230,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">簽發者</td>
                <td>
-                  擁有設定檔的實體。
-                  <br/><br/>
-                  可能的值包括：
-                  <ul>
+                  擁有設定檔的實體。<br/><br/>
+                  可能的值包括：<ul>
                     <li><b>Apple</b><br/>建立設定檔的原因為：使用合作夥伴Apple的單一登入。</li>
                   </ul>
                </td>
@@ -262,10 +240,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">type</td>
                <td>
-                  設定檔的型別。
-                  <br/><br/>
-                  可能的值包括：
-                  <ul>
+                  設定檔的型別。<br/><br/>
+                  可能的值包括：<ul>
                     <li><b>appleSSO</b><br/>建立設定檔的原因為：使用合作夥伴Apple的單一登入。</li>
                   </ul>
                </td>
@@ -274,10 +250,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">屬性</td>
                <td>
-                    JSON包含索引鍵、值配對的對應。
-                    <br/><br/>
-                    關鍵元素由使用者中繼資料屬性定義，可以是：
-                    <ul>
+                    JSON包含索引鍵、值配對的對應。<br/><br/>
+                    關鍵元素由使用者中繼資料屬性定義，可以是：<ul>
                         <li>強制性，例如「userID」</li>
                         <li>非強制性，例如「zip」、「householdID」、「maxRating」等。</li>
                     </ul>
@@ -306,7 +280,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">狀態</td>
-      <td>400， 401， 405， 500</td>
+      <td>400, 401, 405, 500</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -322,10 +296,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            回應內文可能會提供其他錯誤資訊，這些資訊會遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強型錯誤碼</a>檔案。
-            <br/><br/>
-            使用者端應用程式必須實作錯誤處理機制，以便能夠正確處理此API最常傳回的錯誤代碼：
-            <ul>
+            回應內文可能會提供其他錯誤資訊，這些資訊會遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強型錯誤碼</a>檔案。<br/><br/>
+            使用者端應用程式必須實作錯誤處理機制，以便能夠正確處理此API最常傳回的錯誤代碼：<ul>
                 <li>invalid_header_pfs_permission_access_not_present</li>
                 <li>invalid_header_pfs_permission_access_not_determined</li>
                 <li>invalid_header_pfs_permission_access_not_granted</li>
@@ -335,15 +307,14 @@ ht-degree: 1%
                 <li>invalid_parameter_saml_response</li>
                 <li>等等。</li>
             </ul>
-            以上清單並非詳盡無遺。 使用者端應用程式必須能夠處理<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">公開檔案</a>中定義的所有增強型錯誤碼。
-      </td>
+            以上清單並非詳盡無遺。 使用者端應用程式必須能夠處理<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">公開檔案</a>中定義的所有增強型錯誤碼。</td>
       <td><i>必填</i></td>
    </tr>
 </table>
 
 ## 範例 {#samples}
 
-### 1.使用合作夥伴驗證回應來建立和擷取設定檔
+### &#x200B;1. 使用合作夥伴驗證回應建立和擷取設定檔
 
 >[!BEGINTABS]
 
@@ -400,7 +371,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2.使用合作夥伴驗證回應來建立和擷取設定檔，但套用效能降低
+### &#x200B;2. 使用合作夥伴驗證回應來建立和擷取設定檔，但套用效能降級
 
 >[!BEGINTABS]
 

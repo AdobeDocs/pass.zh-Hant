@@ -4,7 +4,7 @@ description: REST API V2 — 建立驗證工作階段
 exl-id: bb2a6bb4-0778-4748-a674-df9d0e8242c8
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1083'
+source-wordcount: '1190'
 ht-degree: 1%
 
 ---
@@ -59,30 +59,23 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">mvpd</td>
       <td>
-        上線流程中與身分提供者相關聯的內部唯一識別碼。
-        <br/><br/>
-        如果串流裝置平台在提供值方面有所限制，則應用程式必須繼續驗證工作階段並提供有效值。
-      </td>
+        上線流程中與身分提供者相關聯的內部唯一識別碼。<br/><br/>
+        如果串流裝置平台在提供值方面有所限制，則應用程式必須繼續驗證工作階段並提供有效值。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">domainName</td>
       <td>
-        執行MVPD登入之應用程式的原始網域。
-        <br/><br/>
-        如果串流裝置平台在提供值方面有所限制，則應用程式必須繼續驗證工作階段並提供有效值。
-      </td>
+        執行MVPD登入之應用程式的原始網域。<br/><br/>
+        如果串流裝置平台在提供值方面有所限制，則應用程式必須繼續驗證工作階段並提供有效值。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        MVPD驗證流程完成後，使用者代理程式導覽的最終重新導向URL。
-        <br/><br/>
-        值必須以URL編碼。
-        <br/><br/>
-        如果串流裝置平台在提供值方面有所限制，則應用程式必須繼續驗證工作階段並提供有效值。
-        </td>
+        MVPD驗證流程完成後，使用者代理程式導覽的最終重新導向URL。<br/><br/>
+        值必須以URL編碼。<br/><br/>
+        如果串流裝置平台在提供值方面有所限制，則應用程式必須繼續驗證工作階段並提供有效值。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -98,10 +91,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         所傳送資源的接受媒體型別。
-         <br/><br/>
-         它必須是application/x-www-form-urlencoded。
-      </td>
+         所傳送資源的接受媒體型別。<br/><br/>
+         它必須是application/x-www-form-urlencoded。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -112,43 +103,32 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>標題檔案中會說明裝置資訊承載的產生。
-         <br/><br/>
-         強烈建議您在應用程式的裝置平台允許明確提供有效值時，一律使用此值。
-         <br/><br/>
-         提供此屬性時，Adobe Pass驗證後端會以隱含方式將明確設定的值與擷取的值合併（預設為）。
-         <br/><br/>
-         若未提供，Adobe Pass驗證後端將會以隱含方式使用擷取的值（依預設）。
-      </td>
+         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>標題檔案中會說明裝置資訊承載的產生。<br/><br/>
+         強烈建議您在應用程式的裝置平台允許明確提供有效值時，一律使用此值。<br/><br/>
+         提供此屬性時，Adobe Pass驗證後端會以隱含方式將明確設定的值與擷取的值合併（預設為）。<br/><br/>
+         若未提供，Adobe Pass驗證後端將會以隱含方式使用擷取的值（依預設）。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         串流裝置的IP位址。
-         <br/><br/>
-         強烈建議一律將它用於伺服器對伺服器的實作，尤其是當呼叫是由程式設計人員服務（而非串流裝置）進行時。
-         <br/><br/>
-         對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。
-      </td>
+         串流裝置的IP位址。<br/><br/>
+         強烈建議一律將它用於伺服器對伺服器的實作，尤其是當呼叫是由程式設計人員服務（而非串流裝置）進行時。<br/><br/>
+         對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。</td>
       <td>可選</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>或<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        有關Platform Identity方法單一登入裝載的產生，請參閱<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>標標頭檔案。
-        <br/><br/>
-        如需使用平台身分識別啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台身分識別流程單一登入</a>檔案。
-      </td>
+        有關Platform Identity方法單一登入裝載的產生，請參閱<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>標標頭檔案。<br/><br/>
+        如需使用平台身分識別啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台身分識別流程單一登入</a>檔案。</td>
       <td>可選</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-        服務權杖方法的單一登入裝載產生過程在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>標標頭檔案中進行了說明。
-        <br/><br/>
-        如需使用服務權杖啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服務權杖流程進行單一登入</a>檔案。
-      <td>可選</td>
+        服務權杖方法的單一登入裝載產生過程在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>標標頭檔案中進行了說明。<br/><br/>
+        如需使用服務權杖啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服務權杖流程進行單一登入</a>檔案。<td>可選</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AP-Visitor-Identifier</td>
@@ -159,10 +139,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         使用者端應用程式接受的媒體型別。
-         <br/><br/>
-         若指定，則必須為application/json；charset=utf-8。
-      </td>
+         使用者端應用程式接受的媒體型別。<br/><br/>
+         若指定，則必須為application/json；charset=utf-8。</td>
       <td>可選</td>
    </tr>
    <tr>
@@ -191,29 +169,25 @@ ht-degree: 1%
       <td>400</td>
       <td>錯誤請求</td>
       <td>
-        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
-      </td>
+        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。</td>
    </tr>
    <tr>
       <td>401</td>
       <td>未獲授權</td>
       <td>
-        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。
-      </td>
+        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。</td>
    </tr>
    <tr>
       <td>405</td>
       <td>不允許的方法</td>
       <td>
-        HTTP方法無效，使用者端需要使用請求資源所允許的HTTP方法，然後再試一次。 如需詳細資訊，請參閱<a href="#request">要求</a>區段。
-      </td>
+        HTTP方法無效，使用者端需要使用請求資源所允許的HTTP方法，然後再試一次。 如需詳細資訊，請參閱<a href="#request">要求</a>區段。</td>
    </tr>
    <tr>
       <td>500</td>
       <td>內部伺服器錯誤</td>
       <td>
-        伺服器端發生問題。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
-      </td>
+        伺服器端發生問題。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。</td>
    </tr>
 </table>
 
@@ -253,10 +227,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
                <td>
-                  串流裝置完成驗證流程所需執行的動作。
-                  <br/><br/>
-                  可能的值包括：
-                  <ul>
+                  串流裝置完成驗證流程所需執行的動作。<br/><br/>
+                  可能的值包括：<ul>
                     <li><b>驗證</b><br/>串流裝置或其他裝置需要在使用者代理程式中開啟提供的URL。</li>
                     <li><b>繼續</b><br/>串流裝置或其他裝置需要提供遺漏的引數，並使用程式碼繼續驗證工作階段。</li>
                     <li><b>授權</b><br/>串流裝置可以直接進行決定流程。</li>
@@ -266,10 +238,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionType</td>
                <td>
-                  串流裝置必須執行的互動型別，才能使用「actionName」屬性所指定的動作繼續流程。
-                  <br/><br/>
-                  可能的值包括：
-                  <ul>
+                  串流裝置必須執行的互動型別，才能使用「actionName」屬性所指定的動作繼續流程。<br/><br/>
+                  可能的值包括：<ul>
                     <li><b>互動式</b><br/>流程繼續使用使用者代理程式導覽至提供的URL。</li>
                     <li><b>直接</b><br/>流程會繼續使用使用者端實作可用的HTTP使用者端直接呼叫提供的URL。</li>
                   </ul>
@@ -278,10 +248,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  說明「actionName」的原因型別。
-                  <br/><br/>
-                  可能的值包括：
-                  <ul>
+                  說明「actionName」的原因型別。<br/><br/>
+                  可能的值包括：<ul>
                     <li><b>無</b><br/>使用者端應用程式必須繼續驗證。</li>
                     <li><b>已驗證</b><br/>使用者端應用程式已透過基本存取流程驗證。</li>
                     <li><b>暫時</b><br/>使用者端應用程式已透過暫存存取流程驗證。</li>
@@ -345,7 +313,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">狀態</td>
-      <td>400， 401， 405， 500</td>
+      <td>400, 401, 405, 500</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -367,7 +335,7 @@ ht-degree: 1%
 
 ## 範例 {#samples}
 
-### 1.建立驗證工作階段，但不遺失引數
+### &#x200B;1. 建立驗證工作階段，但不遺失引數
 
 >[!BEGINTABS]
 
@@ -411,7 +379,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2.使用遺失的引數建立驗證工作階段
+### &#x200B;2. 建立缺少引數的驗證工作階段
 
 >[!BEGINTABS]
 
@@ -453,7 +421,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3.當有效的設定檔已存在時，建立驗證工作階段
+### &#x200B;3. 當有效的設定檔已存在時，建立驗證工作階段
 
 >[!BEGINTABS]
 
@@ -494,7 +462,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4.使用基本或促銷暫時Pass建立驗證工作階段（不需要）
+### &#x200B;4. 使用基本或促銷臨時傳遞建立驗證工作階段（不需要）
 
 >[!BEGINTABS]
 
@@ -535,7 +503,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5.套用降級時建立驗證工作階段
+### &#x200B;5. 套用降級時建立驗證工作階段
 
 >[!BEGINTABS]
 

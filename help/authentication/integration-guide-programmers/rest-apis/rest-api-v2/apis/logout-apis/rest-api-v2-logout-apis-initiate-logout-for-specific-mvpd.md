@@ -4,8 +4,8 @@ description: REST API V2 — 啟動特定mvpd的登出
 exl-id: 2482de87-b3d4-4ea8-bd4a-25bf10017e01
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '1028'
-ht-degree: 1%
+source-wordcount: '1130'
+ht-degree: 2%
 
 ---
 
@@ -60,10 +60,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        MVPD登出流程完成時，使用者代理程式導覽的最終重新導向URL。
-        <br/><br/>
-        值必須以URL編碼。
-      </td>
+        MVPD登出流程完成時，使用者代理程式導覽的最終重新導向URL。<br/><br/>
+        值必須以URL編碼。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -84,43 +82,32 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>標題檔案中會說明裝置資訊承載的產生。
-         <br/><br/>
-         強烈建議您在應用程式的裝置平台允許明確提供有效值時，一律使用此值。
-         <br/><br/>
-         提供此屬性時，Adobe Pass驗證後端會以隱含方式將明確設定的值與擷取的值合併（預設為）。
-         <br/><br/>
-         若未提供，Adobe Pass驗證後端將會以隱含方式使用擷取的值（依預設）。
-      </td>
+         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>標題檔案中會說明裝置資訊承載的產生。<br/><br/>
+         強烈建議您在應用程式的裝置平台允許明確提供有效值時，一律使用此值。<br/><br/>
+         提供此屬性時，Adobe Pass驗證後端會以隱含方式將明確設定的值與擷取的值合併（預設為）。<br/><br/>
+         若未提供，Adobe Pass驗證後端將會以隱含方式使用擷取的值（依預設）。</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         串流裝置的IP位址。
-         <br/><br/>
-         強烈建議一律將它用於伺服器對伺服器的實作，尤其是當呼叫是由程式設計人員服務（而非串流裝置）進行時。
-         <br/><br/>
-         對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。
-      </td>
+         串流裝置的IP位址。<br/><br/>
+         強烈建議一律將它用於伺服器對伺服器的實作，尤其是當呼叫是由程式設計人員服務（而非串流裝置）進行時。<br/><br/>
+         對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。</td>
       <td>可選</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Adobe-Subject-Token<br/>或<br/>X-Roku-Reserved-Roku-Connect-Token</td>
       <td>
-        有關Platform Identity方法單一登入裝載的產生，請參閱<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>標標頭檔案。
-        <br/><br/>
-        如需使用平台身分識別啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台身分識別流程單一登入</a>檔案。
-      </td>
+        有關Platform Identity方法單一登入裝載的產生，請參閱<a href="../../appendix/headers/rest-api-v2-appendix-headers-adobe-subject-token.md">Adobe-Subject-Token</a> / <a href="../../appendix/headers/rest-api-v2-appendix-headers-x-roku-reserved-roku-connect-token.md">X-Roku-Reserved-Roku-Connect-Token</a>標標頭檔案。<br/><br/>
+        如需使用平台身分識別啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-platform-identity-flows.md">使用平台身分識別流程單一登入</a>檔案。</td>
       <td>可選</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-        服務權杖方法的單一登入裝載產生過程在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>標標頭檔案中進行了說明。
-        <br/><br/>
-        如需使用服務權杖啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服務權杖流程進行單一登入</a>檔案。
-      </td>
+        服務權杖方法的單一登入裝載產生過程在<a href="../../appendix/headers/rest-api-v2-appendix-headers-ad-service-token.md">AD-Service-Token</a>標標頭檔案中進行了說明。<br/><br/>
+        如需使用服務權杖啟用單一登入流程的詳細資訊，請參閱<a href="../../flows/single-sign-on-access-flows/rest-api-v2-single-sign-on-service-token-flows.md">使用服務權杖流程進行單一登入</a>檔案。</td>
       <td>可選</td>
    </tr>
    <tr>
@@ -132,10 +119,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         使用者端應用程式接受的媒體型別。
-         <br/><br/>
-         若指定，則必須為application/json；charset=utf-8。
-      </td>
+         使用者端應用程式接受的媒體型別。<br/><br/>
+         若指定，則必須為application/json；charset=utf-8。</td>
       <td>可選</td>
    </tr>
    <tr>
@@ -164,29 +149,25 @@ ht-degree: 1%
       <td>400</td>
       <td>錯誤請求</td>
       <td>
-        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
-      </td>
+        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。</td>
    </tr>
    <tr>
       <td>401</td>
       <td>未獲授權</td>
       <td>
-        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。
-      </td>
+        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。</td>
    </tr>
    <tr>
       <td>405</td>
       <td>不允許的方法</td>
       <td>
-        HTTP方法無效，使用者端需要使用請求資源所允許的HTTP方法，然後再試一次。 如需詳細資訊，請參閱<a href="#request">要求</a>區段。
-      </td>
+        HTTP方法無效，使用者端需要使用請求資源所允許的HTTP方法，然後再試一次。 如需詳細資訊，請參閱<a href="#request">要求</a>區段。</td>
    </tr>
    <tr>
       <td>500</td>
       <td>內部伺服器錯誤</td>
       <td>
-        伺服器端發生問題。 回應本文可能包含符合<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強型錯誤碼</a>檔案的錯誤資訊。
-      </td>
+        伺服器端發生問題。 回應本文可能包含符合<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強型錯誤碼</a>檔案的錯誤資訊。</td>
    </tr>
 </table>
 
@@ -216,10 +197,8 @@ ht-degree: 1%
    <tr>
       <td style="background-color: #DEEBFF;">登出</td>
       <td>
-         JSON包含索引鍵、值配對的對應。
-         <br/><br/>
-         索引鍵元素由下列值定義：
-         <table style="table-layout:auto">
+         JSON包含索引鍵、值配對的對應。<br/><br/>
+         索引鍵元素由下列值定義：<table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">值</th>
                <th style="background-color: #EFF2F7"></th>
@@ -240,10 +219,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
                <td>
-                  串流裝置完成登出流程所需執行的動作。
-                  <br/><br/>
-                  可能的值包括：
-                  <ul>
+                  串流裝置完成登出流程所需執行的動作。<br/><br/>
+                  可能的值包括：<ul>
                     <li><b>登出</b><br/>串流裝置需要在使用者代理程式中開啟提供的URL。<br/>此動作適用於下列情況：使用登出端點登出MVPD。</li>
                     <li><b>partner_logout</b><br/>串流裝置必須同時通知使用者從合作夥伴（系統）層級登出。<br/>此動作適用於下列情況：當設定檔型別為「appleSSO」時登出MVPD。</li>
                     <li><b>完成</b><br/>串流裝置不需要執行任何後續動作。<br/>此動作適用於下列情況：在沒有登出端點（虛擬登出功能）的情況下登出MVPD、在存取效能降低期間登出、在暫時存取期間登出。</li>
@@ -254,10 +231,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">actionType</td>
                <td>
-                  串流裝置必須執行的互動型別，才能使用「actionName」屬性所指定的動作繼續流程。
-                  <br/><br/>
-                  可能的值包括：
-                  <ul>
+                  串流裝置必須執行的互動型別，才能使用「actionName」屬性所指定的動作繼續流程。<br/><br/>
+                  可能的值包括：<ul>
                     <li><b>互動式</b><br/>此型別適用於'actionName'屬性的下列值： <b>登出</b>。</li>
                     <li><b>partner_interactive</b><br/>此型別適用於'actionName'屬性的下列值： <b>partner_logout</b>。</li>
                     <li><b>none</b><br/>此型別適用於'actionName'屬性的下列值： <b>complete</b>，<b>invalid</b>。</li>
@@ -272,10 +247,8 @@ ht-degree: 1%
             <tr>
                <td style="background-color: #DEEBFF;">url</td>
                <td>
-                  用來透過MVPD端點執行登出流程的URL。
-                  <br/><br/>
-                  'actionName'屬性的下列值沒有這個值：
-                  <ul>
+                  用來透過MVPD端點執行登出流程的URL。<br/><br/>
+                  'actionName'屬性的下列值沒有這個值：<ul>
                     <li><b>complete</b></li>
                     <li><b>無效</b></li>
                   </ul>
@@ -297,7 +270,7 @@ ht-degree: 1%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">狀態</td>
-      <td>400， 401， 405， 500</td>
+      <td>400, 401, 405, 500</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -319,7 +292,7 @@ ht-degree: 1%
 
 ## 範例 {#samples}
 
-### 1.為具有登出端點的特定mvpd起始登出
+### &#x200B;1. 為具有登出端點的特定mvpd起始登出
 
 >[!BEGINTABS]
 
@@ -356,7 +329,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 2.在不登出端點的情況下起始特定mvpd的登出
+### &#x200B;2. 在不登出端點的情況下起始特定mvpd的登出
 
 >[!BEGINTABS]
 
@@ -392,7 +365,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 3.針對特定mvpd啟動單一登出，包括透過使用服務權杖方法的單一登入取得的設定檔
+### &#x200B;3. 為特定mvpd起始單一登出，包括使用服務權杖方法透過單一登入取得的設定檔
 
 >[!IMPORTANT]
 >
@@ -438,7 +411,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 4.針對特定mvpd啟動單一登出，包括透過使用平台身分識別方法的單一登入所取得的設定檔
+### &#x200B;4. 為特定mvpd起始單一登出，包括透過使用平台身分識別方法的單一登入所取得的設定檔
 
 >[!IMPORTANT]
 >
@@ -484,7 +457,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 5.為特定mvpd起始登出，包括透過使用合作夥伴(Apple)單一登入取得的設定檔
+### &#x200B;5. 為特定的mvpd起始登出，包括透過使用合作夥伴(Apple)單一登入取得的設定檔
 
 >[!BEGINTABS]
 
@@ -520,7 +493,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 6.在套用降級時起始特定mvpd的登出
+### &#x200B;6. 在套用降級時起始特定mvpd的登出
 
 >[!BEGINTABS]
 
@@ -556,7 +529,7 @@ Content-Type: application/json;charset=UTF-8
 
 >[!ENDTABS]
 
-### 7.啟動基本或促銷臨時傳遞的登出（不需要）
+### &#x200B;7. 啟動基本或促銷臨時傳遞的登出（不需要）
 
 >[!BEGINTABS]
 

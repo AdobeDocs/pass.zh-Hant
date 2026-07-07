@@ -4,7 +4,7 @@ description: REST API V2檢查清單
 exl-id: 9095d1dd-a90c-4431-9c58-9a900bfba1cf
 source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
 workflow-type: tm+mt
-source-wordcount: '2563'
+source-wordcount: '2578'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 0%
 
 ## 強制需求 {#mandatory-requirements}
 
-### 1.註冊階段 {#mandatory-requirements-registration-phase}
+### &#x200B;1. 註冊階段 {#mandatory-requirements-registration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -50,7 +50,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 2.設定階段 {#mandatory-requirements-configuration-phase}
+### &#x200B;2. 設定階段 {#mandatory-requirements-configuration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -60,7 +60,7 @@ ht-degree: 0%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>設定擷取</i></td>
-      <td>只有在需要提示使用者在驗證階段之前選取其MVPD （電視提供者）時，才會擷取設定回應。<br/><br/>下列情況不需要擷取設定回應：<ul><li>使用者已經過驗證。</li><li>授予使用者暫時存取權。</li><li>使用者驗證已過期，但系統會提示使用者，確認他們仍是先前所選MVPD的訂閱者。</li></ul></td>
+      <td>只有在需要提示使用者在驗證階段之前選取其MVPD （電視提供者）時，才擷取設定回應。<br/><br/>在下列情況下，不需要擷取設定回應：<ul><li>使用者已經過驗證。</li><li>授予使用者暫時存取權。</li><li>使用者驗證已過期，但系統會提示使用者，確認他們仍是先前所選MVPD的訂閱者。</li></ul></td>
       <td>可能會造成系統資源超載及延遲增加。</td>
    </tr>
    <tr>
@@ -70,7 +70,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 3.驗證階段 {#mandatory-requirements-authentication-phase}
+### &#x200B;3. 驗證階段 {#mandatory-requirements-authentication-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -111,7 +111,7 @@ ht-degree: 0%
    <tr>
       <td style="background-color: #DEEBFF;"><i>預先授權決定擷取</i></td>
       <td>使用預先授權決定進行內容篩選，永不用於播放決定。</td>
-      <td>違反程式設計師、MVPD和Adobe之間合約協定的風險。<br/><br/>略過我們的監視和警示系統的風險。</td>
+      <td>違反程式設計人員、MVPD和Adobe之間合約合約的風險。<br/><br/>略過我們的監控和警示系統的風險。</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>預先授權決定擷取重試</i></td>
@@ -125,7 +125,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 5.授權階段 {#mandatory-requirements-authorization-phase}
+### &#x200B;5. 授權階段 {#mandatory-requirements-authorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -136,7 +136,7 @@ ht-degree: 0%
    <tr>
       <td style="background-color: #DEEBFF;"><i>授權決定擷取</i></td>
       <td>在播放之前取得授權決定 — 無論預先授權決定是否存在。<br/><br/>即使媒體權杖在播放期間到期，並允許資料流繼續不受中斷，並在使用者提出下一個播放請求時請求包含（新增）媒體權杖的新授權決定，無論該媒體權杖是否用於相同或不同的資源。<br/><br/>長時間執行的即時資料流可選擇在視訊作業後要求新的授權決定，例如暫停內容、啟動商業插播，或在MRSS發生變更時修改資產層級設定。</td>
-      <td>違反程式設計師、MVPD和Adobe之間合約協定的風險。<br/><br/>略過我們的監視和警示系統的風險。</td>
+      <td>違反程式設計人員、MVPD和Adobe之間合約合約的風險。<br/><br/>略過我們的監控和警示系統的風險。</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>授權決定擷取重試</i></td>
@@ -145,7 +145,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 6.登出階段 {#mandatory-requirements-logout-phase}
+### &#x200B;6. 登出階段 {#mandatory-requirements-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -155,12 +155,12 @@ ht-degree: 0%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>登出支援</i></td>
-      <td>實作登出API以允許使用者手動登出、終止其已驗證的設定檔，並遵循為每個已移除設定檔指定的REST API v2動作名稱：<ul><li>對於支援登出端點的MVPD，使用者端應用程式需要導覽至使用者代理程式中提供的「url」。</li><li>針對「appleSSO」型別設定檔，使用者端應用程式需要引導使用者也從合作夥伴層級(Apple的系統設定)登出。</li></ul></td>
+      <td>實作登出API以允許使用者手動登出、終止其已驗證的設定檔，並遵循為每個已移除設定檔指定的REST API v2動作名稱：<ul><li>對於支援登出端點的MVPD，使用者端應用程式需要導覽至使用者代理程式中提供的「url」。</li><li>針對「appleSSO」型別設定檔，使用者端應用程式需要引導使用者也從合作夥伴層級（Apple的系統設定）登出。</li></ul></td>
       <td>由於缺少使用者端應用程式端的支援，導致使用者端應用程式故障的風險。</td>
    </tr>
 </table>
 
-### 7.引數和標題 {#mandatory-requirements-parameters-headers}
+### &#x200B;7. 引數和標題 {#mandatory-requirements-parameters-headers}
 
 <table style="table-layout:auto">
    <tr>
@@ -181,7 +181,7 @@ ht-degree: 0%
    <tr>
       <td style="background-color: #DEEBFF;"><i>傳送X-Device-Info標頭</i></td>
       <td>針對每個REST API v2請求傳送<a href="/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>標頭。<br/><br/>即使請求來自代表裝置的伺服器，X-Device-Info標頭值也必須反映實際的串流裝置資訊。</td>
-      <td>歸類為源自未知平台且視為不安全的風險，會受限於較嚴格的規則，例如較短的驗證TTL。<br/><br/>此外，某些欄位（例如串流裝置connectionIp和connectionPort）是諸如Spectrum的Home Base Authentication之類功能的必要欄位。</td>
+      <td>將風險分類為來自未知平台且視為不安全，會受限於較嚴格的規則，例如較短的驗證TTL。<br/><br/>此外，某些欄位，例如串流裝置connectionIp和connectionPort，對於如Spectrum的Home Base Authentication的功能是強制性的。</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>穩定裝置識別碼</i></td>
@@ -195,7 +195,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 8.錯誤處理 {#mandatory-requirements-error-handling}
+### &#x200B;8. 錯誤處理 {#mandatory-requirements-error-handling}
 
 <table style="table-layout:auto">
    <tr>
@@ -215,7 +215,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 9.測試 {#mandatory-requirements-testing}
+### &#x200B;9. 測試 {#mandatory-requirements-testing}
 
 <table style="table-layout:auto">
    <tr>
@@ -225,14 +225,14 @@ ht-degree: 0%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;"><i>生命週期測試</i></td>
-      <td>使用官方的Adobe Pass驗證非生產環境開發和測試應用程式：<ul><li>前期生產</li><li>Release-Staging</li></ul><br/>在啟動至發行生產之前，先在這些環境中執行徹底品質保證(QA)。<br/><br/>使用者端應用程式必須先在非生產環境中完成端對端驗證，才能進行發行生產。</td>
+      <td>使用官方的Adobe Pass驗證非生產環境開發和測試應用程式：<ul><li>前期生產</li><li>Release-Staging</li></ul><br/>在啟動至發行生產之前，在這些環境中執行徹底品質保證(QA)。<br/><br/>使用者端應用程式必須先在非生產環境中完成端對端驗證，才能繼續發行生產。</td>
       <td>發生嚴重和重大缺陷的風險。<br/><br/>缺少簡短且有效的偵錯路徑，可能會妨礙Adobe支援和工程部門快速介入。</td>
    </tr>
 </table>
 
 ## 建議作法 {#recommended-practices}
 
-### 1.註冊階段 {#recommended-practices-registration-phase}
+### &#x200B;1. 註冊階段 {#recommended-practices-registration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -247,7 +247,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 2.設定階段 {#recommended-practices-configuration-phase}
+### &#x200B;2. 設定階段 {#recommended-practices-configuration-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -262,7 +262,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 3.驗證階段 {#recommended-practices-authentication-phase}
+### &#x200B;3. 驗證階段 {#recommended-practices-authentication-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -302,7 +302,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 5.授權階段 {#recommended-practices-authorization-phase}
+### &#x200B;5. 授權階段 {#recommended-practices-authorization-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -322,7 +322,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 6.登出階段 {#recommended-practices-logout-phase}
+### &#x200B;6. 登出階段 {#recommended-practices-logout-phase}
 
 <table style="table-layout:auto">
    <tr>
@@ -337,7 +337,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 7.引數和標題 {#recommended-practices-parameters-headers}
+### &#x200B;7. 引數和標題 {#recommended-practices-parameters-headers}
 
 <table style="table-layout:auto">
    <tr>
@@ -352,7 +352,7 @@ ht-degree: 0%
    </tr>
 </table>
 
-### 8.測試 {#recommended-practices-testing}
+### &#x200B;8. 測試 {#recommended-practices-testing}
 
 <table style="table-layout:auto">
    <tr>
@@ -391,7 +391,7 @@ ht-degree: 0%
       <td>快取設定回應</td>
    </tr>
    <tr>
-      <td style="background-color: #DEEBFF;"><i>驗證</i></td>
+      <td style="background-color: #DEEBFF;"><i>Authentication</i></td>
       <td>輪詢機制微調<br/><br/>設定檔的快取部分</td>
       <td>支援多個設定檔<br/><br/>支援降級功能（若業務需求）<br/><br/>支援TempPass功能（若業務需求）<br/><br/>支援單一登入功能（若業務需求）</td>
    </tr>
