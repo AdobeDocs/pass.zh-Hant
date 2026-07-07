@@ -2,7 +2,7 @@
 title: Android SDK API參考
 description: Android SDK API參考
 exl-id: f932e9a1-2dbe-4e35-bd60-a4737407942d
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '4628'
 ht-degree: 0%
@@ -778,3 +778,4 @@ Access Enabler會觸發其他回呼，而此回呼不一定與權益流程相關
 - [Android Technical Overview](/help/authentication/android-sdk-overview.md)
 
 -->
+

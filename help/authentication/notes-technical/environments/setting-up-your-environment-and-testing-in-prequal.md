@@ -2,7 +2,7 @@
 title: 在預備中設定您的環境及測試
 description: 在預備中設定您的環境及測試
 exl-id: f822c0a1-045a-401f-a44f-742ed25bfcdc
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '492'
 ht-degree: 0%
@@ -118,3 +118,4 @@ Addresses:  52.26.79.43
 * 如果您想更深入測試Adobe Pass驗證，建議您使用[API測試網站](http://entitlement-prequal.auth.adobe.com/apitest/api.html)。
 
 您可以在[找到更多有關API測試網站的詳細資料。如何使用Adobe的API測試網站](/help/authentication/integration-guide-programmers/legacy/notes-technical/test-authn-authz-flows-using-adobes-api-test-site.md)來測試驗證和授權流程。
+

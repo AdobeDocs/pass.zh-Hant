@@ -2,7 +2,7 @@
 title: Amazon FireOS Native Client API參考
 description: Amazon FireOS Native Client API參考
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '3519'
 ht-degree: 0%
@@ -684,3 +684,4 @@ Access Enabler會觸發其他回呼，而此回呼不一定與權益流程相關
    - **3** — 作業系統型別
 
 **觸發者：** `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`
+

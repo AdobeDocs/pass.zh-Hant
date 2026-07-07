@@ -2,7 +2,7 @@
 title: Android SDK與動態使用者端註冊
 description: Android SDK與動態使用者端註冊
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: c2a5591cd8fea44f66fc25beb1fb40532e18d8a6
+source-git-commit: b6ba687240799d1889302019613f426259f147ad
 workflow-type: tm+mt
 source-wordcount: '1321'
 ht-degree: 1%
@@ -193,3 +193,4 @@ f. 登出：
 | invalid_request | 400 | 要求的格式錯誤。 SDK應停止執行對伺服器的呼叫。 |
 | invalid_client | 403 | 不再允許使用者端ID執行要求。 sdk必須再次執行使用者端註冊。 |
 | access_denied | 401 | access\_token無效。 sdk必須要求新的access_token。 |
+
