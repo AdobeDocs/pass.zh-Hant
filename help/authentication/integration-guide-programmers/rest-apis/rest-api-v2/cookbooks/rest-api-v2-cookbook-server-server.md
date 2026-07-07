@@ -4,7 +4,7 @@ description: REST API V2逐步指南（伺服器對伺服器）
 exl-id: 3160c03c-849d-4d39-95e5-9a9cbb46174d
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2497'
+source-wordcount: '2524'
 ht-degree: 0%
 
 ---
@@ -214,7 +214,7 @@ API
 
    * 程式設計師服務必須在下列條件下&#x200B;**啟動輪詢**&#x200B;機制：
 
-      * **在主要（熒幕）應用程式內執行的驗證：**&#x200B;當瀏覽器元件載入`redirectUrl`工作階段[端點要求中為](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)引數指定的URL後，程式設計師服務應在使用者到達最終目的地頁面時開始輪詢。
+      * **在主要（熒幕）應用程式內執行的驗證：**&#x200B;當瀏覽器元件載入[工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端點要求中為`redirectUrl`引數指定的URL後，程式設計師服務應在使用者到達最終目的地頁面時開始輪詢。
 
       * **在次要（熒幕）應用程式內執行的驗證：**&#x200B;程式設計師服務應用程式應在使用者起始驗證程式後立即開始輪詢 — 在收到[工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端點回應並向使用者顯示驗證代碼之後。
 
@@ -222,7 +222,7 @@ API
 
       * **成功驗證：**&#x200B;已成功擷取使用者的設定檔資訊，確認其驗證狀態。 此時，不再需要輪詢。
 
-      * **驗證工作階段和程式碼到期日：**&#x200B;驗證工作階段和程式碼會到期，如`notAfter`工作階段[端點回應中的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)時間戳記（例如30分鐘）所指示。 如果發生這種狀況，使用者必須重新啟動驗證程式，而且使用先前驗證代碼的輪詢應該立即停止。
+      * **驗證工作階段和程式碼到期日：**&#x200B;驗證工作階段和程式碼會到期，如[工作階段](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)端點回應中的`notAfter`時間戳記（例如30分鐘）所指示。 如果發生這種狀況，使用者必須重新啟動驗證程式，而且使用先前驗證代碼的輪詢應該立即停止。
 
       * **產生的新驗證碼：**&#x200B;如果使用者要求主要（熒幕）裝置上的新驗證碼，則現有工作階段不再有效，使用先前驗證碼的輪詢應立即停止。
 

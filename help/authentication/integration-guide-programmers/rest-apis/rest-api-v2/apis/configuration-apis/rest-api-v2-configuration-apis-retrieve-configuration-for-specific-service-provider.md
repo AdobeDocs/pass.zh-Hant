@@ -4,7 +4,7 @@ description: REST API V2 — 擷取特定服務提供者的設定
 exl-id: ad7e4c6d-ed96-4ae7-82a9-3c24e5fc9302
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '728'
+source-wordcount: '749'
 ht-degree: 2%
 
 ---
@@ -79,34 +79,25 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>標題檔案中會說明裝置資訊承載的產生。
-         <br/><br/>
-         強烈建議您在應用程式的裝置平台允許明確提供有效值時，一律使用此值。
-         <br/><br/>
-         提供此屬性時，Adobe Pass驗證後端會以隱含方式將明確設定的值與擷取的值合併（預設為）。
-         <br/><br/>
-         若未提供，Adobe Pass驗證後端將會以隱含方式使用擷取的值（依預設）。
-      </td>
+         在<a href="../../appendix/headers/rest-api-v2-appendix-headers-x-device-info.md">X-Device-Info</a>標題檔案中會說明裝置資訊承載的產生。<br/><br/>
+         強烈建議您在應用程式的裝置平台允許明確提供有效值時，一律使用此值。<br/><br/>
+         提供此屬性時，Adobe Pass驗證後端會以隱含方式將明確設定的值與擷取的值合併（預設為）。<br/><br/>
+         若未提供，Adobe Pass驗證後端將會以隱含方式使用擷取的值（依預設）。</td>
       <td>可選</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         串流裝置的IP位址。
-         <br/><br/>
-         強烈建議一律將它用於伺服器對伺服器的實作，尤其是當呼叫是由程式設計人員服務（而非串流裝置）進行時。
-         <br/><br/>
-         對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。
-      </td>
+         串流裝置的IP位址。<br/><br/>
+         強烈建議一律將它用於伺服器對伺服器的實作，尤其是當呼叫是由程式設計人員服務（而非串流裝置）進行時。<br/><br/>
+         對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。</td>
       <td>可選</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         使用者端應用程式接受的媒體型別。
-         <br/><br/>
-         若指定，則必須為application/json；charset=utf-8。
-      </td>
+         使用者端應用程式接受的媒體型別。<br/><br/>
+         若指定，則必須為application/json；charset=utf-8。</td>
       <td>可選</td>
    </tr>
    <tr>
@@ -135,29 +126,25 @@ ht-degree: 2%
       <td>400</td>
       <td>錯誤請求</td>
       <td>
-        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
-      </td>
+        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。</td>
    </tr>
    <tr>
       <td>401</td>
       <td>未獲授權</td>
       <td>
-        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。
-      </td>
+        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。</td>
    </tr>
    <tr>
       <td>405</td>
       <td>不允許的方法</td>
       <td>
-        HTTP方法無效，使用者端需要使用請求資源所允許的HTTP方法，然後再試一次。 如需詳細資訊，請參閱<a href="#request">要求</a>區段。
-      </td>
+        HTTP方法無效，使用者端需要使用請求資源所允許的HTTP方法，然後再試一次。 如需詳細資訊，請參閱<a href="#request">要求</a>區段。</td>
    </tr>
    <tr>
       <td>500</td>
       <td>內部伺服器錯誤</td>
       <td>
-        伺服器端發生問題。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
-      </td>
+        伺服器端發生問題。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。</td>
    </tr>
 </table>
 
@@ -260,7 +247,7 @@ ht-degree: 2%
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">狀態</td>
-      <td>400， 401， 405， 500</td>
+      <td>400, 401, 405, 500</td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -282,7 +269,7 @@ ht-degree: 2%
 
 ## 範例 {#samples}
 
-### 1.擷取特定服務提供者的組態
+### &#x200B;1. 擷取特定服務提供者的設定
 
 >[!BEGINTABS]
 

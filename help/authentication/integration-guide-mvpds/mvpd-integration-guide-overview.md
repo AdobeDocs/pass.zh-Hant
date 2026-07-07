@@ -4,7 +4,7 @@ description: MVPD整合指南
 exl-id: b918550b-96a8-4e80-af28-0a2f63a02396
 source-git-commit: 07bb12f7983f39b58e1b9795fdaa1bec4f68e674
 workflow-type: tm+mt
-source-wordcount: '1307'
+source-wordcount: '1326'
 ht-degree: 0%
 
 ---
@@ -15,13 +15,13 @@ ht-degree: 0%
 >
 > 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
-本整合指南適用於計畫與Adobe® Pass Authentication整合的多頻道視訊程式設計經銷商(MVPD)。
+本整合指南適用於計畫與® Pass Authentication整合的多頻道視訊程式設計經銷商(MVPD)。
 
 TV Everywhere (TVE)是付費電視產業中的革新性計畫，讓訂閱者能夠透過多部裝置（無論是在家中或外出）存取他們已付費的內容。 對付費電視提供者而言，TVE提供了重要的機會，其中可強化現有客戶關係，並開啟通往新客戶關係的大門。 然而，這些機會也伴隨著挑戰。
 
 在TVE生態系統中，**程式設計師**&#x200B;提供內容，而&#x200B;**MVPD** （多頻道視訊節目經銷商）管理驗證檢視者是否為合格訂閱者所需的客戶資料。 雖然使用單一程式設計人員協調驗證與授權可能易於管理，但若使用數十甚至數百個程式設計人員，則會帶來相當的複雜性。
 
-這是&#x200B;**Adobe® Pass Authentication**&#x200B;簡化程式的地方。 MVPD只需要實作單一、簡化的Adobe Pass整合，即可存取整個TVE生態系統。 提供的整合架構可加快上市時間、提供安全環境以減少詐騙，並透過跨多個平台提供更多電視內容來強化客戶體驗。
+這是&#x200B;**® Pass Authentication**&#x200B;簡化程式的地方。 MVPD只需要實作單一、簡化的Adobe Pass整合，即可存取整個TVE生態系統。 提供的整合架構可加快上市時間、提供安全環境以減少詐騙，並透過跨多個平台提供更多電視內容來強化客戶體驗。
 
 ## 適用於所有電視的Adobe Pass驗證 {#adobe-pass-authentication-for-tv-everywhere}
 
@@ -71,7 +71,7 @@ Adobe Pass驗證可支援有效率地處理MVPD商業邏輯，如下所示：
 
 >[!NOTE]
 >
-> 本檔案使用程式設計工具(TVE)應用程式，以統稱為Adobe Pass驗證支援之不同平台（瀏覽器、行動裝置、電視連線裝置等）上執行的應用程式型別。
+> 本檔案使用程式設計工具(TVE)應用程式來統整指代在不同平台（瀏覽器、行動裝置、電視連線裝置等）上執行的應用程式型別 受Adobe Pass驗證支援。
 
 ### 驗證階段 {#authentication-phase}
 

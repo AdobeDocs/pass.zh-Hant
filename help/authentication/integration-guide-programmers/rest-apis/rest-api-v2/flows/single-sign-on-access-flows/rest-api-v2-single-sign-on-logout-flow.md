@@ -4,7 +4,7 @@ description: REST API V2 — 單一登出 — 流量
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '587'
+source-wordcount: '599'
 ht-degree: 0%
 
 ---
@@ -54,7 +54,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定mvpd[&#x200B; API的](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)起始登出：
+   > 如需下列詳細資訊，請參閱特定mvpd[&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的起始登出：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`、`mvpd`和`redirectUrl`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
@@ -80,7 +80,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 如需登出回應中提供的詳細資訊，請參閱特定mvpd[&#x200B; API的](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)Initiate登出。
+   > 如需登出回應中提供的詳細資訊，請參閱特定mvpd[&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的Initiate登出。
    > 
    > <br/>
    > 
