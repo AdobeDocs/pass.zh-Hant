@@ -4,7 +4,7 @@ description: 並行監視簡介
 exl-id: 725cc64b-6b03-46e3-a038-41e9b1341c6b
 source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '225'
 ht-degree: 0%
 
 ---
