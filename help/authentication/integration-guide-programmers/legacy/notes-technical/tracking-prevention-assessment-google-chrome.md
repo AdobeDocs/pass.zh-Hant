@@ -4,7 +4,7 @@ description: 追蹤預防評估Google Chrome
 exl-id: f3d552da-2fd7-4ac8-9f82-876625af5d47
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '673'
+source-wordcount: '812'
 ht-degree: 0%
 
 ---
@@ -29,12 +29,12 @@ ht-degree: 0%
 
 請參閱下方的Google開發人員網站彙總的資源清單，以及其官方部落格，其中建議您向客戶諮詢：
 
-* [在Chrome中逐步淘汰協力廠商Cookie的下一步](https://blog.google/products/chrome/privacy-sandbox-tracking-protection/)
+* [在Chrome中逐步淘汰第三方Cookie的下一個步驟](https://blog.google/products/chrome/privacy-sandbox-tracking-protection/)
 * [隱私權沙箱的開發人員檔案](https://developers.google.com/privacy-sandbox)
 * [準備第三方Cookie限制](https://developers.google.com/privacy-sandbox/3pcd)
 * [準備第三方Cookie逐步淘汰](https://developers.google.com/privacy-sandbox/3pcd/prepare/prepare-for-phaseout)
-* [正在準備結束第三方Cookie](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2023oct)
-* [預設會為1%的Chrome使用者限制第三方Cookie](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2024jan)
+* [為第三方Cookie的結束做準備](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2023oct)
+* [1%的Chrome使用者預設會限制第三方Cookie](https://developers.google.com/privacy-sandbox/blog/cookie-countdown-2024jan)
 
 ## 時間軸
 
@@ -76,7 +76,7 @@ Google發佈了一份檔案，彙總其建議的行動手冊，為第三方Cooki
 
 ### 測試中斷
 
-若要測試中斷，請使用`--test-third-party-cookie-phaseout`命令列旗標或從Chrome 118啟動Chrome，在`#test-third-party-cookie-phaseout`中啟用`chrome://flags/`。
+若要測試中斷，請使用`--test-third-party-cookie-phaseout`命令列旗標或從Chrome 118啟動Chrome，在`chrome://flags/`中啟用`#test-third-party-cookie-phaseout`。
 
 這將設定Google Chrome以封鎖第三方Cookie並確保未來功能作用中，以便在逐步淘汰後以最佳方式模擬狀態。
 

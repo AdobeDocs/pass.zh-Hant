@@ -1,13 +1,13 @@
 ---
 title: API參考概述
 description: 並行監控API的完整參考，包括端點、驗證和回應格式
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 6a1c6507-03d5-4003-8b88-502eb4019346
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '438'
+source-wordcount: '444'
 ht-degree: 2%
 
 ---
-
 
 # API參考概述 {#api-reference-overview}
 
@@ -29,11 +29,11 @@ https://streams-stage.adobeprimetime.com/v2/
 
 **注意：**&#x200B;請一律使用中繼環境進行開發和測試。 生產認證僅在成功中繼整合後提供。
 
-## 驗證
+## Authentication
 
 所有API呼叫都需要使用您的應用程式認證進行HTTP基本驗證：
 
-- **使用者名稱：**&#x200B;您的應用程式識別碼(由Adobe提供)
+- **使用者名稱：**&#x200B;您的應用程式識別碼（由Adobe提供）
 - **密碼：**&#x200B;空字串
 
 ### 驗證標頭範例
@@ -154,7 +154,7 @@ curl -u "demo-app:" https://streams-stage.adobeprimetime.com/v2/sessions
 屬於URL路徑一部分的必要引數：
 
 1. `{idp}` — 身分提供者識別碼
-2. `{subject}` — 使用者識別碼(通常來自Adobe Pass)
+2. `{subject}` — 使用者識別碼（通常來自Adobe Pass）
 3. `{sessionId}` — 工作階段識別碼（在Location標題中傳回）
 
 ### 其他引數
@@ -192,7 +192,7 @@ X-Client-Version: 1.0.0
 當您收到409衝突回應時：
 
 1. **剖析評估結果**&#x200B;以瞭解原則違規
-2. **從**&#x200B;擷取衝突資訊`associatedAdvice`
+2. **從`associatedAdvice`擷取衝突資訊**
 3. 根據您的LIFO/FIFO策略&#x200B;**向使用者呈現選項**
 4. 如果實作LIFO行為，**使用終止代碼**
 
