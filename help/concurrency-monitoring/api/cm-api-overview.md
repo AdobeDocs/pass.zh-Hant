@@ -59,7 +59,7 @@ curl -i -X POST -u ${user}:%{pass} http://streams-stage.adobeprimetime.com/v2/se
 
 第一次呼叫時不需要提供任何終止程式碼，因為我們沒有任何其他作用中的資料流。 而且沒有中繼資料屬性，因為擷取中繼資料呼叫未傳回任何屬性。
 
-**subject**&#x200B;和&#x200B;**idp**&#x200B;引數是必要引數，它們將被指定為URI路徑變數。 您可以從Adobe Pass驗證呼叫&#x200B;**mvpd**&#x200B;和&#x200B;**upstreamUserID**&#x200B;中繼資料欄位，以取得&#x200B;**主旨**&#x200B;和&#x200B;**idp**&#x200B;引數。 另請參閱中繼資料API的[總覽](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=en#)。 在此範例中，我們會提供「12345」值作為主旨，以及「adobe」值作為idp。
+**subject**&#x200B;和&#x200B;**idp**&#x200B;引數是必要引數，它們將被指定為URI路徑變數。 您可以從Adobe Pass驗證呼叫&#x200B;**mvpd**&#x200B;和&#x200B;**upstreamUserID**&#x200B;中繼資料欄位，以取得&#x200B;**主旨**&#x200B;和&#x200B;**idp**&#x200B;引數。 另請參閱中繼資料API的[總覽](https://experienceleague.adobe.com/docs/primetime/authentication/auth-features/user-metadat/user-metadata-feature.html?lang=zh-Hant#)。 在此範例中，我們會提供「12345」值作為主旨，以及「adobe」值作為idp。
 
 ```
 # Response Code
