@@ -4,7 +4,7 @@ description: Adobe Pass Authentication 3.1.0發行說明
 exl-id: cf9fc8e2-4b37-4b0a-a6ed-cda1b6738e76
 source-git-commit: 0c6aec04ae9df410228730b5bce6ced1aeecd312
 workflow-type: tm+mt
-source-wordcount: '192'
+source-wordcount: '193'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Adobe Pass驗證： adobe-pass-**3.1.0**
 
 * 修正了阻止Spectrum訂閱者透過REST API v2 [驗證API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)進行驗證的問題。
 * 修正了無法透過REST API V2 [驗證API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)產生的事件在ESM中正確彙總的問題。
-* 修正REST API v2 `notBefore`設定檔API[回應中，使用者設定檔的](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)時間戳記計算錯誤的問題。
+* 修正REST API v2 [設定檔API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profiles.md)回應中，使用者設定檔的`notBefore`時間戳記計算錯誤的問題。
 
 #### JavaScript SDK
 
