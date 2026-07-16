@@ -4,7 +4,7 @@ description: 瞭解TVE控制面板中不同環境的使用及運作方式。
 exl-id: 591becb8-2f6c-46e0-b108-c64e6df69f89
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '346'
+source-wordcount: '347'
 ht-degree: 0%
 
 ---

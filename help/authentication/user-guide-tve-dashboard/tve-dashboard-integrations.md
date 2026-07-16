@@ -4,7 +4,7 @@ description: 瞭解您的管道和MVPD之間的整合，以及如何管理整合
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2093'
+source-wordcount: '2105'
 ht-degree: 0%
 
 ---
@@ -79,11 +79,11 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 
 * **全部預設**：若未定義特定平台值，則設定適用於所有平台的通用屬性值，無論程式設計師的實施為何。
 
-* **桌上型電腦**：設定適用於所有桌上型電腦和筆記型電腦的屬性值，不論程式設計方式(JS SDK或REST API)為何。
+* **桌上型電腦**：設定適用於所有桌上型電腦和筆記型電腦的屬性值，不論程式設計方式（JS SDK或REST API）為何。
 
-* **行動裝置**：設定適用於所有行動裝置的屬性值，包括&#x200B;**iOS**、**Android**&#x200B;和其他裝置，無論程式設計方式為何(SDK或REST API)。
+* **行動裝置**：設定適用於所有行動裝置的屬性值，包括&#x200B;**iOS**、**Android**&#x200B;和其他裝置，無論程式設計方式為何（SDK或REST API）。
 
-* **電視連線裝置**：設定適用於所有電視連線裝置的屬性值，包括&#x200B;**tvOS**、**Roku**、**FireTV**&#x200B;和其他裝置，不論其程式設計方式為何(SDK或REST API)。
+* **電視連線裝置**：設定適用於所有電視連線裝置的屬性值，包括&#x200B;**tvOS**、**Roku**、**FireTV**&#x200B;和其他裝置，不論其程式設計方式為何（SDK或REST API）。
 
 * **無法識別的裝置**：設定適用於目前機制無法正確識別平台的所有裝置的屬性值。 在這種情況下，請套用MVPD定義的最嚴格規則。
 
@@ -131,7 +131,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 
 >[!IMPORTANT]
 >
->**在** iOS、tvOS、Roku和FireTV *平台上僅支援*&#x200B;啟用單一登入。 此變數僅適用於與支援這些平台之單一登入的MVPD整合。
+>**在&#x200B;*iOS、tvOS、Roku和FireTV*平台上僅支援**&#x200B;啟用單一登入。 此變數僅適用於與支援這些平台之單一登入的MVPD整合。
 
 請依照下列步驟，為特定整合和平台啟用或停用SSO。
 
@@ -183,7 +183,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 >
 >應避免變更&#x200B;**HBA AuthN TTL**&#x200B;屬性的持續時間。 這可能會導致授權程式中發生未預期的失敗。
 
-只有在&#x200B;**檢閱並推送變更**&#x200B;之後，才能啟用或停用特定MVPD的[嘗試HBA](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)屬性。
+只有在[檢閱並推送變更](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之後，才能啟用或停用特定MVPD的&#x200B;**嘗試HBA**&#x200B;屬性。
 
 #### 新增更多屬性 {#add-more-properties}
 
@@ -232,7 +232,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 
 *為每個彙總屬性新增驗證*
 
-**檢閱並推播變更**&#x200B;之後，才會新增每個彙總的[驗證](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)屬性。
+[檢閱並推播變更](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之後，才會新增每個彙總的&#x200B;**驗證**&#x200B;屬性。
 
 新增後，選取&#x200B;**是**&#x200B;以啟用選取之整合的每個彙總器&#x200B;**的**&#x200B;驗證。
 
@@ -244,7 +244,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 >
 >無法移除某些屬性，因為它們是所選MVPD的強制要求。
 
-只有在&#x200B;**檢閱並推播變更**&#x200B;之後，屬性才會從[平台設定](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)區段中刪除。
+只有在[檢閱並推播變更](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之後，屬性才會從&#x200B;**平台設定**&#x200B;區段中刪除。
 
 ### 使用者中繼資料 {#user-metadata}
 
