@@ -4,7 +4,7 @@ description: 瞭解資料如何在TVE儀表板報表中彙總。
 exl-id: d8ba48de-d743-4dc2-866c-7d6e3ff94773
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '976'
+source-wordcount: '988'
 ht-degree: 0%
 
 ---
@@ -45,7 +45,7 @@ AuthN TTL報告(也稱為驗證存留時間(TTL))會顯示您的管道與所有[
 
 >[!IMPORTANT]
 >
-> 當MVPD強制執行AuthN TTL值(而非Adobe Pass驗證設定)時，會使用MVPD設定的&#x200B;**預留位置**。
+> 當MVPD強制執行AuthN TTL值（而非Adobe Pass驗證設定）時，會使用MVPD設定的&#x200B;**預留位置**。
 
 選取「**匯出報表**」，將資料儲存為本機電腦上的CSV檔案。
 
@@ -61,7 +61,7 @@ AuthZ TTL報告(也稱為「授權存留時間(TTL)」)會顯示針對所有[平
 
 >[!IMPORTANT]
 >
-> 當MVPD強制執行AuthZ TTL值(而非Adobe Pass驗證設定)時，會使用MVPD設定的&#x200B;**預留位置**。
+> 當MVPD強制執行AuthZ TTL值（而非Adobe Pass驗證設定）時，會使用MVPD設定的&#x200B;**預留位置**。
 
 選取「**匯出報表**」，將資料儲存為本機電腦上的CSV檔案。
 
