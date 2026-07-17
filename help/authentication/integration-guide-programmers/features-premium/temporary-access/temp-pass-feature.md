@@ -4,7 +4,7 @@ description: TempPass功能
 exl-id: 1df14090-8e71-4e3e-82d8-f441d07c6f64
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2203'
+source-wordcount: '2245'
 ht-degree: 0%
 
 ---
@@ -62,7 +62,7 @@ TempPass功能的提供方式是在Adobe Pass驗證伺服器設定中匯入偽MV
 * **TempPass1**：已設定4小時的存留時間(TTL)，以涵蓋初始的免費存取期間。
 * **TempPass2**：設定為後續每日自由存取間隔的10分鐘存留時間(TTL)。
 
-為確保日常存取的正常運作，所有裝置的TempPass2必須在每天00:00小時重設。
+為確保日常存取的正常運作，所有裝置的TempPass2必須在每天00:00重設。
 
 ### 功能詳細資料 {#basic-temp-pass-feature-details}
 
@@ -120,7 +120,7 @@ Basic TempPass不需要登出，允許您使用實際使用者MVPD直接切換�
 * 定義促銷期間可存取的VOD標題數量上限。
 * 設定促銷存取的有效期間。
 
-一旦使用者超過預先定義的存取限制(VOD標題數量或持續時間)，除非重設其TempPass，否則他們將無法再使用相同的使用者識別碼或相同的裝置上檢視內容。
+一旦使用者超過預先定義的存取限制（VOD標題數量或持續時間），除非重設其TempPass，否則他們將無法再使用相同的使用者識別碼或相同的裝置上檢視內容。
 
 ### 功能詳細資料 {#promotional-temp-pass-feature-details}
 
