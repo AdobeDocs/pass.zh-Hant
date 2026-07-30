@@ -4,7 +4,7 @@ description: Amazon FireOS整合逐步指南
 exl-id: 1982c485-f0ed-4df3-9a20-9c6a928500c2
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1447'
+source-wordcount: '1430'
 ht-degree: 0%
 
 ---
@@ -30,9 +30,9 @@ Amazon FireOS的Adobe Pass驗證權益解決方案最終將分為兩個網域：
 
 - UI網域 — 這是實作UI並使用`AccessEnabler`資料庫所提供的服務來提供受限制內容存取權的上層應用程式層。
 - `AccessEnabler`網域 — 這是軟體權利檔案工作流程以下列形式實作的位置：
-   - 對Adobe後端伺服器發出的網路呼叫
-   - 與驗證和授權工作流程相關的商業邏輯規則
-   - 管理各種資源及處理工作流程狀態（例如Token快取）
+  - 對Adobe後端伺服器發出的網路呼叫
+  - 與驗證和授權工作流程相關的商業邏輯規則
+  - 管理各種資源及處理工作流程狀態（例如Token快取）
 
 `AccessEnabler`網域的目標是隱藏軟體權利檔案工作流程的所有複雜性，並（透過`AccessEnabler`資料庫）提供一組簡單的軟體權利檔案基本要件。 此程式可讓您實作權益工作流程：
 
@@ -58,53 +58,53 @@ Amazon FireOS的Adobe Pass驗證權益解決方案最終將分為兩個網域：
 ### A.必要條件 {#prereqs}
 
 1. 建立回呼函式：
-   - [&#39;setRequestorComplete()&#39;](#$setRequestorComplete)
+   - [`setRequestorComplete()`](#$setRequestorComplete)
 
-      - 由`setRequestor()`觸發，傳回成功或失敗。     成功表示您可以繼續權益呼叫。
+     - 由`setRequestor()`觸發，傳回成功或失敗。     成功表示您可以繼續權益呼叫。
 
    - [displayProviderDialog(mvpd)](#$displayProviderDialog)
 
-      - 僅當使用者尚未選取提供者(MVPD)且尚未驗證時，才由`getAuthentication()`觸發。 `mvpds`引數是使用者可用的提供者陣列。
+     - 僅當使用者尚未選取提供者(MVPD)且尚未驗證時，才由`getAuthentication()`觸發。 `mvpds`引數是使用者可用的提供者陣列。
 
-   - [&#39;setAuthenticationStatus(status， reason)&#39;](#$setAuthNStatus)
+   - [`setAuthenticationStatus(status, reason)`](#$setAuthNStatus)
 
-      - 每次都由`checkAuthentication()`觸發。 只有在使用者已經驗證且已選取提供者時，才會由`getAuthentication()`觸發。
+     - 每次都由`checkAuthentication()`觸發。 只有在使用者已經驗證且已選取提供者時，才會由`getAuthentication()`觸發。
 
-      - 傳回的狀態已驗證或未驗證，原因說明驗證失敗或登出動作。
+     - 傳回的狀態已驗證或未驗證，原因說明驗證失敗或登出動作。
 
    - [navigateToUrl(url)](#$navigateToUrl)
 
-      - 在AmazonFireOS SDK中略過，方法用於Android平台，其中由`getAuthentication()`在使用者選取MVPD後觸發。  `url`引數提供MVPD登入頁面的位置。
+     - 在AmazonFireOS SDK中略過，方法用於Android平台，其中由`getAuthentication()`在使用者選取MVPD後觸發。  `url`引數提供MVPD登入頁面的位置。
 
-   - [&#39;sendTrackingData(event， data)&#39;](#$sendTrackingData)
+   - [`sendTrackingData(event, data)`](#$sendTrackingData)
 
-      - 由`checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`觸發。
-`event`引數指出已發生的權利事件；`data`引數是與事件相關的值清單。
+     - 由`checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`觸發。
+       `event`引數指出已發生的權利事件；`data`引數是與事件相關的值清單。
 
-   - [&#39;setToken(token， resource)&#39;](#$setToken)
+   - [`setToken(token, resource)`](#$setToken)
 
-      - 在成功授權檢視資源後由`checkAuthorization()`和`getAuthorization()`觸發。
-      - `token`引數是短期的媒體權杖；`resource`引數是使用者有權檢視的內容。
+     - 在成功授權檢視資源後由`checkAuthorization()`和`getAuthorization()`觸發。
+     - `token`引數是短期的媒體權杖；`resource`引數是使用者有權檢視的內容。
 
-   - [&#39;tokenRequestFailed(resource， code， description)&#39;](#$tokenRequestFailed)
+   - [`tokenRequestFailed(resource, code, description)`](#$tokenRequestFailed)
 
-      - 在授權失敗後由`checkAuthorization()`和`getAuthorization()`觸發。
-      - `resource`引數是使用者嘗試檢視的內容；`code`引數是錯誤碼，指出發生的失敗型別；`description`引數描述與錯誤碼相關的錯誤。
+     - 在授權失敗後由`checkAuthorization()`和`getAuthorization()`觸發。
+     - `resource`引數是使用者嘗試檢視的內容；`code`引數是錯誤碼，指出發生的失敗型別；`description`引數描述與錯誤碼相關的錯誤。
 
-   - [&#39;selectedProvider(mvpd)&#39;](#$selectedProvider)
+   - [`selectedProvider(mvpd)`](#$selectedProvider)
 
-      - 由`getSelectedProvider()`觸發。
-      - `mvpd`引數提供使用者所選取之提供者的相關資訊。
+     - 由`getSelectedProvider()`觸發。
+     - `mvpd`引數提供使用者所選取之提供者的相關資訊。
 
-   - [&#39;setMetadataStatus(metadata， key， arguments)&#39;](#$setMetadataStatus)
+   - [`setMetadataStatus(metadata, key, arguments)`](#$setMetadataStatus)
 
-      - 由`getMetadata().`觸發
-      - `metadata`引數提供您要求的特定資料；`key`引數是`getMetadata()`要求中使用的索引鍵；`arguments`引數是傳遞給`getMetadata()`的相同字典。
+     - 由`getMetadata().`觸發
+     - `metadata`引數提供您要求的特定資料；`key`引數是`getMetadata()`要求中使用的索引鍵；`arguments`引數是傳遞給`getMetadata()`的相同字典。
 
-   - [&#39;preauthorizedResources(resources)&#39;](#$preauthResources)
+   - [`preauthorizedResources(resources)`](#$preauthResources)
 
-      - 由`checkPreauthorizedResources()`觸發。
-      - `authorizedResources`引數會顯示使用者有權檢視的資源。
+     - 由`checkPreauthorizedResources()`觸發。
+     - `authorizedResources`引數會顯示使用者有權檢視的資源。
 
 
 ![](../../../../assets/android-entitlement-flows.png)
@@ -121,7 +121,7 @@ Amazon FireOS的Adobe Pass驗證權益解決方案最終將分為兩個網域：
 
    1. 呼叫` setRequestor()`以建立程式設計師的識別碼；傳入程式設計師的`requestorID`以及（選擇性）Adobe Pass驗證端點的陣列。
 
-      - **相依性：**&#x200B;有效的Adobe Pass驗證請求者ID (請與您的Adobe Pass驗證帳戶管理員合作安排此專案。)
+      - **相依性：**&#x200B;有效的Adobe Pass驗證請求者ID （請與您的Adobe Pass驗證帳戶管理員合作安排此專案。）
 
       - **觸發器：** setRequestorComplete()回呼
 
@@ -176,9 +176,9 @@ Amazon FireOS的Adobe Pass驗證權益解決方案最終將分為兩個網域：
 
    - 如果`getAuthorization()`呼叫成功：使用者擁有有效的AuthN和AuthZ權杖（使用者已驗證並獲授權觀看要求的媒體）。
    - 如果`getAuthorization()`失敗：檢查擲回的例外狀況，以判斷其型別（AuthN、AuthZ或其他專案）：
-      - 如果這是驗證(AuthN)錯誤，請重新啟動驗證流程。
-      - 如果是授權(AuthZ)錯誤，則使用者無權觀看請求的媒體，並且應向使用者顯示某種錯誤訊息。
-      - 如果有其他型別的錯誤（連線錯誤、網路錯誤等），則向使用者顯示適當的錯誤訊息。
+     - 如果這是驗證(AuthN)錯誤，請重新啟動驗證流程。
+     - 如果是授權(AuthZ)錯誤，則使用者無權觀看請求的媒體，並且應向使用者顯示某種錯誤訊息。
+     - 如果有其他型別的錯誤（連線錯誤、網路錯誤等）， 然後向使用者顯示適當的錯誤訊息。
 
 1. 驗證短媒體權杖。
 

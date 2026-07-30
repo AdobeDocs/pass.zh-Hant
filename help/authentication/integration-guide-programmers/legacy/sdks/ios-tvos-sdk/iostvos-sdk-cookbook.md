@@ -4,7 +4,7 @@ description: iOS/tvOS逐步指南
 exl-id: 4743521e-d323-4d1d-ad24-773127cfbe42
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '2424'
+source-wordcount: '2436'
 ht-degree: 0%
 
 ---
@@ -29,9 +29,9 @@ ht-degree: 0%
 
 * AccessEnabler網域 — 這是以下列形式實施權益工作流程的地方：
 
-   * 對Adobe後端伺服器發出的網路呼叫
-   * 與驗證和授權工作流程相關的商業邏輯規則
-   * 管理各種資源及處理工作流程狀態（例如Token快取）
+  * 對Adobe後端伺服器發出的網路呼叫
+  * 與驗證和授權工作流程相關的商業邏輯規則
+  * 管理各種資源及處理工作流程狀態（例如Token快取）
 
 AccessEnabler網域的目標是隱藏軟體權利檔案工作流程的所有複雜性，並（透過AccessEnabler資料庫）提供一組簡單軟體權利檔案基本要素，供您實作軟體權利檔案工作流程：
 
@@ -48,19 +48,19 @@ AccessEnabler的網路活動會在其自己的執行緒中進行，因此不會�
 
 ## 設定Experience Cloud ID服務（訪客ID） {#visitorIDSetup}
 
-從[的觀點來看，設定](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hant)Experience Cloud ID[!DNL Analytics]值很重要。 設定`visitorID`值後，SDK會連同每個網路呼叫傳送此資訊，且[!DNL Adobe Pass]驗證伺服器會收集此資訊。 您可以將來自Adobe Pass Authentication Service的分析與其他應用程式或網站的任何其他分析報表建立關聯。 您可以在[這裡](#setOptions)找到如何設定visitorID的資訊。
+從[!DNL Analytics]的觀點來看，設定[Experience Cloud ID](https://experienceleague.adobe.com/docs/id-service/using/home.html?lang=zh-Hant)值很重要。 設定`visitorID`值後，SDK會連同每個網路呼叫傳送此資訊，且[!DNL Adobe Pass]驗證伺服器會收集此資訊。 您可以將來自Adobe Pass Authentication Service的分析與其他應用程式或網站的任何其他分析報表建立關聯。 您可以在[這裡](#setOptions)找到如何設定visitorID的資訊。
 
 ## 權益流程 {#entitlement}
 
-A. [必要條件](#prereqs) </br>
-B. [啟動流程](#startup_flow) </br>
-C. [沒有Apple SSO的驗證流程](#authn_flow_wo_applesso) </br>
-D. [在iOS上使用Apple SSO的驗證流程](#authn_flow_with_applesso) </br>
-E.在tvOS上使用Apple SSO的[驗證流程](#authn_flow_with_applesso_tvOS) </br>
-F. [授權流程](#authz_flow) </br>
-G. [檢視媒體流程](#media_flow) </br>
-高[不含Apple SSO的登出流程](#logout_flow_wo_AppleSSO) </br>
-I. [使用Apple SSO的登出流程](#logout_flow_with_AppleSSO) </br>
+答：  [必要條件](#prereqs) </br>
+B.  [啟動流程](#startup_flow) </br>
+C.  [沒有Apple SSO的驗證流程](#authn_flow_wo_applesso)  </br>
+D.  在iOS上使用Apple SSO的[驗證流程](#authn_flow_with_applesso) </br>
+E.  [在tvOS上使用Apple SSO的驗證流程](#authn_flow_with_applesso_tvOS) </br>
+F.  [授權流程](#authz_flow) </br>
+G.  [檢視媒體流程](#media_flow) </br>
+高。  [不使用Apple SSO的登出流程](#logout_flow_wo_AppleSSO) </br>
+I.  [使用Apple SSO的登出流程](#logout_flow_with_AppleSSO) </br>
 
 
 ### A.必要條件 {#prereqs}
@@ -71,54 +71,54 @@ I. [使用Apple SSO的登出流程](#logout_flow_with_AppleSSO) </br>
    * 成功表示您可以繼續權益呼叫。
 
    * [`displayProviderDialog(mvpds)`](#$dispProvDialog) </br>
-      * 僅當使用者尚未選取提供者(MVPD)且尚未驗證時，才由[`getAuthentication()`](#$getAuthN)觸發。</br>
-      * `mvpds`引數是使用者可用的提供者陣列。
+     * 僅當使用者尚未選取提供者(MVPD)且尚未驗證時，才由[`getAuthentication()`](#$getAuthN)觸發。</br>
+     * `mvpds`引數是使用者可用的提供者陣列。
 
    * `setAuthenticationStatus(status, errorcode)` </br>
-      * 每次都由`checkAuthentication()`觸發。</br>
-      * 只有在使用者已經驗證且已選取提供者時，才會由[`getAuthentication()`](#$getAuthN)觸發。</br>
-      * 傳回的狀態是成功或失敗，錯誤碼會說明失敗的型別。
+     * 每次都由`checkAuthentication()`觸發。</br>
+     * 只有在使用者已經驗證且已選取提供者時，才會由[`getAuthentication()`](#$getAuthN)觸發。</br>
+     * 傳回的狀態是成功或失敗，錯誤碼會說明失敗的型別。
 
    * [`navigateToUrl(url)`](#$nav2url) </br>
-      * 在使用者選取MVPD後由[`getAuthentication()`](#$getAuthN)觸發。 `url`引數提供MVPD登入頁面的位置。
+     * 在使用者選取MVPD後由[`getAuthentication()`](#$getAuthN)觸發。 `url`引數提供MVPD登入頁面的位置。
 
    * `sendTrackingData(event, data)` </br>
-      * 由`checkAuthentication()`、[`getAuthentication()`](#$getAuthN)、`checkAuthorization()`、[`getAuthorization()`](#$getAuthZ)、`setSelectedProvider()`觸發。
-      * `event`引數指出已發生的權利事件；`data`引數是與事件相關的值清單。
+     * 由`checkAuthentication()`、[`getAuthentication()`](#$getAuthN)、`checkAuthorization()`、[`getAuthorization()`](#$getAuthZ)、`setSelectedProvider()`觸發。
+     * `event`引數指出已發生的權利事件；`data`引數是與事件相關的值清單。
 
    * `setToken(token, resource)`
 
-      * 在成功授權檢視資源之後，由[checkAuthorization()](#checkAuthZ)和[getAuthorization()](#$getAuthZ)觸發。
-      * `token`引數是短期的媒體權杖；`resource`引數是使用者有權檢視的內容。
+     * 在成功授權檢視資源之後，由[checkAuthorization()](#checkAuthZ)和[getAuthorization()](#$getAuthZ)觸發。
+     * `token`引數是短期的媒體權杖；`resource`引數是使用者有權檢視的內容。
 
    * `tokenRequestFailed(resource, code, description)` </br>
-      * 授權失敗後由[checkAuthorization()](#checkAuthZ)和[getAuthorization()](#$getAuthZ)觸發。
-      * `resource`引數是使用者嘗試檢視的內容；`code`引數是錯誤碼，指出發生的失敗型別；`description`引數描述與錯誤碼相關的錯誤。
+     * 授權失敗後由[checkAuthorization()](#checkAuthZ)和[getAuthorization()](#$getAuthZ)觸發。
+     * `resource`引數是使用者嘗試檢視的內容；`code`引數是錯誤碼，指出發生的失敗型別；`description`引數描述與錯誤碼相關的錯誤。
 
    * `selectedProvider(mvpd)` </br>
-      * 由[`getSelectedProvider()`](#getSelProv)觸發。
-      * `mvpd`引數提供使用者所選取之提供者的相關資訊。
+     * 由[`getSelectedProvider()`](#getSelProv)觸發。
+     * `mvpd`引數提供使用者所選取之提供者的相關資訊。
 
    * `setMetadataStatus(metadata, key, arguments)`
-      * 由`getMetadata().`觸發
-      * `metadata`引數提供您要求的特定資料；`key`引數是[getMetadata()](#getMeta)要求中使用的索引鍵；`arguments`引數是傳遞給[getMetadata()](#getMeta)的相同字典。
+     * 由`getMetadata().`觸發
+     * `metadata`引數提供您要求的特定資料；`key`引數是[getMetadata()](#getMeta)要求中使用的索引鍵；`arguments`引數是傳遞給[getMetadata()](#getMeta)的相同字典。
 
-   * [&#39;preauthorizedResources(authorizedResources)&#39;](#preauthResources)
+   * [`preauthorizedResources(authorizedResources)`](#preauthResources)
 
-      * 由[`checkPreauthorizedResources()`](#checkPreauth)觸發。
+     * 由[`checkPreauthorizedResources()`](#checkPreauth)觸發。
 
-      * `authorizedResources`引數顯示使用者擁有的資源
-已獲得檢視的授權。
+     * `authorizedResources`引數顯示使用者擁有的資源
+       已獲得檢視的授權。
 
-   * [&#39;presentTvProviderDialog(viewController)&#39;](#presentTvDialog)
+   * [`presentTvProviderDialog(viewController)`](#presentTvDialog)
 
-      * 當目前的要求者至少支援支援SSO的MVPD時，由[getAuthentication()](#getAuthN)觸發。
-      * viewController引數是Apple SSO對話方塊，必須顯示在主檢視控制器上。
+     * 當目前的要求者至少支援支援SSO的MVPD時，由[getAuthentication()](#getAuthN)觸發。
+     * viewController引數是Apple SSO對話方塊，必須顯示在主檢視控制器上。
 
-   * [&#39;dissistTvProviderDialog(viewController)&#39;](#dismissTvDialog)
+   * [`dismissTvProviderDialog(viewController)`](#dismissTvDialog)
 
-      * 由使用者動作觸發(從Apple SSO對話方塊選取「取消」或「其他電視提供者」)。
-      * viewController引數是Apple SSO對話方塊，需要從主檢視控制器中解除。
+     * 由使用者動作觸發（從Apple SSO對話方塊選取「取消」或「其他電視提供者」）。
+     * viewController引數是Apple SSO對話方塊，需要從主檢視控制器中解除。
 
 ![](../../../../assets/iOS-flows.png)
 
@@ -127,13 +127,13 @@ I. [使用Apple SSO的登出流程](#logout_flow_with_AppleSSO) </br>
 1. 啟動上層應用程式。</br>
 1. 起始Adobe Pass驗證</br>
 
-   a.呼叫[`init`](#$init)以建立Adobe Pass Authentication AccessEnabler的單一執行個體。
+   答：  呼叫[`init`](#$init)以建立Adobe Pass Authentication AccessEnabler的單一執行個體。
    * **相依性：** Adobe Pass驗證原生iOS/tvOS資料庫(AccessEnabler)
 
-   b.呼叫`setRequestor()`以建立程式設計師的身分；傳入程式設計師的`requestorID`以及（選擇性）Adobe Pass驗證端點的陣列。 若是tvOS，您還需要提供公開金鑰和密碼。 如需詳細資訊，請參閱[無使用者端檔案](#create_dev)。
+   b.  呼叫`setRequestor()`以建立程式設計師的身分；傳入程式設計師的`requestorID`以及（選擇性）Adobe Pass驗證端點的陣列。 若是tvOS，您還需要提供公開金鑰和密碼。 如需詳細資訊，請參閱[無使用者端檔案](#create_dev)。
 
-   * **相依性：**&#x200B;有效的Adobe Pass驗證請求者ID (使用您的Adobe Pass驗證帳戶)
-管理員來安排此工作)。
+   * **相依性：**&#x200B;有效的Adobe Pass驗證請求者ID （使用您的Adobe Pass驗證帳戶）
+     管理員來安排此工作)。
 
    * **觸發器：**
      [setRequestorComplete()](#$setReqComplete)回呼。
@@ -167,7 +167,7 @@ I. [使用Apple SSO的登出流程](#logout_flow_with_AppleSSO) </br>
    * [displayProviderDialog()](#$dispProvDialog)回呼（如果使用者尚未驗證）。
 
 1. 向使用者呈現傳送至的提供者清單
-   [`displayProviderDialog()`](#dispProvDialog)。
+   [`displayProviderDialog()`](#dispProvDialog).
 
 1. 使用者選取提供者後，從`navigateToUrl:`或`navigateToUrl:useSVC:`回呼取得使用者MVPD的URL，並開啟`UIWebView/WKWebView`或`SFSafariViewController`控制器，將該控制器導向至URL。
 
@@ -193,7 +193,7 @@ I. [使用Apple SSO的登出流程](#logout_flow_with_AppleSSO) </br>
 1. 呼叫[`getAuthentication()`](#$getAuthN)以啟動驗證流程，或取得使用者已驗證的確認。
    **觸發器：**
 
-   * [presentTvProviderDialog()](#presentTvDialog)回呼(若使用者未驗證，且目前要求者至少擁有支援SSO的MVPD)。 如果沒有任何MVPD支援SSO，則會使用傳統驗證流程。
+   * [presentTvProviderDialog()](#presentTvDialog)回呼（若使用者未驗證，且目前要求者至少擁有支援SSO的MVPD）。 如果沒有任何MVPD支援SSO，則會使用傳統驗證流程。
 
 1. 使用者選取提供者後，AccessEnabler程式庫會取得驗證權杖，其中包含Apple VSA架構提供的資訊。
 
@@ -212,7 +212,7 @@ I. [使用Apple SSO的登出流程](#logout_flow_with_AppleSSO) </br>
 驗證流程，或取得使用者已在的確認
 已驗證。
    **觸發器：**
-   * [`presentTvProviderDialog()`](#presentTvDialog)回呼(若使用者未驗證，且目前要求者至少擁有支援SSO的MVPD)。 如果沒有任何MVPD支援SSO，則會使用傳統驗證流程。
+   * [`presentTvProviderDialog()`](#presentTvDialog)回呼（若使用者未驗證，且目前要求者至少擁有支援SSO的MVPD）。 如果沒有任何MVPD支援SSO，則會使用傳統驗證流程。
 
 1. 使用者選取提供者後，將會呼叫[`status()`](#status_callback_implementation)回呼。 將會提供註冊碼，且AccessEnabler程式庫會開始輪詢伺服器，以順利進行第二個熒幕驗證。
 
@@ -236,9 +236,9 @@ I. [使用Apple SSO的登出流程](#logout_flow_with_AppleSSO) </br>
    * 如果[getAuthorization()](#$getAuthZ)呼叫成功：使用者具有有效的AuthN和AuthZ權杖（使用者已經過驗證，並且獲得觀看請求媒體的授權）。
 
    * 如果[getAuthorization()](#$getAuthZ)失敗：請檢查擲回的例外狀況，以判斷其型別（AuthN、AuthZ或其他專案）：
-      * 如果這是驗證(AuthN)錯誤，請重新啟動驗證流程。
-      * 如果是授權(AuthZ)錯誤，則使用者無權觀看請求的媒體，並且應向使用者顯示某種錯誤訊息。
-      * 如果有其他型別的錯誤（連線錯誤、網路錯誤等），則向使用者顯示適當的錯誤訊息。
+     * 如果這是驗證(AuthN)錯誤，請重新啟動驗證流程。
+     * 如果是授權(AuthZ)錯誤，則使用者無權觀看請求的媒體，並且應向使用者顯示某種錯誤訊息。
+     * 如果有其他型別的錯誤（連線錯誤、網路錯誤等）， 然後向使用者顯示適當的錯誤訊息。
 
 1. 驗證短媒體權杖。\
    使用Adobe Pass驗證媒體權杖驗證器程式庫，驗證從上述[getAuthorization()](#$getAuthZ)呼叫傳回的短期媒體權杖：
@@ -257,15 +257,15 @@ I. [使用Apple SSO的登出流程](#logout_flow_with_AppleSSO) </br>
    * 如果選取的媒體受到保護，您的應用程式會啟動上述[授權流程](#authz_flow)。
 
    * 如果選取的媒體未受保護，則播放該媒體
-使用者。
+     使用者。
 
 ### H.不使用Apple SSO的登出流程 {#logout_flow_wo_AppleSSO}
 
 1. 呼叫[`logout()`](#$logout)將使用者登出。 AccessEnabler會清除所有快取值和Token。 清除快取之後，AccessEnabler會進行伺服器呼叫以清除伺服器端工作階段。 請注意，由於伺服器呼叫可能會導致SAML重新導向至IdP （這允許IdP端的工作階段清理），此呼叫必須在所有重新導向之後。 因此，必須在UIWebView/WKWebView或SFSafariViewController控制器內處理此呼叫。
 
-   a.遵循與驗證工作流程相同的模式，AccessEnabler網域會透過`navigateToUrl:`或`navigateToUrl:useSVC:`回呼，向UI應用程式層提出要求，以建立UIWebView/WKWebView或SFSafariViewController控制器，並指示載入回呼`url`引數中提供的URL。 這是後端伺服器上登出端點的URL。
+   答：  遵循與驗證工作流程相同的模式，AccessEnabler網域會透過`navigateToUrl:`或`navigateToUrl:useSVC:`回呼，向UI應用程式層提出要求，以建立UIWebView/WKWebView或SFSafariViewController控制器，並指示載入回呼`url`引數中提供的URL。 這是後端伺服器上登出端點的URL。
 
-   b.您的應用程式必須監視`UIWebView/WKWebView or SFSafariViewController`控制器的活動，並偵測載入特定自訂URL的時間，因為它經過數個重新導向。 請注意，這個特定自訂URL實際上無效，控制器並非打算實際載入此URL。 應用程式必須將其解譯為登出流程已完成，且關閉`UIWebView/WKWebView`或`SFSafariViewController`控制器是安全的訊號。 當控制器載入這個特定自訂URL時，您的應用程式必須關閉`UIWebView/WKWebView or SFSafariViewController`控制器並呼叫AccessEnabler的`handleExternalURL:url`API方法。 若需使用`SFSafariViewController`控制器，則特定自訂URL是由&#x200B;**`application's custom scheme`**&#x200B;所定義（例如`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`），否則此特定自訂URL是由&#x200B;**`ADOBEPASS_REDIRECT_URL`**&#x200B;常數（即`adobepass://ios.app`）所定義。
+   b.  您的應用程式必須監視`UIWebView/WKWebView or SFSafariViewController`控制器的活動，並偵測載入特定自訂URL的時間，因為它經過數個重新導向。 請注意，這個特定自訂URL實際上無效，控制器並非打算實際載入此URL。 應用程式必須將其解譯為登出流程已完成，且關閉`UIWebView/WKWebView`或`SFSafariViewController`控制器是安全的訊號。 當控制器載入這個特定自訂URL時，您的應用程式必須關閉`UIWebView/WKWebView or SFSafariViewController`控制器並呼叫AccessEnabler的`handleExternalURL:url`API方法。 若需使用`SFSafariViewController`控制器，則特定自訂URL是由&#x200B;**`application's custom scheme`**&#x200B;所定義（例如`adbe.u-XFXJeTSDuJiIQs0HVRAg://adobe.com`），否則此特定自訂URL是由&#x200B;**`ADOBEPASS_REDIRECT_URL`**&#x200B;常數（即`adobepass://ios.app`）所定義。
 
    >[!NOTE]
    >

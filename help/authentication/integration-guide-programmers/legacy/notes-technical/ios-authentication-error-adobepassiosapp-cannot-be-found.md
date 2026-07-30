@@ -4,7 +4,7 @@ description: iOS驗證錯誤 — 找不到adobepass.ios.app
 exl-id: cd97c6fb-f0fa-45c2-82c1-f28aa6b2fd12
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '387'
+source-wordcount: '389'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 0%
 
 問題是`adobepass.ios.app`實際上不存在，將在`webView`中觸發錯誤訊息。 舊版iOS DemoApp假設此錯誤一律會在AuthN流程結束時觸發，且已設定為據以處理(`indidFailLoadWithError`)。
 
-**注意：**&#x200B;此問題已在較新版本的DemoApp (包含在iOS SDK下載中)中修正。
+**注意：**&#x200B;此問題已在較新版本的DemoApp （包含在iOS SDK下載中）中修正。
 
 很遺憾，此假設不正確。 有些所謂的「智慧」DNS或Proxy伺服器不會簡單地傳遞所引發的錯誤，而是會執行下列其中一項作業：
 
