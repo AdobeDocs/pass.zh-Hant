@@ -2,10 +2,10 @@
 title: 刪除註冊記錄
 description: 刪除註冊資源
 exl-id: 42707070-2e1f-4847-93fd-30025aef56c1
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 689e2f86550d9fa59337c15dd38767975a1d6d30
 workflow-type: tm+mt
-source-wordcount: '174'
-ht-degree: 1%
+source-wordcount: '180'
+ht-degree: 2%
 
 ---
 
@@ -42,9 +42,9 @@ ht-degree: 1%
 
 刪除登入程式碼記錄並釋出登入程式碼以供重複使用。
 
-| 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
+| 端點 | 呼叫</br>者 | 輸入</br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>例如：</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | 串流應用程式</br></br>或</br></br>程式設計師服務 | 1.要求者識別碼</br>    （路徑元件）</br>2。  註冊代碼</br>    （路徑元件） | DELETE | 無 | 204 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestorId}/regcode/{registrationCode}</br></br>例如：</br></br>&lt;REGGIE_FQDN>/reggie/v1/regcode/ER45RTY | 串流應用程式</br></br>或</br></br>程式設計師服務 | &#x200B;1.  要求者識別碼</br> （路徑元件）</br>2。  註冊代碼</br> （路徑元件） | DELETE | 無 | 204 |
 
 {style="table-layout:auto"}
 
@@ -59,4 +59,4 @@ ht-degree: 1%
 
 </br>
 
-### [返回REST API參考](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+**[返回REST API參考](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)**
