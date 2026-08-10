@@ -4,7 +4,7 @@ description: Amazon SSO逐步指南(REST API V1)
 exl-id: 4c65eae7-81c1-4926-9202-a36fd13af6ec
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: '629'
 ht-degree: 0%
 
 ---
@@ -89,13 +89,13 @@ Amazon SSO SDK提供同步和非同步API來取得SSO權杖（平台身分）裝
   ```
 
   SSO權杖成功回應套件組合將包含：
-   * SSO權杖作為具有索引鍵「SSOToken」的`string`。
+  * SSO權杖作為具有索引鍵「SSOToken」的`string`。
 
   <br/>
 
   SSO權杖失敗回應套件組合將包含：
-   * 含有索引鍵「ErrorCode」的`int`錯誤碼。
-   * `string`的錯誤描述，含索引鍵「ErrorDescription」。
+  * 含有索引鍵「ErrorCode」的`int`錯誤碼。
+  * `string`的錯誤描述，含索引鍵「ErrorDescription」。
 
   <br/>
 
@@ -136,10 +136,10 @@ Amazon SSO SDK提供同步和非同步API來取得SSO權杖（平台身分）裝
 確認串流應用程式正在處理：
 
 * 缺少應在Amazon裝置上執行的Amazon隨附應用程式。
-   * 串流應用程式在執行階段可能遇到下列類別`ClassNotFoundException`的`com.amazon.ottssotokenlib.SSOEnabler`。
+  * 串流應用程式在執行階段可能遇到下列類別`com.amazon.ottssotokenlib.SSOEnabler`的`ClassNotFoundException`。
 
 * 缺少上述API應傳回的SSO權杖（平台身分）裝載。
-   * 串流應用程式可能會聯絡Amazon和Adobe代表進行調查。
+  * 串流應用程式可能會聯絡Amazon和Adobe代表進行調查。
 
 ### 工作流程 {#workflow}
 
