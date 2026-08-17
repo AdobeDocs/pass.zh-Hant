@@ -2,9 +2,9 @@
 title: 程式設計師快速入門手冊
 description: 程式設計師快速入門手冊
 exl-id: 0aecdb81-9b97-4475-b0b0-654d916b2374
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '777'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 > 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
-本Kickstart指南適用於計畫將Adobe®傳遞驗證整合至其網站或應用程式的內容提供者（程式設計人員）。
+本Kickstart指南適用於計畫將®傳遞驗證整合至其網站或應用程式的內容提供者（程式設計人員）。
 
 本檔案概述確保順利且有效率地開始整合程式的重要初始步驟。 此課程旨在釐清客戶的期望，並指引我們與合作夥伴協力達成成功整合。
 
@@ -25,9 +25,9 @@ Adobe提供一系列資源，協助您將Adobe Pass驗證整合至您的網站�
 
 設定程式包括下列步驟：
 
-![Adobe®通過驗證整合程式](../assets/progr-flow-int-lifecycle.png)
+![®通過驗證整合程式](../assets/progr-flow-int-lifecycle.png)
 
-*Adobe®通過驗證整合程式*
+*®通過驗證整合程式*
 
 **您將在啟動階段提供**：
 
@@ -69,19 +69,19 @@ Adobe提供一系列資源，協助您將Adobe Pass驗證整合至您的網站�
 
 ## 存取客戶支援 {#access-customer-support}
 
-**Adobe將透過** Zendesk[提供](https://tve.zendesk.com/home)我們的客戶支援系統存取權。 若要存取Zendesk，您必須在https://tve.zendesk.com/home註冊並建立帳戶。 您可以註冊的使用者數目沒有限制。 註冊後，您可以在任何提交的票證上檢視和分享註解。
+**Adobe將透過[Zendesk](https://tve.zendesk.com/home)提供**&#x200B;我們的客戶支援系統存取權。 若要存取Zendesk，您必須在https://tve.zendesk.com/home註冊並建立帳戶。 您可以註冊的使用者數目沒有限制。 註冊後，您可以在任何提交的票證上檢視和分享註解。
 
 Adobe Pass驗證團隊可協助您在整合過程中遇到任何問題或技術問題。 請透過[tve-support@adobe.com](mailto:tve-support@adobe.com)聯絡我們。
 
 ## 存取檔案 {#access-documentation}
 
-**Adobe將透過** Adobe Experience League[提供](https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/home)對公開檔案的存取權。
+**Adobe將透過[Adobe Experience League](https://experienceleague.adobe.com/en/docs/pass/authentication/home)提供**&#x200B;對公開檔案的存取權。
 
 Adobe Pass驗證團隊針對[程式設計師整合指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md)區段下的可用功能和API提供完整檔案。 請參考本節下的目錄，以取得每個主題的詳細資訊連結。
 
 ## 存取測試工具 {#access-testing-tool}
 
-**Adobe將透過** Adobe Developer[網站提供](https://developer.adobe.com/adobe-pass/)我們的API探索工具存取權。
+**Adobe將透過[Adobe Developer](https://developer.adobe.com/adobe-pass/)網站提供**&#x200B;我們的API探索工具存取權。
 
 ## 存取設定管理工具 {#access-configuration-management-tool}
 

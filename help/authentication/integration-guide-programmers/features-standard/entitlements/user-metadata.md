@@ -2,9 +2,9 @@
 title: 使用者中繼資料
 description: 使用者中繼資料
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '1902'
+source-wordcount: '1936'
 ht-degree: 0%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 0%
 >
 > 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
-使用者中繼資料是指由MVPD維護並透過Adobe Pass驗證[REST API V2](#attributes)提供給程式設計師的使用者專屬[屬性](#apis) （例如郵遞區號、家長分級、使用者ID等）。
+使用者中繼資料是指使用者特定的[屬性](#attributes) （例如郵遞區號、家長分級、使用者ID等） 由MVPD維護並透過Adobe Pass驗證[REST API V2](#apis)提供給程式設計人員的物件。
 
 驗證流程完成後，使用者中繼資料即可使用，但在授權流程期間，某些中繼資料屬性可能會更新，具體取決於MVPD和有問題的特定中繼資料屬性。
 
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 當MVPD提供不同格式的資料時，Adobe Pass驗證會標準化使用者中繼資料值。 此外，對於某些屬性（例如郵遞區號），可以使用程式設計師的憑證將值加密為[加密](#encryption)。
 
-Adobe Pass驗證可讓程式設計師檢閱可在其MVPD整合中使用的使用者中繼資料，並透過[Adobe Pass TVE Dashboard](#management)進行[管理](https://experience.adobe.com/#/pass/authentication)。
+Adobe Pass驗證可讓程式設計師檢閱可在其MVPD整合中使用的使用者中繼資料，並透過[Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication)進行[管理](#management)。
 
 ## 使用者中繼資料屬性 {#attributes}
 
@@ -34,13 +34,13 @@ Adobe Pass驗證可讓程式設計師檢閱可在其MVPD整合中使用的使用
 | `userID` | 字串 | 「1o7241p」 | 否 | 帳戶識別碼。 | 屬性值可以是家庭識別碼或子帳戶識別碼。 如果MVPD支援子帳戶，且目前使用者不是主要帳戶持有者，`userID`值將與`householdID`不同。 |
 | `upstreamUserID` | 字串 | 「1o7241p」 | 否 | 用於並行監視的帳戶識別碼。 | 屬性值可用來在MVPD和程式設計師網站與應用程式間強制執行並行限制。 `upstreamUserID`值與大部分MVPD的`userID`值相同。 |
 | `householdID` | 字串 | 「1o7241p」 | 否 | 家長監護的帳戶識別碼。 | 屬性值可用來區分家庭和子帳戶的使用情況。 有時候，如果無法提供真實的分級，家長監護可使用此選項作為替代選項；如果使用者以家庭帳戶登入，他們可以觀看，否則不會顯示分級內容。 在MVPD中，其呈現方式會有許多變數（例如，家庭使用者ID、戶長ID、戶長旗標等），如果MVPD不支援子帳戶，則其將與`userID`相同。 |
-| `primaryOID` | 字串 | 「uuidd1e19ec9-012c-124f-b520-acaf118d16a0」 | 否 | 帳戶識別碼。 | 屬性是AT&amp;T專屬的。當`primaryOID`值設為「主要」時，`userID`值與`typeID`值相同。 |
-| `typeID` | 字串 | &quot;主要&quot; | 否 | 指出目前使用者為主要或次要帳戶持有人的屬性。 | 屬性是AT&amp;T專屬的。當`primaryOID`值設為「主要」時，`userID`值與`typeID`值相同。 |
+| `primaryOID` | 字串 | 「uuidd1e19ec9-012c-124f-b520-acaf118d16a0」 | 否 | 帳戶識別碼。 | 屬性是AT&amp;T專屬的。當`typeID`值設為「主要」時，`primaryOID`值與`userID`值相同。 |
+| `typeID` | 字串 | &quot;主要&quot; | 否 | 指出目前使用者為主要或次要帳戶持有人的屬性。 | 屬性是AT&amp;T專屬的。當`typeID`值設為「主要」時，`primaryOID`值與`userID`值相同。 |
 | `is_hoh` | 字串 | &quot;1&quot; | 否 | 指出目前使用者是否為戶主的屬性。 | 屬性是Synacor專屬的。 |
 | `hba_status` | 布林值 | &quot;true&quot; | 否 | 指出目前使用者是否透過HBA驗證的屬性。 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `allowMirroring` | 布林值 | &quot;true&quot; | 否 | 指出目前裝置是否可映象熒幕的屬性。 | 該屬性專屬於Spectrum。 |
-| `zip` | 陣列 | \[&quot;77754&quot;， &quot;12345&quot;\] | 是 | 使用者的郵遞區號。 | 屬性值可用來傳送本地化新聞、天氣更新或體育賽事。 `zip`值代表需要與MVPD簽訂法律協定的敏感資料。 加密後，`zip`金鑰的表示形式將為`String`，而不是`Array`。 |
-| `encryptedZip` | 字串 | 「」 | 是 | 使用者的加密郵遞區號。 | 屬性是Comcast專屬的。 |
+| `zip` | 陣列 | \[&quot;77754&quot;, &quot;12345&quot;\] | 是 | 使用者的郵遞區號。 | 屬性值可用來傳送本地化新聞、天氣更新或體育賽事。 `zip`值代表需要與MVPD簽訂法律協定的敏感資料。 加密後，`zip`金鑰的表示形式將為`String`，而不是`Array`。 |
+| `encryptedZip` | 字串 | &quot;&quot; | 是 | 使用者的加密郵遞區號。 | 屬性是Comcast專屬的。 |
 | `channelID` | 陣列 | \[&quot;channel-1&quot;， &quot;channel-2&quot;\] | 否 | 使用者有權檢視的管道清單。 | 屬性值可用於從彙總多個網路的入口網站篩選各種管道。 我們的建議是使用[預先授權API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-preauthorization-decisions-using-specific-mvpd.md)，而非此使用者中繼資料屬性，來篩選掉使用者無法使用的管道。 |
 | `maxRating` | 物件 | { MPAA： &quot;NR&quot;， VCHIP： &quot;X&quot;， URL： &quot;http://manage.my/parental&quot; } | 否 | 目前使用者的最大家長分級。 | 屬性值可用於根據「MPAA」或「VCHIP」評等篩選不適合目前使用者的內容。 |
 | `language` | 字串 | &quot;English&quot; | 否 | 語言設定。 | 屬性值可用於根據使用者的語言偏好設定顯示訊息。 |
@@ -68,7 +68,7 @@ Adobe Pass驗證可讓程式設計師檢閱可在其MVPD整合中使用的使用
 | RCN | **是** | **是** | **是** | **是（僅限AuthN）** | **否** | **否** | **否** | **否** | **否** | **是（僅限AuthN）** | **否** | **是（僅限AuthN）** | **否** | **否** | **否** |                                                                                                                                           |
 | 東連結 | **否** | **是** | **是** | **是（僅限AuthN）** | **否** | **否** | **否** | **否** | **否** | **是（僅限AuthN）** | **是** | **是（僅限AuthN）** | **否** | **否** | **否** |                                                                                                                                           |
 | Cogeco | **否** | **是** | **是** | **是（僅限AuthN）** | **否** | **否** | **否** | **否** | **否** | **是（僅限AuthN）** | **否** | **否** | **否** | **否** | **否** |                                                                                                                                           |
-| Videotron | **否** | **是** | **是** | **是*** | **否** | **否** | **否** | **否** | **否** | **是（僅限AuthN）** | **否** | **否** | **否** | **否** | **否** | 它公開與`householdID`具有相同值的`userID`。 |
+| Videotron | **否** | **是** | **是** | **是*** | **否** | **否** | **否** | **否** | **否** | **是（僅限AuthN）** | **否** | **否** | **否** | **否** | **否** | 它公開與`userID`具有相同值的`householdID`。 |
 | Proxy Masslon | **是** | **是** | **是** | **是（僅限AuthN）** | **否** | **否** | **否** | **否** | **否** | **是（僅限AuthN）** | **否** | **否** | **否** | **否** | **否** | 已簽署法律合約。 |
 | Proxy Clearleap | **是** | **是** | **是** | **否** | **否** | **否** | **否** | **否** | **否** | **是（僅限AuthN）** | **否** | **是（僅限AuthZ）** | **是** | **否** | **否** | 已簽署法律合約。 |
 | Proxy GLDS | **否** | **是** | **是** | **否** | **否** | **否** | **否** | **否** | **否** | **是（僅限AuthN）** | **否** | **否** | **否** | **否** | **否** |                                                                                                                                           |
@@ -80,7 +80,7 @@ Adobe Pass驗證可讓程式設計師檢閱可在其MVPD整合中使用的使用
 
 ## 使用者中繼資料加密 {#encryption}
 
-若要加密和解密使用者中繼資料屬性，程式設計師必須產生憑證（公開/私密金鑰組），並透過[Adobe Pass TVE Dashboard](#management)自行設定[憑證，或與Adobe Pass驗證代表共用公開金鑰。](https://experience.adobe.com/#/pass/authentication)
+若要加密和解密使用者中繼資料屬性，程式設計師必須產生憑證（公開/私密金鑰組），並透過[Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication)自行設定](#management)憑證，或與Adobe Pass驗證代表共用公開金鑰。[
 
 請依照下列步驟操作，確認憑證已產生並正確設定：
 
@@ -142,7 +142,7 @@ Adobe Pass驗證可讓程式設計師檢閱可在其MVPD整合中使用的使用
      openssl x509 -in mycompany-license-temp.pem -inform PEM -out mycompany-license.pem -outform PEM
      ```
 
-1. 使用PEM檔案來[透過](#management)Adobe Pass TVE Dashboard[設定](https://experience.adobe.com/#/pass/authentication)憑證，或傳送PEM檔案給Adobe Pass驗證代表。
+1. 使用PEM檔案來[透過[Adobe Pass TVE Dashboard](https://experience.adobe.com/#/pass/authentication)設定](#management)憑證，或傳送PEM檔案給Adobe Pass驗證代表。
 
    * 請參閱下一節以取得有關如何透過[Adobe Pass TVE控制面板](https://experience.adobe.com/#/pass/authentication)管理憑證的詳細資料。
 

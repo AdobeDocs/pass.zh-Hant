@@ -2,9 +2,9 @@
 title: 標準中繼資料屬性
 description: 標準中繼資料屬性
 exl-id: 99ffa98c-213f-47a5-a6e7-fbacb77875d0
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '1053'
+source-wordcount: '1295'
 ht-degree: 0%
 
 ---
@@ -54,8 +54,8 @@ Concurrency Monitoring API強制使用者端傳送下列值做為任何有效初
 | 應用 | applicationName | 字串 | 應用程式的「使用者易記」或消費者可讀取的名稱 | 不適用 | 範例_應用程式 |                                                                                   |
 |                 | applicationId | 字串 | 唯一識別使用者端應用程式的應用程式ID。 | 不適用 | de305d54-75b4-431b-adb2-eb6b9e546013 |                                                                                   |
 |                 | applicationPlatform | 字串 | 應用程式的原生平台 | 不適用 | ios， android |                                                                                   |
-|                 | applicationversion | 字串 | 此值可用於分析目的 | 不適用 | 1.0， 2.0 |                                                                                   |
-| 主旨 | accountId | 字串 | 並行監視主體的帳戶ID (在MVPD的範圍內) | 不適用 | test-account |                                                                                   |
+|                 | applicationversion | 字串 | 此值可用於分析目的 | 不適用 | 1.0, 2.0 |                                                                                   |
+| 主旨 | accountId | 字串 | 並行監視主體的帳戶ID （在MVPD的範圍內） | 不適用 | test-account |                                                                                   |
 |                 | contracttype | 字串 | 進階、基本。 客戶可以自由地將此專案新增為自訂中繼資料，並在其自己的領域中使用它 | 不適用 | premium，基本 |                                                                                   |
 | 使用者 | 名稱 | 字串 | 有些MVPD會提供與播放內容之特定使用者相關的資訊。 | 不適用 |                                                                                                                                                         |                                                                                   |
 |                 | hba | 布林值 | 識別使用者是否嘗試從他的住家位置起始資料流 | 不適用 | true， false | true或false |
@@ -71,17 +71,17 @@ Concurrency Monitoring API強制使用者端傳送下列值做為任何有效初
 
 標準中繼資料欄位可用於根據其欄位值定義伺服器端原則：
 
-* 您可以將原則設定為僅套用至特定欄位值(例如，專用的iOS原則： `osType`為`iOS`)
+* 您可以將原則設定為僅套用至特定欄位值（例如，專用的iOS原則： `osType`為`iOS`）
 * 您可以限制給定欄位的不同值數量。 部分範例如下：
-   * 不多於X個相異裝置： `HAVING DISTINCT COUNT(deviceId) <= 2`
-   * 不多於X個不同的壓縮碼： `HAVING DISTINCT COUNT(zipcode) <= 3`
+  * 不多於X個相異裝置： `HAVING DISTINCT COUNT(deviceId) <= 2`
+  * 不多於X個不同的壓縮碼： `HAVING DISTINCT COUNT(zipcode) <= 3`
 * 您可以限制每個欄位值的作用中串流數目。 部分範例如下：
-   * 單一裝置型別不超過X個使用中串流： `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
-   * 即時內容資料流的有效資料流不超過X個： `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
+  * 單一裝置型別不超過X個使用中串流： `GROUP BY deviceType HAVING COUNT(streamId) <= 3`
+  * 即時內容資料流的有效資料流不超過X個： `SELECT COUNT(streamId) AS streamCount WHERE contentType='live' HAVING streamCount <= 3`
 
-請在Zendesk[中建立票證](mailto:tve-support@adobe.com)，連絡並行監視小組，並指示您要實作哪些原則。
+請在Zendesk](mailto:tve-support@adobe.com)中建立票證[，連絡並行監視小組，並指示您要實作哪些原則。
 
 您可在下列中找到更多原則和整合Cookbook範例：
 
 * [原則決定點](/help/concurrency-monitoring/technical/cm-policy-decision-point.md)
-* [API主控台 — Adobe並行監視](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)
+* [API主控台 — Adobe並行監控](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)

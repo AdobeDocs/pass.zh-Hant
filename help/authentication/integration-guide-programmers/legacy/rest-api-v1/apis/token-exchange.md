@@ -2,10 +2,10 @@
 title: 將Platform SSO權杖交換為Adobe權杖
 description: 將Platform SSO權杖交換為Adobe權杖
 exl-id: 5ab60268-8f97-4755-8281-be45e812ed7f
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '251'
-ht-degree: 0%
+source-wordcount: '258'
+ht-degree: 3%
 
 ---
 
@@ -41,9 +41,9 @@ ht-degree: 0%
 
 允許將Platform SSO設定檔「交換」為Adobe權杖。
 
-| 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
+| 端點 | 呼叫</br>者 | 輸入</br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/tokens/authn | 串流應用程式</br></br>或</br></br>程式設計師服務 | 1.要求者（必要）</br>    </br>2。  deviceId （必要）</br>    </br>3。  mvpd （必要）</br>    </br>4。  deviceType （必要）</br>    </br>5。  SAMLResponse （必要）</br>    </br>6。  deviceUser （已棄用）</br>    </br>7。  appId （已棄用） | POST | 成功的回應將是「204無內容」，這表示已成功建立權杖，並已準備好用於授權流程。 | 204 — 無內容   </br>400 — 錯誤請求 |
+| &lt;SP_FQDN>/api/v1/tokens/authn | 串流應用程式</br></br>或</br></br>程式設計師服務 | &#x200B;1.  要求者（必要）</br>    </br>2.  deviceId （必要）</br>    </br>3.  mvpd （必要）</br>    </br>4.  deviceType （必要）</br>    </br>5.  SAMLResponse （必要）</br>    </br>6.  deviceUser （已棄用）</br>    </br>7.  appId （已棄用） | POST | 成功的回應將是「204無內容」，這表示已成功建立權杖，並已準備好用於授權流程。 | 204 — 無內容</br>400 — 錯誤請求 |
 
 
 | 輸入引數 | 說明 |

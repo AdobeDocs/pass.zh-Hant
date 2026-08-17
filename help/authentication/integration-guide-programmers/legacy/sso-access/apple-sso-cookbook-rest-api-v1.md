@@ -2,9 +2,9 @@
 title: Apple SSO逐步指南(REST API V1)
 description: Apple SSO逐步指南(REST API V1)
 exl-id: 072a011f-e1bb-4d3e-bcb5-697f2d1739cc
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '1496'
+source-wordcount: '1596'
 ht-degree: 0%
 
 ---
@@ -41,7 +41,7 @@ Adobe Pass Authentication REST API V1支援在iOS、iPadOS或tvOS上執行之使
 >
 > **<u>專業秘訣：</u>**&#x200B;我們建議在應用程式進入前景狀態時要求使用者的許可權，因為應用程式可以在要求使用者驗證之前，隨時檢查[存取使用者訂閱資訊的許可權](https://developer.apple.com/documentation/videosubscriberaccount/vsaccountmanager/1949763-checkaccessstatus)。
 
-### 驗證 {#apple-sso-cookbook-rest-api-v1-authentication}
+### Authentication {#apple-sso-cookbook-rest-api-v1-authentication}
 
 * [是否有有效的Adobe驗證Token？](#step1)
 * [使用者是否透過合作夥伴SSO登入？](#step2)
@@ -265,7 +265,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>專業秘訣：</u>**&#x200B;請注意，從視訊訂閱者帳戶架構取得的提供者識別碼，在Adobe Pass驗證組態方面代表&#x200B;*`platformMappingId`*。 因此，應用程式必須透過MVPD驗證&#x200B;*`platformMappingId`*&#x200B;提供Adobe Pass清單[&#x200B; API服務，使用](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md)值來判斷MVPD ID屬性值。
+> **<u>專業秘訣：</u>**&#x200B;請注意，從視訊訂閱者帳戶架構取得的提供者識別碼，在Adobe Pass驗證組態方面代表&#x200B;*`platformMappingId`*。 因此，應用程式必須透過MVPD驗證[提供Adobe Pass清單](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/provide-mvpd-list.md) API服務，使用&#x200B;*`platformMappingId`*&#x200B;值來判斷MVPD ID屬性值。
 
 #### 步驟：「將Adobe要求轉寄給合作夥伴SSO以取得設定檔」 {#step7}
 
@@ -352,7 +352,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 
 >[!TIP]
 >
-> **<u>專業秘訣：</u>**&#x200B;請注意[「將Adobe要求轉寄給合作夥伴SSO以取得設定檔」](#step7)步驟中的程式碼片段。 此&#x200B;*`vsaMetadata!.samlAttributeQueryResponse!`*&#x200B;代表需要在&#x200B;*`SAMLResponse`* Token Exchange[上傳遞的](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md)，而且需要字串操控和編碼（*Base64*&#x200B;編碼和&#x200B;*URL*&#x200B;編碼後），才能進行呼叫。
+> **<u>專業秘訣：</u>**&#x200B;請注意[「將Adobe要求轉寄給合作夥伴SSO以取得設定檔」](#step7)步驟中的程式碼片段。 此&#x200B;*`vsaMetadata!.samlAttributeQueryResponse!`*&#x200B;代表需要在[Token Exchange](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/token-exchange.md)上傳遞的&#x200B;*`SAMLResponse`*，而且需要字串操控和編碼（*Base64*&#x200B;編碼和&#x200B;*URL*&#x200B;編碼後），才能進行呼叫。
 
 #### 步驟：「Adobe Token是否已成功產生？」 {#step9}
 
@@ -380,8 +380,8 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 > **<u>專業秘訣：</u>**&#x200B;請依照下列步驟實作iOS/iPadOS。
 
 * 應用程式必須[取得註冊碼](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/registration-code-request.md)，此註冊碼不應在第一部裝置（熒幕）上呈現給一般使用者。
-* 應用程式必須在第一個裝置（熒幕）上[使用登入碼和](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md)WKWebView[或](https://developer.apple.com/documentation/webkit/wkwebview)SFSafariViewController[元件，來啟動驗證](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)。
-* 在[WKWebView](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)或[SFSafariViewController](https://developer.apple.com/documentation/webkit/wkwebview)元件關閉後，應用程式必須啟動[輪詢，才能知道第一個裝置（熒幕）上的驗證狀態](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)。
+* 應用程式必須在第一個裝置（熒幕）上[使用登入碼和[WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)或[SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)元件，來啟動驗證](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-authentication.md)。
+* 在[WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)或[SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)元件關閉後，應用程式必須啟動[輪詢，才能知道第一個裝置（熒幕）上的驗證狀態](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)。
 * 產生驗證Token時，應用程式必須停止[輪詢第1部裝置（熒幕）上的](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)。
 
 #### 步驟：「繼續授權流程」 {#step11}
@@ -403,7 +403,7 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 > **<u>專業秘訣：</u>**&#x200B;請依照下列步驟進行tvOS實作。
 
 * 應用程式必須使用Adobe Pass Authentication Service的&quot;*tokenSource&quot;* [使用者中繼資料](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)，判斷是否因為透過合作夥伴SSO登入而發生驗證。
-* 若&#x200B;*`Settings -> Accounts -> TV Provider`*「tokenSource」**值等於「** Apple」，應用程式必須指示/提示使用者僅在tvOS *上*&#x200B;從&#x200B;*明確登出。*
+* 若&#x200B;*「tokenSource」*&#x200B;值等於「*Apple」，應用程式必須指示/提示使用者僅在tvOS **上**從&#x200B;*`Settings -> Accounts -> TV Provider`*明確登出。*
 * 應用程式必須使用直接HTTP呼叫，從Adobe Pass驗證服務[起始登出](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)。 這無助於在MVPD端清理工作階段。
 
 >[!TIP]
@@ -411,5 +411,5 @@ videoSubscriberAccountManager.checkAccessStatus(options: [VSCheckAccessOption.pr
 > **<u>專業秘訣：</u>**&#x200B;請依照下列步驟實作iOS/iPadOS。
 
 * 應用程式必須使用Adobe Pass Authentication Service的&quot;*tokenSource&quot;* [使用者中繼資料](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/user-metadata.md)，判斷是否因為透過合作夥伴SSO登入而發生驗證。
-* 若&#x200B;*`Settings -> TV Provider`*「tokenSource」**值等於**「Apple」*，應用程式必須指示/提示使用者僅在iOS/iPadOS*&#x200B;上&#x200B;*從*&#x200B;明確登出。
-* 應用程式必須使用[WKWebView](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)或[SFSafariViewController](https://developer.apple.com/documentation/webkit/wkwebview)元件，從Adobe Pass Authentication Service [起始登出](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)。 這將有助於MVPD端的工作階段清理。
+* 若&#x200B;*「tokenSource」*&#x200B;值等於&#x200B;*「Apple」*，應用程式必須指示/提示使用者僅在iOS/iPadOS **上**&#x200B;從&#x200B;*`Settings -> TV Provider`*&#x200B;明確登出。
+* 應用程式必須使用[WKWebView](https://developer.apple.com/documentation/webkit/wkwebview)或[SFSafariViewController](https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller)元件，從Adobe Pass Authentication Service [起始登出](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/initiate-logout.md)。 這將有助於MVPD端的工作階段清理。

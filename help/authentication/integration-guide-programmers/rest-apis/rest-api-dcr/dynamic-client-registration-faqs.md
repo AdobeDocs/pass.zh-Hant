@@ -2,10 +2,10 @@
 title: Dynamic Client Registration (DCR)常見問題集
 description: Dynamic Client Registration (DCR)常見問題集
 exl-id: 12268163-632e-4884-b35d-a29cc8ef45bf
-source-git-commit: 747c3d9b6de537be5e7e0a0244b2b301603d9b18
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '1135'
-ht-degree: 0%
+source-wordcount: '1147'
+ht-degree: 1%
 
 ---
 
@@ -31,7 +31,7 @@ ht-degree: 0%
 
 +++REST API V2存取常見問題集
 
-#### 1.註冊階段的用途為何？ {#rest-api-v2-access-faq1}
+#### &#x200B;1. 註冊階段的用途為何？ {#rest-api-v2-access-faq1}
 
 註冊階段的目的是透過[動態使用者端註冊(DCR)](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#dcr)程式，針對Adobe Pass驗證註冊使用者端應用程式。
 
@@ -39,11 +39,11 @@ ht-degree: 0%
 
 如需詳細資訊，請參閱[動態使用者端註冊概觀](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)檔案。
 
-#### &#x200B;2. 「註冊階段」是否為必要？ {#rest-api-v2-access-faq2}
+#### &#x200B;2. 註冊階段是否為強制性的？ {#rest-api-v2-access-faq2}
 
 註冊階段是強制性的，但如果使用者端應用程式具有快取的使用者端憑證對和仍然有效的存取權杖，則可以跳過此階段。
 
-#### 3.什麼是軟體陳述式及其有效期限？ {#rest-api-v2-access-faq3}
+#### &#x200B;3. 什麼是軟體陳述式？其有效期限為多久？ {#rest-api-v2-access-faq3}
 
 軟體陳述式是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#software-statement)檔案中定義的辭彙。
 
@@ -55,19 +55,19 @@ ht-degree: 0%
 
 如需詳細資訊，請參閱[Dynamic Client註冊概觀](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)檔案。
 
-#### 4.如何產生及下載軟體陳述式？ {#rest-api-v2-access-faq4}
+#### &#x200B;4. 如何產生及下載軟體宣告？ {#rest-api-v2-access-faq4}
 
 您的組織管理員或代表您行事的Adobe Pass驗證代表可透過Adobe Pass [TVE控制面板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)完成此作業。
 
 如需詳細資訊，請參閱[TVE儀表板頻道使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md#registered-applications)或[TVE儀表板程式設計師使用手冊](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md#registered-applications)檔案。
 
-#### 5.如果軟體陳述式被撤銷，會發生什麼情況？ {#rest-api-v2-access-faq5}
+#### &#x200B;5. 如果軟體宣告被撤銷，會發生什麼情況？ {#rest-api-v2-access-faq5}
 
 撤銷軟體宣告時，請考量下列其中一個重要後果：
 
 * 使用已撤銷軟體宣告的使用者端應用程式將無法再透過[軟體權利檔案](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#entitlement)流程，這表示使用者將無法播放內容。
 
-#### 6.什麼是使用者端認證，其有效期限為多久？ {#rest-api-v2-access-faq6}
+#### &#x200B;6. 什麼是使用者端認證，其有效期限為多久？ {#rest-api-v2-access-faq6}
 
 使用者端認證是在[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#client-credentials)檔案中定義的辭彙。
 
@@ -79,15 +79,15 @@ ht-degree: 0%
 
 如需詳細資訊，請參閱[擷取使用者端認證](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-client-credentials.md)檔案。
 
-#### 7.如何管理使用者端憑證？ {#rest-api-v2-access-faq7}
+#### &#x200B;7. 如何管理使用者端憑證？ {#rest-api-v2-access-faq7}
 
 建議使用者端應用程式在與Adobe Pass驗證的使用者端對伺服器和伺服器對伺服器整合時，為每個使用者應用程式執行個體管理一組唯一的使用者端認證。
 
-#### 8.使用者端應用程式是否應該將使用者端認證快取在永久儲存體中？ {#rest-api-v2-access-faq8}
+#### &#x200B;8. 使用者端應用程式是否應該將使用者端憑證快取在永久儲存體中？ {#rest-api-v2-access-faq8}
 
 使用者端應用程式必須儲存使用者端憑證，並在需要擷取存取權杖時無限期使用。
 
-#### 9.如果快取的使用者端憑證遺失，會發生什麼情況？ {#rest-api-v2-access-faq9}
+#### &#x200B;9. 如果快取的使用者端憑證遺失會發生什麼情況？ {#rest-api-v2-access-faq9}
 
 當快取的使用者端憑證遺失時，需要考慮三個重要後果：
 
@@ -95,7 +95,7 @@ ht-degree: 0%
 * 使用者端應用程式必須使用新的使用者端憑證組來取得新的存取權杖。
 * 使用者端應用程式將需要要求使用者重新驗證，因為使用者端應用程式將失去對先前取得的已驗證設定檔的存取權。
 
-#### 10.什麼是存取Token？其有效期為多久？ {#rest-api-v2-access-faq10}
+#### &#x200B;10. 什麼是存取權杖？其有效期為多久？ {#rest-api-v2-access-faq10}
 
 存取權杖是[字彙表](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#access-token)檔案中定義的辭彙。
 
@@ -109,11 +109,11 @@ ht-degree: 0%
 
 如需詳細資訊，請參閱[擷取存取Token](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/apis/dynamic-client-registration-apis-retrieve-access-token.md)檔案。
 
-#### 11.使用者端應用程式是否應該將存取權杖快取至永久儲存體中？ {#rest-api-v2-access-faq11}
+#### &#x200B;11. 使用者端應用程式是否應該將存取Token快取到永久儲存體中？ {#rest-api-v2-access-faq11}
 
 使用者端應用程式必須儲存並使用存取權杖，直到它過期為止，然後捨棄它並取得新權杖。
 
-#### 12.使用者端應用程式如何重新整理存取權杖？ {#rest-api-v2-access-faq12}
+#### &#x200B;12. 使用者端應用程式如何重新整理存取權杖？ {#rest-api-v2-access-faq12}
 
 使用者端應用程式必須重新整理存取權杖，其方式與擷取新存取權杖相同，但使用快取的使用者端認證。
 
@@ -135,7 +135,7 @@ ht-degree: 0%
 
 +++REST API V2移轉常見問題集
 
-#### 1.使用者端應用程式可重複使用現有的已註冊應用程式（軟體陳述式）嗎？ {#rest-api-v2-migration-faq1}
+#### &#x200B;1. 使用者端應用程式可重複使用現有的已註冊應用程式（軟體宣告）嗎？ {#rest-api-v2-migration-faq1}
 
 使用者端應用程式無法重複使用現有的註冊應用程式（軟體陳述式），因此必須產生並下載專用於使用REST API V2的新註冊應用程式（軟體陳述式）。
 
@@ -147,7 +147,7 @@ ht-degree: 0%
 
 為了區分使用REST API V2的使用者端應用程式中使用的已註冊應用程式（軟體陳述式），我們要求您將特定的尾碼新增到已註冊應用程式名稱中，例如「RESTV2」。
 
-#### 2.使用者端應用程式可重複使用現有的自訂配置嗎？ {#rest-api-v2-migration-faq2}
+#### &#x200B;2. 使用者端應用程式可重複使用現有的自訂配置嗎？ {#rest-api-v2-migration-faq2}
 
 使用者端應用程式可重複使用透過Adobe Pass [TVE儀表板](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)產生的現有自訂配置。
 

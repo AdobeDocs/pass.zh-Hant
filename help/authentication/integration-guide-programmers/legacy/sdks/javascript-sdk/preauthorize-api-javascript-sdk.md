@@ -2,9 +2,9 @@
 title: 預先授權
 description: JavaScript預先授權
 exl-id: b7493ca6-1862-4cea-a11e-a634c935c86e
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '1488'
+source-wordcount: '1527'
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 預先授權API方法可供應用程式用來取得一或多個資源的預先授權決定。 預先授權API要求應該用於UI提示和/或內容篩選。 在允許使用者存取指定的資源之前，必須先提出實際的授權API要求。
 
-如果Adobe Pass驗證服務處理預先授權API請求時發生未預期的錯誤(例如網路問題，以及MVPD授權端點無法使用)，則受影響資源的一或多個個別錯誤資訊將會作為「預先授權API」回應結果的一部分納入。
+如果Adobe Pass驗證服務處理預先授權API請求時發生未預期的錯誤（例如網路問題，以及MVPD授權端點無法使用），則受影響資源的一或多個個別錯誤資訊將會作為「預先授權API」回應結果的一部分納入。
 
 ### public preauthorize(request： PreauthorizeRequest， callback： AccessEnablerCallback&lt;any>)： void {#preauth-method}
 
@@ -143,14 +143,14 @@ public func build() -> PreauthorizeRequest
 #### 公開動作：字串； {#public-action-string}
 
 * 補救此情況的建議動作。
-   * **無**：很遺憾，沒有預先定義的動作來修正此問題。 這可能表示對公用API的呼叫不正確
-   * **組態**：需要透過TVE儀表板或連絡支援人員來變更組態。
-   * **application-registration**：應用程式必須重新登入本身。
-   * **驗證**：使用者必須驗證或重新驗證。
-   * **授權**：使用者必須取得特定資源的授權。
-   * **退化**：應該套用某種形式的退化。
-   * **重試**：重試要求或許可以解決此問題
-   * **在指定時段後重試**：在指定的時段後重試請求可能會解決問題。
+  * **無**：很遺憾，沒有預先定義的動作來修正此問題。 這可能表示對公用API的呼叫不正確
+  * **組態**：需要透過TVE儀表板或連絡支援人員來變更組態。
+  * **application-registration**：應用程式必須重新登入本身。
+  * **驗證**：使用者必須驗證或重新驗證。
+  * **授權**：使用者必須取得特定資源的授權。
+  * **退化**：應該套用某種形式的退化。
+  * **重試**：重試要求或許可以解決此問題
+  * **在指定時段後重試**：在指定的時段後重試請求可能會解決問題。
 * 可能保留空字串或`null`值。
 
 ### 類別決定 {#class-decision}
@@ -253,26 +253,26 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已停用</td>
     <td>
 
-    &grave;&grave;JavaScript
+    ``JavaScript
     
-    &lbrace;
-    `decisions`： &lbrack;
-    &lbrace;
+    {
+    `decisions`： [
+    {
     `id`： &quot;RES01&quot;，
-    &grave;authorized&quot;： true
-    &rbrace;，
-    &lbrace;
+    `authorized&quot;： true
+    }，
+    {
     `id`： &quot;RES02&quot;，
-    &grave;authorized&quot;： false
-    &rbrace;，
-    &lbrace;
+    `authorized&quot;： false
+    }，
+    {
     `id`： &quot;RES03&quot;，
-    &grave;authorized&quot;： true
-    &rbrace;
-    &rbrack;
-    &rbrace;
+    `authorized&quot;： true
+    }
+    ]
+    }
     
-    &grave;
+    `
 
 </td>
   </tr>
@@ -306,7 +306,7 @@ accessEnablerApi.preauthorize(request, callback);
     ]
     }
     
-    ```
+    &quot;&#39;
 
 </td>
   </tr>
@@ -329,22 +329,22 @@ accessEnablerApi.preauthorize(request, callback);
 
      &quot;JavaScript
     
-    &lbrace;
-    &quot;decisions&quot;： &lbrack;
-    &lbrace;
+    {
+    &quot;decisions&quot;： [
+    {
     &quot;id&quot;： &quot;RES01&quot;，
     &quot;authorized&quot;： false
-    &rbrace;，
-    &lbrace;
+    }，
+    {
     &quot;id&quot;： &quot;RES02&quot;，
     &quot;authorized&quot;： false
-    &rbrace;，
-    &lbrace;
+    }，
+    {
     &quot;id&quot;： &quot;RES03&quot;，
     &quot;authorized&quot;： false
-    &rbrace;
-    &rbrack;
-    &rbrace;
+    }
+    ]
+    }
     
     &quot;
 
@@ -395,7 +395,7 @@ accessEnablerApi.preauthorize(request, callback);
     ]
     }
     
-    ```
+    &quot;&#39;
 
 </td>
   </tr>
@@ -416,19 +416,19 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已停用/已啟用</td>
     <td>
 
-    &grave;&grave;JavaScript
-    &lbrace;
-    &grave;狀態&quot;： &lbrace;
-    &grave;狀態&quot;： 400，
-    &grave;代碼&quot;： &quot;internal_error&quot;，
-    &grave;message&quot;： &quot;要求由於內部錯誤而失敗。&quot;，
-    `details&quot;： &quot;Required String[]引數`resource&grave;不存在&quot;，
-    &grave;helpUrl&quot;： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
-    &grave;action&quot;： &quot;none&quot;
-    &rbrace;，
-    &grave;decisions&quot;： []
-    &rbrace;
-    &grave;&grave;
+    ``JavaScript
+    {
+    `狀態&quot;： {
+    `狀態&quot;： 400，
+    `代碼&quot;： &quot;internal_error&quot;，
+    `message&quot;： &quot;要求由於內部錯誤而失敗。&quot;，
+    `details&quot;： &quot;Required String[]引數`resource`不存在&quot;，
+    `helpUrl&quot;： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
+    `action&quot;： &quot;none&quot;
+    }，
+    `decisions&quot;： []
+    }
+    ``
 
 </td>
   </tr>
@@ -449,18 +449,18 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已停用/已啟用</td>
     <td>
 
-    &grave;&grave;JavaScript
-    &lbrace;
-    `status`： &lbrace;
+    ``JavaScript
+    {
+    `status`： {
     `status`： 412，
     `code`： &quot;missing_resource&quot;，
     `message`： &quot;resource引數遺失&quot;，
     `helpUrl`： &quot;https://experienceleague.adobe.com/docs/primetime/authentication/home.html&quot;，
     `action`： &quot;none&quot;
-    &rbrace;，
+    }，
     `decisions`： []
-    &rbrace;
-    &grave;&grave;
+    }
+    ``
 
 </td>
   </tr>
@@ -508,7 +508,7 @@ accessEnablerApi.preauthorize(request, callback);
     }
     ]
     }
-    ```
+    &quot;&#39;
 
 </td>
   </tr>
@@ -529,16 +529,16 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已停用/已啟用</td>
     <td>
 
-    &grave;&grave;JavaScript
-    &lbrace;
-    &grave;狀態&quot;： &lbrace;
-    &grave;狀態&quot;： 0，
-    &grave;代碼&quot;： &quot;authentication_session_missing&quot;，
-    &grave;message&quot;： &quot;無法擷取與此要求關聯的驗證工作階段。 使用者必須使用支援的MVPD重新驗證才能繼續。&quot;，
+    ``JavaScript
+    {
+    `狀態&quot;： {
+    `狀態&quot;： 0，
+    `代碼&quot;： &quot;authentication_session_missing&quot;，
+    `message&quot;： &quot;無法擷取與此要求關聯的驗證工作階段。 使用者必須使用支援的MVPD重新驗證才能繼續。&quot;，
     &quot;action&quot;： &quot;authentication&quot;
-    &rbrace;，
+    }，
     &quot;decisions&quot;： []
-    &rbrace;
+    }
     
     &quot;&#39;
 
@@ -563,17 +563,17 @@ accessEnablerApi.preauthorize(request, callback);
     <td>已停用/已啟用</td>
     <td>
 
-    &grave;&grave;JavaScript
-    &lbrace;
-    &grave;狀態&quot;： &lbrace;
-    &grave;狀態&quot;： 0，
-    &grave;代碼&quot;： &quot;requestor_not_configured&quot;，
-    &grave;message&quot;： &quot;尚未設定請求者，這是使用setRequestor API以外的任何API的先決條件。&quot;，
-    &grave;動作&quot;： &quot;retry&quot;
-    &rbrace;，
-    &grave;decisions&quot;： []
-    &rbrace;
-    &grave;
+    ``JavaScript
+    {
+    `狀態&quot;： {
+    `狀態&quot;： 0，
+    `代碼&quot;： &quot;requestor_not_configured&quot;，
+    `message&quot;： &quot;尚未設定請求者，這是使用setRequestor API以外的任何API的先決條件。&quot;，
+    `動作&quot;： &quot;retry&quot;
+    }，
+    `decisions&quot;： []
+    }
+    `
 
 </td>
   </tr>

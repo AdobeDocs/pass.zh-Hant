@@ -2,9 +2,9 @@
 title: 使用iOS Authentication Access Enabler時Adobe Pass上的SSO
 description: 使用iOS Authentication Access Enabler時Adobe Pass上的SSO
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '1144'
+source-wordcount: '1216'
 ht-degree: 0%
 
 ---
@@ -27,7 +27,7 @@ Adobe Pass驗證支援的應用程式之間的單一登入(SSO)會根據基礎�
 
 使用Adobe Pass驗證&#x200B;**Access Enabler**&#x200B;時，此檔案會在iOS **上處理** SSO。
 
-**Access Enabler** **1.10**&#x200B;是Adobe Pass Authentication iOS原生SDK的最新版本。 Adobe強烈建議您改用此版本，不要再使用較舊的版本。 如果您使用舊版的Access Enabler，您可以在此下載最新版的[&#128279;](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)。
+**Access Enabler** **1.10**&#x200B;是Adobe Pass Authentication iOS原生SDK的最新版本。 Adobe強烈建議您改用此版本，不要再使用較舊的版本。 如果您使用舊版的Access Enabler，您可以在此下載最新版的[](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)。
 
 iOS上的SSO受下列條件支配：
 
@@ -38,8 +38,8 @@ iOS上的SSO受下列條件支配：
 
 SSO行為如下：
 
-- **iOS 6及較低版本**： SSO會自動在同一個團隊或不同團隊開發的應用程式之間運作。 裝置ID是根據MAC位址計算（相同的值會在所有應用程式中產生），且儲存區域在所有應用程式中都是通用的(自訂作業範圍可在iOS 6及較低版本的應用程式中分享)。
-   - **重要：**&#x200B;請注意，iOS SDK 1.9.4版本已[將最低iOS部署目標提高至iOS 7。](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
+- **iOS 6及較低版本**： SSO會自動在同一個團隊或不同團隊開發的應用程式之間運作。 裝置ID是根據MAC位址計算（相同的值會在所有應用程式中產生），且儲存區域在所有應用程式中都是通用的（自訂作業範圍可在iOS 6及較低版本的應用程式中分享）。
+  - **重要：**&#x200B;請注意，iOS SDK 1.9.4版本已[將最低iOS部署目標提高至iOS 7。](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)
 - **iOS 7和更高版本**： SSO將在下列條件下運作：
 
 1. 應用程式是使用相同的Apple發佈設定檔發佈，或是屬於相同團隊的設定檔發佈。 這是應用程式在iOS 7和更高版本上共用自訂作業底板的唯一方法。 在所有其他情況下，作業範圍會依應用程式而沙箱。 來自&#x200B;[*https://developer.apple.com/library/IOs/releasenotes/General/RN-iOSSDK-7.0/index.html*](https://developer.apple.com/library/ios/releasenotes/General/RN-iOSSDK-7.0/index.html)： \+\[`UIPasteboard pasteboardWithName:create:\`]和+\[`UIPasteboard pasteboardWithUniqueName`\]的指定名稱現在是唯一的，僅允許相同應用程式群組中的那些應用程式存取作業面板。 如果開發人員嘗試以已存在的名稱建立剪貼簿，而他們不屬於相同應用程式套裝，則會取得專屬的私人剪貼簿。 請注意，這不會影響系統提供的作業範圍、一般和尋找。

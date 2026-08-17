@@ -2,7 +2,7 @@
 title: Proxy MVPD SAML整合
 description: Proxy MVPD SAML整合
 exl-id: 6c83e703-d8cd-476b-8514-05b8230902be
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 'null'
 workflow-type: tm+mt
 source-wordcount: '700'
 ht-degree: 0%
@@ -37,7 +37,7 @@ ht-degree: 0%
 
 在整合的MVPD Proxy中，會在Adobe Pass驗證和MVPD Proxy之間完成整合。 Adobe Pass驗證會將使用者驗證請求傳送至MVPD Proxy，而MVPD Proxy會處理重新導向。 為了讓MVPD Proxy知道將使用者驗證請求重新導向的位置，Adobe Pass驗證會在SAML驗證請求中傳送MVPD識別碼。  此識別碼是Proxy提供者透過上述指定的Proxy Web服務所指定的MVPD ID。
 
-### 驗證 {#authn-saml-int}
+### Authentication {#authn-saml-int}
 
 為了讓Adobe Pass驗證與Proxy MVPD整合，將需具備下列條件：
 
@@ -48,17 +48,17 @@ ht-degree: 0%
 * （建議） - Proxy MVPD會處理代理MVPD登入頁面URL的其他重新導向
 
 * MVPD Proxy需要為下列IP開啟連線埠443和80：
-   * 192.150.4.5
-   * 192.150.10.200
-   * 192.150.11.4
-   * 4.53.93.130
-   * 193.105.140.131
-   * 193.105.140.132
-   * 76.74.170.204
-   * 63.140.39.4
-   * 66.235.132.38
-   * 66.235.139.38
-   * 66.235.139.168
+  * 192.150.4.5
+  * 192.150.10.200
+  * 192.150.11.4
+  * 4.53.93.130
+  * 193.105.140.131
+  * 193.105.140.132
+  * 76.74.170.204
+  * 63.140.39.4
+  * 66.235.132.38
+  * 66.235.139.38
+  * 66.235.139.168
 
 
 #### 驗證SAML請求和回應 {#authn-saml-req-resp}

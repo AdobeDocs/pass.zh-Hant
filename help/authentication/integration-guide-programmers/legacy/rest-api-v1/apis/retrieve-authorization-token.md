@@ -2,10 +2,10 @@
 title: 擷取授權Token
 description: 擷取授權Token
 exl-id: 0b010958-efa8-4dd9-b11b-5d10f51f5680
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '373'
-ht-degree: 0%
+source-wordcount: '375'
+ht-degree: 1%
 
 ---
 
@@ -42,9 +42,9 @@ ht-degree: 0%
 擷取授權(AuthZ) Token。
 
 
-| 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
+| 端點 | 呼叫</br>者 | 輸入</br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/tokens/authz</br></br>例如：</br></br>&lt;SP_FQDN>/api/v1/tokens/authz | 串流應用程式</br></br>或</br></br>程式設計師服務 | 1.要求者（必要）</br>2。  deviceId （必要）</br>3。  資源（必要）</br>4。  device_info/X-Device-Info （必要）</br>5。  _deviceType_</br> 6。  _deviceUser_ （已棄用）</br>7。  _appId_ （已棄用） | GET | 1.成功</br>2。  驗證Token </br>    找不到或已過期：   </br>    XML說明原因</br>    找不到authn權杖的</br>3。  授權權杖</br>    找不到： </br>    XML說明</br>4。  授權權杖</br>    已過期： </br>    XML說明 | 200 — 成功</br>412 — 無AuthN</br></br>404 — 無AuthZ</br></br>410 - AuthZ已過期 |
+| &lt;SP_FQDN>/api/v1/tokens/authz</br></br>例如：</br></br>&lt;SP_FQDN>/api/v1/tokens/authz | 串流應用程式</br></br>或</br></br>程式設計師服務 | &#x200B;1.  要求者（必要）</br>2。  deviceId （必要）</br>3。  資源（必要）</br>4。  device_info/X-Device-Info （必要）</br>5。  _deviceType_</br> 6。  _deviceUser_ （已棄用）</br>7。  _appId_ （已棄用） | GET | &#x200B;1.  成功</br>2。  找不到或過期的驗證權杖</br>： </br> XML說明找不到驗證權杖的原因</br></br>3。  找不到授權權杖</br>： </br> XML說明</br>4。  授權權杖</br>已過期： </br> XML說明 | 200 — 成功</br>412 — 無AuthN</br></br>404 — 無AuthZ</br></br>410 - AuthZ已過期 |
 
 {style="table-layout:auto"}
 
@@ -55,8 +55,8 @@ ht-degree: 0%
 | 要求者 | 此作業有效的程式設計師要求者ID。 |
 | deviceId | 裝置識別碼位元組。 |
 | resource | 包含resourceId （或MRSS片段）的字串，可識別使用者請求的內容並由MVPD授權端點識別。 |
-| device_info/</br></br>X-Device-Info | 串流裝置資訊。</br></br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數的潛在大小以及GET URL長度的限制，它應該作為X-Device-Info傳遞到http標頭。 </br></br>檢視[傳遞裝置和連線資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
-| _deviceType_ | 裝置型別（例如Roku、PC）。</br></br>若此引數設定正確，ESM提供的量度在使用Clienless時，會針對每個裝置型別[進行](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)劃分，因此可以執行不同型別的分析，例如Roku、AppleTV和Xbox。</br></br>檢視，[在傳遞量度中使用無使用者端裝置型別引數的好處&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**： device_info將會取代此引數。 |
+| device_info/</br></br>X-Device-Info | 串流裝置資訊。</br></br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數的潛在大小以及GET URL的長度限制，應該在http標頭中作為X-Device-Info傳遞。 </br></br>檢視[傳遞裝置和連線資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中的完整詳細資料。 |
+| _deviceType_ | 裝置型別（例如Roku、電腦）。</br></br>若此引數設定正確，ESM會提供使用無使用者端時每個裝置型別](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)的[劃分量度，因此可以執行不同型別的分析，例如Roku、AppleTV和Xbox。</br></br>請參閱，[在傳遞量度中使用無使用者端裝置型別引數的好處&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br></br>**注意**：device_info將會取代此引數。 |
 | _deviceUser_ | 裝置使用者識別碼。 |
 | _appId_ | 應用程式id/名稱。 </br></br>**注意**： device_info會取代此引數。 |
 

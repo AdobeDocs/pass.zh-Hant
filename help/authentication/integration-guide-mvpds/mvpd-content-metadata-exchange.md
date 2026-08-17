@@ -2,9 +2,9 @@
 title: MVPD內容中繼資料交換
 description: MVPD內容中繼資料交換
 exl-id: d17e60dc-6c61-4ca2-bad8-1840c95261e0
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '413'
 ht-degree: 0%
 
 ---

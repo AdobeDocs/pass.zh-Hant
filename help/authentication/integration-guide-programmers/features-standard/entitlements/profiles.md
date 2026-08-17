@@ -1,9 +1,9 @@
 ---
 title: 設定檔
 description: 設定檔
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '333'
+source-wordcount: '343'
 ht-degree: 0%
 
 ---
@@ -48,7 +48,7 @@ ht-degree: 0%
 驗證存留時間(TTL)會定義使用者在需要重新驗證之前保持驗證狀態的時間。 此時間範圍是有限的，必須與MVPD代表商定。 TTL值可能因以下因素而異：
 
 * 平台類別（例如桌上型電腦、行動裝置、電視連線裝置）
-* 特定平台(例如iOS、Android、tvOS、Roku、FireTV)
+* 特定平台（例如iOS、Android、tvOS、Roku、FireTV）
 
 您的組織管理員或代表您行事的Adobe Pass驗證代表可透過Adobe Pass [TVE Dashboard](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-glossary.md#tve-dashboard)檢視及變更驗證(authN) TTL。
 

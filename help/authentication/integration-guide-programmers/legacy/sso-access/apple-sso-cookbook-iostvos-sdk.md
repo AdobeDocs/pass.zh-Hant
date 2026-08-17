@@ -2,9 +2,9 @@
 title: Apple SSO逐步指南(iOS/tvOS SDK)
 description: Apple SSO逐步指南(iOS/tvOS SDK)
 exl-id: 2d59cd33-ccfd-41a8-9697-1ace3165bc44
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '1832'
+source-wordcount: '1854'
 ht-degree: 0%
 
 ---
@@ -89,7 +89,7 @@ Adobe Pass Authentication AccessEnabler iOS/tvOS SDK支援在iOS、iPadOS或tvOS
 * ***VSA503*** — 視訊訂閱者帳戶中繼資料要求失敗，*訊息*&#x200B;欄位中有更多內容。
 * ***AAPL / APPL_ERROR*** — 視訊訂閱者帳戶中繼資料要求失敗，*詳細資料*&#x200B;欄位中有更多內容。
 
-### 驗證 {#apple-sso-cookbook-iostvos-sdk-authentication}
+### Authentication {#apple-sso-cookbook-iostvos-sdk-authentication}
 
 >[!TIP]
 >
@@ -124,17 +124,17 @@ Adobe Pass Authentication AccessEnabler iOS/tvOS SDK支援在iOS、iPadOS或tvOS
    **重要：**&#x200B;第三個步驟可能會觸發Apple SSO工作流程專屬的[進階錯誤碼](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)，以防下列其中一項&#x200B;**為true**：
 
    * ***VSA403** — 使用者已登入其電視提供者帳戶，位於
-裝置系統層級，但使用者的電視提供者許可權為
-已拒絕應用程式。
+     裝置系統層級，但使用者的電視提供者許可權為
+     已拒絕應用程式。
    * ***VSA404** — 使用者已登入其電視提供者帳戶，位於
-裝置系統層級，但使用者的電視提供者許可權
-應用程式的未決定。
+     裝置系統層級，但使用者的電視提供者許可權
+     應用程式的未決定。
    * ***APPL\_ERROR** — 使用者已登入其電視提供者
-裝置系統層級的帳戶，但與
-AccessEnabler iOS/tvOS SDK和視訊訂閱者帳戶
-框架發生錯誤。
+     裝置系統層級的帳戶，但與
+     AccessEnabler iOS/tvOS SDK和視訊訂閱者帳戶
+     框架發生錯誤。
 
-   **重要：**&#x200B;此第三個步驟會觸發具有&#x200B;[*狀態*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus)&#x200B;等於0的&#x200B;*setAuthenticationStatus*&#x200B;回呼，如果&#x200B;**下列其中一個為true**：
+   **重要：**&#x200B;此第三個步驟會觸發具有&#x200B;*狀態*&#x200B;等於0的&#x200B;[*setAuthenticationStatus*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus)&#x200B;回呼，如果&#x200B;**下列其中一個為true**：
 
    * 使用者並未在裝置系統層級登入其TV提供者帳戶，或是透過一般驗證流程登入。
    * 使用者已在裝置系統層級或透過一般驗證流程登入其電視提供者帳戶，但使用者的電視提供者驗證權杖TTL已通過。
@@ -147,11 +147,11 @@ AccessEnabler iOS/tvOS SDK和視訊訂閱者帳戶
    **重要：**&#x200B;此第三個步驟將會觸發&#x200B;[*setAuthenticationStatus*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus)&#x200B;回呼，其中&#x200B;*狀態*&#x200B;等於1，若上述&#x200B;**全部為false。**
 
 
-1. 若先前的驗證狀態檢查觸發了[setAuthenticationStatus](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getauthentication-getauthenticationwithdata-getauthn)回呼，且&#x200B;[*狀態*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus)&#x200B;等於0，應用程式將必須&#x200B;*初始化驗證*。
+1. 若先前的驗證狀態檢查觸發了&#x200B;[*setAuthenticationStatus*](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setauthenticationstatuserrorcode-setauthnstatus)&#x200B;回呼，且&#x200B;*狀態*&#x200B;等於0，應用程式將必須[初始化驗證](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getauthentication-getauthenticationwithdata-getauthn)。
 
    **<u>專業秘訣：</u>**&#x200B;實作下列其中一個AccessEnabler iOS/tvOS SDK API [getAuthentication](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN)或[getAuthentication:filter](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#getAuthN_filter)。
 
-   **重要：**&#x200B;如果下列其中一項[為true](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)，此第四個步驟可能會觸發Apple SSO工作流程專屬的&#x200B;**進階錯誤碼**：
+   **重要：**&#x200B;如果下列其中一項&#x200B;**為true**，此第四個步驟可能會觸發Apple SSO工作流程專屬的[進階錯誤碼](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)：
 
    * ***VSA403*** — 應用程式拒絕使用者的TV提供者許可權。
    * ***VSA404*** — 應用程式未決定使用者的TV提供者許可權。
@@ -160,9 +160,9 @@ AccessEnabler iOS/tvOS SDK和視訊訂閱者帳戶
    * ***N004*** — 使用者從Apple MVPD選擇器中選取電視提供者，但目前的要求者不支援該電視提供者（整合或停用單一登入）。
    * ***N005*** — 使用者決定取消一般MVPD選取器或Apple MVPD選取器。
 
-   **重要：**&#x200B;此第四個步驟會退回至一般驗證流程，方法是觸發上述[進階錯誤碼](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#dispProvDialog)的&#x200B;**displayProviderDialog**&#x200B;回呼及[一個](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)，若上述的&#x200B;**一個為true**。
+   **重要：**&#x200B;此第四個步驟會退回至一般驗證流程，方法是觸發上述[進階錯誤碼](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)的[displayProviderDialog](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#dispProvDialog)回呼及&#x200B;**一個**，若上述的&#x200B;**一個為true**。
 
-   **重要：**&#x200B;如果使用者選取的電視提供者不支援Apple SSO，但存在於Apple MVPD選擇器中，此第四個步驟會回溯至一般的驗證流程，方法是觸發[navigateToUrl](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2url)或[navigateToUrl:useSVC](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2urlSVC)回呼，以及上述&#x200B;**進階錯誤碼**&#x200B;中的[none](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)。
+   **重要：**&#x200B;如果使用者選取的電視提供者不支援Apple SSO，但存在於Apple MVPD選擇器中，此第四個步驟會回溯至一般的驗證流程，方法是觸發[navigateToUrl](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2url)或[navigateToUrl:useSVC](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#nav2urlSVC)回呼，以及上述[進階錯誤碼](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)中的&#x200B;**none**。
 
    **<u>專業秘訣：</u>** AccessEnabler iOS/tvOS SDK會無訊息呼叫[setSelectedPrrovder](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#setSelProv) API，以防使用者選取的電視提供者不支援Apple SSO，但存在於Apple MVPD選取器中。
 
@@ -201,11 +201,11 @@ AccessEnabler iOS/tvOS SDK和視訊訂閱者帳戶
 > **<u>專業秘訣：</u>**&#x200B;請依照下列步驟進行tvOS實作。
 
 * 應用程式必須從AccessEnabler iOS/tvOS SDK [起始登出](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#logout)。 這無助於在MVPD端清理工作階段。
-* 只有在觸發&#x200B;*`Settings -> Accounts -> TV Provider`* VSA203 [*狀態碼時，應用程式才必須指示/提示使用者從tvOS上的*&#x200B;明確登出](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)。
+* 只有在觸發&#x200B;[*VSA203*&#x200B;狀態碼時，應用程式才必須指示/提示使用者從tvOS上的&#x200B;*`Settings -> Accounts -> TV Provider`*&#x200B;明確登出](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)。
 
 >[!TIP]
 >
 > **<u>專業秘訣：</u>**&#x200B;請依照下列步驟實作iOS/iPadOS。
 
 * 應用程式必須從AccessEnabler iOS/tvOS SDK [起始登出](/help/authentication/integration-guide-programmers/legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md#logout)。 這將有助於MVPD端的工作階段清理。
-* 只有在觸發&#x200B;*`Settings -> TV Provider`* VSA203 [*狀態碼時，應用程式才能指示/提示使用者從iOS/iPadOS上的*&#x200B;明確登出](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)。
+* 只有在觸發&#x200B;[*VSA203*&#x200B;狀態碼時，應用程式才能指示/提示使用者從iOS/iPadOS上的&#x200B;*`Settings -> TV Provider`*&#x200B;明確登出](/help/authentication/integration-guide-programmers/legacy/error-reporting/error-reporting.md)。

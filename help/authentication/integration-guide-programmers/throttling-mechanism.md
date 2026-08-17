@@ -2,9 +2,9 @@
 title: 節流機制
 description: 瞭解Adobe Pass驗證中使用的節流機制。 在此頁面中探索此機制的概觀。
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
-source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
+source-git-commit: 'null'
 workflow-type: tm+mt
-source-wordcount: '1141'
+source-wordcount: '1162'
 ht-degree: 0%
 
 ---
@@ -65,11 +65,11 @@ Pass Authentication引進節流機制，以確保在客戶的使用者之間公�
 - /api/v1/mediatoken
 - /api/v1/authenticate/freepreview
 - /api/v1/authenticate/
-- /api/v1/。+/profile-requests/.+
+- /api/v1/.+/profile-requests/.+
 - /api/v1/identities
 - /adobe-services/config/
-- /reggie/v1/。+/regcode
-- /reggie/v1/。+/regcode/.+
+- /reggie/v1/.+/regcode
+- /reggie/v1/.+/regcode/.+
 
 ### SDK實作消除混淆
 
