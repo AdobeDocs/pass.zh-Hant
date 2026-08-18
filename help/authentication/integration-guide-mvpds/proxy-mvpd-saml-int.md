@@ -2,7 +2,7 @@
 title: Proxy MVPD SAML整合
 description: Proxy MVPD SAML整合
 exl-id: 6c83e703-d8cd-476b-8514-05b8230902be
-source-git-commit: 'null'
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '700'
 ht-degree: 0%

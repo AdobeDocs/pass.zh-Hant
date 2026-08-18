@@ -2,7 +2,7 @@
 title: Apple SSO概觀
 description: Apple SSO概觀
 exl-id: 7cf47d01-a35a-4c85-b562-e5ebb6945693
-source-git-commit: 'null'
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '1311'
 ht-degree: 0%
@@ -23,8 +23,8 @@ Adobe Pass驗證與Apple合作，為iPhone、iPad和Apple電視擁有者在電�
 
 最終結果應會建立符合下列使用者流程的體驗，建議您先諮詢後再開始開發應用程式：
 
-* iPhone和iPad[&#128279;](https://tve.zendesk.com/hc/article_attachments/205624966/User_flows_AppleSSO_iOS_v2.pdf)裝置的單一登入(SSO) 使用者流程。
-* Apple TV[&#128279;](https://tve.zendesk.com/hc/article_attachments/206669126/User_flows_tvOS.pdf)裝置的單一登入(SSO) 使用者流程。
+* iPhone和iPad](https://tve.zendesk.com/hc/article_attachments/205624966/User_flows_AppleSSO_iOS_v2.pdf)裝置的單一登入(SSO) [使用者流程。
+* Apple TV](https://tve.zendesk.com/hc/article_attachments/206669126/User_flows_tvOS.pdf)裝置的單一登入(SSO) [使用者流程。
 
 ## 先決條件 {#apple-sso-prerequisites}
 
@@ -57,7 +57,7 @@ Adobe Pass驗證與Apple合作，為iPhone、iPad和Apple電視擁有者在電�
 
   * 舊版Adobe Pass Authentication AccessEnabler iOS/tvOS SDK支援合作夥伴單一登入(SSO)。
 
-    請參閱[&#x200B; （舊版） Apple SSO逐步指南(iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)檔案。
+    請參閱[ （舊版） Apple SSO逐步指南(iOS/tvOS SDK)](../../../../legacy/sso-access/apple-sso-cookbook-iostvos-sdk.md)檔案。
 
 ### MVPD {#apple-sso-prerequisites-mvpd}
 

@@ -2,7 +2,7 @@
 title: 服務提供者範圍
 description: 服務提供者範圍
 exl-id: 730c43e1-46c0-4eec-b562-b1ad93cce6d3
-source-git-commit: 'null'
+source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
 workflow-type: tm+mt
 source-wordcount: '314'
 ht-degree: 0%

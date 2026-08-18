@@ -2,7 +2,7 @@
 title: Adobe Pass Authentication JavaScript 4.4.0發行說明
 description: Adobe Pass Authentication JavaScript 4.4.0發行說明
 exl-id: 28cc0ccc-7a1d-45bd-8455-26cfde25c5c5
-source-git-commit: 'null'
+source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
 source-wordcount: '250'
 ht-degree: 0%

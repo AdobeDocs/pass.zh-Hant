@@ -2,7 +2,7 @@
 title: Apple SSO逐步指南(iOS/tvOS SDK)
 description: Apple SSO逐步指南(iOS/tvOS SDK)
 exl-id: 2d59cd33-ccfd-41a8-9697-1ace3165bc44
-source-git-commit: 'null'
+source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
 source-wordcount: '1854'
 ht-degree: 0%

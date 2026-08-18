@@ -2,7 +2,7 @@
 title: 標題 — Adobe-Subject-Token
 description: REST API V2 — 標題 — Adobe-Subject-Token
 exl-id: 906d88f4-3b8f-491a-ab58-8e63d3b958d8
-source-git-commit: 'null'
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '179'
 ht-degree: 1%

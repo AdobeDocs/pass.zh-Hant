@@ -2,7 +2,7 @@
 title: 節流機制
 description: 瞭解Adobe Pass驗證中使用的節流機制。 在此頁面中探索此機制的概觀。
 exl-id: f00f6c8e-2281-45f3-b592-5bbc004897f7
-source-git-commit: 'null'
+source-git-commit: 6b803eb0037e347d6ce147c565983c5a26de9978
 workflow-type: tm+mt
 source-wordcount: '1162'
 ht-degree: 0%

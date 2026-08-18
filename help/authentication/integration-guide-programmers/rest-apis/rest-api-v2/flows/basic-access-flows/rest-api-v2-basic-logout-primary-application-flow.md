@@ -2,7 +2,7 @@
 title: 基本登出 — 主要應用程式 — 流量
 description: REST API V2 — 基本登出 — 主要應用程式 — 流程
 exl-id: 21dbff4a-0d69-4f81-b04f-e99d743c35b3
-source-git-commit: 'null'
+source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
 source-wordcount: '948'
 ht-degree: 0%
@@ -61,7 +61,7 @@ Adobe Pass驗證許可權內的&#x200B;**登出流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定mvpd[&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的起始登出：
+   > 如需下列詳細資訊，請參閱特定mvpd](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[起始登出：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`、`mvpd`和`redirectUrl`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
@@ -78,7 +78,7 @@ Adobe Pass驗證許可權內的&#x200B;**登出流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 如需登出回應中提供的詳細資訊，請參閱特定mvpd[&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的Initiate登出。
+   > 如需登出回應中提供的詳細資訊，請參閱特定mvpd](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[Initiate登出。
    > 
    > <br/>
    > 
@@ -127,7 +127,7 @@ Adobe Pass驗證許可權內的&#x200B;**登出流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定mvpd[&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的起始登出：
+   > 如需下列詳細資訊，請參閱特定mvpd](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[起始登出：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`、`mvpd`和`redirectUrl`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
@@ -144,7 +144,7 @@ Adobe Pass驗證許可權內的&#x200B;**登出流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 如需登出回應中提供的詳細資訊，請參閱特定mvpd[&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的Initiate登出。
+   > 如需登出回應中提供的詳細資訊，請參閱特定mvpd](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[Initiate登出。
    > 
    > <br/>
    > 
