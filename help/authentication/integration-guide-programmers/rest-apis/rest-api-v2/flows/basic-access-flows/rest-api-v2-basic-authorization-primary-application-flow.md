@@ -61,7 +61,7 @@ Adobe Pass驗證許可權內的&#x200B;**授權流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的[擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -80,7 +80,7 @@ Adobe Pass驗證許可權內的&#x200B;**授權流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的[擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 
