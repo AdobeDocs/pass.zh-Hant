@@ -4,7 +4,7 @@ description: 瞭解TVE控制面板和資源。
 exl-id: 91baeb34-a32a-4dc3-94d8-f6cfca59dc4e
 source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
 workflow-type: tm+mt
-source-wordcount: '305'
+source-wordcount: '314'
 ht-degree: 0%
 
 ---
@@ -22,8 +22,8 @@ ht-degree: 0%
 * **屬性組態**：為每個整合設定多個屬性，以實作根據特定平台需求自訂的精細商業規則。
 
 * **報告產生**：存取和匯出有關跨MVPD設定詳細的報告。 這些報表包括：
-   * 平台類別，例如&#x200B;*桌上型電腦、行動裝置和電視連線裝置*
-   * 平台如&#x200B;*iOS、Android™、tvOS、Roku和FireTV*
+  * 平台類別，例如&#x200B;*桌上型電腦、行動裝置和電視連線裝置*
+  * 平台如&#x200B;*iOS、Android™、tvOS、Roku和FireTV*
 
   這些報表提供單一登入(SSO)支援以及MVPD和平台層級的訂閱者驗證或授權工作階段持續時間的深入分析。
 
@@ -39,7 +39,7 @@ Adobe Pass驗證在TVE儀表板中提供下列區段：
 * [環境](/help/authentication/user-guide-tve-dashboard/tve-dashboard-environments.md)
 * [檢閱和推送變更](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)
 * [儀表板](/help/authentication/user-guide-tve-dashboard/tve-dashboard-home.md)
-* [頻道](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md)
+* [管道](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md)
 * [程式設計師](/help/authentication/user-guide-tve-dashboard/tve-dashboard-programmers.md)
 * [MVPDs](/help/authentication/user-guide-tve-dashboard/tve-dashboard-mvpds.md)
 * [整合](/help/authentication/user-guide-tve-dashboard/tve-dashboard-integrations.md)
