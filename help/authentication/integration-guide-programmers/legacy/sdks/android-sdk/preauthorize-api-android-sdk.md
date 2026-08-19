@@ -26,7 +26,7 @@ ht-degree: 0%
 
 
 
-如果Adobe Pass驗證服務處理預先授權API請求時發生未預期的錯誤(例如網路問題、MVPD授權端點無法使用等)，作為預先授權API回應結果的一部分，受影響資源將會包含一或多個分開的錯誤資訊。
+發生非預期的錯誤（例如網路問題、無法使用MVPD授權端點等） 當Adobe Pass驗證服務處理預先授權API要求時發生，作為預先授權API回應結果的一部分，受影響資源將包含一或多個分隔的錯誤資訊。
 
 
 ## `public void preauthorize(PreauthorizeRequest request, AccessEnablerCallback<PreauthorizeResponse> callback);`

@@ -1,9 +1,10 @@
 ---
 title: REST API V2 AI規則
 description: REST API V2 AI規則
-source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
+exl-id: 7bcea820-2324-44a5-8628-9a10c1bec067
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '194'
+source-wordcount: '197'
 ht-degree: 0%
 
 ---

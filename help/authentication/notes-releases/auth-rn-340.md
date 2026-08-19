@@ -4,7 +4,7 @@ description: Adobe Pass Authentication 3.4.0發行說明
 exl-id: ad572617-f607-419d-a085-70c025465080
 source-git-commit: c9958a17ad9dfb518bab1d24087c85fdcb6fd057
 workflow-type: tm+mt
-source-wordcount: '185'
+source-wordcount: '190'
 ht-degree: 0%
 
 ---

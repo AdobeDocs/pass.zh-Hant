@@ -4,7 +4,7 @@ description: Dynamic Client Registration API — 擷取使用者端認證
 exl-id: 0b39768b-25b8-47b9-8080-59c56fb829fb
 source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
 workflow-type: tm+mt
-source-wordcount: '437'
+source-wordcount: '472'
 ht-degree: 1%
 
 ---

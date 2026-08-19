@@ -4,7 +4,7 @@ description: 瞭解TVE儀表板中的程式設計師及其設定。
 exl-id: b450d7cc-d5b5-4454-8f95-8047856bfb98
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1139'
+source-wordcount: '1144'
 ht-degree: 0%
 
 ---
@@ -36,7 +36,7 @@ TVE儀表板的&#x200B;**程式設計人員**&#x200B;區段可讓您檢視和管
 1. 從清單中選取程式設計師。
 1. 選取下列其中一個標籤，以檢視及編輯所選程式設計師的對應設定：
 
-   * [頻道](#channels)
+   * [管道](#channels)
    * [憑證](#certificates)
    * [註冊的應用程式](#registered-applications)
    * [自訂配置](#custom-schemes)
@@ -49,7 +49,7 @@ TVE儀表板的&#x200B;**程式設計人員**&#x200B;區段可讓您檢視和管
 >
 > 檢視[檢閱並推播變更](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)，以取得啟用組態變更的詳細資訊。
 
-### 頻道 {#channels}
+### 管道 {#channels}
 
 此索引標籤會顯示與目前程式設計師連結的管道清單。 從此清單中選取特定通道，以存取[通道](/help/authentication/user-guide-tve-dashboard/tve-dashboard-channels.md)區段中的詳細資訊。
 
@@ -118,7 +118,7 @@ TVE儀表板的&#x200B;**程式設計人員**&#x200B;區段可讓您檢視和管
 
 1. 在&#x200B;**刪除憑證**&#x200B;對話方塊上選取&#x200B;**刪除**。
 
-已建立新的組態變更，且已準備好進行伺服器更新。 只有在&#x200B;**檢閱並推播變更**&#x200B;之後，憑證才會從[可用的憑證](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)區段中刪除。
+已建立新的組態變更，且已準備好進行伺服器更新。 只有在[檢閱並推播變更](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之後，憑證才會從&#x200B;**可用的憑證**&#x200B;區段中刪除。
 
 ### 註冊的應用程式 {#registered-applications}
 

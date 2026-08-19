@@ -4,7 +4,7 @@ description: Adobe Pass Authentication iOS / tvOS 3.9.2發行說明
 exl-id: 5c3f6138-f727-499b-bc73-816444849c1b
 source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '132'
+source-wordcount: '141'
 ht-degree: 0%
 
 ---

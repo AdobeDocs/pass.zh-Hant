@@ -30,9 +30,9 @@ Adobe Pass驗證許可權內的&#x200B;**授權流程**&#x200B;可讓串流應�
 使用特定MVPD擷取授權決定之前，請確定符合下列先決條件：
 
 * 串流應用程式必須具備使用其中一個基本驗證流程成功為MVPD建立的有效一般設定檔：
-   * [在主要應用程式內執行驗證](rest-api-v2-basic-authentication-primary-application-flow.md)
-   * [使用預先選取的mvpd在次要應用程式內執行驗證](rest-api-v2-basic-authentication-secondary-application-flow.md)
-   * [在次要應用程式內執行驗證，而不預先選取mvpd](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [在主要應用程式內執行驗證](rest-api-v2-basic-authentication-primary-application-flow.md)
+  * [使用預先選取的mvpd在次要應用程式內執行驗證](rest-api-v2-basic-authentication-secondary-application-flow.md)
+  * [在次要應用程式內執行驗證，而不預先選取mvpd](rest-api-v2-basic-authentication-secondary-application-flow.md)
 * 串流應用程式必須先擷取授權決定，才能播放使用者選取的資源。
 
 ### 工作流程 {#workflow-retrieve-authorization-decisions-using-specific-mvpd}
@@ -61,7 +61,7 @@ Adobe Pass驗證許可權內的&#x200B;**授權流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#x200B; API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -80,7 +80,7 @@ Adobe Pass驗證許可權內的&#x200B;**授權流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#x200B; API檔案的](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md)擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 

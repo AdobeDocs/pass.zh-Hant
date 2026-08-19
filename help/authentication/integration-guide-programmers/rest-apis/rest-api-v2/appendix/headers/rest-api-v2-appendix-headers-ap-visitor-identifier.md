@@ -4,8 +4,8 @@ description: REST API V2 — 標題 — AP-Visitor-Identifier
 exl-id: 216f398b-1cfa-4453-a81d-963675b33ec2
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '91'
-ht-degree: 2%
+source-wordcount: '101'
+ht-degree: 1%
 
 ---
 

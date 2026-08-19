@@ -4,7 +4,7 @@ description: REST API V2 — 單一登入 — 合作夥伴 — 流程
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
 source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
 workflow-type: tm+mt
-source-wordcount: '1468'
+source-wordcount: '1504'
 ht-degree: 0%
 
 ---
