@@ -1,13 +1,12 @@
 ---
 title: Adobe Concurrency Monitoring Services 3.3.0發行說明
 description: Adobe Concurrency Monitoring Services 3.3.0發行說明
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: 19789a15-6677-46e3-889e-98ad963e09ac
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '54'
+source-wordcount: '53'
 ht-degree: 3%
-
 ---
-
 # Adobe Concurrency Monitoring Services 3.3.0發行說明 {#cm-services-rns}
 
 本頁說明此版本的新功能、變更和已知問題。
