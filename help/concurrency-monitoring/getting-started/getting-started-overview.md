@@ -1,14 +1,12 @@
 ---
 title: 開始使用並行監視
 description: 瞭解並行監視的基本知識，以及如何開始使用整合
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+exl-id: d2b8c7c4-b02d-4bea-9310-162064fd7216
+source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
 workflow-type: tm+mt
-source-wordcount: '363'
+source-wordcount: '372'
 ht-degree: 0%
-
 ---
-
-
 # 開始使用並行監視 {#getting-started-overview}
 
 歡迎使用並行監視！ 本指南將幫助您瞭解基礎知識，並讓您的整合快速啟動並執行。
@@ -80,7 +78,7 @@ ht-degree: 0%
 2. **您要與並行監視整合的應用程式**。 請為每個應用程式提供：
    1. 應用程式名稱
    2. 應用程式平台
-3. **整合合作夥伴** (如果您是應另一方、程式設計師或MVPD的要求訂閱並行監視)
+3. **整合合作夥伴** （如果您是應另一方、程式設計師或MVPD的要求訂閱並行監視）
 
 
 ## 需要協助嗎？ {#need-help}
