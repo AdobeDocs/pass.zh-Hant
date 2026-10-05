@@ -4,11 +4,9 @@ description: Adobe Pass Authentication JavaScript 4.1.1發行說明
 exl-id: 00d017b3-700d-48b6-a43f-c0d7b8b67c3d
 source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '106'
+source-wordcount: '113'
 ht-degree: 0%
-
 ---
-
 # Adobe Pass Authentication JavaScript 4.1.1發行說明 {#javascript-sdk-411-rn}
 
 >[!IMPORTANT]

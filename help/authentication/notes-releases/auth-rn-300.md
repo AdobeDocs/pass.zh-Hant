@@ -4,11 +4,9 @@ description: Adobe Pass Authentication 3.0發行說明
 exl-id: 9284151a-8458-44a3-937b-35f379ca0e4e
 source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '195'
+source-wordcount: '204'
 ht-degree: 0%
-
 ---
-
 # Adobe Pass Authentication 3.0發行說明 {#authn-300-rn}
 
 >[!IMPORTANT]
@@ -39,11 +37,11 @@ Adobe Pass驗證： adobe-pass-**3.0**
 ##### 檔案
 
 * 若要開始使用新的REST API v2，請參閱下列檔案：
-   * [REST API v2 - API — 概觀](../integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
-   * [REST API v2 — 流程 — 概觀](../integration-guide-programmers/rest-apis/rest-api-v2/flows/rest-api-v2-flows-overview.md)
+  * [REST API v2 - API — 概觀](../integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [REST API v2 — 流程 — 概觀](../integration-guide-programmers/rest-apis/rest-api-v2/flows/rest-api-v2-flows-overview.md)
 * REST API v1之公開檔案的URL已變更，請參閱下列檔案：
-   * [REST API v1 - API — 概觀](../integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
-   * [REST API v1 - API — 參考](../integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
+  * [REST API v1 - API — 概觀](../integration-guide-programmers/legacy/rest-api-v1/rest-api-overview.md)
+  * [REST API v1 - API — 參考](../integration-guide-programmers/legacy/rest-api-v1/rest-api-reference.md)
 
 ##### 工具
 
