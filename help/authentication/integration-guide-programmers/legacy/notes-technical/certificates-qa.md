@@ -4,11 +4,9 @@ description: 憑證問答
 exl-id: d4e493b0-4467-42b1-9758-16c5941d8051
 source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
 workflow-type: tm+mt
-source-wordcount: '265'
+source-wordcount: '268'
 ht-degree: 0%
-
 ---
-
 # （舊版）憑證常見問答 {#certificates-q}
 
 >[!NOTE]
