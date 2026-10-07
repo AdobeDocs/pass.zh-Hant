@@ -4,11 +4,9 @@ description: Adobe Pass Authentication Android 3.7.3發行說明
 exl-id: f335357e-c209-428d-af2a-2181551447d4
 source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '142'
+source-wordcount: '160'
 ht-degree: 0%
-
 ---
-
 # Adobe Pass Authentication Android 3.7.3發行說明 {#android-sdk-373-rn}
 
 >[!IMPORTANT]
@@ -26,9 +24,9 @@ Adobe Pass驗證： Android 3.7.3
 ## 版本總覽 {#release-overview-373}
 
 * 變更以支援Android 14和以API層級34為目標的應用程式
-   * 新增[Android 14執行階段登入的廣播接收器](https://developer.android.com/about/versions/14/behavior-changes-14#runtime-receivers-exported)所需的旗標。
+  * 新增[Android 14執行階段登入的廣播接收器](https://developer.android.com/about/versions/14/behavior-changes-14#runtime-receivers-exported)所需的旗標。
 * 修正無法在模擬器API 32+上開啟ChromeCustomTabs以進行MVPD登入
-   * 注意：在SDK &lt;3.7.3上，此問題的因應措施是在模擬器上開啟Chrome應用程式，並在嘗試進行MVPD登入前完成設定
+  * 注意：在SDK &lt;3.7.3上，此問題的因應措施是在模擬器上開啟Chrome應用程式，並在嘗試進行MVPD登入前完成設定
 
 ## 發行套件 {#release-package-373}
 

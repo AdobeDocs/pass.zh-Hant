@@ -4,11 +4,9 @@ description: Adobe Pass Authentication iOS / tvOS 3.8.2發行說明
 exl-id: 67562582-8f93-4293-bb1b-b7a6d9364c32
 source-git-commit: ecafc3a92f691203d8113a741f0b6cd00a134e80
 workflow-type: tm+mt
-source-wordcount: '126'
+source-wordcount: '135'
 ht-degree: 0%
-
 ---
-
 # Adobe Pass Authentication iOS / tvOS 3.8.2發行說明 {#ios-tvos-sdk-382-rn}
 
 >[!IMPORTANT]
