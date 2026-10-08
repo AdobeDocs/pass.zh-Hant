@@ -2,13 +2,14 @@
 title: 動態使用者端註冊(DCR)字彙表
 description: 動態使用者端註冊(DCR)字彙表
 exl-id: 4ce67fa5-b0e5-4967-b83d-c682426d9329
-source-git-commit: ae02f53afc58b7d31f57bcc1e4dd1328f12abc3e
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '299'
+source-wordcount: '307'
 ht-degree: 0%
-
 ---
-
 # 動態使用者端註冊(DCR)字彙表 {#rest-api-dcr-glossary}
 
 >[!IMPORTANT]

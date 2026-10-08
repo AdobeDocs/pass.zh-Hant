@@ -2,13 +2,14 @@
 title: API使用範例
 description: 並行監視的API端點使用
 exl-id: eb232926-9c68-4874-b76d-4c458d059f0d
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2083'
 ht-degree: 0%
-
 ---
-
 # API總覽 {#api-overview}
 
 檢視[線上API檔案](https://streams-stage.adobeprimetime.com/swagger-ui/index.html)以取得詳細資料。
@@ -188,7 +189,10 @@ curl -i -X GET -u ${user}:%{pass} http://streams-stage.adobeprimetime.com/v2/run
 
 對於每個工作階段，您將取得&#x200B;**terminationCode**&#x200B;並完成中繼資料。
 
-請注意&#x200B;**Expires**&#x200B;標頭。 這是第一個工作階段到期的時間，除非傳送心率。中繼資料欄位將會填入工作階段開始時所傳送的所有中繼資料。 我們不篩選它，您會收到您傳送的所有內容。只要其他租使用者的應用程式共用相同原則，回應就會包含這些應用程式上執行的所有串流。如果您進行呼叫時沒有特定使用者的執行中工作階段，您將會收到此回應：
+請注意&#x200B;**Expires**&#x200B;標頭。 這是第一個工作階段到期的時間，除非傳送心率。
+中繼資料欄位將會填入工作階段開始時所傳送的所有中繼資料。 我們不篩選它，您會收到您傳送的所有內容。
+只要其他租使用者的應用程式共用相同原則，回應就會包含這些應用程式上執行的所有串流。
+如果您進行呼叫時沒有特定使用者的執行中工作階段，您將會收到此回應：
 
 ```http
 # Response Code

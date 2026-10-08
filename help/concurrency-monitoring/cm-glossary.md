@@ -2,13 +2,14 @@
 title: 字彙表
 description: 並行監視的術語表
 exl-id: 3b3b36fe-9f04-4de9-bd84-9f8d766bbc71
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '762'
+source-wordcount: '766'
 ht-degree: 0%
-
 ---
-
 # 字彙表 {#glossary}
 
 ## 帳戶 ID {#accid-defn}
@@ -66,8 +67,8 @@ ht-degree: 0%
 ## 原則資訊點(PIP) {#policy-info-pt-defn}
 
 * 屬性值的來源。 「並行監視」可提供下列功能，以作為資訊點：
-   * 傳遞串流中繼資料。
-   * 與並行串流有關的活動量度。
+  * 傳遞串流中繼資料。
+  * 與並行串流有關的活動量度。
 
 ## 程式設計師 {#programmer-defn}
 
@@ -104,7 +105,7 @@ ht-degree: 0%
 * 可透過並行監視服務，透過使用上述服務的使用者端應用程式，阻止觀看內容。
 * 在最好的情況下，他或她不會注意到並行監視服務的存在
 
-## Target {#target-defn}
+## 目標 {#target-defn}
 
 * 將傳回規則是否適用於指定資料流的資料流述詞。 CM中的隱含目標是任何由參照相關原則的應用程式所建立的資料流。 此外，可以新增屬性值條件，以便在套用規則之前微調活動篩選。
 

@@ -2,13 +2,14 @@
 title: 動態使用者端註冊流程
 description: 動態使用者端註冊流程
 exl-id: d881cf0a-de09-4b1d-a094-d5490f944796
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '564'
+source-wordcount: '567'
 ht-degree: 0%
-
 ---
-
 # 動態使用者端註冊流程 {#dynamic-client-registration-flow}
 
 >[!IMPORTANT]
@@ -102,15 +103,15 @@ ht-degree: 0%
    >
    > 必須僅在指定的期間（例如24小時的存留時間）內快取和使用存取權杖。 過期後，使用者端應用程式必須要求新的存取權杖。
 
-1. **繼續存取受保護的API：**&#x200B;使用者端應用程式使用存取權杖來存取其他Adobe Pass受保護的API。 使用者端應用程式必須在使用`Authorization`驗證配置（亦即`Bearer`）的`Authorization: Bearer <access_token>`要求標頭中包含存取權杖。
+1. **繼續存取受保護的API：**&#x200B;使用者端應用程式使用存取權杖來存取其他Adobe Pass受保護的API。 使用者端應用程式必須在使用`Bearer`驗證配置（亦即`Authorization: Bearer <access_token>`）的`Authorization`要求標頭中包含存取權杖。
 
    >[!IMPORTANT]
    >
    > 受Adobe Pass保護的API會驗證存取Token，以確保符合基本條件：
    >
-   > * _access_token_&#x200B;必須有效。
-   > * _access_token_&#x200B;必須與有效的&#x200B;_client_id_&#x200B;和&#x200B;_client_secret_&#x200B;相關聯。
-   > * _access_token_&#x200B;必須與有效的&#x200B;_software_statement_&#x200B;相關聯。
+   > * _access_ token_必須有效。
+   > * _access_ token _必須與有效的_ client _id_&#x200B;和_client_secret_相關聯。
+   > * _access_ token _必須與有效的_ software_statement_相關聯。
    >
    > <br/>
    >

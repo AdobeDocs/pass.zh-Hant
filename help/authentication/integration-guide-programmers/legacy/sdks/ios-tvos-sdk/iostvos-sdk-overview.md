@@ -2,13 +2,14 @@
 title: iOS/tvOS SDK概觀
 description: iOS/tvOS SDK概觀
 exl-id: b02a6234-d763-46c0-bc69-9cfd65917a19
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '3801'
 ht-degree: 0%
-
 ---
-
 # （舊版） iOS/tvOS SDK概觀 {#iostvos-sdk-overview}
 
 >[!NOTE]
@@ -187,7 +188,8 @@ iOS AccessEnabler程式庫會將權杖資料儲存在名為&#x200B;*貼上板*&#
 
 **iOS 7作業範圍變更 —**&#x200B;由於作業範圍在iOS 7上的功能有所變更，在iOS 7上執行的應用程式之間的交叉SSO將會受到限制。 具有相同`<Bundle Seed ID>` （也稱為`<Team ID>`）的應用程式將共用權杖，這表示來自相同程式設計人員X的應用程式A1和A2將共用權杖，而應用程式A1 （程式設計人員X）和應用程式A3 （程式設計人員Y）將不會共用權杖。
 
-- 如果2個應用程式之間的套件組合種子ID/團隊ID是由相同的布建設定檔產生，則它們是相同的。 如需詳細資訊，請前往此連結：  [http://developer.apple.com/library/ios/\#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html](http://developer.apple.com/library/ios/#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html)
+- 如果2個應用程式之間的套件組合種子ID/團隊ID是由相同的布建設定檔產生，則它們是相同的。 如需詳細資訊，請前往此連結：
+  [http://developer.apple.com/library/ios/\#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html](http://developer.apple.com/library/ios/#documentation/general/conceptual/DevPedia-CocoaCore/AppID.html)
 - 無論使用哪種Adobe Pass驗證SDK，iOS 7都會出現這種「跨SSO」限制。
 
 請閱讀此技術說明以瞭解在iOS 7和更新版本上設定SSO的詳細資訊（此技術說明適用於Access Enabler v1.8和更新版本）： <https://tve.zendesk.com/entries/58233434-Configuring-Pay-TV-pass-SSO-on-iOS>

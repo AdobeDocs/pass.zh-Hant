@@ -2,13 +2,14 @@
 title: 退化特徵
 description: 退化特徵
 exl-id: c7d6685b-a235-42eb-9c9c-0ffa1747f614
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '477'
+source-wordcount: '493'
 ht-degree: 0%
-
 ---
-
 # 退化特徵 {#degradation-feature}
 
 >[!IMPORTANT]
@@ -43,7 +44,7 @@ Adobe Pass驗證使用其&#x200B;**降級功能**&#x200B;解決這些挑戰，�
 
 降級API是RESTful API，可讓程式設計師管理特定MVPD的降級規則。 API提供了方法來啟用、移除以及擷取作用中降級規則的狀態。
 
-若要深入瞭解Degradation API，請參閱下列Zendesk檔案[Adobe Pass驗證 | 降級API v3](https://tve.zendesk.com/hc/en-us/articles/33912526308372-Adobe-Pass-Authentication-Degradation-API-v3)，並尋找要下載的PDF檔案。
+若要深入瞭解Degradation API，請參閱下列Zendesk檔案[Adobe Pass驗證 |降級API v3](https://tve.zendesk.com/hc/en-us/articles/33912526308372-Adobe-Pass-Authentication-Degradation-API-v3)，並尋找要下載的PDF檔案。
 
 ## REST API V2 {#rest-api-v2}
 

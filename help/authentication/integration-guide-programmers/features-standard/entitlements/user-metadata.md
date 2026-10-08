@@ -2,13 +2,14 @@
 title: 使用者中繼資料
 description: 使用者中繼資料
 exl-id: 9fd68885-7b3a-4af0-a090-6f1f16efd2a1
-source-git-commit: edfde4b463dd8b93dd770bc47353ee8ceb6f39d2
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1936'
 ht-degree: 0%
-
 ---
-
 # 使用者中繼資料 {#user-metadata}
 
 >[!IMPORTANT]

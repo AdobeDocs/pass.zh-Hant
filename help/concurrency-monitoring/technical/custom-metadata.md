@@ -2,13 +2,14 @@
 title: 自訂中繼資料
 description: 自訂中繼資料
 exl-id: 0cfd1158-8c6c-47c2-b838-5490ff4bf0ce
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '367'
+source-wordcount: '370'
 ht-degree: 0%
-
 ---
-
 # 自訂中繼資料 {#cm}
 
 >[!NOTE]
@@ -30,7 +31,7 @@ ht-degree: 0%
 * 擷取帳戶的資料流清單（/streams資源）時，要求額外的欄位（透過欄位查詢字串引數）
 * 指定維度作為群組依據，以劃分帳號活動（ /activity資源）
 * 根據欄位值或基數定義伺服器端原則（範例使用偽SQL以清楚說明）：
-* 設定僅套用至特定欄位值的原則(例如，專用的iOS原則：其中osType為&#39;iOS&#39;)
+* 設定僅套用至特定欄位值的原則（例如，專用的iOS原則：其中osType為&#39;iOS&#39;）
 * 限制指定欄位的相異值數量(例如不多於X個相異裝置： HAVING DISTINCT COUNT(deviceId) >= 2)
 * 限制每個欄位值的作用中串流數目(例如，單一裝置型別不超過X個作用中串流：GROUP BY deviceType HAVING COUNT(streamId) >= 3)
 

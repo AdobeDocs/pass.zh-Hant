@@ -2,13 +2,14 @@
 title: REST API總覽
 description: Rest API概觀
 exl-id: 5533d852-f644-417e-bf80-6f7aa1edd6b2
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1635'
+source-wordcount: '1659'
 ht-degree: 0%
-
 ---
-
 # （舊版） REST API概觀 {#rest-api-overview}
 
 >[!NOTE]
@@ -21,7 +22,7 @@ ht-degree: 0%
 
 ## 概觀 {#over}
 
-Adobe Pass Authentication REST API可讓您直接存取TV Everywhere (TVE)驗證和授權服務。 此API支援兩種主要架構：伺服器對伺服器或連線裝置（例如遊戲主機、智慧型電視、機上盒等）應用程式，這些應用程式沒有網頁瀏覽功能。
+Adobe Pass Authentication REST API可讓您直接存取TV Everywhere (TVE)驗證和授權服務。 此API支援兩種主要架構：伺服器對伺服器或連線裝置（例如遊戲主機、智慧型電視、機上盒等） 沒有網頁瀏覽功能的應用程式。
 
 ### 節流機制
 
@@ -84,8 +85,8 @@ Adobe Pass Authentication REST API的建立目的，是為沒有網頁瀏覽功�
 
 | **功能** | **負責處理功能** | **目前無使用者端API的限制以及與原生SDK的差異說明** |
 | --- | --- | --- |
-| 每個平台套用的組態設定 | Adobe | 在所有平台(包括iOS和Android等行動裝置)上使用REST API的&#x200B;**主要限制**&#x200B;是，我們TVE儀表板組態工具中與REST API對應的組態設定會套用至所有裝置(即使有iOS裝置執行在REST API上實作的原生應用程式)。 此限制&#x200B;**可能會中斷**&#x200B;與MVPD的協定TTL與協定平台設定（若每個平台不同）。 [1](#1) |
-| 單一登入 | 程式設計師 | 使用REST API時，SSO僅適用於支援Platform SSO的平台(例如Apple、Roku、Amazon)，而使用REST API時，其他平台無法保證SSO。 SDK會以跨網站/應用程式的方式快取資料。 這表示使用者在網站/應用程式上登入一次，且已登入參與的網站，無需任何使用者互動。 [2](#2) |
+| 每個平台套用的組態設定 | Adobe | 在所有平台（包括iOS和Android等行動裝置）上使用REST API的&#x200B;**主要限制**&#x200B;是，我們TVE儀表板組態工具中與REST API對應的組態設定會套用至所有裝置（即使有iOS裝置執行在REST API上實作的原生應用程式）。 此限制&#x200B;**可能會中斷**&#x200B;與MVPD的協定TTL與協定平台設定（若每個平台不同）。 [1](#1) |
+| 單一登入 | 程式設計師 | 使用REST API時，SSO僅適用於支援Platform SSO的平台（例如Apple、Roku、Amazon），而使用REST API時，其他平台無法保證SSO。 SDK會以跨網站/應用程式的方式快取資料。 這表示使用者在網站/應用程式上登入一次，且已登入參與的網站，無需任何使用者互動。 [2](#2) |
 | 單一登出 | 程式設計師 | 在原生SDK SSO案例中，從某個參與應用程式登出後，使用者將會從任何地方登出。 在目前不支援SLO的REST API上，從某個應用程式登出只會為該特定應用程式登出使用者。 |
 | 快取 | 程式設計師 | REST API實作必須針對業務認可的資料專案實作自己的快取機制。 SDK會自動快取各種資料專案，同時考慮到各種商業規則。 例如，使用者中繼資料會使用與驗證Token相同的TTL來快取，而某些專案可以程式設計方式從快取（預檢）中排除。 |
 | 詳細的錯誤報告機制 | 程式設計師 | REST API主要仰賴HTTP錯誤碼來報告應用程式錯誤，而SDK具有詳細的錯誤報告機制，可協助應用程式開發人員更能瞭解正在發生的事情。 |

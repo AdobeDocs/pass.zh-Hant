@@ -2,13 +2,14 @@
 title: Adobe Pass Authentication 3.4.0發行說明
 description: Adobe Pass Authentication 3.4.0發行說明
 exl-id: ad572617-f607-419d-a085-70c025465080
-source-git-commit: c9958a17ad9dfb518bab1d24087c85fdcb6fd057
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '190'
 ht-degree: 0%
-
 ---
-
 # Adobe Pass Authentication 3.4.0發行說明 {#authn-340-rn}
 
 >[!IMPORTANT]

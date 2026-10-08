@@ -2,13 +2,14 @@
 title: Android應用程式註冊
 description: Android應用程式註冊
 exl-id: 6238bd87-ac97-4a5c-9d92-3631f7b2d46a
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '609'
+source-wordcount: '614'
 ht-degree: 0%
-
 ---
-
 # （舊版） Android應用程式註冊 {#android-application-registration}
 
 >[!NOTE]
@@ -51,7 +52,7 @@ ht-degree: 0%
 
 1. 命名應用程式並指定版本。
 
-1. 選取可使用應用程式的平台(此案例中為Android)。
+1. 選取可使用應用程式的平台（此案例中為Android）。
 
 1. 從已為程式設計師設定的網域清單中選擇，以提供&#x200B;**[!UICONTROL Domain Name]**。
 

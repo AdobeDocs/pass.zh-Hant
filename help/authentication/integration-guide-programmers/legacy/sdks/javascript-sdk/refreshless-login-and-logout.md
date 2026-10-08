@@ -2,13 +2,14 @@
 title: 不需重新整理的登入和登出
 description: 不需重新整理的登入和登出
 exl-id: 3ce8dfec-279a-4d10-93b4-1fbb18276543
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1817'
 ht-degree: 0%
-
 ---
-
 # （舊版）不需重新整理的登入和登出 {#tefresh-less-login-and-logout}
 
 >[!NOTE]

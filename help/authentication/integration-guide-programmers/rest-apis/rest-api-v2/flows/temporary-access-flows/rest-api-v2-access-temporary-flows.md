@@ -2,13 +2,14 @@
 title: 暫時存取流程
 description: REST API V2 — 暫時存取流程
 exl-id: 387fcdb0-3a42-4893-ba83-e809426f92be
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '3259'
 ht-degree: 0%
-
 ---
-
 # 暫時存取流程 {#temporary-access-flows}
 
 >[!IMPORTANT]

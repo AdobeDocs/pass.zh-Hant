@@ -2,13 +2,14 @@
 title: 擷取授權Token
 description: 擷取授權Token
 exl-id: 0b010958-efa8-4dd9-b11b-5d10f51f5680
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '375'
 ht-degree: 1%
-
 ---
-
 # （舊版）擷取授權Token {#retrieve-authorization-token}
 
 >[!NOTE]

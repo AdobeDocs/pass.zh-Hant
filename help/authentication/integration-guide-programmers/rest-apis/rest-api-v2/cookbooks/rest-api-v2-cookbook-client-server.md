@@ -2,13 +2,14 @@
 title: REST API V2逐步指南（使用者端對伺服器）
 description: REST API V2逐步指南（使用者端對伺服器）
 exl-id: 6a5a89d2-ea54-4f9c-9505-e575ced4301c
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1842'
 ht-degree: 0%
-
 ---
-
 # REST API V2逐步指南（使用者端對伺服器） {#rest-api-v2-cookbook-client-to-server}
 
 >[!IMPORTANT]

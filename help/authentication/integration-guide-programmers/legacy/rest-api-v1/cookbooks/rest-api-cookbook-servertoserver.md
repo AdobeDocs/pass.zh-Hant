@@ -2,13 +2,14 @@
 title: REST API逐步指南（伺服器對伺服器）
 description: Rest API逐步指南伺服器到伺服器。
 exl-id: 36ad4a64-dde8-4a5f-b0fe-64b6c0ddcbee
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1891'
 ht-degree: 1%
-
 ---
-
 # （舊版） REST API逐步指南（伺服器對伺服器） {#rest-api-cookbook-server-to-server}
 
 >[!NOTE]
@@ -119,7 +120,8 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
 ### \[Optional\]中繼資料
 
-中繼資料可用來擷取MVPD共用的使用者資訊。其範例可能包括使用者ID、郵遞區號等。
+中繼資料可用來擷取MVPD共用的使用者資訊。
+其範例可能包括使用者ID、郵遞區號等。
 
 1. 使用者通過驗證後，程式設計人員服務可能會呼叫Adobe Pass **usermetadata** API來要求有關已驗證使用者的資訊。
 

@@ -2,13 +2,14 @@
 title: Adobe Pass驗證和Android 6 「Marshmallow」新許可權模型
 description: Adobe Pass驗證和Android 6 「Marshmallow」新許可權模型
 exl-id: 3c96769e-b25b-48ab-bb74-40f13d4e5a84
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '503'
+source-wordcount: '521'
 ht-degree: 0%
-
 ---
-
 # （舊版） Adobe Pass驗證和Android 6「Marshmallow」新許可權模型 {#adobe-primetime-authentication-and-the-android-6-marshmallow-new-permissions-model}
 
 >[!NOTE]
@@ -74,7 +75,7 @@ if (ContextCompat.checkSelfPermission(thisActivity,
 
 >[!TIP]
 >
->Adobe Pass Authentication SDK 1.9正在開發引入儲存彈性的功能。新的SDK預計於10月&#x200B;**日的最後一週發行**。 當無法使用一般儲存體時，應用程式將會回復到在應用程式的沙箱儲存體中寫入。 針對在API層級23中開發的應用程式，此規範涵蓋使用者不接受全域儲存中的讀取/寫入許可權的情況。 代號會依應用程式個別儲存，這表示使用Adobe Pass驗證的應用程式之間的單一登入功能將會停用。
+>Adobe Pass Authentication SDK 1.9正在開發引入儲存彈性的功能。 新的SDK預計於10月&#x200B;**日的最後一週發行**。 當無法使用一般儲存體時，應用程式將會回復到在應用程式的沙箱儲存體中寫入。 針對在API層級23中開發的應用程式，此規範涵蓋使用者不接受全域儲存中的讀取/寫入許可權的情況。 代號會依應用程式個別儲存，這表示使用Adobe Pass驗證的應用程式之間的單一登入功能將會停用。
 
 
 ![](../../../assets/android-permissions-request.png)

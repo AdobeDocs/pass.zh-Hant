@@ -2,13 +2,14 @@
 title: 增強的錯誤碼
 description: 增強的錯誤碼
 exl-id: 2b0a9095-206b-4dc7-ab9e-e34abf4d359c
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2747'
 ht-degree: 3%
-
 ---
-
 # 增強的錯誤碼 {#enhanced-error-codes}
 
 >[!IMPORTANT]
@@ -18,12 +19,12 @@ ht-degree: 3%
 增強的「錯誤碼」代表Adobe Pass驗證功能，可向整合以下專案的使用者端應用程式提供其他錯誤資訊：
 
 * Adobe Pass驗證REST API：
-   * [REST API v2](../../rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
-   * [（舊版） REST API v1](../../legacy/rest-api-v1/rest-api-overview.md)
+  * [REST API v2](../../rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [（舊版） REST API v1](../../legacy/rest-api-v1/rest-api-overview.md)
 * Adobe Pass驗證SDK預先授權API：
-   * [（舊版） JavaScript SDK （預先授權API）](../../legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
-   * [（舊版） iOS/tvOS SDK （預先授權API）](../../legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
-   * [（舊版） Android SDK （預先授權API）](../../legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
+  * [（舊版） JavaScript SDK （預先授權API）](../../legacy/sdks/javascript-sdk/preauthorize-api-javascript-sdk.md)
+  * [（舊版） iOS/tvOS SDK （預先授權API）](../../legacy/sdks/ios-tvos-sdk/preauthorize-api-ios-tvos-sdk.md)
+  * [（舊版） Android SDK （預先授權API）](../../legacy/sdks/android-sdk/preauthorize-api-android-sdk.md)
 
   _(*) Preauthorize API是唯一支援增強型錯誤碼的Adobe Pass驗證SDK API。_
 

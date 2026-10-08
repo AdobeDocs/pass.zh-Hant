@@ -2,13 +2,14 @@
 title: 啟動驗證
 description: 啟動驗證
 exl-id: 55dddd29-68d6-4aae-8744-307fea285e29
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '316'
 ht-degree: 0%
-
 ---
-
 # （舊版）起始驗證 {#initiate-authentication}
 
 >[!NOTE]
@@ -44,9 +45,9 @@ ht-degree: 0%
 
 
 
-| 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
+| 端點 | 呼叫</br>者 | 輸入</br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/驗證 | 驗證模組 | &#x200B;1. requestor_id （必要）</br>2。  mso_id （必要）</br>3。  reg_code （必要）</br>4。  domain_name （必要）</br>5。  noflash=true - </br>    （必要，剩餘引數）</br>6。  no_iframe=true （必要，剩餘引數）</br>7。  額外的引數（選擇性）</br>8。  redirect_url （必要） | GET | 系統會將登入網頁應用程式重新導向至MVPD登入頁面。 | 302 （完整重新導向實作） |
+| &lt;SP_FQDN>/api/v1/驗證 | 驗證模組 | &#x200B;1.  requestor_id （必要）</br>2。  mso_id （必要）</br>3。  reg_code （必要）</br>4。  domain_name （必要）</br>5。  noflash=true - </br> （必要，剩餘引數）</br>6。  no_iframe=true （必要，剩餘引數）</br>7。  額外的引數（選擇性）</br>8。  redirect_url （必要） | GET | 系統會將登入網頁應用程式重新導向至MVPD登入頁面。 | 302 （完整重新導向實作） |
 
 {style="table-layout:auto"}
 

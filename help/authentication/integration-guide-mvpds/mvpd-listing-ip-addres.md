@@ -2,13 +2,14 @@
 title: MVPD IP位址清單
 description: MVPD IP位址清單
 exl-id: be18084c-22f5-47b5-b088-d9032681113d
-source-git-commit: ebe0a53e3ba54c2effdef45c1143deea0e6e57d3
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '139'
+source-wordcount: '176'
 ht-degree: 0%
-
 ---
-
 
 # MVPD IP位址清單
 

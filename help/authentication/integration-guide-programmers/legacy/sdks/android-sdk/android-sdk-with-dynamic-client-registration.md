@@ -2,13 +2,14 @@
 title: Android SDK與動態使用者端註冊
 description: Android SDK與動態使用者端註冊
 exl-id: 8d0c1507-8e80-40a4-8698-fb795240f618
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1321'
 ht-degree: 1%
-
 ---
-
 # （舊版）透過動態使用者端註冊的Android SDK {#android-sdk-with-dynamic-client-registration}
 
 >[!NOTE]
@@ -64,7 +65,8 @@ Android SDK v3.0+將使用[動態使用者端註冊概述](../../../rest-apis/re
 - softwareStatement：從TVE Dashboard取得的值，或如果字串中設定了「software\_statement」，則為&#x200B;*null*
 - redirectUrl ：唯一的url，在TVE儀表板中明確新增的網域之一，或是如果「redirect\_uri」設定在strings.xml中，則為&#x200B;*null*
 
-注意：無效的softwareStatement或redirectUrl將導致應用程式無法初始化AccessEnabler或註冊Adobe Pass驗證和授權的應用程式</br>
+注意：無效的softwareStatement或redirectUrl將導致應用程式無法初始化AccessEnabler或註冊Adobe Pass驗證和授權的應用程式
+</br>
 注意： strings.xml中的redirectUrl引數或redirect\_uri應為應用程式在TVE儀表板中以相反順序新增的網域值(例如：若為TVE儀表板中新增的網域「adobe.com」，redirectUrl應為「com.adobe」。
 
 
@@ -113,8 +115,8 @@ Android SDK v3.0+將使用[動態使用者端註冊概述](../../../rest-apis/re
 
 **引數：**&#x200B;無
 
-已觸發&#x200B;**回呼：** 
-
+已觸發&#x200B;**回呼：** `setAuthenticationStatus()`
+</br></br>
 
 ## 程式設計師實作流程 {#Progr}
 

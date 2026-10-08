@@ -2,13 +2,14 @@
 title: 註冊頁面
 description: 註冊頁面
 exl-id: 581b8e2e-7420-4511-88b9-f2cd43a41e10
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '528'
+source-wordcount: '529'
 ht-degree: 0%
-
 ---
-
 # （舊版）註冊頁面 {#registration-page}
 
 ## REST API端點 {#clientless-endpoints}
@@ -41,9 +42,9 @@ ht-degree: 0%
 
 傳回隨機產生的註冊代碼和登入頁面URI。
 
-| 端點 | 呼叫<br>者 | 輸入   <br>引數 | HTTP <br>方法 | 回應 | HTTP <br>回應 |
+| 端點 | 呼叫<br>者 | 輸入<br>引數 | HTTP <br>方法 | 回應 | HTTP <br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>例如：<br>REGGIE_FQDN/regggie/v1/sampleRequestorId/regcode | 串流應用程式<br>或<br>程式設計師服務 | &#x200B;1.  要求者<br>    （路徑元件）<br>2。  deviceId （雜湊）   <br>    （必要）<br>3。  device_info/X-Device-Info （必要）<br>4。  mvpd （選用）<br>5。  ttl （選擇性）<br> | POST | 包含註冊代碼的XML或JSON，以及失敗時的資訊或錯誤詳細資料。 請參閱下列範例。 | 201 |
+| &lt;REGGIE_FQDN>/reggie/v1/{requestor}/regcode<br>例如：<br>REGGIE_FQDN/reggie/v1/sampleRequestorId/regcode | 串流應用程式<br>或<br>程式設計師服務 | &#x200B;1.  要求者<br> （路徑元件）<br>2。  deviceId （雜湊） <br> （必要）<br>3。  device_info/X-Device-Info （必要）<br>4。  mvpd （選用）<br>5。  ttl （選擇性）<br> | POST | 包含註冊代碼的XML或JSON，以及失敗時的資訊或錯誤詳細資料。 請參閱下列範例。 | 201 |
 
 {style="table-layout:auto"}
 
@@ -65,7 +66,8 @@ ht-degree: 0%
 >[!CAUTION]
 >
 >**串流裝置IP位址**
-><br>>對於使用者端對伺服器實作，串流裝置IP位址會與此呼叫一併隱含傳送。  對於伺服器對伺服器實作，其中發出&#x200B;**regcode**&#x200B;呼叫是程式設計人員服務，而不是串流裝置，以下標頭是傳遞串流裝置IP位址的必要專案：
+><br>
+>對於使用者端對伺服器實作，串流裝置IP位址會與此呼叫一併隱含傳送。  對於伺服器對伺服器實作，其中發出&#x200B;**regcode**&#x200B;呼叫是程式設計人員服務，而不是串流裝置，以下標頭是傳遞串流裝置IP位址的必要專案：
 >
 >
 >```
@@ -73,7 +75,8 @@ ht-degree: 0%
 >```
 >
 >其中`<streaming\_device\_ip>`是串流裝置的公用IP位址。
-><br><br>>範例：<br>
+><br><br>
+>範例：<br>
 >
 >```
 >POST /reggie/v1/{req_id}/regcode HTTP/1.1<br>X-Forwarded-For:203.45.101.20

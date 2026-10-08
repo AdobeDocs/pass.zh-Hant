@@ -2,13 +2,14 @@
 title: 節流機制
 description: 節流機制
 exl-id: 15236570-1a75-42fb-9bba-0e2d7a59c9f6
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '614'
+source-wordcount: '616'
 ht-degree: 1%
-
 ---
-
 # 節流機制 {#throttling-mechanism}
 
 ## 簡介 {#introduction}
@@ -20,7 +21,7 @@ Adobe身為資料處理者，必須採取適當措施，確保客戶的使用者
 ## 機制概觀 {#mechanism-overview}
 
 此機制會決定特定時間間隔內每個「並行監視」端點可接受的最大呼叫數。
-一旦達到這個最大通話數量，我們的服務將會回應「429太多請求」。 429回應「過期」標頭包含下一次呼叫被視為有效或節流過期的時間戳記。 目前，節流會在完成後過期   第一個429回應後的分鐘數。
+一旦達到這個最大通話數量，我們的服務將會回應「429太多請求」。 429回應「過期」標頭包含下一次呼叫被視為有效或節流過期的時間戳記。 目前，節流會在第一個429回應發生一分鐘後過期。
 
 使用節流設定的端點包括：
 1. 建立新的工作階段： POST /sessions/{idp}/{subject}
@@ -28,8 +29,8 @@ Adobe身為資料處理者，必須採取適當措施，確保客戶的使用者
 3. 終止工作階段： DELETE /sessions/{idp}/{subject}/{sessionId}
 
 節流是在兩個層級上設定：
-1. 工作階段：在{sessionId}呼叫和`Heartbeat`呼叫中傳送了相同的唯一`Terminate a session`引數。
-2. 使用者：在{subject}呼叫中傳送了相同的唯一`Create a new session`引數。
+1. 工作階段：在`Heartbeat`呼叫和`Terminate a session`呼叫中傳送了相同的唯一{sessionId}引數。
+2. 使用者：在`Create a new session`呼叫中傳送了相同的唯一{subject}引數。
 
 工作階段層級節流限制設為1分鐘內200個要求。\
 使用者層級節流限制設為1分鐘內200個請求。\

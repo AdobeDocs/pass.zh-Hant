@@ -2,13 +2,14 @@
 title: 附錄B「偵錯技巧」
 description: 附錄B「偵錯技巧」
 exl-id: ea024797-315e-47c0-99ea-1ac49c8c9697
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '192'
 ht-degree: 0%
-
 ---
-
 # （舊版）附錄B：偵錯技巧 {#appendix-b-debugging-tips}
 
 >[!NOTE]

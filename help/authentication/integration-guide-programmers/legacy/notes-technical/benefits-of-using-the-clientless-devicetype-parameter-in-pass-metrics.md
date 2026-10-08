@@ -2,13 +2,14 @@
 title: 在Adobe Pass驗證量度中使用無使用者端deviceType引數的好處
 description: 在Adobe Pass驗證量度中使用無使用者端deviceType引數的好處
 exl-id: a5004887-d5fa-468e-971b-10806519175b
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '372'
+source-wordcount: '377'
 ht-degree: 0%
-
 ---
-
 # （舊版）在Adobe Pass驗證量度中使用無使用者端deviceType引數的好處 {#benefits-of-using-the-clientless-devicetype-parameter-in-primetime-authentication-metrics}
 
 >[!NOTE]
@@ -35,7 +36,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->如果引數`deviceType`設定正確，則在軟體權利檔案服務監視中會有下列&#x200B;**優點**：它提供使用無使用者端時，每個裝置型別[有](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)劃分的量度，因此可以針對Roku、AppleTV、Xbox等執行不同型別的分析。
+>如果引數`deviceType`設定正確，則在軟體權利檔案服務監視中會有下列&#x200B;**優點**：它提供使用無使用者端時，每個裝置型別[&#128279;](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)有劃分的量度，因此可以針對Roku、AppleTV、Xbox等執行不同型別的分析。
 
 
 如需軟體權利檔案服務監視API的詳細資訊，請參閱[向下鑽研樹狀結構](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md#drill-down_tree)，其中說明ESM 2.0中可用的[維度](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#esm_dimensions) （資源）。
@@ -51,12 +52,12 @@ ht-degree: 0%
 
 為了充分利用Adobe Pass驗證量度，目前使用中有2種型別的[無使用者端API](#web_srvs_summary)，且需要設定正確的`deviceType`：
 
-1. 以`regcode`作為必要引數的API，將透過下列API呼叫使用建立`deviceType`時設定的`regcode`引數：
-   - [\&lt;REGGIE\_FQDN\>/reggie/v1/](#reg_serv)
+1. 以`regcode`作為必要引數的API，將透過下列API呼叫使用建立`regcode`時設定的`deviceType`引數：
+   - [\&lt;REGGIE\_FQDN\>/reggie/v1/{requestorId}/regcode](#reg_serv)
 
 1. 以`deviceType`作為選用引數的API：
    - [\&lt;SP\_FQDN\>/api/v1/checkauthn](#check_authn_token)
-   - [&lt;span class=&quot;s1&quot;>](#retrieve_authn_token)
+   - [<span class="s1">\&lt;SP\_FQDN\>/api/v1/tokens/authn</span>](#retrieve_authn_token)
    - [\&lt;SP\_FQDN\>/api/v1/authorize](#init_authz)
    - [\&lt;SP\_FQDN\>/api/v1/tokens/authz](#retrieve_authz_token)
    - [\&lt;SP\_FQDN\>/api/v1/tokens/media](#short_media)

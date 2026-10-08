@@ -2,13 +2,14 @@
 title: 單一登入 — 平台身分 — 流程
 description: REST API V2 — 單一登入 — 平台身分 — 流程
 exl-id: 5200e851-84e8-4cb4-b068-63b91a2a8945
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1944'
 ht-degree: 0%
-
 ---
-
 # 使用平台身分流程的單一登入 {#single-sign-on-platform-identity-full-flows}
 
 >[!IMPORTANT]

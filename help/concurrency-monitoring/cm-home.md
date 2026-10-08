@@ -2,13 +2,14 @@
 title: 並行監視簡介
 description: 並行監視簡介
 exl-id: 725cc64b-6b03-46e3-a038-41e9b1341c6b
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '225'
 ht-degree: 0%
-
 ---
-
 # 並行監視簡介 {#intro}
 
 「並行監視」是一項服務，可讓內容提供者和身分提供者（MVPD和程式設計人員）定義並強制實施跨多個應用程式、裝置和平台並行視訊串流的限制。 不論您是想要控制訂閱者可同時觀看多少串流的程式設計師，或是MVPD想要跨您的內容合作夥伴強制執行使用原則，「並行監視」都能提供您需要的工具。

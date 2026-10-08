@@ -2,20 +2,21 @@
 title: MVPD快速入門手冊
 description: MVPD快速入門手冊
 exl-id: 6423cc9a-a45a-4cde-b562-4cb72c98e505
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '934'
+source-wordcount: '965'
 ht-degree: 0%
-
 ---
-
 # MVPD快速入門手冊 {#mvpd-kickstart-guide}
 
 >[!IMPORTANT]
 >
 > 此頁面上的內容僅供參考。 使用此API需要Adobe的目前授權。 不允許未經授權的使用。
 
-本Kickstart指南適用於計畫與Adobe® Pass Authentication整合的多頻道視訊程式設計經銷商(MVPD)。
+本Kickstart指南適用於計畫與® Pass Authentication整合的多頻道視訊程式設計經銷商(MVPD)。
 
 本檔案概述確保順利且有效率地開始整合程式的重要初始步驟。 此課程旨在釐清客戶的期望，並指引我們與合作夥伴協力達成成功整合。
 
@@ -33,9 +34,9 @@ Adobe提供一系列資源，協助您整合Adobe Pass驗證。 請參考&#x200B
 
 設定程式包括下列步驟：
 
-![Adobe®通過驗證整合程式](../assets/mvpd-int-lifecycle.png)
+![®通過驗證整合程式](../assets/mvpd-int-lifecycle.png)
 
-*Adobe®通過驗證整合程式*
+*®通過驗證整合程式*
 
 ### 啟動 {#kickoff}
 
@@ -129,16 +130,16 @@ Adobe提供一系列資源，協助您整合Adobe Pass驗證。 請參考&#x200B
 
 ## 存取客戶支援 {#access-customer-support}
 
-**Adobe將透過** Zendesk[提供](https://tve.zendesk.com/home)我們的客戶支援系統存取權。 若要存取Zendesk，您必須在https://tve.zendesk.com/home註冊並建立帳戶。
+**Adobe將透過[Zendesk](https://tve.zendesk.com/home)提供**&#x200B;我們的客戶支援系統存取權。 若要存取Zendesk，您必須在https://tve.zendesk.com/home註冊並建立帳戶。
 
 Adobe Pass驗證團隊可涵蓋我們在整合過程中可能遇到的任何問題或技術問題。 請透過[tve-support@adobe.com](mailto:tve-support@adobe.com)聯絡我們。
 
 ## 存取檔案 {#access-documentation}
 
-**Adobe將透過** Adobe Experience League[提供](https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/home)對公開檔案的存取權。
+**Adobe將透過[Adobe Experience League](https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/home)提供**&#x200B;對公開檔案的存取權。
 
 Adobe Pass驗證團隊針對[MVPD整合指南](/help/authentication/integration-guide-mvpds/mvpd-integration-guide-overview.md)區段下的可用功能和工作流程提供完整檔案。 請參考本節下的目錄，以取得每個主題的詳細資訊連結。
 
 ## 存取測試工具 {#access-testing-tool}
 
-**Adobe將透過** Adobe Developer[網站提供](https://developer.adobe.com/adobe-pass/)我們的API探索工具存取權。
+**Adobe將透過[Adobe Developer](https://developer.adobe.com/adobe-pass/)網站提供**&#x200B;我們的API探索工具存取權。

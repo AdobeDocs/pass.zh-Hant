@@ -2,13 +2,14 @@
 title: 頁首 — X-Device-Info
 description: REST API V2 — 標題 — X-Device-Info
 exl-id: 0ef25e06-86de-427a-a938-7ba3817f0d5e
-source-git-commit: 42df16e34783807e1b5eb1a12ca9db92f4e4c161
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1234'
 ht-degree: 3%
-
 ---
-
 # 頁首 — X-Device-Info {#header-x-device-info}
 
 >[!NOTE]

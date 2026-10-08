@@ -2,13 +2,14 @@
 title: 單一登入支援
 description: 單一登入支援
 exl-id: edc3719e-c627-464c-9b10-367a425698c6
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1167'
+source-wordcount: '1174'
 ht-degree: 0%
-
 ---
-
 # （舊版）單一登入支援
 
 >[!NOTE]
@@ -60,7 +61,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->無使用者端API SSO的重要注意事項：有些MVPD會要求每個網路（要求者ID）執行自己的驗證流程。 對於以SDK為基礎的流程(iOS等)，這會由SDK自動處理。 不過，針對無使用者端API，這必須由程式設計師處理。 我們強烈建議程式設計師此時不要為無使用者端API啟用SSO流程，而是將裝置ID +應用程式ID組合用於裝置ID。 Adobe也將改善無使用者端API流程，以便建立正確的SSO。
+>無使用者端API SSO的重要注意事項：有些MVPD會要求每個網路（要求者ID）執行自己的驗證流程。 對於以SDK為基礎的流程（iOS等），這會由SDK自動處理。 不過，針對無使用者端API，這必須由程式設計師處理。 我們強烈建議程式設計師此時不要為無使用者端API啟用SSO流程，而是將裝置ID +應用程式ID組合用於裝置ID。 Adobe也將改善無使用者端API流程，以便建立正確的SSO。
 
 ### 登出 {#logout-sso-support}
 

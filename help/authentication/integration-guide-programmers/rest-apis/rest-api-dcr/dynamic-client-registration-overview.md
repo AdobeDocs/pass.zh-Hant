@@ -2,13 +2,14 @@
 title: Dynamic Client註冊概述
 description: Dynamic Client註冊概述
 exl-id: 9f98dfcd-4375-48c3-beff-259dfb1d3a26
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '809'
+source-wordcount: '835'
 ht-degree: 0%
-
 ---
-
 # Dynamic Client註冊概述 {#dynamic-client-registration-overview}
 
 >[!IMPORTANT]
@@ -20,18 +21,18 @@ ht-degree: 0%
 Adobe Pass提供動態使用者端註冊服務，可讓您存取以下受保護的API：
 
 * Adobe Pass驗證管理API：
-   * [重設Temp Pass API](../../features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-   * [降級API](../../features-premium/degraded-access/degradation-feature.md#degradation-api-access)
-   * [Proxy MVPD API](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
-   * [權益服務監控API](../../features-premium/esm/entitlement-service-monitoring-api.md)
+  * [重設Temp Pass API](../../features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+  * [降級API](../../features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+  * [Proxy MVPD API](../../../integration-guide-mvpds/proxy-mvpd-webserv.md)
+  * [權益服務監控API](../../features-premium/esm/entitlement-service-monitoring-api.md)
 * Adobe Pass驗證REST API：
-   * [REST API V2](../rest-api-v2/apis/rest-api-v2-apis-overview.md)
-   * [（舊版） REST API V1](../../legacy/rest-api-v1/rest-api-reference.md)
+  * [REST API V2](../rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [（舊版） REST API V1](../../legacy/rest-api-v1/rest-api-reference.md)
 * Adobe Pass驗證SDK：
-   * [（舊版） JavaScript SDK](../../legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
-   * [（舊版） iOS/tvOS SDK](../../legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
-   * [（舊版） Android SDK](../../legacy/sdks/android-sdk/android-sdk-api-reference.md)
-   * [（舊版） FireOS SDK](../../legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
+  * [（舊版） JavaScript SDK](../../legacy/sdks/javascript-sdk/javascript-sdk-api-reference.md)
+  * [（舊版） iOS/tvOS SDK](../../legacy/sdks/ios-tvos-sdk/iostvos-sdk-api-reference.md)
+  * [（舊版） Android SDK](../../legacy/sdks/android-sdk/android-sdk-api-reference.md)
+  * [（舊版） FireOS SDK](../../legacy/sdks/fireos-sdk/amazon-fireos-native-client-api-reference.md)
 
 >[!IMPORTANT]
 >

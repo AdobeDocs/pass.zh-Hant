@@ -2,13 +2,14 @@
 title: Adobe單一登入服務
 description: 瞭解Adobe Pass SSO服務，該服務可跨多個裝置和應用程式啟用順暢的驗證。
 exl-id: ffca2bcc-c933-4688-8d98-c5e03390f66c
-source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '4447'
 ht-degree: 2%
-
 ---
-
 # Adobe單一登入服務 {#sso-service}
 
 本檔案說明Adobe單一登入服務的使用案例、端點和API。
@@ -216,37 +217,48 @@ MVPD設定檔在取得初始驗證期間，將透過SSO有效。
    <tr>
       <td style="background-color: #DEEBFF;">AP-Device-Identifier</td>
       <td>
-         在<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>標標頭檔案中說明裝置識別碼裝載的產生。<br/><br/>
-         若未提供X-SSO-ID，此識別碼會作為預設的SSO識別碼使用。</td>
+         在<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>標標頭檔案中說明裝置識別碼裝載的產生。
+         <br/><br/>
+         若未提供X-SSO-ID，此識別碼會作為預設的SSO識別碼使用。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Device-Info</td>
       <td>
-         <a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-x-device-info">X-Device-Info</a>標標頭檔案中指定的裝置資訊。<br/><br/>
-         <b>強烈建議</b>在應用程式的裝置平台允許明確提供有效值時使用。<br/><br/>
-         Adobe Pass驗證後端會將明確設定的值與隱含擷取的值合併。 若未提供，則會使用預設擷取值。</td>
+         <a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-x-device-info">X-Device-Info</a>標標頭檔案中指定的裝置資訊。
+         <br/><br/>
+         <b>強烈建議</b>在應用程式的裝置平台允許明確提供有效值時使用。
+         <br/><br/>
+         Adobe Pass驗證後端會將明確設定的值與隱含擷取的值合併。 若未提供，則會使用預設擷取值。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-SSO-LINK</td>
       <td>
-         將此要求與現有的已驗證設定檔建立關聯的連結代碼。 提供此屬性時，回應會包含SSO的服務權杖，以及產生連結程式碼的設定檔。<br/><br/>
-         當次要應用程式或裝置想要從主要應用程式或裝置連線到已驗證的設定檔時，通常會使用此功能。</td>
+         將此要求與現有的已驗證設定檔建立關聯的連結代碼。 提供此屬性時，回應會包含SSO的服務權杖，以及產生連結程式碼的設定檔。
+         <br/><br/>
+         當次要應用程式或裝置想要從主要應用程式或裝置連線到已驗證的設定檔時，通常會使用此功能。
+      </td>
       <td>如果未提供x-sso-id，則必須填寫此項</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-SSO-ID</td>
       <td>
-         應用程式要求作為SSO基礎的一般識別碼。<br/><br/>
-         提供此識別碼時，會用來建立跨裝置及/或應用程式的通用SSO設定檔。</td>
+         應用程式要求作為SSO基礎的一般識別碼。
+         <br/><br/>
+         提供此識別碼時，會用來建立跨裝置及/或應用程式的通用SSO設定檔。
+      </td>
       <td>如果未提供x-sso-link，則必須填寫此項</td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         使用者端應用程式接受的媒體型別。<br/><br/>
-         若指定，則必須是application/json。</td>
+         使用者端應用程式接受的媒體型別。
+         <br/><br/>
+         若指定，則必須是application/json。
+      </td>
       <td>可選</td>
    </tr>
    <tr>
@@ -275,19 +287,22 @@ MVPD設定檔在取得初始驗證期間，將透過SSO有效。
       <td>400</td>
       <td>錯誤請求</td>
       <td>
-        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。</td>
+        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>未獲授權</td>
       <td>
-        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">動態使用者端註冊概觀</a>檔案。</td>
+        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">動態使用者端註冊概觀</a>檔案。
+      </td>
    </tr>
    <tr>
       <td>500</td>
       <td>內部伺服器錯誤</td>
       <td>
-        伺服器端發生問題。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。</td>
+        伺服器端發生問題。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。
+      </td>
    </tr>
 </table>
 
@@ -478,15 +493,19 @@ Content-Type: application/json
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-         先前取得的服務權杖需要重新整理。<br/><br/>
-         此Token必須有效或最近過期，才能重新整理。</td>
+         先前取得的服務權杖需要重新整理。
+         <br/><br/>
+         此Token必須有效或最近過期，才能重新整理。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         使用者端應用程式接受的媒體型別。<br/><br/>
-         若指定，則必須是application/json。</td>
+         使用者端應用程式接受的媒體型別。
+         <br/><br/>
+         若指定，則必須是application/json。
+      </td>
       <td>可選</td>
    </tr>
    <tr>
@@ -515,19 +534,22 @@ Content-Type: application/json
       <td>400</td>
       <td>錯誤請求</td>
       <td>
-        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。</td>
+        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>未獲授權</td>
       <td>
-        存取權杖或服務權杖無效，使用者端需要取得新的存取權杖或服務權杖，然後再試一次。 如需詳細資訊，請參閱<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">動態使用者端註冊概觀</a>檔案。</td>
+        存取權杖或服務權杖無效，使用者端需要取得新的存取權杖或服務權杖，然後再試一次。 如需詳細資訊，請參閱<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">動態使用者端註冊概觀</a>檔案。
+      </td>
    </tr>
    <tr>
       <td>500</td>
       <td>內部伺服器錯誤</td>
       <td>
-        伺服器端發生問題。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。</td>
+        伺服器端發生問題。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。
+      </td>
    </tr>
 </table>
 
@@ -700,15 +722,19 @@ Content-Type: application/json
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-         服務權杖API檔案會說明服務權杖的產生方式。<br/><br/>
-         此服務權杖會識別將為其產生連結代碼的已驗證設定檔。</td>
+         服務權杖API檔案會說明服務權杖的產生方式。
+         <br/><br/>
+         此服務權杖會識別將為其產生連結代碼的已驗證設定檔。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         使用者端應用程式接受的媒體型別。<br/><br/>
-         若指定，則必須是application/json。</td>
+         使用者端應用程式接受的媒體型別。
+         <br/><br/>
+         若指定，則必須是application/json。
+      </td>
       <td>可選</td>
    </tr>
    <tr>
@@ -737,19 +763,22 @@ Content-Type: application/json
       <td>400</td>
       <td>錯誤請求</td>
       <td>
-        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。</td>
+        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>未獲授權</td>
       <td>
-        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">動態使用者端註冊概觀</a>檔案。</td>
+        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">動態使用者端註冊概觀</a>檔案。
+      </td>
    </tr>
    <tr>
       <td>500</td>
       <td>內部伺服器錯誤</td>
       <td>
-        伺服器端發生問題。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。</td>
+        伺服器端發生問題。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。
+      </td>
    </tr>
 </table>
 
@@ -913,8 +942,10 @@ Content-Type: application/json
    <tr>
       <td style="background-color: #DEEBFF;">裝置</td>
       <td>
-         要取消連結的裝置識別碼陣列。<br/><br/>
-         範例：</td>
+         要取消連結的裝置識別碼陣列。
+         <br/><br/>
+         範例：<br/><code>["deviceid1", "deviceid2", "deviceid3"]</code>
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -930,8 +961,10 @@ Content-Type: application/json
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         所傳送資源的接受媒體型別。<br/><br/>
-         它必須是application/json。</td>
+         所傳送資源的接受媒體型別。
+         <br/><br/>
+         它必須是application/json。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -942,15 +975,19 @@ Content-Type: application/json
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-         服務權杖API檔案會說明服務權杖的產生方式。<br/><br/>
-         此服務權杖會識別將為其取消連結之裝置的已驗證設定檔。</td>
+         服務權杖API檔案會說明服務權杖的產生方式。
+         <br/><br/>
+         此服務權杖會識別將為其取消連結之裝置的已驗證設定檔。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         使用者端應用程式接受的媒體型別。<br/><br/>
-         若指定，則必須是application/json。</td>
+         使用者端應用程式接受的媒體型別。
+         <br/><br/>
+         若指定，則必須是application/json。
+      </td>
       <td>可選</td>
    </tr>
    <tr>
@@ -979,13 +1016,15 @@ Content-Type: application/json
       <td>400</td>
       <td>錯誤請求</td>
       <td>
-        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。</td>
+        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>未獲授權</td>
       <td>
-        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">動態使用者端註冊概觀</a>檔案。</td>
+        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">動態使用者端註冊概觀</a>檔案。
+      </td>
    </tr>
    <tr>
       <td>405</td>
@@ -998,7 +1037,8 @@ Content-Type: application/json
       <td>500</td>
       <td>內部伺服器錯誤</td>
       <td>
-        伺服器端發生問題。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。</td>
+        伺服器端發生問題。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。
+      </td>
    </tr>
 </table>
 
@@ -1033,8 +1073,10 @@ Content-Type: application/json
    <tr>
       <td style="background-color: #DEEBFF;">unlinkedDevices</td>
       <td>
-         已成功取消連結的裝置清單。<br/><br/>
-         範例：</td>
+         已成功取消連結的裝置清單。
+         <br/><br/>
+         範例：<br/><code>["deviceid1", "deviceid2", "deviceid3"]</code>
+      </td>
       <td><i>必填</i></td>
    </tr>
 </table>
@@ -1220,15 +1262,19 @@ List API會傳回已驗證設定檔（SSO設定檔）中每個裝置的詳細資
    <tr>
       <td style="background-color: #DEEBFF;">AD-Service-Token</td>
       <td>
-         服務權杖API檔案會說明服務權杖的產生方式。<br/><br/>
-         此服務權杖會識別將擷取其裝置清單的已驗證設定檔。</td>
+         服務權杖API檔案會說明服務權杖的產生方式。
+         <br/><br/>
+         此服務權杖會識別將擷取其裝置清單的已驗證設定檔。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         使用者端應用程式接受的媒體型別。<br/><br/>
-         若指定，則必須是application/json。</td>
+         使用者端應用程式接受的媒體型別。
+         <br/><br/>
+         若指定，則必須是application/json。
+      </td>
       <td>可選</td>
    </tr>
    <tr>
@@ -1257,13 +1303,15 @@ List API會傳回已驗證設定檔（SSO設定檔）中每個裝置的詳細資
       <td>400</td>
       <td>錯誤請求</td>
       <td>
-        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。</td>
+        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>未獲授權</td>
       <td>
-        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">動態使用者端註冊概觀</a>檔案。</td>
+        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview">動態使用者端註冊概觀</a>檔案。
+      </td>
    </tr>
    <tr>
       <td>405</td>
@@ -1276,7 +1324,8 @@ List API會傳回已驗證設定檔（SSO設定檔）中每個裝置的詳細資
       <td>500</td>
       <td>內部伺服器錯誤</td>
       <td>
-        伺服器端發生問題。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。</td>
+        伺服器端發生問題。 回應本文可能包含遵守<a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/standard-features/error-reporting/enhanced-error-codes">增強錯誤碼</a>檔案的錯誤資訊。
+      </td>
    </tr>
 </table>
 
@@ -1306,9 +1355,12 @@ List API會傳回已驗證設定檔（SSO設定檔）中每個裝置的詳細資
    <tr>
       <td style="background-color: #DEEBFF;">裝置</td>
       <td>
-         JSON包含索引鍵、值配對的對應。<br/><br/>
-         <b>索引鍵：</b> deviceId - <a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>標標頭檔案中所述的裝置識別碼裝載<br/><br/>
-         <b>值：</b>屬性 — JSON包含裝置中繼資料屬性的對應，包括：<ul>
+         JSON包含索引鍵、值配對的對應。
+         <br/><br/>
+         <b>索引鍵：</b> deviceId - <a href="https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/rest-apis/rest-api-v2/rest-api-v2-appendix/rest-api-v2-appendix-headers/rest-api-v2-appendix-headers-ap-device-identifier">AP-Device-Identifier</a>標標頭檔案中所述的裝置識別碼裝載
+         <br/><br/>
+         <b>值：</b>屬性 — JSON包含裝置中繼資料屬性的對應，包括：
+         <ul>
             <li>裝置型別</li>
             <li>平台</li>
             <li>使用者代理</li>

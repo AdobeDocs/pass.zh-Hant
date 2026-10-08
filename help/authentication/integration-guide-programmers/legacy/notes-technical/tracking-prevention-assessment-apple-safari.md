@@ -2,13 +2,14 @@
 title: 追蹤預防評估Apple Safari
 description: 追蹤預防評估Apple Safari
 exl-id: a3362020-92ff-4232-b923-e462868730d5
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1849'
+source-wordcount: '1887'
 ht-degree: 0%
-
 ---
-
 # （舊版）預防追蹤評估 — Apple Safari {#tracking-prevention-assessment-apple-safari}
 
 >[!NOTE]
@@ -100,11 +101,11 @@ Adobe Pass Authentication Service使用並依賴Cookie做為驗證程式&#x200B;
 
 * SSO和SLO
 
-   * 由於從Safari 10開始在Safari中實施localStorage的方式，JS SDK無法再透過通用網域iFrame共用登入狀態。 這表示使用者需要登入使用AccessEnabler JavaScript SDK的每個網站。 登出也不會刪除網站間的驗證Token，因此使用者需要從每個啟用Adobe Pass驗證的網站登出。
+  * 由於從Safari 10開始在Safari中實施localStorage的方式，JS SDK無法再透過通用網域iFrame共用登入狀態。 這表示使用者需要登入使用AccessEnabler JavaScript SDK的每個網站。 登出也不會刪除網站間的驗證Token，因此使用者需要從每個啟用Adobe Pass驗證的網站登出。
 
 * 暫時通過
 
-   * 對於暫時傳遞，AccessEnabler JavaScript SDK會使用個人化機制，以將驗證權杖鎖定至特定裝置（瀏覽器執行個體）。 由於Safari 12中設計用來防止追蹤的新機制，因此我們正在計算及使用於個人化機制&#x200B;**中的指紋，對於具有相同IP位址**&#x200B;的所有使用者來說都是相同的。 我們確實會根據個人化目的考量使用者端IP，但即使如此，使用者共用相同的公用IP位址也會受到影響。 對於這些使用者，我們將計算相同的個人化ID，而臨時密碼將繫結至此。 這表示一旦這類使用者使用臨時密碼，其他人都無法存取\！ 這尤其會影響企業使用者、教育機構，或任何其他組織，這些組織擁有使用NAT或通用Proxy存取網際網路的多位使用者。
+  * 對於暫時傳遞，AccessEnabler JavaScript SDK會使用個人化機制，以將驗證權杖鎖定至特定裝置（瀏覽器執行個體）。 由於Safari 12中設計用來防止追蹤的新機制，因此我們正在計算及使用於個人化機制&#x200B;**中的指紋，對於具有相同IP位址**&#x200B;的所有使用者來說都是相同的。 我們確實會根據個人化目的考量使用者端IP，但即使如此，使用者共用相同的公用IP位址也會受到影響。 對於這些使用者，我們將計算相同的個人化ID，而臨時密碼將繫結至此。 這表示一旦這類使用者使用臨時密碼，其他人都無法存取\！ 這尤其會影響企業使用者、教育機構，或任何其他組織，這些組織擁有使用NAT或通用Proxy存取網際網路的多位使用者。
 
 >[!NOTE]
 >
@@ -112,7 +113,7 @@ Adobe Pass Authentication Service使用並依賴Cookie做為驗證程式&#x200B;
 
 * 自動流程
 
-   * 使用JS SDK 4.0時，在自動模式下嘗試的驗證流程（沒有任何使用者互動）在Safari 12中將無法成功。請注意，即將推出的JS SDK 4.1修正了自動化流程的所有問題。
+  * 使用JS SDK 4.0時，在自動模式下嘗試的驗證流程（沒有任何使用者互動）在Safari 12中將無法成功。 請注意，即將推出的JS SDK 4.1修正了自動化流程的所有問題。
 
 受此問題影響的使用案例：
 
@@ -146,7 +147,7 @@ Adobe Pass Authentication Service使用並依賴Cookie做為驗證程式&#x200B;
 
 從Safari 13開始，瀏覽器推出對[智慧型追蹤預防](https://webkit.org/blog/7675/intelligent-tracking-prevention/) (ITP)的新變更，使得機制背後的啟發法在將第三方Cookie標幟為追蹤Cookie的程式中更嚴格，以防止跨網站追蹤。
 
-如先前各節所述，當實作人員使用AccessEnabler JavaScript SDK v2 （版本2.x）和AccessEnabler JavaScript SDK v3 （版本3.x）時，Adobe Pass驗證服務使用並依賴第三方Cookie做為驗證流程的一部分。 相較於舊版Safari瀏覽器，在ITP花了一段時間才開始「瞭解」使用者與相關各方(程式設計人員的網站和Adobe)之間的互動時，Safari 13瀏覽器會從一開始封鎖第三方Cookie，而這些Cookie被視為追蹤使用者端 — 伺服器模型通訊中的Cookie。
+如先前各節所述，當實作人員使用AccessEnabler JavaScript SDK v2 （版本2.x）和AccessEnabler JavaScript SDK v3 （版本3.x）時，Adobe Pass驗證服務使用並依賴第三方Cookie做為驗證流程的一部分。 相較於舊版Safari瀏覽器，在ITP花了一段時間才開始「瞭解」使用者與相關各方（程式設計人員的網站和Adobe）之間的互動時，Safari 13瀏覽器會從一開始封鎖第三方Cookie，而這些Cookie被視為追蹤使用者端 — 伺服器模型通訊中的Cookie。
 
 總而言之，Safari 13瀏覽器的使用者極有可能無法在已啟用Adobe Pass驗證(使用舊版AccessEnabler JavaScript SDK v2 （版本2.x）或v3 （版本3.x）)的網站上起始新的驗證。 發生此狀況的原因是，ITP已封鎖所有必要的Adobe Primetime驗證服務Cookie，因此導致服務無法履行驗證請求。
 
@@ -166,6 +167,6 @@ AccessEnabler JavaScript SDK v4 （4.x版）程式庫不使用第三方Cookie進
 
   ![](../../../assets/prvnt-cross-site-tr-safari13.png)
 
-* 若是Mac OS X Sierra和舊版：檢查「偏好設定」瀏覽器的「隱私權」標籤中「</span>Cookie和網站資料&#x200B;**」專案的「**&#x200B;一律允許&#x200B;**」選項，如下圖所示。**
+* 若是Mac OS X Sierra和舊版：檢查「偏好設定」瀏覽器的「隱私權」標籤中「**Cookie和網站資料**」專案的「**一律允許**」選項，如下圖所示。</span>
 
   ![](../../../assets/always-allow-safari13.png)

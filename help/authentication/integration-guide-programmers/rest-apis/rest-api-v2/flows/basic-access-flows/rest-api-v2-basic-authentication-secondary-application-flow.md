@@ -2,13 +2,14 @@
 title: 基本驗證 — 次要應用程式 — 流量
 description: REST API V2 — 基本驗證 — 次要應用程式 — 流量
 exl-id: 83bf592e-c679-4cfe-984d-710a9598c620
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2008'
 ht-degree: 0%
-
 ---
-
 # 在次要應用程式內執行的基本驗證流程 {#basic-authentication-flow-performed-within-secondary-application}
 
 >[!IMPORTANT]

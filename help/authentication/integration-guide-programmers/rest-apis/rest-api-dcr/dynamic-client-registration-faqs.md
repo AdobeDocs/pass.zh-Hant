@@ -2,13 +2,14 @@
 title: Dynamic Client Registration (DCR)常見問題集
 description: Dynamic Client Registration (DCR)常見問題集
 exl-id: 12268163-632e-4884-b35d-a29cc8ef45bf
-source-git-commit: 747c3d9b6de537be5e7e0a0244b2b301603d9b18
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1147'
 ht-degree: 1%
-
 ---
-
 # Dynamic Client Registration (DCR)常見問題集 {#rest-api-dcr-faqs}
 
 >[!IMPORTANT]

@@ -2,13 +2,14 @@
 title: 單一登入 — 合作夥伴 — 流程
 description: REST API V2 — 單一登入 — 合作夥伴 — 流程
 exl-id: 5735d67f-a311-4d03-ad48-93c0fcbcace5
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1504'
 ht-degree: 0%
-
 ---
-
 # 使用合作夥伴流程的單一登入 {#single-sign-on-partner-flows}
 
 >[!IMPORTANT]

@@ -2,13 +2,14 @@
 title: Adobe Pass Authentication Android 3.8.0發行說明
 description: Adobe Pass Authentication Android 3.8.0發行說明
 exl-id: ad020b9a-61ad-492f-9522-d0e7a668196a
-source-git-commit: c9958a17ad9dfb518bab1d24087c85fdcb6fd057
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '140'
+source-wordcount: '148'
 ht-degree: 0%
-
 ---
-
 # Adobe Pass Authentication Android 3.8.0發行說明 {#android-sdk-380-rn}
 
 >[!IMPORTANT]
@@ -27,7 +28,7 @@ Adobe Pass驗證： Android 3.8.0
 
 * 修正SDK的儲存廣播接收器弱點。 惡意應用程式可能會提供錯誤的連結，以查詢Adobe Token的共用儲存空間。
 然而，不會儲存任何重要資訊，而且任何使用者受到此漏洞影響的可能性很低。
-   * 注意：由於此變更，使用者將會登出。
+  * 注意：由於此變更，使用者將會登出。
 
 ## 發行套件 {#release-package-380}
 

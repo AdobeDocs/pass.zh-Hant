@@ -2,13 +2,14 @@
 title: Adobe Pass Authentication 3.2.0發行說明
 description: Adobe Pass Authentication 3.2.0發行說明
 exl-id: 43aee317-dbac-4000-893e-839ee3e9f6ba
-source-git-commit: fcdf50b2caad20deef15fceeb3e23f4195c0078d
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '190'
+source-wordcount: '191'
 ht-degree: 0%
-
 ---
-
 # Adobe Pass Authentication 3.2.0發行說明 {#authn-320-rn}
 
 >[!IMPORTANT]
@@ -32,7 +33,7 @@ Adobe Pass驗證： adobe-pass-**3.2.0**
 
 #### REST API v2
 
-* 已針對`missing_parameters_fallback`工作階段API[回應中缺少引數的情況新增原因](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)。
+* 已針對[工作階段API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-create-authentication-session.md)回應中缺少引數的情況新增原因`missing_parameters_fallback`。
 * 新欄位「裝置」已新增至[工作階段API](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/sessions-apis/rest-api-v2-sessions-apis-retrieve-authentication-session-information-using-code.md)回應。
 
 #### 新功能

@@ -2,13 +2,14 @@
 title: 最低系統需求
 description: 最低系統需求
 exl-id: 57b21e2a-abd7-4b4b-85f1-25584a850e40
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '294'
+source-wordcount: '297'
 ht-degree: 0%
-
 ---
-
 # 最低系統需求 {#minimum-system-requirements}
 
 >[!IMPORTANT]

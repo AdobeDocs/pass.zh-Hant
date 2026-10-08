@@ -2,13 +2,14 @@
 title: 頁首 — AP-Device-Identifier
 description: REST API V2 — 標題 — AP-Device-Identifier
 exl-id: 90a5882b-2e6d-4e67-994a-050465cac6c6
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '561'
 ht-degree: 0%
-
 ---
-
 # 頁首 — AP-Device-Identifier {#header-ap-device-identifier}
 
 >[!NOTE]
@@ -51,8 +52,10 @@ ht-degree: 0%
    <tr>
       <td>指紋</td>
       <td>
-            裝置識別碼是由使用者端應用程式針對每個裝置建立及管理的穩定且唯一識別碼。<br/>
-            使用者端應用程式應將裝置識別碼快取在永久儲存體中，因為遺失或變更它會使驗證失效。 使用者端應用程式應防止使用者動作（例如應用程式解除安裝、重新安裝或升級）所導致的值變更。</td>
+            裝置識別碼是由使用者端應用程式針對每個裝置建立及管理的穩定且唯一識別碼。
+            <br/>
+            使用者端應用程式應將裝置識別碼快取在永久儲存體中，因為遺失或變更它會使驗證失效。 使用者端應用程式應防止使用者動作（例如應用程式解除安裝、重新安裝或升級）所導致的值變更。
+      </td>
    </tr>
 </table>
 

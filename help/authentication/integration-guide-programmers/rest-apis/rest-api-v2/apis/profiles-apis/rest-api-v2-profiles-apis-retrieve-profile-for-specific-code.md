@@ -2,13 +2,14 @@
 title: 擷取特定程式碼的設定檔
 description: REST API V2 — 擷取特定程式碼的設定檔
 exl-id: d6ead7d5-de5f-4033-8115-980953a370c0
-source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '851'
 ht-degree: 2%
-
 ---
-
 # 擷取特定程式碼的設定檔 {#retrieve-profile-for-specific-code}
 
 >[!IMPORTANT]
@@ -69,9 +70,12 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         串流裝置的IP位址。<br/><br/>
-         強烈建議一律將它用於伺服器對伺服器的實作，尤其是當呼叫是由程式設計人員服務（而非串流裝置）進行時。<br/><br/>
-         對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。</td>
+         串流裝置的IP位址。
+         <br/><br/>
+         強烈建議一律將它用於伺服器對伺服器的實作，尤其是當呼叫是由程式設計人員服務（而非串流裝置）進行時。
+         <br/><br/>
+         對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。
+      </td>
       <td>可選</td>
    </tr>
    <tr>
@@ -88,8 +92,10 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         使用者端應用程式接受的媒體型別。<br/><br/>
-         若指定，則必須為application/json；charset=utf-8。</td>
+         使用者端應用程式接受的媒體型別。
+         <br/><br/>
+         若指定，則必須為application/json；charset=utf-8。
+      </td>
       <td>可選</td>
    </tr>
    <tr>
@@ -118,31 +124,36 @@ ht-degree: 2%
       <td>400</td>
       <td>錯誤請求</td>
       <td>
-        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。</td>
+        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>未獲授權</td>
       <td>
-        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。</td>
+        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。
+      </td>
    </tr>
    <tr>
       <td>403</td>
       <td>已禁止</td>
       <td>
-        暫時存取存留時間(TTL)已過期或超出資源最大數量，使用者端需要指示使用者使用一般MVPD來啟動基本驗證流程。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。</td>
+        暫時存取存留時間(TTL)已過期或超出資源最大數量，使用者端需要指示使用者使用一般MVPD來啟動基本驗證流程。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
+      </td>
    </tr> 
    <tr>
       <td>405</td>
       <td>不允許的方法</td>
       <td>
-        HTTP方法無效，使用者端需要使用請求資源所允許的HTTP方法，然後再試一次。 如需詳細資訊，請參閱<a href="#request">要求</a>區段。</td>
+        HTTP方法無效，使用者端需要使用請求資源所允許的HTTP方法，然後再試一次。 如需詳細資訊，請參閱<a href="#request">要求</a>區段。
+      </td>
    </tr>
    <tr>
       <td>500</td>
       <td>內部伺服器錯誤</td>
       <td>
-        伺服器端發生問題。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。</td>
+        伺服器端發生問題。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
+      </td>
    </tr>
 </table>
 
@@ -172,8 +183,10 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">設定檔</td>
       <td>
-        JSON包含索引鍵、值配對的對應。<br/><br/>
-        索引鍵元素由下列值定義：<table style="table-layout:auto">
+        JSON包含索引鍵、值配對的對應。
+        <br/><br/>
+        索引鍵元素由下列值定義：
+        <table style="table-layout:auto">
             <tr>
                <th style="background-color: #EFF2F7;">值</th>
                <th style="background-color: #EFF2F7"></th>
@@ -205,8 +218,10 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">簽發者</td>
                <td>
-                  擁有設定檔的實體。<br/><br/>
-                  可能的值包括：<ul>
+                  擁有設定檔的實體。
+                  <br/><br/>
+                  可能的值包括：
+                  <ul>
                     <li><b>mvpd （例如Spectrum、Cablevision等）</b><br/>此設定檔是因為：基本驗證而建立的。</li>
                     <li><b>Adobe</b><br/>建立設定檔的原因為：存取許可權降低、暫時存取。</li>
                   </ul>
@@ -215,8 +230,10 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">type</td>
                <td>
-                  設定檔的型別。<br/><br/>
-                  可能的值包括：<ul>
+                  設定檔的型別。
+                  <br/><br/>
+                  可能的值包括：
+                  <ul>
                     <li><b>一般</b><br/>設定檔的建立是因為：基本驗證。</li>
                     <li><b>已降級</b><br/>設定檔是因為：存取已降級。</li>
                     <li><b>暫時</b><br/>建立設定檔的原因是：暫時存取。</li>
@@ -226,8 +243,10 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">屬性</td>
                <td>
-                    JSON包含索引鍵、值配對的對應。<br/><br/>
-                    關鍵元素由使用者中繼資料屬性定義，可以是：<ul>
+                    JSON包含索引鍵、值配對的對應。
+                    <br/><br/>
+                    關鍵元素由使用者中繼資料屬性定義，可以是：
+                    <ul>
                         <li>強制性，例如「userID」</li>
                         <li>非強制性，例如「zip」、「householdID」、「maxRating」等。</li>
                     </ul>
@@ -272,13 +291,16 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            回應內文可能會提供其他錯誤資訊，這些資訊會遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強型錯誤碼</a>檔案。<br/><br/>
-            使用者端應用程式必須實作錯誤處理機制，以便能夠正確處理此API最常傳回的錯誤代碼：<ul>
+            回應內文可能會提供其他錯誤資訊，這些資訊會遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強型錯誤碼</a>檔案。
+            <br/><br/>
+            使用者端應用程式必須實作錯誤處理機制，以便能夠正確處理此API最常傳回的錯誤代碼：
+            <ul>
                 <li>invalid_authentication_session</li>
                 <li>invalid_parameter_code</li>
                 <li>等等。</li>
             </ul>
-            以上清單並非詳盡無遺。 使用者端應用程式必須能夠處理<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">公開檔案</a>中定義的所有增強型錯誤碼。</td>
+            以上清單並非詳盡無遺。 使用者端應用程式必須能夠處理<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">公開檔案</a>中定義的所有增強型錯誤碼。
+      </td>
       <td><i>必填</i></td>
    </tr>
 </table>

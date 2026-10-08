@@ -2,13 +2,14 @@
 title: 基本設定檔 — 次要應用程式 — 流量
 description: REST API V2 — 基本設定檔 — 次要應用程式 — 流量
 exl-id: 1fcefcfa-7534-4b85-b3b5-df513685d66b
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '418'
 ht-degree: 0%
-
 ---
-
 # 在次要應用程式內執行的基本設定檔流程 {#basic-profiles-flow-secondary-application}
 
 >[!IMPORTANT]
@@ -35,7 +36,7 @@ Adobe Pass驗證許可權內的&#x200B;**設定檔流程**&#x200B;可讓次要�
 
 在擷取特定驗證代碼的設定檔之前，請確定您符合下列必要條件：
 
-* 次要應用程式(具有`code`，用於與MVPD執行互動式驗證)想要擷取特定驗證程式碼的設定檔。
+* 次要應用程式（具有`code`，用於與MVPD執行互動式驗證）想要擷取特定驗證程式碼的設定檔。
 
 ### 工作流程 {#workflow-retrieve-profile-for-specific-code}
 
@@ -49,7 +50,7 @@ Adobe Pass驗證許可權內的&#x200B;**設定檔流程**&#x200B;可讓次要�
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定程式碼[&#x200B; API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔：
+   > 如需下列詳細資訊，請參閱特定程式碼[&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) API檔案的擷取設定檔：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，如`serviceProvider`和`code`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`
@@ -61,7 +62,7 @@ Adobe Pass驗證許可權內的&#x200B;**設定檔流程**&#x200B;可讓次要�
 
    >[!IMPORTANT]
    >
-   > 請參閱特定程式碼[&#x200B; API檔案的](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md)擷取設定檔，以取得設定檔回應中提供的詳細資訊。
+   > 請參閱特定程式碼[&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) API檔案的擷取設定檔，以取得設定檔回應中提供的詳細資訊。
    > 
    > <br/>
    > 

@@ -1,15 +1,16 @@
 ---
-title: 頻道
+title: 管道
 description: 瞭解TVE Dashboard中的管道及其各種設定。
 exl-id: bbddeccb-6b6f-4a8f-87ab-d4af538eee1d
-source-git-commit: b4276ee12d57bc061d26afc0a192b799fe1681ae
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '1637'
+source-wordcount: '1641'
 ht-degree: 0%
-
 ---
-
-# 頻道 {#channels}
+# 管道 {#channels}
 
 >[!NOTE]
 >
@@ -152,7 +153,7 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 1. 從&#x200B;**刪除使用中憑證**&#x200B;對話方塊中選取&#x200B;**刪除**。
 
-已建立新的組態變更，且已準備好進行伺服器更新。 只有在&#x200B;**檢閱並推播變更**&#x200B;之後，憑證才會從[可用的憑證](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)區段中刪除。
+已建立新的組態變更，且已準備好進行伺服器更新。 只有在[檢閱並推播變更](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之後，憑證才會從&#x200B;**可用的憑證**&#x200B;區段中刪除。
 
 #### 繼承的可用憑證 {#inherited-avail-certificates}
 
@@ -205,7 +206,7 @@ TVE儀表板的&#x200B;**管道**&#x200B;區段可讓您檢視和管理與特定
 
 1. 在&#x200B;**刪除網域**&#x200B;對話方塊上選取&#x200B;**刪除**。
 
-已建立新的組態變更，且已準備好進行伺服器更新。 只有在&#x200B;**檢閱並推播變更**&#x200B;之後，才會從[可用的網域](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)區段中刪除網域。
+已建立新的組態變更，且已準備好進行伺服器更新。 只有在[檢閱並推播變更](/help/authentication/user-guide-tve-dashboard/tve-dashboard-review-push-changes.md)之後，才會從&#x200B;**可用的網域**&#x200B;區段中刪除網域。
 
 選取的網域已無法使用。 因此，與此網域相關聯的應用程式會失去對Adobe Pass驗證服務的存取權。
 

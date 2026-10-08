@@ -2,13 +2,14 @@
 title: JavaScript SDK API參考
 description: JavaScript SDK API參考
 exl-id: 48d48327-14e6-46f3-9e80-557f161acd8a
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2902'
+source-wordcount: '2904'
 ht-degree: 0%
-
 ---
-
 # （舊版） JavaScript SDK API參考 {#javascript-sdk-api-reference}
 
 >[!NOTE]
@@ -44,14 +45,14 @@ ht-degree: 0%
 
 - *端點* — 此引數是選用的。 可以是下列其中一個值：
 
-   - 陣列，可讓您為Adobe提供的驗證和授權服務指定端點（不同的例項可能會用於偵錯）。 若提供多個URL，MVPD清單將由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是說，第一個回應並支援該MVPD的提供者。 根據預設（如果未指定值），會使用Adobe服務提供者(<http://sp.auth.adobe.com/>)。
+  - 陣列，可讓您為Adobe提供的驗證和授權服務指定端點（不同的例項可能會用於偵錯）。 若提供多個URL，MVPD清單將由所有服務提供者的端點組成。 每個MVPD都與最快的服務提供者相關聯；也就是說，第一個回應並支援該MVPD的提供者。 根據預設（如果未指定值），會使用Adobe服務提供者(<http://sp.auth.adobe.com/>)。
 
   範例：
-   - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
+  - `setRequestor("IFC", ["http://sp.auth-dev.adobe.com/adobe-services"])`
 
 - *選項* — 包含應用程式ID值、訪客ID值重新整理較少設定（背景登出登出）和MVPD設定(iFrame)的JSON物件。 所有值均為選用。
-   1. 若指定，系統會在資料庫執行的所有網路呼叫上報告Experience Cloud visitorID。 此值稍後可用於進階分析報表。
-   2. 如果指定應用程式的唯一識別碼 — `applicationId` — 則會將該值新增至應用程式進行的所有後續呼叫，作為X-Device-Info HTTP標頭的一部分。 稍後可以使用適當的查詢從[ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)報表擷取此值。
+  1. 若指定，系統會在資料庫執行的所有網路呼叫上報告Experience Cloud visitorID。 此值稍後可用於進階分析報表。
+  2. 如果指定應用程式的唯一識別碼 — `applicationId` — 則會將該值新增至應用程式進行的所有後續呼叫，作為X-Device-Info HTTP標頭的一部分。 稍後可以使用適當的查詢從[ESM](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md)報表擷取此值。
 
   **注意：**&#x200B;所有JSON金鑰都區分大小寫。
 
@@ -237,39 +238,39 @@ ht-degree: 0%
 **引數：**
 
 - *key*：指定所要求中繼資料的ID：
-   - 如果金鑰為`"TTL_AUTHN",`，則會進行查詢以取得驗證權杖到期時間。
+  - 如果金鑰為`"TTL_AUTHN",`，則會進行查詢以取得驗證權杖到期時間。
 
-   - 如果索引鍵是`"TTL_AUTHZ"`，而params是包含資源ID的陣列做為字串，則會進行查詢以取得與指定資源關聯的授權權杖的到期時間。
+  - 如果索引鍵是`"TTL_AUTHZ"`，而params是包含資源ID的陣列做為字串，則會進行查詢以取得與指定資源關聯的授權權杖的到期時間。
 
-   - 如果索引鍵是`"DEVICEID"`，則會進行查詢以取得目前的裝置識別碼。 請注意，此功能預設為停用，程式設計師應聯絡Adobe瞭解啟用和費用相關資訊。
+  - 如果索引鍵是`"DEVICEID"`，則會進行查詢以取得目前的裝置識別碼。 請注意，此功能預設為停用，程式設計師應聯絡Adobe瞭解啟用和費用相關資訊。
 
-   - 如果索引鍵來自以下使用者中繼資料型別清單，則會將包含對應使用者中繼資料的JSON物件傳送至[`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata)回呼函式：
+  - 如果索引鍵來自以下使用者中繼資料型別清單，則會將包含對應使用者中繼資料的JSON物件傳送至[`setMetadataStatus()`](#setmetadatastatuskey-encrypted-data-setmetadatastatuskeyencrypteddata)回呼函式：
 
-   - `"zip"` — 郵遞區號
+  - `"zip"` — 郵遞區號
 
-   - `"encryptedZip"` — 加密的郵遞區號
+  - `"encryptedZip"` — 加密的郵遞區號
 
-   - `"householdID"` — 家庭識別碼。 在MVPD不支援附屬帳戶的情況下，這將與userID相同。
+  - `"householdID"` — 家庭識別碼。 在MVPD不支援附屬帳戶的情況下，這將與userID相同。
 
-   - `"maxRating"` — 使用者的家長評等上限
+  - `"maxRating"` — 使用者的家長評等上限
 
-   - `"userID"` — 使用者識別碼。 在MVPD支援子帳戶，而使用者不是主要帳戶的情況下，userID將會與householdID不同。
+  - `"userID"` — 使用者識別碼。 在MVPD支援子帳戶，而使用者不是主要帳戶的情況下，userID將會與householdID不同。
 
-   - `"channelID"` — 使用者有權檢視的管道清單
+  - `"channelID"` — 使用者有權檢視的管道清單
 
-   - `"is_hoh"` — 識別使用者是否為戶主的旗標
+  - `"is_hoh"` — 識別使用者是否為戶主的旗標
 
-   - `"encryptedZip"` — 加密的郵遞區號
+  - `"encryptedZip"` — 加密的郵遞區號
 
-   - `"typeID"` — 識別使用者帳戶是否為主要/次要帳戶的旗標
+  - `"typeID"` — 識別使用者帳戶是否為主要/次要帳戶的旗標
 
-   - `"primaryOID"` — 家庭識別碼
+  - `"primaryOID"` — 家庭識別碼
 
-   - `"postalCode"` — 類似郵遞區號
+  - `"postalCode"` — 類似郵遞區號
 
-   - `"acctID"` — 帳戶ID
+  - `"acctID"` — 帳戶ID
 
-   - `"acctParentID"` — 帳戶父級ID
+  - `"acctParentID"` — 帳戶父級ID
 
   **注意**：程式設計師可用的實際使用者中繼資料取決於MVPD所提供的內容。  如需目前可用的使用者中繼資料清單，請參閱[使用者中繼資料](#UserMetadata)。
 
@@ -453,16 +454,16 @@ ht-degree: 0%
 **描述：**&#x200B;實作此回撥以在特定事件發生時接收追蹤資料。 例如，您可以使用它來追蹤有多少使用者以相同認證登入。 目前無法設定追蹤。 使用Adobe Pass Authentication 1.6時，`sendTrackingData()`也會報告有關裝置、Access Enabler使用者端和作業系統型別的資訊。 `sendTrackingData()`回呼保持回溯相容。
 
 - 裝置型別的可能值：
-   - 電腦
-   - 平板電腦
-   - 行動
-   - gameconsole
-   - 未知
+  - 電腦
+  - 平板電腦
+  - 行動
+  - gameconsole
+  - 未知
 
 - Access Enabler使用者端型別的可能值：
-   - html5
-   - ios
-   - android
+  - html5
+  - ios
+  - android
 
 
 傳遞事件型別和一系列相關資訊。 事件型別為：

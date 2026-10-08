@@ -2,13 +2,14 @@
 title: 擷取Platform SSO設定檔要求
 description: 擷取Platform SSO設定檔要求
 exl-id: 44fd4e26-4d9a-4607-ac2c-b85d848f5fc6
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '210'
-ht-degree: 0%
-
+source-wordcount: '222'
+ht-degree: 1%
 ---
-
 # （舊版）擷取平台SSO設定檔請求 {#retrieve-platform-sso-profile-request}
 
 >[!NOTE]
@@ -42,9 +43,9 @@ ht-degree: 0%
 此資源會產生要求者ID和MVPD Tuple的設定檔要求。
 
 
-| 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
+| 端點 | 呼叫</br>者 | 輸入</br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | 串流應用程式</br></br>或</br></br>程式設計師服務 | 1.要求者（路徑引數）</br>2。 mvpd （路徑引數）</br>3。 deviceType （必要） | GET | 回應Content-Type將會是應用程式/八位元資料流，因為使用者端應用程式的實際裝載是不透明的。</br></br>應用程式應將回應轉送至Platform</br></br>SSO引擎以取得設定檔SSO。 | 200 — 成功   </br>400 — 錯誤請求 |
+| &lt;SP_FQDN>/api/v1/{requestor}/profile-requests/{mvpd} | 串流應用程式</br></br>或</br></br>程式設計師服務 | &#x200B;1. 要求者（路徑引數）</br>2。 mvpd （路徑引數）</br>3。 deviceType （必要） | GET | 回應Content-Type將會是應用程式/八位元資料流，因為使用者端應用程式的實際裝載是不透明的。</br></br>應用程式應將回應轉送至Platform</br></br>SSO引擎以取得設定檔SSO。 | 200 — 成功</br>400 — 錯誤的請求 |
 
 
 | 輸入引數 | 說明 |
