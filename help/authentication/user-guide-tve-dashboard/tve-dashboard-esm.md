@@ -26,7 +26,7 @@ ESM Dashboard提供許可權和事件資料的統一檢視，以協助您監控�
 - 比較MVPD效能
 - 瞭解每個應用程式的客戶使用情況
 
-如需有關ESM資料和事件的詳細資訊，請參閱[軟體權利檔案服務監視總覽](https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview)。
+如需有關ESM資料和事件的詳細資訊，請參閱[軟體權利檔案服務監視總覽](https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview)。
 
 ## 報表 {#reports}
 
