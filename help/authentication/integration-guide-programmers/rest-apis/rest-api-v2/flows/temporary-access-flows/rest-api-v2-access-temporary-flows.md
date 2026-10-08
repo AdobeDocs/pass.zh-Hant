@@ -79,7 +79,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的[擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
    >
    > <br/>
    > 
@@ -156,7 +156,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的[擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -214,7 +214,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定mvpd](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的[擷取設定檔：
+   > 如需下列詳細資訊，請參閱特定mvpd[&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的擷取設定檔：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，如`serviceProvider`和`mvpd`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`和`AP-Device-Identifier`
@@ -230,7 +230,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 請參閱特定mvpd](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的[擷取設定檔，以取得設定檔回應中提供的詳細資訊。
+   > 請參閱特定mvpd[&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的擷取設定檔，以取得設定檔回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -280,7 +280,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的[擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -328,7 +328,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的[擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -364,8 +364,8 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
 在擷取基本或促銷TempPass過期時的授權決定之前，請確定符合下列先決條件：
 
-* 使用基本TempPass](#prerequisites-retrieve-authorization-decisions-using-basic-temppass)擷取授權決定之前的先決條件[。
-* 使用提升TempPass](#prerequisites-retrieve-authorization-decisions-using-promotional-temppass)擷取授權決定之前的先決條件[。
+* 使用基本TempPass[&#128279;](#prerequisites-retrieve-authorization-decisions-using-basic-temppass)擷取授權決定之前的先決條件。
+* 使用提升TempPass[&#128279;](#prerequisites-retrieve-authorization-decisions-using-promotional-temppass)擷取授權決定之前的先決條件。
 
 >[!IMPORTANT]
 >
@@ -408,7 +408,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的[擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -471,7 +471,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定mvpd](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的[擷取設定檔：
+   > 如需下列詳細資訊，請參閱特定mvpd[&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的擷取設定檔：
    > 
    > * 所有&#x200B;_必要的_&#x200B;引數，如`serviceProvider`和`mvpd`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`和`AP-Device-Identifier`
@@ -483,7 +483,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 請參閱特定mvpd](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的[擷取設定檔，以取得設定檔回應中提供的詳細資訊。
+   > 請參閱特定mvpd[&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的擷取設定檔，以取得設定檔回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -542,7 +542,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定mvpd](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的[擷取設定檔：
+   > 如需下列詳細資訊，請參閱特定mvpd[&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的擷取設定檔：
    > 
    > * 所有&#x200B;_必要的_&#x200B;引數，如`serviceProvider`和`mvpd`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`和`AP-Device-Identifier`
@@ -554,7 +554,7 @@ TempPass可讓程式設計師暫時存取其受保護的內容，而不需要要
 
    >[!IMPORTANT]
    >
-   > 請參閱特定mvpd](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的[擷取設定檔，以取得設定檔回應中提供的詳細資訊。
+   > 請參閱特定mvpd[&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-mvpd.md) API檔案的擷取設定檔，以取得設定檔回應中提供的詳細資訊。
    > 
    > <br/>
    > 

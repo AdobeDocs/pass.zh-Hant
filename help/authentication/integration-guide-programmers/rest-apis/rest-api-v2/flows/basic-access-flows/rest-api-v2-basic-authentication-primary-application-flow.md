@@ -120,7 +120,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定程式碼](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) API檔案的[擷取設定檔：
+   > 如需下列詳細資訊，請參閱特定程式碼[&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) API檔案的擷取設定檔：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，如`serviceProvider`、`code`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
@@ -134,7 +134,7 @@ Adobe Pass驗證許可權內的&#x200B;**驗證流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 請參閱特定程式碼](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) API檔案的[擷取設定檔，以取得設定檔回應中提供的詳細資訊。
+   > 請參閱特定程式碼[&#128279;](../../apis/profiles-apis/rest-api-v2-profiles-apis-retrieve-profile-for-specific-code.md) API檔案的擷取設定檔，以取得設定檔回應中提供的詳細資訊。
    > 
    > <br/>
    > 

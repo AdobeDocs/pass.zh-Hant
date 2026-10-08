@@ -60,7 +60,7 @@ AccessEnabler iOS/tvOS記錄機制的用途是發出有用的訊息，用於疑�
 
 ![](../../../assets/subsys-console-app.png)
 
-* 使用&#x200B;**任何**選項(包含
+* 使用&#x200B;**任何**&#x200B;選項(包含
   [AccessEnabler]值，如下圖所示。
 
 ![](../../../assets/any-optn-console-app.png)

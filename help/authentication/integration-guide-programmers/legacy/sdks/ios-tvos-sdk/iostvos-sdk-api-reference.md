@@ -48,7 +48,7 @@ ht-degree: 0%
 
 * [`setOptions:options:`](#setOptions) — 設定全域SDK選項，例如設定檔或訪客ID。
 
-* [`setRequestor:`](#setReqV3)[`requestorID`](#setReqV3)，[`setRequestor:requestorID:serviceProviders:`](#setReqV3) — 建立程式設計師的身分。
+* [`setRequestor:`](#setReqV3) [`requestorID`](#setReqV3)，[`setRequestor:requestorID:serviceProviders:`](#setReqV3) — 建立程式設計師的身分。
 
 * **[已棄用]** [`setRequestor:signedRequestorId:`](#setReq)，[`setRequestor:signedRequestorId:serviceProviders:`](#setReq) — 建立程式設計師的身分。
 
@@ -60,7 +60,7 @@ ht-degree: 0%
 
 * [`getAuthentication`](#getAuthN)， [`getAuthentication:withData:`](#getAuthN) — 啟動完整驗證工作流程。
 
-* [`getAuthentication:filter`](#getAuthN_filter)，[`getAuthentication:withData:`](#getAuthN)[andFilter](#getAuthN_filter) — 啟動完整驗證工作流程。
+* [`getAuthentication:filter`](#getAuthN_filter)，[`getAuthentication:withData:`](#getAuthN) [andFilter](#getAuthN_filter) — 啟動完整驗證工作流程。
 
 * [`displayProviderDialog:`](#dispProvDialog) — 通知您的應用程式具現化適當的UI元素，讓使用者選取MVPD。
 
@@ -167,7 +167,7 @@ ht-degree: 0%
 * *options*：包含全域SDK選項的NSDictionary。 目前提供下列選項：
   * **applicationProfile** — 它可用來根據這個值設定伺服器組態。
   * **visitorID** - Experience Cloud ID服務。 此值稍後可用於進階分析報表。
-  * **handleSVC** — 布林值，表示程式設計師是否會處理SFSafariViewControllers。 如需詳細資訊，請參閱iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的[SFSafariViewController支援。
+  * **handleSVC** — 布林值，表示程式設計師是否會處理SFSafariViewControllers。 如需詳細資訊，請參閱iOS SDK 3.2+[&#128279;](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的SFSafariViewController支援。
     * 若設為&#x200B;**false，** SDK會自動向一般使用者顯示SFSafariViewController。 SDK會進一步導覽至MVPD登入頁面URL。
     * 若設為&#x200B;**true，** SDK將&#x200B;**NOT**&#x200B;自動向一般使用者顯示SFSafariViewController。 SDK將進一步觸發&#x200B;**navigate(toUrl：{url}， useSVC:YES)**。
 * **device\_info** — 使用者端資訊，如[傳遞使用者端資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中所述。
@@ -370,7 +370,7 @@ ht-degree: 0%
 
 **檔案：** AccessEnabler/headers/AccessEnabler.h
 
-**描述：**檢查目前使用者的驗證狀態。
+**描述：**&#x200B;檢查目前使用者的驗證狀態。
 其做法是在本機中搜尋有效的驗證Token
 Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您在主要執行緒上呼叫它。
 應用程式會用它來查詢使用者的驗證狀態，並且
@@ -713,7 +713,7 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 **檔案：** AccessEnabler/headers/EntitlementDelegate.h
 
-**描述：**&#x200B;若您的應用程式先前透過[setOptions(\[&quot;handleSVC&quot;:true&quot;\])](#setOptions)呼叫啟用手動Safari檢視控制器(SVC)處理，且只有MVPD需要Safari檢視控制器(SVC)時，AccessEnabler會觸發回呼，而非`navigateToUrl:`回呼。 對於所有其他MVPD，將會呼叫`navigateToUrl:`回呼。 如需如何管理Safari檢視控制器(SVC)的詳細資訊，請參閱iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的[SFSafariViewController支援。
+**描述：**&#x200B;若您的應用程式先前透過[setOptions(\[&quot;handleSVC&quot;:true&quot;\])](#setOptions)呼叫啟用手動Safari檢視控制器(SVC)處理，且只有MVPD需要Safari檢視控制器(SVC)時，AccessEnabler會觸發回呼，而非`navigateToUrl:`回呼。 對於所有其他MVPD，將會呼叫`navigateToUrl:`回呼。 如需如何管理Safari檢視控制器(SVC)的詳細資訊，請參閱iOS SDK 3.2+[&#128279;](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的SFSafariViewController支援。
 
 與`navigateToUrl:`回呼類似，`navigateToUrl:useSVC:`由AccessEnabler觸發，要求您的應用程式將`SFSafariViewController`控制器具現化，並載入回呼的&#x200B;**`url`**&#x200B;引數中提供的URL。 回呼會傳遞代表驗證端點的URL或登出端點的URL的&#x200B;**`url`**&#x200B;引數，以及指定應用程式必須使用`SFSafariViewController`的&#x200B;**`useSVC`**&#x200B;引數。
 
@@ -738,14 +738,14 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 </tbody>
 </table>
 
-**可用性：**v 3.2+
+**可用性：**&#x200B;v 3.2+
 
 **引數**：
 
 * *url：*&#x200B;指向MVPD登入頁面的URL
 * *useSVC：*&#x200B;是否應在SFSafariViewController中載入URL。
 
-**觸發者：**[ setOptions：](#setOptions)，在[setSelectedProvider：](#setSelProv)之前
+**觸發者：**&#x200B;[&#x200B; setOptions：](#setOptions)，在[setSelectedProvider：](#setSelProv)之前
 
 [回到頂端……](#apis)
 
