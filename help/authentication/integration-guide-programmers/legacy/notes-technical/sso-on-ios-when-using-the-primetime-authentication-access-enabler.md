@@ -2,13 +2,14 @@
 title: 使用iOS Authentication Access Enabler時Adobe Pass上的SSO
 description: 使用iOS Authentication Access Enabler時Adobe Pass上的SSO
 exl-id: 882f0abb-2e6e-461d-a375-3ab410991935
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1216'
 ht-degree: 0%
-
 ---
-
 # （舊版） iOS在使用Adobe Pass Authentication Access Enabler時的SSO {#sso-on-ios-when-using-the-primetime-authentication-access-enabler}
 
 >[!NOTE]
@@ -27,7 +28,7 @@ Adobe Pass驗證支援的應用程式之間的單一登入(SSO)會根據基礎�
 
 使用Adobe Pass驗證&#x200B;**Access Enabler**&#x200B;時，此檔案會在iOS **上處理** SSO。
 
-**Access Enabler** **1.10**&#x200B;是Adobe Pass Authentication iOS原生SDK的最新版本。 Adobe強烈建議您改用此版本，不要再使用較舊的版本。 如果您使用舊版的Access Enabler，您可以在此下載最新版的[&#128279;](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)。
+**Access Enabler** **1.10**&#x200B;是Adobe Pass Authentication iOS原生SDK的最新版本。 Adobe強烈建議您改用此版本，不要再使用較舊的版本。 如果您使用舊版的Access Enabler，您可以在此下載最新版的[](https://tve.zendesk.com/hc/en-us/articles/204963209-iOS-Native-AccessEnabler-Library)。
 
 iOS上的SSO受下列條件支配：
 

@@ -2,13 +2,14 @@
 title: Adobe Pass Authentication 3.1.0發行說明
 description: Adobe Pass Authentication 3.1.0發行說明
 exl-id: cf9fc8e2-4b37-4b0a-a6ed-cda1b6738e76
-source-git-commit: 0c6aec04ae9df410228730b5bce6ced1aeecd312
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '193'
 ht-degree: 0%
-
 ---
-
 # Adobe Pass Authentication 3.1.0發行說明 {#authn-310-rn}
 
 >[!IMPORTANT]

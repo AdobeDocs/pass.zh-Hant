@@ -2,13 +2,14 @@
 title: Authentication iOS / tvOS 3.7.0發行說明
 description: Authentication iOS / tvOS 3.7.0發行說明
 exl-id: 19c1179e-16b1-4608-954f-25b0980d7ad9
-source-git-commit: cafdcf3b4df6adb54fba21b56ee427b87791bac2
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '122'
+source-wordcount: '120'
 ht-degree: 0%
-
 ---
-
 # Authentication iOS / tvOS 3.7.0發行說明 {#ios-tvos-sdk-370-rn}
 
 >[!IMPORTANT]

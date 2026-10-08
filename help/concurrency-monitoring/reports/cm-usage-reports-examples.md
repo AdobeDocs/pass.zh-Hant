@@ -2,13 +2,14 @@
 title: 並行監視使用報告範例
 description: 並行監視使用報告範例
 exl-id: e612ea40-c59c-440e-9c80-754b81b37a72
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '2360'
+source-wordcount: '2896'
 ht-degree: 0%
-
 ---
-
 # 並行監視使用報告範例{#cm-usage-reports-examples}
 
 >[!NOTE]

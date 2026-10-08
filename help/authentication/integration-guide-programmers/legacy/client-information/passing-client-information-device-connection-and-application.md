@@ -2,13 +2,14 @@
 title: 傳遞使用者端資訊（裝置、連線和應用程式）
 description: 傳遞使用者端資訊（裝置、連線和應用程式）
 exl-id: 0b21ef0e-c169-48ff-ac01-25411cfece1e
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1725'
 ht-degree: 2%
-
 ---
-
 # （舊版）傳遞使用者端資訊（裝置、連線和應用程式） {#pass-client-info}
 
 >[!NOTE]
@@ -97,7 +98,8 @@ AccessEnabler JavaScript SDK僅支援&#x200B;**透過[setRequestor](/help/authen
 
 >[!CAUTION]
 >
->`applicationId`引數值必須是純文字字串值。如果程式設計師應用程式決定傳遞applicationId，則其餘的使用者端資訊金鑰仍會由AccessEnabler JavaScript SDK計算。
+>`applicationId`引數值必須是純文字字串值。
+>如果程式設計師應用程式決定傳遞applicationId，則其餘的使用者端資訊金鑰仍會由AccessEnabler JavaScript SDK計算。
 
 #### iOS/tvOS SDK {#ios-tvos-sdk}
 

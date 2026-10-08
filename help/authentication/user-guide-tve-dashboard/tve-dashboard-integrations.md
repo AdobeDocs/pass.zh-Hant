@@ -2,13 +2,14 @@
 title: TVE儀表板整合
 description: 瞭解您的管道和MVPD之間的整合，以及如何管理整合。
 exl-id: 0add340b-120c-4e82-8e3c-6c190d77cf7e
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2105'
 ht-degree: 0%
-
 ---
-
 # 整合
 
 >[!NOTE]
@@ -200,7 +201,7 @@ TVE儀表板的&#x200B;**整合**&#x200B;區段可讓您檢視和管理頻道與
 **變更預先授權資源的數量**
 
 根據預設，大部分的MVPD支援最多使用5個資源ID的預檢authZ呼叫。
-不過，如果MVPD同意提高此限制，您可以瀏覽至&#x200B;**新增更多屬性**，並從選項功能表中選取&#x200B;**預檢最大資源**。
+不過，如果MVPD同意提高此限制，您可以瀏覽至**新增更多屬性**，並從選項功能表中選取&#x200B;**預檢最大資源**。
 
 **預檢資源上限**&#x200B;將新增一個屬性，以便指定與MVPD的議定限制。
 

@@ -2,13 +2,14 @@
 title: API參考概述
 description: 並行監控API的完整參考，包括端點、驗證和回應格式
 exl-id: 6a1c6507-03d5-4003-8b88-502eb4019346
-source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '444'
 ht-degree: 2%
-
 ---
-
 # API參考概述 {#api-reference-overview}
 
 「並行監控API」提供RESTful介面，用於管理串流工作階段及強制實施並行使用原則。 此參考提供所有端點、驗證方法、請求/回應格式及錯誤處理的完整檔案。

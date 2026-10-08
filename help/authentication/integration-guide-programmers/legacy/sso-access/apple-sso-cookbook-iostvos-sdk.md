@@ -2,13 +2,14 @@
 title: Apple SSO逐步指南(iOS/tvOS SDK)
 description: Apple SSO逐步指南(iOS/tvOS SDK)
 exl-id: 2d59cd33-ccfd-41a8-9697-1ace3165bc44
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1854'
 ht-degree: 0%
-
 ---
-
 # （舊版） Apple SSO逐步指南(iOS/tvOS SDK) {#apple-sso-cookbook-iostvos-sdk}
 
 >[!IMPORTANT]

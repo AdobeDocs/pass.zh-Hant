@@ -2,13 +2,14 @@
 title: 使用主控台應用程式記錄檔對AccessEnabler iOS/tvOS SDK進行除錯
 description: 使用主控台應用程式記錄檔對AccessEnabler iOS/tvOS SDK進行除錯
 exl-id: 0dad325e-db15-4ea0-a87a-75409eaf8d46
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '576'
+source-wordcount: '577'
 ht-degree: 0%
-
 ---
-
 # （舊版）使用主控台應用程式記錄檔對AccessEnabler iOS/tvOS SDK進行除錯 {#debugging-the-accessenabler-iostvos-sdk-using-console-app-logs}
 
 >[!NOTE]
@@ -59,7 +60,7 @@ AccessEnabler iOS/tvOS記錄機制的用途是發出有用的訊息，用於疑�
 
 ![](../../../assets/subsys-console-app.png)
 
-* 使用&#x200B;**任何**&#x200B;選項(包含
+* 使用&#x200B;**任何**選項(包含
   [AccessEnabler]值，如下圖所示。
 
 ![](../../../assets/any-optn-console-app.png)
@@ -71,7 +72,7 @@ AccessEnabler iOS/tvOS記錄機制的用途是發出有用的訊息，用於疑�
 為了能夠更好地偵錯其他元件的功能和&#x200B;**排除** AccessEnabler架構記錄檔，您可以：
 
 * 使用不等於com.adobe.pass.AccessEnabler值的&#x200B;**子系統**&#x200B;選項在主控台應用程式中搜尋。
-* 使用不包含&#x200B;**AccessEnabler**&#x200B;值的[Any]選項在主控台應用程式中搜尋。
+* 使用不包含[AccessEnabler]值的&#x200B;**Any**&#x200B;選項在主控台應用程式中搜尋。
 
 ## 報告問題
 

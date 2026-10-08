@@ -2,13 +2,14 @@
 title: 程式設計師整合指南
 description: 程式設計師整合指南
 exl-id: 51461caf-08ef-459e-b284-8f317f45e7b1
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2152'
 ht-degree: 0%
-
 ---
-
 # 程式設計師整合指南 {#programmer-integration-guide}
 
 >[!IMPORTANT]
@@ -43,15 +44,15 @@ Adobe Pass Authentication作為Proxy，透過為雙方提供安全一致的介�
 對於程式設計師而言，Adobe Pass驗證提供API作為&#x200B;**Standard**&#x200B;或&#x200B;**Premium**&#x200B;層級的一部分：
 
 * 標準Adobe Pass驗證API：
-   * [REST API DCR](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
-   * [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [REST API DCR](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+  * [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * Premium Adobe Pass驗證API：
-   * [重設Temp Pass API](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-   * [降級API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
-      * [退化特徵](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
-   * [權益服務監控API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
+  * [重設Temp Pass API](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+    * [TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+  * [降級API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+    * [退化特徵](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+  * [權益服務監控API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 ### 使用案例 {#use-cases}
 

@@ -2,7 +2,10 @@
 title: 憑證問答
 description: 憑證問答
 exl-id: d4e493b0-4467-42b1-9758-16c5941d8051
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '268'
 ht-degree: 0%

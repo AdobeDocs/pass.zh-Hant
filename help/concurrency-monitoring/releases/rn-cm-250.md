@@ -2,13 +2,14 @@
 title: Adobe Pass Concurrency Monitoring 2.5.0發行說明
 description: Adobe Pass Concurrency Monitoring 2.5.0發行說明
 exl-id: da392b18-a2aa-4f51-a75f-2c5b65b2b073
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '286'
+source-wordcount: '288'
 ht-degree: 0%
-
 ---
-
 # Adobe Pass Concurrency Monitoring 2.5.0發行說明 {#cm-250}
 
 此頁面說明此版本的新功能、變更和已知問題：
@@ -35,9 +36,9 @@ V2版本可統一心率和查詢呼叫，並大幅簡化同時使用這兩個API
 
 * 每當有意義時，回應都會包括：
 
-   * 相關的建議 — 失敗的詳細說明，提示使用者。
+  * 相關的建議 — 失敗的詳細說明，提示使用者。
 
-   * 義務 — 應用程式必須採取的強制動作(例如：重新整理中繼資料、從Adobe Pass登出)。
+  * 義務 — 應用程式必須採取的強制動作（例如：重新整理中繼資料、從Adobe Pass登出）。
 
 ### 中繼資料 {#metadata}
 

@@ -2,13 +2,14 @@
 title: 如何提出隱私權請求
 description: 如何提出隱私權請求
 exl-id: abb21306-98d6-4899-914a-bdfa85cbd204
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 0%
-
 ---
-
 # 如何提出隱私權請求 {#howto-make-privacy-request}
 
 >[!NOTE]
@@ -226,7 +227,7 @@ Adobe Pass驗證支援存取和刪除請求。
 
 ### 透過Privacy Service UI {#privacy-service-ui}
 
-您可以透過Adobe I/O服務線上取得有關如何存取及使用Privacy Service使用者介面的[完整教學課程](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=zh-Hant#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)。 此外，客戶可以使用此連結來存取隱私權法規的影片和文章庫。 按一下Adobe Experience Cloud和GDPR功能表。 以下影片將說明其使用方式：「GDPR UI使用說明」。
+您可以透過Adobe I/O服務線上取得有關如何存取及使用Privacy Service使用者介面的[完整教學課程](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)。 此外，客戶可以使用此連結來存取隱私權法規的影片和文章庫。 按一下Adobe Experience Cloud和GDPR功能表。 以下影片將說明其使用方式：「GDPR UI使用說明」。
 
 在UI中，客戶需要載入自己的IMSOrgID以及包含每個產品之GDPR要求詳細資料的JSON。
 
@@ -259,7 +260,7 @@ Adobe Experience Platform Privacy Service可針對私人資料的存取/刪除�
 
 >[!RELATEDINFORMATION]
 >
->* [Privacy Services Overview](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=zh-Hant#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)
+>* [Privacy Services Overview](https://experienceleague.adobe.com/docs/experience-platform/privacy/home.html?lang=en#!api-specification/markdown/narrative/tutorials/privacy_service_tutorial/privacy_service_ui_tutorial.md)
 >* Privacy Service API documentation
 
 -->

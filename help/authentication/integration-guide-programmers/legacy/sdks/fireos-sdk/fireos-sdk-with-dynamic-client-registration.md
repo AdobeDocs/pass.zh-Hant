@@ -2,13 +2,14 @@
 title: Amazon FireOS SDK搭配Dynamic Client註冊
 description: Amazon FireOS SDK搭配Dynamic Client註冊
 exl-id: 27acf3f5-8b7e-4299-b0f0-33dd6782aeda
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1185'
 ht-degree: 1%
-
 ---
-
 
 # （舊版） Amazon FireOS SDK含Dynamic Client註冊 {#amazon-fireos-sdk-with-dynamic-client-registration}
 
@@ -123,8 +124,8 @@ ht-degree: 1%
 
   SDK將執行下列操作：
 
-   - 註冊應用程式：使用&#x200B;**software\_statement**，SDK將取得&#x200B;**client\_id， client\_secret， client\_id\_issued\_at， redirect\_uris， grant\_types**。 此資訊會儲存在應用程式的內部儲存中。
-   - 使用client\_id、client\_secret和grant\_type=&quot;client\_credentials&quot;取得&#x200B;**access\_token**。 此access\_token將用於SDK對Adobe Pass伺服器進行的每次呼叫。
+  - 註冊應用程式：使用&#x200B;**software\_statement**，SDK將取得&#x200B;**client\_id， client\_secret， client\_id\_issued\_at， redirect\_uris， grant\_types**。 此資訊會儲存在應用程式的內部儲存中。
+  - 使用client\_id、client\_secret和grant\_type=&quot;client\_credentials&quot;取得&#x200B;**access\_token**。 此access\_token將用於SDK對Adobe Pass伺服器進行的每次呼叫。
 
 | 權杖錯誤回應： |  |  |
 |--- | --- | --- |
@@ -136,32 +137,32 @@ ht-degree: 1%
 
 - b. checkAuthentication()
 
-   - *true* ：移至[授權]
-   - *false* ：前往選取MVPD
+  - *true* ：移至[授權]
+  - *false* ：前往選取MVPD
 
 - c. getAuthentication ： SDK將在呼叫引數中包含&#x200B;**access_token**
 
-   - 記憶的mvpd ：前往setSelectedProvider(mvpd\_id)
-   - 未選取mvpd ： displayProviderDialog
-   - 已選取mvpd ：前往setSelectedProvider(mvpd\_id)
+  - 記憶的mvpd ：前往setSelectedProvider(mvpd\_id)
+  - 未選取mvpd ： displayProviderDialog
+  - 已選取mvpd ：前往setSelectedProvider(mvpd\_id)
 
 - d. setselectedprovider
 
-   - mvpd\_id驗證URL已載入ChromeCustomTabs中
-   - 登入成功： delegate.setAuthenticationStatus ( SUCCESS )
-   - 登入已取消：重設MVPD選擇
-   - URL配置會建立為「adobepass://android.app」，以便在驗證完成時擷取
+  - mvpd\_id驗證URL已載入ChromeCustomTabs中
+  - 登入成功： delegate.setAuthenticationStatus ( SUCCESS )
+  - 登入已取消：重設MVPD選擇
+  - URL配置會建立為「adobepass://android.app」，以便在驗證完成時擷取
 
-- e. get/checkAuthorization ： SDK將在標頭中包含&#x200B;**access\_token**&#x200B;作為授權：持有人&#x200B;**access\_token**
+- e. get/checkAuthorization ： SDK將在標頭中包含&#x200B;**access\_token**&#x200B;作為授權：持有人**access\_token**
 
 - 如果授權成功，將會呼叫以取得媒體權杖
 
 - f. 登出：
 
-   - SDK將刪除目前請求者的有效Token （由其他應用程式取得而非透過SSO取得的驗證仍有效）
-   - SDK將開啟Chrome自訂標籤以存取mvpd\_id登出端點。 完成後，Chrome自訂標籤將關閉
-   - URL配置會建立為「adobepass://logout」，以擷取登出完成時的時間
-   - 登出會觸發sendTrackingData(new Event(EVENT\_LOGOUT，USER\_NOT\_AUTHENTICATED\_ERROR)和回呼：setAuthenticationStatus(0，&quot;Logout&quot;)
+  - SDK將刪除目前請求者的有效Token （由其他應用程式取得而非透過SSO取得的驗證仍有效）
+  - SDK將開啟Chrome自訂標籤以存取mvpd\_id登出端點。 完成後，Chrome自訂標籤將關閉
+  - URL配置會建立為「adobepass://logout」，以擷取登出完成時的時間
+  - 登出會觸發sendTrackingData(new Event(EVENT\_LOGOUT，USER\_NOT\_AUTHENTICATED\_ERROR)和回呼：setAuthenticationStatus(0，&quot;Logout&quot;)
 
 
 

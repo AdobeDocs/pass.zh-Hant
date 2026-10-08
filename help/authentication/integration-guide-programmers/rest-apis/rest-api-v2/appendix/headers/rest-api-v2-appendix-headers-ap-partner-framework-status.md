@@ -2,13 +2,14 @@
 title: 頁首 — AP-Partner-Framework-Status
 description: REST API V2 — 標題 — AP-Partner-Framework-Status
 exl-id: f589d948-e23e-43d4-81c2-8db0e7a40e93
-source-git-commit: 22529618db679f7dbfb493906e1aeb4a0443a40c
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '439'
 ht-degree: 0%
-
 ---
-
 # 頁首 — AP-Partner-Framework-Status {#header-ap-partner-framework-status}
 
 >[!NOTE]
@@ -132,7 +133,7 @@ ht-degree: 0%
                   <br/><br/>
                   這是已驗證使用者設定檔的到期日，以防使用者已在合作夥伴框架層級使用支援的MVPD成功登入。
                   <br/><br/>
-                  這必須是自Unix紀元以來以毫秒為單位的時間戳記(例如「1735689600000」)，以字串表示。
+                  這必須是自Unix紀元以來以毫秒為單位的時間戳記（例如「1735689600000」），以字串表示。
                </td>
             </tr>
             <tr>

@@ -2,13 +2,14 @@
 title: 檢查驗證Token
 description: 檢查驗證Token
 exl-id: 9020f261-44d8-4bd5-b85b-a8667679f563
-source-git-commit: 689e2f86550d9fa59337c15dd38767975a1d6d30
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '301'
-ht-degree: 0%
-
+source-wordcount: '331'
+ht-degree: 9%
 ---
-
 # （舊版）檢查驗證Token {#check-authentication-token}
 
 >[!NOTE]
@@ -53,7 +54,7 @@ ht-degree: 0%
 | 要求者 | 此作業有效的程式設計師要求者ID。 |
 | deviceId | 裝置識別碼位元組。 |
 | device_info/</br></br>X-Device-Info | 串流裝置資訊。</br></br>**注意**：這可以作為URL引數傳遞device_info，但由於此引數可能的大小以及GET URL的長度限制，應該在http標頭中作為X-Device-Info傳遞。 </br></br><!--See the full details in [Passing Device and Connection Information](/help/authentication/passing-client-information-device-connection-and-application.md)(/help/authentication/passing-client-information-device-connection-and-application.md)-->. |
-| _deviceType_ | 裝置型別（例如Roku、電腦）。</br></br>若此引數設定正確，ESM提供的量度會在使用Clienless時針對每個裝置型別[&#128279;](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)進行劃分，因此可以針對Roku、AppleTV、Xbox等執行不同型別的分析。</br></br>如需詳細資訊，請參閱[在Adobe Pass驗證度量中使用無使用者端deviceType引數的好處&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**注意**： device_info將取代此引數。 |
+| _deviceType_ | 裝置型別（例如Roku、電腦）。</br></br>若此引數設定正確，ESM提供的量度會在使用Clienless時針對每個裝置型別](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview.md#clientless_device_type)進行[劃分，因此可以針對Roku、AppleTV、Xbox等執行不同型別的分析。</br></br>如需詳細資訊，請參閱[在Adobe Pass驗證度量中使用無使用者端deviceType引數的好處&#x200B;](/help/authentication/integration-guide-programmers/legacy/notes-technical/benefits-of-using-the-clientless-devicetype-parameter-in-pass-metrics.md)</br>**注意**： device_info將取代此引數。 |
 | _deviceUser_ | 裝置使用者識別碼。 |
 | _appId_ | 應用程式ID/名稱。</br>**注意**： device_info會取代此引數。 |
 

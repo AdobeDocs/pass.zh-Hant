@@ -2,13 +2,14 @@
 title: 繼續驗證工作階段
 description: REST API V2 — 繼續驗證工作階段
 exl-id: 66c33546-2be0-473f-9623-90499d1c13eb
-source-git-commit: 110e8519d6c042cc38de3fbefcd34297b6edcfad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '985'
 ht-degree: 2%
-
 ---
-
 # 繼續驗證工作階段 {#resume-authentication-session}
 
 >[!IMPORTANT]
@@ -64,23 +65,30 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">mvpd</td>
       <td>
-        上線流程中與身分提供者相關聯的內部唯一識別碼。<br/><br/>
-        如果串流裝置平台在提供值方面有所限制，則應用程式必須繼續驗證工作階段並提供有效值。</td>
+        上線流程中與身分提供者相關聯的內部唯一識別碼。
+        <br/><br/>
+        如果串流裝置平台在提供值方面有所限制，則應用程式必須繼續驗證工作階段並提供有效值。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">domainName</td>
       <td>
-        執行MVPD登入之應用程式的原始網域。<br/><br/>
-        如果串流裝置平台在提供值方面有所限制，則應用程式必須繼續驗證工作階段並提供有效值。</td>
+        執行MVPD登入之應用程式的原始網域。
+        <br/><br/>
+        如果串流裝置平台在提供值方面有所限制，則應用程式必須繼續驗證工作階段並提供有效值。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">redirectUrl</td>
       <td>
-        MVPD驗證流程完成後，使用者代理程式導覽的最終重新導向URL。<br/><br/>
-        值必須以URL編碼。<br/><br/>
-        如果串流裝置平台在提供值方面有所限制，則應用程式必須繼續驗證工作階段並提供有效值。</td>
+        MVPD驗證流程完成後，使用者代理程式導覽的最終重新導向URL。
+        <br/><br/>
+        值必須以URL編碼。
+        <br/><br/>
+        如果串流裝置平台在提供值方面有所限制，則應用程式必須繼續驗證工作階段並提供有效值。
+        </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
@@ -96,16 +104,21 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">Content-Type</td>
       <td>
-         所傳送資源的接受媒體型別。<br/><br/>
-         它必須是application/x-www-form-urlencoded。</td>
+         所傳送資源的接受媒體型別。
+         <br/><br/>
+         它必須是application/x-www-form-urlencoded。
+      </td>
       <td><i>必填</i></td>
    </tr>
    <tr>
       <td style="background-color: #DEEBFF;">X-Forwarded-For</td>
       <td>
-         串流裝置的IP位址。<br/><br/>
-         強烈建議一律將它用於伺服器對伺服器的實作，尤其是當呼叫是由程式設計人員服務（而非串流裝置）進行時。<br/><br/>
-         對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。</td>
+         串流裝置的IP位址。
+         <br/><br/>
+         強烈建議一律將它用於伺服器對伺服器的實作，尤其是當呼叫是由程式設計人員服務（而非串流裝置）進行時。
+         <br/><br/>
+         對於使用者端對伺服器實作，會以隱含方式傳送串流裝置的IP位址。
+      </td>
       <td>可選</td>
    </tr>
    <tr>
@@ -117,8 +130,10 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;">Accept</td>
       <td>
-         使用者端應用程式接受的媒體型別。<br/><br/>
-         若指定，則必須為application/json；charset=utf-8。</td>
+         使用者端應用程式接受的媒體型別。
+         <br/><br/>
+         若指定，則必須為application/json；charset=utf-8。
+      </td>
       <td>可選</td>
    </tr>
    <tr>
@@ -147,25 +162,29 @@ ht-degree: 2%
       <td>400</td>
       <td>錯誤請求</td>
       <td>
-        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。</td>
+        請求無效，使用者端需要修正請求，然後再試一次。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
+      </td>
    </tr>
    <tr>
       <td>401</td>
       <td>未獲授權</td>
       <td>
-        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。</td>
+        存取權杖無效，使用者端需要取得新的存取權杖並重試。 如需詳細資訊，請參閱<a href="../../../rest-api-dcr/dynamic-client-registration-overview.md">動態使用者端註冊概觀</a>檔案。
+      </td>
    </tr>
    <tr>
       <td>405</td>
       <td>不允許的方法</td>
       <td>
-        HTTP方法無效，使用者端需要使用請求資源所允許的HTTP方法，然後再試一次。 如需詳細資訊，請參閱<a href="#request">要求</a>區段。</td>
+        HTTP方法無效，使用者端需要使用請求資源所允許的HTTP方法，然後再試一次。 如需詳細資訊，請參閱<a href="#request">要求</a>區段。
+      </td>
    </tr>
    <tr>
       <td>500</td>
       <td>內部伺服器錯誤</td>
       <td>
-        伺服器端發生問題。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。</td>
+        伺服器端發生問題。 回應本文可能包含遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強錯誤碼</a>檔案的錯誤資訊。
+      </td>
    </tr>
 </table>
 
@@ -200,8 +219,10 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">actionName</td>
                <td>
-                  串流裝置完成驗證流程所需執行的動作。<br/><br/>
-                  可能的值包括：<ul>
+                  串流裝置完成驗證流程所需執行的動作。
+                  <br/><br/>
+                  可能的值包括：
+                  <ul>
                     <li><b>驗證</b><br/>串流裝置或其他裝置需要在使用者代理程式中開啟提供的URL。</li>
                     <li><b>重試</b><br/>串流裝置或其他裝置需要提供遺漏的引數，然後使用程式碼重試繼續驗證工作階段。</li>
                     <li><b>授權</b><br/>串流裝置可以直接進行決定流程。</li>
@@ -211,8 +232,10 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">actionType</td>
                <td>
-                  串流裝置必須執行的互動型別，才能使用「actionName」屬性所指定的動作繼續流程。<br/><br/>
-                  可能的值包括：<ul>
+                  串流裝置必須執行的互動型別，才能使用「actionName」屬性所指定的動作繼續流程。
+                  <br/><br/>
+                  可能的值包括：
+                  <ul>
                     <li><b>互動式</b><br/>流程繼續使用使用者代理程式導覽至提供的URL。</li>
                     <li><b>直接</b><br/>流程會繼續使用使用者端實作可用的HTTP使用者端直接呼叫提供的URL。</li>
                   </ul>
@@ -221,8 +244,10 @@ ht-degree: 2%
             <tr>
                <td style="background-color: #DEEBFF;">reasonType</td>
                <td>
-                  說明「actionName」的原因型別。<br/><br/>
-                  可能的值包括：<ul>
+                  說明「actionName」的原因型別。
+                  <br/><br/>
+                  可能的值包括：
+                  <ul>
                     <li><b>無</b><br/>使用者端應用程式必須繼續驗證。</li>
                     <li><b>已驗證</b><br/>使用者端應用程式已透過基本存取流程驗證。</li>
                     <li><b>暫時</b><br/>使用者端應用程式已透過暫存存取流程驗證。</li>
@@ -301,13 +326,16 @@ ht-degree: 2%
    <tr>
       <td style="background-color: #DEEBFF;"></td>
       <td>
-            回應內文可能會提供其他錯誤資訊，這些資訊會遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強型錯誤碼</a>檔案。<br/><br/>
-            使用者端應用程式必須實作錯誤處理機制，以便能夠正確處理此API最常傳回的錯誤代碼：<ul>
+            回應內文可能會提供其他錯誤資訊，這些資訊會遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強型錯誤碼</a>檔案。
+            <br/><br/>
+            使用者端應用程式必須實作錯誤處理機制，以便能夠正確處理此API最常傳回的錯誤代碼：
+            <ul>
                 <li>invalid_authentication_session</li>
                 <li>invalid_parameter_code</li>
                 <li>等等。</li>
             </ul>
-            以上清單並非詳盡無遺。 使用者端應用程式必須能夠處理<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">公開檔案</a>中定義的所有增強型錯誤碼。</td>
+            以上清單並非詳盡無遺。 使用者端應用程式必須能夠處理<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">公開檔案</a>中定義的所有增強型錯誤碼。
+      </td>
       <td><i>必填</i></td>
    </tr>
 </table>

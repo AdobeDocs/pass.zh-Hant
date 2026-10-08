@@ -2,13 +2,14 @@
 title: 在選擇對話方塊中允許MVPD
 description: 在選擇對話方塊中允許MVPD
 exl-id: 2c0e0f06-ddc6-4bea-90dc-d7ef8e78d27e
-source-git-commit: 9dc25b66d12b05a8afe16d1a866707880b5d6a51
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '151'
 ht-degree: 0%
-
 ---
-
 # （舊版）在選取對話方塊中允許MVPD {#allow-mvpds-selection-dialog}
 
 >[!NOTE]

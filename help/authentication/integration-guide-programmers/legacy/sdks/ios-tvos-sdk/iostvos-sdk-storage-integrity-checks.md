@@ -2,13 +2,14 @@
 title: iOS/tvOS儲存完整性檢查機制
 description: iOS/tvOS完整性檢查機制
 exl-id: 5d7cdc46-3e51-4e14-9e30-d7f48bc87506
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '346'
+source-wordcount: '345'
 ht-degree: 0%
-
 ---
-
 # （舊版） iOS/tvOS完整性檢查機制 {#iostvos-sdk-storage-integrity-checks}
 
 >[!NOTE]
@@ -73,5 +74,5 @@ IntegrityCheckType列舉會公開給使用者端應用程式，並具有下列�
 | 值 | 已執行的檢查 | 儲存空間已清除 | 說明 | 建議的使用案例 |
 |-----------------------|-----------------------------------------------------|-----------------|------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | INTEGRITY_CHECK_NONE | 無 | 從不 | 儲存初始化時不會執行完整性檢查 | 當SDK流程如預期運作時 |
-| INTEGRITY_CHECK_ALL | 儲存操作性<br/>儲存值的有效性 | 檢查時失敗 | 所有可用的完整性檢查都會在儲存初始化時執行 | 懷疑SDK儲存空間損毀時。 <br/>如果任何完整性檢查失敗，使用者將會登出 |
+| INTEGRITY_CHECK_ALL | 儲存操作性<br/>儲存值的有效性 | 檢查時失敗 | 所有可用的完整性檢查都會在儲存初始化時執行 | 懷疑SDK儲存空間損毀時。<br/> 如果任何完整性檢查失敗，使用者將被登出 |
 | INTEGRITY_CHECK_CLEAR | 無 | 一直 | 儲存體初始化時會清除儲存體 | 當SDK流程無法如預期完成時 |

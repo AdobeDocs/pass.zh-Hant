@@ -2,13 +2,14 @@
 title: 單一登出 — 流量
 description: REST API V2 — 單一登出 — 流量
 exl-id: d7092ca7-ea7b-4e92-b45f-e373a6d673d6
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '599'
 ht-degree: 0%
-
 ---
-
 # 單一登出流程 {#single-logout-flow}
 
 >[!IMPORTANT]
@@ -30,8 +31,8 @@ ht-degree: 0%
 在起始特定MVPD的單一登出之前，請確定符合下列先決條件：
 
 * 第二個串流應用程式必須具備有效的單一登入設定檔，且已使用其中一個單一登入驗證流程成功為MVPD建立：
-   * [使用平台身分識別透過單一登入執行驗證](rest-api-v2-single-sign-on-platform-identity-flows.md)
-   * [使用服務權杖，透過單一登入執行驗證](rest-api-v2-single-sign-on-service-token-flows.md)
+  * [使用平台身分識別透過單一登入執行驗證](rest-api-v2-single-sign-on-platform-identity-flows.md)
+  * [使用服務權杖，透過單一登入執行驗證](rest-api-v2-single-sign-on-service-token-flows.md)
 * 第二個串流應用程式在需要登出MVPD時，必須起始單一登出流程。
 
 >[!IMPORTANT]
@@ -54,7 +55,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 如需下列詳細資訊，請參閱特定mvpd[&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的起始登出：
+   > 如需下列詳細資訊，請參閱特定mvpd](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[起始登出：
    >
    > * 所有&#x200B;_必要的_&#x200B;引數，例如`serviceProvider`、`mvpd`和`redirectUrl`
    > * 所有&#x200B;_必要的_&#x200B;標頭，例如`Authorization`、`AP-Device-Identifier`
@@ -80,7 +81,7 @@ ht-degree: 0%
 
    >[!IMPORTANT]
    >
-   > 如需登出回應中提供的詳細資訊，請參閱特定mvpd[&#128279;](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的Initiate登出。
+   > 如需登出回應中提供的詳細資訊，請參閱特定mvpd](../../apis/logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md) API的[Initiate登出。
    > 
    > <br/>
    > 

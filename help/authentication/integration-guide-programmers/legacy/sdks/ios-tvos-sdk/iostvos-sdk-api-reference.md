@@ -2,13 +2,14 @@
 title: iOS/tvOS API參考
 description: iOS/tvOS API參考
 exl-id: 017a55a8-0855-4c52-aad0-d3d597996fcb
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '7035'
 ht-degree: 0%
-
 ---
-
 # （舊版） iOS/tvOS SDK API參考 {#iostvos-sdk-api-reference}
 
 >[!NOTE]
@@ -47,7 +48,7 @@ ht-degree: 0%
 
 * [`setOptions:options:`](#setOptions) — 設定全域SDK選項，例如設定檔或訪客ID。
 
-* [`setRequestor:`](#setReqV3) [`requestorID`](#setReqV3)，[`setRequestor:requestorID:serviceProviders:`](#setReqV3) — 建立程式設計師的身分。
+* [`setRequestor:`](#setReqV3)[`requestorID`](#setReqV3)，[`setRequestor:requestorID:serviceProviders:`](#setReqV3) — 建立程式設計師的身分。
 
 * **[已棄用]** [`setRequestor:signedRequestorId:`](#setReq)，[`setRequestor:signedRequestorId:serviceProviders:`](#setReq) — 建立程式設計師的身分。
 
@@ -59,7 +60,7 @@ ht-degree: 0%
 
 * [`getAuthentication`](#getAuthN)， [`getAuthentication:withData:`](#getAuthN) — 啟動完整驗證工作流程。
 
-* [`getAuthentication:filter`](#getAuthN_filter)，[`getAuthentication:withData:`](#getAuthN) [andFilter](#getAuthN_filter) — 啟動完整驗證工作流程。
+* [`getAuthentication:filter`](#getAuthN_filter)，[`getAuthentication:withData:`](#getAuthN)[andFilter](#getAuthN_filter) — 啟動完整驗證工作流程。
 
 * [`displayProviderDialog:`](#dispProvDialog) — 通知您的應用程式具現化適當的UI元素，讓使用者選取MVPD。
 
@@ -164,11 +165,11 @@ ht-degree: 0%
 **引數：**
 
 * *options*：包含全域SDK選項的NSDictionary。 目前提供下列選項：
-   * **applicationProfile** — 它可用來根據這個值設定伺服器組態。
-   * **visitorID** - Experience Cloud ID服務。 此值稍後可用於進階分析報表。
-   * **handleSVC** — 布林值，表示程式設計師是否會處理SFSafariViewControllers。 如需詳細資訊，請參閱iOS SDK 3.2+[&#128279;](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的SFSafariViewController支援。
-      * 若設為&#x200B;**false，** SDK會自動向一般使用者顯示SFSafariViewController。 SDK會進一步導覽至MVPD登入頁面URL。
-      * 若設為&#x200B;**true，** SDK將&#x200B;**NOT**&#x200B;自動向一般使用者顯示SFSafariViewController。 SDK將進一步觸發&#x200B;**navigate(toUrl：{url}， useSVC:YES)**。
+  * **applicationProfile** — 它可用來根據這個值設定伺服器組態。
+  * **visitorID** - Experience Cloud ID服務。 此值稍後可用於進階分析報表。
+  * **handleSVC** — 布林值，表示程式設計師是否會處理SFSafariViewControllers。 如需詳細資訊，請參閱iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的[SFSafariViewController支援。
+    * 若設為&#x200B;**false，** SDK會自動向一般使用者顯示SFSafariViewController。 SDK會進一步導覽至MVPD登入頁面URL。
+    * 若設為&#x200B;**true，** SDK將&#x200B;**NOT**&#x200B;自動向一般使用者顯示SFSafariViewController。 SDK將進一步觸發&#x200B;**navigate(toUrl：{url}， useSVC:YES)**。
 * **device\_info** — 使用者端資訊，如[傳遞使用者端資訊](/help/authentication/integration-guide-programmers/legacy/client-information/passing-client-information-device-connection-and-application.md)中所述。
 
 [回到頂端……](#apis)
@@ -354,8 +355,8 @@ ht-degree: 0%
 **引數**：
 
 * *狀態*：可以使用下列其中一個值：
-   * `ACCESS_ENABLER_STATUS_SUCCESS` — 設定階段已順利完成
-   * `ACCESS_ENABLER_STATUS_ERROR` — 設定階段失敗
+  * `ACCESS_ENABLER_STATUS_SUCCESS` — 設定階段已順利完成
+  * `ACCESS_ENABLER_STATUS_ERROR` — 設定階段失敗
 
 **觸發者：**
 
@@ -369,8 +370,10 @@ ht-degree: 0%
 
 **檔案：** AccessEnabler/headers/AccessEnabler.h
 
-**描述：**&#x200B;檢查目前使用者的驗證狀態。其做法是在本機中搜尋有效的驗證Token
-Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您在主要執行緒上呼叫它。應用程式會用它來查詢使用者的驗證狀態，並且
+**描述：**檢查目前使用者的驗證狀態。
+其做法是在本機中搜尋有效的驗證Token
+Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您在主要執行緒上呼叫它。
+應用程式會用它來查詢使用者的驗證狀態，並且
 相應地更新UI （即更新登入/登出UI）。 此
 驗證狀態會透過以下方式傳達給應用程式：
 [`setAuthenticationStatus:errorCode:`](#setAuthNStatus)回呼。
@@ -396,8 +399,8 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 **引數：**&#x200B;無
 
-已觸發&#x200B;**個回呼：
-
+已觸發&#x200B;**個回呼：**
+[`setAuthenticationStatus:errorCode:`](#setAuthNStatus)
 
 [回到頂端……](#apis)
 
@@ -528,8 +531,8 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 * *forceAuthn*：指定是否應該啟動驗證流程的標幟，無論使用者是否已驗證。
 * *資料*：包含要傳送至Pay-TV pass服務之索引鍵值組的字典。 Adobe可使用此資料來啟用未來的功能，而不需變更SDK。
 * 篩選器：包含兩個MVPD ID清單的字典，應顯示在Apple SSO對話方塊中。 任何不支援SSO的MVPD都會被忽略，但順序將會被遵守。 字典必須有兩個索引鍵：
-   * TV\_PROVIDERS：包含所有應該出現在選擇器中的MVPD的清單
-   * FEATURED\_TV\_PROVIDERS：包含所有應在選擇器中標示為精選的MVPD的清單。 此清單中的MVPD也必須在TV\_PROVIDERS清單中指定。
+  * TV\_PROVIDERS：包含所有應該出現在選擇器中的MVPD的清單
+  * FEATURED\_TV\_PROVIDERS：包含所有應在選擇器中標示為精選的MVPD的清單。 此清單中的MVPD也必須在TV\_PROVIDERS清單中指定。
 
 **可用性：** v2.0 - v2.3.1
 
@@ -710,7 +713,7 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 **檔案：** AccessEnabler/headers/EntitlementDelegate.h
 
-**描述：**&#x200B;若您的應用程式先前透過[setOptions(\[&quot;handleSVC&quot;:true&quot;\])](#setOptions)呼叫啟用手動Safari檢視控制器(SVC)處理，且只有MVPD需要Safari檢視控制器(SVC)時，AccessEnabler會觸發回呼，而非`navigateToUrl:`回呼。 對於所有其他MVPD，將會呼叫`navigateToUrl:`回呼。 如需如何管理Safari檢視控制器(SVC)的詳細資訊，請參閱iOS SDK 3.2+[&#128279;](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的SFSafariViewController支援。
+**描述：**&#x200B;若您的應用程式先前透過[setOptions(\[&quot;handleSVC&quot;:true&quot;\])](#setOptions)呼叫啟用手動Safari檢視控制器(SVC)處理，且只有MVPD需要Safari檢視控制器(SVC)時，AccessEnabler會觸發回呼，而非`navigateToUrl:`回呼。 對於所有其他MVPD，將會呼叫`navigateToUrl:`回呼。 如需如何管理Safari檢視控制器(SVC)的詳細資訊，請參閱iOS SDK 3.2+](/help/authentication/integration-guide-programmers/legacy/notes-technical/sfsafariviewcontroller-support-on-ios-sdk-32.md)上的[SFSafariViewController支援。
 
 與`navigateToUrl:`回呼類似，`navigateToUrl:useSVC:`由AccessEnabler觸發，要求您的應用程式將`SFSafariViewController`控制器具現化，並載入回呼的&#x200B;**`url`**&#x200B;引數中提供的URL。 回呼會傳遞代表驗證端點的URL或登出端點的URL的&#x200B;**`url`**&#x200B;引數，以及指定應用程式必須使用`SFSafariViewController`的&#x200B;**`useSVC`**&#x200B;引數。
 
@@ -730,19 +733,19 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 <tbody>
 <tr class="odd">
 <td><pre><code>@optional
-&#x200B;- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
+- (void) navigateToUrl:(NSString *)url useSVC:(BOOL)useSVC; </code></pre></td>
 </tr>
 </tbody>
 </table>
 
-**可用性：**&#x200B;v 3.2+
+**可用性：**v 3.2+
 
 **引數**：
 
 * *url：*&#x200B;指向MVPD登入頁面的URL
 * *useSVC：*&#x200B;是否應在SFSafariViewController中載入URL。
 
-**觸發者：**&#x200B;[&#x200B; setOptions：](#setOptions)，在[setSelectedProvider：](#setSelProv)之前
+**觸發者：**[ setOptions：](#setOptions)，在[setSelectedProvider：](#setSelProv)之前
 
 [回到頂端……](#apis)
 
@@ -847,12 +850,12 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 **引數**：
 
 * *狀態*：可以使用下列其中一個值：
-   * `ACCESS_ENABLER_STATUS_SUCCESS` — 驗證流程已成功完成
-   * `ACCESS_ENABLER_STATUS_ERROR` — 驗證流程失敗
+  * `ACCESS_ENABLER_STATUS_SUCCESS` — 驗證流程已成功完成
+  * `ACCESS_ENABLER_STATUS_ERROR` — 驗證流程失敗
 * *代碼*：失敗原因。 如果&#x200B;*狀態*&#x200B;為`ACCESS_ENABLER_STATUS_SUCCESS`，則&#x200B;*代碼*&#x200B;為空字串（亦即，由`USER_AUTHENTICATED`常數定義）。 如果失敗，此引數可以採用下列其中一個值：
-   * `USER_NOT_AUTHENTICATED_ERROR` — 使用者未驗證。 回應[checkAuthentication：](#checkAuthN)方法呼叫（當本機權杖快取中沒有有效的驗證權杖時）。
-   * `PROVIDER_NOT_SELECTED_ERROR` — 在上層應用程式將&#x200B;*null*&#x200B;傳遞到[`setSelectedProvider:`](#setSelProv)之後，AccessEnabler已重設驗證狀態電腦，以中止驗證流程。  使用者可能已取消驗證流程（亦即按下「上一步」按鈕）。
-   * `GENERIC_AUTHENTICATION_ERROR` — 由於網路無法使用或使用者明確取消驗證流程等原因，驗證流程失敗。
+  * `USER_NOT_AUTHENTICATED_ERROR` — 使用者未驗證。 回應[checkAuthentication：](#checkAuthN)方法呼叫（當本機權杖快取中沒有有效的驗證權杖時）。
+  * `PROVIDER_NOT_SELECTED_ERROR` — 在上層應用程式將&#x200B;*null*&#x200B;傳遞到[`setSelectedProvider:`](#setSelProv)之後，AccessEnabler已重設驗證狀態電腦，以中止驗證流程。  使用者可能已取消驗證流程（亦即按下「上一步」按鈕）。
+  * `GENERIC_AUTHENTICATION_ERROR` — 由於網路無法使用或使用者明確取消驗證流程等原因，驗證流程失敗。
 
 **觸發者：** `checkAuthentication`，`getAuthentication`，[`getAuthentication:withData:`](#getAuthN)，`checkAuthorization:`，[`checkAuthorization:withData:`](#checkAuthZ)
 
@@ -1157,8 +1160,8 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 * *resource*：已取得授權的資源。
 * *代碼*：與失敗案例關聯的錯誤碼。 可能的值：
-   * `USER_NOT_AUTHORIZED_ERROR` — 使用者無法授權
-指定資源的
+  * `USER_NOT_AUTHORIZED_ERROR` — 使用者無法授權
+    指定資源的
 * *description*：有關失敗情況的其他詳細資料。 如果此描述性字串因任何原因而無法使用，Adobe Pass驗證會傳送空白字串&#x200B;**(&quot;)**。\
   MVPD可使用此字串來傳遞自訂錯誤訊息或銷售相關訊息。 例如，如果訂閱者拒絕對資源的授權，MVPD可以傳送訊息，例如：「您目前沒有封裝中此頻道的存取權。 若要升級您的封裝，請按一下&#x200B;**這裡**。」 此訊息會由Adobe Pass驗證透過此回呼傳送給程式設計師，程式設計師可以選擇顯示或忽略此訊息。 Adobe Pass驗證也可以使用此引數來提供可能導致錯誤的狀況通知。 例如，「與提供者的授權服務通訊時發生網路錯誤」。
 
@@ -1312,16 +1315,16 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 
 * *keyDictionary*：字典資料結構，包含下列專案
 格式：
-   * 如果金鑰為`METADATA_OPCODE_KEY`且值為`METADATA_AUTHENTICATION`，則會進行查詢以取得驗證權杖到期時間。
-   * 如果索引鍵是`METADATA_OPCODE_KEY`且值是`METADATA_AUTHORIZATION` **和**\
-     金鑰為`METADATA_RESOURCE_ID_KEY`且值為特定資源ID，則進行查詢以取得與指定資源關聯的授權權杖的到期時間。
-   * 如果索引鍵為`METADATA_OPCODE_KEY`且值為`METADATA_DEVICE_ID`，則會進行查詢以取得目前的裝置識別碼。 請注意，此功能預設為停用，程式設計師應聯絡Adobe瞭解啟用和費用相關資訊。
-   * 如果索引鍵是`METADATA_OPCODE_KEY`且值是`METADATA_USER_META` **且**&#x200B;索引鍵是`METADATA_USER_META_KEY`且值是中繼資料的名稱，則會針對使用者中繼資料進行查詢。 可用的使用者中繼資料型別清單：
-      * `zip` — 郵遞區號清單
-      * `householdID` — 家庭識別碼。 在MVPD不支援附屬帳戶的情況下，這將與`userID`相同。
-      * `maxRating` — 使用者最大家長分級的集合
-      * `userID` — 使用者識別碼。 如果MVPD支援附屬帳戶，且使用者不是主要帳戶，則`userID`將與`householdID.`不同
-      * `channelID` — 使用者有權檢視的管道清單。
+  * 如果金鑰為`METADATA_OPCODE_KEY`且值為`METADATA_AUTHENTICATION`，則會進行查詢以取得驗證權杖到期時間。
+  * 如果索引鍵是`METADATA_OPCODE_KEY`且值是`METADATA_AUTHORIZATION` **和**\
+    金鑰為`METADATA_RESOURCE_ID_KEY`且值為特定資源ID，則進行查詢以取得與指定資源關聯的授權權杖的到期時間。
+  * 如果索引鍵為`METADATA_OPCODE_KEY`且值為`METADATA_DEVICE_ID`，則會進行查詢以取得目前的裝置識別碼。 請注意，此功能預設為停用，程式設計師應聯絡Adobe瞭解啟用和費用相關資訊。
+  * 如果索引鍵是`METADATA_OPCODE_KEY`且值是`METADATA_USER_META` **且**&#x200B;索引鍵是`METADATA_USER_META_KEY`且值是中繼資料的名稱，則會針對使用者中繼資料進行查詢。 可用的使用者中繼資料型別清單：
+    * `zip` — 郵遞區號清單
+    * `householdID` — 家庭識別碼。 在MVPD不支援附屬帳戶的情況下，這將與`userID`相同。
+    * `maxRating` — 使用者最大家長分級的集合
+    * `userID` — 使用者識別碼。 如果MVPD支援附屬帳戶，且使用者不是主要帳戶，則`userID`將與`householdID.`不同
+    * `channelID` — 使用者有權檢視的管道清單。
 
   >[!NOTE]
   >
@@ -1485,9 +1488,9 @@ Token儲存空間。 此方法不會執行任何網路呼叫，我們建議您�
 * (NSString) logoURL - MVPD標誌位址。
 * （布林值） enablePlatformServices — 如果為true，則MVPD支援[Apple SSO](#presentTvDialog)之類的SSO服務。
 * (NSString) boardingStatus — 可以有3個值：
-   * 無 — MVPD不支援Apple SSO。
-   * 選取器 — MVPD會顯示在Apple選取器中，但驗證流程是由Adobe完成。
-   * 支援 — Apple完全支援MVPD，並將使用Apple的SSO代號。
+  * 無 — MVPD不支援Apple SSO。
+  * 選取器 — MVPD會顯示在Apple選取器中，但驗證流程是由Adobe完成。
+  * 支援 — Apple完全支援MVPD，並將使用Apple的SSO代號。
 
 [回到頂端……](#apis)
 
@@ -1515,25 +1518,25 @@ AccessEnabler會觸發其他回呼，而此回呼不一定與權益流程相關�
 **注意：**&#x200B;裝置型別和作業系統衍生自使用公用Java程式庫(<http://java.net/projects/user-agent-utils>)和使用者代理程式字串。 請注意，此資訊僅以粗略的方式提供，以將營運量度劃分為裝置類別，但Adobe對於錯誤結果概不負責。 請據以使用新功能。
 
 * 裝置型別的可能值：
-   * `computer`
-   * `tablet`
-   * `mobile`
-   * `gameconsole`
-   * `unknown`
+  * `computer`
+  * `tablet`
+  * `mobile`
+  * `gameconsole`
+  * `unknown`
 
 * AccessEnabler使用者端型別的可能值：
-   * `flash`
-   * `html5`
-   * `ios`
-   * `android`
+  * `flash`
+  * `html5`
+  * `ios`
+  * `android`
 
 
 **引數**：
 
 * *event*：正在追蹤之事件的程式碼。 追蹤事件型別共有三種：
-   * **authorizationDetection：**&#x200B;任何時候授權權杖要求傳回（事件為`TRACKING_AUTHORIZATION`）
-   * **authenticationDetection：**&#x200B;在任何驗證檢查發生時（事件為`TRACKING_AUTHENTICATION`）
-   * **mvpdSelection：**&#x200B;當使用者在MVPD選擇表單中選取MVPD （事件為`TRACKING_GET_SELECTED_PROVIDER`）時
+  * **authorizationDetection：**&#x200B;任何時候授權權杖要求傳回（事件為`TRACKING_AUTHORIZATION`）
+  * **authenticationDetection：**&#x200B;在任何驗證檢查發生時（事件為`TRACKING_AUTHENTICATION`）
+  * **mvpdSelection：**&#x200B;當使用者在MVPD選擇表單中選取MVPD （事件為`TRACKING_GET_SELECTED_PROVIDER`）時
 * *資料*：與報告事件相關的其他資料。 此資料會以值清單的形式呈現。
 
 **觸發者：** `checkAuthentication`，`getAuthentication`，[`getAuthentication:withData:`](#getAuthN)，`checkAuthorization:`，[`checkAuthorization:withData:`](#checkAuthZ)，`getAuthorization:`，[`getAuthorization:withData:`](#getAuthZ)，`setSelectedProvider:`
@@ -1541,29 +1544,29 @@ AccessEnabler會觸發其他回呼，而此回呼不一定與權益流程相關�
 解譯&#x200B;*資料*&#x200B;陣列中值的指示：
 
 * 適用於trackingEventType `TRACKING_AUTHENTICATION:`
-   * **0** — 權杖要求是否成功(true/false)，如果成功：
-   * **1** - MVPD ID字串
-   * **2** - GUID （md5雜湊）
-   * **3** — 權杖已在快取中(true/false)
-   * **4** — 裝置型別
-   * **5** - AccessEnabler使用者端型別
-   * **6** — 作業系統型別
+  * **0** — 權杖要求是否成功(true/false)，如果成功：
+  * **1** - MVPD ID字串
+  * **2** - GUID （md5雜湊）
+  * **3** — 權杖已在快取中(true/false)
+  * **4** — 裝置型別
+  * **5** - AccessEnabler使用者端型別
+  * **6** — 作業系統型別
 
 * 適用於trackingEventType `TRACKING_AUTHORIZATION:`
-   * **0** — 權杖要求是否成功(true/false)，如果成功：
-   * **1** - MVPD ID
-   * **2** - GUID （md5雜湊）
-   * **3** — 權杖已在快取中(true/false)
-   * **4** — 錯誤
-   * **5** — 詳細資料
-   * **6** — 裝置型別
-   * **7** - AccessEnabler使用者端型別
-   * **8** — 作業系統型別
+  * **0** — 權杖要求是否成功(true/false)，如果成功：
+  * **1** - MVPD ID
+  * **2** - GUID （md5雜湊）
+  * **3** — 權杖已在快取中(true/false)
+  * **4** — 錯誤
+  * **5** — 詳細資料
+  * **6** — 裝置型別
+  * **7** - AccessEnabler使用者端型別
+  * **8** — 作業系統型別
 * 適用於trackingEventType `TRACKING_GET_SELECTED_PROVIDER:`
-   * **0** — 目前所選MVPD的識別碼
-   * **1** — 裝置型別
-   * **2** - AccessEnabler使用者端型別
-   * **3** — 作業系統型別
+  * **0** — 目前所選MVPD的識別碼
+  * **1** — 裝置型別
+  * **2** - AccessEnabler使用者端型別
+  * **3** — 作業系統型別
 
 </br>
 

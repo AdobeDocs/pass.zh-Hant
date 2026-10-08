@@ -2,13 +2,14 @@
 title: Amazon FireOS Native Client API參考
 description: Amazon FireOS Native Client API參考
 exl-id: 8ac9f976-fd6b-4b19-a80d-49bfe57134b5
-source-git-commit: b6ba687240799d1889302019613f426259f147ad
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '3519'
 ht-degree: 0%
-
 ---
-
 # （舊版） Amazon FireOS Native Client API參考 {#amazon-fireos-native-client-api-reference}
 
 >[!NOTE]
@@ -146,10 +147,10 @@ ht-degree: 0%
 **引數：**
 
 - *狀態*：可以使用下列其中一個值：
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` — 設定
-階段已成功完成
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` — 設定
-階段失敗
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` — 設定
+    階段已成功完成
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` — 設定
+    階段失敗
 
 **觸發者：** `setRequestor()`
 
@@ -173,9 +174,9 @@ ht-degree: 0%
 **引數：**
 
 - *選項*：包含全域SDK選項的對應\&lt;字串，字串\>。 目前提供下列選項：
-   - **applicationProfile** — 它可用來根據這個值設定伺服器組態。
-   - **ap\_vi** - Experience Cloud ID服務。 此值稍後可用於進階分析報表。
-   - **device\_info** — 裝置資訊，如&#x200B;**傳遞裝置資訊逐步指南**&#x200B;中所述
+  - **applicationProfile** — 它可用來根據這個值設定伺服器組態。
+  - **ap\_vi** - Experience Cloud ID服務。 此值稍後可用於進階分析報表。
+  - **device\_info** — 裝置資訊，如&#x200B;**傳遞裝置資訊逐步指南**&#x200B;中所述
 
 </br>
 
@@ -259,12 +260,12 @@ ht-degree: 0%
 | `public void setSelectedProvider(String mvpdId)` |
 
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **引數：**&#x200B;無
 
-已觸發&#x200B;**回呼：** 
-
+已觸發&#x200B;**回呼：** `setAuthenticationStatus(), sendTrackingData()`
+</br>
 
 ### navigateToUrl {#navigagteToUrl}
 
@@ -317,14 +318,14 @@ ht-degree: 0%
 **引數：**
 
 - *狀態*：可以使用下列其中一個值：
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` — 驗證流程已成功完成
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` — 驗證流程失敗
-   - `AccessEnabler.ACCESS_ENABLER_STATUS_LOGOUT` — 登出
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS` — 驗證流程已成功完成
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_ERROR` — 驗證流程失敗
+  - `AccessEnabler.ACCESS_ENABLER_STATUS_LOGOUT` — 登出
 - *代碼*：顯示狀態的原因。 如果&#x200B;*狀態*&#x200B;為`AccessEnabler.ACCESS_ENABLER_STATUS_SUCCESS`，則&#x200B;*代碼*&#x200B;為空字串（亦即，由`AccessEnabler.USER_AUTHENTICATED`常數定義）。 如果未驗證，此引數可以有下列其中一個值：
-   - `AccessEnabler.USER_NOT_AUTHENTICATED_ERROR` — 使用者未驗證。 當本機權杖快取中沒有有效的驗證權杖時，回應&#x200B;*checkAuthentication()*&#x200B;方法呼叫。
-   - `AccessEnabler.PROVIDER_NOT_SELECTED_ERROR` — 在上層應用程式將&#x200B;*null*&#x200B;傳遞到`setSelectedProvider()`之後，AccessEnabler已重設驗證狀態電腦，以中止驗證流程。  使用者可能已取消驗證流程（亦即按下「上一步」按鈕）。
-   - `AccessEnabler.GENERIC_AUTHENTICATION_ERROR` — 由於網路無法使用或使用者明確取消驗證流程等原因，驗證流程失敗。
-   - `AccessEnabler.LOGOUT` — 由於登出動作，使用者未經驗證。
+  - `AccessEnabler.USER_NOT_AUTHENTICATED_ERROR` — 使用者未驗證。 當本機權杖快取中沒有有效的驗證權杖時，回應&#x200B;*checkAuthentication()*&#x200B;方法呼叫。
+  - `AccessEnabler.PROVIDER_NOT_SELECTED_ERROR` — 在上層應用程式將&#x200B;*null*&#x200B;傳遞到`setSelectedProvider()`之後，AccessEnabler已重設驗證狀態電腦，以中止驗證流程。  使用者可能已取消驗證流程（亦即按下「上一步」按鈕）。
+  - `AccessEnabler.GENERIC_AUTHENTICATION_ERROR` — 由於網路無法使用或使用者明確取消驗證流程等原因，驗證流程失敗。
+  - `AccessEnabler.LOGOUT` — 由於登出動作，使用者未經驗證。
 
 **觸發者：** `checkAuthentication(), getAuthentication(), checkAuthorization()`
 
@@ -354,7 +355,7 @@ ht-degree: 0%
 | --- |
 | `public void checkPreauthorizedResources(ArrayList<String> resources)` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **引數：** `resources`引數是使用者已被授權檢視的資源陣列。
 
@@ -426,7 +427,7 @@ ht-degree: 0%
 | --- |
 | `public void setToken(String token, String resourceId)` |
 
-**可用性：**&#x200B;v 1.0+
+**可用性：**v 1.0+
 
 **引數：**
 
@@ -451,7 +452,7 @@ ht-degree: 0%
 
 - *resourceId*：已取得授權的資源
 - *errorCode*：與失敗案例關聯的錯誤碼。 可能的值：
-   - `AccessEnabler.USER_NOT_AUTHORIZED_ERROR` — 使用者無法授權指定的資源
+  - `AccessEnabler.USER_NOT_AUTHORIZED_ERROR` — 使用者無法授權指定的資源
 - *errorDescription*：有關失敗案例的其他詳細資料。 如果此描述性字串因任何原因而無法使用，Adobe Pass驗證會傳送空白字串>**(&quot;)**。  MVPD可使用此字串來傳遞自訂錯誤訊息或銷售相關訊息。 例如，如果訂閱者拒絕對資源的授權，MVPD可以傳送訊息，例如：「您目前沒有封裝中此頻道的存取權。 如果您想要升級您的套件，請按這裡。」 此訊息會由Adobe Pass驗證透過此回呼傳送給程式設計師，程式設計師可以選擇顯示或忽略此訊息。 Adobe Pass驗證也可以使用此引數來提供可能導致錯誤的狀況通知。 例如，「與提供者的授權服務通訊時發生網路錯誤。」
 
 **觸發者：** `checkAuthorization(), getAuthorization()`
@@ -526,15 +527,15 @@ ht-degree: 0%
 **引數：**
 
 - *metadataKey*：封裝索引鍵和args變數的資料結構，其含義如下：
-   - 如果金鑰為`METADATA_KEY_TTL_AUTHN`，則會進行查詢以取得驗證權杖到期時間。
-   - 如果索引鍵是`METADATA_KEY_TTL_AUTHZ`，而且引數包含名稱= `METADATA_ARG_RESOURCE_ID`且值= `[resource_id]`的SerializableNameValuePair物件，則會進行查詢以取得與指定資源關聯的授權權杖的到期時間。
-   - 如果索引鍵是`METADATA_KEY_DEVICE_ID`，則會進行查詢以取得目前的裝置識別碼。 請注意，此功能預設為停用，程式設計師應聯絡Adobe瞭解啟用和費用相關資訊。
-   - 如果索引鍵是`METADATA_KEY_USER_META`，而且引數包含名稱= `METADATA_KEY_USER_META`且值= `[metadata_name]`的SerializableNameValuePair物件，則會針對使用者中繼資料進行查詢。 目前可用的使用者中繼資料型別清單：
-      - `zip` — 郵遞區號
-      - `householdID` — 家庭識別碼。 如果MVPD不支援附屬帳戶，這與`userID`相同。
-      - `maxRating` — 使用者的家長評等上限
-      - `userID` — 使用者識別碼。 如果MVPD支援附屬帳戶，且使用者不是主要帳戶，
-      - `channelID` — 使用者有權檢視的管道清單
+  - 如果金鑰為`METADATA_KEY_TTL_AUTHN`，則會進行查詢以取得驗證權杖到期時間。
+  - 如果索引鍵是`METADATA_KEY_TTL_AUTHZ`，而且引數包含名稱= `METADATA_ARG_RESOURCE_ID`且值= `[resource_id]`的SerializableNameValuePair物件，則會進行查詢以取得與指定資源關聯的授權權杖的到期時間。
+  - 如果索引鍵是`METADATA_KEY_DEVICE_ID`，則會進行查詢以取得目前的裝置識別碼。 請注意，此功能預設為停用，程式設計師應聯絡Adobe瞭解啟用和費用相關資訊。
+  - 如果索引鍵是`METADATA_KEY_USER_META`，而且引數包含名稱= `METADATA_KEY_USER_META`且值= `[metadata_name]`的SerializableNameValuePair物件，則會針對使用者中繼資料進行查詢。 目前可用的使用者中繼資料型別清單：
+    - `zip` — 郵遞區號
+    - `householdID` — 家庭識別碼。 如果MVPD不支援附屬帳戶，這與`userID`相同。
+    - `maxRating` — 使用者的家長評等上限
+    - `userID` — 使用者識別碼。 如果MVPD支援附屬帳戶，且使用者不是主要帳戶，
+    - `channelID` — 使用者有權檢視的管道清單
 
 程式設計師實際可用的使用者中繼資料取決於MVPD提供的功能。  此清單將進一步展開，因為新的中繼資料已推出並新增至Adobe Pass驗證系統。
 
@@ -558,42 +559,42 @@ ht-degree: 0%
 
 - *key*：包含要求中繼資料值的索引鍵和相關引數的MetadataKey物件（如需參考實作，請參閱示範應用程式）。
 - *result*：包含所要求中繼資料的複合物件。 物件包含下列欄位：
-   - *simpleResult*：字串，代表驗證TTL、授權TTL或裝置ID要求時的中繼資料值。 如果針對使用者中繼資料提出要求，則此值為Null。
+  - *simpleResult*：字串，代表驗證TTL、授權TTL或裝置ID要求時的中繼資料值。 如果針對使用者中繼資料提出要求，則此值為Null。
 
-   - *userMetadataResult*：包含JSON使用者中繼資料承載之Java表示法的物件。 例如：
+  - *userMetadataResult*：包含JSON使用者中繼資料承載之Java表示法的物件。 例如：
 
-     ```json
-     {
-     "street": "Main Avenue",
-     "buildings": ["150", "320"]
-     }
-     ```
+    ```json
+    {
+    "street": "Main Avenue",
+    "buildings": ["150", "320"]
+    }
+    ```
 
-     會轉譯為Java，如下所示：
+    會轉譯為Java，如下所示：
 
-     ```java
-     Map("street" -> "Main Avenue", "buildings" -> List("150", "320")))
-     ```
+    ```java
+    Map("street" -> "Main Avenue", "buildings" -> List("150", "320")))
+    ```
 
-     **使用者中繼資料物件的實際結構類似下列：**
+    **使用者中繼資料物件的實際結構類似下列：**
 
-     ```json
-     {
-         updated: 1334243471,
-         encrypted: ["encryptedProp"],
-         data: {
-             zip: ["12345", "34567"],
-             maxRating: { 
-                 "MPAA": "PG-13",
-                 "VCHIP": "TV-Y", 
-                 "URL": "http://exam.pl/e/manage/ratings"
-             },
-             householdID: "3456",
-             userID: "BgSdasfsdk23/dsaf3+saASesadgfsShggssd=",
-             channelID: ["channel-1", "channel-2"]
-         }
-     }
-     ```
+    ```json
+    {
+        updated: 1334243471,
+        encrypted: ["encryptedProp"],
+        data: {
+            zip: ["12345", "34567"],
+            maxRating: { 
+                "MPAA": "PG-13",
+                "VCHIP": "TV-Y", 
+                "URL": "http://exam.pl/e/manage/ratings"
+            },
+            householdID: "3456",
+            userID: "BgSdasfsdk23/dsaf3+saASesadgfsShggssd=",
+            channelID: ["channel-1", "channel-2"]
+        }
+    }
+    ```
 
 
 請求簡單中繼資料（驗證TTL、授權TTL或裝置ID）時，此值為空。
@@ -627,19 +628,19 @@ Access Enabler會觸發其他回呼，而此回呼不一定與權益流程相關
 > 裝置型別和作業系統衍生自使用公用Java程式庫(http://java.net/projects/user-agent-utils)和使用者代理字串。 請注意，此資訊僅以粗略的方式提供，以將營運量度劃分為裝置類別，但Adobe對於錯誤結果概不負責。 請據以使用新功能。
 
 - 裝置型別的可能值：
-   - `computer`
-   - `tablet`
-   - `mobile`
-   - `gameconsole`
-   - `unknown`
+  - `computer`
+  - `tablet`
+  - `mobile`
+  - `gameconsole`
+  - `unknown`
 
 - Access Enabler使用者端型別的可能值：
-   - `flash`
-   - `html5`
-   - `ios`
-   - `tvos`
-   - `android`
-   - `firetv`
+  - `flash`
+  - `html5`
+  - `ios`
+  - `tvos`
+  - `android`
+  - `firetv`
 
 | 回呼：追蹤事件 |
 | --- |
@@ -650,38 +651,38 @@ Access Enabler會觸發其他回呼，而此回呼不一定與權益流程相關
 **引數：**
 
 - *event*：正在追蹤的事件。 追蹤事件型別共有三種：
-   - **authorizationDetection：**&#x200B;當授權權杖要求傳回時（事件型別為`EVENT_AUTHZ_DETECTION`）
-   - **authenticationDetection：**&#x200B;任何時候發生驗證檢查時（事件型別為`EVENT_AUTHN_DETECTION`）
-   - **mvpdSelection：**&#x200B;當使用者在MVPD選擇表單中選取MVPD （事件型別為`EVENT_MVPD_SELECTION`）時
+  - **authorizationDetection：**&#x200B;當授權權杖要求傳回時（事件型別為`EVENT_AUTHZ_DETECTION`）
+  - **authenticationDetection：**&#x200B;任何時候發生驗證檢查時（事件型別為`EVENT_AUTHN_DETECTION`）
+  - **mvpdSelection：**&#x200B;當使用者在MVPD選擇表單中選取MVPD （事件型別為`EVENT_MVPD_SELECTION`）時
 - *資料*：與報告事件相關的其他資料。 此資料會以值清單的形式呈現。
 
 下列是解譯&#x200B;*資料*&#x200B;陣列中值的指示：
 
 - 事件型別&#x200B;*`EVENT_AUTHN_DETECTION`：*
-   - **0** — 權杖要求是否成功(true/false)，如果以上為true：
-   - **1** - MVPD ID字串
-   - **2** - GUID （md5雜湊）
-   - **3** — 權杖已在快取中(true/false)
-   - **4** — 裝置型別
-   - **5** — 存取啟用程式使用者端型別
-   - **6** — 作業系統型別
+  - **0** — 權杖要求是否成功(true/false)，如果以上為true：
+  - **1** - MVPD ID字串
+  - **2** - GUID （md5雜湊）
+  - **3** — 權杖已在快取中(true/false)
+  - **4** — 裝置型別
+  - **5** — 存取啟用程式使用者端型別
+  - **6** — 作業系統型別
 
 - 針對事件型別`EVENT_AUTHZ_DETECTION`
-   - **0** — 權杖要求是否成功(true/false)，如果成功：
-   - **1** - MVPD ID
-   - **2** - GUID （md5雜湊）
-   - **3** — 權杖已在快取中(true/false)
-   - **4** — 錯誤
-   - **5** — 詳細資料
-   - **6** — 裝置型別
-   - **7** — 存取啟用程式使用者端型別
-   - **8** — 作業系統型別
+  - **0** — 權杖要求是否成功(true/false)，如果成功：
+  - **1** - MVPD ID
+  - **2** - GUID （md5雜湊）
+  - **3** — 權杖已在快取中(true/false)
+  - **4** — 錯誤
+  - **5** — 詳細資料
+  - **6** — 裝置型別
+  - **7** — 存取啟用程式使用者端型別
+  - **8** — 作業系統型別
 
 - 針對事件型別`EVENT_MVPD_SELECTION`
-   - **0** — 目前所選MVPD的識別碼
-   - **1** — 裝置型別
-   - **2** — 存取啟用程式使用者端型別
-   - **3** — 作業系統型別
+  - **0** — 目前所選MVPD的識別碼
+  - **1** — 裝置型別
+  - **2** — 存取啟用程式使用者端型別
+  - **3** — 作業系統型別
 
 **觸發者：** `checkAuthentication(), getAuthentication(), checkAuthorization(), getAuthorization(), setSelectedProvider()`
 

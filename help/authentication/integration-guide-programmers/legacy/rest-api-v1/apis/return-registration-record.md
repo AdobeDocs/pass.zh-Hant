@@ -2,13 +2,14 @@
 title: 傳回註冊記錄
 description: 傳回註冊記錄
 exl-id: 7b9e63a2-59b6-4123-a19b-ee1f021219ea
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '275'
+source-wordcount: '285'
 ht-degree: 2%
-
 ---
-
 # （舊版）退貨註冊記錄 {#return-registration-record}
 
 >[!NOTE]
@@ -25,12 +26,12 @@ ht-degree: 2%
 
 ## REST API端點 {#clientless-endpoints}
 
-`<REGGIE_FQDN>`：
+`<REGGIE_FQDN>`:
 
 * 生產 — [api.auth.adobe.com](http://api.auth.adobe.com/)
 * 正在暫存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
 
-`<SP_FQDN>`：
+`<SP_FQDN>`:
 
 * 生產 — [api.auth.adobe.com](http://api.auth.adobe.com/)
 * 正在暫存 — [api.auth-staging.adobe.com](http://api.auth-staging.adobe.com/)
@@ -47,9 +48,9 @@ ht-degree: 2%
 
 
 
-| 端點 | 呼叫</br>者 | 輸入   </br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
+| 端點 | 呼叫</br>者 | 輸入</br>引數 | HTTP </br>方法 | 回應 | HTTP </br>回應 |
 | --- | --- | --- | --- | --- | --- |
-| `<REGGIE_FQDN>`；/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>例如：<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJCFK？format=xml | 串流應用程式</br></br>或</br></br>程式設計師服務 | 1.要求者</br>    （路徑元件）</br>2。  註冊代碼</br>    （路徑元件） | GET | 包含註冊代碼和資訊的XML或JSON。 請參閱下面的結構描述和範例。 | 200 |
+| `<REGGIE_FQDN>`；/reggie/v1/`{requestorId}`/regcode/`{registrationCode}`<p>例如：<p>`<REGGIE_FQDN>`/reggie/v1/sampleRequestorId/regcode/TJCFK？format=xml | 串流應用程式</br></br>或</br></br>程式設計師服務 | &#x200B;1.  要求者</br> （路徑元件）</br>2。  註冊代碼</br> （路徑元件） | GET | 包含註冊代碼和資訊的XML或JSON。 請參閱下面的結構描述和範例。 | 200 |
 
 {style="table-layout:auto"}
 

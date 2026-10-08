@@ -2,13 +2,14 @@
 title: iOS/tvOS應用程式註冊
 description: iOS/tvOS應用程式註冊
 exl-id: 89ee6b5a-29fa-4396-bfc8-7651aa3d6826
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
-source-wordcount: '632'
+source-wordcount: '634'
 ht-degree: 0%
-
 ---
-
 
 # （舊版） iOS/tvOS應用程式註冊 {#iostvos-application-registration}
 
@@ -40,9 +41,9 @@ ht-degree: 0%
 - 導覽至`Channels`區段並選取您的頻道。
 - 導覽至`Registered Applications`標籤。
 - 按一下`Add new application`。
-- 提供應用程式的名稱和版本，並選取   提供此功能的平台。 在此案例中為iOS/tvOS。
+- 提供應用程式的名稱和版本，並選取可用的平台。 在此案例中為iOS/tvOS。
 - 將變更推播至伺服器，然後導覽回您管道的「已註冊應用程式」標籤。
-- 您應該會看到包含所有已註冊應用程式的清單。 按一下   您剛建立的應用程式上的`Download`按鈕。 您可能需要等待幾分鐘，軟體宣告才可供下載。
+- 您應該會看到包含所有已註冊應用程式的清單。 按一下您剛建立的應用程式上的`Download`按鈕。 您可能需要等待幾分鐘，軟體宣告才可供下載。
 - 將會下載文字檔。 將其內容當做您的軟體宣告使用。
 
 如需詳細資訊，請參閱[動態使用者端註冊管理](../../../rest-apis/rest-api-dcr/dynamic-client-registration-overview.md#dynamic-client-registration-management)。

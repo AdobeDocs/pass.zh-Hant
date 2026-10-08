@@ -2,13 +2,14 @@
 title: 使用Charles代理
 description: 使用Charles代理
 exl-id: bb38543f-f6bc-4b5a-91b8-41bc51ee4c56
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '379'
 ht-degree: 0%
-
 ---
-
 # （舊版）使用Charles Proxy {#using-charles-proxy}
 
 >[!NOTE]

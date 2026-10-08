@@ -2,13 +2,14 @@
 title: 基本授權 — 主要應用程式 — 流程
 description: REST API V2 — 基本授權 — 主要應用程式 — 流程
 exl-id: 46bc9326-966e-44fc-8546-2f58be01b7bc
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '603'
 ht-degree: 0%
-
 ---
-
 # 主要應用程式內執行的基本授權流程 {#basic-authorization-flow-performed-within-primary-application}
 
 >[!IMPORTANT]
@@ -61,7 +62,7 @@ Adobe Pass驗證許可權內的&#x200B;**授權流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的[擷取授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 
@@ -80,7 +81,7 @@ Adobe Pass驗證許可權內的&#x200B;**授權流程**&#x200B;可讓串流應�
 
    >[!IMPORTANT]
    >
-   > 請參閱使用特定mvpd[&#128279;](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的擷取授權決定，以取得決定回應中提供的詳細資訊。
+   > 請參閱使用特定mvpd](../../apis/decisions-apis/rest-api-v2-decisions-apis-retrieve-authorization-decisions-using-specific-mvpd.md) API檔案的[擷取授權決定，以取得決定回應中提供的詳細資訊。
    > 
    > <br/>
    > 

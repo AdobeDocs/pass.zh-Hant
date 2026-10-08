@@ -2,13 +2,14 @@
 title: Android SDK逐步指南
 description: Android SDK逐步指南
 exl-id: 7f66ab92-f52c-4dae-8016-c93464dd5254
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1690'
 ht-degree: 0%
-
 ---
-
 # （舊版） Android SDK逐步指南 {#android-sdk-cookbook}
 
 >[!NOTE]
@@ -30,9 +31,9 @@ Android的Adobe Pass驗證許可權解決方案最終將分為兩個網域：
 
 - UI網域 — 這是上層應用程式層，會實作UI並使用AccessEnabler程式庫所提供的服務來提供對受限制內容的存取權。
 - AccessEnabler網域 — 這是以下列形式實施權益工作流程的地方：
-   - 對Adobe後端伺服器發出的網路呼叫
-   - 與驗證和授權工作流程相關的商業邏輯規則
-   - 管理各種資源及處理工作流程狀態（例如Token快取）
+  - 對Adobe後端伺服器發出的網路呼叫
+  - 與驗證和授權工作流程相關的商業邏輯規則
+  - 管理各種資源及處理工作流程狀態（例如Token快取）
 
 AccessEnabler網域的目標是隱藏軟體權利檔案工作流程的所有複雜性，並（透過AccessEnabler資料庫）提供一組簡單軟體權利檔案基本要素，供您實作軟體權利檔案工作流程：
 
@@ -124,7 +125,7 @@ AccessEnabler的網路活動會發生在不同的執行緒中，因此不會封�
    答：  呼叫[`getInstance`](#$getInstance)以建立Adobe Pass Authentication AccessEnabler的單一執行個體。
 
    - **相依性：** Adobe Pass Authentication Native
-Android資料庫(AccessEnabler)
+     Android資料庫(AccessEnabler)
 
    b.  呼叫` setRequestor()`以建立程式設計師的識別碼；傳入程式設計師的`requestorID`以及（選擇性）Adobe Pass驗證端點的陣列。
 
@@ -185,9 +186,9 @@ Android資料庫(AccessEnabler)
 
    - 如果`getAuthorization()`呼叫成功：使用者擁有有效的AuthN和AuthZ權杖（使用者已驗證並獲授權觀看要求的媒體）。
    - 如果`getAuthorization()`失敗：檢查擲回的例外狀況，以判斷其型別（AuthN、AuthZ或其他專案）：
-      - 如果這是驗證(AuthN)錯誤，請重新啟動驗證流程。
-      - 如果是授權(AuthZ)錯誤，則使用者無權觀看請求的媒體，並且應向使用者顯示某種錯誤訊息。
-      - 如果有其他型別的錯誤（連線錯誤、網路錯誤等）， 然後向使用者顯示適當的錯誤訊息。
+     - 如果這是驗證(AuthN)錯誤，請重新啟動驗證流程。
+     - 如果是授權(AuthZ)錯誤，則使用者無權觀看請求的媒體，並且應向使用者顯示某種錯誤訊息。
+     - 如果有其他型別的錯誤（連線錯誤、網路錯誤等）， 然後向使用者顯示適當的錯誤訊息。
 
 1. 驗證短媒體權杖。\
    使用Adobe Pass驗證媒體權杖驗證器程式庫，驗證從上述`getAuthorization()`呼叫傳回的短期媒體權杖：

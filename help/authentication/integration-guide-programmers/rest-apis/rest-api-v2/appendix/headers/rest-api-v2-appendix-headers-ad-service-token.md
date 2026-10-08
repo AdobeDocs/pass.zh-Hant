@@ -2,13 +2,14 @@
 title: 標頭 — AD-Service-Token
 description: REST API V2 — 標題 — AD-Service-Token
 exl-id: 856f76fc-cde6-4b3f-81f7-deaa0df015dc
-source-git-commit: 81d3c3835d2e97e28c2ddb9c72d1a048a25ad433
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '266'
 ht-degree: 1%
-
 ---
-
 # 標頭 — AD-Service-Token {#header-ad-service-token}
 
 >[!NOTE]

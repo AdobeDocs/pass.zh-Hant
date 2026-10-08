@@ -2,13 +2,14 @@
 title: Android SDK概觀
 description: Android SDK概觀
 exl-id: a1d98325-32a1-4881-8635-9a3c38169422
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2801'
 ht-degree: 0%
-
 ---
-
 # （舊版） Android SDK概觀 {#android-sdk-overview}
 
 >[!NOTE]
@@ -72,7 +73,7 @@ AccessEnabler支援的所有權益工作流程都假設您先前已呼叫[`setRe
 
 
 
-**注意：**&#x200B;從一名程式設計師/MVPD工作階段登出將會清除
+**注意：**從一名程式設計師/MVPD工作階段登出將會清除
 該特定MVPD的基礎儲存空間，包括所有
 透過SSO取得的其他程式設計師驗證權杖
 該裝置。 為其他MVPD取得或未透過SSO取得的權杖不會

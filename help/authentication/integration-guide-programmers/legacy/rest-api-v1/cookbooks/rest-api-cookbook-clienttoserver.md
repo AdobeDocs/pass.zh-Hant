@@ -2,13 +2,14 @@
 title: REST API逐步指南（使用者端對伺服器）
 description: Rest API逐步指南使用者端至伺服器。
 exl-id: f54a1eda-47d5-4f02-b343-8cdbc99a73c0
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '906'
 ht-degree: 0%
-
 ---
-
 # （舊版） REST API逐步指南（使用者端對伺服器） {#rest-api-cookbook-client-to-server}
 
 >[!NOTE]
@@ -84,7 +85,7 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
 1. 使用者從第二熒幕應用程式返回，並按裝置上的「繼續」按鈕。 或者，您可以實作輪詢機制來檢查驗證狀態，但Adobe Pass驗證建議使用繼續按鈕方法來取代輪詢。<!--(For information on employing a "Continue" button versus polling the Adobe Pass Authentication backend server, see the Clientless Technical Overview: Managing 2nd-Screen Workflow Transition.)--> 例如： [\&lt;SP\_FQDN\>/api/v1/tokens/authn](/help/authentication/integration-guide-programmers/legacy/rest-api-v1/apis/retrieve-authentication-token.md)
 
-2. 傳送GET請求至Adobe Pass Authentication Authorization Service以啟動授權。 例如： `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
+2. 傳送GET要求至Adobe Pass驗證授權服務以啟動授權。 例如： `<SP_FQDN>/api/v1/authorize [device ID, Requestor ID, Resource ID]`
 
 <!-- end list -->
 
@@ -92,11 +93,11 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
 
 * 如果回應指出失敗：請檢查擲回的例外狀況，以判斷其型別（AuthN、AuthZ或其他專案）：
 
-   * 如果是AuthN錯誤，請重新啟動註冊流程。
+  * 如果是AuthN錯誤，請重新啟動註冊流程。
 
-   * 如果這是AuthZ錯誤，則使用者無權觀看請求的媒體，並且應向使用者顯示某種錯誤訊息。
+  * 如果這是AuthZ錯誤，則使用者無權觀看請求的媒體，並且應向使用者顯示某種錯誤訊息。
 
-   * 如果發生其他錯誤（連線錯誤、網路錯誤等）， 然後向使用者顯示適當的錯誤訊息。
+  * 如果發生其他錯誤（連線錯誤、網路錯誤等）， 然後向使用者顯示適當的錯誤訊息。
 
 
 
@@ -109,10 +110,10 @@ Adobe Pass使用DCR來保護程式設計人員應用程式或伺服器與Adobe P
    答：  您的應用程式會檢查媒體是否受到保護。
 
    b.  如果媒體受到保護，您的應用程式會啟動授權
-(AuthZ)流量高於。
+   (AuthZ)流量高於。
 
    c.  如果媒體未受保護，則播放媒體的
-使用者。
+   使用者。
 
 3. 播放媒體。
 

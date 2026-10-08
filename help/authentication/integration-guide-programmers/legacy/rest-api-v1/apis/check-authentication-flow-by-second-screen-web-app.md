@@ -2,13 +2,14 @@
 title: 依第二熒幕Web應用程式檢查驗證流程
 description: 依第二熒幕Web應用程式檢查驗證流程
 exl-id: 5807f372-a520-4069-b837-67ae41b7f79b
-source-git-commit: 689e2f86550d9fa59337c15dd38767975a1d6d30
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '240'
 ht-degree: 1%
-
 ---
-
 # （舊版）依第二熒幕Web應用程式檢查驗證流程 {#check-authentication-flow-by-second-screen-web-app}
 
 >[!NOTE]

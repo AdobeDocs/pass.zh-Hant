@@ -2,13 +2,14 @@
 title: 限制屬於不同擁有者的多重應用程式的並行使用
 description: 限制屬於不同擁有者的多個應用程式同時使用
 exl-id: c358befc-36d6-4f55-92cc-4d02064c65fb
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '286'
 ht-degree: 1%
-
 ---
-
 # 限制屬於不同擁有者的多個應用程式同時使用 {#restr-concurr-usage}
 
 

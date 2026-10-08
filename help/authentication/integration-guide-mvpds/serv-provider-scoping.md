@@ -2,13 +2,14 @@
 title: 服務提供者範圍
 description: 服務提供者範圍
 exl-id: 730c43e1-46c0-4eec-b562-b1ad93cce6d3
-source-git-commit: d982beb16ea0db29f41d0257d8332fd4a07a84d8
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '314'
 ht-degree: 0%
-
 ---
-
 # 服務提供者範圍 {#service-provoider-scoping}
 
 >[!NOTE]

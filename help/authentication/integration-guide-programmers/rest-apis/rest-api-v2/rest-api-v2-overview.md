@@ -2,13 +2,14 @@
 title: REST API V2概觀
 description: REST API V2概觀
 exl-id: a5595193-82c4-4033-bd98-596b4908b401
-source-git-commit: 63dc9636f74f8eee1af6205c4d31a01df4503050
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '537'
 ht-degree: 0%
-
 ---
-
 # REST API V2概觀 {#rest-api-v2-overview}
 
 >[!IMPORTANT]

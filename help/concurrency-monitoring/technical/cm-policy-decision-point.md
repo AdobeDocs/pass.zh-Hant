@@ -2,20 +2,21 @@
 title: 原則決定點
 description: 原則決定點
 exl-id: 94bc638c-bef8-45ea-b20a-9b7038adecdd
-source-git-commit: ed340643e807d786638d59f9bf07d73b7f909a72
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '731'
 ht-degree: 0%
-
 ---
-
 # 原則決定點 {#policy-desc-pt}
 
 ## 網域模型 {#domain-model}
 
 本頁旨在作為不同使用案例和原則實施的參考。 我們建議您也參閱檔案中的[字彙表](/help/concurrency-monitoring/cm-glossary.md)部分以取得字詞定義。
 
-**租使用者**&#x200B;擁有它想要強制執行&#x200B;**原則**&#x200B;的&#x200B;**應用程式**。 **使用者端應用程式**&#x200B;必須設定為&#x200B;**應用程式識別碼** (由Adobe提供)。
+**租使用者**&#x200B;擁有它想要強制執行&#x200B;**原則**&#x200B;的&#x200B;**應用程式**。 **使用者端應用程式**&#x200B;必須設定為&#x200B;**應用程式識別碼** （由Adobe提供）。
 
 租使用者接著會將每個應用程式與一個或多個原則建立關聯，這些原則可能是由他建立或由其他人建立和共用。 原則可以在多個租使用者之間連結。
 
@@ -33,7 +34,7 @@ ht-degree: 0%
 
 以下逐步說明旨在根據某些使用案例來驗證模型。 我們將從基本設定開始，以各種方式增加複雜性，逐步做到這一點。
 
-### 1.一個租使用者。 一個應用程式。 一個原則。 一個資料流 {#onetenant-oneapp-onepolicy-onestream}
+### &#x200B;1. 一個租使用者。 一個應用程式。 一個原則。 一個資料流 {#onetenant-oneapp-onepolicy-onestream}
 
 我們將從單一租使用者開始，透過單一應用程式和單一關聯原則。 我們假設原則宣告，任何使用者最多只能有一個使用中資料流（允許播放最新資料流）。
 
@@ -42,7 +43,7 @@ ht-degree: 0%
 ![一個租使用者。 一個應用程式。 一個原則。 一個資料流](../assets/onetenant-app-policy-stream.png)
 
 
-### 2.一個租使用者。 一個應用程式。 一個原則。 兩個串流。 {#onetenant-oneapp-onepolicy-twostreams}
+### &#x200B;2. 一個租使用者。 一個應用程式。 一個原則。 兩個串流。 {#onetenant-oneapp-onepolicy-twostreams}
 
 啟動第二個資料流後（由相同主體使用相同應用程式），用於驗證的活動將同時包含&#x200B;**s1**&#x200B;和&#x200B;**s2**。
 
@@ -54,7 +55,7 @@ ht-degree: 0%
 >
 >這些圖表代表使用者活動的系統檢視。 對於串流初始化嘗試，存取決定將包含在回應中。 對於作用中資料流，將會在心率回應上傳回決定。
 
-### 3.兩個租戶。 兩個應用程式。 一個原則。 兩個串流。 {#twotenant-twoapp-onepolicy-twostreams}
+### &#x200B;3. 兩個租使用者。 兩個應用程式。 一個原則。 兩個串流。 {#twotenant-twoapp-onepolicy-twostreams}
 
 現在，假設新租使用者想要在其應用程式中強制實施相同原則：
 
@@ -62,7 +63,7 @@ ht-degree: 0%
 
 由於兩個租使用者由相同原則連結，因此使用案例2中說明的情況適用於此處，並且允許&#x200B;**s3**&#x200B;播放，因為它是最新的資料流。
 
-### 4.兩個租戶。 三個應用程式。 兩個原則。 兩個串流。 {#twotenants-threeapps-twopolicies-twostreams}
+### &#x200B;4. 兩個租使用者。 三個應用程式。 兩個原則。 兩個串流。 {#twotenants-threeapps-twopolicies-twostreams}
 
 現在，假設第二個租使用者部署新的應用程式，並且想要定義將在&#x200B;**app2**&#x200B;和&#x200B;**app3**&#x200B;之間共用的新原則。
 
@@ -72,7 +73,7 @@ ht-degree: 0%
 
 原則&#x200B;**P2**&#x200B;已套用至兩個資料流，而且它將同時包含&#x200B;**s3**&#x200B;和&#x200B;**s4**&#x200B;做為相關活動。 由於此活動在兩個資料流的界限內，因此允許兩個資料流。
 
-### 5.兩個租戶。 三個應用程式。 兩個原則。 三個串流。 {#twotenants-threeapps-twopolicies-threestreams}
+### &#x200B;5. 兩個租使用者。 三個應用程式。 兩個原則。 三個串流。 {#twotenants-threeapps-twopolicies-threestreams}
 
 假設使用&#x200B;**app2**&#x200B;執行新的資料流初始化嘗試：
 

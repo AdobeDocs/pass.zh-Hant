@@ -2,13 +2,14 @@
 title: ESM儀表板
 description: 瞭解如何使用ESM Dashboard監控MVPD合作夥伴的權益和事件資料。
 exl-id: ac5f289a-c26d-4156-bc56-7968c49c100f
-source-git-commit: 39384d753e7808fa433f30d8dafabd531dbf3acf
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '487'
 ht-degree: 1%
-
 ---
-
 # ESM儀表板 {#esm-dashboard}
 
 >[!NOTE]
@@ -25,7 +26,7 @@ ESM Dashboard提供許可權和事件資料的統一檢視，以協助您監控�
 - 比較MVPD效能
 - 瞭解每個應用程式的客戶使用情況
 
-如需有關ESM資料和事件的詳細資訊，請參閱[軟體權利檔案服務監視總覽](https://experienceleague.adobe.com/zh-hant/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview)。
+如需有關ESM資料和事件的詳細資訊，請參閱[軟體權利檔案服務監視總覽](https://experienceleague.adobe.com/en/docs/pass/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-overview)。
 
 ## 報表 {#reports}
 

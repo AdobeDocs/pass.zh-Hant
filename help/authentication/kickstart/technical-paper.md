@@ -2,13 +2,14 @@
 title: 關於Adobe Pass驗證
 description: 關於Adobe Pass驗證
 exl-id: 5edeaccb-f9fa-4395-83b4-706c518d5a03
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1863'
 ht-degree: 0%
-
 ---
-
 # 關於®通過驗證 {#about-adobe-pass-authentication}
 
 >[!IMPORTANT]
@@ -165,15 +166,15 @@ Adobe Pass Authentication作為Proxy，透過為雙方提供安全一致的介�
 對於程式設計師而言，Adobe Pass驗證提供API作為&#x200B;**Standard**&#x200B;或&#x200B;**Premium**&#x200B;層級的一部分：
 
 * 標準Adobe Pass驗證API：
-   * [REST API DCR](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
-   * [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
+  * [REST API DCR](/help/authentication/integration-guide-programmers/rest-apis/rest-api-dcr/dynamic-client-registration-overview.md)
+  * [REST API V2](/help/authentication/integration-guide-programmers/rest-apis/rest-api-v2/apis/rest-api-v2-apis-overview.md)
 
 * Premium Adobe Pass驗證API：
-   * [重設Temp Pass API](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
-      * [TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
-   * [降級API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
-      * [退化特徵](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
-   * [權益服務監控API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
+  * [重設Temp Pass API](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md#reset-tempass-api-access)
+    * [TempPass功能](/help/authentication/integration-guide-programmers/features-premium/temporary-access/temp-pass-feature.md)
+  * [降級API](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md#degradation-api-access)
+    * [退化特徵](/help/authentication/integration-guide-programmers/features-premium/degraded-access/degradation-feature.md)
+  * [權益服務監控API](/help/authentication/integration-guide-programmers/features-premium/esm/entitlement-service-monitoring-api.md)
 
 如需軟體權利檔案流程的詳細資訊，請參閱[程式設計師整合指南](/help/authentication/integration-guide-programmers/programmer-integration-guide-overview.md#entitlement-flow)檔案。
 
@@ -208,18 +209,18 @@ Adobe Pass驗證解決方案以建立許可權為中心，也就是在成功完�
 程式設計師至少必須：
 
 * **實作提供者選擇介面**
-   * 允許新使用者識別他們的付費電視提供者，並首次登入。
-   * 有些付費電視提供者會將使用者重新導向至外部登入頁面，有些則需要在iframe內登入。 程式設計師必須實作回呼函式，才能在需要時產生iframe。
+  * 允許新使用者識別他們的付費電視提供者，並首次登入。
+  * 有些付費電視提供者會將使用者重新導向至外部登入頁面，有些則需要在iframe內登入。 程式設計師必須實作回呼函式，才能在需要時產生iframe。
 
 * **管理支援的付費電視提供者清單**
-   * 確保使用者只能透過核准的提供者存取內容。
+  * 確保使用者只能透過核准的提供者存取內容。
 
 * **表示驗證狀態**
-   * 顯示使用者在應用程式或網站內進行驗證的時間。
+  * 顯示使用者在應用程式或網站內進行驗證的時間。
 
 * **識別受保護的資源**
-   * 清楚指出哪些內容在檢視前需要授權。
-   * 更新UI以反映在授予存取權後成功的授權。
+  * 清楚指出哪些內容在檢視前需要授權。
+  * 更新UI以反映在授予存取權後成功的授權。
 
 ## 常見問題集 {#faqs}
 

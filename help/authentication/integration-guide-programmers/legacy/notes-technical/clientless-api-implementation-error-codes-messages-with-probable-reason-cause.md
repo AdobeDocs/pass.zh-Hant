@@ -2,13 +2,14 @@
 title: 無使用者端API實施 — 錯誤代碼/包含可能原因/原因的訊息
 description: 無使用者端API實施 — 錯誤代碼/包含可能原因/原因的訊息
 exl-id: 616e35fc-9b72-422b-9a05-e6248bd52490
-source-git-commit: 3818dce9847ae1a0da19dd7decc6b7a6a74a46cc
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '227'
 ht-degree: 0%
-
 ---
-
 # （舊版）無使用者端API實作 — 錯誤代碼/包含可能原因/原因的訊息 {#clientless-api-implementation--error-codes-messages-with-probable-reason-cause}
 
 >[!NOTE]
@@ -41,7 +42,7 @@ ht-degree: 0%
 
 ### 原因：
 
-1. POST/GET的格式錯誤url
+1. POST/GET的格式錯誤URL
 1. SAMLAssertionParserException — 無法在Adobe端解密加密的SAML宣告
 
 ## 錯誤： 403禁止

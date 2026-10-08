@@ -2,13 +2,14 @@
 title: rest API V2字彙表
 description: rest API V2字彙表
 exl-id: 8b3bd2de-1ff8-4c57-b18d-27ecdf2b0de2
-source-git-commit: 9e085ed0b2918eee30dc5c332b6b63b0e6bcc156
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '1762'
 ht-degree: 0%
-
 ---
-
 # rest API V2字彙表 {#rest-api-v2-glossary}
 
 >[!IMPORTANT]

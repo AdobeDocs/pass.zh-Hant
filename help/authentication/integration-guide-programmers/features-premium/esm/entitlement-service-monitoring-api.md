@@ -2,13 +2,14 @@
 title: 權益服務監控API
 description: 權益服務監控API
 exl-id: a9572372-14a6-4caa-9ab6-4a6baababaa1
-source-git-commit: b51ac004765a8617347ac2ddadbfe60adff8ea3a
+product_v2:
+  - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
+    internal-label: Pass
+source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
 workflow-type: tm+mt
 source-wordcount: '2098'
 ht-degree: 0%
-
 ---
-
 # 權益服務監控API {#entitlement-service-monitoring-api}
 
 >[!IMPORTANT]
@@ -67,9 +68,9 @@ REST API會根據維度路徑、提供的篩選器和選取的量度，在請求
 
 * 可用根目錄向下鑽研路徑的連結：
 
-   * `<link rel="drill-down" href="/v3/dimensionA"/>`
+  * `<link rel="drill-down" href="/v3/dimensionA"/>`
 
-   * `<link rel="drill-down" href="/v3/dimensionB"/>`
+  * `<link rel="drill-down" href="/v3/dimensionB"/>`
 
 * 所有量度的摘要（彙總值） (預設值
 間隔，因為未提供查詢字串引數，請參閱下文)。
