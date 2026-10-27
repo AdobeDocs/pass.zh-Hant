@@ -5,9 +5,9 @@ exl-id: e8889395-4434-4bec-a212-a8341bb9c310
 product_v2:
   - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
     internal-label: Pass
-source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
+source-git-commit: af03be1d866ad60b601f0fbe8799bd1b87e5c9b6
 workflow-type: tm+mt
-source-wordcount: '1137'
+source-wordcount: '1170'
 ht-degree: 1%
 ---
 # 使用特定mvpd擷取授權決策 {#retrieve-authorization-decisions-using-specific-mvpd}
@@ -300,6 +300,13 @@ ht-degree: 1%
                <td>可選</td>
             </tr>
             <tr>
+               <td style="background-color: #DEEBFF;">userMetadata</td>
+               <td>
+                  MVPD共用的選用使用者中繼資料。 可用的金鑰取決於MVPD設定。 每個中繼資料索引鍵都會傳回為包含<b>值</b>和<b>狀態</b>的物件。 例如，頻譜可能傳回<code>packageType</code>。
+               </td>
+               <td>可選</td>
+            </tr>
+            <tr>
                <td style="background-color: #DEEBFF;">錯誤</td>
                <td>此錯誤提供遵守<a href="../../../../features-standard/error-reporting/enhanced-error-codes.md">增強型錯誤碼</a>檔案的「拒絕」決定的相關額外資訊。</td>
                <td>可選</td>
@@ -397,7 +404,13 @@ Content-Type: application/json;charset=UTF-8
                 "serializedToken": "PHNpZ25hdHVyZUluZm8..."
             },
             "notBefore": 1697094207324,
-            "notAfter": 1697098802367
+            "notAfter": 1697098802367,
+            "userMetadata": {
+                "packageType": {
+                    "value": "INCLUSION",
+                    "state": "plain"
+                }
+            }
         }
     ]
 }
