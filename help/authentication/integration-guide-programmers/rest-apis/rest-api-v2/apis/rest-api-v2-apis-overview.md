@@ -5,9 +5,9 @@ exl-id: 62b48bf0-d200-4949-b268-8f8ea2daabfa
 product_v2:
   - id: f002a92a-b99f-47a4-90c8-65e0e415bc7a
     internal-label: Pass
-source-git-commit: 9cd75fbc66d5395a899c272d94774cbaf7ea3d07
+source-git-commit: 297578d3b311fbc2a5702f1bcc947e94463fb884
 workflow-type: tm+mt
-source-wordcount: '152'
+source-wordcount: '266'
 ht-degree: 0%
 ---
 # REST API V2 API概述 {#rest-api-v2-apis-overview}
@@ -17,6 +17,19 @@ ht-degree: 0%
 > 請務必隨時瞭解彙總在[產品公告](/help/authentication/product-announcements.md)頁面中的最新Adobe Pass驗證產品公告和淘汰時間表。
 
 若要開始使用，請瀏覽下列清單中您感興趣的API公開檔案。
+
+## 基本URL {#rest-api-v2-apis-base-urls}
+
+使用下列環境特定基底URL以執行REST API V2請求。 將每個API記錄的相對`path`附加至此基底URL。
+
+部分API回應會傳回串流裝置必須在瀏覽器或使用者代理程式中開啟的互動式URL。 範例包括[針對特定mvpd](logout-apis/rest-api-v2-logout-apis-initiate-logout-for-specific-mvpd.md)啟動登出所傳回的`url`屬性，以及[在使用者代理程式](sessions-apis/rest-api-v2-sessions-apis-perform-authentication-in-user-agent.md)中執行驗證所傳回的`Location`重新導向。
+
+這些互動式URL會使用相同的Adobe Pass Service Provider (SP)主機。 完全依照傳回內容開啟絕對的互動式URL。 如果Adobe Pass傳回以`/adobe-services/`開頭的相對互動式URL，請針對目標環境的SP主機進行解析：
+
+| 環境 | REST API V2和互動式基底URL |
+| --- |--------------------------------------|
+| 生產 | `https://sp.auth.adobe.com` |
+| 分段 | `https://sp.auth-staging.adobe.com` |
 
 ## 設定 {#rest-api-v2-apis-configuration}
 
